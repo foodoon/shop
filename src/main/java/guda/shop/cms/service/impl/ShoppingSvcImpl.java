@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.Product;
 imimport guda.shopms.entity.ShopMember;
 impimport guda.shops.manager.CartMng;
 impoimport guda.shop.service.ShoppingSvc;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.util.Set;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

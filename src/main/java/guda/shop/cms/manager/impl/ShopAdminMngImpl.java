@@ -10,7 +10,7 @@ importimport guda.shopentity.User;
 import import guda.shopntity.Website;
 import cimport guda.shopnager.AdminMng;
 import coimport guda.shopager.UserMng;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.core.manager.WebsiteMng;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

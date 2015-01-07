@@ -3,7 +3,7 @@ package guda.shop.cms.manager.impl;
 import guda.shop.cms.dao.AdspaceDao;
 iimport guda.shopcms.entity.Adspace;
 imimport guda.shopms.manager.AdspaceMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

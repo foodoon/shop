@@ -10,7 +10,7 @@ importimport guda.shopntity.ShopScore.ScoreTypes;
 import import guda.shopnager.GiftExchangeMng;
 import cimport guda.shopager.ShopScoreMng;
 import coimport guda.shopibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;

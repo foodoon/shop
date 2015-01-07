@@ -2,7 +2,7 @@ package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ShopAdmin;
 iimport guda.shopcore.entity.Admin;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 
 public abstract class BaseShopAdmin

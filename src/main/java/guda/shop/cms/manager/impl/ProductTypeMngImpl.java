@@ -4,7 +4,7 @@ import guda.shop.cms.dao.ProductTypeDao;
 iimport guda.shopcms.entity.ProductType;
 imimport guda.shopms.manager.BrandMng;
 impimport guda.shops.manager.ProductTypeMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

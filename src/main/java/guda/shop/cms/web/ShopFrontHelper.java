@@ -6,7 +6,7 @@ imimport guda.shopms.web.threadvariable.MemberThread;
 impimport guda.shopre.entity.Website;
 impoimport guda.shope.web.front.FrontHelper;
 imporimport guda.shop.web.front.URLHelper;
-import com.jspgou.core.web.front.URLHelper.PageInfo;
+import guda.shop.core.web.front.URLHelper.PageInfo;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.ui.ModelMap;

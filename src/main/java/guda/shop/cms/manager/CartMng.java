@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Cart;
-import com.jspgou.cms.entity.Product;
+import guda.shop.cms.entity.Product;
 
 public abstract interface CartMng
 {

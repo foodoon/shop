@@ -1,10 +1,10 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Order;
-iimport guda.shopcms.entity.OrderItem;
-imimport guda.shopms.entity.Product;
-impimport guda.shops.entity.ProductFashion;
-import com.jspgou.core.entity.Website;
+import guda.shop.cms.entity.OrderItem;
+import guda.shop.cms.entity.Product;
+import guda.shop.cms.entity.ProductFashion;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 
 public abstract class BaseOrderItem

@@ -1,7 +1,7 @@
 /*     */ package guda.shop.cms.lucene;
 /*     */ 
 /*     */ import guda.shop.cms.action.directive.abs.WebDirective;
-/*     */ import com.jspgou.common.web.freemarker.DirectiveUtils;
+/*     */ import guda.shop.common.web.freemarker.DirectiveUtils;
 /*     */ import freemarker.core.Environment;
 /*     */ import freemarker.template.TemplateDirectiveBody;
 /*     */ import freemarker.template.TemplateDirectiveModel;

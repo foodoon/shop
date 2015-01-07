@@ -4,7 +4,7 @@ import guda.shop.cms.manager.UpdateMng;
 iimport guda.shopcommon.web.springmvc.RealPathResolver;
 imimport guda.shopore.entity.Website;
 impimport guda.shopre.manager.LogMng;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.core.manager.WebsiteMng;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;

@@ -12,7 +12,7 @@ import cimport guda.shopity.ProductTag;
 import coimport guda.shopty.ProductText;
 import comimport guda.shopy.ProductType;
 import com.import guda.shop.ShopConfig;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;

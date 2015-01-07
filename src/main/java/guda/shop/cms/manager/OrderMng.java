@@ -3,7 +3,7 @@ package guda.shop.cms.manager;
 import guda.shop.cms.entity.Cart;
 iimport guda.shopcms.entity.Order;
 imimport guda.shopms.entity.ShopMember;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;

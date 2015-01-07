@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.PopularityGroup;
 imimport guda.shopms.manager.PopularityGroupMng;
 impimport guda.shops.manager.ProductMng;
 impoimport guda.shopmon.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ProductType;
-import com.jspgou.cms.entity.ProductTypeProperty;
+import guda.shop.cms.entity.ProductTypeProperty;
 import java.io.Serializable;
 
 public abstract class BaseProductTypeProperty

@@ -3,7 +3,7 @@ package guda.shop.cms.entity.base;
 import guda.shop.cms.entity.Order;
 iimport guda.shopcms.entity.OrderReturn;
 imimport guda.shopms.entity.OrderReturnPicture;
-import com.jspgou.cms.entity.ShopDictionary;
+import guda.shop.cms.entity.ShopDictionary;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;

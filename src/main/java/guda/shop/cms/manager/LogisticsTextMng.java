@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Logistics;
-import com.jspgou.cms.entity.LogisticsText;
+import guda.shop.cms.entity.LogisticsText;
 
 public abstract interface LogisticsTextMng
 {

@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Brand;
-import com.jspgou.cms.entity.Category;
+import guda.shop.cms.entity.Category;
 import java.util.List;
 import java.util.Map;
 

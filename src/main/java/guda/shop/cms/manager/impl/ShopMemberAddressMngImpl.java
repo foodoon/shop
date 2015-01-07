@@ -6,7 +6,7 @@ imimport guda.shopms.entity.ShopMemberAddress;
 impimport guda.shops.manager.CartMng;
 impoimport guda.shop.manager.ShopMemberAddressMng;
 imporimport guda.shopmanager.ShopMemberMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

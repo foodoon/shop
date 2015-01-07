@@ -3,7 +3,7 @@ package guda.shop.cms.manager.impl;
 import guda.shop.cms.dao.CartItemDao;
 iimport guda.shopcms.entity.CartItem;
 imimport guda.shopms.manager.CartItemMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

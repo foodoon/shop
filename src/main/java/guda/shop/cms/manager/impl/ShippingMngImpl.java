@@ -3,7 +3,7 @@ package guda.shop.cms.manager.impl;
 import guda.shop.cms.dao.ShippingDao;
 iimport guda.shopcms.entity.Shipping;
 imimport guda.shopms.manager.ShippingMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

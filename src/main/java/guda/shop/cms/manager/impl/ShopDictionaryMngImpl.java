@@ -4,7 +4,7 @@ import guda.shop.cms.dao.ShopDictionaryDao;
 iimport guda.shopcms.entity.ShopDictionary;
 imimport guda.shopms.manager.ShopDictionaryMng;
 impimport guda.shopmmon.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

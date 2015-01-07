@@ -3,7 +3,7 @@ package guda.shop.cms.manager;
 import guda.shop.cms.entity.Product;
 iimport guda.shopcms.entity.ProductExt;
 imimport guda.shopms.entity.ProductTag;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;

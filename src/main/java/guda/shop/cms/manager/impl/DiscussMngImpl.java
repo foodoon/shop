@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.Discuss;
 imimport guda.shopms.manager.DiscussMng;
 impimport guda.shops.manager.ProductMng;
 impoimport guda.shop.manager.ShopMemberMng;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

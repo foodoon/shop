@@ -1,8 +1,8 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Payment;
-iimport guda.shopcms.entity.Shipping;
-import com.jspgou.core.entity.Website;
+import guda.shop.cms.entity.Shipping;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Set;
 

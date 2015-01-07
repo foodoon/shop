@@ -3,7 +3,7 @@ package guda.shop.cms.web;
 import guda.shop.cms.service.LoginSvc;
 iimport guda.shopcms.web.threadvariable.MemberThread;
 imimport guda.shopommon.security.annotation.Secured;
-import com.jspgou.core.web.front.FrontHelper;
+import guda.shop.core.web.front.FrontHelper;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.InitializingBean;

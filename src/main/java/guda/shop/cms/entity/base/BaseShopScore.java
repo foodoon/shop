@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ShopMember;
-import com.jspgou.cms.entity.ShopScore;
+import guda.shop.cms.entity.ShopScore;
 import java.io.Serializable;
 import java.util.Date;
 

@@ -1,8 +1,8 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Address;
-iimport guda.shopcms.entity.ShopMember;
-import com.jspgou.cms.entity.ShopMemberAddress;
+import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.entity.ShopMemberAddress;
 import java.io.Serializable;
 
 public abstract class BaseShopMemberAddress

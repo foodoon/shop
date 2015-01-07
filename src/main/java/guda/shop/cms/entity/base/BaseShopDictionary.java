@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ShopDictionary;
-import com.jspgou.cms.entity.ShopDictionaryType;
+import guda.shop.cms.entity.ShopDictionaryType;
 import java.io.Serializable;
 
 public abstract class BaseShopDictionary

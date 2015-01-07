@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.ShopMoney;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Date;
 
 public abstract interface ShopMoneyMng

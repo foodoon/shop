@@ -3,7 +3,7 @@ package guda.shop.cms.entity.base;
 import guda.shop.cms.entity.ShopArticle;
 iimport guda.shopcms.entity.ShopArticleContent;
 imimport guda.shopms.entity.ShopChannel;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
 

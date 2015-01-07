@@ -1,13 +1,13 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.CollectDao;
-iimport guda.shopcms.entity.Collect;
-imimport guda.shopms.entity.ShopMember;
-impimport guda.shops.manager.CollectMng;
-impoimport guda.shop.manager.ProductFashionMng;
-imporimport guda.shopmanager.ProductMng;
-importimport guda.shopn.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.cms.entity.Collect;
+import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.manager.CollectMng;
+import guda.shop.cms.manager.ProductFashionMng;
+import guda.shop.cms.manager.ProductMng;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.page.Pagination;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

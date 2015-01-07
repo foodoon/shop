@@ -1,10 +1,10 @@
 /*     */ package guda.shop.cms.lucene;
 /*     */ 
 /*     */ import guda.shop.cms.entity.Product;
-/*     */ iimport guda.shopcms.entity.ProductInfo;
-/*     */ imimport guda.shopommon.file.lucene.MoneyTools;
-/*     */ impimport guda.shopmmon.page.Pagination;
-/*     */ import com.jspgou.core.entity.Website;
+/*     */ import guda.shop.cms.entity.ProductInfo;
+/*     */ import guda.shop.common.file.lucene.MoneyTools;
+/*     */ import guda.shop.common.page.Pagination;
+/*     */ import guda.shop.core.entity.Website;
 /*     */ import java.io.IOException;
 /*     */ import java.util.ArrayList;
 /*     */ import java.util.Collection;

@@ -2,7 +2,7 @@ package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Exended;
 iimport guda.shopcms.entity.ExendedItem;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Collection;
 
 public abstract interface ExendedItemMng

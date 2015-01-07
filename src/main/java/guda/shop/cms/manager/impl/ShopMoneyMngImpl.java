@@ -4,7 +4,7 @@ import guda.shop.cms.dao.ShopMoneyDao;
 iimport guda.shopcms.entity.ShopMoney;
 imimport guda.shopms.manager.ShopMoneyMng;
 impimport guda.shopmmon.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

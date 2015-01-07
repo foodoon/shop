@@ -6,7 +6,7 @@ imimport guda.shopms.entity.BrandText;
 impimport guda.shops.manager.BrandMng;
 impoimport guda.shop.manager.BrandTextMng;
 imporimport guda.shopmanager.ProductTypeMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

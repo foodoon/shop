@@ -7,7 +7,7 @@ impimport guda.shops.service.LoginSvc;
 impoimport guda.shop.web.threadvariable.GroupThread;
 imporimport guda.shopweb.threadvariable.MemberThread;
 importimport guda.shopentity.Website;
-import com.jspgou.core.web.SiteUtils;
+import guda.shop.core.web.SiteUtils;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

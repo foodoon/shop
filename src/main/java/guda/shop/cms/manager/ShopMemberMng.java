@@ -3,7 +3,7 @@ package guda.shop.cms.manager;
 import guda.shop.cms.entity.ShopMember;
 iimport guda.shopcms.entity.ShopMemberGroup;
 imimport guda.shopommon.page.Pagination;
-import com.jspgou.core.entity.User;
+import guda.shop.core.entity.User;
 
 public abstract interface ShopMemberMng
 {

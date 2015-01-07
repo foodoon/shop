@@ -1,7 +1,7 @@
 /*    */ package guda.shop.cms.lucene;
 /*    */ 
 /*    */ import guda.shop.cms.dao.ProductDao;
-/*    */ import com.jspgou.common.page.Pagination;
+/*    */ import guda.shop.common.page.Pagination;
 /*    */ import java.io.File;
 /*    */ import java.io.IOException;
 /*    */ import java.util.Date;

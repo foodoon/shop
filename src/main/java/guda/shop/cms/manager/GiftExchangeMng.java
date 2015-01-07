@@ -4,7 +4,7 @@ import guda.shop.cms.entity.Gift;
 iimport guda.shopcms.entity.GiftExchange;
 imimport guda.shopms.entity.ShopMember;
 impimport guda.shops.entity.ShopMemberAddress;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.List;
 
 public abstract interface GiftExchangeMng

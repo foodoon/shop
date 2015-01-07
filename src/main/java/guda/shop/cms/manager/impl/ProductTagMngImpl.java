@@ -3,7 +3,7 @@ package guda.shop.cms.manager.impl;
 import guda.shop.cms.dao.ProductTagDao;
 iimport guda.shopcms.entity.ProductTag;
 imimport guda.shopms.manager.ProductMng;
-import com.jspgou.cms.manager.ProductTagMng;
+import guda.shop.cms.manager.ProductTagMng;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

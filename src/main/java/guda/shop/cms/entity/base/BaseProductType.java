@@ -1,9 +1,9 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Exended;
-iimport guda.shopcms.entity.ProductType;
-imimport guda.shopms.entity.ProductTypeProperty;
-import com.jspgou.core.entity.Website;
+import guda.shop.cms.entity.ProductType;
+import guda.shop.cms.entity.ProductTypeProperty;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Set;
 

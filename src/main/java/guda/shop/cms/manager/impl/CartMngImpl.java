@@ -10,7 +10,7 @@ importimport guda.shopanager.PopularityGroupMng;
 import import guda.shopnager.ProductFashionMng;
 import cimport guda.shopager.ProductMng;
 import coimport guda.shopager.MemberMng;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.core.manager.WebsiteMng;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

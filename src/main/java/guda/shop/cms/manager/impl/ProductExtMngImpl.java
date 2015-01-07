@@ -4,7 +4,7 @@ import guda.shop.cms.dao.ProductExtDao;
 iimport guda.shopcms.entity.Product;
 imimport guda.shopms.entity.ProductExt;
 impimport guda.shops.manager.ProductExtMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;

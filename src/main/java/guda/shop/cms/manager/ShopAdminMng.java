@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.ShopAdmin;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 
 public abstract interface ShopAdminMng
 {

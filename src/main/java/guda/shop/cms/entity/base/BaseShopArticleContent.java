@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ShopArticle;
-import com.jspgou.cms.entity.ShopArticleContent;
+import guda.shop.cms.entity.ShopArticleContent;
 import java.io.Serializable;
 
 public abstract class BaseShopArticleContent

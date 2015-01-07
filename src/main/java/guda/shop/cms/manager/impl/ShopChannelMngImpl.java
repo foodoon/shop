@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.ShopChannel;
 imimport guda.shopms.entity.ShopChannelContent;
 impimport guda.shops.manager.ShopChannelContentMng;
 impoimport guda.shop.manager.ShopChannelMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

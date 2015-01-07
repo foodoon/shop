@@ -5,7 +5,7 @@ iimport guda.shopcommon.file.FileWrap;
 imimport guda.shopommon.file.FileWrap.FileComparator;
 impimport guda.shopmmon.util.Zipper.FileEntry;
 impoimport guda.shopmon.web.springmvc.RealPathResolver;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileOutputStream;

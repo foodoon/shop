@@ -2,7 +2,7 @@ package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.KeyWordDao;
 iimport guda.shopcms.entity.KeyWord;
-import com.jspgou.cms.manager.KeyWordMng;
+import guda.shop.cms.manager.KeyWordMng;
 import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

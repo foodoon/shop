@@ -3,7 +3,7 @@ package guda.shop.cms.manager.impl;
 import guda.shop.cms.dao.DataBackupDao;
 iimport guda.shopcms.entity.DataBackup;
 imimport guda.shopms.manager.DataBackupMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

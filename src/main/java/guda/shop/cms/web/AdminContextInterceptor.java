@@ -6,7 +6,7 @@ imimport guda.shopms.service.LoginSvc;
 impimport guda.shops.web.threadvariable.AdminThread;
 impoimport guda.shopmon.web.springmvc.MessageResolver;
 imporimport guda.shop.entity.Website;
-import com.jspgou.core.web.SiteUtils;
+import guda.shop.core.web.SiteUtils;
 import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

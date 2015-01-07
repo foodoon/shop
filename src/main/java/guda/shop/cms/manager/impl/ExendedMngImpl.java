@@ -8,7 +8,7 @@ impoimport guda.shop.manager.ExendedItemMng;
 imporimport guda.shopmanager.ExendedMng;
 importimport guda.shopanager.ProductTypeMng;
 import import guda.shop.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;

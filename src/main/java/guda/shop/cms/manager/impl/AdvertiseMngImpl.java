@@ -1,11 +1,11 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.AdvertiseDao;
-iimport guda.shopcms.entity.Advertise;
-imimport guda.shopms.manager.AdspaceMng;
-impimport guda.shops.manager.AdvertiseMng;
-impoimport guda.shopmon.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.cms.entity.Advertise;
+import guda.shop.cms.manager.AdspaceMng;
+import guda.shop.cms.manager.AdvertiseMng;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.page.Pagination;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;

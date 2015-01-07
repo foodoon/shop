@@ -2,7 +2,7 @@ package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.ShopArticle;
 iimport guda.shopcms.entity.ShopArticleContent;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 
 public abstract interface ShopArticleContentMng
 {

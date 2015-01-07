@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Brand;
-import com.jspgou.cms.entity.BrandText;
+import guda.shop.cms.entity.BrandText;
 
 public abstract interface BrandTextMng
 {

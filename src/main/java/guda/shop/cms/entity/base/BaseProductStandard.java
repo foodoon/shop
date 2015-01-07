@@ -1,9 +1,9 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Product;
-iimport guda.shopcms.entity.ProductStandard;
-imimport guda.shopms.entity.Standard;
-import com.jspgou.cms.entity.StandardType;
+import guda.shop.cms.entity.ProductStandard;
+import guda.shop.cms.entity.Standard;
+import guda.shop.cms.entity.StandardType;
 import java.io.Serializable;
 
 public abstract class BaseProductStandard

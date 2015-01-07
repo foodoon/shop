@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ShopMemberGroup;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 
 public abstract class BaseShopMemberGroup

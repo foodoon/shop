@@ -2,7 +2,7 @@ package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Cart;
 iimport guda.shopcms.entity.PopularityGroup;
-import com.jspgou.cms.entity.PopularityItem;
+import guda.shop.cms.entity.PopularityItem;
 import java.io.Serializable;
 
 public abstract class BasePopularityItem

@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.ShopChannel;
 imimport guda.shopms.entity.ShopChannelContent;
 impimport guda.shops.manager.ShopChannelContentMng;
 impoimport guda.shopmon.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

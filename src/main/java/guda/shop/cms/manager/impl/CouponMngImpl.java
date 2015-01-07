@@ -1,13 +1,13 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.CouponDao;
-iimport guda.shopcms.entity.Coupon;
-imimport guda.shopms.manager.CouponMng;
-impimport guda.shopmmon.hibernate3.Updater;
-impoimport guda.shopmon.page.Pagination;
-imporimport guda.shopon.web.springmvc.RealPathResolver;
-importimport guda.shopentity.Website;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.cms.entity.Coupon;
+import guda.shop.cms.manager.CouponMng;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.page.Pagination;
+import guda.shop.common.web.springmvc.RealPathResolver;
+import guda.shop.core.entity.Website;
+import guda.shop.core.manager.WebsiteMng;
 import java.io.File;
 import java.util.Date;
 import java.util.List;

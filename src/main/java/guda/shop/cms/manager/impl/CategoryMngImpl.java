@@ -10,7 +10,7 @@ importimport guda.shopanager.BrandMng;
 import import guda.shopnager.CategoryMng;
 import cimport guda.shopager.ProductTypeMng;
 import coimport guda.shopger.StandardTypeMng;
-import com.jspgou.common.hibernate3.Updater;
+import guda.shop.common.hibernate3.Updater;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;

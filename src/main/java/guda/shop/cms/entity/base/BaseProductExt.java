@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Product;
-import com.jspgou.cms.entity.ProductExt;
+import guda.shop.cms.entity.ProductExt;
 import java.io.Serializable;
 import java.util.Date;
 

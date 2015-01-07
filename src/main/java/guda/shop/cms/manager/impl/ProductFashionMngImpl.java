@@ -10,7 +10,7 @@ importimport guda.shopn.hibernate3.Updater;
 import import guda.shop.image.ImageScale;
 import cimport guda.shoppage.Pagination;
 import coimport guda.shopeb.springmvc.RealPathResolver;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.core.manager.WebsiteMng;
 import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.Exended;
 imimport guda.shopms.entity.ExendedItem;
 impimport guda.shops.manager.ExendedItemMng;
 impoimport guda.shopmon.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;

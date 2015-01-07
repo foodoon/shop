@@ -3,7 +3,7 @@ package guda.shop.cms.web;
 import guda.shop.common.web.RequestUtils;
 iimport guda.shopcommon.web.freemarker.DirectiveUtils;
 imimport guda.shopommon.web.springmvc.MessageResolver;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import freemarker.core.Environment;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateModel;

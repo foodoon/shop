@@ -8,7 +8,7 @@ impoimport guda.shop.manager.ShopArticleContentMng;
 imporimport guda.shopmanager.ShopArticleMng;
 importimport guda.shopanager.ShopChannelMng;
 import import guda.shop.hibernate3.Updater;
-import com.jspgou.common.page.Pagination;
+import guda.shop.common.page.Pagination;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

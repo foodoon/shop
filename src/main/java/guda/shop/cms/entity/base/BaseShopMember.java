@@ -5,7 +5,7 @@ iimport guda.shopcms.entity.ShopDictionary;
 imimport guda.shopms.entity.ShopMember;
 impimport guda.shops.entity.ShopMemberGroup;
 impoimport guda.shope.entity.Member;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;

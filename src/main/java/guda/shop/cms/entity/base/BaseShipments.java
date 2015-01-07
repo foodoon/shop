@@ -1,8 +1,8 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Order;
-iimport guda.shopcms.entity.Shipments;
-import com.jspgou.cms.entity.ShopAdmin;
+import guda.shop.cms.entity.Shipments;
+import guda.shop.cms.entity.ShopAdmin;
 import java.io.Serializable;
 
 public abstract class BaseShipments

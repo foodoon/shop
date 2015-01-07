@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Product;
-import com.jspgou.cms.entity.ProductExt;
+import guda.shop.cms.entity.ProductExt;
 
 public abstract interface ProductExtMng
 {

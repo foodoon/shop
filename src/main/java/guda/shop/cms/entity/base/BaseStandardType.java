@@ -1,8 +1,8 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Category;
-iimport guda.shopcms.entity.Standard;
-import com.jspgou.cms.entity.StandardType;
+import guda.shop.cms.entity.Standard;
+import guda.shop.cms.entity.StandardType;
 import java.io.Serializable;
 import java.util.Set;
 

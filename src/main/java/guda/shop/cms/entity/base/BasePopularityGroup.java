@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.PopularityGroup;
-import com.jspgou.cms.entity.Product;
+import guda.shop.cms.entity.Product;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
