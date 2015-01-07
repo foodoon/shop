@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopMoneyDao;
-iimport guda.shopcms.entity.ShopMoney;
-imimport guda.shopms.manager.ShopMoneyMng;
-impimport guda.shopmmon.hibernate3.Updater;
+import guda.shop.cms.entity.ShopMoney;
+import guda.shop.cms.manager.ShopMoneyMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;

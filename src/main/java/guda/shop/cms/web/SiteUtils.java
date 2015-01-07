@@ -3,7 +3,7 @@ package guda.shop.cms.web;
 import guda.shop.cms.entity.ShopConfig;
 import javax.servlet.http.HttpServletRequest;
 
-public class SiteUtils extends com.jspgou.core.web.SiteUtils
+public class SiteUtils extends guda.shop.core.web.SiteUtils
 {
   public static ShopConfig getConfig(HttpServletRequest paramHttpServletRequest)
   {

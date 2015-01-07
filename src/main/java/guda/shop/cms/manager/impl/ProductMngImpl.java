@@ -1,33 +1,7 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ProductDao;
-iimport guda.shopcms.dao.ProductFashionDao;
-imimport guda.shopms.entity.Category;
-impimport guda.shops.entity.Collect;
-impoimport guda.shop.entity.Consult;
-imporimport guda.shopentity.Product;
-importimport guda.shopntity.ProductExt;
-import import guda.shoptity.ProductFashion;
-import cimport guda.shopity.ProductStandard;
-import coimport guda.shopty.ProductTag;
-import comimport guda.shopy.ProductText;
-import com.import guda.shop.ProductType;
-import com.jimport guda.shop.BrandMng;
-import com.jsimport guda.shopCartItemMng;
-import com.jspimport guda.shopategoryMng;
-import com.jspgimport guda.shopllectMng;
-import com.jspgoimport guda.shopsultMng;
-import guda.shopimport guda.shopuctExtMng;
-import guda.shop.import guda.shopctFashionMng;
-import guda.shop.cimport guda.shoptMng;
-import guda.shop.cmimport guda.shopStandardMng;
-import guda.shop.cmsimport guda.shopagMng;
-import guda.shop.cms.import guda.shopxtMng;
-import guda.shop.cms.mimport guda.shopMng;
-import guda.shop.commonimport guda.shopls;
-import guda.shop.common.import guda.shopr;
-import guda.shop.common.iimport guda.shopimport guda.shop.common.imimport guda.shopmport com.jspgou.common.pagimport guda.shoport com.jspgou.common.web.import guda.shophResolver;
-import guda.shop.core.entity.import guda.shopom.jspgou.core.manager.WebsiteMng;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -35,6 +9,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import guda.shop.cms.dao.ProductFashionDao;
+import guda.shop.cms.entity.*;
+import guda.shop.cms.manager.*;
+import guda.shop.common.file.FileNameUtils;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.image.ImageScale;
+import guda.shop.common.image.ImageUtils;
+import guda.shop.common.page.Pagination;
+import guda.shop.common.web.springmvc.RealPathResolver;
+import guda.shop.core.entity.Website;
+import guda.shop.core.manager.WebsiteMng;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
@@ -233,8 +219,8 @@ public class ProductMngImpl
     if ((paramArrayOfString2 != null) && (paramArrayOfString2.length > 0))
     {
       i = 0;
-      ??? = paramArrayOfString2.length;
-      while (i < ???)
+      int len = paramArrayOfString2.length;
+      while (i < len)
       {
         if (!StringUtils.isBlank(paramArrayOfString2[i]))
           paramProduct.addToExendeds(paramArrayOfString2[i], paramArrayOfString3[i]);
@@ -244,8 +230,8 @@ public class ProductMngImpl
     if ((paramArrayOfString4 != null) && (paramArrayOfString4.length > 0))
     {
       i = 0;
-      ??? = paramArrayOfString4.length;
-      while (i < ???)
+      int len = paramArrayOfString4.length;
+      while (i < len)
       {
         if (!StringUtils.isBlank(paramArrayOfString4[i]))
           paramProduct.addToPictures(paramArrayOfString4[i], paramArrayOfString5[i], paramArrayOfString6[i]);
@@ -271,7 +257,7 @@ public class ProductMngImpl
     ProductText localProductText = paramProduct.getProductText();
     if (localProductText != null)
     {
-      localObject1 = localProduct.getProductText();
+      Object localObject1 = localProduct.getProductText();
       if (localObject1 != null)
       {
         ((ProductText)localObject1).setText(localProductText.getText());
@@ -301,18 +287,18 @@ public class ProductMngImpl
         localProduct.addToTags(this._$8.findById(localLong));
     if (paramArrayOfString1 != null)
     {
-      ??? = localProduct.getKeywords();
-      ((List)???).clear();
-      ((List)???).addAll(Arrays.asList(paramArrayOfString1));
+        List<String> keywords = localProduct.getKeywords();
+        keywords.clear();
+        keywords.addAll(Arrays.asList(paramArrayOfString1));
     }
     else
     {
       localProduct.getKeywords().clear();
     }
-    ??? = new Updater(paramProduct);
-    ((Updater)???).exclude(Product.PROP_WEBSITE);
-    ((Updater)???).exclude(Product.PROP_PRODUCT_TEXT);
-    localProduct = this._$1.updateByUpdater((Updater)???);
+      Updater updater = new Updater(paramProduct);
+      updater.exclude(Product.PROP_WEBSITE);
+      updater.exclude(Product.PROP_PRODUCT_TEXT);
+    localProduct = this._$1.updateByUpdater(updater);
     if (paramMap != null)
     {
       Map localMap = localProduct.getAttr();
@@ -324,8 +310,8 @@ public class ProductMngImpl
     if ((paramArrayOfString2 != null) && (paramArrayOfString2.length > 0))
     {
       j = 0;
-      ??? = paramArrayOfString2.length;
-      while (j < ???)
+      int len = paramArrayOfString2.length;
+      while (j < len)
       {
         if (!StringUtils.isBlank(paramArrayOfString2[j]))
           localProduct.addToExendeds(paramArrayOfString2[j], paramArrayOfString3[j]);
@@ -336,8 +322,8 @@ public class ProductMngImpl
     if ((paramArrayOfString4 != null) && (paramArrayOfString4.length > 0))
     {
       j = 0;
-      ??? = paramArrayOfString4.length;
-      while (j < ???)
+        int len = paramArrayOfString4.length;
+      while (j < len)
       {
         if (!StringUtils.isBlank(paramArrayOfString4[j]))
           localProduct.addToPictures(paramArrayOfString4[j], paramArrayOfString5[j], paramArrayOfString6[j]);
@@ -370,14 +356,14 @@ public class ProductMngImpl
       localObject1 = localList.iterator();
       while (((Iterator)localObject1).hasNext())
       {
-        localObject2 = (Collect)((Iterator)localObject1).next();
+        Object localObject2 = (Collect)((Iterator)localObject1).next();
         this._$14.deleteById(((Collect)localObject2).getId());
       }
       localObject1 = this._$13.findByProductId(paramArrayOfLong[i]);
       Object localObject2 = ((List)localObject1).iterator();
       while (((Iterator)localObject2).hasNext())
       {
-        localObject3 = (Consult)((Iterator)localObject2).next();
+        Object localObject3 = (Consult)((Iterator)localObject2).next();
         this._$13.deleteById(((Consult)localObject3).getId());
       }
       localObject2 = this._$2.findByProductId(paramArrayOfLong[i]);
@@ -395,8 +381,8 @@ public class ProductMngImpl
       arrayOfProduct1[i] = this._$1.deleteById(paramArrayOfLong[i]);
       i++;
     }
-    for (localObject1 : arrayOfProduct1)
-      ((Product)localObject1).removeAllTags();
+    for (Object t : arrayOfProduct1)
+      ((Product)t).removeAllTags();
     return arrayOfProduct1;
   }
 

@@ -22,14 +22,15 @@
 /*     */ import org.apache.lucene.index.CorruptIndexException;
 /*     */ import org.apache.lucene.index.Term;
 /*     */ import org.apache.lucene.queryParser.MultiFieldQueryParser;
-/*     */ import org.apache.lucene.search.BooleanClause.Occur;
-/*     */ import org.apache.lucene.search.BooleanQuery;
-/*     */ import org.apache.lucene.search.Query;
-/*     */ import org.apache.lucene.search.ScoreDoc;
-/*     */ import org.apache.lucene.search.Searcher;
-/*     */ import org.apache.lucene.search.TermQuery;
-/*     */ import org.apache.lucene.search.TermRangeQuery;
-/*     */ import org.apache.lucene.search.TopDocs;
+/*     */ import org.apache.lucene.search.*;
+import org.apache.lucene.search.BooleanClause.Occur;
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ import org.apache.lucene.util.Version;
 /*     */ import org.slf4j.Logger;
 /*     */ import org.slf4j.LoggerFactory;
@@ -58,7 +59,7 @@
 /* 239 */   public static final String[] QUERY_FIELD = { "name", "categoryNameArray", 
 /* 240 */     "brandName", "description" };
 /*     */ 
-/* 241 */   public static final BooleanClause.Occur[] QUERY_FLAGS = { 
+/* 241 */   public static final BooleanClause.Occur[] QUERY_FLAGS = {
 /* 242 */     BooleanClause.Occur.SHOULD, BooleanClause.Occur.SHOULD, 
 /* 243 */     BooleanClause.Occur.SHOULD, BooleanClause.Occur.SHOULD };
 /*     */   private Long id;

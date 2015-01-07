@@ -1,7 +1,7 @@
 package guda.shop.core.dao.impl;
 
 import guda.shop.common.hibernate3.HibernateBaseDao;
-iimport guda.shop.ore.dao.GlobalDao;
+import guda.shop.core.dao.GlobalDao;
 import guda.shop.core.entity.Global;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;

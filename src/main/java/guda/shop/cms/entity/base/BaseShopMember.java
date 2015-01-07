@@ -1,10 +1,10 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Product;
-iimport guda.shopcms.entity.ShopDictionary;
-imimport guda.shopms.entity.ShopMember;
-impimport guda.shops.entity.ShopMemberGroup;
-impoimport guda.shope.entity.Member;
+import guda.shop.cms.entity.ShopDictionary;
+import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.entity.ShopMemberGroup;
+import guda.shop.core.entity.Member;
 import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;

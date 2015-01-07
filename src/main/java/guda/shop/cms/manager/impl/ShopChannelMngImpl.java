@@ -1,10 +1,10 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopChannelDao;
-iimport guda.shopcms.entity.ShopChannel;
-imimport guda.shopms.entity.ShopChannelContent;
-impimport guda.shops.manager.ShopChannelContentMng;
-impoimport guda.shop.manager.ShopChannelMng;
+
+import guda.shop.cms.entity.ShopChannel;
+import guda.shop.cms.manager.ShopChannelContentMng;
+import guda.shop.cms.manager.ShopChannelMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.ArrayList;
 import java.util.Collection;

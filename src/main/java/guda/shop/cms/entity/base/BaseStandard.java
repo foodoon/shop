@@ -1,7 +1,7 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ProductFashion;
-iimport guda.shopcms.entity.Standard;
+import guda.shop.cms.entity.Standard;
 import guda.shop.cms.entity.StandardType;
 import java.io.Serializable;
 import java.util.Set;

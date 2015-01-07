@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.CartItemDao;
-iimport guda.shopcms.entity.CartItem;
-imimport guda.shopms.manager.CartItemMng;
+import guda.shop.cms.entity.CartItem;
+import guda.shop.cms.manager.CartItemMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

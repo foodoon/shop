@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ProductTypePropertyDao;
-iimport guda.shopcms.entity.ProductTypeProperty;
-imimport guda.shopms.manager.ProductTypePropertyMng;
-impimport guda.shopmmon.hibernate3.Updater;
+
+import guda.shop.cms.entity.ProductTypeProperty;
+import guda.shop.cms.manager.ProductTypePropertyMng;
 import guda.shop.common.page.Pagination;
 import java.util.Iterator;
 import java.util.List;

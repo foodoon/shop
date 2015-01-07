@@ -1,11 +1,12 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.GiftDao;
-iimport guda.shopcms.dao.ShopMemberDao;
-imimport guda.shopms.entity.Gift;
-impimport guda.shops.entity.ShopMember;
-impoimport guda.shop.manager.GiftMng;
-imporimport guda.shopon.hibernate3.Updater;
+
+import guda.shop.cms.dao.ShopMemberDao;
+import guda.shop.cms.entity.Gift;
+import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.manager.GiftMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

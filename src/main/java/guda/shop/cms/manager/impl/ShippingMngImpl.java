@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShippingDao;
-iimport guda.shopcms.entity.Shipping;
-imimport guda.shopms.manager.ShippingMng;
+import guda.shop.cms.entity.Shipping;
+import guda.shop.cms.manager.ShippingMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.Iterator;
 import java.util.List;
@@ -28,8 +28,9 @@ public class ShippingMngImpl
   {
     List localList = this._$1.getList(paramLong1, false, true);
     Iterator localIterator = localList.iterator();
-    while (localIterator.hasNext())
-      Shipping localShipping = (Shipping)localIterator.next();
+    while (localIterator.hasNext()) {
+        Shipping localShipping = (Shipping) localIterator.next();
+    }
     return localList;
   }
 

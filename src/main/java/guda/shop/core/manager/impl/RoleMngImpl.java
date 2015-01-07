@@ -1,8 +1,8 @@
 package guda.shop.core.manager.impl;
 
 import guda.shop.common.hibernate3.Updater;
-iimport guda.shop.ore.dao.RoleDao;
-imimport guda.shop.re.entity.Role;
+import guda.shop.core.dao.RoleDao;
+import guda.shop.core.entity.Role;
 import guda.shop.core.manager.RoleMng;
 import java.util.List;
 import java.util.Set;

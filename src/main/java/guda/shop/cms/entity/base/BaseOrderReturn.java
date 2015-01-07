@@ -1,8 +1,8 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Order;
-iimport guda.shopcms.entity.OrderReturn;
-imimport guda.shopms.entity.OrderReturnPicture;
+import guda.shop.cms.entity.OrderReturn;
+import guda.shop.cms.entity.OrderReturnPicture;
 import guda.shop.cms.entity.ShopDictionary;
 import java.io.Serializable;
 import java.util.Date;

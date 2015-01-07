@@ -1,12 +1,12 @@
 package guda.shop.core.manager.impl;
 
 import guda.shop.common.hibernate3.Updater;
-iimport guda.shop.ore.dao.AdminDao;
-imimport guda.shop.re.entity.Admin;
-impimport guda.shop.e.entity.User;
-impoimport guda.shop..entity.Website;
-imporimport guda.shop.manager.AdminMng;
-importimport guda.shop.anager.RoleMng;
+import guda.shop.core.dao.AdminDao;
+import guda.shop.core.entity.Admin;
+import guda.shop.core.entity.User;
+import guda.shop.core.entity.Website;
+import guda.shop.core.manager.AdminMng;
+import guda.shop.core.manager.RoleMng;
 import guda.shop.core.manager.UserMng;
 import java.sql.Timestamp;
 import java.util.Set;

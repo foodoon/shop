@@ -1,7 +1,7 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.PosterDao;
-iimport guda.shopcms.entity.Poster;
+import guda.shop.cms.entity.Poster;
 import guda.shop.cms.manager.PosterMng;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

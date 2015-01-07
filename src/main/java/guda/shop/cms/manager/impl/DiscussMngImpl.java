@@ -1,10 +1,10 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.DiscussDao;
-iimport guda.shopcms.entity.Discuss;
-imimport guda.shopms.manager.DiscussMng;
-impimport guda.shops.manager.ProductMng;
-impoimport guda.shop.manager.ShopMemberMng;
+import guda.shop.cms.entity.Discuss;
+import guda.shop.cms.manager.DiscussMng;
+import guda.shop.cms.manager.ProductMng;
+import guda.shop.cms.manager.ShopMemberMng;
 import guda.shop.common.page.Pagination;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;

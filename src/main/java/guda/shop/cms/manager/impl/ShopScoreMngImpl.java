@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopScoreDao;
-iimport guda.shopcms.entity.ShopScore;
-imimport guda.shopms.manager.ShopScoreMng;
-impimport guda.shopmmon.hibernate3.Updater;
+import guda.shop.cms.entity.ShopScore;
+import guda.shop.cms.manager.ShopScoreMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Date;
 import java.util.List;

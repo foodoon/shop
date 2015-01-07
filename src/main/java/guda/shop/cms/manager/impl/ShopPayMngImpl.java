@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopPayDao;
-iimport guda.shopcms.entity.ShopPay;
-imimport guda.shopms.manager.ShopPayMng;
+import guda.shop.cms.entity.ShopPay;
+import guda.shop.cms.manager.ShopPayMng;
 import guda.shop.common.hibernate3.Updater;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

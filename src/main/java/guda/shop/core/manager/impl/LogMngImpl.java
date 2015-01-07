@@ -1,9 +1,9 @@
 package guda.shop.core.manager.impl;
 
 import guda.shop.common.hibernate3.Updater;
-iimport guda.shop.ommon.page.Pagination;
-imimport guda.shop.re.dao.LogDao;
-impimport guda.shop.e.entity.Log;
+import guda.shop.common.page.Pagination;
+import guda.shop.core.dao.LogDao;
+import guda.shop.core.entity.Log;
 import guda.shop.core.manager.LogMng;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;

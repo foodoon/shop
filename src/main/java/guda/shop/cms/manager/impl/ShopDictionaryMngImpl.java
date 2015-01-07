@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopDictionaryDao;
-iimport guda.shopcms.entity.ShopDictionary;
-imimport guda.shopms.manager.ShopDictionaryMng;
-impimport guda.shopmmon.hibernate3.Updater;
+import guda.shop.cms.entity.ShopDictionary;
+import guda.shop.cms.manager.ShopDictionaryMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

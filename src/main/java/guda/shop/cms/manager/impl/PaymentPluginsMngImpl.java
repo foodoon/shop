@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.PaymentPluginsDao;
-iimport guda.shopcms.entity.PaymentPlugins;
-imimport guda.shopms.manager.PaymentPluginsMng;
+import guda.shop.cms.entity.PaymentPlugins;
+import guda.shop.cms.manager.PaymentPluginsMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

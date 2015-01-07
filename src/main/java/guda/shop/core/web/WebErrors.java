@@ -5,7 +5,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.context.MessageSource;
 
-public class WebErrors extends com.jspgou.common.web.springmvc.WebErrors
+public class WebErrors extends guda.shop.common.web.springmvc.WebErrors
 {
   public static final String ERROR_PAGE = "/common/error_message";
   public static final String ERROR_ATTR_NAME = "errors";

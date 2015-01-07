@@ -1,9 +1,10 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Gift;
-iimport guda.shopcms.entity.GiftExchange;
-imimport guda.shopms.entity.ShopMember;
-impimport guda.shops.entity.ShopMemberAddress;
+
+import guda.shop.cms.entity.GiftExchange;
+import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.entity.ShopMemberAddress;
 import guda.shop.common.page.Pagination;
 import java.util.List;
 

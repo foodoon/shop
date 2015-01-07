@@ -1,11 +1,11 @@
 package guda.shop.core.manager.impl;
 
 import guda.shop.common.page.Pagination;
-iimport guda.shop.ommon.security.encoder.PwdEncoder;
-imimport guda.shop.re.dao.UserDao;
-impimport guda.shop.e.entity.EmailSender;
-impoimport guda.shop..entity.MessageTemplate;
-imporimport guda.shop.entity.User;
+import guda.shop.common.security.encoder.PwdEncoder;
+import guda.shop.core.dao.UserDao;
+import guda.shop.core.entity.EmailSender;
+import guda.shop.core.entity.MessageTemplate;
+import guda.shop.core.entity.User;
 import guda.shop.core.manager.UserMng;
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;

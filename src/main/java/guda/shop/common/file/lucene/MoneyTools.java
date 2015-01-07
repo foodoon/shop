@@ -10,7 +10,7 @@ public class MoneyTools
   public static String moneyToString(Double paramDouble)
   {
     Assert.notNull(paramDouble);
-    return NumberTools.longToString(()(paramDouble.doubleValue() * _$1.doubleValue()));
+    return String.valueOf(paramDouble.doubleValue() * _$1.doubleValue());
   }
 
   public static Double stringToMoney(String paramString)

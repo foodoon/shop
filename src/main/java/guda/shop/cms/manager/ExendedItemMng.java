@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Exended;
-iimport guda.shopcms.entity.ExendedItem;
+import guda.shop.cms.entity.ExendedItem;
 import guda.shop.common.page.Pagination;
 import java.util.Collection;
 

@@ -1,11 +1,11 @@
 package guda.shop.core.directive;
 
 import guda.shop.cms.action.directive.abs.WebDirective;
-iimport guda.shop.ms.entity.ShopAdmin;
-imimport guda.shop.s.web.threadvariable.AdminThread;
-impimport guda.shop.mon.web.freemarker.MustStringException;
-impoimport guda.shop.on.web.freemarker.ParamsRequiredException;
-imporimport guda.shop.entity.Admin;
+import guda.shop.cms.entity.ShopAdmin;
+import guda.shop.cms.web.threadvariable.AdminThread;
+import guda.shop.common.web.freemarker.MustStringException;
+import guda.shop.common.web.freemarker.ParamsRequiredException;
+import guda.shop.core.entity.Admin;
 import guda.shop.core.web.admin.AdminSecureInterceptor;
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;
@@ -40,7 +40,7 @@ public class AuthorizeDirective extends WebDirective
     str2 = _$1(str2, str1);
     if (str2.contains("//"))
     {
-      localObject = str2.split("//");
+      String[] localObject = str2.split("//");
       str2 = "/" + localObject[1];
     }
     Object localObject = _$1(paramEnvironment);

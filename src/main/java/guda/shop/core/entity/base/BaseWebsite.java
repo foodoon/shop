@@ -1,9 +1,9 @@
 package guda.shop.core.entity.base;
 
 import guda.shop.core.entity.Admin;
-iimport guda.shop.ore.entity.EmailSender;
-imimport guda.shop.re.entity.Global;
-impimport guda.shop.e.entity.MessageTemplate;
+import guda.shop.core.entity.EmailSender;
+import guda.shop.core.entity.Global;
+import guda.shop.core.entity.MessageTemplate;
 import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;

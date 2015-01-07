@@ -1,7 +1,7 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.MemberCouponDao;
-iimport guda.shopcms.entity.MemberCoupon;
+import guda.shop.cms.entity.MemberCoupon;
 import guda.shop.cms.manager.MemberCouponMng;
 import java.math.BigDecimal;
 import java.util.Date;

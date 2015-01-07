@@ -1,8 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopMemberGroupDao;
-iimport guda.shopcms.entity.ShopMemberGroup;
-imimport guda.shopms.manager.ShopMemberGroupMng;
+
+import guda.shop.cms.entity.ShopMemberGroup;
+import guda.shop.cms.manager.ShopMemberGroupMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class ShopMemberGroupMngImpl
       throw new IllegalStateException("ShopMmeberGroup not found in website id=" + paramLong);
     if (i == 1)
       return (ShopMemberGroup)localList.get(0);
-    Object localObject = (ShopMemberGroup)localList.get(0);
+      ShopMemberGroup localObject = (ShopMemberGroup)localList.get(0);
     for (int j = i - 1; j > 0; j--)
     {
       ShopMemberGroup localShopMemberGroup = (ShopMemberGroup)localList.get(j);

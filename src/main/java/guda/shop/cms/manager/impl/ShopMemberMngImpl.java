@@ -1,26 +1,24 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopMemberDao;
-iimport guda.shopcms.entity.ShopMember;
-imimport guda.shopms.entity.ShopMemberAddress;
-impimport guda.shops.entity.ShopMemberGroup;
-impoimport guda.shop.manager.CartMng;
-imporimport guda.shopmanager.ShopDictionaryMng;
-importimport guda.shopanager.ShopMemberAddressMng;
-import import guda.shopnager.ShopMemberGroupMng;
-import cimport guda.shopager.ShopMemberMng;
-import coimport guda.shopibernate3.Updater;
-import comimport guda.shopage.ImageScale;
-import com.import guda.shope.Pagination;
-import com.jimport guda.shopspringmvc.RealPathResolver;
-import com.jsimport guda.shopMember;
-import com.jspimport guda.shopser;
-import com.jspgimport guda.shopbsite;
-import com.jspgoimport guda.shopmberMng;
-import guda.shopimport guda.shoprMng;
-import guda.shop.core.manager.WebsiteMng;
+
+
 import java.util.Iterator;
 import java.util.List;
+
+import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.entity.ShopMemberGroup;
+import guda.shop.cms.manager.*;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.image.ImageScale;
+import guda.shop.common.page.Pagination;
+import guda.shop.common.web.springmvc.RealPathResolver;
+import guda.shop.core.entity.Member;
+import guda.shop.core.entity.User;
+import guda.shop.core.entity.Website;
+import guda.shop.core.manager.MemberMng;
+import guda.shop.core.manager.UserMng;
+import guda.shop.core.manager.WebsiteMng;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

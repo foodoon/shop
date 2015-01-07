@@ -1,7 +1,7 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.KeyWordDao;
-iimport guda.shopcms.entity.KeyWord;
+import guda.shop.cms.entity.KeyWord;
 import guda.shop.cms.manager.KeyWordMng;
 import java.util.Iterator;
 import java.util.List;

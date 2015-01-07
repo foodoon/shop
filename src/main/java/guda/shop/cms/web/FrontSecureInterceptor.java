@@ -1,8 +1,8 @@
 package guda.shop.cms.web;
 
 import guda.shop.cms.service.LoginSvc;
-iimport guda.shopcms.web.threadvariable.MemberThread;
-imimport guda.shopommon.security.annotation.Secured;
+import guda.shop.cms.web.threadvariable.MemberThread;
+import guda.shop.common.security.annotation.Secured;
 import guda.shop.core.web.front.FrontHelper;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

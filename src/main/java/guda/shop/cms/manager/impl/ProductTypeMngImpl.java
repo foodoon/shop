@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ProductTypeDao;
-iimport guda.shopcms.entity.ProductType;
-imimport guda.shopms.manager.BrandMng;
-impimport guda.shops.manager.ProductTypeMng;
+import guda.shop.cms.entity.ProductType;
+import guda.shop.cms.manager.BrandMng;
+import guda.shop.cms.manager.ProductTypeMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

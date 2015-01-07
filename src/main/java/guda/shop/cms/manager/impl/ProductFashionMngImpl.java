@@ -1,15 +1,15 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ProductFashionDao;
-iimport guda.shopcms.entity.ProductFashion;
-imimport guda.shopms.entity.Standard;
-impimport guda.shops.manager.CategoryMng;
-impoimport guda.shop.manager.ProductFashionMng;
-imporimport guda.shopmanager.StandardMng;
-importimport guda.shopn.hibernate3.Updater;
-import import guda.shop.image.ImageScale;
-import cimport guda.shoppage.Pagination;
-import coimport guda.shopeb.springmvc.RealPathResolver;
+
+import guda.shop.cms.entity.ProductFashion;
+import guda.shop.cms.manager.CategoryMng;
+import guda.shop.cms.manager.ProductFashionMng;
+import guda.shop.cms.manager.StandardMng;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.image.ImageScale;
+import guda.shop.common.page.Pagination;
+import guda.shop.common.web.springmvc.RealPathResolver;
 import guda.shop.core.manager.WebsiteMng;
 import java.util.List;
 import java.util.Set;
@@ -107,8 +107,8 @@ public class ProductFashionMngImpl
     for (String str2 : paramArrayOfString)
       str1 = str1 + " " + this._$1.findById(Long.valueOf(Long.parseLong(str2))).getName();
     paramProductFashion.setAttitude(str1);
-    ??? = new Updater(paramProductFashion);
-    ProductFashion localProductFashion = this._$6.updateByUpdater((Updater)???);
+      Updater updater = new Updater(paramProductFashion);
+    ProductFashion localProductFashion = this._$6.updateByUpdater(updater);
     return localProductFashion;
   }
 

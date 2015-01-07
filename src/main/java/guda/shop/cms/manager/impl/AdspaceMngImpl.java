@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.AdspaceDao;
-iimport guda.shopcms.entity.Adspace;
-imimport guda.shopms.manager.AdspaceMng;
+import guda.shop.cms.entity.Adspace;
+import guda.shop.cms.manager.AdspaceMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

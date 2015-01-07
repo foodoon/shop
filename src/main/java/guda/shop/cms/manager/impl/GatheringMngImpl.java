@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.GatheringDao;
-iimport guda.shopcms.entity.Gathering;
-imimport guda.shopms.manager.GatheringMng;
-impimport guda.shopmmon.hibernate3.Updater;
+import guda.shop.cms.entity.Gathering;
+import guda.shop.cms.manager.GatheringMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Iterator;
 import java.util.List;

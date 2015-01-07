@@ -1,11 +1,11 @@
 package guda.shop.cms.web;
 
 import guda.shop.cms.entity.ShopAdmin;
-iimport guda.shopcms.manager.ShopAdminMng;
-imimport guda.shopms.service.LoginSvc;
-impimport guda.shops.web.threadvariable.AdminThread;
-impoimport guda.shopmon.web.springmvc.MessageResolver;
-imporimport guda.shop.entity.Website;
+import guda.shop.cms.manager.ShopAdminMng;
+import guda.shop.cms.service.LoginSvc;
+import guda.shop.cms.web.threadvariable.AdminThread;
+import guda.shop.common.web.springmvc.MessageResolver;
+import guda.shop.core.entity.Website;
 import guda.shop.core.web.SiteUtils;
 import java.util.Set;
 import javax.servlet.http.HttpServletRequest;

@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.ShopChannel;
-iimport guda.shopcms.entity.ShopChannelContent;
+import guda.shop.cms.entity.ShopChannelContent;
 import guda.shop.common.page.Pagination;
 
 public abstract interface ShopChannelContentMng

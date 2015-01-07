@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.PaymentDao;
-iimport guda.shopcms.entity.Payment;
-imimport guda.shopms.manager.PaymentMng;
-impimport guda.shops.manager.ShippingMng;
+import guda.shop.cms.entity.Payment;
+import guda.shop.cms.manager.PaymentMng;
+import guda.shop.cms.manager.ShippingMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.List;
 import java.util.Set;

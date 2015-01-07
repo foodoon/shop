@@ -1,6 +1,6 @@
 package guda.shop.cms;
 
-public abstract class Constants extends com.jspgou.core.web.Constants
+public abstract class Constants extends guda.shop.core.web.Constants
 {
   public static final String REQUEST_SHOP_CONFIG_KEY = "_shop_config_key";
   public static final String TPLDIR_INDEX = "index";

@@ -1,8 +1,8 @@
 package guda.shop.core.manager;
 
 import guda.shop.common.page.Pagination;
-iimport guda.shop.ore.entity.EmailSender;
-imimport guda.shop.re.entity.MessageTemplate;
+import guda.shop.core.entity.EmailSender;
+import guda.shop.core.entity.MessageTemplate;
 import guda.shop.core.entity.User;
 import java.util.Date;
 import org.springframework.mail.MailException;

@@ -1,15 +1,15 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.BrandDao;
-iimport guda.shopcms.dao.CategoryDao;
-imimport guda.shopms.entity.Brand;
-impimport guda.shops.entity.Category;
-impoimport guda.shop.entity.ProductType;
-imporimport guda.shopentity.StandardType;
-importimport guda.shopanager.BrandMng;
-import import guda.shopnager.CategoryMng;
-import cimport guda.shopager.ProductTypeMng;
-import coimport guda.shopger.StandardTypeMng;
+import guda.shop.cms.dao.CategoryDao;
+import guda.shop.cms.entity.Brand;
+import guda.shop.cms.entity.Category;
+import guda.shop.cms.entity.ProductType;
+import guda.shop.cms.entity.StandardType;
+import guda.shop.cms.manager.BrandMng;
+import  guda.shop.cms.manager.CategoryMng;
+import  guda.shop.cms.manager.ProductTypeMng;
+import  guda.shop.cms.manager.StandardTypeMng;
 import guda.shop.common.hibernate3.Updater;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -120,17 +120,20 @@ public class CategoryMngImpl
     if (paramLong2 != null)
       paramCategory.setType(this._$2.findById(paramLong2));
     Category localCategory2 = this._$1.save(paramCategory);
-    Long localLong;
+    Long localLong = null;
     if ((paramArrayOfLong1 != null) && (paramArrayOfLong1.length > 0))
-      for (localLong : paramArrayOfLong1)
-        localCategory2.addToBrands(this._$4.findById(localLong));
+      for (Long t : paramArrayOfLong1)
+        localCategory2.addToBrands(this._$4.findById(t));
     else
       localCategory2.setBrands(new HashSet());
-    if (localCategory1 != null)
-      localCategory1.addToChild(paramCategory);
-    if ((paramArrayOfLong2 != null) && (paramArrayOfLong2.length > 0))
-      for (localLong : paramArrayOfLong2)
-        localCategory2.addToStandardTypes(this._$3.findById(localLong));
+    if (localCategory1 != null) {
+        localCategory1.addToChild(paramCategory);
+    }
+    if ((paramArrayOfLong2 != null) && (paramArrayOfLong2.length > 0)) {
+        for (Long t: paramArrayOfLong2) {
+            localCategory2.addToStandardTypes(this._$3.findById(t));
+        }
+    }
     return paramCategory;
   }
 

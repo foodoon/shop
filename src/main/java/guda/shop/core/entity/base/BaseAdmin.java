@@ -1,8 +1,8 @@
 package guda.shop.core.entity.base;
 
 import guda.shop.core.entity.Admin;
-iimport guda.shop.ore.entity.Role;
-imimport guda.shop.re.entity.User;
+import guda.shop.core.entity.Role;
+import guda.shop.core.entity.User;
 import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;

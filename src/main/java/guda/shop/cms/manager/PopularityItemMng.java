@@ -1,7 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Cart;
-iimport guda.shopcms.entity.PopularityItem;
+import guda.shop.cms.entity.PopularityItem;
 import guda.shop.common.page.Pagination;
 import java.util.List;
 

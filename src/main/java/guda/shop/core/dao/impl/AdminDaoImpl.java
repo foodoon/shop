@@ -1,7 +1,7 @@
 package guda.shop.core.dao.impl;
 
 import guda.shop.common.hibernate3.HibernateBaseDao;
-iimport guda.shop.ore.dao.AdminDao;
+import guda.shop.core.dao.AdminDao;
 import guda.shop.core.entity.Admin;
 import org.hibernate.Query;
 import org.hibernate.Session;

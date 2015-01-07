@@ -1,8 +1,8 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.ShopArticle;
-iimport guda.shopcms.entity.ShopArticleContent;
-imimport guda.shopms.entity.ShopChannel;
+import guda.shop.cms.entity.ShopArticleContent;
+import guda.shop.cms.entity.ShopChannel;
 import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;

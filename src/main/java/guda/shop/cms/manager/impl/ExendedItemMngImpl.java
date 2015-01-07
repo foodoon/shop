@@ -1,10 +1,10 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ExendedItemDao;
-iimport guda.shopcms.entity.Exended;
-imimport guda.shopms.entity.ExendedItem;
-impimport guda.shops.manager.ExendedItemMng;
-impoimport guda.shopmon.hibernate3.Updater;
+import guda.shop.cms.entity.Exended;
+import guda.shop.cms.entity.ExendedItem;
+import guda.shop.cms.manager.ExendedItemMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Collection;
 import java.util.HashSet;

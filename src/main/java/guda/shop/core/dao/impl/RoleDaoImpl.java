@@ -1,7 +1,7 @@
 package guda.shop.core.dao.impl;
 
 import guda.shop.common.hibernate3.HibernateBaseDao;
-iimport guda.shop.ore.dao.RoleDao;
+import guda.shop.core.dao.RoleDao;
 import guda.shop.core.entity.Role;
 import java.util.List;
 import org.hibernate.Session;

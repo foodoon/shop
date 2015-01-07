@@ -1,15 +1,12 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.CartDao;
-iimport guda.shopcms.entity.Cart;
-imimport guda.shopms.entity.Product;
-impimport guda.shops.entity.ProductFashion;
-impoimport guda.shop.manager.CartMng;
-imporimport guda.shopmanager.GiftMng;
-importimport guda.shopanager.PopularityGroupMng;
-import import guda.shopnager.ProductFashionMng;
-import cimport guda.shopager.ProductMng;
-import coimport guda.shopager.MemberMng;
+
+import guda.shop.cms.entity.Cart;
+import guda.shop.cms.entity.Product;
+import guda.shop.cms.entity.ProductFashion;
+import guda.shop.cms.manager.*;
+import guda.shop.core.manager.MemberMng;
 import guda.shop.core.manager.WebsiteMng;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

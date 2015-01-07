@@ -1,9 +1,10 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.LogisticsTextDao;
-iimport guda.shopcms.entity.Logistics;
-imimport guda.shopms.entity.LogisticsText;
-impimport guda.shops.manager.LogisticsTextMng;
+
+import guda.shop.cms.entity.Logistics;
+import guda.shop.cms.entity.LogisticsText;
+import guda.shop.cms.manager.LogisticsTextMng;
 import guda.shop.common.hibernate3.Updater;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

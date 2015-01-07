@@ -1,8 +1,8 @@
 package guda.shop.cms.manager;
 
 import guda.shop.cms.entity.Product;
-iimport guda.shopcms.entity.ProductExt;
-imimport guda.shopms.entity.ProductTag;
+import guda.shop.cms.entity.ProductExt;
+import guda.shop.cms.entity.ProductTag;
 import guda.shop.common.page.Pagination;
 import java.util.HashSet;
 import java.util.List;

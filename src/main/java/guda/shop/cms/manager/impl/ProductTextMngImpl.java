@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ProductTextDao;
-iimport guda.shopcms.entity.ProductText;
-imimport guda.shopms.manager.ProductTextMng;
+import guda.shop.cms.entity.ProductText;
+import guda.shop.cms.manager.ProductTextMng;
 import guda.shop.common.hibernate3.Updater;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

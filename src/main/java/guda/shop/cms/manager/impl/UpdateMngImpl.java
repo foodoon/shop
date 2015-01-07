@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.manager.UpdateMng;
-iimport guda.shopcommon.web.springmvc.RealPathResolver;
-imimport guda.shopore.entity.Website;
-impimport guda.shopre.manager.LogMng;
+import guda.shop.common.web.springmvc.RealPathResolver;
+import guda.shop.core.entity.Website;
+import guda.shop.core.manager.LogMng;
 import guda.shop.core.manager.WebsiteMng;
 import java.io.BufferedReader;
 import java.io.File;

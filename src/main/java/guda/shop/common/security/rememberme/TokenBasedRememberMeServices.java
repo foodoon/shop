@@ -1,7 +1,7 @@
 package guda.shop.common.security.rememberme;
 
 import guda.shop.common.security.UsernameNotFoundException;
-iimport guda.shop.ommon.security.userdetails.UserDetails;
+import guda.shop.common.security.userdetails.UserDetails;
 import guda.shop.common.security.userdetails.UserDetailsService;
 import java.util.Arrays;
 import java.util.Date;

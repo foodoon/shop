@@ -1,10 +1,10 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.PopularityGroupDao;
-iimport guda.shopcms.entity.PopularityGroup;
-imimport guda.shopms.manager.PopularityGroupMng;
-impimport guda.shops.manager.ProductMng;
-impoimport guda.shopmon.hibernate3.Updater;
+import guda.shop.cms.entity.PopularityGroup;
+import guda.shop.cms.manager.PopularityGroupMng;
+import guda.shop.cms.manager.ProductMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;

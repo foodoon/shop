@@ -1,8 +1,8 @@
 /*    */ package guda.shop.cms.lucene;
 /*    */ 
 /*    */ import guda.shop.common.page.Pagination;
-/*    */ iimport guda.shopcommon.web.freemarker.DirectiveUtils;
-/*    */ imimport guda.shopore.entity.Website;
+/*    */ import guda.shop.common.web.freemarker.DirectiveUtils;
+/*    */ import guda.shop.core.entity.Website;
 /*    */ import guda.shop.core.manager.WebsiteMng;
 /*    */ import freemarker.core.Environment;
 /*    */ import freemarker.template.ObjectWrapper;

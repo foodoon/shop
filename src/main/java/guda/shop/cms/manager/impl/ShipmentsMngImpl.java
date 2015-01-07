@@ -1,9 +1,9 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShipmentsDao;
-iimport guda.shopcms.entity.Shipments;
-imimport guda.shopms.manager.ShipmentsMng;
-impimport guda.shopmmon.hibernate3.Updater;
+import guda.shop.cms.entity.Shipments;
+import guda.shop.cms.manager.ShipmentsMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Iterator;
 import java.util.List;

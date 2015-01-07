@@ -1,15 +1,11 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.GiftExchangeDao;
-iimport guda.shopcms.entity.Gift;
-imimport guda.shopms.entity.GiftExchange;
-impimport guda.shops.entity.ShopMember;
-impoimport guda.shop.entity.ShopMemberAddress;
-imporimport guda.shopentity.ShopScore;
-importimport guda.shopntity.ShopScore.ScoreTypes;
-import import guda.shopnager.GiftExchangeMng;
-import cimport guda.shopager.ShopScoreMng;
-import coimport guda.shopibernate3.Updater;
+
+import guda.shop.cms.entity.*;
+import guda.shop.cms.manager.GiftExchangeMng;
+import guda.shop.cms.manager.ShopScoreMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.sql.Timestamp;
 import java.util.Date;

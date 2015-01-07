@@ -68,8 +68,8 @@ public final class SpringEhCacheProvider
   {
     if (this._$1 != null)
     {
-      localObject = "Attempt to restart an already started EhCacheProvider. Use sessionFactory.close()  between repeated calls to buildSessionFactory. Using previously created EhCacheProvider. If this behaviour is required, consider using SingletonEhCacheProvider.";
-      _$4.warn((String)localObject);
+      String localObject = "Attempt to restart an already started EhCacheProvider. Use sessionFactory.close()  between repeated calls to buildSessionFactory. Using previously created EhCacheProvider. If this behaviour is required, consider using SingletonEhCacheProvider.";
+      _$4.warn(localObject);
       return;
     }
     Object localObject = null;

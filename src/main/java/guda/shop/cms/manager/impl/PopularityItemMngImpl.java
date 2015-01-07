@@ -1,11 +1,11 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.PopularityItemDao;
-iimport guda.shopcms.entity.Cart;
-imimport guda.shopms.entity.PopularityItem;
-impimport guda.shops.manager.PopularityGroupMng;
-impoimport guda.shop.manager.PopularityItemMng;
-imporimport guda.shopon.hibernate3.Updater;
+import guda.shop.cms.entity.Cart;
+import guda.shop.cms.entity.PopularityItem;
+import guda.shop.cms.manager.PopularityGroupMng;
+import guda.shop.cms.manager.PopularityItemMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

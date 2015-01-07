@@ -1,34 +1,6 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.OrderDao;
-iimport guda.shopcms.entity.Cart;
-imimport guda.shopms.entity.CartItem;
-impimport guda.shops.entity.Coupon;
-impoimport guda.shop.entity.MemberCoupon;
-imporimport guda.shopentity.Order;
-importimport guda.shopntity.OrderItem;
-import import guda.shoptity.OrderReturn;
-import cimport guda.shopity.Payment;
-import coimport guda.shopty.PopularityGroup;
-import comimport guda.shopy.PopularityItem;
-import com.import guda.shop.Product;
-import com.jimport guda.shopProductFashion;
-import com.jsimport guda.shophipping;
-import com.jspimport guda.shopopMember;
-import com.jspgimport guda.shoppMemberAddress;
-import com.jspgoimport guda.shopScore;
-import guda.shopimport guda.shopcore.ScoreTypes;
-import guda.shop.import guda.shoptemMng;
-import guda.shop.cimport guda.shopg;
-import guda.shop.cmimport guda.shopngMng;
-import guda.shop.cmsimport guda.shopuponMng;
-import guda.shop.cms.import guda.shop
-import guda.shop.cms.mimport guda.shopnMng;
-import guda.shop.cms.maimport guda.shop
-import guda.shop.cms.manimport guda.shopemMng;
-import guda.shop.cms.manaimport guda.shopnMng;
-import guda.shop.cms.managimport guda.shopport com.jspgou.cms.manageimport guda.shopmport com.jspgou.cms.managerimport guda.shoport com.jspgou.cms.manager.import guda.shopMng;
-import guda.shop.cms.manager.Simport guda.shoport com.jspgou.cms.manager.Shimport guda.shopt com.jspgou.common.hibernatimport guda.shopt com.jspgou.common.page.Pagiimport guda.shopm.jspgou.core.entity.Websiimport guda.shoppgou.core.manager.WebsiteMng;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,6 +11,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import guda.shop.cms.entity.*;
+import guda.shop.cms.manager.*;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.page.Pagination;
+import guda.shop.core.entity.Website;
+import guda.shop.core.manager.WebsiteMng;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -132,6 +111,8 @@ public class OrderMngImpl
     double d1 = 0.0D;
     Double localDouble1 = Double.valueOf(0.0D);
     Double localDouble2 = Double.valueOf(0.0D);
+      Object localObject1;
+      Iterator<PopularityItem> localObject2;
     if (paramCart != null)
     {
       localObject1 = this._$1.getlist(paramCart.getId(), null);
@@ -152,10 +133,10 @@ public class OrderMngImpl
         this._$5.update((MemberCoupon)localObject1);
       }
     }
-    Object localObject1 = new ArrayList();
-    for (localObject3 : paramArrayOfLong)
+    localObject1 = new ArrayList();
+    for (Object localObject3 : paramArrayOfLong)
       ((List)localObject1).add(this._$9.findById((Long)localObject3));
-    Object localObject2 = ((List)localObject1).iterator();
+    localObject2 = ((List)localObject1).iterator();
     while (((Iterator)localObject2).hasNext())
     {
       CartItem localCartItem = (CartItem)((Iterator)localObject2).next();
@@ -206,7 +187,7 @@ public class OrderMngImpl
     Object localObject4 = localList.iterator();
     while (((Iterator)localObject4).hasNext())
     {
-      localObject5 = (PopularityItem)((Iterator)localObject4).next();
+      Object localObject5 = (PopularityItem)((Iterator)localObject4).next();
       this._$1.deleteById(((PopularityItem)localObject5).getId());
     }
     paramCart.getItems().removeAll((Collection)localObject1);
@@ -301,8 +282,8 @@ public class OrderMngImpl
       Object localObject4;
       while (((Iterator)localObject1).hasNext())
       {
-        localObject2 = (OrderItem)((Iterator)localObject1).next();
-        localObject3 = ((OrderItem)localObject2).getProduct();
+          OrderItem localObject2 = (OrderItem)((Iterator)localObject1).next();
+          Product localObject3 = ((OrderItem)localObject2).getProduct();
         if (((OrderItem)localObject2).getProductFash() != null)
         {
           localObject4 = ((OrderItem)localObject2).getProductFash();

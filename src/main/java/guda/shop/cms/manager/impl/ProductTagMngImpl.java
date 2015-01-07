@@ -1,8 +1,8 @@
 package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ProductTagDao;
-iimport guda.shopcms.entity.ProductTag;
-imimport guda.shopms.manager.ProductMng;
+import guda.shop.cms.entity.ProductTag;
+import guda.shop.cms.manager.ProductMng;
 import guda.shop.cms.manager.ProductTagMng;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

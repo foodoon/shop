@@ -1,17 +1,17 @@
 package guda.shop.cms.entity.base;
 
 import guda.shop.cms.entity.Brand;
-iimport guda.shopcms.entity.Category;
-imimport guda.shopms.entity.PopularityGroup;
-impimport guda.shops.entity.Product;
-impoimport guda.shop.entity.ProductExended;
-imporimport guda.shopentity.ProductExt;
-importimport guda.shopntity.ProductFashion;
-import import guda.shoptity.ProductPicture;
-import cimport guda.shopity.ProductTag;
-import coimport guda.shopty.ProductText;
-import comimport guda.shopy.ProductType;
-import com.import guda.shop.ShopConfig;
+import guda.shop.cms.entity.Category;
+import guda.shop.cms.entity.PopularityGroup;
+import guda.shop.cms.entity.Product;
+import guda.shop.cms.entity.ProductExended;
+import guda.shop.cms.entity.ProductExt;
+import guda.shop.cms.entity.ProductFashion;
+import  guda.shop.cms.entity.ProductPicture;
+import  guda.shop.cms.entity.ProductTag;
+import  guda.shop.cms.entity.ProductText;
+import  guda.shop.cms.entity.ProductType;
+import  guda.shop.cms.entity.ShopConfig;
 import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
