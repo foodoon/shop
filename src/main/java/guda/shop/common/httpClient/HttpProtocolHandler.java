@@ -81,7 +81,7 @@ public class HttpProtocolHandler
     else
     {
       localObject1 = new PostMethod(paramHttpRequest.getUrl());
-      localObject2 = new ArrayList();
+     List localObject2 = new ArrayList();
       for (int k = 0; k < paramHttpRequest.getParameters().length; k++)
         ((List)localObject2).add(new StringPart(paramHttpRequest.getParameters()[k].getName(), paramHttpRequest.getParameters()[k].getValue(), str));
       ((List)localObject2).add(new FilePart(paramString1, new FilePartSource(new File(paramString2))));
