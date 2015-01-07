@@ -4,7 +4,7 @@ import guda.shop.common.hibernate3.Updater;
 iimport guda.shop.ommon.page.Pagination;
 imimport guda.shop.re.dao.LogDao;
 impimport guda.shop.e.entity.Log;
-import com.jspgou.core.manager.LogMng;
+import guda.shop.core.manager.LogMng;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package guda.shop.core.dao.impl;
 
 import guda.shop.common.hibernate3.HibernateBaseDao;
 iimport guda.shop.ore.dao.AdminDao;
-import com.jspgou.core.entity.Admin;
+import guda.shop.core.entity.Admin;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;

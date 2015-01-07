@@ -1,7 +1,7 @@
 package guda.shop.common.update;
 
 import guda.shop.cms.manager.UpdateMng;
-import com.jspgou.common.web.springmvc.RealPathResolver;
+import guda.shop.common.web.springmvc.RealPathResolver;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

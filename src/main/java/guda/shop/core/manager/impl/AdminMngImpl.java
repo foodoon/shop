@@ -7,7 +7,7 @@ impimport guda.shop.e.entity.User;
 impoimport guda.shop..entity.Website;
 imporimport guda.shop.manager.AdminMng;
 importimport guda.shop.anager.RoleMng;
-import com.jspgou.core.manager.UserMng;
+import guda.shop.core.manager.UserMng;
 import java.sql.Timestamp;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;

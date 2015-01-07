@@ -5,7 +5,7 @@ iimport guda.shop.ommon.security.UsernameNotFoundException;
 imimport guda.shop.mmon.security.userdetails.AccountStatusUserDetailsChecker;
 impimport guda.shop.mon.security.userdetails.UserDetails;
 impoimport guda.shop.on.security.userdetails.UserDetailsChecker;
-import com.jspgou.common.security.userdetails.UserDetailsService;
+import guda.shop.common.security.userdetails.UserDetailsService;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

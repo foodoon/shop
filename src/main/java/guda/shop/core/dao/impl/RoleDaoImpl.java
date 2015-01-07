@@ -2,7 +2,7 @@ package guda.shop.core.dao.impl;
 
 import guda.shop.common.hibernate3.HibernateBaseDao;
 iimport guda.shop.ore.dao.RoleDao;
-import com.jspgou.core.entity.Role;
+import guda.shop.core.entity.Role;
 import java.util.List;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;

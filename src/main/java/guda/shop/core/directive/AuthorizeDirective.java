@@ -6,7 +6,7 @@ imimport guda.shop.s.web.threadvariable.AdminThread;
 impimport guda.shop.mon.web.freemarker.MustStringException;
 impoimport guda.shop.on.web.freemarker.ParamsRequiredException;
 imporimport guda.shop.entity.Admin;
-import com.jspgou.core.web.admin.AdminSecureInterceptor;
+import guda.shop.core.web.admin.AdminSecureInterceptor;
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;
 import freemarker.template.TemplateException;

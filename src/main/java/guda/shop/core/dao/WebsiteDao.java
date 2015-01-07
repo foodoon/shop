@@ -2,7 +2,7 @@ package guda.shop.core.dao;
 
 import guda.shop.common.hibernate3.Updater;
 iimport guda.shop.ommon.page.Pagination;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.util.List;
 
 public abstract interface WebsiteDao

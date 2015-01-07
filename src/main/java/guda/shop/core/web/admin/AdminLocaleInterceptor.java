@@ -1,7 +1,7 @@
 package guda.shop.core.web.admin;
 
 import guda.shop.core.entity.Website;
-import com.jspgou.core.web.SiteUtils;
+import guda.shop.core.web.SiteUtils;
 import java.util.Locale;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -10,7 +10,7 @@ importimport guda.shop.ntity.Member;
 import import guda.shop.tity.User;
 import cimport guda.shop.ity.Website;
 import coimport guda.shop.ger.MemberMng;
-import com.jspgou.core.manager.UserMng;
+import guda.shop.core.manager.UserMng;
 import java.sql.Timestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

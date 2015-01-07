@@ -1,7 +1,7 @@
 package guda.shop.common.web.session;
 
 import guda.shop.common.web.session.cache.SessionCache;
-import com.jspgou.common.web.session.id.SessionIdGenerator;
+import guda.shop.common.web.session.id.SessionIdGenerator;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;

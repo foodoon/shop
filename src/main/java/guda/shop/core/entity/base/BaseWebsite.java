@@ -4,7 +4,7 @@ import guda.shop.core.entity.Admin;
 iimport guda.shop.ore.entity.EmailSender;
 imimport guda.shop.re.entity.Global;
 impimport guda.shop.e.entity.MessageTemplate;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;

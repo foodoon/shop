@@ -1,7 +1,7 @@
 package guda.shop.core.directive;
 
 import guda.shop.cms.action.directive.abs.WebDirective;
-import com.jspgou.common.web.freemarker.MustNumberException;
+import guda.shop.common.web.freemarker.MustNumberException;
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;
 import freemarker.template.TemplateException;

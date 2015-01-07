@@ -6,7 +6,7 @@ imimport guda.shop.re.dao.UserDao;
 impimport guda.shop.e.entity.EmailSender;
 impoimport guda.shop..entity.MessageTemplate;
 imporimport guda.shop.entity.User;
-import com.jspgou.core.manager.UserMng;
+import guda.shop.core.manager.UserMng;
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.util.Date;

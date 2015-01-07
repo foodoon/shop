@@ -3,7 +3,7 @@ package guda.shop.core.entity.base;
 import guda.shop.core.entity.Admin;
 iimport guda.shop.ore.entity.Role;
 imimport guda.shop.re.entity.User;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;

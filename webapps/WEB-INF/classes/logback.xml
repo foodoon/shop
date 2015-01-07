@@ -28,16 +28,16 @@
 	-->
 	<!--
 	-->
-	<logger name="com.jspgou">
+	<logger name="guda.shop">
 		<level value="ERROR" />
 	</logger>
-	<logger name="com.jspgou.common.web.ProcessTimeFilter">
+	<logger name="cguda.shopcommon.web.ProcessTimeFilter">
 		<level value="ERROR" />
 	</logger>
-	<logger name="com.jspgou.common.developer">
+	<logger name="coguda.shopommon.developer">
 		<level value="ERROR" />
 	</logger>
-	<logger name="com.jspgou.common">
+	<logger name="comguda.shopmmon">
 		<level value="ERROR" />
 	</logger>
 	<logger name="com.jspgou.common.hibernate3.TreeIntercptor">

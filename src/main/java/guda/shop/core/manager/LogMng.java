@@ -1,7 +1,7 @@
 package guda.shop.core.manager;
 
 import guda.shop.common.page.Pagination;
-import com.jspgou.core.entity.Log;
+import guda.shop.core.entity.Log;
 
 public abstract interface LogMng
 {

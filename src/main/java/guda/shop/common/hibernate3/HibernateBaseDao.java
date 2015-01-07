@@ -1,7 +1,7 @@
 package guda.shop.common.hibernate3;
 
 import guda.shop.common.page.Pagination;
-import com.jspgou.common.util.MyBeanUtils;
+import guda.shop.common.util.MyBeanUtils;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;

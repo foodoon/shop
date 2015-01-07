@@ -1,7 +1,7 @@
 package guda.shop.core.manager;
 
 import guda.shop.core.entity.Admin;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 
 public abstract interface AdminMng
 {

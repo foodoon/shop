@@ -1,7 +1,7 @@
 package guda.shop.core.entity;
 
 import guda.shop.common.security.userdetails.UserDetails;
-import com.jspgou.core.entity.base.BaseMember;
+import guda.shop.core.entity.base.BaseMember;
 import java.util.Date;
 
 public class Member extends BaseMember

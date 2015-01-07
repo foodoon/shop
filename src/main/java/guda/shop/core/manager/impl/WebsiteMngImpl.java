@@ -6,7 +6,7 @@ imimport guda.shop.re.cache.CoreCacheSvc;
 impimport guda.shop.e.cache.DomainCacheSvc;
 impoimport guda.shop..dao.WebsiteDao;
 imporimport guda.shop.entity.Website;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.core.manager.WebsiteMng;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;

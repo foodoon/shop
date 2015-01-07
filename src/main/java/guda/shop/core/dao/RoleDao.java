@@ -1,7 +1,7 @@
 package guda.shop.core.dao;
 
 import guda.shop.common.hibernate3.Updater;
-import com.jspgou.core.entity.Role;
+import guda.shop.core.entity.Role;
 import java.util.List;
 
 public abstract interface RoleDao

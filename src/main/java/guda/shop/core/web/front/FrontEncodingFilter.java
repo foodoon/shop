@@ -1,7 +1,7 @@
 package guda.shop.core.web.front;
 
 import guda.shop.core.entity.Website;
-import com.jspgou.core.web.SiteUtils;
+import guda.shop.core.web.SiteUtils;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

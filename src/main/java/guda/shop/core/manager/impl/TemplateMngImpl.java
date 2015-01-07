@@ -1,7 +1,7 @@
 package guda.shop.core.manager.impl;
 
 import guda.shop.common.file.FileWrap;
-import com.jspgou.core.manager.TemplateMng;
+import guda.shop.core.manager.TemplateMng;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;

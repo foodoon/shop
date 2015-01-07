@@ -3,7 +3,7 @@ package guda.shop.core.manager.impl;
 import guda.shop.common.hibernate3.Updater;
 iimport guda.shop.ore.dao.RoleDao;
 imimport guda.shop.re.entity.Role;
-import com.jspgou.core.manager.RoleMng;
+import guda.shop.core.manager.RoleMng;
 import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;

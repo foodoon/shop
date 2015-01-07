@@ -2,7 +2,7 @@ package guda.shop.core.web.admin;
 
 import guda.shop.cms.entity.ShopAdmin;
 iimport guda.shop.ms.web.threadvariable.AdminThread;
-import com.jspgou.core.entity.Admin;
+import guda.shop.core.entity.Admin;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;

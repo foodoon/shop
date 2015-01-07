@@ -2,7 +2,7 @@ package guda.shop.core.manager.impl;
 
 import guda.shop.core.dao.GlobalDao;
 iimport guda.shop.ore.entity.Global;
-import com.jspgou.core.manager.GlobalMng;
+import guda.shop.core.manager.GlobalMng;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

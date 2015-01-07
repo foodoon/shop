@@ -24,7 +24,7 @@
 	
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="webBindingInitializer">
-			<bean class=" com.jspgou.common.web.springmvc.BindingInitializer"/>
+			<bean class=" guda.shop.common.web.springmvc.BindingInitializer"/>
 		</property>
 	</bean>
 	
@@ -37,7 +37,7 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="adminContextInterceptor" class="com.jspgou.cms.web.AdminContextInterceptor">
+	<bean id="adminContextInterceptor" class="guda.shop.cms.web.AdminContextInterceptor">
 		<!--开发状态下指定管理员ID
 		<property name="developAdminId" value="1"/>
 		-->
@@ -56,7 +56,7 @@
 			</props>
 		</property>
 	</bean>
-	<bean id="freemarkerViewResolver" class="com.jspgou.common.web.springmvc.RichFreeMarkerViewResolver">
+	<bean id="freemarkerViewResolver" class="guda.shop.common.web.springmvc.RichFreeMarkerViewResolver">
 		<property name="prefix" value="/jspgou_sys/"/>
 		<property name="suffix" value=".html"/>
 		<property name="contentType" value="text/html; charset=UTF-8"/>
@@ -65,7 +65,7 @@
 		<property name="exposeSpringMacroHelpers" value="true"/>
 	</bean>
 	<!--
-		<bean id="freemarkerViewResolver" class="com.jspgou.common.web.springmvc.SimpleFreeMarkerViewResolver">
+		<bean id="freemarkerViewResolver" class="guda.shop.common.web.springmvc.SimpleFreeMarkerViewResolver">
 			<property name="prefix" value=""/>
 			<property name="suffix" value=".html"/>
 			<property name="contentType" value="text/html; charset=UTF-8"/>
@@ -100,68 +100,68 @@
 		</property>
 	</bean>
 	<!--
-		<context:component-scan base-package="com.jspgou.cms.action.admin" use-default-filters="false">
+		<context:component-scan base-package="guda.shop.cms.action.admin" use-default-filters="false">
 			<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		</context:component-scan>
 		-->
 	<!--Controller
 		-->
 	<context:annotation-config/>
-	<bean id="fckAct" class="com.jspgou.cms.action.admin.FckAct"/>
-	<bean id="loginAct" class="com.jspgou.cms.action.admin.LoginAct"/>
-	<bean id="frameAct" class="com.jspgou.cms.action.admin.FrameAct"/>
-	<bean id="imageCutAct" class="com.jspgou.cms.action.admin.ImageCutAct"/>
-    <bean id="imageUploadAct" class="com.jspgou.cms.action.admin.ImageUploadAct"/>
-	<bean id="welcomeAct" class="com.jspgou.cms.action.admin.WelcomeAct"/>
+	<bean id="fckAct" class="guda.shop.cms.action.admin.FckAct"/>
+	<bean id="loginAct" class="guda.shop.cms.action.admin.LoginAct"/>
+	<bean id="frameAct" class="guda.shop.cms.action.admin.FrameAct"/>
+	<bean id="imageCutAct" class="guda.shop.cms.action.admin.ImageCutAct"/>
+    <bean id="imageUploadAct" class="guda.shop.cms.action.admin.ImageUploadAct"/>
+	<bean id="welcomeAct" class="guda.shop.cms.action.admin.WelcomeAct"/>
 	
-	<bean id="logAct" class="com.jspgou.cms.action.admin.main.LogAct"/>
-    <bean id="alipayAct" class="com.jspgou.cms.action.admin.main.AlipayAct"/>
-    <bean id="addressAct" class="com.jspgou.cms.action.admin.main.AddressAct"/>
-	<bean id="shopAdminAct" class="com.jspgou.cms.action.admin.main.ShopAdminAct"/>
-	<bean id="resourceAct" class="com.jspgou.cms.action.admin.main.ResourceAct"/>
-	<bean id="shopMemberAct" class="com.jspgou.cms.action.admin.main.ShopMemberAct"/>
-	<bean id="productTypeAct" class="com.jspgou.cms.action.admin.main.ProductTypeAct"/>
-	<bean id="productAct" class="com.jspgou.cms.action.admin.main.ProductAct"/>
-	<bean id="productTagAct" class="com.jspgou.cms.action.admin.main.ProductTagAct"/>
-	<bean id="configAct" class="com.jspgou.cms.action.admin.main.ConfigAct"/>
-	<bean id="categoryAct" class="com.jspgou.cms.action.admin.main.CategoryAct"/>
-	<bean id="brandAct" class="com.jspgou.cms.action.admin.main.BrandAct"/>
-	<bean id="logisticsAct" class="com.jspgou.cms.action.admin.main.LogisticsAct"/>
-	<bean id="shopMemberGroupAct" class="com.jspgou.cms.action.admin.main.ShopMemberGroupAct"/>
-	<bean id="templateAct" class="com.jspgou.cms.action.admin.main.TemplateAct">
+	<bean id="logAct" class="guda.shop.cms.action.admin.main.LogAct"/>
+    <bean id="alipayAct" class="guda.shop.cms.action.admin.main.AlipayAct"/>
+    <bean id="addressAct" class="guda.shop.cms.action.admin.main.AddressAct"/>
+	<bean id="shopAdminAct" class="guda.shop.cms.action.admin.main.ShopAdminAct"/>
+	<bean id="resourceAct" class="guda.shop.cms.action.admin.main.ResourceAct"/>
+	<bean id="shopMemberAct" class="guda.shop.cms.action.admin.main.ShopMemberAct"/>
+	<bean id="productTypeAct" class="guda.shop.cms.action.admin.main.ProductTypeAct"/>
+	<bean id="productAct" class="guda.shop.cms.action.admin.main.ProductAct"/>
+	<bean id="productTagAct" class="guda.shop.cms.action.admin.main.ProductTagAct"/>
+	<bean id="configAct" class="guda.shop.cms.action.admin.main.ConfigAct"/>
+	<bean id="categoryAct" class="guda.shop.cms.action.admin.main.CategoryAct"/>
+	<bean id="brandAct" class="guda.shop.cms.action.admin.main.BrandAct"/>
+	<bean id="logisticsAct" class="guda.shop.cms.action.admin.main.LogisticsAct"/>
+	<bean id="shopMemberGroupAct" class="guda.shop.cms.action.admin.main.ShopMemberGroupAct"/>
+	<bean id="templateAct" class="guda.shop.cms.action.admin.main.TemplateAct">
 	  <property name="tplManager" ref="tplManager"/>
     </bean>
-	<bean id="shippingAct" class="com.jspgou.cms.action.admin.main.ShippingAct"/>
-	<bean id="paymentAct" class="com.jspgou.cms.action.admin.main.PaymentAct"/>
-	<bean id="orderAct" class="com.jspgou.cms.action.admin.main.OrderAct"/>
-	<bean id="shopChannelAct" class="com.jspgou.cms.action.admin.main.ShopChannelAct"/>
-	<bean id="shopArticleAct" class="com.jspgou.cms.action.admin.main.ShopArticleAct"/>
-	<bean id="messageAct" class="com.jspgou.cms.action.admin.main.MessageAct"/>
-	<bean id="discussAct" class="com.jspgou.cms.action.admin.main.DiscussAct"/>	
-	<bean id="consultAct" class="com.jspgou.cms.action.admin.main.ConsultAct"/>	
-	<bean id="giftAct" class="com.jspgou.cms.action.admin.main.GiftAct"/>
-	<bean id="giftExchangeAct" class="com.jspgou.cms.action.admin.main.GiftExchangeAct"/>
+	<bean id="shippingAct" class="guda.shop.cms.action.admin.main.ShippingAct"/>
+	<bean id="paymentAct" class="guda.shop.cms.action.admin.main.PaymentAct"/>
+	<bean id="orderAct" class="guda.shop.cms.action.admin.main.OrderAct"/>
+	<bean id="shopChannelAct" class="guda.shop.cms.action.admin.main.ShopChannelAct"/>
+	<bean id="shopArticleAct" class="guda.shop.cms.action.admin.main.ShopArticleAct"/>
+	<bean id="messageAct" class="guda.shop.cms.action.admin.main.MessageAct"/>
+	<bean id="discussAct" class="guda.shop.cms.action.admin.main.DiscussAct"/>
+	<bean id="consultAct" class="guda.shop.cms.action.admin.main.ConsultAct"/>
+	<bean id="giftAct" class="guda.shop.cms.action.admin.main.GiftAct"/>
+	<bean id="giftExchangeAct" class="guda.shop.cms.action.admin.main.GiftExchangeAct"/>
 		
-	<bean id="couponAct" class="com.jspgou.cms.action.admin.main.CouponAct"/>
-	<bean id="uploadAdminAct" class="com.jspgou.cms.action.admin.main.UnLoadAdminAct"/>
-	<bean id="productTypePropertyAct" class="com.jspgou.cms.action.admin.main.ProductTypePropertyAct"/>
-	<bean id="productStatisticsAct" class="com.jspgou.cms.action.admin.main.ProductStatisticsAct"/>
-	<bean id="posterAct" class="com.jspgou.cms.action.admin.main.PosterAct"/>
-	<bean id="adspaceAct" class="com.jspgou.cms.action.admin.main.AdspaceAct"/>
-	<bean id="advertiseAct" class="com.jspgou.cms.action.admin.main.AdvertiseAct"/>
-	<bean id="pluginsAct" class="com.jspgou.cms.action.admin.main.PaymentPluginsAct"/>
+	<bean id="couponAct" class="guda.shop.cms.action.admin.main.CouponAct"/>
+	<bean id="uploadAdminAct" class="guda.shop.cms.action.admin.main.UnLoadAdminAct"/>
+	<bean id="productTypePropertyAct" class="guda.shop.cms.action.admin.main.ProductTypePropertyAct"/>
+	<bean id="productStatisticsAct" class="guda.shop.cms.action.admin.main.ProductStatisticsAct"/>
+	<bean id="posterAct" class="guda.shop.cms.action.admin.main.PosterAct"/>
+	<bean id="adspaceAct" class="guda.shop.cms.action.admin.main.AdspaceAct"/>
+	<bean id="advertiseAct" class="guda.shop.cms.action.admin.main.AdvertiseAct"/>
+	<bean id="pluginsAct" class="guda.shop.cms.action.admin.main.PaymentPluginsAct"/>
 
-	<bean id="shopDictionaryAct" class="com.jspgou.cms.action.admin.main.ShopDictionaryAct"/>
-	<bean id="shopDictionaryTypeAct" class="com.jspgou.cms.action.admin.main.ShopDictionaryTypeAct"/>
-	<bean id="shopScoreAct" class="com.jspgou.cms.action.admin.main.ShopScoreAct"/>
-	<bean id="orderReturnAct" class="com.jspgou.cms.action.admin.main.OrderReturnAct"/>
-	<bean id="shopMoneyAct" class="com.jspgou.cms.action.admin.main.ShopMoneyAct"/>
-	<bean id="customerServiceAct" class="com.jspgou.cms.action.admin.main.CustomerServiceAct"/>
-	<bean id="roleAct" class="com.jspgou.cms.action.admin.main.RoleAct"/>
+	<bean id="shopDictionaryAct" class="guda.shop.cms.action.admin.main.ShopDictionaryAct"/>
+	<bean id="shopDictionaryTypeAct" class="guda.shop.cms.action.admin.main.ShopDictionaryTypeAct"/>
+	<bean id="shopScoreAct" class="guda.shop.cms.action.admin.main.ShopScoreAct"/>
+	<bean id="orderReturnAct" class="guda.shop.cms.action.admin.main.OrderReturnAct"/>
+	<bean id="shopMoneyAct" class="guda.shop.cms.action.admin.main.ShopMoneyAct"/>
+	<bean id="customerServiceAct" class="guda.shop.cms.action.admin.main.CustomerServiceAct"/>
+	<bean id="roleAct" class="guda.shop.cms.action.admin.main.RoleAct"/>
 
-	<bean id="exendedAct" class="com.jspgou.cms.action.admin.main.ExendedAct"/>
-	<bean id="standardTypeAct" class="com.jspgou.cms.action.admin.main.StandardTypeAct"/>
-	<bean id="gatheringAct" class="com.jspgou.cms.action.admin.main.GatheringAct"/>
-	<bean id="shipmentsAct" class="com.jspgou.cms.action.admin.main.ShipmentsAct"/>
-	<bean id="popularityGroupAct" class="com.jspgou.cms.action.admin.main.PopularityGroupAct"/>
+	<bean id="exendedAct" class="guda.shop.cms.action.admin.main.ExendedAct"/>
+	<bean id="standardTypeAct" class="guda.shop.cms.action.admin.main.StandardTypeAct"/>
+	<bean id="gatheringAct" class="guda.shop.cms.action.admin.main.GatheringAct"/>
+	<bean id="shipmentsAct" class="guda.shop.cms.action.admin.main.ShipmentsAct"/>
+	<bean id="popularityGroupAct" class="guda.shop.cms.action.admin.main.PopularityGroupAct"/>
 </beans>

@@ -3,7 +3,7 @@ package guda.shop.core.dao.impl;
 import guda.shop.common.hibernate3.HibernateBaseDao;
 iimport guda.shop.ommon.page.Pagination;
 imimport guda.shop.re.dao.WebsiteDao;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;

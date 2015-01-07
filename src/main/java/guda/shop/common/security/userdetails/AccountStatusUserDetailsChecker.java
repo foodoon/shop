@@ -4,7 +4,7 @@ import guda.shop.common.security.AccountExpiredException;
 iimport guda.shop.ommon.security.AccountStatusException;
 imimport guda.shop.mmon.security.CredentialsExpiredException;
 impimport guda.shop.mon.security.DisabledException;
-import com.jspgou.common.security.LockedException;
+import guda.shop.common.security.LockedException;
 
 public class AccountStatusUserDetailsChecker
   implements UserDetailsChecker

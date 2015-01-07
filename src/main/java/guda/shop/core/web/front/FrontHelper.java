@@ -3,7 +3,7 @@ package guda.shop.core.web.front;
 import guda.shop.common.web.RequestUtils;
 iimport guda.shop.ommon.web.springmvc.MessageResolver;
 imimport guda.shop.re.entity.Website;
-import com.jspgou.core.web.WebErrors;
+import guda.shop.core.web.WebErrors;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;

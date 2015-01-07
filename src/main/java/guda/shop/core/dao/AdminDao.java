@@ -1,7 +1,7 @@
 package guda.shop.core.dao;
 
 import guda.shop.common.hibernate3.Updater;
-import com.jspgou.core.entity.Admin;
+import guda.shop.core.entity.Admin;
 
 public abstract interface AdminDao
 {

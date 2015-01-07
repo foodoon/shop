@@ -2,7 +2,7 @@ package guda.shop.core.entity.base;
 
 import guda.shop.core.entity.Log;
 iimport guda.shop.ore.entity.User;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 import java.io.Serializable;
 import java.util.Date;
 

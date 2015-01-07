@@ -1,7 +1,7 @@
 package guda.shop.core.web.front;
 
 import guda.shop.core.entity.Website;
-import com.jspgou.core.manager.WebsiteMng;
+import guda.shop.core.manager.WebsiteMng;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;

@@ -1,0 +1,26 @@
+package guda.shop.dao;
+
+import guda.shop.cms.entity.CustomerService;
+import guda.shop.common.hibernate3.Updater;
+import guda.shop.common.page.Pagination;
+import java.util.List;
+
+public abstract interface CustomerServiceDao
+{
+  public abstract Pagination getPagination(Boolean paramBoolean, int paramInt1, int paramInt2);
+
+  public abstract List<CustomerService> getList(Boolean paramBoolean);
+
+  public abstract CustomerService findById(Long paramLong);
+
+  public abstract CustomerService updateByUpdater(Updater<CustomerService> paramUpdater);
+
+  public abstract CustomerService deleteById(Long paramLong);
+
+  public abstract CustomerService save(CustomerService paramCustomerService);
+}
+
+/* Location:           D:\demo22\jspgou-cms.jar
+ * Qualified Name:     com.jspgou.cms.dao.CustomerServiceDao
+ * JD-Core Version:    0.6.2
+ */

@@ -3,7 +3,7 @@ package guda.shop.core.manager;
 import guda.shop.common.page.Pagination;
 iimport guda.shop.ore.entity.Member;
 imimport guda.shop.re.entity.User;
-import com.jspgou.core.entity.Website;
+import guda.shop.core.entity.Website;
 
 public abstract interface MemberMng
 {

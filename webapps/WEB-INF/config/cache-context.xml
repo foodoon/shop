@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
 	default-lazy-init="true">
 	<!--缓存--><!-- 引用ehCache的配置 -->
-	<bean id="cacheManager" class="com.jspgou.common.web.WebEhCacheManagerFacotryBean">
+	<bean id="cacheManager" class="guda.shop.common.web.WebEhCacheManagerFacotryBean">
 		<property name="configLocation">
 			<value>classpath:ehcache-application.xml</value>
 		</property>
@@ -18,7 +18,7 @@
 			<ref local="cacheManager"/>
 		</property>
 		<property name="cacheName">
-			<value>com.jspgou.core.Global</value>
+			<value>guda.shop.core.Global</value>
 		</property>
 	</bean>
 	<!--域名缓存-->
@@ -28,7 +28,7 @@
 			<ref local="cacheManager"/>
 		</property>
 		<property name="cacheName">
-			<value>com.jspgou.core.Domain</value>
+			<value>guda.shop.core.Domain</value>
 		</property>
 	</bean>
 	<!--SESSION缓存-->
@@ -38,7 +38,7 @@
 			<ref local="cacheManager"/>
 		</property>
 		<property name="cacheName">
-			<value>com.jspgou.common.web.session.Session</value>
+			<value>guda.shop.common.web.session.Session</value>
 		</property>
 	</bean>
 </beans>
