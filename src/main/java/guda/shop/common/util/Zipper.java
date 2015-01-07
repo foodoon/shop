@@ -81,8 +81,8 @@ public class Zipper
         localZipEntry = new ZipEntry(paramFile.getName());
       else
         localZipEntry = new ZipEntry(paramZipEntry.getName() + "/" + paramFile.getName());
-      localObject1 = paramFile.listFiles(paramFilenameFilter);
-      for (File localFile : localObject1)
+        File[] files = paramFile.listFiles(paramFilenameFilter);
+        for (File localFile : files)
         _$1(localFile, paramFilenameFilter, localZipEntry, paramString);
     }
     else

@@ -32,13 +32,10 @@ import java.util.Properties;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.apache.commons.lang.StringUtils;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.tools.zip.ZipEntry;
 import org.apache.tools.zip.ZipFile;
@@ -138,7 +135,7 @@ public class UpdateMngImpl
       Website localWebsite = UpdateMngImpl.this._$1.findById(Long.valueOf(1L));
       String str1 = "http://update.jeecms.com/update.jhtml?version=" + getVersion() + "&domain=" + localWebsite.getDomain() + "&name=" + localWebsite.getName();
       DefaultHttpClient localDefaultHttpClient = new DefaultHttpClient();
-      IllIlllIlllIIllI localIllIlllIlllIIllI = new IllIlllIlllIIllI(UpdateMngImpl.this, "UTF-8");
+      ResponseHandlerMngImpl localIllIlllIlllIIllI = new ResponseHandlerMngImpl(UpdateMngImpl.this, "UTF-8");
       try
       {
         HttpGet localHttpGet = new HttpGet(new URI(str1));

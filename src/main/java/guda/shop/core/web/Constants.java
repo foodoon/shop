@@ -1,6 +1,6 @@
 package guda.shop.core.web;
 
-public abstract class Constants extends com.jspgou.common.web.Constants
+public abstract class Constants extends guda.shop.common.web.Constants
 {
   public static final String ENCODING = "UTF-8";
   public static final String SESSION_USER_ID_KEY = "_user_id_key";

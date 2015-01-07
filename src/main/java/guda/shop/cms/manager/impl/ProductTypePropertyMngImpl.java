@@ -4,6 +4,7 @@ import guda.shop.cms.dao.ProductTypePropertyDao;
 
 import guda.shop.cms.entity.ProductTypeProperty;
 import guda.shop.cms.manager.ProductTypePropertyMng;
+import guda.shop.common.hibernate3.Updater;
 import guda.shop.common.page.Pagination;
 import java.util.Iterator;
 import java.util.List;

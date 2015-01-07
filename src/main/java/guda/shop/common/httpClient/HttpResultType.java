@@ -2,6 +2,8 @@ package guda.shop.common.httpClient;
 
 public enum HttpResultType
 {
+    STRING,
+    BYTES;
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

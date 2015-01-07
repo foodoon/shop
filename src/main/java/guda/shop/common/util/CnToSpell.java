@@ -14,21 +14,22 @@ public class CnToSpell
       this._$1[i] = _$1(this._$3[i]);
   }
 
-  public char charAlpha(char paramChar)
-  {
-    if ((paramChar >= 'a') && (paramChar <= 'z'))
+  public char charAlpha(char paramChar) {
+      if ((paramChar >= 'a') && (paramChar <= 'z'))
+          return paramChar;
+      if ((paramChar >= 'A') && (paramChar <= 'Z'))
+          return (char) (paramChar - 'A' + 97);
+      if ((paramChar >= '0') && (paramChar <= '9'))
+          return paramChar;
+      int i = _$1(paramChar);
+      if (i < this._$1[0])
+          return '0';
+      for (int j = 0; (j < 26) && (!_$1(j, i)); j++) {
+          if (j >= 26)
+              return '0';
+          return this._$2[j];
+      }
       return paramChar;
-    if ((paramChar >= 'A') && (paramChar <= 'Z'))
-      return (char)(paramChar - 'A' + 97);
-    if ((paramChar >= '0') && (paramChar <= '9'))
-      return paramChar;
-    int i = _$1(paramChar);
-    if (i < this._$1[0])
-      return '0';
-    for (int j = 0; (j < 26) && (!_$1(j, i)); j++);
-    if (j >= 26)
-      return '0';
-    return this._$2[j];
   }
 
   public String getBeginCharacter(String paramString)
@@ -51,10 +52,15 @@ public class CnToSpell
   {
     if (paramInt2 < this._$1[paramInt1])
       return false;
-    for (int i = paramInt1 + 1; (i < 26) && (this._$1[i] == this._$1[paramInt1]); i++);
-    if (i == 26)
-      return paramInt2 <= this._$1[i];
-    return paramInt2 < this._$1[i];
+    for (int i = paramInt1 + 1; (i < 26) && (this._$1[i] == this._$1[paramInt1]); i++) {
+        if (i == 26) {
+            return paramInt2 <= this._$1[i];
+        }else {
+            return paramInt2 < this._$1[i];
+        }
+    }
+
+     return false;
   }
 
   private int _$1(char paramChar)

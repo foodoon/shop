@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import guda.shop.cms.entity.ShopMember;
+import guda.shop.cms.entity.ShopMemberAddress;
 import guda.shop.cms.entity.ShopMemberGroup;
 import guda.shop.cms.manager.*;
 import guda.shop.common.hibernate3.Updater;

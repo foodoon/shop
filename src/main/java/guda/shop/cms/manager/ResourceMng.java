@@ -1,6 +1,7 @@
 package guda.shop.cms.manager;
 
 import guda.shop.common.file.FileWrap;
+import guda.shop.common.util.Zipper;
 import guda.shop.common.util.Zipper.FileEntry;
 import guda.shop.core.entity.Website;
 import java.io.File;

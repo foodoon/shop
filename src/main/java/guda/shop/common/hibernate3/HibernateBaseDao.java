@@ -25,6 +25,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
+import static org.hibernate.EntityMode.POJO;
+
 public abstract class HibernateBaseDao<T, ID extends Serializable>
 {
   protected Logger log = LoggerFactory.getLogger(getClass());
@@ -36,15 +38,16 @@ public abstract class HibernateBaseDao<T, ID extends Serializable>
     return get(paramID, false);
   }
 
-  protected T get(ID paramID, boolean paramBoolean)
-  {
-    Object localObject;
-    if (paramBoolean)
-      localObject = getSession().get(getEntityClass(), paramID, LockMode.UPGRADE);
-    else
-      localObject = getSession().get(getEntityClass(), paramID);
-    return localObject;
-  }
+    protected T get(ID id, boolean lock) {
+        T entity;
+        if (lock) {
+            entity = (T) getSession().get(getEntityClass(), id,
+                    LockMode.UPGRADE);
+        } else {
+            entity = (T) getSession().get(getEntityClass(), id);
+        }
+        return entity;
+    }
 
   protected List<T> findByProperty(String paramString, Object paramObject)
   {
@@ -52,12 +55,13 @@ public abstract class HibernateBaseDao<T, ID extends Serializable>
     return createCriteria(new Criterion[] { Restrictions.eq(paramString, paramObject) }).list();
   }
 
-  protected T findUniqueByProperty(String paramString, Object paramObject)
-  {
-    Assert.hasText(paramString);
-    Assert.notNull(paramObject);
-    return createCriteria(new Criterion[] { Restrictions.eq(paramString, paramObject) }).uniqueResult();
-  }
+
+    protected T findUniqueByProperty(String property, Object value) {
+        Assert.hasText(property);
+        Assert.notNull(value);
+        return (T) createCriteria(new Criterion[] {Restrictions.eq(property, value)})
+                .uniqueResult();
+    }
 
   protected int countByProperty(String paramString, Object paramObject)
   {
@@ -71,16 +75,16 @@ public abstract class HibernateBaseDao<T, ID extends Serializable>
     return createCriteria(paramArrayOfCriterion).list();
   }
 
-  public T updateByUpdater(Updater<T> paramUpdater)
-  {
-    ClassMetadata localClassMetadata = this.sessionFactory.getClassMetadata(getEntityClass());
-    Object localObject1 = paramUpdater.getBean();
-    Object localObject2 = getSession().get(getEntityClass(), localClassMetadata.getIdentifier(localObject1, EntityMode.POJO));
-    _$1(paramUpdater, localObject2, localClassMetadata);
-    return localObject2;
-  }
+    public T updateByUpdater(Updater<T> updater) {
+        ClassMetadata cm = sessionFactory.getClassMetadata(getEntityClass());
+        T bean = updater.getBean();
+        T po = (T) getSession().get(getEntityClass(),
+                cm.getIdentifier(bean, POJO));
+        updaterCopyToPersistentObject(updater, po, cm);
+        return po;
+    }
 
-  private void _$1(Updater<T> paramUpdater, T paramT, ClassMetadata paramClassMetadata)
+  private void updaterCopyToPersistentObject(Updater<T> paramUpdater, T paramT, ClassMetadata paramClassMetadata)
   {
     String[] arrayOfString1 = paramClassMetadata.getPropertyNames();
     String str1 = paramClassMetadata.getIdentifierPropertyName();

@@ -3,6 +3,7 @@ package guda.shop.cms.manager.impl;
 import guda.shop.cms.dao.ShopChannelDao;
 
 import guda.shop.cms.entity.ShopChannel;
+import guda.shop.cms.entity.ShopChannelContent;
 import guda.shop.cms.manager.ShopChannelContentMng;
 import guda.shop.cms.manager.ShopChannelMng;
 import guda.shop.common.hibernate3.Updater;

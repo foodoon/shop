@@ -9,12 +9,12 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.util.EntityUtils;
 
-class IllIlllIlllIIllI
+class ResponseHandlerMngImpl
   implements ResponseHandler<String>
 {
   private String _$1;
 
-  public IllIlllIlllIIllI(UpdateMngImpl paramUpdateMngImpl, String paramString)
+  public ResponseHandlerMngImpl(UpdateMngImpl paramUpdateMngImpl, String paramString)
   {
     this._$1 = paramString;
   }

@@ -2,6 +2,7 @@ package guda.shop.cms.manager.impl;
 
 import guda.shop.cms.dao.ShopMemberAddressDao;
 
+import guda.shop.cms.entity.Cart;
 import guda.shop.cms.entity.ShopMemberAddress;
 import guda.shop.cms.manager.CartMng;
 import guda.shop.cms.manager.ShopMemberAddressMng;

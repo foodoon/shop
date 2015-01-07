@@ -1,34 +1,93 @@
 package guda.shop.common.hibernate3;
 
-public abstract interface HibernateTree
-{
-  public static final String DEF_LEFT_NAME = "lft";
-  public static final String DEF_RIGHT_NAME = "rgt";
-  public static final String DEF_PARENT_NAME = "parent";
-  public static final String ENTITY_ALIAS = "bean";
+public interface HibernateTree<T extends Number> {
+    /**
+     * 默认树左边属性名称
+     */
+    public static final String DEF_LEFT_NAME = "lft";
+    /**
+     * 默认树右边属性名称
+     */
+    public static final String DEF_RIGHT_NAME = "rgt";
+    /**
+     * 默认父节点属性名称
+     */
+    public static final String DEF_PARENT_NAME = "parent";
+    /**
+     * 实体类别名
+     */
+    public static final String ENTITY_ALIAS = "bean";
 
-  public abstract String getLftName();
+    /**
+     * 获得树左边属性名称
+     *
+     * @return
+     */
+    public String getLftName();
 
-  public abstract String getRgtName();
+    /**
+     * 获得树右边属性名称
+     *
+     * @return
+     */
+    public String getRgtName();
 
-  public abstract String getParentName();
+    /**
+     * 获得父节点属性名称
+     *
+     * @return
+     */
+    public String getParentName();
 
-  public abstract Integer getLft();
+    /**
+     * 获得树左边值
+     *
+     * @return
+     */
+    public T getLft();
 
-  public abstract void setLft(Integer paramInteger);
+    /**
+     * 设置树左边值
+     *
+     * @param lft
+     */
+    public void setLft(T lft);
 
-  public abstract Integer getRgt();
+    /**
+     * 获得树右边值
+     *
+     * @return
+     */
+    public T getRgt();
 
-  public abstract void setRgt(Integer paramInteger);
+    /**
+     * 设置数右边值
+     *
+     * @param rgt
+     */
+    public void setRgt(T rgt);
 
-  public abstract Long getParentId();
+    /**
+     * 获得父节点ID
+     *
+     * @return 如果没有父节点，则返回null。
+     */
+    public T getParentId();
 
-  public abstract Long getId();
+    /**
+     * 获得树ID
+     *
+     * @return
+     */
+    public T getId();
 
-  public abstract String getTreeCondition();
+    /**
+     * 获得附加条件
+     * <p/>
+     * 通过附加条件可以维护多棵树相互独立的树，附加条件使用hql语句，实体别名为bean。例如：bean.website.id=5
+     *
+     * @return 为null则不添加任何附加条件
+     * @see HibernateTree#ENTITY_ALIAS
+     */
+    public String getTreeCondition();
 }
-
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.hibernate3.HibernateTree
- * JD-Core Version:    0.6.2
- */
