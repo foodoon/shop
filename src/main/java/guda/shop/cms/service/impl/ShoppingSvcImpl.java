@@ -39,8 +39,8 @@ public class ShoppingSvcImpl
     public Cart getCart(ShopMember paramShopMember, HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse) {
         Cart localCart = this._$1.findById(paramShopMember.getId());
         if ((localCart != null) && (localCart.getItems().size() > 0)) {
-            localCookie = _$1(localCart.getTotalItems().toString(), paramHttpServletRequest);
-            paramHttpServletResponse.addCookie(localCookie);
+            Cookie cookie = _$1(localCart.getTotalItems().toString(), paramHttpServletRequest);
+            paramHttpServletResponse.addCookie(cookie);
             return localCart;
         }
         Cookie localCookie = _$1("0", paramHttpServletRequest);

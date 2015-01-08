@@ -47,7 +47,6 @@ public class ShopArticleAct {
 /*  56 */
         log.debug("tree path={}", root);
         boolean isRoot;
-        boolean isRoot;
 /*  59 */
         if ((StringUtils.isBlank(root)) || ("source".equals(root)))
 /*  60 */ isRoot = true;
@@ -68,7 +67,6 @@ public class ShopArticleAct {
 /*  69 */
             return null;
         }
-        List list;
         List list;
 /*  72 */
         if (isRoot) {

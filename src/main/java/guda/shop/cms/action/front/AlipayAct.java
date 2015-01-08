@@ -403,7 +403,6 @@ public class AlipayAct extends Alipay {
 
     public String getLogisticsType(Order order) {
         String logistics_type;
-        String logistics_type;
 /* 283 */
         if (!StringUtils.isBlank(order.getShipping().getLogisticsType()))
 /* 284 */ logistics_type = order.getShipping().getLogisticsType();

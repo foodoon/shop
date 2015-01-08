@@ -143,7 +143,6 @@ public class ForgotPasswordAct {
 /* 141 */
         User user = this.userMng.findById(uid);
         boolean success;
-        boolean success;
 /* 143 */
         if (activationCode.equals(user.getResetKey())) {
 /* 144 */

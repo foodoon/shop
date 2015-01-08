@@ -24,7 +24,7 @@ public class UnLoadAdminAct {
 /* 29 */
         model.addAttribute("map1", adminMap);
 /* 30 */
-        Set keySet = adminMap.keySet();
+        Set<String> keySet = adminMap.keySet();
 /* 31 */
         for (String username : keySet) {
 /* 32 */

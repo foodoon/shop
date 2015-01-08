@@ -331,7 +331,7 @@ public class CartAct {
 /* 245 */
             if ((cart != null) && (cartItem.getPopularityGroup() != null)) {
 /* 246 */
-                List list = this.cartItemMng.getlist(cart.getId(), cartItem.getPopularityGroup().getId());
+                List<CartItem> list = this.cartItemMng.getlist(cart.getId(), cartItem.getPopularityGroup().getId());
 /* 247 */
                 for (CartItem item : list) {
 /* 248 */
@@ -432,7 +432,7 @@ public class CartAct {
             return "redirect:shopping_cart.jspx";
         }
 /* 319 */
-        List popularityItems = null;
+        List<PopularityItem> popularityItems = null;
 /* 320 */
         Double popularityPrice = Double.valueOf(0.0D);
 /* 321 */
@@ -518,7 +518,3 @@ public class CartAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.front.CartAct
- * JD-Core Version:    0.6.2
- */

@@ -53,9 +53,9 @@ public class AdminContextInterceptor extends HandlerInterceptorAdapter {
             localShopAdmin = this._$2.findById(this._$1);
             if (localShopAdmin == null)
                 throw new IllegalStateException("developAdminId not found: " + this._$1);
-            localObject = localShopAdmin.getWebsite().getId();
-            if (!((Long) localObject).equals(localWebsite.getId()))
-                throw new IllegalStateException("developAdminId's website id=" + localObject + " not in current website id=" + localWebsite.getId());
+            Long id = localShopAdmin.getWebsite().getId();
+            if (!id.equals(localWebsite.getId()))
+                throw new IllegalStateException("developAdminId's website id=" + id + " not in current website id=" + localWebsite.getId());
         } else {
             localShopAdmin = this._$3.getAdmin(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
         }

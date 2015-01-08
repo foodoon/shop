@@ -78,7 +78,7 @@ public class Alipay {
     public static boolean verify(Map<String, String> paramMap, String paramString1, String paramString2) {
         String str1 = "true";
         if (paramMap.get("notify_id") != null) {
-            str2 = (String) paramMap.get("notify_id");
+            String str2 =  paramMap.get("notify_id");
             str1 = _$2(str2, paramString1);
         }
         String str2 = "";
