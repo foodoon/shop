@@ -69,6 +69,16 @@ public class DynamicPageAct {
 
     }
 
+    @RequestMapping(value = {"/"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    public String first(HttpServletRequest request,HttpServletResponse response, ModelMap model) {
+
+        Website web = SiteUtils.getWeb(request);
+
+        ShopFrontHelper.setCommonData(request, model, web, 1);
+
+        return web.getTemplate("index", MessageResolver.getMessage(request, "tpl.index", new Object[0]));
+
+    }
 
     @RequestMapping(value = {"/"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String index(HttpServletRequest request, ModelMap model) {

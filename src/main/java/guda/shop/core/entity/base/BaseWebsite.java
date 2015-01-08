@@ -79,12 +79,12 @@ public abstract class BaseWebsite
     private String _$10;
     private String _$9;
     private String _$8;
-    private String _$7;
-    private Boolean _$6;
-    private Admin _$5;
-    private Website _$4;
-    private Global _$3;
-    private Set<Website> _$2;
+    private String version;
+    private Boolean aBoolean;
+    private Admin admin;
+    private Website website;
+    private Global global;
+    private Set<Website> websiteSet;
     private Map<String, MessageTemplate> _$1;
 
     public BaseWebsite() {
@@ -367,35 +367,35 @@ public abstract class BaseWebsite
     }
 
     public Admin getAdmin() {
-        return this._$5;
+        return this.admin;
     }
 
     public void setAdmin(Admin paramAdmin) {
-        this._$5 = paramAdmin;
+        this.admin = paramAdmin;
     }
 
     public Website getParent() {
-        return this._$4;
+        return this.website;
     }
 
     public void setParent(Website paramWebsite) {
-        this._$4 = paramWebsite;
+        this.website = paramWebsite;
     }
 
     public Global getGlobal() {
-        return this._$3;
+        return this.global;
     }
 
     public void setGlobal(Global paramGlobal) {
-        this._$3 = paramGlobal;
+        this.global = paramGlobal;
     }
 
     public Set<Website> getChild() {
-        return this._$2;
+        return this.websiteSet;
     }
 
     public void setChild(Set<Website> paramSet) {
-        this._$2 = paramSet;
+        this.websiteSet = paramSet;
     }
 
     public Map<String, MessageTemplate> getMessages() {
@@ -432,19 +432,19 @@ public abstract class BaseWebsite
     }
 
     public String getVersion() {
-        return this._$7;
+        return this.version;
     }
 
     public void setVersion(String paramString) {
-        this._$7 = paramString;
+        this.version = paramString;
     }
 
     public Boolean getRestart() {
-        return this._$6;
+        return this.aBoolean;
     }
 
     public void setRestart(Boolean paramBoolean) {
-        this._$6 = paramBoolean;
+        this.aBoolean = paramBoolean;
     }
 }
 

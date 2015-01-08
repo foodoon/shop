@@ -36,11 +36,11 @@
         <form class="ropt">
             <input type="hidden" name="root" value="${root!}"/>
             <input type="hidden" id="type" name="type" value="1"/>
-            <input type="submit" value="<@s.m " global.add"/><@s.m "shopChannel.type.1"/>"
+            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.1"/>"
             onclick="this.form.action='v_add.do';$('#type').val(1);"/>
-            <input type="submit" value="<@s.m " global.add"/><@s.m "shopChannel.type.2"/>"
+            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.2"/>"
             onclick="this.form.action='v_add.do';$('#type').val(2);"/>
-            <input type="submit" value="<@s.m " global.add"/><@s.m "shopChannel.type.3"/>"
+            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.3"/>"
             onclick="this.form.action='v_add.do';$('#type').val(3);"/>
         </form>
         <div class="clear"></div>
@@ -52,16 +52,13 @@
         <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
         <input type='checkbox' name='ids' value='${shopChannel.id}'/>
         <#t/>
-    </
-    @p.column>
+    </@p.column>
     <#t/>
     <@p.column title="ID">${shopChannel.id}
-</
-@p.column>
+</@p.column>
 <#t/>
 <@p.column code="shopChannel.name">${shopChannel.name} [<@s.m "shopChannel.type.${shopChannel.type}"/>]
-</
-@p.column>
+</@p.column>
 <#t/>
 <@p.column code="shopChannel.path">
 <#if shopChannel.type==3>${shopChannel.outerUrl}
@@ -100,14 +97,13 @@
 <@p.column code="global.operate" align="center">
 <a href="v_edit.do?id=${shopChannel.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> |
 <#rt/>
-<a href="o_delete.do?ids=${shopChannel.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "
-   global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
+<a href="o_delete.do?ids=${shopChannel.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
 <#t/>
 </@p.column>
 <#t/>
 </@p.table>
-<div><input type="button" value="<@s.m " global.delete"/>" onclick="optDelete();"/>
-    &nbsp; <input type="button" value="<@s.m " global.saveOrder"/>" onclick="optSaveOrder();"/>
+<div><input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/>
+    &nbsp; <input type="button" value="<@s.m "global.saveOrder"/>" onclick="optSaveOrder();"/>
 </div>
 </form>
 </div>

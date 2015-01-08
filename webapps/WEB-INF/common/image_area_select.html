@@ -39,8 +39,7 @@
             <input type="button" id="resetButton" value="<@s.m " global.reset"/>"
             onclick="resetOption($('#reMinWidth').val(),$('#reMinHeight').val());"/>
             <div style="text-align:center;margin-top:7px;"><input type="button" value="<@s.m " imagecut.confirmCut"/>"
-                onclick="$('#submitForm').submit();window.close();"/> <input type="button" value="<@s.m "
-                                                                             global.closeWindow"/>"
+                onclick="$('#submitForm').submit();window.close();"/> <input type="button" value="<@s.m "global.closeWindow"/>"
                 onclick="window.close();"/>
             </div>
         </form>
@@ -86,16 +85,14 @@
         return;
         </#if>
         if (imageW <${minWidth} || imageH <${minHeight}) {
-            alert("<@s.m "
-            imagecut.error.origSizeLessThenZoomSize
+            alert("<@s.m "imagecut.error.origSizeLessThenZoomSize
             "/>"
         )
             ;
             return;
         }
         if (imageW == minWidth && imageH == minHeight) {
-            alert("<@s.m "
-            imagecut.error.origSizeEqualsZoomSize
+            alert("<@s.m "imagecut.error.origSizeEqualsZoomSize
             "/>"
         )
             ;
@@ -114,16 +111,14 @@
         minWidth = parseInt(width);
         minHeight = parseInt(height);
         if (imageW < minWidth || imageH < minHeight) {
-            alert("<@s.m "
-            imagecut.error.origSizeLessThenZoomSize
+            alert("<@s.m "imagecut.error.origSizeLessThenZoomSize
             "/>"
         )
             ;
             return;
         }
         if (imageW == minWidth && imageH == minHeight) {
-            alert("<@s.m "
-            imagecut.error.origSizeEqualsZoomSize
+            alert("<@s.m "imagecut.error.origSizeEqualsZoomSize
             "/>"
         )
             ;

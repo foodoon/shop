@@ -82,7 +82,7 @@
             库存:
             <input type="text" name="startStock" value="${startStock!}" style="width:50px"/>
             &nbsp;至&nbsp;<input type="text" name="endStock" value="${endStock!}" style="width:50px"/>
-            <input type="submit" class="ropt" value="<@s.m " global.query"/>" />
+            <input type="submit" class="ropt" value="<@s.m "global.query"/>" />
         </form>
         <div class="clear"></div>
     </div>
@@ -94,15 +94,12 @@
         <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
         <input type='checkbox' name='ids' value='${product.id}'/>
         <#t/>
-    </
-    @p.column>
+    </@p.column>
     <#t/>
     <@p.column title="ID" width="20">${product.id!}
-</
-@p.column>
+</@p.column>
 <#t/>
-<@p.column code="product.name"><a href="${product.url}" target="_blank">${product.name}</a></
-@p.column>
+<@p.column code="product.name"><a href="${product.url}" target="_blank">${product.name}</a></@p.column>
 <#t/>
 <@p.column code="product.category">${product.category.name}
 </@p.column>
@@ -127,13 +124,12 @@
 <@p.column code="global.operate" align="center">
 <a href="v_edit.do?id=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}"><@s.m "global.edit"/></a> |
 <#rt/>
-<a href="o_delete.do?ids=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}" onclick="if(!confirm('<@s.m "
-   global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
+<a href="o_delete.do?ids=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
 <#t/>
 </@p.column>
 <#t/>
 </@p.table>
-<div><input type="button" value="<@s.m " global.delete"/>" onclick="optDelete();"/></div>
+<div><input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/></div>
 </form>
 </div>
 <#include "/common/alert_message.html"/>

@@ -102,11 +102,7 @@
                 <select name="paymentId">
                     <option value="">--支付方式--</option>
                     <#list paymentList as payment>
-                        <option value="${payment.id}"
-                        <#if paymentId??>
-                            <#if paymentId==payment.id>selected="selected"</#if>
-                        </#if>
-                        >${payment.name!}</option>
+                        <option value="${payment.id}" <#if paymentId??> <#if paymentId==payment.id>selected="selected"</#if> </#if> >${payment.name!}</option>
                     </#list>
                 </select>
                 <select name="shoppingId">
@@ -119,7 +115,7 @@
                         >${shopping.name!}</option>
                     </#list>
                 </select>
-                <input type="submit" value="<@s.m " global.query"/>" />
+                <input type="submit" value="<@s.m "global.query"/>" />
             </div>
         </form>
         <div class="clear"></div>
@@ -131,16 +127,13 @@
         <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
         <input type='checkbox' name='ids' value='${order.id}'/>
         <#t/>
-    </
-    @p.column>
+    </@p.column>
     <#t/>
     <@p.column code="订单编号">${order.code}
-</
-@p.column>
+</@p.column>
 <#t/>
 <@p.column code="会员名">${order.member.username!}
-</
-@p.column>
+</@p.column>
 <#t/>
 <@p.column code="收货人名称">${order.receiveName!}
 </@p.column>
@@ -166,8 +159,7 @@
 <#rt/>
 <a href="v_edit.do?id=${order.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> |
 <#rt/>
-<a href="o_delete.do?ids=${order.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "
-   global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
+<a href="o_delete.do?ids=${order.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
 <#t/>
 </@p.column>
 <#t/>

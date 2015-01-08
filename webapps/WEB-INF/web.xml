@@ -112,6 +112,7 @@
         <url-pattern>*.jspx</url-pattern>
     </servlet-mapping>
 
+
     <servlet-mapping>
         <servlet-name>Jcaptcha</servlet-name>
         <url-pattern>/checkcode.svl</url-pattern>
@@ -185,6 +186,7 @@
         <filter-name>websiteFilter</filter-name>
         <url-pattern>*.jhtml</url-pattern>
     </filter-mapping>
+
     <filter-mapping>
         <filter-name>processTime</filter-name>
         <url-pattern>*.htm</url-pattern>
