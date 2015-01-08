@@ -38,7 +38,7 @@ public abstract class WebDirective
     public static final String OUT_LIST = "tag_list";
     public static final String OUT_PAGINATION = "tag_pagination";
     public static final String PARAM_PARENT_ID = "parentId";
-       protected final Logger log = LoggerFactory.getLogger(getClass());
+    protected final Logger log = LoggerFactory.getLogger(getClass());
 
     public static Map getMap(String name, Map<String, TemplateModel> params)
             throws TemplateException {
@@ -157,9 +157,7 @@ public abstract class WebDirective
         if (integer.intValue() > 200) {
 
             integer = Integer.valueOf(1);
-        }
-
-        else if (integer.intValue() < 1) {
+        } else if (integer.intValue() < 1) {
 
             integer = Integer.valueOf(200);
         }
@@ -236,7 +234,7 @@ public abstract class WebDirective
             String s1 = ((TemplateScalarModel) templatemodel).getAsString();
 
             if (StringUtils.isBlank(s1))
- return null;
+                return null;
             try {
 
                 return Long.valueOf(Long.parseLong(s1));
@@ -269,7 +267,7 @@ public abstract class WebDirective
             String s1 = ((TemplateScalarModel) templatemodel).getAsString();
 
             if (StringUtils.isBlank(s1))
- return null;
+                return null;
             try {
 
                 return Integer.valueOf(Integer.parseInt(s1));
@@ -302,7 +300,7 @@ public abstract class WebDirective
             String s1 = ((TemplateScalarModel) templatemodel).getAsString();
 
             if (StringUtils.isBlank(s1))
- return null;
+                return null;
             try {
 
                 return Double.valueOf(Double.parseDouble(s1));

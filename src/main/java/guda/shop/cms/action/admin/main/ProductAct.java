@@ -38,7 +38,7 @@ import java.util.*;
 @Controller
 public class ProductAct
         implements ServletContextAware {
-       private static final Logger log = LoggerFactory.getLogger(ProductAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ProductAct.class);
 
     @Autowired
     private StandardMng standardMng;
@@ -96,9 +96,9 @@ public class ProductAct
         }
 
         Pagination pagination = this.manager.getPage(SiteUtils.getWebId(request),
-       ctgId, productName, brandName, isOnSale, isRecommend, isSpecial, isHotsale, isNewProduct, typeId,
-       startSalePrice, endSalePrice, startStock, endStock,
-       SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
+                ctgId, productName, brandName, isOnSale, isRecommend, isSpecial, isHotsale, isNewProduct, typeId,
+                startSalePrice, endSalePrice, startStock, endStock,
+                SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
         List typeList = this.productTypeMng.getList(web.getId());
 
@@ -139,7 +139,7 @@ public class ProductAct
     public String left(HttpServletRequest request, ModelMap model) {
 
         List list = this.categoryMng.getTopList(
-       SiteUtils.getWebId(request));
+                SiteUtils.getWebId(request));
 
 
         if (list.size() > 0) {
@@ -147,8 +147,9 @@ public class ProductAct
             Category treeRoot = new Category();
 
             treeRoot.setName(
-         MessageResolver.getMessage(request,
-         "product.allCategory", new Object[0]));
+                    MessageResolver.getMessage(request,
+                            "product.allCategory", new Object[0])
+            );
 
             treeRoot.setChild(new LinkedHashSet(list));
 
@@ -323,7 +324,7 @@ public class ProductAct
         bean.setAttr(RequestUtils.getRequestMap(request, "attr_"));
 
         bean = this.manager.save(bean, ext, web.getId(), categoryId, brandId, tagIds,
-       keywords, names, values, fashionSwitchPic, fashionBigPic, fashionAmpPic, file);
+                keywords, names, values, fashionSwitchPic, fashionBigPic, fashionAmpPic, file);
 
         if (picture != null) {
 
@@ -385,7 +386,7 @@ public class ProductAct
         }
 
         productKeywords = StringUtils.replace(productKeywords,
-       MessageResolver.getMessage(request, "product.keywords.split", new Object[0]), ",");
+                MessageResolver.getMessage(request, "product.keywords.split", new Object[0]), ",");
 
         String[] keywords = StringUtils.split(productKeywords, ",");
 
@@ -419,7 +420,7 @@ public class ProductAct
         }
 
         bean = this.manager.update(bean, ext, categoryId, brandId, tagIds, keywords, names, values, attr,
-       fashionSwitchPic, fashionBigPic, fashionAmpPic, file);
+                fashionSwitchPic, fashionBigPic, fashionAmpPic, file);
 
         List pcList = this.productStandardMng.findByProductId(bean.getId());
 
@@ -476,7 +477,7 @@ public class ProductAct
                 for (ProductFashion ps : pfList) {
 
                     if (!Arrays.asList(fashId).contains(ps.getId()))
- this.fashMng.deleteById(ps.getId());
+                        this.fashMng.deleteById(ps.getId());
                 }
             } else {
 
@@ -493,7 +494,7 @@ public class ProductAct
         log.info("update Product. id={}.", bean.getId());
 
         return list(ctgId, null, null, null, null, null,
-       null, null, null, null, null, pageNo, request, model);
+                null, null, null, null, null, pageNo, request, model);
     }
 
     @RequestMapping({"/product/o_delete.do"})
@@ -621,85 +622,7 @@ public class ProductAct
     private void saveProductFash(Product bean, String[] nature, Boolean[] isDefaults, Integer[] stockCounts, Double[] salePrices, Double[] marketPrices, Double[] costPrices) {
 
         if (nature != null)
- for (int i = 0; i < nature.length; i++) {
-
-            ProductFashion pfash = new ProductFashion();
-
-            pfash.setCreateTime(new Date());
-
-            pfash.setIsDefault(isDefaults[i]);
-
-            pfash.setStockCount(stockCounts[i]);
-
-            pfash.setMarketPrice(marketPrices[i]);
-
-            pfash.setSalePrice(salePrices[i]);
-
-            pfash.setCostPrice(costPrices[i]);
-
-            pfash.setProductId(bean);
-
-            pfash.setNature(nature[i]);
-
-            String[] arr = nature[i].split("_");
-
-            ProductFashion fashion = this.productFashionMng.save(pfash, arr);
-
-            this.productFashionMng.addStandard(fashion, arr);
-
-            if (isDefaults[i].booleanValue()) {
-
-                bean.setCostPrice(costPrices[i]);
-
-                bean.setMarketPrice(marketPrices[i]);
-
-                bean.setSalePrice(salePrices[i]);
-
-                this.manager.update(bean);
-            }
-        }
-    }
-
-    private void updateProductFash(Product bean, Long[] fashId, String[] nature, Boolean[] isDefaults, Integer[] stockCounts, Double[] salePrices, Double[] marketPrices, Double[] costPrices) {
-
-        if (nature != null)
- for (int i = 0; i < nature.length; i++) {
-
-            if ((fashId != null) && (i < fashId.length)) {
-
-                ProductFashion pfash = this.productFashionMng.findById(fashId[i]);
-
-                pfash.setCreateTime(new Date());
-
-                pfash.setIsDefault(isDefaults[i]);
-
-                pfash.setStockCount(stockCounts[i]);
-
-                pfash.setMarketPrice(marketPrices[i]);
-
-                pfash.setSalePrice(salePrices[i]);
-
-                pfash.setCostPrice(costPrices[i]);
-
-                pfash.setProductId(bean);
-
-                pfash.setNature(nature[i]);
-
-                String[] arr = nature[i].split("_");
-
-                this.productFashionMng.updateStandard(pfash, arr);
-
-                if (isDefaults[i].booleanValue()) {
-
-                    bean.setCostPrice(costPrices[i]);
-
-                    bean.setMarketPrice(marketPrices[i]);
-
-                    bean.setSalePrice(salePrices[i]);
-
-                    this.manager.update(bean);
-                }
-            } else {
+            for (int i = 0; i < nature.length; i++) {
 
                 ProductFashion pfash = new ProductFashion();
 
@@ -736,7 +659,85 @@ public class ProductAct
                     this.manager.update(bean);
                 }
             }
-        }
+    }
+
+    private void updateProductFash(Product bean, Long[] fashId, String[] nature, Boolean[] isDefaults, Integer[] stockCounts, Double[] salePrices, Double[] marketPrices, Double[] costPrices) {
+
+        if (nature != null)
+            for (int i = 0; i < nature.length; i++) {
+
+                if ((fashId != null) && (i < fashId.length)) {
+
+                    ProductFashion pfash = this.productFashionMng.findById(fashId[i]);
+
+                    pfash.setCreateTime(new Date());
+
+                    pfash.setIsDefault(isDefaults[i]);
+
+                    pfash.setStockCount(stockCounts[i]);
+
+                    pfash.setMarketPrice(marketPrices[i]);
+
+                    pfash.setSalePrice(salePrices[i]);
+
+                    pfash.setCostPrice(costPrices[i]);
+
+                    pfash.setProductId(bean);
+
+                    pfash.setNature(nature[i]);
+
+                    String[] arr = nature[i].split("_");
+
+                    this.productFashionMng.updateStandard(pfash, arr);
+
+                    if (isDefaults[i].booleanValue()) {
+
+                        bean.setCostPrice(costPrices[i]);
+
+                        bean.setMarketPrice(marketPrices[i]);
+
+                        bean.setSalePrice(salePrices[i]);
+
+                        this.manager.update(bean);
+                    }
+                } else {
+
+                    ProductFashion pfash = new ProductFashion();
+
+                    pfash.setCreateTime(new Date());
+
+                    pfash.setIsDefault(isDefaults[i]);
+
+                    pfash.setStockCount(stockCounts[i]);
+
+                    pfash.setMarketPrice(marketPrices[i]);
+
+                    pfash.setSalePrice(salePrices[i]);
+
+                    pfash.setCostPrice(costPrices[i]);
+
+                    pfash.setProductId(bean);
+
+                    pfash.setNature(nature[i]);
+
+                    String[] arr = nature[i].split("_");
+
+                    ProductFashion fashion = this.productFashionMng.save(pfash, arr);
+
+                    this.productFashionMng.addStandard(fashion, arr);
+
+                    if (isDefaults[i].booleanValue()) {
+
+                        bean.setCostPrice(costPrices[i]);
+
+                        bean.setMarketPrice(marketPrices[i]);
+
+                        bean.setSalePrice(salePrices[i]);
+
+                        this.manager.update(bean);
+                    }
+                }
+            }
     }
 
     private WebErrors validateSave(Product bean, MultipartFile file, HttpServletRequest request) {
@@ -825,7 +826,7 @@ public class ProductAct
         String ext = FilenameUtils.getExtension(filename);
 
         if (!ImageUtils.isImage(ext))
- errors.addErrorString("not support image extension:" + filename);
+            errors.addErrorString("not support image extension:" + filename);
     }
 
     public void setServletContext(ServletContext servletContext) {

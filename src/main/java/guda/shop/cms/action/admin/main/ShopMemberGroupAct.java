@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 public class ShopMemberGroupAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopMemberGroupAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopMemberGroupAct.class);
 
     @Autowired
     private ShopMemberGroupMng manager;
@@ -25,7 +25,7 @@ public class ShopMemberGroupAct {
     @RequestMapping({"/group/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(
-       SiteUtils.getWebId(request));
+                SiteUtils.getWebId(request));
 
         model.addAttribute("list", list);
 

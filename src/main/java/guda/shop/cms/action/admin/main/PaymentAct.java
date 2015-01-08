@@ -21,7 +21,7 @@ import java.util.Map;
 
 @Controller
 public class PaymentAct {
-       private static final Logger log = LoggerFactory.getLogger(PaymentAct.class);
+    private static final Logger log = LoggerFactory.getLogger(PaymentAct.class);
 
     @Autowired
     private PaymentMng manager;
@@ -259,7 +259,7 @@ public class PaymentAct {
             if (name.startsWith(param)) {
 
                 map.put(name.substring(param.length()),
-           request.getParameter(name));
+                        request.getParameter(name));
             }
         }
 

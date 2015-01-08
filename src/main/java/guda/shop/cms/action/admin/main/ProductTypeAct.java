@@ -17,7 +17,7 @@ import java.util.List;
 
 @Controller
 public class ProductTypeAct {
-       private static final Logger log = LoggerFactory.getLogger(ProductTypeAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ProductTypeAct.class);
 
     @Autowired
     private BrandMng brandMng;

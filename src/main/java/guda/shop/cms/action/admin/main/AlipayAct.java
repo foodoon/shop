@@ -49,9 +49,7 @@ public class AlipayAct extends Alipay {
 
                 shipments(bean, order, id, response);
             }
-        }
-
-        else if ((order.getShippingStatus().intValue() == 1) && (order.getStatus().intValue() == 2)) {
+        } else if ((order.getShippingStatus().intValue() == 1) && (order.getStatus().intValue() == 2)) {
 
             shipments(bean, order, id, response);
         }

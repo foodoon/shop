@@ -23,7 +23,7 @@ import java.util.List;
 @Controller
 public class ShopChannelAct
         implements ServletContextAware {
-       private static final Logger log = LoggerFactory.getLogger(ShopChannelAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopChannelAct.class);
 
     @Autowired
     private ShopChannelMng manager;
@@ -45,7 +45,7 @@ public class ShopChannelAct
         boolean isRoot;
 
         if ((StringUtils.isBlank(root)) || ("source".equals(root)))
- isRoot = true;
+            isRoot = true;
         else {
 
             isRoot = false;
@@ -91,7 +91,7 @@ public class ShopChannelAct
         List list;
 
         if (root == null)
- list = this.manager.getTopList(web.getId());
+            list = this.manager.getTopList(web.getId());
         else {
 
             list = this.manager.getChildList(web.getId(), root);
@@ -188,7 +188,7 @@ public class ShopChannelAct
 
 
         List parentList = this.manager.getListForParent(web.getId(),
-       shopChannel.getId());
+                shopChannel.getId());
 
         model.addAttribute("parentList", parentList);
 
@@ -324,7 +324,7 @@ public class ShopChannelAct
         bean.setWebsite(web);
 
         if ((parentId != null) &&
-       (vldExist(parentId, web.getId(), errors))) {
+                (vldExist(parentId, web.getId(), errors))) {
 
             return errors;
         }

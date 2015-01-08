@@ -30,7 +30,7 @@ import java.util.List;
 
 @Controller
 public class ShopMenberAddressAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopMenberAddressAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopMenberAddressAct.class);
     private static final String MEMBER_ADDRESS = "tpl.memberAddress";
     private static final String MEMBER_ADDRESS_EDIT = "tpl.memberAddressEdit";
 

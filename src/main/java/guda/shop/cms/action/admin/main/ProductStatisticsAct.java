@@ -34,7 +34,7 @@ public class ProductStatisticsAct {
         }
 
         Pagination pagination = this.productMng.getPageByStockWarning(web.getId(), count, status, SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 
@@ -55,7 +55,7 @@ public class ProductStatisticsAct {
         this.productMng.updateByUpdater(product);
 
         if (status.booleanValue())
- status = Boolean.valueOf(false);
+            status = Boolean.valueOf(false);
         else {
 
             status = Boolean.valueOf(true);

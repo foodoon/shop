@@ -21,7 +21,7 @@ public class ImageCutAct
     public static final String IMAGE_SELECT_RESULT = "/common/image_area_select";
     public static final String IMAGE_CUTED = "/common/image_cuted";
     public static final String ERROR = "error";
-       private static final Logger log = LoggerFactory.getLogger(ImageCutAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ImageCutAct.class);
     @Autowired
     private ImageScale imageScale;
     private ServletContext servletContext;
@@ -53,11 +53,12 @@ public class ImageCutAct
         try {
 
             if (imgWidth.intValue() > 0)
- this.imageScale.resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue(),
-           getLen(imgTop.intValue(), imgScale.floatValue()),
-           getLen(imgLeft.intValue(),
-           imgScale.floatValue()), getLen(imgWidth.intValue(), imgScale.floatValue()),
-           getLen(imgHeight.intValue(), imgScale.floatValue()));
+                this.imageScale.resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue(),
+                        getLen(imgTop.intValue(), imgScale.floatValue()),
+                        getLen(imgLeft.intValue(),
+                                imgScale.floatValue()), getLen(imgWidth.intValue(), imgScale.floatValue()),
+                        getLen(imgHeight.intValue(), imgScale.floatValue())
+                );
             else {
 
                 this.imageScale.resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue());

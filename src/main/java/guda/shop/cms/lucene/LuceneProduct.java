@@ -46,12 +46,12 @@ public class LuceneProduct
     public static final String KEYWORD_ARRAY = "keywordArray";
     public static final String TAG_ARRAY = "tagArray";
     public static final String CREATE_TIME = "createTime";
-       public static final String[] QUERY_FIELD = {"name", "categoryNameArray",
-     "brandName", "description"};
-       public static final BooleanClause.Occur[] QUERY_FLAGS = {
-     BooleanClause.Occur.SHOULD, BooleanClause.Occur.SHOULD,
-     BooleanClause.Occur.SHOULD, BooleanClause.Occur.SHOULD};
-       private static final Logger log = LoggerFactory.getLogger(LuceneProduct.class);
+    public static final String[] QUERY_FIELD = {"name", "categoryNameArray",
+            "brandName", "description"};
+    public static final BooleanClause.Occur[] QUERY_FLAGS = {
+            BooleanClause.Occur.SHOULD, BooleanClause.Occur.SHOULD,
+            BooleanClause.Occur.SHOULD, BooleanClause.Occur.SHOULD};
+    private static final Logger log = LoggerFactory.getLogger(LuceneProduct.class);
     private Long id;
     private Long websiteId;
     private Collection<Long> categoryIdArray;
@@ -79,7 +79,7 @@ public class LuceneProduct
         if (!StringUtils.isBlank(queryString)) {
 
             Query q = MultiFieldQueryParser.parse(Version.LUCENE_30, queryString,
-         QUERY_FIELD, QUERY_FLAGS, analyzer);
+                    QUERY_FIELD, QUERY_FLAGS, analyzer);
 
             bq.add(q, BooleanClause.Occur.MUST);
         }
@@ -154,37 +154,37 @@ public class LuceneProduct
         Document doc = new Document();
 
         doc.add(new Field("id", p.getId().toString(), Store.YES,
-       Index.NO));
+                Index.NO));
 
         doc.add(new Field("websiteId", p.getWebsite().getId().toString(),
-       Store.YES, Index.NOT_ANALYZED));
+                Store.YES, Index.NOT_ANALYZED));
 
         for (Long id : p.getCategoryIdArray()) {
 
             doc.add(new Field("categoryIdArray", id.toString(),
-         Store.YES, Index.NOT_ANALYZED));
+                    Store.YES, Index.NOT_ANALYZED));
         }
 
 
         doc.add(new Field("name", p.getName(), Store.YES,
-       Index.ANALYZED));
+                Index.ANALYZED));
 
         for (String name : p.getCategoryNameArray()) {
 
             doc.add(new Field("categoryNameArray", name, Store.YES,
-         Index.ANALYZED));
+                    Index.ANALYZED));
         }
 
         if (!StringUtils.isBlank(p.getMdescription())) {
 
             doc.add(new Field("description", p.getMdescription(), Store.YES,
-         Index.ANALYZED));
+                    Index.ANALYZED));
         }
 
         if (!StringUtils.isBlank(p.getBrandName())) {
 
             doc.add(new Field("brandName", p.getBrandName(), Store.YES,
-         Index.ANALYZED));
+                    Index.ANALYZED));
         }
 
 
@@ -194,39 +194,40 @@ public class LuceneProduct
         if (!StringUtils.isBlank(p.getDetailImgUrl())) {
 
             doc.add(new Field("detailImgUrl", p.getDetailImgUrl(),
-         Store.YES, Index.NO));
+                    Store.YES, Index.NO));
         }
 
         if (!StringUtils.isBlank(p.getListImgUrl())) {
 
             doc.add(new Field("listImgUrl", p.getListImgUrl(), Store.YES,
-         Index.NO));
+                    Index.NO));
         }
 
         if (!StringUtils.isBlank(p.getCoverImgUrl())) {
 
             doc.add(new Field("coverImgUrl", p.getCoverImgUrl(), Store.YES,
-         Index.NO));
+                    Index.NO));
         }
 
         if (!StringUtils.isBlank(p.getMinImgUrl())) {
 
             doc.add(new Field("minImgUrl", p.getMinImgUrl(), Store.YES,
-         Index.NO));
+                    Index.NO));
         }
 
 
         doc.add(new Field("marketPrice", MoneyTools.moneyToString(
-       p.getMarketPrice()), Store.YES, Index.NOT_ANALYZED));
+                p.getMarketPrice()), Store.YES, Index.NOT_ANALYZED));
 
         doc.add(new Field("salePrice",
-       MoneyTools.moneyToString(p.getPrice()), Store.YES,
-       Index.NOT_ANALYZED));
+                MoneyTools.moneyToString(p.getPrice()), Store.YES,
+                Index.NOT_ANALYZED));
 
 
         doc.add(new Field("createTime", DateTools.dateToString(
-       p.getCreateTime(), Resolution.MILLISECOND),
-       Store.YES, Index.NOT_ANALYZED));
+                p.getCreateTime(), Resolution.MILLISECOND),
+                Store.YES, Index.NOT_ANALYZED
+        ));
 
 
         Collection<String> keywords = p.getKeywordArray();
@@ -234,7 +235,7 @@ public class LuceneProduct
         for (String keyword : keywords) {
 
             doc.add(new Field("keywordArray", keyword, Store.YES,
-         Index.ANALYZED));
+                    Index.ANALYZED));
         }
 
         Collection<String> tags = p.getTagArray();
@@ -242,7 +243,7 @@ public class LuceneProduct
         for (String tag : tags) {
 
             doc.add(new Field("tagArray", tag, Store.YES,
-         Index.ANALYZED));
+                    Index.ANALYZED));
         }
 
         return doc;
@@ -260,19 +261,19 @@ public class LuceneProduct
             String name = f.name();
 
             if (name.equals("keywordArray"))
- p.addToKeyworeds(f.stringValue());
+                p.addToKeyworeds(f.stringValue());
 
             else if (name.equals("tagArray"))
- p.addToTags(f.stringValue());
+                p.addToTags(f.stringValue());
 
             else if (name.equals("id"))
- p.setId(Long.valueOf(f.stringValue()));
+                p.setId(Long.valueOf(f.stringValue()));
 
             else if (name.equals("websiteId"))
- p.setWebsiteId(Long.valueOf(f.stringValue()));
+                p.setWebsiteId(Long.valueOf(f.stringValue()));
 
             else if (name.equals("categoryIdArray"))
- p.addToCategoryIds(Long.valueOf(f.stringValue()));
+                p.addToCategoryIds(Long.valueOf(f.stringValue()));
 
             else if (name.equals("createTime"))
                 try {
@@ -284,34 +285,34 @@ public class LuceneProduct
                 }
 
             else if (name.equals("name"))
- p.setName(f.stringValue());
+                p.setName(f.stringValue());
 
             else if (name.equals("categoryNameArray"))
- p.addToCategoryNames(f.stringValue());
+                p.addToCategoryNames(f.stringValue());
 
             else if (name.equals("brandName"))
- p.setBrandName(f.stringValue());
+                p.setBrandName(f.stringValue());
 
             else if (name.equals("description"))
- p.setDescription(f.stringValue());
+                p.setDescription(f.stringValue());
 
             else if (name.equals("url"))
- p.setUrl(f.stringValue());
+                p.setUrl(f.stringValue());
 
             else if (name.equals("detailImgUrl"))
- p.setDetailImgUrl(f.stringValue());
+                p.setDetailImgUrl(f.stringValue());
 
             else if (name.equals("listImgUrl"))
- p.setListImgUrl(f.stringValue());
+                p.setListImgUrl(f.stringValue());
 
             else if (name.equals("coverImgUrl"))
- p.setCoverImgUrl(f.stringValue());
+                p.setCoverImgUrl(f.stringValue());
 
             else if (name.equals("minImgUrl"))
- p.setMinImgUrl(f.stringValue());
+                p.setMinImgUrl(f.stringValue());
 
             else if (name.equals("marketPrice"))
- p.setMarketPrice(MoneyTools.stringToMoney(f.stringValue()));
+                p.setMarketPrice(MoneyTools.stringToMoney(f.stringValue()));
 
             else if (name.equals("salePrice")) {
 

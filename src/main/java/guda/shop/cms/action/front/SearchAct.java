@@ -90,7 +90,7 @@ public class SearchAct
         model.addAttribute("q", q);
 
         if (StringUtils.isBlank(ctgId))
- model.addAttribute("ctgId", null);
+            model.addAttribute("ctgId", null);
         else {
 
             model.addAttribute("ctgId", Integer.valueOf(ctgId));
@@ -107,9 +107,9 @@ public class SearchAct
         try {
 
             if ((agent != null) && (-1 != agent.indexOf("MSIE")))
- fileName = URLEncoder.encode(fileName, "UTF8");
+                fileName = URLEncoder.encode(fileName, "UTF8");
             else
-         fileName = new String(fileName.getBytes("utf-8"), "iso-8859-1");
+                fileName = new String(fileName.getBytes("utf-8"), "iso-8859-1");
         } catch (UnsupportedEncodingException e) {
 
             e.printStackTrace();

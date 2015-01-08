@@ -31,15 +31,15 @@ public class KeyWordDirective extends ProductAbstractDirective {
         List beanList = this.keywordMng.findKeyWord(count);
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(beanList));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ProductList", web, params, env);
+            includeTpl("shop", "ProductList", web, params, env);
         else {
 
             renderBody(env, loopVars, body);

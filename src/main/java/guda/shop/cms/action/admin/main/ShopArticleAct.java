@@ -25,7 +25,7 @@ import java.util.List;
 
 @Controller
 public class ShopArticleAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopArticleAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopArticleAct.class);
 
     @Autowired
     private ShopChannelMng channelMng;
@@ -49,7 +49,7 @@ public class ShopArticleAct {
         boolean isRoot;
 
         if ((StringUtils.isBlank(root)) || ("source".equals(root)))
- isRoot = true;
+            isRoot = true;
         else {
 
             isRoot = false;
@@ -94,7 +94,7 @@ public class ShopArticleAct {
         Website web = SiteUtils.getWeb(request);
 
         Pagination pagination = this.manager.getPage(cid, web.getId(), SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 
@@ -116,7 +116,7 @@ public class ShopArticleAct {
         Website web = SiteUtils.getWeb(request);
 
         List channelList = this.channelMng.getArticleList(
-       web.getId());
+                web.getId());
 
         model.addAttribute("channelList", channelList);
 
@@ -141,7 +141,7 @@ public class ShopArticleAct {
         }
 
         List articleChannelList = this.channelMng.getArticleList(
-       web.getId());
+                web.getId());
 
         model.addAttribute("articleChannelList", articleChannelList);
 

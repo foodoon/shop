@@ -19,7 +19,7 @@ public class AuthorizeDirective extends WebDirective {
 
     private static String _$1(String paramString1, String paramString2) {
         int i = 0;
-        int j=0;
+        int j = 0;
         for (j = paramString1.lastIndexOf("/"); paramString2.startsWith("../", i); j = paramString1.lastIndexOf("/", j - 1))
             i += 3;
         return paramString1.substring(0, j + 1) + paramString2.substring(i);

@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -18,34 +16,19 @@ import java.io.IOException;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
- public class ShoppingCartDirective extends WebDirective
- {
-       private WebsiteMng websiteMng;
-
+public class ShoppingCartDirective extends WebDirective {
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = getWeb(env, params, this.websiteMng);
 
         RequestContext ctx = getContext(env);
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, params);
+                DirectiveUtils.addParamsToVariable(env, params);
 
         includeTpl(web, ctx, env);
 
@@ -54,22 +37,18 @@ import java.util.Map;
     }
 
 
-
-    private void includeTpl(Website web, RequestContext ctx, Environment env) throws IOException, TemplateException
- {
+    private void includeTpl(Website web, RequestContext ctx, Environment env) throws IOException, TemplateException {
 
         String tpl = web
-.getTplSys("shop", ctx.getMessage("tpl.shoppingCart"));
+                .getTplSys("shop", ctx.getMessage("tpl.shoppingCart"));
 
         env.include(tpl, "UTF-8", true);
 
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng)
- {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class GiftAct {
-       private static final Logger log = LoggerFactory.getLogger(GiftAct.class);
+    private static final Logger log = LoggerFactory.getLogger(GiftAct.class);
 
     @Autowired
     private GiftMng manager;
@@ -27,7 +27,7 @@ public class GiftAct {
     @RequestMapping({"/gift/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPageGift(SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

@@ -28,7 +28,7 @@ import java.util.Set;
 
 @Controller
 public class ShopAdminAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopAdminAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopAdminAct.class);
     @Autowired
     protected RoleMng roleMng;
     @Autowired
@@ -143,7 +143,7 @@ public class ShopAdminAct {
     public String checkUsername(String username, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(username)) || (this.userMng.usernameExist(username)))
- ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJson(response, "false");
         else {
 
             ResponseUtils.renderJson(response, "true");
@@ -156,7 +156,7 @@ public class ShopAdminAct {
     public String checkEmail(String email, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(email)) || (this.userMng.emailExist(email)))
- ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJson(response, "false");
         else {
 
             ResponseUtils.renderJson(response, "true");

@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -23,35 +21,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class CollectPageDirective extends WebDirective
- {
-       public static final String TPL_NAME = "ArticlePage";
-       public static final String PARAM_CATEGORY_ID = "channelId";
-       private CollectMng collectMng;
-       private WebsiteMng websiteMng;
-
+public class CollectPageDirective extends WebDirective {
+    public static final String TPL_NAME = "ArticlePage";
+    public static final String PARAM_CATEGORY_ID = "channelId";
+    private CollectMng collectMng;
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         ShopMember member = MemberThread.get();
 
@@ -62,18 +40,18 @@ import java.util.Map;
         Pagination pagination = this.collectMng.getList(count, Integer.valueOf(getPageNo(env)), member.getId());
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_pagination",
-       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+                ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ArticlePage", web, params, env);
+            includeTpl("shop", "ArticlePage", web, params, env);
 
         else {
 
@@ -86,28 +64,23 @@ import java.util.Map;
     }
 
 
-
-    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
- {
+    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
 
         body.render(env.getOut());
 
     }
 
 
-
     @Autowired
- public void setCollectMng(CollectMng collectMng)
- {
+    public void setCollectMng(CollectMng collectMng) {
 
         this.collectMng = collectMng;
 
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng) {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

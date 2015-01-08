@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ShopDictionaryTypeAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopDictionaryTypeAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopDictionaryTypeAct.class);
 
     @Autowired
     private ShopDictionaryTypeMng manager;
@@ -28,7 +28,7 @@ public class ShopDictionaryTypeAct {
     @RequestMapping({"/shopDictionaryType/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

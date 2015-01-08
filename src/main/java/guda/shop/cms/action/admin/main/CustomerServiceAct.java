@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class CustomerServiceAct {
-       private static final Logger log = LoggerFactory.getLogger(CustomerServiceAct.class);
+    private static final Logger log = LoggerFactory.getLogger(CustomerServiceAct.class);
 
     @Autowired
     private CustomerServiceMng manager;
@@ -28,7 +28,7 @@ public class CustomerServiceAct {
     @RequestMapping({"/customerService/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPagination(null, SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

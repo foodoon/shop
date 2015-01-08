@@ -78,7 +78,7 @@
     <bean id="websiteMng" class="guda.shop.core.manager.impl.WebsiteMngImpl"/>
     <bean id="globalMng" class="guda.shop.core.manager.impl.GlobalMngImpl"/>
     <bean id="adminMng" class="guda.shop.core.manager.impl.AdminMngImpl"/>
-    <bean id="roleMng" class="guda.shop.core.manager.impl.RoleMngImpl" />
-	<bean id="resourceMng" class="guda.shop.cms.manager.impl.ResourceMngImpl"/>
-	<bean id="logMng" class="guda.shop.core.manager.impl.LogMngImpl"/>
+    <bean id="roleMng" class="guda.shop.core.manager.impl.RoleMngImpl"/>
+    <bean id="resourceMng" class="guda.shop.cms.manager.impl.ResourceMngImpl"/>
+    <bean id="logMng" class="guda.shop.core.manager.impl.LogMngImpl"/>
 </beans>

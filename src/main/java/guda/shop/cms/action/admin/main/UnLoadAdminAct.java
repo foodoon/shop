@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Controller
 public class UnLoadAdminAct {
-       private static final Logger log = LoggerFactory.getLogger(UnLoadAdminAct.class);
+    private static final Logger log = LoggerFactory.getLogger(UnLoadAdminAct.class);
 
     @RequestMapping(value = {"/commonAdmin/v_list.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String unLoad(HttpServletRequest request, HttpServletResponse response, ModelMap model) {

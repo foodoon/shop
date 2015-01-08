@@ -18,30 +18,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SiftBrandDirective extends WebDirective {
-       public static final String TPL_NAME = "BrandList";
-       private BrandMng brandMng;
-       private WebsiteMng websiteMng;
-
+    public static final String TPL_NAME = "BrandList";
+    private BrandMng brandMng;
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = getWeb(env, params, this.websiteMng);
 
         Brand brand = this.brandMng.getsiftBrand();
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_bean", ObjectWrapper.DEFAULT_WRAPPER.wrap(brand));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "BrandList", web, params, env);
+            includeTpl("shop", "BrandList", web, params, env);
 
         else {
 
@@ -54,28 +52,23 @@ public class SiftBrandDirective extends WebDirective {
     }
 
 
-
-    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
- {
+    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
 
         body.render(env.getOut());
 
     }
 
 
-
     @Autowired
- public void setBrandMng(BrandMng brandMng)
- {
+    public void setBrandMng(BrandMng brandMng) {
 
         this.brandMng = brandMng;
 
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng) {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

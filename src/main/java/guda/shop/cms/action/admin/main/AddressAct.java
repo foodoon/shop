@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class AddressAct {
-       private static final Logger log = LoggerFactory.getLogger(AddressAct.class);
+    private static final Logger log = LoggerFactory.getLogger(AddressAct.class);
 
     @Autowired
     private AddressMng manager;
@@ -28,7 +28,7 @@ public class AddressAct {
     @RequestMapping({"/address/v_list.do"})
     public String list(Long parentId, Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPageByParentId(parentId, SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

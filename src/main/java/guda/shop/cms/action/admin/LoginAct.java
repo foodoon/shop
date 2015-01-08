@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class LoginAct {
-       private static final Logger log = LoggerFactory.getLogger(LoginAct.class);
+    private static final Logger log = LoggerFactory.getLogger(LoginAct.class);
 
     @Autowired
     private LoginSvc loginSvc;

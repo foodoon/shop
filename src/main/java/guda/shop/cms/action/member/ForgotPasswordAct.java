@@ -26,7 +26,7 @@ import java.util.Locale;
 
 @Controller
 public class ForgotPasswordAct {
-       private static final Logger log = LoggerFactory.getLogger(ForgotPasswordAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ForgotPasswordAct.class);
     private static final String FORGOTTEN_INPUT = "tpl.forgottenInput";
     private static final String FORGOTTEN_RESULT = "tpl.forgottenResult";
     private static final String RESET_PASSWORD_TPL = "tpl.resetPassword";
@@ -48,8 +48,9 @@ public class ForgotPasswordAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.forgottenInput", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.forgottenInput", new Object[0])
+        );
     }
 
     @RequestMapping(value = {"/forgot_password.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
@@ -58,7 +59,7 @@ public class ForgotPasswordAct {
         Website web = SiteUtils.getWeb(request);
 
         WebErrors errors = validateFogotten(checkcode, username, email,
-       request, response);
+                request, response);
 
         if (errors.hasErrors()) {
 
@@ -69,7 +70,7 @@ public class ForgotPasswordAct {
         User user = this.userMng.getByUsername(username);
 
         MessageTemplate tpl = (MessageTemplate) web.getMessages().get(
-       "resetPassword");
+                "resetPassword");
 
         EmailSender sender = web.getEmailSender();
 
@@ -124,8 +125,9 @@ public class ForgotPasswordAct {
         log.info("find passsword, username={} email={}", username, email);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.forgottenResult", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.forgottenResult", new Object[0])
+        );
     }
 
     @RequestMapping({"/reset_password.jspx"})
@@ -138,7 +140,7 @@ public class ForgotPasswordAct {
         if (errors.hasErrors()) {
 
             return FrontHelper.showMessage((String) errors.getErrors().get(0), web,
-         model, request);
+                    model, request);
         }
 
         User user = this.userMng.findById(uid);
@@ -161,8 +163,9 @@ public class ForgotPasswordAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.resetPassword", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.resetPassword", new Object[0])
+        );
     }
 
     private WebErrors validateFogotten(String checkcode, String username, String email, HttpServletRequest request, HttpServletResponse response) {
@@ -172,11 +175,11 @@ public class ForgotPasswordAct {
         String id = this.session.getSessionId(request, response);
 
         if (errors.ifOutOfLength(checkcode, "checkcode", 3, 10))
- return errors;
+            return errors;
         try {
 
             if (!this.captchaService.validateResponseForID(id,
-         checkcode.toUpperCase(Locale.ENGLISH)).booleanValue()) {
+                    checkcode.toUpperCase(Locale.ENGLISH)).booleanValue()) {
 
                 errors.addErrorCode("error.checkcodeIncorrect");
 

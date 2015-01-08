@@ -21,7 +21,7 @@ import java.util.List;
 
 @Controller
 public class BrandAct {
-       private static final Logger log = LoggerFactory.getLogger(BrandAct.class);
+    private static final Logger log = LoggerFactory.getLogger(BrandAct.class);
 
     @Autowired
     private BrandMng manager;
@@ -147,7 +147,7 @@ public class BrandAct {
         String pass;
 
         if (StringUtils.isBlank(name))
- pass = "false";
+            pass = "false";
         else {
 
             pass = this.manager.brandNameNotExist(name) ? "true" : "false";

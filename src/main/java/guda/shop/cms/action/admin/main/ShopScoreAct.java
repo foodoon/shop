@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ShopScoreAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopScoreAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopScoreAct.class);
 
     @Autowired
     private ShopScoreMng manager;
@@ -28,7 +28,7 @@ public class ShopScoreAct {
     @RequestMapping({"/shopScore/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(null, Boolean.valueOf(false), Boolean.valueOf(false), null, null, Integer.valueOf(SimplePage.cpn(pageNo)),
-       Integer.valueOf(CookieUtils.getPageSize(request)));
+                Integer.valueOf(CookieUtils.getPageSize(request)));
 
         model.addAttribute("pagination", pagination);
 

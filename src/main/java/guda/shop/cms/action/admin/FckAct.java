@@ -25,7 +25,7 @@ import java.util.Map.Entry;
 @Controller
 public class FckAct {
     public static final String UPLOAD_PATH = "/u/jspgou/";
-       private static final Logger log = LoggerFactory.getLogger(FckAct.class);
+    private static final Logger log = LoggerFactory.getLogger(FckAct.class);
     private FileRepository fileRepository;
 
     @RequestMapping(value = {"/fck/upload.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
@@ -60,7 +60,7 @@ public class FckAct {
         log.debug("Parameter CurrentFolder: {}", currentFolderStr);
 
         UploadResponse ur = validateUpload(request, commandStr, typeStr,
-       currentFolderStr);
+                currentFolderStr);
 
         if (ur == null) {
 
@@ -87,7 +87,7 @@ public class FckAct {
             MultipartFile uplFile = (MultipartFile) ((Entry) multipartRequest.getFileMap().entrySet().iterator().next()).getValue();
 
             String filename = FilenameUtils.getName(uplFile
-.getOriginalFilename());
+                    .getOriginalFilename());
 
             log.debug("Parameter NewFile: {}", filename);
 

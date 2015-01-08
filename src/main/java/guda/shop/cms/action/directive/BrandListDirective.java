@@ -28,18 +28,18 @@ public class BrandListDirective extends WebDirective {
         Website web = getWeb(env, params, this.websiteMng);
 
         List list = this.brandMng.getListForTag(web.getId(), 0,
-       getCount(params));
+                getCount(params));
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "BrandList", web, params, env);
+            includeTpl("shop", "BrandList", web, params, env);
         else {
 
             renderBody(env, loopVars, body);

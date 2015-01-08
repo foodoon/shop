@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -20,88 +18,46 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class CategoryListDirective extends WebDirective
- {
-       public static final String TPL_NAME = "category_list";
-       private CategoryMng categoryMng;
-       private WebsiteMng websiteMng;
-
+public class CategoryListDirective extends WebDirective {
+    public static final String TPL_NAME = "category_list";
+    private CategoryMng categoryMng;
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
-
+            throws TemplateException, IOException {
         Long webId = getWebId(params);
-
         Website web;
-
         if (webId == null)
- web = getWeb(env, params, this.websiteMng);
-
+            web = getWeb(env, params, this.websiteMng);
         else {
-
             web = this.websiteMng.findById(webId);
-
         }
-
         if (web == null) {
-
             throw new TemplateModelException("webId=" + webId + " not exist!");
-
         }
-
         Long parentId = DirectiveUtils.getLong("parentId", params);
         List list;
-
         if (parentId != null) {
-
             Category category = this.categoryMng.findById(parentId);
-
-
             if (category != null)
- list = new ArrayList(category.getChild());
-
+                list = new ArrayList(category.getChild());
             else
-         list = new ArrayList();
-
-        }
-
-        else {
-
+                list = new ArrayList();
+        } else {
             list = this.categoryMng.getTopListForTag(web.getId());
 
         }
-
-
         Map paramsWrap = new HashMap(
-       params);
+                params);
 
         paramsWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramsWrap);
+                DirectiveUtils.addParamsToVariable(env, paramsWrap);
 
         if (isInvokeTpl(params))
- includeTpl("tag", "category_list", web, params, env);
+            includeTpl("tag", "category_list", web, params, env);
 
         else {
 
@@ -114,28 +70,23 @@ import java.util.Map;
     }
 
 
-
-    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
- {
+    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
 
         body.render(env.getOut());
 
     }
 
 
-
     @Autowired
- public void setCategoryMng(CategoryMng categoryMng)
- {
+    public void setCategoryMng(CategoryMng categoryMng) {
 
         this.categoryMng = categoryMng;
 
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng) {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

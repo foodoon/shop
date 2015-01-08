@@ -26,7 +26,7 @@ import java.util.List;
 
 @Controller
 public class ExendedAct {
-       private static final Logger log = LoggerFactory.getLogger(ExendedAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ExendedAct.class);
 
     @Autowired
     private ExendedMng manager;

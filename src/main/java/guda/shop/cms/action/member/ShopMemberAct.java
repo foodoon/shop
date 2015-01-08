@@ -35,7 +35,7 @@ public class ShopMemberAct {
     public static final String MEMBER_PORTRAIT = "tpl.memberPortrait";
     public static final String MEMBER_PROFILE = "tpl.memberProfile";
     public static final String MEMBER_PASSWORD = "tpl.memberPassword";
-       private static final Logger log = LoggerFactory.getLogger(ShopMemberAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopMemberAct.class);
     @Autowired
     private OrderDao dao;
 
@@ -81,8 +81,9 @@ public class ShopMemberAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.memberCenter", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.memberCenter", new Object[0])
+        );
     }
 
     @RequestMapping(value = {"/shopMember/profile.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
@@ -275,7 +276,7 @@ public class ShopMemberAct {
         WebErrors errors = WebErrors.create(request);
 
         if ((!StringUtils.isBlank(newPwd)) &&
-       (errors.ifOutOfLength(newPwd, "password", 3, 32))) {
+                (errors.ifOutOfLength(newPwd, "password", 3, 32))) {
 
             return errors;
         }

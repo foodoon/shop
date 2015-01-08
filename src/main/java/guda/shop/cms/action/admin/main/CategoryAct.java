@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller
 public class CategoryAct
         implements ServletContextAware {
-       private static final Logger log = LoggerFactory.getLogger(CategoryAct.class);
+    private static final Logger log = LoggerFactory.getLogger(CategoryAct.class);
 
     @Autowired
     private BrandMng brandMng;
@@ -63,7 +63,7 @@ public class CategoryAct
         boolean isRoot;
 
         if ((StringUtils.isBlank(root)) || ("source".equals(root)))
- isRoot = true;
+            isRoot = true;
         else {
 
             isRoot = false;
@@ -109,7 +109,7 @@ public class CategoryAct
         List list;
 
         if (root == null)
- list = this.manager.getTopList(web.getId());
+            list = this.manager.getTopList(web.getId());
         else {
 
             list = this.manager.getChildList(web.getId(), root);
@@ -178,7 +178,7 @@ public class CategoryAct
 
 
         List parentList = this.manager.getListForParent(
-       SiteUtils.getWebId(request), null);
+                SiteUtils.getWebId(request), null);
 
 
         List standardTypeList = this.standardTypeMng.getList();
@@ -229,7 +229,7 @@ public class CategoryAct
         List brandList;
 
         if (category.getParent() != null)
- brandList = new ArrayList(category.getParent().getBrands());
+            brandList = new ArrayList(category.getParent().getBrands());
         else {
 
             brandList = brandList = this.brandMng.getList();
@@ -358,8 +358,8 @@ public class CategoryAct
     public String checkPath(String path, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(path)) ||
-       (!this.manager.checkPath(SiteUtils.getWebId(request), path)))
- ResponseUtils.renderJson(response, "false");
+                (!this.manager.checkPath(SiteUtils.getWebId(request), path)))
+            ResponseUtils.renderJson(response, "false");
         else {
 
             ResponseUtils.renderJson(response, "true");

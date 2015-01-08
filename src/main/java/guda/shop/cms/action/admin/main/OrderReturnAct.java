@@ -25,7 +25,7 @@ import java.util.*;
 
 @Controller
 public class OrderReturnAct {
-       private static final Logger log = LoggerFactory.getLogger(OrderReturnAct.class);
+    private static final Logger log = LoggerFactory.getLogger(OrderReturnAct.class);
     private static final String ALIPAY_GATEWAY_NEW = "https://mapi.alipay.com/gateway.do?";
 
     @Autowired
@@ -72,8 +72,8 @@ public class OrderReturnAct {
 
 
         sbHtml.append("<form id=\"alipaysubmit\" name=\"alipaysubmit\" action=\"" + gateway +
-       "_input_charset=" + "UTF-8" + "\" method=\"" + strMethod +
-       "\">");
+                "_input_charset=" + "UTF-8" + "\" method=\"" + strMethod +
+                "\">");
 
 
         for (int i = 0; i < keys.size(); i++) {
@@ -160,7 +160,7 @@ public class OrderReturnAct {
 
 
             if (i == keys.size() - 1)
- prestr = prestr + key + "=" + value;
+                prestr = prestr + key + "=" + value;
             else {
 
                 prestr = prestr + key + "=" + value + "&";
@@ -187,7 +187,7 @@ public class OrderReturnAct {
             String value = (String) sArray.get(key);
 
             if ((value != null) && (!value.equals("")) && (!key.equalsIgnoreCase("sign")) &&
-         (!key.equalsIgnoreCase("sign_type"))) {
+                    (!key.equalsIgnoreCase("sign_type"))) {
 
                 result.put(key, value);
             }

@@ -18,7 +18,7 @@ import java.util.List;
 
 @Controller
 public class ProductTypePropertyAct {
-       private static final Logger log = LoggerFactory.getLogger(ProductTypePropertyAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ProductTypePropertyAct.class);
 
     @Autowired
     private ProductTypePropertyMng manager;
@@ -85,7 +85,7 @@ public class ProductTypePropertyAct {
         ProductType pType = this.productTypeMng.findById(typeId);
 
         List itemList = getItems(pType, isCategory.booleanValue(), fields, propertyNames,
-       dataTypes, sorts, singles);
+                dataTypes, sorts, singles);
 
         this.manager.saveList(itemList);
 

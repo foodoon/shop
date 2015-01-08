@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -20,42 +18,21 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class ChannelListDirective extends WebDirective
- {
-       public static final String TPL_NAME = "TopChannel";
-       private ShopChannelMng shopChannelMng;
-       private WebsiteMng websiteMng;
-
+public class ChannelListDirective extends WebDirective {
+    public static final String TPL_NAME = "TopChannel";
+    private ShopChannelMng shopChannelMng;
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Long webId = getWebId(params);
 
         Website web;
 
         if (webId == null)
- web = getWeb(env, params, this.websiteMng);
+            web = getWeb(env, params, this.websiteMng);
 
         else {
 
@@ -78,29 +55,27 @@ import java.util.Map;
             ShopChannel channel = this.shopChannelMng.findById(parentId);
 
             if (channel != null)
- list = new ArrayList(channel.getChild());
+                list = new ArrayList(channel.getChild());
 
             else
-         list = new ArrayList();
+                list = new ArrayList();
 
-        }
-
-        else {
+        } else {
 
             list = this.shopChannelMng.getTopListForTag(web.getId(), Integer.valueOf(getCount(params)));
 
         }
 
         Map paramsWrap = new HashMap(
-       params);
+                params);
 
         paramsWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramsWrap);
+                DirectiveUtils.addParamsToVariable(env, paramsWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "TopChannel", web, params, env);
+            includeTpl("shop", "TopChannel", web, params, env);
 
         else {
 
@@ -113,24 +88,19 @@ import java.util.Map;
     }
 
 
-
-    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
- {
+    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
 
         body.render(env.getOut());
 
     }
 
 
-
     @Autowired
- public void setShopChannelMng(ShopChannelMng shopChannelMng)
- {
+    public void setShopChannelMng(ShopChannelMng shopChannelMng) {
 
         this.shopChannelMng = shopChannelMng;
 
     }
-
 
 
     public void setWebsiteMng(WebsiteMng websiteMng) {

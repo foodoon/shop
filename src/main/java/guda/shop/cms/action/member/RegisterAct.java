@@ -41,7 +41,7 @@ import java.util.UUID;
 
 @Controller
 public class RegisterAct {
-       private static final Logger log = LoggerFactory.getLogger(RegisterAct.class);
+    private static final Logger log = LoggerFactory.getLogger(RegisterAct.class);
     private static final String REGISTER = "tpl.register";
     private static final String REGISTER_RESULT = "tpl.registerResult";
     private static final String REGISTER_TREATY = "tpl.registerTreaty";
@@ -113,7 +113,7 @@ public class RegisterAct {
                 this.userMng.senderActiveEmail(username, base, email, uuid, sender, tpl);
 
                 ShopMember member = this.shopMemberMng.register(username, password, email, Boolean.valueOf(false), uuid,
-           request.getRemoteAddr(), Boolean.valueOf(false), web.getId(), config.getRegisterGroup().getId());
+                        request.getRemoteAddr(), Boolean.valueOf(false), web.getId(), config.getRegisterGroup().getId());
 
 
                 String emailtype = email.substring(email.indexOf("@") + 1, email.indexOf("."));
@@ -181,7 +181,7 @@ public class RegisterAct {
 
 
             this.shopMemberMng.updateScore(this.shopMemberMng.findById(bean.getId()),
-         SiteUtils.getWeb(request).getGlobal().getActiveScore());
+                    SiteUtils.getWeb(request).getGlobal().getActiveScore());
 
             ShopScore shopScore = new ShopScore();
 
@@ -279,8 +279,9 @@ public class RegisterAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.registerTreaty", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.registerTreaty", new Object[0])
+        );
     }
 
     @RequestMapping({"/username_unique.jspx"})
@@ -343,11 +344,11 @@ public class RegisterAct {
         }
 
         if (errors.ifOutOfLength(password, "password", 3, 32))
- return errors;
+            return errors;
         try {
 
             if (!this.captchaService.validateResponseForID(id,
-         checkcode.toUpperCase(Locale.ENGLISH)).booleanValue()) {
+                    checkcode.toUpperCase(Locale.ENGLISH)).booleanValue()) {
 
                 errors.addErrorCode("error.checkcodeIncorrect");
 

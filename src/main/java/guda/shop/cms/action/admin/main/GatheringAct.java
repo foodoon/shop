@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class GatheringAct {
-       private static final Logger log = LoggerFactory.getLogger(GatheringAct.class);
+    private static final Logger log = LoggerFactory.getLogger(GatheringAct.class);
 
     @Autowired
     private GatheringMng manager;
@@ -28,7 +28,7 @@ public class GatheringAct {
     @RequestMapping({"/Gathering/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

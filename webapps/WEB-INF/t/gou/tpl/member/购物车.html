@@ -149,234 +149,240 @@
 </ul>
 [#if cart??]
 <div class="gray-box pro-li">
-    <form id="jvForm" action="../cart/checkout_shipping.jspx" method="post">
-        <div class="shop_name">
-            <h2>
-                <input type="checkbox" id="chkBill" class="chkAllBill" onclick="checkedStatus(this.id);"
-                       name="bagCheckbox" checked/>
-                <label for="bag(0">商家：JSPGOU店 </label>
-            </h2>
-        </div>
-        <table width="980" cellspacing="0" cellpadding="0" border="0" class="clear list">
-            <tbody>
-            <tr>
-                <th width="25"></th>
-                <th width="70"></th>
-                <th width="310">商品名称</th>
-                <th width="80">单价</th>
-                <th width="58">积 分</th>
-                <th width="80">数 量</th>
-                <th width="59">重 量</th>
-                <th width="172">商品合计</th>
-                <th width="70">操 作</th>
-            </tr>
-            [#list popularityItems as popularityItem]
-            <tr>
-                <th width="25"></th>
-                <th width="70"></th>
-                <th width="310"><h4>套餐名称：${popularityItem.popularityGroup.name!} &nbsp;立省：${popularityItem.popularityGroup.price!}
-                    X ${popularityItem.count!} = <span id="total_popularity_${popularityItem_index}">${(popularityItem.popularityGroup.price)*(popularityItem.count)}</span>
-                </h4></th>
-                <th width="80"></th>
-                <th width="58"></th>
-                <th width="80"></th>
-                <th width="59"></th>
-                <th width="172"></th>
-                <th width="70"></th>
-            </tr>
-            [#list cart.items as item]
-            [#if item.popularityGroup??]
-            [#if item.popularityGroup.id=popularityItem.popularityGroup.id]
-            <tr class="select" id="item_tr_${item.product.id}_${item_index}">
-                <td class="first_td">
-                    <input type="checkbox" name="cart2Checkbox" value='${item.id}'
-                           id="chkMat_${item.product.id}_${item_index}" class="chkBill"
-                           onclick="checkedStatus(this.id);" checked [#if item.popularityGroup??]disabled[/#if]/>
-                    [#if item.popularityGroup??]<input type="hidden" name="cart2Checkbox" value='${item.id}'/> [/#if]
-                </td>
-                <td><a class="img60" href="${item.product.url}" target="_blank">
-                    <img src="${item.product.productExt.coverImg!}" width="60" height="60"/></a>
-                </td>
-                <td class="tl">
-                    <h3>
-                        <a href="${item.product.url}" target="_blank">
-                            [@text_cut s=item.product.name len='10' appent='...'/]&nbsp;
-                            [#if item.productFash??]${item.productFash.attitude!}[/#if][#if
-                            item.popularityGroup??](${item.popularityGroup.name})[/#if]
-                        </a>
-                    </h3>
-                    [#if item.productFash??]
-                    [#if item.productFash.stockCount==0]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该款式商品已下架或无库存</strong></p>
-                    [#elseif item.count gt item.productFash.stockCount]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该款式商品的购买数量大于库存</strong></p>
-                    [/#if]
-                    [#else]
-                    [#if item.product.stockCount==0]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该商品已下架或无库存</strong></p>
-                    [#elseif item.count gt item.product.stockCount]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该商品的购买数量大于库存</strong></p>
-                    [/#if]
-                    [/#if]
-                </td>
-                <td>
-                    [#if item.productFash??]
-                    <del>￥<span
-                            id="market_items_${item.product.id}_${item_index}">${item.productFash.marketPrice!}</span>
-                    </del>
-                    <br/>
-                    <strong class="red">￥<span id="sale_items_${item.product.id}_${item_index}">${item.productFash.salePrice!}</span></strong>
-                    [#else]
-                    <del>￥<span id="market_items_${item.product.id}_${item_index}">${item.product.marketPrice!}</span>
-                    </del>
-                    <br/>
-                    <strong class="red">￥<span id="sale_items_${item.product.id}_${item_index}">${item.product.salePrice!}</span></strong>
-                    [/#if]
-                    <span id="score_items_${item.product.id}_${item_index}" style="display:none;">${item.product.score!0}</span>
-                    <span id="weight_items_${item.product.id}_${item_index}" style="display:none;">${item.product.productExt.weight!0}</span>
-                </td>
-                <td>
-                    <span id="total_score_items_${item.product.id}_${item_index}">${item.count*item.product.score!0}</span>
-                </td>
-                <td>
-                    <input class="btn-reduce-active" type="button"
-                           onclick="decrement('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
-                    item.popularityGroup??]disabled[/#if]/>
-                    <input id="items_${item.product.id}_${item_index}" name="itemNumBox" type="text"
-                           value="${item.count}" class="num"[#if
-                    item.productFash??]oriNum="${item.productFash.stockCount!0}"[#else]oriNum="${item.product.stockCount!0}"[/#if]
-                    onblur="calSubTotal('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
-                    item.popularityGroup??]disabled[/#if]/>
-                    <input class="btn-plus" type="button"
-                           onclick="increment('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
-                    item.popularityGroup??]disabled[/#if]/>
-                </td>
-                <td><span id="total_weight_items_${item.product.id}_${item_index}">${item.count*item.product.productExt.weight!0}</span>kg
-                </td>
+<form id="jvForm" action="../cart/checkout_shipping.jspx" method="post">
+<div class="shop_name">
+    <h2>
+        <input type="checkbox" id="chkBill" class="chkAllBill" onclick="checkedStatus(this.id);"
+               name="bagCheckbox" checked/>
+        <label for="bag(0">商家：JSPGOU店 </label>
+    </h2>
+</div>
+<table width="980" cellspacing="0" cellpadding="0" border="0" class="clear list">
+<tbody>
+<tr>
+    <th width="25"></th>
+    <th width="70"></th>
+    <th width="310">商品名称</th>
+    <th width="80">单价</th>
+    <th width="58">积 分</th>
+    <th width="80">数 量</th>
+    <th width="59">重 量</th>
+    <th width="172">商品合计</th>
+    <th width="70">操 作</th>
+</tr>
+[#list popularityItems as popularityItem]
+<tr>
+    <th width="25"></th>
+    <th width="70"></th>
+    <th width="310"><h4>套餐名称：${popularityItem.popularityGroup.name!} &nbsp;立省：${popularityItem.popularityGroup.price!}
+        X ${popularityItem.count!} = <span id="total_popularity_${popularityItem_index}">${(popularityItem.popularityGroup.price)*(popularityItem.count)}</span>
+    </h4></th>
+    <th width="80"></th>
+    <th width="58"></th>
+    <th width="80"></th>
+    <th width="59"></th>
+    <th width="172"></th>
+    <th width="70"></th>
+</tr>
+[#list cart.items as item]
+[#if item.popularityGroup??]
+[#if item.popularityGroup.id=popularityItem.popularityGroup.id]
+<tr class="select" id="item_tr_${item.product.id}_${item_index}">
+    <td class="first_td">
+        <input type="checkbox" name="cart2Checkbox" value='${item.id}'
+               id="chkMat_${item.product.id}_${item_index}" class="chkBill"
+               onclick="checkedStatus(this.id);" checked [#if item.popularityGroup??]disabled[/#if]/>
+        [#if item.popularityGroup??]<input type="hidden" name="cart2Checkbox" value='${item.id}'/> [/#if]
+    </td>
+    <td><a class="img60" href="${item.product.url}" target="_blank">
+        <img src="${item.product.productExt.coverImg!}" width="60" height="60"/></a>
+    </td>
+    <td class="tl">
+        <h3>
+            <a href="${item.product.url}" target="_blank">
+                [@text_cut s=item.product.name len='10' appent='...'/]&nbsp;
+                [#if item.productFash??]${item.productFash.attitude!}[/#if][#if
+                item.popularityGroup??](${item.popularityGroup.name})[/#if]
+            </a>
+        </h3>
+        [#if item.productFash??]
+        [#if item.productFash.stockCount==0]
+        <p class="tips_2"><strong class="orange" style="color:red;">该款式商品已下架或无库存</strong></p>
+        [#elseif item.count gt item.productFash.stockCount]
+        <p class="tips_2"><strong class="orange" style="color:red;">该款式商品的购买数量大于库存</strong></p>
+        [/#if]
+        [#else]
+        [#if item.product.stockCount==0]
+        <p class="tips_2"><strong class="orange" style="color:red;">该商品已下架或无库存</strong></p>
+        [#elseif item.count gt item.product.stockCount]
+        <p class="tips_2"><strong class="orange" style="color:red;">该商品的购买数量大于库存</strong></p>
+        [/#if]
+        [/#if]
+    </td>
+    <td>
+        [#if item.productFash??]
+        <del>￥<span
+                id="market_items_${item.product.id}_${item_index}">${item.productFash.marketPrice!}</span>
+        </del>
+        <br/>
+        <strong class="red">￥<span
+                id="sale_items_${item.product.id}_${item_index}">${item.productFash.salePrice!}</span></strong>
+        [#else]
+        <del>￥<span id="market_items_${item.product.id}_${item_index}">${item.product.marketPrice!}</span>
+        </del>
+        <br/>
+        <strong class="red">￥<span
+                id="sale_items_${item.product.id}_${item_index}">${item.product.salePrice!}</span></strong>
+        [/#if]
+        <span id="score_items_${item.product.id}_${item_index}" style="display:none;">${item.product.score!0}</span>
+        <span id="weight_items_${item.product.id}_${item_index}" style="display:none;">${item.product.productExt.weight!0}</span>
+    </td>
+    <td>
+        <span id="total_score_items_${item.product.id}_${item_index}">${item.count*item.product.score!0}</span>
+    </td>
+    <td>
+        <input class="btn-reduce-active" type="button"
+               onclick="decrement('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
+        item.popularityGroup??]disabled[/#if]/>
+        <input id="items_${item.product.id}_${item_index}" name="itemNumBox" type="text"
+               value="${item.count}" class="num"[#if
+        item.productFash??]oriNum="${item.productFash.stockCount!0}"[#else]oriNum="${item.product.stockCount!0}"[/#if]
+        onblur="calSubTotal('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
+        item.popularityGroup??]disabled[/#if]/>
+        <input class="btn-plus" type="button"
+               onclick="increment('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
+        item.popularityGroup??]disabled[/#if]/>
+    </td>
+    <td><span
+            id="total_weight_items_${item.product.id}_${item_index}">${item.count*item.product.productExt.weight!0}</span>kg
+    </td>
 
-                <td>
-                    [#if item.productFash??]
-                    <input id="items_fash_${item.product.id}_${item_index}" type="hidden"
-                           value="${item.productFash.id}"/>
-                    <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.productFash.salePrice!0}</span></strong>
-                    <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.productFash.marketPrice!0}</span>
-                    [#else]
-                    <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.product.salePrice!0}</span></strong>
-                    <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.product.marketPrice!0}</span>
-                    [/#if]
-                </td>
-                <td class="last_td">
+    <td>
+        [#if item.productFash??]
+        <input id="items_fash_${item.product.id}_${item_index}" type="hidden"
+               value="${item.productFash.id}"/>
+        <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.productFash.salePrice!0}</span></strong>
+        <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.productFash.marketPrice!0}</span>
+        [#else]
+        <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.product.salePrice!0}</span></strong>
+        <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.product.marketPrice!0}</span>
+        [/#if]
+    </td>
+    <td class="last_td">
                   <span> 
                     <a href="javascript:void(0)" class="deleteButton"
                        onclick="ajaxDeleteCartItem('${base}',${item.id});"
                        id="items_${item.product.id}_${item_index}_delete" style="color:#656565;">删除</a>
                   </span>
-                </td>
-            </tr>
-            [/#if]
-            [/#if]
-            [/#list]
-            [/#list]
-            [#list cart.items as item]
-            [#if !item.popularityGroup??]
-            <tr class="select" id="item_tr_${item.product.id}_${item_index}">
-                <td class="first_td">
-                    <input type="checkbox" name="cart2Checkbox" value='${item.id}'
-                           id="chkMat_${item.product.id}_${item_index}" class="chkBill"
-                           onclick="checkedStatus(this.id);" checked [#if item.popularityGroup??]disabled[/#if]/>
-                </td>
-                <td><a class="img60" href="${item.product.url}" target="_blank">
-                    <img src="${item.product.productExt.coverImg!}" width="60" height="60"/></a>
-                </td>
-                <td class="tl">
-                    <h3>
-                        <a href="${item.product.url}" target="_blank">
-                            [@text_cut s=item.product.name len='10' appent='...'/]&nbsp;
-                            [#if item.productFash??]${item.productFash.attitude!}[/#if][#if
-                            item.popularityGroup??](${item.popularityGroup.name})[/#if]
-                        </a>
-                    </h3>
-                    [#if item.productFash??]
-                    [#if item.productFash.stockCount==0]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该款式商品已下架或无库存</strong></p>
-                    [#elseif item.count gt item.productFash.stockCount]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该款式商品的购买数量大于库存</strong></p>
-                    [/#if]
-                    [#else]
-                    [#if item.product.stockCount==0]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该商品已下架或无库存</strong></p>
-                    [#elseif item.count gt item.product.stockCount]
-                    <p class="tips_2"><strong class="orange" style="color:red;">该商品的购买数量大于库存</strong></p>
-                    [/#if]
-                    [/#if]
-                </td>
-                <td>
-                    [#if item.productFash??]
-                    <del>￥<span
-                            id="market_items_${item.product.id}_${item_index}">${item.productFash.marketPrice!}</span>
-                    </del>
-                    <br/>
-                    <strong class="red">￥<span id="sale_items_${item.product.id}_${item_index}">${item.productFash.salePrice!}</span></strong>
-                    [#else]
-                    <del>￥<span id="market_items_${item.product.id}_${item_index}">${item.product.marketPrice!}</span>
-                    </del>
-                    <br/>
-                    <strong class="red">￥<span id="sale_items_${item.product.id}_${item_index}">${item.product.salePrice!}</span></strong>
-                    [/#if]
-                    <span id="score_items_${item.product.id}_${item_index}" style="display:none;">${item.product.score!0}</span>
-                    <span id="weight_items_${item.product.id}_${item_index}" style="display:none;">${item.product.productExt.weight!0}</span>
-                </td>
-                <td>
-                    <span id="total_score_items_${item.product.id}_${item_index}">${item.count*item.product.score!0}</span>
-                </td>
-                <td>
-                    <input class="btn-reduce-active" type="button"
-                           onclick="decrement('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
-                    item.popularityGroup??]disabled[/#if]/>
-                    <input id="items_${item.product.id}_${item_index}" name="itemNumBox" type="text"
-                           value="${item.count}" class="num"[#if
-                    item.productFash??]oriNum="${item.productFash.stockCount!0}"[#else]oriNum="${item.product.stockCount!0}"[/#if]
-                    onblur="calSubTotal('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
-                    item.popularityGroup??]disabled[/#if]/>
-                    <input class="btn-plus" type="button"
-                           onclick="increment('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
-                    item.popularityGroup??]disabled[/#if]/>
-                </td>
-                <td><span id="total_weight_items_${item.product.id}_${item_index}">${item.count*item.product.productExt.weight!0}</span>kg
-                </td>
+    </td>
+</tr>
+[/#if]
+[/#if]
+[/#list]
+[/#list]
+[#list cart.items as item]
+[#if !item.popularityGroup??]
+<tr class="select" id="item_tr_${item.product.id}_${item_index}">
+    <td class="first_td">
+        <input type="checkbox" name="cart2Checkbox" value='${item.id}'
+               id="chkMat_${item.product.id}_${item_index}" class="chkBill"
+               onclick="checkedStatus(this.id);" checked [#if item.popularityGroup??]disabled[/#if]/>
+    </td>
+    <td><a class="img60" href="${item.product.url}" target="_blank">
+        <img src="${item.product.productExt.coverImg!}" width="60" height="60"/></a>
+    </td>
+    <td class="tl">
+        <h3>
+            <a href="${item.product.url}" target="_blank">
+                [@text_cut s=item.product.name len='10' appent='...'/]&nbsp;
+                [#if item.productFash??]${item.productFash.attitude!}[/#if][#if
+                item.popularityGroup??](${item.popularityGroup.name})[/#if]
+            </a>
+        </h3>
+        [#if item.productFash??]
+        [#if item.productFash.stockCount==0]
+        <p class="tips_2"><strong class="orange" style="color:red;">该款式商品已下架或无库存</strong></p>
+        [#elseif item.count gt item.productFash.stockCount]
+        <p class="tips_2"><strong class="orange" style="color:red;">该款式商品的购买数量大于库存</strong></p>
+        [/#if]
+        [#else]
+        [#if item.product.stockCount==0]
+        <p class="tips_2"><strong class="orange" style="color:red;">该商品已下架或无库存</strong></p>
+        [#elseif item.count gt item.product.stockCount]
+        <p class="tips_2"><strong class="orange" style="color:red;">该商品的购买数量大于库存</strong></p>
+        [/#if]
+        [/#if]
+    </td>
+    <td>
+        [#if item.productFash??]
+        <del>￥<span
+                id="market_items_${item.product.id}_${item_index}">${item.productFash.marketPrice!}</span>
+        </del>
+        <br/>
+        <strong class="red">￥<span
+                id="sale_items_${item.product.id}_${item_index}">${item.productFash.salePrice!}</span></strong>
+        [#else]
+        <del>￥<span id="market_items_${item.product.id}_${item_index}">${item.product.marketPrice!}</span>
+        </del>
+        <br/>
+        <strong class="red">￥<span
+                id="sale_items_${item.product.id}_${item_index}">${item.product.salePrice!}</span></strong>
+        [/#if]
+        <span id="score_items_${item.product.id}_${item_index}" style="display:none;">${item.product.score!0}</span>
+        <span id="weight_items_${item.product.id}_${item_index}" style="display:none;">${item.product.productExt.weight!0}</span>
+    </td>
+    <td>
+        <span id="total_score_items_${item.product.id}_${item_index}">${item.count*item.product.score!0}</span>
+    </td>
+    <td>
+        <input class="btn-reduce-active" type="button"
+               onclick="decrement('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
+        item.popularityGroup??]disabled[/#if]/>
+        <input id="items_${item.product.id}_${item_index}" name="itemNumBox" type="text"
+               value="${item.count}" class="num"[#if
+        item.productFash??]oriNum="${item.productFash.stockCount!0}"[#else]oriNum="${item.product.stockCount!0}"[/#if]
+        onblur="calSubTotal('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
+        item.popularityGroup??]disabled[/#if]/>
+        <input class="btn-plus" type="button"
+               onclick="increment('${base}',${item.id},'items_${item.product.id}_${item_index}');" [#if
+        item.popularityGroup??]disabled[/#if]/>
+    </td>
+    <td><span
+            id="total_weight_items_${item.product.id}_${item_index}">${item.count*item.product.productExt.weight!0}</span>kg
+    </td>
 
-                <td>
-                    [#if item.productFash??]
-                    <input id="items_fash_${item.product.id}_${item_index}" type="hidden"
-                           value="${item.productFash.id}"/>
-                    <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.productFash.salePrice!0}</span></strong>
-                    <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.productFash.marketPrice!0}</span>
-                    [#else]
-                    <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.product.salePrice!0}</span></strong>
-                    <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.product.marketPrice!0}</span>
-                    [/#if]
-                </td>
-                <td class="last_td">
+    <td>
+        [#if item.productFash??]
+        <input id="items_fash_${item.product.id}_${item_index}" type="hidden"
+               value="${item.productFash.id}"/>
+        <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.productFash.salePrice!0}</span></strong>
+        <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.productFash.marketPrice!0}</span>
+        [#else]
+        <strong class="red">￥<span id="total_sale_items_${item.product.id}_${item_index}">${item.count*item.product.salePrice!0}</span></strong>
+        <span id="total_market_items_${item.product.id}_${item_index}" style="display:none;">${item.count*item.product.marketPrice!0}</span>
+        [/#if]
+    </td>
+    <td class="last_td">
                   <span> 
                     <a href="javascript:void(0)" class="deleteButton"
                        onclick="ajaxDeleteCartItem('${base}',${item.id});"
                        id="items_${item.product.id}_${item_index}_delete" style="color:#656565;">删除</a>
                   </span>
-                </td>
-            </tr>
-            [/#if]
-            [/#list]
+    </td>
+</tr>
+[/#if]
+[/#list]
 
 
-        </table>
-    </form>
-    <p class="subtotal">
+</table>
+</form>
+<p class="subtotal">
             <span class="fl"> 重量总计：<span id="items_weight"></span>kg &nbsp;
                                                                          共节省：<span id="items_spare"></span>元 &nbsp; 
                                                                          预计可获积分：<span id="items_score"></span> </span>
-        <strong class="darkgray">运费：</strong> (以结算时为准) &nbsp;&nbsp; <strong class="darkgray">商品金额：</strong>
-        <strong class="red f16 yh">&nbsp;<span id="items_sale"></span></strong>&nbsp;元
-    </p>
+    <strong class="darkgray">运费：</strong> (以结算时为准) &nbsp;&nbsp; <strong class="darkgray">商品金额：</strong>
+    <strong class="red f16 yh">&nbsp;<span id="items_sale"></span></strong>&nbsp;元
+</p>
 </div>
 <div style="height:35px;">
     <div class="fix_btm_bar clearfix">

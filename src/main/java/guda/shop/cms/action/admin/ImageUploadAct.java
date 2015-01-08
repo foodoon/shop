@@ -25,7 +25,7 @@ import java.io.IOException;
 public class ImageUploadAct
         implements ServletContextAware {
     public static final String ERROR = "error";
-       private static final Logger log = LoggerFactory.getLogger(ImageUploadAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ImageUploadAct.class);
     private static final String RESULT_PAGE = "/common/iframe_upload";
     private static final String RESULT_SWITCH_PAGE = "/common/iframe_switch_upload";
     private static final String RESULT_BIG_PAGE = "/common/iframe_big_upload";

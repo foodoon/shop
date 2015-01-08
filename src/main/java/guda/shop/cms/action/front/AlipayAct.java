@@ -51,7 +51,7 @@ public class AlipayAct extends Alipay {
             try {
 
                 if ((!StringUtils.isBlank(code)) && (code.equals("alipayPartner")))
- aliURL = alipay(paymentPlugins, web, order, request, model);
+                    aliURL = alipay(paymentPlugins, web, order, request, model);
 
                 else if ((!StringUtils.isBlank(code)) && (code.equals("alipay"))) {
 
@@ -278,7 +278,7 @@ public class AlipayAct extends Alipay {
             for (int i = 0; i < values.length; i++) {
 
                 valueStr =
-           valueStr + values[i] + ",";
+                        valueStr + values[i] + ",";
             }
 
 
@@ -405,7 +405,7 @@ public class AlipayAct extends Alipay {
         String logistics_type;
 
         if (!StringUtils.isBlank(order.getShipping().getLogisticsType()))
- logistics_type = order.getShipping().getLogisticsType();
+            logistics_type = order.getShipping().getLogisticsType();
         else {
 
             logistics_type = "EXPRESS";

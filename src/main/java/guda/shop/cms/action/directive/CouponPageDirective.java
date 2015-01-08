@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -21,35 +19,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class CouponPageDirective extends WebDirective
- {
-       public static final String TPL_NAME = "ShopCouponPage";
+public class CouponPageDirective extends WebDirective {
+    public static final String TPL_NAME = "ShopCouponPage";
 
 
     @Autowired
- public CouponMng couponMng;
-       private WebsiteMng websiteMng;
-
+    public CouponMng couponMng;
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = getWeb(env, params, this.websiteMng);
 
@@ -58,18 +38,18 @@ import java.util.Map;
         Pagination pagination = this.couponMng.getPageByUsing(getPageNo(env), count.intValue());
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_pagination",
-       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+                ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ShopCouponPage", web, params, env);
+            includeTpl("shop", "ShopCouponPage", web, params, env);
 
         else {
 
@@ -82,19 +62,15 @@ import java.util.Map;
     }
 
 
-
-    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
- {
+    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
 
         body.render(env.getOut());
 
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng)
- {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

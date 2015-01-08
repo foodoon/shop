@@ -22,7 +22,7 @@ import java.util.List;
 
 @Controller
 public class ShopDictionaryAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopDictionaryAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopDictionaryAct.class);
 
     @Autowired
     private ShopDictionaryMng manager;
@@ -38,7 +38,7 @@ public class ShopDictionaryAct {
         List typelist = this.shopDictionaryTypeMng.findAll();
 
         Pagination pagination = this.manager.getPage(name, typeId, SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("name", name);
 

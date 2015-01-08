@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MessageAct {
-       private static final Logger log = LoggerFactory.getLogger(MessageAct.class);
+    private static final Logger log = LoggerFactory.getLogger(MessageAct.class);
 
     @Autowired
     private DiscussMng manager;
@@ -30,7 +30,7 @@ public class MessageAct {
     @RequestMapping({"/message/v_productDiss.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(null, null, null, null, null, SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request), true);
+                CookieUtils.getPageSize(request), true);
 
         model.addAttribute("pagination", pagination);
 
@@ -62,7 +62,7 @@ public class MessageAct {
     public String listConsult(Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Pagination pagination = this.consultMng.getPage(null, null, null, null, null, SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request), Boolean.valueOf(true));
+                CookieUtils.getPageSize(request), Boolean.valueOf(true));
 
         model.addAttribute("pagination", pagination);
 

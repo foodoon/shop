@@ -1,6 +1,4 @@
-
 package guda.shop.cms.lucene;
-
 
 
 import freemarker.core.Environment;
@@ -19,41 +17,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class LuceneDirectivePage extends LuceneDirectiveAbstract
- {
-       public static final String TPL_NAME = "ProductPage";
-       protected WebsiteMng websiteMng;
+public class LuceneDirectivePage extends LuceneDirectiveAbstract {
+    public static final String TPL_NAME = "ProductPage";
+    protected WebsiteMng websiteMng;
 
 
     @Autowired
- private LuceneProductSvc luceneProductSvc;
+    private LuceneProductSvc luceneProductSvc;
 
 
     @Autowired
- private ServletContext servletContext;
-
+    private ServletContext servletContext;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = this.websiteMng.findById(Long.valueOf(1L));
 
@@ -71,16 +49,13 @@ import java.util.Map;
         int pageNo = ((TemplateNumberModel) env.getGlobalVariable("pageNo")).getAsNumber().intValue();
         Pagination pagination;
 
-        try
- {
+        try {
 
             String path = this.servletContext.getRealPath("/WEB-INF/lucene");
 
             pagination = this.luceneProductSvc.search(path, query, web.getId(), ctgId, start, end, pageNo, getCount(params));
 
-        }
- catch (ParseException e)
- {
+        } catch (ParseException e) {
 
 
             throw new RuntimeException(e);
@@ -88,17 +63,17 @@ import java.util.Map;
         }
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_pagination", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ProductPage", web, params, env);
+            includeTpl("shop", "ProductPage", web, params, env);
 
         else {
 
@@ -111,10 +86,8 @@ import java.util.Map;
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng)
- {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

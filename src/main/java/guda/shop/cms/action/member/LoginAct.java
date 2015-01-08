@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginAct {
     public static final String TPL_INDEX = "tpl.index";
-       private static final Logger log = LoggerFactory.getLogger(LoginAct.class);
+    private static final Logger log = LoggerFactory.getLogger(LoginAct.class);
     private static final String LOGIN_INPUT = "tpl.loginInput";
     @Autowired
     private LoginSvc loginSvc;
@@ -53,8 +53,9 @@ public class LoginAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.loginInput", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.loginInput", new Object[0])
+        );
     }
 
     @RequestMapping(value = {"/login.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
@@ -75,7 +76,7 @@ public class LoginAct {
             log.info("member '{}' login success.", username);
 
             if (!StringUtils.isBlank(returnUrl))
- return "redirect:" + returnUrl;
+                return "redirect:" + returnUrl;
 
             if (!StringUtils.isBlank(redirectUrl)) {
 
@@ -88,8 +89,9 @@ public class LoginAct {
 
 
             return web.getTemplate("index",
-         MessageResolver.getMessage(request,
-         "tpl.index", new Object[0]));
+                    MessageResolver.getMessage(request,
+                            "tpl.index", new Object[0])
+            );
         } catch (UsernameNotFoundException e) {
 
             errors.addErrorCode("error.usernameNotExist");

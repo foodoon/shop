@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ShopMoneyAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopMoneyAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopMoneyAct.class);
 
     @Autowired
     private ShopMoneyMng manager;
@@ -28,7 +28,7 @@ public class ShopMoneyAct {
     @RequestMapping({"/shopMoney/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

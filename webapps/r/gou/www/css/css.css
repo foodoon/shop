@@ -237,7 +237,7 @@ BODY {
     transform-origin: 50% 30%
 }
 
-#site-nav .mytaobao .menu-bd/*宽度*/ {
+#site-nav .mytaobao .menu-bd/*宽度*/  {
     WIDTH: 80px;
     LINE-HEIGHT: 1.7;
     TOP: 21px;

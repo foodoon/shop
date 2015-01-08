@@ -26,7 +26,7 @@ import java.io.IOException;
 public class ImageUploadAct
         implements ServletContextAware {
     public static final String ERROR = "error";
-       private static final Logger log = LoggerFactory.getLogger(ImageUploadAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ImageUploadAct.class);
     private static final String RESULT_PAGE = "iframe_upload";
     private ServletContext servletContext;
 
@@ -42,8 +42,9 @@ public class ImageUploadAct
             model.addAttribute("error", errors.getErrors().get(0));
 
             return web.getTplSys("member",
-         MessageResolver.getMessage(request,
-         "iframe_upload", new Object[0]));
+                    MessageResolver.getMessage(request,
+                            "iframe_upload", new Object[0])
+            );
         }
 
         String real = this.servletContext.getRealPath(web.getUploadRel());
@@ -105,8 +106,9 @@ public class ImageUploadAct
         model.addAttribute("zoomHeight", zoomHeight);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "iframe_upload", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "iframe_upload", new Object[0])
+        );
     }
 
     private WebErrors validate(String fileName, MultipartFile file, HttpServletRequest request) {

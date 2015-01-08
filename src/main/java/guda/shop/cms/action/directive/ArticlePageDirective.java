@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -18,54 +16,34 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class ArticlePageDirective extends WebDirective
- {
-       public static final String TPL_NAME = "ArticlePage";
-       public static final String PARAM_CHANNEL_ID = "channelId";
-       private ShopArticleMng shopArticleMng;
-       private WebsiteMng websiteMng;
-
+public class ArticlePageDirective extends WebDirective {
+    public static final String TPL_NAME = "ArticlePage";
+    public static final String PARAM_CHANNEL_ID = "channelId";
+    private ShopArticleMng shopArticleMng;
+    private WebsiteMng websiteMng;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = getWeb(env, params, this.websiteMng);
 
         Long channelId = getChannelId(params);
 
         Pagination pagination = this.shopArticleMng.getPageForTag(web.getId(),
-       channelId, getPageNo(env), getCount(params));
+                channelId, getPageNo(env), getCount(params));
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_pagination",
-       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+                ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ArticlePage", web, params, env);
+            includeTpl("shop", "ArticlePage", web, params, env);
 
         else {
 
@@ -78,18 +56,14 @@ import java.util.Map;
     }
 
 
-
-    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
- {
+    private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
 
         body.render(env.getOut());
 
     }
 
 
-
-    private Long getChannelId(Map<String, TemplateModel> params) throws TemplateException
- {
+    private Long getChannelId(Map<String, TemplateModel> params) throws TemplateException {
 
         TemplateModel parentId = (TemplateModel) params.get("channelId");
 
@@ -110,19 +84,16 @@ import java.util.Map;
     }
 
 
-
     @Autowired
- public void setShopArticleMng(ShopArticleMng shopArticleMng)
- {
+    public void setShopArticleMng(ShopArticleMng shopArticleMng) {
 
         this.shopArticleMng = shopArticleMng;
 
     }
 
 
-
     @Autowired
- public void setWebsiteMng(WebsiteMng websiteMng) {
+    public void setWebsiteMng(WebsiteMng websiteMng) {
 
         this.websiteMng = websiteMng;
 

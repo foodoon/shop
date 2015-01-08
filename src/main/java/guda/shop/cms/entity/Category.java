@@ -156,15 +156,6 @@ public class Category extends BaseCategory
         return "parent";
     }
 
-    @Override
-    public void setLft(Number lft) {
-
-    }
-
-    @Override
-    public void setRgt(Number rgt) {
-
-    }
 
     public String getRgtName() {
         return "rgt";

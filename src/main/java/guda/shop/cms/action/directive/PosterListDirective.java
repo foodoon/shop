@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -19,47 +17,31 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class PosterListDirective extends ProductAbstractDirective
- {
-       public static final String TPL_NAME = "ProductList";
+public class PosterListDirective extends ProductAbstractDirective {
+    public static final String TPL_NAME = "ProductList";
 
 
     @Autowired
- private PosterMng manager;
-
+    private PosterMng manager;
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = getWeb(env, params, this.websiteMng);
 
         List list = this.manager.getPage();
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ProductList", web, params, env);
+            includeTpl("shop", "ProductList", web, params, env);
 
         else {
 

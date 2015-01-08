@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 public class LogisticsAct {
-       private static final Logger log = LoggerFactory.getLogger(LogisticsAct.class);
+    private static final Logger log = LoggerFactory.getLogger(LogisticsAct.class);
 
     @Autowired
     private LogisticsMng manager;

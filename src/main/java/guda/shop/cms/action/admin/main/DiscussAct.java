@@ -22,7 +22,7 @@ import java.util.Date;
 
 @Controller
 public class DiscussAct {
-       private static final Logger log = LoggerFactory.getLogger(DiscussAct.class);
+    private static final Logger log = LoggerFactory.getLogger(DiscussAct.class);
 
     @Autowired
     private DiscussMng manager;
@@ -39,7 +39,7 @@ public class DiscussAct {
         productName = StringUtils.trim(productName);
 
         Pagination pagination = this.manager.getPage(null, userName, productName, startTime, endTime,
-       SimplePage.cpn(pageNo), CookieUtils.getPageSize(request), true);
+                SimplePage.cpn(pageNo), CookieUtils.getPageSize(request), true);
 
         if (!StringUtils.isBlank(userName)) {
 

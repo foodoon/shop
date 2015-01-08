@@ -64,7 +64,7 @@ public class GiftAct {
         Website web = SiteUtils.getWeb(request);
 
         if ((id != null) && (this.manager.findById(id) != null))
- model.addAttribute("gift", this.manager.findById(id));
+            model.addAttribute("gift", this.manager.findById(id));
         else {
 
             return FrontHelper.pageNotFound(web, model, request);
@@ -164,8 +164,9 @@ public class GiftAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("gift",
-       MessageResolver.getMessage(request,
-       "tpl.exchange", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.exchange", new Object[0])
+        );
     }
 
     @RequestMapping(value = {"/create_exchange.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})

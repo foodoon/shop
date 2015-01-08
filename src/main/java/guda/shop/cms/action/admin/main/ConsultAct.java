@@ -22,7 +22,7 @@ import java.util.Date;
 
 @Controller
 public class ConsultAct {
-       private static final Logger log = LoggerFactory.getLogger(ConsultAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ConsultAct.class);
 
     @Autowired
     private ConsultMng manager;
@@ -39,7 +39,7 @@ public class ConsultAct {
         productName = StringUtils.trim(productName);
 
         Pagination pagination = this.manager.getPage(null, userName, productName, startTime, endTime,
-       SimplePage.cpn(pageNo), CookieUtils.getPageSize(request), Boolean.valueOf(true));
+                SimplePage.cpn(pageNo), CookieUtils.getPageSize(request), Boolean.valueOf(true));
 
 
         if (!StringUtils.isBlank(userName)) {

@@ -271,7 +271,7 @@ public class DynamicPageAct {
         WebErrors errors = validateBrand(id, request);
 
         if (errors.hasErrors())
- return FrontHelper.showError(errors, web, model, request);
+            return FrontHelper.showError(errors, web, model, request);
 
         String tpl;
 
@@ -391,7 +391,7 @@ public class DynamicPageAct {
         for (int i = 0; i < li.size(); i++) {
 
             if (i + 1 == li.size())
- name = name + (String) li.get(i);
+                name = name + (String) li.get(i);
 
             else {
 
@@ -421,7 +421,7 @@ public class DynamicPageAct {
             if (i + 1 == li.size()) {
 
                 if (StringUtils.isBlank((String) attr.get(li.get(i))))
- value = value + "0";
+                    value = value + "0";
 
                 else {
 
@@ -429,10 +429,8 @@ public class DynamicPageAct {
 
                 }
 
-            }
-
-            else if (StringUtils.isBlank((String) attr.get(li.get(i))))
- value = value + "0,";
+            } else if (StringUtils.isBlank((String) attr.get(li.get(i))))
+                value = value + "0,";
 
             else {
 
@@ -461,7 +459,7 @@ public class DynamicPageAct {
         for (int i = 0; i < li.size(); i++) {
 
             if (i + 1 == li.size())
- name = name + (String) li.get(i);
+                name = name + (String) li.get(i);
 
             else {
 
@@ -490,7 +488,7 @@ public class DynamicPageAct {
             if (i + 1 == li.size()) {
 
                 if (StringUtils.isBlank((String) attr.get(li.get(i))))
- value = value + "0";
+                    value = value + "0";
 
                 else {
 
@@ -498,10 +496,8 @@ public class DynamicPageAct {
 
                 }
 
-            }
-
-            else if (StringUtils.isBlank((String) attr.get(li.get(i))))
- value = value + "0,";
+            } else if (StringUtils.isBlank((String) attr.get(li.get(i))))
+                value = value + "0,";
 
             else {
 

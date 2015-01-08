@@ -1,6 +1,4 @@
-
 package guda.shop.cms.lucene;
-
 
 
 import guda.shop.cms.dao.ProductDao;
@@ -27,44 +25,19 @@ import java.io.IOException;
 import java.util.Date;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Service
- public class LuceneProductSvcImpl
- implements LuceneProductSvc
- {
-       private ProductDao productDao;
-
+public class LuceneProductSvcImpl
+        implements LuceneProductSvc {
+    private ProductDao productDao;
 
 
     public int index(String path, Long webId, Date start, Date end)
-     throws CorruptIndexException, LockObtainFailedException, IOException
- {
+            throws CorruptIndexException, LockObtainFailedException, IOException {
 
         Directory dir = new SimpleFSDirectory(new File(path));
 
         IndexWriter writer = new IndexWriter(dir, new StandardAnalyzer(Version.LUCENE_30),
-       true, MaxFieldLength.LIMITED);
+                true, MaxFieldLength.LIMITED);
 
         try {
 
@@ -83,10 +56,8 @@ import java.util.Date;
     }
 
 
-
     public Pagination search(String path, String queryString, Long webId, Long ctgId, Date start, Date end, int pageNo, int pageSize)
-     throws CorruptIndexException, IOException, ParseException
- {
+            throws CorruptIndexException, IOException, ParseException {
 
         Directory dir = new SimpleFSDirectory(new File(path));
 
@@ -113,10 +84,8 @@ import java.util.Date;
     }
 
 
-
     @Autowired
- public void setProductDao(ProductDao productDao)
- {
+    public void setProductDao(ProductDao productDao) {
 
         this.productDao = productDao;
 

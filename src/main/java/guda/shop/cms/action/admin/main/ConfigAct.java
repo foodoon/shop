@@ -29,7 +29,7 @@ import java.util.Map;
 
 @Controller
 public class ConfigAct {
-       private final Logger log = LoggerFactory.getLogger(ConfigAct.class);
+    private final Logger log = LoggerFactory.getLogger(ConfigAct.class);
 
     @Autowired
     private WebsiteMng websiteMng;
@@ -166,10 +166,10 @@ public class ConfigAct {
             String base = new String(web.getUrlBuff(true));
 
             this.userMng.senderEmail(Long.valueOf(0L), "Test_Username", base, to, "Test_ResetKey",
-         "Test_ResetPassword", email, tpl);
+                    "Test_ResetPassword", email, tpl);
 
             ResponseUtils.renderJson(response,
-         new JSONObject().put("success", true).toString());
+                    new JSONObject().put("success", true).toString());
         } catch (Exception e) {
 
             JSONObject json = new JSONObject();
@@ -221,7 +221,7 @@ public class ConfigAct {
             Runtime rt = Runtime.getRuntime();
 
             Process child = rt.exec("cmd /c mysqldump -u" + bean.getUsername() + " -p" + bean.getPassword() +
-         " -h" + bean.getAddress() + " " + bean.getDataBaseName());
+                    " -h" + bean.getAddress() + " " + bean.getDataBaseName());
 
             InputStream in = child.getInputStream();
 

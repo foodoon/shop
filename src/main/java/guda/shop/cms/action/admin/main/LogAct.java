@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LogAct {
-       private static final Logger log = LoggerFactory.getLogger(LogAct.class);
+    private static final Logger log = LoggerFactory.getLogger(LogAct.class);
 
     @Autowired
     private LogMng manager;
@@ -28,7 +28,7 @@ public class LogAct {
     @RequestMapping({"/log/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

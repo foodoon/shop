@@ -25,13 +25,13 @@ public class RepeatDirective
 
 
         Iterator paramIter = params
-.entrySet().iterator();
+                .entrySet().iterator();
 
         while (paramIter.hasNext()) {
 
             Entry ent =
-         (Entry) paramIter
-.next();
+                    (Entry) paramIter
+                            .next();
 
 
             String paramName = (String) ent.getKey();
@@ -48,7 +48,7 @@ public class RepeatDirective
 
 
                 countParam = ((TemplateNumberModel) paramValue).getAsNumber()
-.intValue();
+                        .intValue();
 
                 countParamSet = true;
 
@@ -56,9 +56,7 @@ public class RepeatDirective
 
                     throw new TemplateModelException("The \"hr\" parameter can't be negative.");
                 }
-            }
-
-            else if (paramName.equals("hr")) {
+            } else if (paramName.equals("hr")) {
 
                 if (!(paramValue instanceof TemplateBooleanModel)) {
 
@@ -70,7 +68,7 @@ public class RepeatDirective
             } else {
 
                 throw new TemplateModelException("Unsupported parameter: " +
-           paramName);
+                        paramName);
             }
         }
 
@@ -83,29 +81,29 @@ public class RepeatDirective
         if (loopVars.length > 1) {
 
             throw new TemplateModelException(
-         "At most one loop variable is allowed.");
+                    "At most one loop variable is allowed.");
         }
 
 
         Writer out = env.getOut();
 
         if (body != null)
- for (int i = 0; i < countParam; i++) {
+            for (int i = 0; i < countParam; i++) {
 
-            if ((hrParam) && (i != 0)) {
+                if ((hrParam) && (i != 0)) {
 
-                out.write("<hr>");
+                    out.write("<hr>");
+                }
+
+
+                if (loopVars.length > 0) {
+
+                    loopVars[0] = new SimpleNumber(i + 1);
+                }
+
+
+                body.render(env.getOut());
             }
-
-
-            if (loopVars.length > 0) {
-
-                loopVars[0] = new SimpleNumber(i + 1);
-            }
-
-
-            body.render(env.getOut());
-        }
     }
 }
 

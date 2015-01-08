@@ -28,7 +28,7 @@ import java.util.List;
 
 @Controller
 public class PopularityGroupAct {
-       private static final Logger log = LoggerFactory.getLogger(PopularityGroupAct.class);
+    private static final Logger log = LoggerFactory.getLogger(PopularityGroupAct.class);
 
     @Autowired
     private BrandMng brandMng;

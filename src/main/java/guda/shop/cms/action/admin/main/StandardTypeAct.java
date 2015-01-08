@@ -27,7 +27,7 @@ import java.util.Set;
 
 @Controller
 public class StandardTypeAct {
-       private static final Logger log = LoggerFactory.getLogger(StandardTypeAct.class);
+    private static final Logger log = LoggerFactory.getLogger(StandardTypeAct.class);
 
     @Autowired
     private StandardTypeMng manager;
@@ -39,7 +39,7 @@ public class StandardTypeAct {
     @RequestMapping({"/standardType/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
-       CookieUtils.getPageSize(request));
+                CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 
@@ -179,7 +179,7 @@ public class StandardTypeAct {
     public String checkUsername(String field, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(field)) || (this.manager.getByField(field) != null))
- ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJson(response, "false");
         else {
 
             ResponseUtils.renderJson(response, "true");
@@ -197,7 +197,7 @@ public class StandardTypeAct {
             for (Standard s : set) {
 
                 if (!Arrays.asList(itemId).contains(s.getId()))
- this.standardMng.deleteById(s.getId());
+                    this.standardMng.deleteById(s.getId());
             }
         } else {
             for (Standard s : set) {
@@ -212,33 +212,33 @@ public class StandardTypeAct {
             for (int len = itemName.length; i < len; i++)
 
                 if (!StringUtils.isBlank(itemName[i]))
- if ((itemId != null) && (i < itemId.length)) {
+                    if ((itemId != null) && (i < itemId.length)) {
 
-                    Standard item = this.standardMng.findById(itemId[i]);
+                        Standard item = this.standardMng.findById(itemId[i]);
 
-                    item.setName(itemName[i]);
+                        item.setName(itemName[i]);
 
-                    item.setColor(itemColor[i]);
+                        item.setColor(itemColor[i]);
 
-                    item.setPriority(itemPriority[i]);
+                        item.setPriority(itemPriority[i]);
 
-                    item.setType(bean);
+                        item.setType(bean);
 
-                    this.standardMng.update(item);
-                } else {
+                        this.standardMng.update(item);
+                    } else {
 
-                    Standard item = new Standard();
+                        Standard item = new Standard();
 
-                    item.setName(itemName[i]);
+                        item.setName(itemName[i]);
 
-                    item.setColor(itemColor[i]);
+                        item.setColor(itemColor[i]);
 
-                    item.setPriority(itemPriority[i]);
+                        item.setPriority(itemPriority[i]);
 
-                    item.setType(bean);
+                        item.setType(bean);
 
-                    this.standardMng.save(item);
-                }
+                        this.standardMng.save(item);
+                    }
         }
     }
 

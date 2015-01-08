@@ -43,8 +43,9 @@ public class AdvertiseAct {
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
         return web.getTplSys("member",
-       MessageResolver.getMessage(request,
-       "tpl.mycollect", new Object[0]));
+                MessageResolver.getMessage(request,
+                        "tpl.mycollect", new Object[0])
+        );
     }
 
     @RequestMapping({"/adspace.jspx"})

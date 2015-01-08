@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 public class ProductTagAct {
-       private static final Logger log = LoggerFactory.getLogger(ProductTagAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ProductTagAct.class);
 
     @Autowired
     private ProductTagMng manager;
@@ -63,7 +63,7 @@ public class ProductTagAct {
         for (ProductTag bean : beans) {
 
             log.info("update ProductTag. id={},name={}", bean.getId(),
-         bean.getName());
+                    bean.getName());
         }
 
         return "redirect:v_list.do";
@@ -84,7 +84,7 @@ public class ProductTagAct {
         for (ProductTag bean : beans) {
 
             log.info("delete ProductTag. id={},name={}", bean.getId(),
-         bean.getName());
+                    bean.getName());
         }
 
         return list(request, model);

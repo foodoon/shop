@@ -31,18 +31,18 @@ public class GiftPageDirective extends WebDirective {
         Pagination pagination = this.giftMng.getPageGift(getPageNo(env), getCount(params));
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_pagination",
-       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+                ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
 
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ArticlePage", web, params, env);
+            includeTpl("shop", "ArticlePage", web, params, env);
         else {
 
             renderBody(env, loopVars, body);

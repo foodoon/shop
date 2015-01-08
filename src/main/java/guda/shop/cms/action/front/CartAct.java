@@ -28,7 +28,7 @@ import java.util.Set;
 
 @Controller
 public class CartAct {
-       private static final Logger log = LoggerFactory.getLogger(CartAct.class);
+    private static final Logger log = LoggerFactory.getLogger(CartAct.class);
     private static final String SHOPPING_CART = "tpl.shoppingCart";
     private static final String CHECKOUT_SHIPPING = "tpl.checkoutShipping";
 
@@ -178,9 +178,7 @@ public class CartAct {
         if (member == null) {
 
             json.put("status", 0);
-        }
-
-        else if (getinventory(popularityId)) {
+        } else if (getinventory(popularityId)) {
 
             Cart cart = null;
 

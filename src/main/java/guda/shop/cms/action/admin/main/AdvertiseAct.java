@@ -24,7 +24,7 @@ import java.util.Set;
 
 @Controller
 public class AdvertiseAct {
-       private static final Logger log = LoggerFactory.getLogger(AdvertiseAct.class);
+    private static final Logger log = LoggerFactory.getLogger(AdvertiseAct.class);
 
     @Autowired
     private AdspaceMng adspaceMng;
@@ -36,7 +36,7 @@ public class AdvertiseAct {
     @RequestMapping({"/advertise/v_list.do"})
     public String list(Integer queryAdspaceId, Boolean queryEnabled, Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(queryAdspaceId,
-       queryEnabled, SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
+                queryEnabled, SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 

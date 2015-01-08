@@ -1,6 +1,4 @@
-
 package guda.shop.cms.action.directive;
-
 
 
 import freemarker.core.Environment;
@@ -18,28 +16,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class ProductPageChannelDirective extends ProductAbstractDirective
- {
-       public static final String TPL_NAME = "ProductPage";
-
+public class ProductPageChannelDirective extends ProductAbstractDirective {
+    public static final String TPL_NAME = "ProductPage";
 
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-     throws TemplateException, IOException
- {
+            throws TemplateException, IOException {
 
         Website web = getWeb(env, params, this.websiteMng);
 
@@ -56,20 +38,20 @@ import java.util.Map;
         Integer orderBy = getInt("orderBy", params);
 
         Pagination pagination = this.productMng.getPageForTagChannel(brandId, web.getId(), ctgId,
-       tagId, isRecommend(params), names, values, isSpecial(params), orderBy.intValue(), getPageNo(env),
-       getCount(params));
+                tagId, isRecommend(params), names, values, isSpecial(params), orderBy.intValue(), getPageNo(env),
+                getCount(params));
 
         Map paramWrap = new HashMap(
-       params);
+                params);
 
         paramWrap.put("tag_pagination",
-       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+                ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
 
         Map origMap =
-       DirectiveUtils.addParamsToVariable(env, paramWrap);
+                DirectiveUtils.addParamsToVariable(env, paramWrap);
 
         if (isInvokeTpl(params))
- includeTpl("shop", "ProductPage", web, params, env);
+            includeTpl("shop", "ProductPage", web, params, env);
 
         else {
 

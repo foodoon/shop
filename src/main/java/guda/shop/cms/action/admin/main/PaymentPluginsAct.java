@@ -18,7 +18,7 @@ import java.util.Set;
 
 @Controller
 public class PaymentPluginsAct {
-       private static final Logger log = LoggerFactory.getLogger(PaymentPluginsAct.class);
+    private static final Logger log = LoggerFactory.getLogger(PaymentPluginsAct.class);
 
     @Autowired
     private PaymentPluginsMng manager;

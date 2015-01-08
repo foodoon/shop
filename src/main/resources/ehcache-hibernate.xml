@@ -51,31 +51,28 @@
            timeToIdleSeconds="600" overflowToDisk="true"/>
     <cache name="guda.shop.cms.entity.tags" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
            overflowToDisk="true"/>
-    <cache name="guda.shop.cms.entity.shopext" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+    <cache name="guda.shop.cms.entity.Shop" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
            overflowToDisk="true"/>
     <cache name="guda.shop.cms.entity.shoprGroup" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
            overflowToDisk="true"/>
 
     <cache name="guda.shop.cms.entity.Order" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
-    overflowToDisk="true"/>
+           overflowToDisk="true"/>
     <cache name="guda.shop.cms.entity.OrderItem" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
-    overflowToDisk="true"/>
-
-
+           overflowToDisk="true"/>
 
 
     <cache name="guda.shop.cms.entity.Cart" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
            overflowToDisk="true"/>
-    <cache name="guda.shop.cms.entity.Cart.itemguda.shopentsInMemory" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
-    overflowToDisk="true"/>
+
     <cache name="guda.shop.cms.entity.CartItem" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
            overflowToDisk="true"/>
 
     <cache name="guda.shop.cms.entity.ShopArticle" maxElementsInMemory="100" eternal="false"
-    timeToIdleSeconds="600" overflowToDisk="true"/>
+           timeToIdleSeconds="600" overflowToDisk="true"/>
     <cache name="guda.shop.cms.entity.ShopChannel" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
            overflowToDisk="true"/>
     <cache name="guda.shop.cms.entity.ShopChannelContent" maxElementsInMemory="100" eternal="false"
-    timeToIdleSeconds="600" overflowToDisk="true"/>
+           timeToIdleSeconds="600" overflowToDisk="true"/>
 
 </ehcache>

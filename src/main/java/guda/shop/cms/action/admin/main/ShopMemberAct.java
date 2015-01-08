@@ -24,7 +24,7 @@ import java.util.List;
 
 @Controller
 public class ShopMemberAct {
-       private static final Logger log = LoggerFactory.getLogger(ShopMemberAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ShopMemberAct.class);
 
     @Autowired
     private ShopMemberGroupMng shopMemberGroupMng;
@@ -42,7 +42,7 @@ public class ShopMemberAct {
     @RequestMapping({"/member/v_list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SiteUtils.getWebId(request),
-       SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
+                SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 
@@ -55,7 +55,7 @@ public class ShopMemberAct {
         Website web = SiteUtils.getWeb(request);
 
         List groupList = this.shopMemberGroupMng.getList(
-       SiteUtils.getWebId(request));
+                SiteUtils.getWebId(request));
 
 
         List userDegreeList = this.shopDictionaryMng.getListByType(Long.valueOf(1L));
@@ -100,9 +100,9 @@ public class ShopMemberAct {
 
 
         bean = this.manager.register(username, password, email, Boolean.valueOf(true), null,
-       request.getRemoteAddr(), disabled, SiteUtils.getWebId(request),
-       groupId, userDegreeId, degreeId, incomeDescId, workSeniorityId,
-       familyMembersId, bean);
+                request.getRemoteAddr(), disabled, SiteUtils.getWebId(request),
+                groupId, userDegreeId, degreeId, incomeDescId, workSeniorityId,
+                familyMembersId, bean);
 
         log.info("save ShopMember, id={}", bean.getId());
 
@@ -122,7 +122,7 @@ public class ShopMemberAct {
         }
 
         List groupList = this.shopMemberGroupMng.getList(
-       SiteUtils.getWebId(request));
+                SiteUtils.getWebId(request));
 
 
         List userDegreeList = this.shopDictionaryMng.getListByType(Long.valueOf(1L));
@@ -172,8 +172,8 @@ public class ShopMemberAct {
         }
 
         bean = this.manager.update(bean, groupId, userDegreeId,
-       degreeId, incomeDescId, workSeniorityId, familyMembersId,
-       password, email, disabled);
+                degreeId, incomeDescId, workSeniorityId, familyMembersId,
+                password, email, disabled);
 
         log.info("update ShopMember, id={}.", bean.getId());
 
@@ -306,7 +306,7 @@ public class ShopMemberAct {
             ShopMember member = this.manager.findById(id);
 
             if ((!member.getEmail().equals(email)) &&
-         (vldEmail(email, errors))) {
+                    (vldEmail(email, errors))) {
 
                 return true;
             }

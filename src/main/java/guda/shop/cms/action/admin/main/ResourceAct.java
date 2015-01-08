@@ -33,7 +33,7 @@ import java.util.Map;
 @Controller
 public class ResourceAct
         implements ServletContextAware {
-       private static final Logger log = LoggerFactory.getLogger(ResourceAct.class);
+    private static final Logger log = LoggerFactory.getLogger(ResourceAct.class);
     private static final String REL_PATH = "relPath";
     private String root;
 
@@ -53,7 +53,7 @@ public class ResourceAct
         String resReal = this.servletContext.getRealPath(web.getResBaseRel());
 
         String resName =
-       MessageResolver.getMessage(request, "resource.resName", new Object[0]);
+                MessageResolver.getMessage(request, "resource.resName", new Object[0]);
 
         FileWrap wrap = this.manager.getResFileWrap(resReal, resName);
 
@@ -173,7 +173,7 @@ public class ResourceAct
         origFile.renameTo(newFile);
 
         log.info("rename resource dir {} to {}", origFile.getAbsolutePath(),
-       newFile.getAbsolutePath());
+                newFile.getAbsolutePath());
 
         model.addAttribute("relPath", relPath);
 
@@ -321,7 +321,7 @@ public class ResourceAct
             Website web = SiteUtils.getWeb(request);
 
             String realPath = this.servletContext.getRealPath(
-         web.getResBaseRel(relPath));
+                    web.getResBaseRel(relPath));
 
             this.manager.uploadResourceFile(realPath, files);
         }
@@ -340,7 +340,7 @@ public class ResourceAct
         model.addAttribute("root", root);
 
         log.info("file upload seccess: {}, size:{}.",
-       file.getOriginalFilename(), Long.valueOf(file.getSize()));
+                file.getOriginalFilename(), Long.valueOf(file.getSize()));
 
         ResponseUtils.renderText(response, "");
     }

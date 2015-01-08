@@ -31,7 +31,7 @@ import java.util.List;
 @Controller
 public class TemplateAct
         implements ServletContextAware {
-       private static final Logger log = LoggerFactory.getLogger(TemplateAct.class);
+    private static final Logger log = LoggerFactory.getLogger(TemplateAct.class);
     private static final String REL_PATH = "relPath";
 
     @Autowired
@@ -65,7 +65,7 @@ public class TemplateAct
         model.addAttribute("root", root);
 
         log.info("file upload seccess: {}, size:{}.",
-       file.getOriginalFilename(), Long.valueOf(file.getSize()));
+                file.getOriginalFilename(), Long.valueOf(file.getSize()));
 
         ResponseUtils.renderText(response, "");
     }
@@ -189,7 +189,7 @@ public class TemplateAct
         origFile.renameTo(newFile);
 
         log.info("rename template dir {} to {}", origFile.getAbsolutePath(),
-       newFile.getAbsolutePath());
+                newFile.getAbsolutePath());
 
         model.addAttribute("relPath", relPath);
 

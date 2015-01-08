@@ -451,292 +451,292 @@ function checkSubmit() {
 <@p.form id="jvForm" action="o_save.do" labelWidth="12" enctype="multipart/form-data">
 <#assign count=0/>
 <#list itemList as item>
-    <#if !item.single>
-        <#assign count=count+1/>
+<#if !item.single>
+    <#assign count=count+1/>
+</#if>
+<#if !item.custom>
+<#if item.field=="name">
+    <@p.text label=item.propertyName name=item.field size="40" required="true" class="required" maxlength="150"
+    colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
+    <#if count%2==0><@p.tr/></#if>
+    <#elseif item.field="categoryId">
+        <@p.select label=item.propertyName name=item.field list=categoryList listKey="id" listValue="name"
+        listDeep="deep" required="true" colspan=item.single?string("2","1")
+        width="${item.single?string(100,50)}"/>
+        <#if count%2==0><@p.tr/></#if>
+        <#elseif item.field="brandId">
+            <@p.select label=item.propertyName name=item.field list=category.brands value=brandId! listKey="id"
+            listValue="name" headerKey="" headerValue="global.none" colspan=item.single?string("2","1")
+            width="${item.single?string(100,50)}"/>
+            <#if count%2==0><@p.tr/></#if>
+            <#elseif item.field="price">
+                <#if !category.colorsize>
+                    <@p.td label=item.propertyName colspan=item.single?string("2","1") required="true"
+                    width="${item.single?string(100,50)}">
+                    <@s.m "product.salePrice"/>: <@p.text name="salePrice" value="0" style="width:50px"
+                    class="required number"/> &nbsp;
+                    <@s.m "product.marketPrice"/>: <@p.text name="marketPrice" value="0" style="width:50px"
+                    class="required number"/> &nbsp;
+                    <@s.m "product.costPrice"/>: <@p.text name="costPrice" value="0" style="width:50px"
+                    class="required number"/> &nbsp;
+                </
+                @p.td>
+                <#if count%2==0><@p.tr/></#if>
+</#if>
+<#elseif item.field="stockCount">
+<#if !category.colorsize>
+    <@p.text label=item.propertyName id=item.field name=item.field size="10" value="0" required="true"
+    class="required digits" maxlength="10" help="" helpPosition="2" colspan=item.single?string("2","1")
+    width="${item.single?string(100,50)}"/>
+    <#if count%2==0><@p.tr/></#if>
+</#if>
+<#elseif item.field="attr">
+    <@p.td label=item.propertyName colspan=item.single?string("2","1")
+    width="${item.single?string(100,50)}">
+    <label class="ckl"><input type="checkbox" onclick="$('#onSale').val(this.checked)" checked="checked"/>
+        <@s.m "product.onSale"/><input type="hidden" id="onSale" name="onSale" value="true"/>
+    </label>
+    <label class="ckl"><input type="checkbox" onclick="$('#recommend').val(this.checked)"/>
+        <@s.m "product.recommend"/><input type="hidden" id="recommend" name="recommend" value="false"/>
+    </label>
+    <label class="ckl"><input type="checkbox" onclick="$('#special').val(this.checked)"/>
+        <@s.m "product.special"/><input type="hidden" id="special" name="special" value="false"/>
+    </label>
+    <label class="ckl"><input type="checkbox" onclick="$('#hotsale').val(this.checked)"/>
+        <@s.m "product.hotsale"/><input type="hidden" id="hotsale" name="hotsale" value="false"/>
+    </label>
+    <label><input type="checkbox" onclick="$('#newProduct').val(this.checked)"/>
+        <@s.m "product.newProduct"/><input type="hidden" id="newProduct" name="newProduct" value="false"/>
+    </label>
+</
+@p.td>
+<#if count%2==0><@p.tr/></#if>
+<#elseif item.field="productKeywords">
+<@p.text label=item.propertyName name="productKeywords" maxlength="255" size="60"
+help="product.keywords.help" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
+<#if count%2==0><@p.tr/></#if>
+<#elseif item.field="weight">
+<@p.text label=item.propertyName name="weight" size="10" help="product.weight.help" class="digits"
+maxlength="10" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
+<#if count%2==0><@p.tr/></#if>
+<#elseif item.field="score">
+<@p.text label=item.propertyName name="score" maxlength="10" colspan=item.single?string("2","1")
+width="${item.single?string(100,50)}"/>
+<#if count%2==0><@p.tr/></#if>
+<#elseif item.field="alertInventory">
+<@p.text label=item.propertyName name="alertInventory" maxlength="10"
+colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
+<#if count%2==0><@p.tr/></#if>
+<#elseif item.field="tagIds">
+    <@p.checkboxlist label=item.propertyName name="tagIds" list=tagList listKey="id"
+    listValue="name" colspan=item.single?string("2","1")
+    width="${item.single?string(100,50)}"/>
+    <#if count%2==0><@p.tr/></#if>
+
+    <#elseif item.field="coverImg">
+        <@p.td label=item.propertyName colspan="1" width="50" noHeight="true"
+        required="true">
+        <@p.text id="uploadImgPath100" name="coverImg" size="30" class="required"/>
+        <input type="button" value="<@s.m " imageupload.clear"/>" onclick="clearImg(100);"/><br/>
+        <span id="ufc100"><input type="file" id="uploadFile100" size="20"/></span>
+        <input type="button" value="<@s.m " imageupload.upload"/>"
+        onclick="upload(100);"/><br/>
+        <input type="hidden" id="zoomWidth100" value="100"/>
+        <input type="hidden" id="zoomHeight100" value="100"/>
+    </
+    @p.td>
+    <@p.td colspan="1" width="50">
+    <img id="preImg100" alt="<@s.m " imageupload.preview"/>160*160"
+    style="width:100px;height:100px;background-color:#CCCCCC;border:1px solid #333"/>
+</
+@p.td>
+<#if count%2==0><@p.tr/></#if>
+<#elseif item.field="productstyle">
+    <tr>
+        <td width="12%" class="pn-flabel pn-flabel-h"><span class="pn-frequired">*</span>商品款式集:
+        </td>
+        <td colspan="3" width="48%" class="pn-fcontent">
+            <table id="picTable${0}" border="0" style="float: left;">
+                <tr>
+                    <td align="left" colspan="3"><input type="button" value="增加款式"
+                                                        onclick="addPicLine()"/></td>
+                </tr>
+                <tr>
+                    <td align="center"> 切换图片预览60*60</td>
+                    <td align="center"> 大图片预览380*380</td>
+                    <td align="center"> 放大图片预览600*600</td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div>
+                            <img id="preSwitchImg${0}" noResize="true"
+                                 style="overflow:hidden;width:60px;height:60px;background-color:#ccc;border:1px solid #333"/>
+                            <br/><br/><br/>
+                            <span class="pn-frequired">*</span>
+
+                            <input type="text" id="uploadImgPathSwitch${0}"
+                                   name="fashionSwitchPic" style="width: 160px"
+                                   class="required"/>
+                            <a href="javascript:void(0);"
+                               onclick="$('#picTable${0}').remove();" class="pn-opt"></a>
+                        </div>
+                        <div><span id="ufcSwitch${0}"><input type="file"
+                                                             id="uploadFileSwitch${0}"
+                                                             size="10"
+                                                             style="width: 150px"/></span>
+                            <input type="button" value="上传" onclick="uploadSwitch(${0});"/>
+                        </div>
+                    </td>
+                    <td align="center">
+                        <div>
+                            <img id="preBigImg${0}" noResize="true"
+                                 style="overflow:hidden;width:90px;height:90px;background-color:#ccc;border:1px solid #333"/>
+                            <br/>
+                            <span class="pn-frequired">*</span>
+                            <input type="text" id="uploadImgPathBig${0}"
+                                   name="fashionBigPic" style="width: 160px"
+                                   class="required"/>
+                            <a href="javascript:void(0);"
+                               onclick="$('#picTable${0}').remove();" class="pn-opt"></a>
+                        </div>
+                        <div><span id="ufcBig${0}"><input type="file" id="uploadFileBig${0}"
+                                                          size="10"
+                                                          style="width: 150px"/></span>
+                            <input type="button" value="上传" onclick="uploadBig(${0});"/>
+                        </div>
+                    </td>
+                    <td align="center">
+                        <div>
+                            <img id="preAmpImg${0}" noResize="true"
+                                 style="overflow:hidden;width:90px;height:90px;background-color:#ccc;border:1px solid #333"/>
+                            <br/>
+                            <span class="pn-frequired">*</span>
+                            <input type="text" id="uploadImgPathAmp${0}"
+                                   name="fashionAmpPic" style="width: 160px"
+                                   class="required"/>
+                            <a href="javascript:void(0);"
+                               onclick="$('#picTable${0}').remove();" class="pn-opt"></a>
+                        </div>
+                        <div><span id="ufcAmp${0}"><input type="file" id="uploadFileAmp${0}"
+                                                          size="10"
+                                                          style="width: 150px"/></span>
+                            <input type="button" value="上传" onclick="uploadAmp(${0});"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div id="picBefore" style="clear:both"></div>
+        </td>
+    </tr>
+    <#list  map?keys as mykey>
+        <#assign mapUser=map[mykey]>
+            <#assign st=map1[mykey] >
+                <#if st.dataType==1>
+                    <@p.select name="exended_${st.field}" label=st.name list=mapUser
+                    listKey="id" listValue="name" colspan="2" width="100" headerKey=""
+                    headerValue="global.none"/><@p.tr/>
+                    <#else>
+                        <@p.radio name="exended_${st.field}" label=st.name list=mapUser
+                        listKey="id" listValue="name" colspan="2" width="100" /><@p.tr/>
+                </#if>
+    </#list>
+    <#if category.colorsize>
+        <tr id="channelIdsContainer">
+            <td width="12%" class="pn-flabel pn-flabel-h">
+                <span class="pn-frequired">*</span>规格:
+            </td>
+            <td colspan="3" width="88%" class="pn-fcontent">
+                <input id="channel" type="button" value="开启规格"/>
+
+                <div id="channelDialog" title="规格列表" style="display:none;">
+                    <span id="channels"></span>
+                </div>
+                <div style="clear:both"></div>
+            </td>
+        </tr>
+        <#list standardTypeList as standardType>
+            <#if standardType.dataType>
+                <tr id="${standardType.field}Container" style="display:none">
+                    <td width="12%" class="pn-flabel pn-flabel-h"> ${standardType.name}</td>
+                    <td colspan="3" width="88%" class="pn-fcontent">
+                        <table id="${standardType.field}ItemContainer" border="0"
+                               style="float: left;">
+                        </table>
+                        <div style="clear:both"></div>
+                    </td>
+                </tr>
+                <#else>
+                    <tr id="${standardType.field}Container" style="display:none;">
+                        <td width="12%" class="pn-flabel pn-flabel-h">${standardType.name}
+                        </td>
+                        <td colspan="3" width="88%" class="pn-fcontent">
+                            <span id="${standardType.field}ItemContainer"></span>
+
+                            <div style="clear:both"></div>
+                        </td>
+                    </tr>
+            </#if>
+        </#list>
+        <tr id="onlyFashion" style="display:none;">
+            <td class="pn-flabel pn-flabel-h" width="12%"></td>
+            <td class="pn-fcontent" width="88%" colspan="3">
+                <table id="tableSpec" cellspacing="0" cellpadding="5" border="0"
+                       class="tb-color">
+                    <tr id="it">
+                        <th align="center" width="60">默认款式</th>
+                        <#list standardTypeList as standardType>
+                            <th align="center" width="120">${standardType.name}</th>
+                        </#list>
+                        <th align="center" width="120">商品库存</th>
+                        <th align="center" width="120">销售价</th>
+                        <th align="center" width="120">市场价</th>
+                        <th align="center" width="120">成本价</th>
+                        <th align="center" width="40">移除</th>
+                    </tr>
+                    <tr id="tbeSpec" style="display:none;">
+                        <td colspan="8" height="1"></td>
+                    </tr>
+                </table>
+                <div style="clear:both"></div>
+            </td>
+        </tr>
     </#if>
-    <#if !item.custom>
-        <#if item.field=="name">
-            <@p.text label=item.propertyName name=item.field size="40" required="true" class="required" maxlength="150"
+
+    <#elseif item.field="shareContent">
+        <@p.textarea label=item.propertyName name="shareContent" rows="3" cols="70"
+        maxlength="255" colspan=item.single?string("2","1")
+        width="${item.single?string(100,50)}"/>
+        <#if count%2==0><@p.tr/></#if>
+        <#elseif item.field="mtitle">
+            <@p.text label=item.propertyName name="mtitle" size="30" maxlength="255"
             colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
             <#if count%2==0><@p.tr/></#if>
-            <#elseif item.field="categoryId">
-                <@p.select label=item.propertyName name=item.field list=categoryList listKey="id" listValue="name"
-                listDeep="deep" required="true" colspan=item.single?string("2","1")
-                width="${item.single?string(100,50)}"/>
+            <#elseif item.field="mkeywords">
+                <@p.text label=item.propertyName name="mkeywords" size="30" maxlength="255"
+                colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
                 <#if count%2==0><@p.tr/></#if>
-                <#elseif item.field="brandId">
-                    <@p.select label=item.propertyName name=item.field list=category.brands value=brandId! listKey="id"
-                    listValue="name" headerKey="" headerValue="global.none" colspan=item.single?string("2","1")
+                <#elseif item.field="mdescription">
+                    <@p.text label=item.propertyName name="mdescription" size="60"
+                    maxlength="255" colspan=item.single?string("2","1")
                     width="${item.single?string(100,50)}"/>
                     <#if count%2==0><@p.tr/></#if>
-                    <#elseif item.field="price">
-                        <#if !category.colorsize>
-                            <@p.td label=item.propertyName colspan=item.single?string("2","1") required="true"
-                            width="${item.single?string(100,50)}">
-                            <@s.m "product.salePrice"/>: <@p.text name="salePrice" value="0" style="width:50px"
-                            class="required number"/> &nbsp;
-                            <@s.m "product.marketPrice"/>: <@p.text name="marketPrice" value="0" style="width:50px"
-                            class="required number"/> &nbsp;
-                            <@s.m "product.costPrice"/>: <@p.text name="costPrice" value="0" style="width:50px"
-                            class="required number"/> &nbsp;
-                        </
-                        @p.td>
-                        <#if count%2==0><@p.tr/></#if>
-        </#if>
-        <#elseif item.field="stockCount">
-            <#if !category.colorsize>
-                <@p.text label=item.propertyName id=item.field name=item.field size="10" value="0" required="true"
-                class="required digits" maxlength="10" help="" helpPosition="2" colspan=item.single?string("2","1")
-                width="${item.single?string(100,50)}"/>
-                <#if count%2==0><@p.tr/></#if>
-            </#if>
-            <#elseif item.field="attr">
-                <@p.td label=item.propertyName colspan=item.single?string("2","1")
-                width="${item.single?string(100,50)}">
-                <label class="ckl"><input type="checkbox" onclick="$('#onSale').val(this.checked)" checked="checked"/>
-                    <@s.m "product.onSale"/><input type="hidden" id="onSale" name="onSale" value="true"/>
-                </label>
-                <label class="ckl"><input type="checkbox" onclick="$('#recommend').val(this.checked)"/>
-                    <@s.m "product.recommend"/><input type="hidden" id="recommend" name="recommend" value="false"/>
-                </label>
-                <label class="ckl"><input type="checkbox" onclick="$('#special').val(this.checked)"/>
-                    <@s.m "product.special"/><input type="hidden" id="special" name="special" value="false"/>
-                </label>
-                <label class="ckl"><input type="checkbox" onclick="$('#hotsale').val(this.checked)"/>
-                    <@s.m "product.hotsale"/><input type="hidden" id="hotsale" name="hotsale" value="false"/>
-                </label>
-                <label><input type="checkbox" onclick="$('#newProduct').val(this.checked)"/>
-                    <@s.m "product.newProduct"/><input type="hidden" id="newProduct" name="newProduct" value="false"/>
-                </label>
-            </
-            @p.td>
-            <#if count%2==0><@p.tr/></#if>
-            <#elseif item.field="productKeywords">
-                <@p.text label=item.propertyName name="productKeywords" maxlength="255" size="60"
-                help="product.keywords.help" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
-                <#if count%2==0><@p.tr/></#if>
-                <#elseif item.field="weight">
-                    <@p.text label=item.propertyName name="weight" size="10" help="product.weight.help" class="digits"
-                    maxlength="10" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
-                    <#if count%2==0><@p.tr/></#if>
-                    <#elseif item.field="score">
-                        <@p.text label=item.propertyName name="score" maxlength="10" colspan=item.single?string("2","1")
+                    <#elseif item.field="text">
+                        <@p.editor label=item.propertyName name="text"
+                        colspan=item.single?string("2","1")
                         width="${item.single?string(100,50)}"/>
                         <#if count%2==0><@p.tr/></#if>
-                        <#elseif item.field="alertInventory">
-                            <@p.text label=item.propertyName name="alertInventory" maxlength="10"
-                            colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
+                        <#elseif item.field="text1">
+                            <@p.editor label=item.propertyName name="text1"
+                            colspan=item.single?string("2","1")
+                            width="${item.single?string(100,50)}"/>
                             <#if count%2==0><@p.tr/></#if>
-                            <#elseif item.field="tagIds">
-                                <@p.checkboxlist label=item.propertyName name="tagIds" list=tagList listKey="id"
-                                listValue="name" colspan=item.single?string("2","1")
-                                width="${item.single?string(100,50)}"/>
-                                <#if count%2==0><@p.tr/></#if>
-
-                                <#elseif item.field="coverImg">
-                                    <@p.td label=item.propertyName colspan="1" width="50" noHeight="true"
-                                    required="true">
-                                    <@p.text id="uploadImgPath100" name="coverImg" size="30" class="required"/>
-                                    <input type="button" value="<@s.m " imageupload.clear"/>" onclick="clearImg(100);"/><br/>
-                                    <span id="ufc100"><input type="file" id="uploadFile100" size="20"/></span>
-                                    <input type="button" value="<@s.m " imageupload.upload"/>"
-                                    onclick="upload(100);"/><br/>
-                                    <input type="hidden" id="zoomWidth100" value="100"/>
-                                    <input type="hidden" id="zoomHeight100" value="100"/>
-                                </
-                                @p.td>
-                                <@p.td colspan="1" width="50">
-                                <img id="preImg100" alt="<@s.m " imageupload.preview"/>160*160"
-                                style="width:100px;height:100px;background-color:#CCCCCC;border:1px solid #333"/>
-                            </
-                            @p.td>
-                            <#if count%2==0><@p.tr/></#if>
-                            <#elseif item.field="productstyle">
-                                <tr>
-                                    <td width="12%" class="pn-flabel pn-flabel-h"><span class="pn-frequired">*</span>商品款式集:
-                                    </td>
-                                    <td colspan="3" width="48%" class="pn-fcontent">
-                                        <table id="picTable${0}" border="0" style="float: left;">
-                                            <tr>
-                                                <td align="left" colspan="3"><input type="button" value="增加款式"
-                                                                                    onclick="addPicLine()"/></td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center"> 切换图片预览60*60</td>
-                                                <td align="center"> 大图片预览380*380</td>
-                                                <td align="center"> 放大图片预览600*600</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center">
-                                                    <div>
-                                                        <img id="preSwitchImg${0}" noResize="true"
-                                                             style="overflow:hidden;width:60px;height:60px;background-color:#ccc;border:1px solid #333"/>
-                                                        <br/><br/><br/>
-                                                        <span class="pn-frequired">*</span>
-
-                                                        <input type="text" id="uploadImgPathSwitch${0}"
-                                                               name="fashionSwitchPic" style="width: 160px"
-                                                               class="required"/>
-                                                        <a href="javascript:void(0);"
-                                                           onclick="$('#picTable${0}').remove();" class="pn-opt"></a>
-                                                    </div>
-                                                    <div><span id="ufcSwitch${0}"><input type="file"
-                                                                                         id="uploadFileSwitch${0}"
-                                                                                         size="10"
-                                                                                         style="width: 150px"/></span>
-                                                        <input type="button" value="上传" onclick="uploadSwitch(${0});"/>
-                                                    </div>
-                                                </td>
-                                                <td align="center">
-                                                    <div>
-                                                        <img id="preBigImg${0}" noResize="true"
-                                                             style="overflow:hidden;width:90px;height:90px;background-color:#ccc;border:1px solid #333"/>
-                                                        <br/>
-                                                        <span class="pn-frequired">*</span>
-                                                        <input type="text" id="uploadImgPathBig${0}"
-                                                               name="fashionBigPic" style="width: 160px"
-                                                               class="required"/>
-                                                        <a href="javascript:void(0);"
-                                                           onclick="$('#picTable${0}').remove();" class="pn-opt"></a>
-                                                    </div>
-                                                    <div><span id="ufcBig${0}"><input type="file" id="uploadFileBig${0}"
-                                                                                      size="10"
-                                                                                      style="width: 150px"/></span>
-                                                        <input type="button" value="上传" onclick="uploadBig(${0});"/>
-                                                    </div>
-                                                </td>
-                                                <td align="center">
-                                                    <div>
-                                                        <img id="preAmpImg${0}" noResize="true"
-                                                             style="overflow:hidden;width:90px;height:90px;background-color:#ccc;border:1px solid #333"/>
-                                                        <br/>
-                                                        <span class="pn-frequired">*</span>
-                                                        <input type="text" id="uploadImgPathAmp${0}"
-                                                               name="fashionAmpPic" style="width: 160px"
-                                                               class="required"/>
-                                                        <a href="javascript:void(0);"
-                                                           onclick="$('#picTable${0}').remove();" class="pn-opt"></a>
-                                                    </div>
-                                                    <div><span id="ufcAmp${0}"><input type="file" id="uploadFileAmp${0}"
-                                                                                      size="10"
-                                                                                      style="width: 150px"/></span>
-                                                        <input type="button" value="上传" onclick="uploadAmp(${0});"/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <div id="picBefore" style="clear:both"></div>
-                                    </td>
-                                </tr>
-                                <#list  map?keys as mykey>
-                                    <#assign mapUser=map[mykey]>
-                                        <#assign st=map1[mykey] >
-                                            <#if st.dataType==1>
-                                                <@p.select name="exended_${st.field}" label=st.name list=mapUser
-                                                listKey="id" listValue="name" colspan="2" width="100" headerKey=""
-                                                headerValue="global.none"/><@p.tr/>
-                                                <#else>
-                                                    <@p.radio name="exended_${st.field}" label=st.name list=mapUser
-                                                    listKey="id" listValue="name" colspan="2" width="100" /><@p.tr/>
-                                            </#if>
-                                </#list>
-                                <#if category.colorsize>
-                                    <tr id="channelIdsContainer">
-                                        <td width="12%" class="pn-flabel pn-flabel-h">
-                                            <span class="pn-frequired">*</span>规格:
-                                        </td>
-                                        <td colspan="3" width="88%" class="pn-fcontent">
-                                            <input id="channel" type="button" value="开启规格"/>
-
-                                            <div id="channelDialog" title="规格列表" style="display:none;">
-                                                <span id="channels"></span>
-                                            </div>
-                                            <div style="clear:both"></div>
-                                        </td>
-                                    </tr>
-                                    <#list standardTypeList as standardType>
-                                        <#if standardType.dataType>
-                                            <tr id="${standardType.field}Container" style="display:none">
-                                                <td width="12%" class="pn-flabel pn-flabel-h"> ${standardType.name}</td>
-                                                <td colspan="3" width="88%" class="pn-fcontent">
-                                                    <table id="${standardType.field}ItemContainer" border="0"
-                                                           style="float: left;">
-                                                    </table>
-                                                    <div style="clear:both"></div>
-                                                </td>
-                                            </tr>
-                                            <#else>
-                                                <tr id="${standardType.field}Container" style="display:none;">
-                                                    <td width="12%" class="pn-flabel pn-flabel-h">${standardType.name}
-                                                    </td>
-                                                    <td colspan="3" width="88%" class="pn-fcontent">
-                                                        <span id="${standardType.field}ItemContainer"></span>
-
-                                                        <div style="clear:both"></div>
-                                                    </td>
-                                                </tr>
-                                        </#if>
-                                    </#list>
-                                    <tr id="onlyFashion" style="display:none;">
-                                        <td class="pn-flabel pn-flabel-h" width="12%"></td>
-                                        <td class="pn-fcontent" width="88%" colspan="3">
-                                            <table id="tableSpec" cellspacing="0" cellpadding="5" border="0"
-                                                   class="tb-color">
-                                                <tr id="it">
-                                                    <th align="center" width="60">默认款式</th>
-                                                    <#list standardTypeList as standardType>
-                                                        <th align="center" width="120">${standardType.name}</th>
-                                                    </#list>
-                                                    <th align="center" width="120">商品库存</th>
-                                                    <th align="center" width="120">销售价</th>
-                                                    <th align="center" width="120">市场价</th>
-                                                    <th align="center" width="120">成本价</th>
-                                                    <th align="center" width="40">移除</th>
-                                                </tr>
-                                                <tr id="tbeSpec" style="display:none;">
-                                                    <td colspan="8" height="1"></td>
-                                                </tr>
-                                            </table>
-                                            <div style="clear:both"></div>
-                                        </td>
-                                    </tr>
-                                </#if>
-
-                                <#elseif item.field="shareContent">
-                                    <@p.textarea label=item.propertyName name="shareContent" rows="3" cols="70"
-                                    maxlength="255" colspan=item.single?string("2","1")
-                                    width="${item.single?string(100,50)}"/>
-                                    <#if count%2==0><@p.tr/></#if>
-                                    <#elseif item.field="mtitle">
-                                        <@p.text label=item.propertyName name="mtitle" size="30" maxlength="255"
-                                        colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
-                                        <#if count%2==0><@p.tr/></#if>
-                                        <#elseif item.field="mkeywords">
-                                            <@p.text label=item.propertyName name="mkeywords" size="30" maxlength="255"
-                                            colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/>
-                                            <#if count%2==0><@p.tr/></#if>
-                                            <#elseif item.field="mdescription">
-                                                <@p.text label=item.propertyName name="mdescription" size="60"
-                                                maxlength="255" colspan=item.single?string("2","1")
-                                                width="${item.single?string(100,50)}"/>
-                                                <#if count%2==0><@p.tr/></#if>
-                                                <#elseif item.field="text">
-                                                    <@p.editor label=item.propertyName name="text"
-                                                    colspan=item.single?string("2","1")
-                                                    width="${item.single?string(100,50)}"/>
-                                                    <#if count%2==0><@p.tr/></#if>
-                                                    <#elseif item.field="text1">
-                                                        <@p.editor label=item.propertyName name="text1"
-                                                        colspan=item.single?string("2","1")
-                                                        width="${item.single?string(100,50)}"/>
-                                                        <#if count%2==0><@p.tr/></#if>
+</#if>
+<#else>
+    <@p.selfDefineWidget name="attr_${item.field}" value=item.defValue list="${item.optValue!}" rows="${item.rows!}"
+    cols="${item.cols!}" label=item.propertyName colspan=item.single?string("2","1")
+    width="${item.single?string(100,50)}" type="${item.dataType}"/>
+    <#if count%2==0><@p.tr/></#if>
     </#if>
-    <#else>
-        <@p.selfDefineWidget name="attr_${item.field}" value=item.defValue list="${item.optValue!}" rows="${item.rows!}"
-        cols="${item.cols!}" label=item.propertyName colspan=item.single?string("2","1")
-        width="${item.single?string(100,50)}" type="${item.dataType}"/>
-        <#if count%2==0><@p.tr/></#if>
-        </#if>
 </#list>
 
 <@p.td colspan="2">

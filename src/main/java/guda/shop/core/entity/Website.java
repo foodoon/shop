@@ -30,12 +30,15 @@ public class Website extends BaseWebsite {
 
     public String getTemplate(String paramString1, String paramString2, String paramString3, String paramString4) {
         StringBuilder localStringBuilder = getTemplateRelBuff().append("/").append(paramString1).append("/");
-        if (!StringUtils.isBlank(paramString4))
+        if (!StringUtils.isBlank(paramString4)) {
             localStringBuilder.append(paramString4);
+        }
         localStringBuilder.append(paramString2);
-        if (!StringUtils.isBlank(paramString3))
+        if (!StringUtils.isBlank(paramString3)) {
             localStringBuilder.append("_").append(paramString3);
-        return ".html";
+        }
+        localStringBuilder.append(".html");
+        return localStringBuilder.toString();
     }
 
     public String getUrl() {

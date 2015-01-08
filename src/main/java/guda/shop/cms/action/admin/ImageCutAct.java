@@ -55,11 +55,12 @@ public class ImageCutAct
         try {
 
             if (imgWidth.intValue() > 0) this.imageScale
-.resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue(), getLen(imgTop.intValue(), imgScale.floatValue()),
-           getLen(imgLeft.intValue(),
-           imgScale.floatValue()), getLen(imgWidth.intValue(), imgScale.floatValue()), getLen(imgHeight.intValue(), imgScale.floatValue()));
+                    .resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue(), getLen(imgTop.intValue(), imgScale.floatValue()),
+                            getLen(imgLeft.intValue(),
+                                    imgScale.floatValue()), getLen(imgWidth.intValue(), imgScale.floatValue()), getLen(imgHeight.intValue(), imgScale.floatValue())
+                    );
             else
-         this.imageScale.resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue());
+                this.imageScale.resizeFix(srcFile, srcFile, reMinWidth.intValue(), reMinHeight.intValue());
         } catch (Exception e) {
 
             log.error("cut image error", e);

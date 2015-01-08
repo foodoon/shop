@@ -38,9 +38,9 @@ public class OrderAct {
     public static final String PROSESSING = "processing";
     public static final String DELIVERED = "delivered";
     public static final String COMPLETE = "complete";
-       public static final String[] TYPES = {"all", "pending", "processing", "delivered",
-     "complete"};
-       private static final Logger log = LoggerFactory.getLogger(OrderAct.class);
+    public static final String[] TYPES = {"all", "pending", "processing", "delivered",
+            "complete"};
+    private static final Logger log = LoggerFactory.getLogger(OrderAct.class);
     private static final String ALIPAY_GATEWAY_NEW = "https://mapi.alipay.com/gateway.do?";
 
     @Autowired
@@ -96,8 +96,8 @@ public class OrderAct {
 
 
         sbHtml.append("<form id=\"alipaysubmit\" name=\"alipaysubmit\" action=\"" + gateway +
-       "_input_charset=" + "UTF-8" + "\" method=\"" + strMethod +
-       "\">");
+                "_input_charset=" + "UTF-8" + "\" method=\"" + strMethod +
+                "\">");
 
 
         for (int i = 0; i < keys.size(); i++) {
@@ -184,7 +184,7 @@ public class OrderAct {
 
 
             if (i == keys.size() - 1)
- prestr = prestr + key + "=" + value;
+                prestr = prestr + key + "=" + value;
             else {
 
                 prestr = prestr + key + "=" + value + "&";
@@ -211,7 +211,7 @@ public class OrderAct {
             String value = (String) sArray.get(key);
 
             if ((value != null) && (!value.equals("")) && (!key.equalsIgnoreCase("sign")) &&
-         (!key.equalsIgnoreCase("sign_type"))) {
+                    (!key.equalsIgnoreCase("sign_type"))) {
 
                 result.put(key, value);
             }
@@ -230,8 +230,8 @@ public class OrderAct {
         userName = StringUtils.trim(userName);
 
         Pagination pagination = this.manager.getPage(web.getId(), null, null, userName,
-       paymentId, shoppingId, startTime, endTime, null, null, status, paymentStatus, shippingStatus, code,
-       SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
+                paymentId, shoppingId, startTime, endTime, null, null, status, paymentStatus, shippingStatus, code,
+                SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
         model.addAttribute("pagination", pagination);
 
@@ -555,7 +555,7 @@ public class OrderAct {
             weight += orderItem.getProduct().getWeight().intValue() * itemCount[i].intValue();
 
             if (orderItem.getProductFash() != null)
- price += itemPrice[i].doubleValue() * itemCount[i].intValue();
+                price += itemPrice[i].doubleValue() * itemCount[i].intValue();
             else {
 
                 price += itemPrice[i].doubleValue() * itemCount[i].intValue();
@@ -759,8 +759,8 @@ public class OrderAct {
         }
 
         if ((itemId == null) || (itemCount == null) || (itemPrice == null) ||
-       (itemId.length == 0) || (itemId.length != itemCount.length) ||
-       (itemCount.length != itemPrice.length)) {
+                (itemId.length == 0) || (itemId.length != itemCount.length) ||
+                (itemCount.length != itemPrice.length)) {
 
             errors.addErrorString("order item invalid!");
 
