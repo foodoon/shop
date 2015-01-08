@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.ObjectWrapper;
@@ -17,70 +17,70 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class ProductPageChannelDirective extends ProductAbstractDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "ProductPage";
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+ public class ProductPageChannelDirective extends ProductAbstractDirective
+ {
+       public static final String TPL_NAME = "ProductPage";
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 34 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 35 */
+
         Long ctgId = getCategoryId(params);
-/* 36 */
+
         Long brandId = getLong("brandId", params);
-/* 37 */
+
         Long tagId = getTagId(params);
-/* 38 */
+
         String[] names = StringUtils.split(getString("names", params), ',');
-/* 39 */
+
         String[] values = StringUtils.split(getString("values", params), ',');
-/* 40 */
+
         Integer orderBy = getInt("orderBy", params);
-/* 41 */
+
         Pagination pagination = this.productMng.getPageForTagChannel(brandId, web.getId(), ctgId,
-/* 42 */       tagId, isRecommend(params), names, values, isSpecial(params), orderBy.intValue(), getPageNo(env), 
-/* 43 */       getCount(params));
-/* 44 */
+       tagId, isRecommend(params), names, values, isSpecial(params), orderBy.intValue(), getPageNo(env),
+       getCount(params));
+
         Map paramWrap = new HashMap(
-/* 45 */       params);
-/* 46 */
+       params);
+
         paramWrap.put("tag_pagination",
-/* 47 */       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
-/* 48 */
+       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+
         Map origMap =
-/* 49 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 50 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 51 */ includeTpl("shop", "ProductPage", web, params, env);
-/*    */
+ includeTpl("shop", "ProductPage", web, params, env);
+
         else {
-/* 53 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 55 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

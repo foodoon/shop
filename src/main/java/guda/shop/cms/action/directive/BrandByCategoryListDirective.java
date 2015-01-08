@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.ObjectWrapper;
@@ -20,83 +20,83 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class BrandByCategoryListDirective extends WebDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "BrandList";
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public class BrandByCategoryListDirective extends WebDirective
+ {
+       public static final String TPL_NAME = "BrandList";
+
+
     @Autowired
-/*    */ private CategoryMng categoryMng;
-    /*    */   private WebsiteMng websiteMng;
+ private CategoryMng categoryMng;
+       private WebsiteMng websiteMng;
 
-    /*    */
-/*    */
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 38 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 39 */
+
         Long categoryId = getLong("categoryId", params);
-/* 40 */
+
         List list = this.categoryMng.getBrandByCate(categoryId);
-/* 41 */
+
         Map paramWrap = new HashMap(
-/* 42 */       params);
-/* 43 */
+       params);
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
-/* 44 */
+
         Map origMap =
-/* 45 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 46 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 47 */ includeTpl("shop", "BrandList", web, params, env);
-/*    */
+ includeTpl("shop", "BrandList", web, params, env);
+
         else {
-/* 49 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 51 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
-/*    */ {
-/* 56 */
+ {
+
         body.render(env.getOut());
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setWebsiteMng(WebsiteMng websiteMng)
-/*    */ {
-/* 65 */
+ public void setWebsiteMng(WebsiteMng websiteMng)
+ {
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

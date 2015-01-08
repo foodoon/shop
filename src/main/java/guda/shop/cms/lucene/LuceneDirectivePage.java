@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.lucene;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.*;
@@ -18,108 +18,108 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class LuceneDirectivePage extends LuceneDirectiveAbstract
-/*    */ {
-    /*    */   public static final String TPL_NAME = "ProductPage";
-    /*    */   protected WebsiteMng websiteMng;
-    /*    */
-/*    */
-    @Autowired
-/*    */ private LuceneProductSvc luceneProductSvc;
-    /*    */
-/*    */
-    @Autowired
-/*    */ private ServletContext servletContext;
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public class LuceneDirectivePage extends LuceneDirectiveAbstract
+ {
+       public static final String TPL_NAME = "ProductPage";
+       protected WebsiteMng websiteMng;
+
+
+    @Autowired
+ private LuceneProductSvc luceneProductSvc;
+
+
+    @Autowired
+ private ServletContext servletContext;
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 43 */
+     throws TemplateException, IOException
+ {
+
         Website web = this.websiteMng.findById(Long.valueOf(1L));
-/* 44 */
+
         String query = getQuery(params);
-/* 45 */
+
         Long ctgId = getCtgId(params);
-/*    */
-/* 47 */
+
+
         Long type = getPtypeId(params);
-/* 48 */
+
         Date start = getStartDate(params);
-/* 49 */
+
         Date end = getEndDate(params);
-/* 50 */
+
         int pageNo = ((TemplateNumberModel) env.getGlobalVariable("pageNo")).getAsNumber().intValue();
         Pagination pagination;
-/*    */
+
         try
-/*    */ {
-/* 53 */
+ {
+
             String path = this.servletContext.getRealPath("/WEB-INF/lucene");
-/* 54 */
+
             pagination = this.luceneProductSvc.search(path, query, web.getId(), ctgId, start, end, pageNo, getCount(params));
-/*    */
+
         }
-/*    */ catch (ParseException e)
-/*    */ {
-/*    */
-/* 56 */
+ catch (ParseException e)
+ {
+
+
             throw new RuntimeException(e);
-/*    */
+
         }
-/* 58 */
+
         Map paramWrap = new HashMap(
-/* 59 */       params);
-/* 60 */
+       params);
+
         paramWrap.put("tag_pagination", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
-/* 61 */
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
-/* 62 */
+
         Map origMap =
-/* 63 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 64 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 65 */ includeTpl("shop", "ProductPage", web, params, env);
-/*    */
+ includeTpl("shop", "ProductPage", web, params, env);
+
         else {
-/* 67 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 69 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setWebsiteMng(WebsiteMng websiteMng)
-/*    */ {
-/* 81 */
+ public void setWebsiteMng(WebsiteMng websiteMng)
+ {
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

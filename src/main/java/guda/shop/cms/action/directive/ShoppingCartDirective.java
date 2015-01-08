@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;
@@ -17,64 +17,64 @@ import org.springframework.web.servlet.support.RequestContext;
 import java.io.IOException;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class ShoppingCartDirective extends WebDirective
-/*    */ {
-    /*    */   private WebsiteMng websiteMng;
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+ public class ShoppingCartDirective extends WebDirective
+ {
+       private WebsiteMng websiteMng;
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 30 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 31 */
+
         RequestContext ctx = getContext(env);
-/* 32 */
+
         Map origMap =
-/* 33 */       DirectiveUtils.addParamsToVariable(env, params);
-/* 34 */
+       DirectiveUtils.addParamsToVariable(env, params);
+
         includeTpl(web, ctx, env);
-/* 35 */
+
         DirectiveUtils.removeParamsFromVariable(env, params, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     private void includeTpl(Website web, RequestContext ctx, Environment env) throws IOException, TemplateException
-/*    */ {
-/* 40 */
+ {
+
         String tpl = web
-/* 41 */.getTplSys("shop", ctx.getMessage("tpl.shoppingCart"));
-/* 42 */
+.getTplSys("shop", ctx.getMessage("tpl.shoppingCart"));
+
         env.include(tpl, "UTF-8", true);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setWebsiteMng(WebsiteMng websiteMng)
-/*    */ {
-/* 49 */
+ public void setWebsiteMng(WebsiteMng websiteMng)
+ {
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

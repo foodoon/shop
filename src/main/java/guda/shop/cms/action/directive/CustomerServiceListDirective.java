@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.ObjectWrapper;
@@ -20,86 +20,86 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class CustomerServiceListDirective extends WebDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "CustomerServiceList";
-    /*    */   private CustomerServiceMng customerServiceMng;
-    /*    */   private WebsiteMng websiteMng;
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public class CustomerServiceListDirective extends WebDirective
+ {
+       public static final String TPL_NAME = "CustomerServiceList";
+       private CustomerServiceMng customerServiceMng;
+       private WebsiteMng websiteMng;
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 38 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 39 */
+
         List list = this.customerServiceMng.getList();
-/* 40 */
+
         Map paramWrap = new HashMap(params);
-/* 41 */
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
-/* 42 */
+
         Map origMap =
-/* 43 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 44 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 45 */ includeTpl("shop", "CustomerServiceList", web, params, env);
-/*    */
+ includeTpl("shop", "CustomerServiceList", web, params, env);
+
         else {
-/* 47 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 49 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
-/*    */ {
-/* 54 */
+ {
+
         body.render(env.getOut());
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setCustomerServiceMng(CustomerServiceMng customerServiceMng)
-/*    */ {
-/* 62 */
+ public void setCustomerServiceMng(CustomerServiceMng customerServiceMng)
+ {
+
         this.customerServiceMng = customerServiceMng;
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setWebsiteMng(WebsiteMng websiteMng) {
-/* 67 */
+ public void setWebsiteMng(WebsiteMng websiteMng) {
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

@@ -36,12 +36,12 @@
             </list>
         </property>
     </bean>
-    <bean id="frontContextIntercept" class="cguda.shopcms.web.FrontContextInterceptor"/>
+    <bean id="frontContextIntercept" class="guda.shop.cms.web.FrontContextInterceptor"/>
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
         <property name="cookieName" value="clientlanguage"/>
         <property name="cookieMaxAge" value="-1"/>
     </bean>
-    <bean id="frontSecureInterceptor" class="coguda.shopms.web.FrontSecureInterceptor">
+    <bean id="frontSecureInterceptor" class="guda.shop.cms.web.FrontSecureInterceptor">
         <property name="loginUrl" value="/login.jspx"/>
     </bean>
 
@@ -68,7 +68,7 @@
             <property name="exposeSpringMacroHelpers" value="true"/>
         </bean>
         -->
-    <bean id="freemarkerViewResolver" class="com.guda.shopmon.web.springmvc.SimpleFreeMarkerViewResolver">
+    <bean id="freemarkerViewResolver" class="guda.shop.common.web.springmvc.SimpleFreeMarkerViewResolver">
         <property name="contentType" value="text/html; charset=UTF-8"/>
         <property name="exposeRequestAttributes" value="false"/>
         <property name="exposeSessionAttributes" value="false"/>
@@ -135,27 +135,27 @@
         -->
     <!--Controller-->
     <context:annotation-config/>
-    <bean id="dynamicPageAct" class="com.jsguda.shopction.front.DynamicPageAct"/>
-    <bean id="searchAct" class="com.jspguda.shoption.front.SearchAct"/>
-    <bean id="cartAct" class="com.jspgguda.shopion.front.CartAct"/>
-    <bean id="orderAct" class="com.jspgoguda.shopon.front.OrderAct"/>
-    <bean id="myInfomationAct" class="com.jspgouguda.shopn.front.MyInfomationAct"/>
-    <bean id="productFormAct" class="com.jspgou.guda.shop.front.ProductFormAct"/>
-    <bean id="memberCouponAct" class="com.jspgou.cguda.shopfront.MemberCouponAct"/>
-    <bean id="collectAct" class="com.jspgou.cmguda.shopront.CollectAct"/>
-    <bean id="advertiseAct" class="com.jspgou.cmsguda.shopont.AdvertiseAct"/>
-    <bean id="giftAct" class="com.jspgou.cms.guda.shopnt.GiftAct"/>
-    <bean id="shopScoreAct" class="com.jspgou.cms.aguda.shopt.ShopScoreAct"/>
-    <bean id="orderReturnAct" class="com.jspgou.cms.acguda.shop.OrderReturnAct"/>
-    <bean id="shopMoneyAct" class="com.jspgou.cms.actguda.shopShopMoneyAct"/>
-    <bean id="couponAct" class="com.jspgou.cms.actiguda.shopouponAct"/>
-    <bean id="alipayAct" class="com.jspgou.cms.actioguda.shopipayAct"/>
+    <bean id="dynamicPageAct" class="guda.shop.cms.action.front.DynamicPageAct"/>
+    <bean id="searchAct" class="guda.shop.cms.action.front.SearchAct"/>
+    <bean id="cartAct" class="guda.shop.cms.action.front.CartAct"/>
+    <bean id="orderAct" class="guda.shop.cms.action.front.OrderAct"/>
+    <bean id="myInfomationAct" class="guda.shop.cms.action.front.MyInfomationAct"/>
+    <bean id="productFormAct" class="guda.shop.cms.action.front.ProductFormAct"/>
+    <bean id="memberCouponAct" class="guda.shop.cms.action.front.MemberCouponAct"/>
+    <bean id="collectAct" class="guda.shop.cms.action.front.CollectAct"/>
+    <bean id="advertiseAct" class="guda.shop.cms.action.front.AdvertiseAct"/>
+    <bean id="giftAct" class="guda.shop.cms.action.front.GiftAct"/>
+    <bean id="shopScoreAct" class="guda.shop.cms.action.front.ShopScoreAct"/>
+    <bean id="orderReturnAct" class="guda.shop.cms.action.front.OrderReturnAct"/>
+    <bean id="shopMoneyAct" class="guda.shop.cms.action.front.ShopMoneyAct"/>
+    <bean id="couponAct" class="guda.shop.cms.action.front.CouponAct"/>
+    <bean id="alipayAct" class="guda.shop.cms.action.front.AlipayAct"/>
 
-    <bean id="forgotPasswordAct" class="com.jspgou.cms.actionguda.shoprgotPasswordAct"/>
-    <bean id="imageCutAct" class="com.jspgou.cms.action.guda.shopgeCutAct"/>
-    <bean id="imageUploadAct" class="com.jspgou.cms.action.mguda.shopeUploadAct"/>
-    <bean id="loginAct" class="com.jspgou.cms.action.meguda.shopAct"/>
-    <bean id="registerAct" class="com.jspgou.cms.action.memguda.shoperAct"/>
-    <bean id="shopMemberAct" class="com.jspgou.cms.action.membguda.shopberAct"/>
-    <bean id="shopMenberAddressAct" class="com.jspgou.cms.action.member.ShopMenberAddressAct"/>
+    <bean id="forgotPasswordAct" class="guda.shop.cms.action.member.ForgotPasswordAct"/>
+    <bean id="imageCutAct" class="guda.shop.cms.action.member.ImageCutAct"/>
+    <bean id="imageUploadAct" class="guda.shop.cms.action.member.ImageUploadAct"/>
+    <bean id="loginAct" class="guda.shop.cms.action.member.LoginAct"/>
+    <bean id="registerAct" class="guda.shop.cms.action.member.RegisterAct"/>
+    <bean id="shopMemberAct" class="guda.shop.cms.action.member.ShopMemberAct"/>
+    <bean id="shopMenberAddressAct" class="guda.shop.cms.action.member.ShopMenberAddressAct"/>
 </beans>

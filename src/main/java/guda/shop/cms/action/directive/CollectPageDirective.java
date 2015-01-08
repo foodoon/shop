@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.ObjectWrapper;
@@ -22,97 +22,97 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class CollectPageDirective extends WebDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "ArticlePage";
-    /*    */   public static final String PARAM_CATEGORY_ID = "channelId";
-    /*    */   private CollectMng collectMng;
-    /*    */   private WebsiteMng websiteMng;
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public class CollectPageDirective extends WebDirective
+ {
+       public static final String TPL_NAME = "ArticlePage";
+       public static final String PARAM_CATEGORY_ID = "channelId";
+       private CollectMng collectMng;
+       private WebsiteMng websiteMng;
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 46 */
+     throws TemplateException, IOException
+ {
+
         ShopMember member = MemberThread.get();
-/* 47 */
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 48 */
+
         Integer count = Integer.valueOf(getCount(params));
-/* 49 */
+
         Pagination pagination = this.collectMng.getList(count, Integer.valueOf(getPageNo(env)), member.getId());
-/* 50 */
+
         Map paramWrap = new HashMap(
-/* 51 */       params);
-/* 52 */
+       params);
+
         paramWrap.put("tag_pagination",
-/* 53 */       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
-/* 54 */
+       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
-/* 55 */
+
         Map origMap =
-/* 56 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 57 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 58 */ includeTpl("shop", "ArticlePage", web, params, env);
-/*    */
+ includeTpl("shop", "ArticlePage", web, params, env);
+
         else {
-/* 60 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 62 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
-/*    */ {
-/* 67 */
+ {
+
         body.render(env.getOut());
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setCollectMng(CollectMng collectMng)
-/*    */ {
-/* 75 */
+ public void setCollectMng(CollectMng collectMng)
+ {
+
         this.collectMng = collectMng;
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setWebsiteMng(WebsiteMng websiteMng) {
-/* 80 */
+ public void setWebsiteMng(WebsiteMng websiteMng) {
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

@@ -25,46 +25,46 @@ public class GiftPageDirective extends WebDirective {
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
             throws TemplateException, IOException {
-/* 42 */
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 43 */
+
         Pagination pagination = this.giftMng.getPageGift(getPageNo(env), getCount(params));
-/* 44 */
+
         Map paramWrap = new HashMap(
-/* 45 */       params);
-/* 46 */
+       params);
+
         paramWrap.put("tag_pagination",
-/* 47 */       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
-/* 48 */
+       ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination));
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(pagination.getList()));
-/* 49 */
+
         Map origMap =
-/* 50 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 51 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 52 */ includeTpl("shop", "ArticlePage", web, params, env);
+ includeTpl("shop", "ArticlePage", web, params, env);
         else {
-/* 54 */
+
             renderBody(env, loopVars, body);
         }
-/* 56 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
     }
 
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
-/* 61 */
+
         body.render(env.getOut());
     }
 
     @Autowired
     public void setGiftMng(GiftMng giftMng) {
-/* 69 */
+
         this.giftMng = giftMng;
     }
 
     @Autowired
     public void setWebsiteMng(WebsiteMng websiteMng) {
-/* 74 */
+
         this.websiteMng = websiteMng;
     }
 }

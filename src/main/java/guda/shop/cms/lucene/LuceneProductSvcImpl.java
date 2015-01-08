@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.lucene;
-/*    */
-/*    */
+
+
 
 import guda.shop.cms.dao.ProductDao;
 import guda.shop.common.page.Pagination;
@@ -26,102 +26,102 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @Service
-/*    */ public class LuceneProductSvcImpl
-/*    */ implements LuceneProductSvc
-/*    */ {
-    /*    */   private ProductDao productDao;
+ public class LuceneProductSvcImpl
+ implements LuceneProductSvc
+ {
+       private ProductDao productDao;
 
-    /*    */
-/*    */
+
+
     public int index(String path, Long webId, Date start, Date end)
-/*    */     throws CorruptIndexException, LockObtainFailedException, IOException
-/*    */ {
-/* 35 */
+     throws CorruptIndexException, LockObtainFailedException, IOException
+ {
+
         Directory dir = new SimpleFSDirectory(new File(path));
-/* 36 */
+
         IndexWriter writer = new IndexWriter(dir, new StandardAnalyzer(Version.LUCENE_30),
-/* 37 */       true, MaxFieldLength.LIMITED);
-/*    */
+       true, MaxFieldLength.LIMITED);
+
         try {
-/* 39 */
+
             int count = this.productDao.luceneWriteIndex(writer, webId, start, end);
-/* 40 */
+
             writer.optimize();
-/* 41 */
+
             return count;
-/*    */
+
         } finally {
-/* 43 */
+
             writer.close();
-/*    */
+
         }
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     public Pagination search(String path, String queryString, Long webId, Long ctgId, Date start, Date end, int pageNo, int pageSize)
-/*    */     throws CorruptIndexException, IOException, ParseException
-/*    */ {
-/* 50 */
+     throws CorruptIndexException, IOException, ParseException
+ {
+
         Directory dir = new SimpleFSDirectory(new File(path));
-/* 51 */
+
         Searcher searcher = new IndexSearcher(dir);
-/*    */
+
         try {
-/* 53 */
+
             Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30);
-/* 54 */
+
             Query query = LuceneProduct.createQuery(queryString, webId, ctgId, start, end, analyzer);
-/* 55 */
+
             TopDocs docs = searcher.search(query, pageNo * pageSize);
-/* 56 */
+
             Pagination p = LuceneProduct.getResult(searcher, docs, pageNo, pageSize);
-/* 57 */
+
             return p;
-/*    */
+
         } finally {
-/* 59 */
+
             searcher.close();
-/*    */
+
         }
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setProductDao(ProductDao productDao)
-/*    */ {
-/* 67 */
+ public void setProductDao(ProductDao productDao)
+ {
+
         this.productDao = productDao;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

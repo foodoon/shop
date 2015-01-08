@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+    <!--<diskStore path="java.io.tmpdir/jeecms/hibernate"/>-->
+    <defaultCache maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="120"
+                  overflowToDisk="true" diskSpoolBufferSizeMB="30" maxElementsOnDisk="10000000"
+                  diskPersistent="false" diskExpiryThreadIntervalSeconds="120"/>
+
+    <cache name="org.hibernate.cache.StandardQueryCache" maxElementsInMemory="50" eternal="false"
+           timeToIdleSeconds="3600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+    <cache name="org.hibernate.cache.UpdateTimestampsCache" maxElementsInMemory="5000" eternal="true"
+           overflowToDisk="true"/>
+
+    <cache name="guda.shop.core.entity.Global" maxElementsInMemory="1" eternal="true" overflowToDisk="false"/>
+    <cache name="guda.shop.cms.entity.Website" maxElementsInMemory="20" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Website.solutions" maxElementsInMemory="20" eternal="false"
+           timeToIdleSeconds="600" overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Website.messages" maxElementsInMemory="20" eternal="false"
+           timeToIdleSeconds="600" overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.User" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Admin" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Admin.perms" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Member" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+
+    <cache name="guda.shop.cms.entity.ShopConfig" maxElementsInMemory="5" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="com.jspgoguda.shopty.ShopAdmin" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shopguda.shopy.ShopMember" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.guda.shop.ShopMember.favorites" maxElementsInMemory="100" eternal="false"
+           timeToIdleSeconds="600" overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Brand" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Brand.types" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.BrandText" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Category" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Category.child" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.keywords" maxElementsInMemory="100" eternal="false"
+           timeToIdleSeconds="600" overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.tags" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.shopext" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.shoprGroup" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+
+    <cache name="guda.shop.cms.entity.Order" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+    overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.OrderItem" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+    overflowToDisk="true"/>
+
+
+
+
+    <cache name="guda.shop.cms.entity.Cart" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.Cart.itemguda.shopentsInMemory" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+    overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.CartItem" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+
+    <cache name="guda.shop.cms.entity.ShopArticle" maxElementsInMemory="100" eternal="false"
+    timeToIdleSeconds="600" overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.ShopChannel" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600"
+           overflowToDisk="true"/>
+    <cache name="guda.shop.cms.entity.ShopChannelContent" maxElementsInMemory="100" eternal="false"
+    timeToIdleSeconds="600" overflowToDisk="true"/>
+
+</ehcache>

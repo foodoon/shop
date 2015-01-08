@@ -18,34 +18,34 @@ public class PaginationDirective extends WebDirective {
 
     public void execute(Environment env, Map params, TemplateModel[] atemplatemodel, TemplateDirectiveBody body)
             throws TemplateException, IOException {
-/* 40 */
+
         Map model = DirectiveUtils.addParamsToVariable(env, params);
-/* 41 */
+
         String content = DirectiveUtils.getString("content", params);
-/* 42 */
+
         if ("1".equals(content)) {
-/* 43 */
+
             String sysPage = DirectiveUtils.getString("sysPage", params);
-/* 44 */
+
             String userPage = DirectiveUtils.getString("userPage", params);
-/* 45 */
+
             if (!StringUtils.isBlank(sysPage)) {
-/* 46 */
+
                 String tpl = "/WEB-INF/t/gou_sys_defined/style_page/content_" + sysPage + ".html";
-/* 47 */
+
                 env.include(tpl, "UTF-8", true);
-/* 48 */
+
             } else if (!StringUtils.isBlank(userPage)) {
-/* 49 */
+
                 String tpl = "/WEB-INF/t/gou_sys_defined/style_page/content_" + userPage + ".html";
-/* 50 */
+
                 env.include(tpl, "UTF-8", true);
             }
         } else {
-/* 55 */
+
             FrontUtils.includePagination(params, env);
         }
-/* 57 */
+
         DirectiveUtils.removeParamsFromVariable(env, params, model);
     }
 }

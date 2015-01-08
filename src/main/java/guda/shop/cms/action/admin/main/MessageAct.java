@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MessageAct {
-    /* 27 */   private static final Logger log = LoggerFactory.getLogger(MessageAct.class);
+       private static final Logger log = LoggerFactory.getLogger(MessageAct.class);
 
     @Autowired
     private DiscussMng manager;
@@ -26,80 +26,80 @@ public class MessageAct {
     @Autowired
     private ConsultMng consultMng;
 
-    /* 32 */
+
     @RequestMapping({"/message/v_productDiss.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(null, null, null, null, null, SimplePage.cpn(pageNo),
-/* 33 */       CookieUtils.getPageSize(request), true);
-/* 34 */
+       CookieUtils.getPageSize(request), true);
+
         model.addAttribute("pagination", pagination);
 
-/* 36 */
+
         return "message/list";
     }
 
     @RequestMapping({"/message/v_edit.do"})
     public String edit(Long id, Integer pageNo, HttpServletRequest request, ModelMap model) {
-/* 42 */
+
         Discuss bean = this.manager.findById(id);
-/* 43 */
+
         model.addAttribute("discuss", bean);
-/* 44 */
+
         return "message/edit";
     }
 
     @RequestMapping({"/message/v_delete.do"})
     public String delete(Long[] ids, Integer pageNo, HttpServletRequest request, ModelMap model) {
-/* 50 */
+
         this.manager.deleteByIds(ids);
-/* 51 */
+
         model.addAttribute("pageNo", pageNo);
-/* 52 */
+
         return "redirect:v_productDiss.do";
     }
 
     @RequestMapping({"/message/v_productConsult.do"})
     public String listConsult(Integer pageNo, HttpServletRequest request, ModelMap model) {
-/* 59 */
+
         Pagination pagination = this.consultMng.getPage(null, null, null, null, null, SimplePage.cpn(pageNo),
-/* 60 */       CookieUtils.getPageSize(request), Boolean.valueOf(true));
-/* 61 */
+       CookieUtils.getPageSize(request), Boolean.valueOf(true));
+
         model.addAttribute("pagination", pagination);
-/* 62 */
+
         return "consult/list";
     }
 
     @RequestMapping({"/message/v_editConsult.do"})
     public String editConsult(Long id, Integer pageNo, HttpServletRequest request, ModelMap model) {
-/* 68 */
+
         Consult bean = this.consultMng.findById(id);
-/* 69 */
+
         model.addAttribute("consult", bean);
-/* 70 */
+
         return "consult/edit";
     }
 
     @RequestMapping({"/message/v_updateConsult.do"})
     public String updateConsult(Long id, String adminReplay, Integer pageNo, HttpServletRequest request, ModelMap model) {
-/* 76 */
+
         Consult bean = this.consultMng.findById(id);
-/* 77 */
+
         bean.setAdminReplay(adminReplay);
-/* 78 */
+
         this.consultMng.update(bean);
-/* 79 */
+
         model.addAttribute("pageNo", pageNo);
-/* 80 */
+
         return "redirect:v_productConsult.do";
     }
 
     @RequestMapping({"/message/v_deleteConsult.do"})
     public String deleteConsult(Long[] ids, Integer pageNo, HttpServletRequest request, ModelMap model) {
-/* 86 */
+
         this.consultMng.deleteByIds(ids);
-/* 87 */
+
         model.addAttribute("pageNo", pageNo);
-/* 88 */
+
         return "redirect:v_productConsult.do";
     }
 }

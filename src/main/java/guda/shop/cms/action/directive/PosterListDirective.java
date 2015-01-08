@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.ObjectWrapper;
@@ -18,59 +18,59 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class PosterListDirective extends ProductAbstractDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "ProductList";
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public class PosterListDirective extends ProductAbstractDirective
+ {
+       public static final String TPL_NAME = "ProductList";
+
+
     @Autowired
-/*    */ private PosterMng manager;
+ private PosterMng manager;
 
-    /*    */
-/*    */
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 37 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 38 */
+
         List list = this.manager.getPage();
-/* 39 */
+
         Map paramWrap = new HashMap(
-/* 40 */       params);
-/* 41 */
+       params);
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
-/* 42 */
+
         Map origMap =
-/* 43 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 44 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 45 */ includeTpl("shop", "ProductList", web, params, env);
-/*    */
+ includeTpl("shop", "ProductList", web, params, env);
+
         else {
-/* 47 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 49 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

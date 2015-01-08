@@ -26,63 +26,63 @@ public abstract class LuceneDirectiveAbstract extends WebDirective
 
     protected String getQuery(Map<String, TemplateModel> params)
             throws TemplateException {
-/*  62 */
+
         return DirectiveUtils.getString("q", params);
     }
 
     protected Long getWebSiteId(Map<String, TemplateModel> params) throws TemplateException {
-/*  67 */
+
         return DirectiveUtils.getLong("websiteId", params);
     }
 
     protected Long getPtypeId(Map<String, TemplateModel> params) throws TemplateException {
-/*  72 */
+
         return DirectiveUtils.getLong("ptypeId", params);
     }
 
     protected Date getStartDate(Map<String, TemplateModel> params) throws TemplateException {
-/*  77 */
+
         return DirectiveUtils.getDate("startDate", params);
     }
 
     protected Date getEndDate(Map<String, TemplateModel> params) throws TemplateException {
-/*  82 */
+
         return DirectiveUtils.getDate("endDate", params);
     }
 
     protected Long getCtgId(Map<String, TemplateModel> params) throws TemplateException {
-/*  87 */
+
         return getLong("ctgId", params);
     }
 
     protected Long getTagId(Map<String, TemplateModel> params)
             throws TemplateException {
-/*  95 */
+
         return getLong("tagId", params);
     }
 
     protected Boolean isRecommend(Map<String, TemplateModel> params) throws TemplateException {
-/* 100 */
+
         return getBool("recommend", params);
     }
 
     protected Boolean isSpecial(Map<String, TemplateModel> params) throws TemplateException {
-/* 105 */
+
         return getBool("special", params);
     }
 
     protected Boolean isHostSale(Map<String, TemplateModel> params) throws TemplateException {
-/* 110 */
+
         return getBool("hostSale", params);
     }
 
     protected Boolean isNewProduct(Map<String, TemplateModel> params) throws TemplateException {
-/* 115 */
+
         return getBool("newProduct", params);
     }
 
     protected void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
-/* 120 */
+
         body.render(env.getOut());
     }
 }

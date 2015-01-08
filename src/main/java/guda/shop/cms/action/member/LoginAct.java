@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginAct {
     public static final String TPL_INDEX = "tpl.index";
-    /*  38 */   private static final Logger log = LoggerFactory.getLogger(LoginAct.class);
+       private static final Logger log = LoggerFactory.getLogger(LoginAct.class);
     private static final String LOGIN_INPUT = "tpl.loginInput";
     @Autowired
     private LoginSvc loginSvc;
@@ -37,115 +37,115 @@ public class LoginAct {
 
     @RequestMapping(value = {"/login.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String loginInput(String returnUrl, String message, HttpServletRequest request, ModelMap model) {
-/*  47 */
+
         Website web = SiteUtils.getWeb(request);
-/*  48 */
+
         if (!StringUtils.isBlank(returnUrl)) {
-/*  49 */
+
             model.addAttribute("returnUrl", returnUrl);
-/*  50 */
+
             if (!StringUtils.isBlank(message)) {
-/*  51 */
+
                 model.addAttribute("message", message);
             }
         }
-/*  54 */
+
         ShopFrontHelper.setCommonData(request, model, web, 1);
-/*  55 */
+
         return web.getTplSys("member",
-/*  56 */       MessageResolver.getMessage(request, 
-/*  56 */       "tpl.loginInput", new Object[0]));
+       MessageResolver.getMessage(request,
+       "tpl.loginInput", new Object[0]));
     }
 
     @RequestMapping(value = {"/login.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String loginSubmit(String username, String password, String returnUrl, String redirectUrl, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-/*  64 */
+
         Website web = SiteUtils.getWeb(request);
-/*  65 */
+
         WebErrors errors = WebErrors.create(request);
         try {
-/*  68 */
+
             ShopMember member = this.loginSvc.memberLogin(request, response, web, username, password);
-/*  69 */
+
             if (member == null) {
-/*  70 */
+
                 return "redirect:/";
             }
-/*  72 */
+
             log.info("member '{}' login success.", username);
-/*  73 */
+
             if (!StringUtils.isBlank(returnUrl))
-/*  74 */ return "redirect:" + returnUrl;
-/*  75 */
+ return "redirect:" + returnUrl;
+
             if (!StringUtils.isBlank(redirectUrl)) {
-/*  76 */
+
                 return "redirect:" + redirectUrl;
             }
-/*  78 */
+
             model.addAttribute("member", member);
-/*  79 */
+
             ShopFrontHelper.setCommonData(request, model, web, 1);
 
-/*  81 */
+
             return web.getTemplate("index",
-/*  82 */         MessageResolver.getMessage(request, 
-/*  82 */         "tpl.index", new Object[0]));
+         MessageResolver.getMessage(request,
+         "tpl.index", new Object[0]));
         } catch (UsernameNotFoundException e) {
-/*  85 */
+
             errors.addErrorCode("error.usernameNotExist");
-/*  86 */
+
             log.info(e.getMessage());
         } catch (BadCredentialsException e) {
-/*  88 */
+
             errors.addErrorCode("error.passwordInvalid");
-/*  89 */
+
             log.info(e.getMessage());
         } catch (UserNotInWebsiteException e) {
-/*  91 */
+
             errors.addErrorCode("error.usernameNotInWebsite");
-/*  92 */
+
             log.info(e.getMessage());
         } catch (UserNotAcitveException e) {
-/*  94 */
+
             errors.addErrorCode("error.usernameNotActivated");
-/*  95 */
+
             log.info(e.getMessage());
         }
-/*  97 */
+
         errors.toModel(model);
-/*  98 */
+
         ShopFrontHelper.setCommonData(request, model, web, 1);
-/*  99 */
+
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.loginInput", new Object[0]));
     }
 
     public Integer errorRemaining(String username) {
-/* 103 */
+
         if (StringUtils.isBlank(username)) {
-/* 104 */
+
             return null;
         }
-/* 106 */
+
         User user = this.userMng.getByUsername(username);
-/* 107 */
+
         if (user == null) {
-/* 108 */
+
             return null;
         }
-/* 110 */
+
         return null;
     }
 
     @RequestMapping({"/logout.jspx"})
     public String logout(String redirectUrl, HttpServletRequest request, HttpServletResponse response) {
-/* 117 */
+
         this.loginSvc.logout(request, response);
-/* 118 */
+
         if (!StringUtils.isBlank(redirectUrl)) {
-/* 119 */
+
             return "redirect:" + redirectUrl;
         }
-/* 121 */
+
         return "redirect:/";
     }
 }

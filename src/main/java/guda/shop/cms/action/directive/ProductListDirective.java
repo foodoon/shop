@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.ObjectWrapper;
@@ -16,60 +16,60 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class ProductListDirective extends ProductAbstractDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "ProductList";
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+ public class ProductListDirective extends ProductAbstractDirective
+ {
+       public static final String TPL_NAME = "ProductList";
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 33 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 34 */
+
         Long ctgId = getCategoryId(params);
-/* 35 */
+
         Long tagId = getTagId(params);
-/* 36 */
+
         List list = this.productMng.getListForTag(web.getId(), ctgId,
-/* 37 */       tagId, isRecommend(params), isSpecial(params), isHostSale(params), isNewProduct(params), 0, 
-/* 38 */       getCount(params));
-/* 39 */
+       tagId, isRecommend(params), isSpecial(params), isHostSale(params), isNewProduct(params), 0,
+       getCount(params));
+
         Map paramWrap = new HashMap(
-/* 40 */       params);
-/* 41 */
+       params);
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
-/* 42 */
+
         Map origMap =
-/* 43 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 44 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 45 */ includeTpl("shop", "ProductList", web, params, env);
-/*    */
+ includeTpl("shop", "ProductList", web, params, env);
+
         else {
-/* 47 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 49 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

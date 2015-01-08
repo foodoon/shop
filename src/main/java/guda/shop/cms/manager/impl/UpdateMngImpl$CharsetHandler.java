@@ -15,32 +15,32 @@ class UpdateMngImpl$CharsetHandler
     private String charset;
 
     public UpdateMngImpl$CharsetHandler(UpdateMngImpl paramUpdateMngImpl, String charset) {
-/* 343 */
+
         this.charset = charset;
     }
 
     public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
-/* 348 */
+
         StatusLine statusLine = response.getStatusLine();
-/* 349 */
+
         if (statusLine.getStatusCode() >= 300) {
-/* 350 */
+
             return null;
         }
-/* 352 */
+
         HttpEntity entity = response.getEntity();
-/* 353 */
+
         if (entity != null) {
-/* 354 */
+
             if (!StringUtils.isBlank(this.charset)) {
-/* 355 */
+
                 return EntityUtils.toString(entity, this.charset);
             }
-/* 357 */
+
             return EntityUtils.toString(entity);
         }
 
-/* 360 */
+
         return null;
     }
 }

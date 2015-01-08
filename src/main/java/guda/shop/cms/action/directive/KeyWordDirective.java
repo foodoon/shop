@@ -23,28 +23,28 @@ public class KeyWordDirective extends ProductAbstractDirective {
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
             throws TemplateException, IOException {
-/* 36 */
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 37 */
+
         Integer count = Integer.valueOf(getCount(params));
-/* 38 */
+
         List beanList = this.keywordMng.findKeyWord(count);
-/* 39 */
+
         Map paramWrap = new HashMap(
-/* 40 */       params);
-/* 41 */
+       params);
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(beanList));
-/* 42 */
+
         Map origMap =
-/* 43 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 44 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 45 */ includeTpl("shop", "ProductList", web, params, env);
+ includeTpl("shop", "ProductList", web, params, env);
         else {
-/* 47 */
+
             renderBody(env, loopVars, body);
         }
-/* 49 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
     }
 }

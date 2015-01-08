@@ -24,44 +24,44 @@ public class BrandListDirective extends WebDirective {
 
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
             throws TemplateException, IOException {
-/* 38 */
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 39 */
+
         List list = this.brandMng.getListForTag(web.getId(), 0,
-/* 40 */       getCount(params));
-/* 41 */
+       getCount(params));
+
         Map paramWrap = new HashMap(
-/* 42 */       params);
-/* 43 */
+       params);
+
         paramWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
-/* 44 */
+
         Map origMap =
-/* 45 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 46 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 47 */ includeTpl("shop", "BrandList", web, params, env);
+ includeTpl("shop", "BrandList", web, params, env);
         else {
-/* 49 */
+
             renderBody(env, loopVars, body);
         }
-/* 51 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
     }
 
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
-/* 56 */
+
         body.render(env.getOut());
     }
 
     @Autowired
     public void setBrandMng(BrandMng brandMng) {
-/* 64 */
+
         this.brandMng = brandMng;
     }
 
     @Autowired
     public void setWebsiteMng(WebsiteMng websiteMng) {
-/* 69 */
+
         this.websiteMng = websiteMng;
     }
 }

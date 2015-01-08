@@ -49,8 +49,8 @@
         -->
         <property name="mappingLocations">
             <list>
-                <value>classpath:/guda.shop/core/entity/hbm/*.hbm.xml</value>
-                <value>classpath:/guda.shop/cms/entity/hbm/*.hbm.xml</value>
+                <value>classpath:/guda/shop/core/entity/hbm/*.hbm.xml</value>
+                <value>classpath:/guda/shop/cms/entity/hbm/*.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">

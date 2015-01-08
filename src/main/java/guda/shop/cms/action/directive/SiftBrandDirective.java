@@ -18,69 +18,69 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SiftBrandDirective extends WebDirective {
-    /*    */   public static final String TPL_NAME = "BrandList";
-    /*    */   private BrandMng brandMng;
-    /*    */   private WebsiteMng websiteMng;
+       public static final String TPL_NAME = "BrandList";
+       private BrandMng brandMng;
+       private WebsiteMng websiteMng;
 
-    /*    */
-/*    */
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 38 */
+     throws TemplateException, IOException
+ {
+
         Website web = getWeb(env, params, this.websiteMng);
-/* 39 */
+
         Brand brand = this.brandMng.getsiftBrand();
-/* 40 */
+
         Map paramWrap = new HashMap(
-/* 41 */       params);
-/* 42 */
+       params);
+
         paramWrap.put("tag_bean", ObjectWrapper.DEFAULT_WRAPPER.wrap(brand));
-/* 43 */
+
         Map origMap =
-/* 44 */       DirectiveUtils.addParamsToVariable(env, paramWrap);
-/* 45 */
+       DirectiveUtils.addParamsToVariable(env, paramWrap);
+
         if (isInvokeTpl(params))
-/* 46 */ includeTpl("shop", "BrandList", web, params, env);
-/*    */
+ includeTpl("shop", "BrandList", web, params, env);
+
         else {
-/* 48 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 50 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramWrap, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
-/*    */ {
-/* 55 */
+ {
+
         body.render(env.getOut());
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setBrandMng(BrandMng brandMng)
-/*    */ {
-/* 63 */
+ public void setBrandMng(BrandMng brandMng)
+ {
+
         this.brandMng = brandMng;
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setWebsiteMng(WebsiteMng websiteMng) {
-/* 68 */
+ public void setWebsiteMng(WebsiteMng websiteMng) {
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

@@ -1,7 +1,7 @@
-/*    */
+
 package guda.shop.cms.action.directive;
-/*    */
-/*    */
+
+
 
 import freemarker.core.Environment;
 import freemarker.template.*;
@@ -19,126 +19,126 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
-/*    */
 
-/*    */
-/*    */ public class ChannelListDirective extends WebDirective
-/*    */ {
-    /*    */   public static final String TPL_NAME = "TopChannel";
-    /*    */   private ShopChannelMng shopChannelMng;
-    /*    */   private WebsiteMng websiteMng;
 
-    /*    */
-/*    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public class ChannelListDirective extends WebDirective
+ {
+       public static final String TPL_NAME = "TopChannel";
+       private ShopChannelMng shopChannelMng;
+       private WebsiteMng websiteMng;
+
+
+
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body)
-/*    */     throws TemplateException, IOException
-/*    */ {
-/* 39 */
+     throws TemplateException, IOException
+ {
+
         Long webId = getWebId(params);
-/*    */
+
         Website web;
-/* 41 */
+
         if (webId == null)
-/* 42 */ web = getWeb(env, params, this.websiteMng);
-/*    */
+ web = getWeb(env, params, this.websiteMng);
+
         else {
-/* 44 */
+
             web = this.websiteMng.findById(webId);
-/*    */
+
         }
-/* 46 */
+
         if (web == null) {
-/* 47 */
+
             throw new TemplateModelException("webId=" + webId + " not exist!");
-/*    */
+
         }
-/* 49 */
+
         Long parentId = DirectiveUtils.getLong("parentId", params);
-/*    */
+
         List list;
-/* 51 */
+
         if (parentId != null) {
-/* 52 */
+
             ShopChannel channel = this.shopChannelMng.findById(parentId);
-/* 53 */
+
             if (channel != null)
-/* 54 */ list = new ArrayList(channel.getChild());
-/*    */
+ list = new ArrayList(channel.getChild());
+
             else
-/* 56 */         list = new ArrayList();
-/*    */
+         list = new ArrayList();
+
         }
-/*    */
+
         else {
-/* 59 */
+
             list = this.shopChannelMng.getTopListForTag(web.getId(), Integer.valueOf(getCount(params)));
-/*    */
+
         }
-/* 61 */
+
         Map paramsWrap = new HashMap(
-/* 62 */       params);
-/* 63 */
+       params);
+
         paramsWrap.put("tag_list", ObjectWrapper.DEFAULT_WRAPPER.wrap(list));
-/* 64 */
+
         Map origMap =
-/* 65 */       DirectiveUtils.addParamsToVariable(env, paramsWrap);
-/* 66 */
+       DirectiveUtils.addParamsToVariable(env, paramsWrap);
+
         if (isInvokeTpl(params))
-/* 67 */ includeTpl("shop", "TopChannel", web, params, env);
-/*    */
+ includeTpl("shop", "TopChannel", web, params, env);
+
         else {
-/* 69 */
+
             renderBody(env, loopVars, body);
-/*    */
+
         }
-/* 71 */
+
         DirectiveUtils.removeParamsFromVariable(env, paramsWrap, origMap);
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     private void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException
-/*    */ {
-/* 76 */
+ {
+
         body.render(env.getOut());
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     @Autowired
-/*    */ public void setShopChannelMng(ShopChannelMng shopChannelMng)
-/*    */ {
-/* 84 */
+ public void setShopChannelMng(ShopChannelMng shopChannelMng)
+ {
+
         this.shopChannelMng = shopChannelMng;
-/*    */
+
     }
 
-    /*    */
-/*    */
+
+
     public void setWebsiteMng(WebsiteMng websiteMng) {
-/* 88 */
+
         this.websiteMng = websiteMng;
-/*    */
+
     }
-/*    */
+
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

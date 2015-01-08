@@ -15,33 +15,33 @@ import java.util.Set;
 
 @Controller
 public class UnLoadAdminAct {
-    /* 24 */   private static final Logger log = LoggerFactory.getLogger(UnLoadAdminAct.class);
+       private static final Logger log = LoggerFactory.getLogger(UnLoadAdminAct.class);
 
     @RequestMapping(value = {"/commonAdmin/v_list.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String unLoad(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-/* 28 */
+
         Map adminMap = AdminMap.adminmap;
-/* 29 */
+
         model.addAttribute("map1", adminMap);
-/* 30 */
+
         Set<String> keySet = adminMap.keySet();
-/* 31 */
+
         for (String username : keySet) {
-/* 32 */
+
             ((Integer) adminMap.get(username)).intValue();
         }
 
-/* 36 */
+
         return "admin/uplocklist";
     }
 
     @RequestMapping(value = {"/commonAdmin/v_unlock.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String unlock(HttpServletResponse response, String username) {
-/* 41 */
+
         AdminMap.unLoadAdmin(username);
-/* 42 */
+
         ResponseUtils.renderJson(response, "解锁成功 !");
-/* 43 */
+
         return null;
     }
 }

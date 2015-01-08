@@ -13,7 +13,7 @@
     <bean id="sessionProvider" class="cguda.shopcommon.web.session.HttpSessionProvider"/>
     -->
     <!--缓存Session-->
-    <bean id="sessionProvider" class="coguda.shopommon.web.session.CacheSessionProvider">
+    <bean id="sessionProvider" class="guda.shop.common.web.session.CacheSessionProvider">
         <property name="sessionCache" ref="sessionCache"/>
         <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
     </bean>
@@ -32,53 +32,53 @@
     </bean>
     -->
     <!--Ehcache缓存-->
-    <bean id="sessionCache" class="com.guda.shopmon.web.session.cache.EhcacheSessionCache">
+    <bean id="sessionCache" class="guda.shop.common.web.session.cache.EhcacheSessionCache">
         <property name="cache" ref="ehSessionCache"/>
     </bean>
     <!--SessionId生成器-->
-    <bean id="sessionIdGenerator" class="com.jguda.shopon.web.session.id.JdkUUIDGenerator"/>
+    <bean id="sessionIdGenerator" class="guda.shop.common.web.session.id.JdkUUIDGenerator"/>
 
     <!--图片处理-->
-    <bean id="imageScale" class="com.jsguda.shopn.image.ImageScaleImpl" init-method="init"/>
+    <bean id="imageScale" class="guda.shop.common.image.ImageScaleImpl" init-method="init"/>
     <!--密码加密器-->
-    <bean id="pwdEncoder" class="com.jspguda.shop.security.encoder.Md5PwdEncoder"/>
+    <bean id="pwdEncoder" class="guda.shop.common.security.encoder.Md5PwdEncoder"/>
 
     <!--拦截器-->
-    <bean id="frontLocaleIntercept" class="com.jspgguda.shopb.front.FrontLocaleInterceptor"/>
-    <bean id="adminLocaleIntercept" class="com.jspgoguda.shop.admin.AdminLocaleInterceptor"/>
-    <bean id="adminSecureInterceptor" class="com.jspgouguda.shopadmin.AdminSecureInterceptor">
+    <bean id="frontLocaleIntercept" class="guda.shop.core.web.front.FrontLocaleInterceptor"/>
+    <bean id="adminLocaleIntercept" class="guda.shop.core.web.admin.AdminLocaleInterceptor"/>
+    <bean id="adminSecureInterceptor" class="guda.shop.core.web.admin.AdminSecureInterceptor">
         <!--是否开发状态
         <property name="develop" value="true"/>
         -->
     </bean>
     <!--执行时间标签-->
-    <bean id="process_time" class="com.jspgou.guda.shoptive.ProcessTimeDirective"/>
-    <bean id="text_cut" class="com.jspgou.cguda.shopfreemarker.TextCutDirective"/>
+    <bean id="process_time" class="guda.shop.core.directive.ProcessTimeDirective"/>
+    <bean id="text_cut" class="guda.shop.common.web.freemarker.TextCutDirective"/>
     <!--权限标签-->
-    <bean id="authorize" class="com.jspgou.coguda.shopve.AuthorizeDirective"/>
-    <bean id="fileRepository" class="com.jspgou.comguda.shop.FileRepository"/>
+    <bean id="authorize" class="guda.shop.core.directive.AuthorizeDirective"/>
+    <bean id="fileRepository" class="guda.shop.common.upload.FileRepository"/>
     <!--文件模板-->
-    <bean id="tplManager" class="com.jspgou.coreguda.shopplManagerImpl"/>
+    <bean id="tplManager" class="guda.shop.core.tpl.FileTplManagerImpl"/>
 
-    <bean id="realPathResolver" class="com.jspgou.commoguda.shopngmvc.ServletContextRealPathResolver"/>
-    <bean id="coreCacheSvc" class="com.jspgou.core.cguda.shopCoreCacheSvcImpl"/>
-    <bean id="domainCacheSvc" class="com.jspgou.core.caguda.shopomainCacheSvcImpl"/>
+    <bean id="realPathResolver" class="guda.shop.common.web.springmvc.ServletContextRealPathResolver"/>
+    <bean id="coreCacheSvc" class="guda.shop.core.cache.impl.CoreCacheSvcImpl"/>
+    <bean id="domainCacheSvc" class="guda.shop.core.cache.impl.DomainCacheSvcImpl"/>
 
-    <bean id="memberDao" class="com.jspgou.core.daoguda.shoperDaoImpl"/>
-    <bean id="userDao" class="com.jspgou.core.dao.guda.shopaoImpl"/>
-    <bean id="websiteDao" class="com.jspgou.core.dao.iguda.shopeDaoImpl"/>
-    <bean id="globalDao" class="com.jspgou.core.dao.imguda.shopaoImpl"/>
-    <bean id="adminDao" class="com.jspgou.core.dao.impguda.shopImpl"/>
-    <bean id="roleDao" class="com.jspgou.core.dao.implguda.shoppl"/>
-    <bean id="logDao" class="com.jspgou.core.dao.impl.guda.shop"/>
+    <bean id="memberDao" class="guda.shop.core.dao.impl.MemberDaoImpl"/>
+    <bean id="userDao" class="guda.shop.core.dao.impl.UserDaoImpl"/>
+    <bean id="websiteDao" class="guda.shop.core.dao.impl.WebsiteDaoImpl"/>
+    <bean id="globalDao" class="guda.shop.core.dao.impl.GlobalDaoImpl"/>
+    <bean id="adminDao" class="guda.shop.core.dao.impl.AdminDaoImpl"/>
+    <bean id="roleDao" class="guda.shop.core.dao.impl.RoleDaoImpl"/>
+    <bean id="logDao" class="guda.shop.core.dao.impl.LogDaoImpl"/>
 
-    <bean id="templateMng" class="com.jspgou.core.manager.imguda.shopeMngImpl"/>
-    <bean id="memberMng" class="com.jspgou.core.manager.impguda.shopgImpl"/>
-    <bean id="userMng" class="com.jspgou.core.manager.implguda.shoppl"/>
-    <bean id="websiteMng" class="com.jspgou.core.manager.impl.guda.shopImpl"/>
-    <bean id="globalMng" class="com.jspgou.core.manager.impl.Gguda.shoppl"/>
-    <bean id="adminMng" class="com.jspgou.core.manager.impl.Adguda.shop"/>
-    <bean id="roleMng" class="com.jspgou.core.manager.impl.Rolguda.shop>
-	<bean id=" resourceMng" class="com.jspgou.cms.manager.impl.Resouguda.shop"/>
-	<bean id="logMng" class="com.jspgou.core.manager.impl.LogMngImpl"/>
+    <bean id="templateMng" class="guda.shop.core.manager.impl.TemplateMngImpl"/>
+    <bean id="memberMng" class="guda.shop.core.manager.impl.MemberMngImpl"/>
+    <bean id="userMng" class="guda.shop.core.manager.impl.UserMngImpl"/>
+    <bean id="websiteMng" class="guda.shop.core.manager.impl.WebsiteMngImpl"/>
+    <bean id="globalMng" class="guda.shop.core.manager.impl.GlobalMngImpl"/>
+    <bean id="adminMng" class="guda.shop.core.manager.impl.AdminMngImpl"/>
+    <bean id="roleMng" class="guda.shop.core.manager.impl.RoleMngImpl" />
+	<bean id="resourceMng" class="guda.shop.cms.manager.impl.ResourceMngImpl"/>
+	<bean id="logMng" class="guda.shop.core.manager.impl.LogMngImpl"/>
 </beans>

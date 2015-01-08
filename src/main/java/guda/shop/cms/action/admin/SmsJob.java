@@ -9,7 +9,7 @@ public class SmsJob {
     private OrderMng manager;
 
     public void execute() {
-/* 12 */
+
         this.manager.abolishOrder();
     }
 }
