@@ -1,7 +1,7 @@
 cd .. && git pull
 tomcat_home=/home/ec2-user/tomcat-fuwu
 mvn clean package -Dmaven.test.skip=true 
-mv target/fuwu-1.0-SNAPSHOT.war ROOT.war
+mv target/shop-1.0-SNAPSHOT.war ROOT.war
 rm -rf ${tomcat_home}/webapps/ROOT.war
 rm -rf ${tomcat_home}/webapps/ROOT
 
