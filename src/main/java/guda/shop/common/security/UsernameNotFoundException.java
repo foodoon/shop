@@ -1,15 +1,12 @@
 package guda.shop.common.security;
 
-public class UsernameNotFoundException extends AuthenticationException
-{
-  public UsernameNotFoundException()
-  {
-  }
+public class UsernameNotFoundException extends AuthenticationException {
+    public UsernameNotFoundException() {
+    }
 
-  public UsernameNotFoundException(String paramString)
-  {
-    super(paramString);
-  }
+    public UsernameNotFoundException(String paramString) {
+        super(paramString);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

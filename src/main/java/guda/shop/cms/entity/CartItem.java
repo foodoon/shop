@@ -3,47 +3,39 @@ package guda.shop.cms.entity;
 import guda.shop.cms.entity.base.BaseCartItem;
 import guda.shop.core.entity.Website;
 
-public class CartItem extends BaseCartItem
-{
-  private static final long serialVersionUID = 1L;
+public class CartItem extends BaseCartItem {
+    private static final long serialVersionUID = 1L;
 
-  public Double getSubtotal()
-  {
-    return Double.valueOf(getProduct().getMemberPrice().doubleValue() * getCount().intValue());
-  }
+    public CartItem() {
+    }
 
-  public Double getLimitSubtotal()
-  {
-    int i = getCount().intValue();
-    Double localDouble1 = getProduct().getProductExt().getSeckillprice();
-    Double localDouble2 = Double.valueOf(localDouble1.doubleValue() * i);
-    return localDouble2;
-  }
+    public CartItem(Long paramLong) {
+        super(paramLong);
+    }
 
-  public int getWeightForFreight()
-  {
-    Product localProduct = getProduct();
-    return localProduct.getWeight().intValue() * getCount().intValue();
-  }
+    public CartItem(Long paramLong, Website paramWebsite, Cart paramCart, Product paramProduct, Integer paramInteger) {
+        super(paramLong, paramWebsite, paramCart, paramProduct, paramInteger);
+    }
 
-  public int getCountForFreigt()
-  {
-    return getCount().intValue();
-  }
+    public Double getSubtotal() {
+        return Double.valueOf(getProduct().getMemberPrice().doubleValue() * getCount().intValue());
+    }
 
-  public CartItem()
-  {
-  }
+    public Double getLimitSubtotal() {
+        int i = getCount().intValue();
+        Double localDouble1 = getProduct().getProductExt().getSeckillprice();
+        Double localDouble2 = Double.valueOf(localDouble1.doubleValue() * i);
+        return localDouble2;
+    }
 
-  public CartItem(Long paramLong)
-  {
-    super(paramLong);
-  }
+    public int getWeightForFreight() {
+        Product localProduct = getProduct();
+        return localProduct.getWeight().intValue() * getCount().intValue();
+    }
 
-  public CartItem(Long paramLong, Website paramWebsite, Cart paramCart, Product paramProduct, Integer paramInteger)
-  {
-    super(paramLong, paramWebsite, paramCart, paramProduct, paramInteger);
-  }
+    public int getCountForFreigt() {
+        return getCount().intValue();
+    }
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

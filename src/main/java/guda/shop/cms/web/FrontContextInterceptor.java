@@ -8,44 +8,41 @@ import guda.shop.cms.web.threadvariable.GroupThread;
 import guda.shop.cms.web.threadvariable.MemberThread;
 import guda.shop.core.entity.Website;
 import guda.shop.core.web.SiteUtils;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class FrontContextInterceptor extends HandlerInterceptorAdapter
-{
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-  @Autowired
-  private ShopConfigMng _$2;
+public class FrontContextInterceptor extends HandlerInterceptorAdapter {
 
-  @Autowired
-  private LoginSvc _$1;
+    @Autowired
+    private ShopConfigMng _$2;
 
-  public boolean preHandle(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject)
-    throws ServletException
-  {
-    Website localWebsite = SiteUtils.getWeb(paramHttpServletRequest);
-    ShopConfig localShopConfig = this._$2.findById(localWebsite.getId());
-    if (localShopConfig == null)
-      throw new IllegalStateException("no ShopConfig found in Website id=" + localWebsite.getId());
-    paramHttpServletRequest.setAttribute("_shop_config_key", localShopConfig);
-    ShopMember localShopMember = this._$1.getMember(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
-    if (localShopMember != null)
-    {
-      MemberThread.set(localShopMember);
-      GroupThread.set(localShopMember.getGroup());
+    @Autowired
+    private LoginSvc _$1;
+
+    public boolean preHandle(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject)
+            throws ServletException {
+        Website localWebsite = SiteUtils.getWeb(paramHttpServletRequest);
+        ShopConfig localShopConfig = this._$2.findById(localWebsite.getId());
+        if (localShopConfig == null)
+            throw new IllegalStateException("no ShopConfig found in Website id=" + localWebsite.getId());
+        paramHttpServletRequest.setAttribute("_shop_config_key", localShopConfig);
+        ShopMember localShopMember = this._$1.getMember(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
+        if (localShopMember != null) {
+            MemberThread.set(localShopMember);
+            GroupThread.set(localShopMember.getGroup());
+        }
+        return true;
     }
-    return true;
-  }
 
-  public void afterCompletion(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject, Exception paramException)
-    throws Exception
-  {
-    MemberThread.remove();
-    GroupThread.remove();
-  }
+    public void afterCompletion(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject, Exception paramException)
+            throws Exception {
+        MemberThread.remove();
+        GroupThread.remove();
+    }
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

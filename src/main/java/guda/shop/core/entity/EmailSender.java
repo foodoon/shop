@@ -2,9 +2,8 @@ package guda.shop.core.entity;
 
 import guda.shop.core.entity.base.BaseEmailSender;
 
-public class EmailSender extends BaseEmailSender
-{
-  private static final long serialVersionUID = 1L;
+public class EmailSender extends BaseEmailSender {
+    private static final long serialVersionUID = 1L;
 }
 
 /* Location:           D:\demo22\jspgou-core.jar

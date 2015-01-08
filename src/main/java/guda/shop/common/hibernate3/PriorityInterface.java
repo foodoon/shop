@@ -1,10 +1,9 @@
 package guda.shop.common.hibernate3;
 
-public abstract interface PriorityInterface
-{
-  public abstract Number getPriority();
+public abstract interface PriorityInterface {
+    public abstract Number getPriority();
 
-  public abstract Number getId();
+    public abstract Number getId();
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

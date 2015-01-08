@@ -1,15 +1,12 @@
 package guda.shop.common.security.rememberme;
 
-public class InvalidCookieException extends RememberMeAuthenticationException
-{
-  public InvalidCookieException()
-  {
-  }
+public class InvalidCookieException extends RememberMeAuthenticationException {
+    public InvalidCookieException() {
+    }
 
-  public InvalidCookieException(String paramString)
-  {
-    super(paramString);
-  }
+    public InvalidCookieException(String paramString) {
+        super(paramString);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

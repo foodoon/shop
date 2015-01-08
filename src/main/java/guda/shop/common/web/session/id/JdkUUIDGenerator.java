@@ -1,15 +1,14 @@
 package guda.shop.common.web.session.id;
 
-import java.util.UUID;
 import org.apache.commons.lang.StringUtils;
 
+import java.util.UUID;
+
 public class JdkUUIDGenerator
-  implements SessionIdGenerator
-{
-  public String get()
-  {
-    return StringUtils.remove(UUID.randomUUID().toString(), '-');
-  }
+        implements SessionIdGenerator {
+    public String get() {
+        return StringUtils.remove(UUID.randomUUID().toString(), '-');
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

@@ -1,174 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
-	default-lazy-init="true">
-	<!--全文检索-->
-	<bean id="luceneProductSvc" class="guda.shop.cms.lucene.LuceneProductSvcImpl"/>
-	<!--登录-->
-	<bean id="loginSvc" class="guda.shop.cms.service.impl.LoginSvcImpl"/>
-	<!--购物-->
-	<bean id="shoppingSvc" class="guda.shop.cms.service.impl.ShoppingSvcImpl"/>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+       default-lazy-init="true">
+    <!--全文检索-->
+    <bean id="luceneProductSvc" class="guda.shop.cms.lucene.LuceneProductSvcImpl"/>
+    <!--登录-->
+    <bean id="loginSvc" class="guda.shop.cms.service.impl.LoginSvcImpl"/>
+    <!--购物-->
+    <bean id="shoppingSvc" class="guda.shop.cms.service.impl.ShoppingSvcImpl"/>
 
-	<!--标签-->
-	<!--分页样式标签-->
-	<bean id="pagination_style" class="guda.shop.cms.action.directive.abs.PaginationDirective"/>
-	<bean id="shop_Category" class="guda.shop.cms.action.directive.CategoryListDirective"/>
-	<bean id="shop_ProductList" class="guda.shop.cms.action.directive.ProductListDirective"/>
-	<bean id="shop_ProductPage" class="guda.shop.cms.action.directive.ProductPageDirective"/>
-	<bean id="shop_Channel" class="guda.shop.cms.action.directive.ChannelListDirective"/>
-	<bean id="shop_ArticleList" class="guda.shop.cms.action.directive.ArticleListDirective"/>
-	<bean id="shop_ArticlePage" class="guda.shop.cms.action.directive.ArticlePageDirective"/>
-	<bean id="shop_BrandList" class="guda.shop.cms.action.directive.BrandListDirective"/>
-	<bean id="shop_productTypeList" class="guda.shop.cms.action.directive.ProductTypeListDirective"/>
-	<bean id="shop_typeofCategoryList" class="guda.shop.cms.action.directive.ProductTypeofCategoryListDirective"/>
-	<bean id="shop_productTagList" class="guda.shop.cms.action.directive.ProductTagListDirective"/>
-	<bean id="shop_ProductPageChannel" class="guda.shop.cms.action.directive.ProductPageChannelDirective"/>
-	<bean id="shop_topSale" class="guda.shop.cms.action.directive.ProductTopSaleDirective"/>
-	<bean id="shop_lucene_page" class="guda.shop.cms.lucene.LuceneDirectivePage"/>
-	<bean id="isRecommend_product" class="guda.shop.cms.action.directive.IsRecommendDirective"/>
-	<bean id="cate_brand" class="guda.shop.cms.action.directive.BrandByCategoryListDirective"/>
-	<bean id="sift_brand" class="guda.shop.cms.action.directive.SiftBrandDirective"/>
-	<bean id="post_list" class="guda.shop.cms.action.directive.PosterListDirective"/>
-	<bean id="keyword_list" class="guda.shop.cms.action.directive.KeyWordDirective"/>
-	<bean id="alone_channel" class="guda.shop.cms.action.directive.AloneChannelDirective"/>
-	<bean id="footer_channel" class="guda.shop.cms.action.directive.FooterChannelDirective"/>
-	<bean id="history_record" class="guda.shop.cms.action.directive.HistoryRecordDirective"/>
-	<bean id="gift_page" class="guda.shop.cms.action.directive.GiftPageDirective"/>
-	<bean id="collect_page" class="guda.shop.cms.action.directive.CollectPageDirective"/>
-	<bean id="order_page" class="guda.shop.cms.action.directive.OrderPageDirective"/>
-	<bean id="score_page" class="guda.shop.cms.action.directive.ScorePageDirective"/>
-	<bean id="money_page" class="guda.shop.cms.action.directive.MoneyPageDirective"/>
-	<bean id="customerService_list" class="guda.shop.cms.action.directive.CustomerServiceListDirective"/>
-	
-	<bean id="shop_coupon_page" class="guda.shop.cms.action.directive.CouponPageDirective"></bean>
-	<!--DAO-->
-	<bean id="addressDao" class="guda.shop.cms.dao.impl.AddressDaoImpl"/>
-	<bean id="shopAdminDao" class="guda.shop.cms.dao.impl.ShopAdminDaoImpl"/>
-	<bean id="productTypeDao" class="guda.shop.cms.dao.impl.ProductTypeDaoImpl"/>
-	<bean id="productTextDao" class="guda.shop.cms.dao.impl.ProductTextDaoImpl"/>
-	<bean id="productTagDao" class="guda.shop.cms.dao.impl.ProductTagDaoImpl"/>
-	<bean id="productDao" class="guda.shop.cms.dao.impl.ProductDaoImpl"/>
-	<bean id="productExtDao" class="guda.shop.cms.dao.impl.ProductExtDaoImpl"/>
-	<bean id="categoryDao" class="guda.shop.cms.dao.impl.CategoryDaoImpl"/>
-	<bean id="brandTextDao" class="guda.shop.cms.dao.impl.BrandTextDaoImpl"/>
-	<bean id="brandDao" class="guda.shop.cms.dao.impl.BrandDaoImpl"/>
-	<bean id="logisticsTextDao" class="guda.shop.cms.dao.impl.LogisticsTextDaoImpl"/>
-	<bean id="logisticsDao" class="guda.shop.cms.dao.impl.LogisticsDaoImpl"/>
-	<bean id="shopConfigDao" class="guda.shop.cms.dao.impl.ShopConfigDaoImpl"/>
-	<bean id="shopMemberDao" class="guda.shop.cms.dao.impl.ShopMemberDaoImpl"/>
-	<bean id="shopMemberGroupDao" class="guda.shop.cms.dao.impl.ShopMemberGroupDaoImpl"/>
-	<bean id="shippingDao" class="guda.shop.cms.dao.impl.ShippingDaoImpl"/>
-	<bean id="customerServiceDao" class="guda.shop.cms.dao.impl.CustomerServiceDaoImpl"/>
-	
-	<bean id="cartDao" class="guda.shop.cms.dao.impl.CartDaoImpl"/>
-	<bean id="shopMemberAddressDao" class="guda.shop.cms.dao.impl.ShopMemberAddressDaoImpl"/>
-	<bean id="paymentDao" class="guda.shop.cms.dao.impl.PaymentDaoImpl"/>
-	<bean id="orderDao" class="guda.shop.cms.dao.impl.OrderDaoImpl"/>
-	<bean id="shopChannelDao" class="guda.shop.cms.dao.impl.ShopChannelDaoImpl"/>
-	<bean id="shopChannelContentDao" class="guda.shop.cms.dao.impl.ShopChannelContentDaoImpl"/>
-	<bean id="shopArticleDao" class="guda.shop.cms.dao.impl.ShopArticleDaoImpl"/>
-	<bean id="shopArticleContentDao" class="guda.shop.cms.dao.impl.ShopArticleContentDaoImpl"/>
-	<bean id="productFashionDao" class="guda.shop.cms.dao.impl.ProductFashionDaoImpl"/>
-	<bean id="orderItemDao" class="guda.shop.cms.dao.impl.OrderItemDaoImpl"/>
-	<bean id="standardDao" class="guda.shop.cms.dao.impl.StandardDaoImpl"/>
-	<bean id="standardTypeDao" class="guda.shop.cms.dao.impl.StandardTypeDaoImpl"/>
-	<bean id="productStandardDao" class="guda.shop.cms.dao.impl.ProductStandardDaoImpl"/>
-	<bean id="orderReturnDao" class="guda.shop.cms.dao.impl.OrderReturnDaoImpl"/>
-	<bean id="shopMoneyDao" class="guda.shop.cms.dao.impl.ShopMoneyDaoImpl"/>
-	<bean id="exendedDao" class="guda.shop.cms.dao.impl.ExendedDaoImpl"/>
-	<bean id="exendedItemDao" class="guda.shop.cms.dao.impl.ExendedItemDaoImpl"/>
-	<bean id="paymentPluginsDao" class="guda.shop.cms.dao.impl.PaymentPluginsDaoImpl"/>
-	
-	
-	<bean id="couponDao" class="guda.shop.cms.dao.impl.CouponDaoImpl"/>
-	<bean id="giftDao" class="guda.shop.cms.dao.impl.GiftDaoImpl"/>
-	<bean id="giftExchangeDao" class="guda.shop.cms.dao.impl.GiftExchangeDaoImpl"/>
-	<bean id="productTypePropertyDao" class="guda.shop.cms.dao.impl.ProductTypePropertyDaoImpl"/>
-	<bean id="dataBackupDao" class="guda.shop.cms.dao.impl.DataBackupDaoImpl"/>
-	<bean id="cartItemDao" class="guda.shop.cms.dao.impl.CartItemDaoImpl"/>
-	
-	<bean id="consultDao" class="guda.shop.cms.dao.impl.ConsultDaoImpl"/>
-	<bean id="discussDao" class="guda.shop.cms.dao.impl.DiscussDaoImpl"/>
-	
-	<bean id="posterDao" class="guda.shop.cms.dao.impl.PosterDaoImpl"/>
-	<bean id="keyWordDao" class="guda.shop.cms.dao.impl.KeyWordDaoImpl"/>
-	<bean id="memberCouponDao" class="guda.shop.cms.dao.impl.MemberCouponDaoImpl"/>
-	<bean id="collectDao" class="guda.shop.cms.dao.impl.CollectDaoImpl"/>
-	<bean id="shopPayDao" class="guda.shop.cms.dao.impl.ShopPayDaoImpl"/>
-	<bean id="adspaceDao" class="guda.shop.cms.dao.impl.AdspaceDaoImpl"/>
-	<bean id="advertiseDao" class="guda.shop.cms.dao.impl.AdvertiseDaoImpl"/>
-	<bean id="shopDictionaryDao" class="guda.shop.cms.dao.impl.ShopDictionaryDaoImpl"/>
-	<bean id="shopDictionaryTypeDao" class="guda.shop.cms.dao.impl.ShopDictionaryTypeDaoImpl"/>
-	<bean id="shopScoreDao" class="guda.shop.cms.dao.impl.ShopScoreDaoImpl"/>
-	<bean id="gatheringDao" class="guda.shop.cms.dao.impl.GatheringDaoImpl"/>
-	<bean id="shipmentsDao" class="guda.shop.cms.dao.impl.ShipmentsDaoImpl"/>
-	<bean id="popularityGroupDao" class="guda.shop.cms.dao.impl.PopularityGroupDaoImpl"/>
+    <!--标签-->
+    <!--分页样式标签-->
+    <bean id="pagination_style" class="guda.shop.cms.action.directive.abs.PaginationDirective"/>
+    <bean id="shop_Category" class="guda.shop.cms.action.directive.CategoryListDirective"/>
+    <bean id="shop_ProductList" class="guda.shop.cms.action.directive.ProductListDirective"/>
+    <bean id="shop_ProductPage" class="guda.shop.cms.action.directive.ProductPageDirective"/>
+    <bean id="shop_Channel" class="guda.shop.cms.action.directive.ChannelListDirective"/>
+    <bean id="shop_ArticleList" class="guda.shop.cms.action.directive.ArticleListDirective"/>
+    <bean id="shop_ArticlePage" class="guda.shop.cms.action.directive.ArticlePageDirective"/>
+    <bean id="shop_BrandList" class="guda.shop.cms.action.directive.BrandListDirective"/>
+    <bean id="shop_productTypeList" class="guda.shop.cms.action.directive.ProductTypeListDirective"/>
+    <bean id="shop_typeofCategoryList" class="guda.shop.cms.action.directive.ProductTypeofCategoryListDirective"/>
+    <bean id="shop_productTagList" class="guda.shop.cms.action.directive.ProductTagListDirective"/>
+    <bean id="shop_ProductPageChannel" class="guda.shop.cms.action.directive.ProductPageChannelDirective"/>
+    <bean id="shop_topSale" class="guda.shop.cms.action.directive.ProductTopSaleDirective"/>
+    <bean id="shop_lucene_page" class="guda.shop.cms.lucene.LuceneDirectivePage"/>
+    <bean id="isRecommend_product" class="guda.shop.cms.action.directive.IsRecommendDirective"/>
+    <bean id="cate_brand" class="guda.shop.cms.action.directive.BrandByCategoryListDirective"/>
+    <bean id="sift_brand" class="guda.shop.cms.action.directive.SiftBrandDirective"/>
+    <bean id="post_list" class="guda.shop.cms.action.directive.PosterListDirective"/>
+    <bean id="keyword_list" class="guda.shop.cms.action.directive.KeyWordDirective"/>
+    <bean id="alone_channel" class="guda.shop.cms.action.directive.AloneChannelDirective"/>
+    <bean id="footer_channel" class="guda.shop.cms.action.directive.FooterChannelDirective"/>
+    <bean id="history_record" class="guda.shop.cms.action.directive.HistoryRecordDirective"/>
+    <bean id="gift_page" class="guda.shop.cms.action.directive.GiftPageDirective"/>
+    <bean id="collect_page" class="guda.shop.cms.action.directive.CollectPageDirective"/>
+    <bean id="order_page" class="guda.shop.cms.action.directive.OrderPageDirective"/>
+    <bean id="score_page" class="guda.shop.cms.action.directive.ScorePageDirective"/>
+    <bean id="money_page" class="guda.shop.cms.action.directive.MoneyPageDirective"/>
+    <bean id="customerService_list" class="guda.shop.cms.action.directive.CustomerServiceListDirective"/>
+
+    <bean id="shop_coupon_page" class="guda.shop.cms.action.directive.CouponPageDirective"></bean>
+    <!--DAO-->
+    <bean id="addressDao" class="guda.shop.cms.dao.impl.AddressDaoImpl"/>
+    <bean id="shopAdminDao" class="guda.shop.cms.dao.impl.ShopAdminDaoImpl"/>
+    <bean id="productTypeDao" class="guda.shop.cms.dao.impl.ProductTypeDaoImpl"/>
+    <bean id="productTextDao" class="guda.shop.cms.dao.impl.ProductTextDaoImpl"/>
+    <bean id="productTagDao" class="guda.shop.cms.dao.impl.ProductTagDaoImpl"/>
+    <bean id="productDao" class="guda.shop.cms.dao.impl.ProductDaoImpl"/>
+    <bean id="productExtDao" class="guda.shop.cms.dao.impl.ProductExtDaoImpl"/>
+    <bean id="categoryDao" class="guda.shop.cms.dao.impl.CategoryDaoImpl"/>
+    <bean id="brandTextDao" class="guda.shop.cms.dao.impl.BrandTextDaoImpl"/>
+    <bean id="brandDao" class="guda.shop.cms.dao.impl.BrandDaoImpl"/>
+    <bean id="logisticsTextDao" class="guda.shop.cms.dao.impl.LogisticsTextDaoImpl"/>
+    <bean id="logisticsDao" class="guda.shop.cms.dao.impl.LogisticsDaoImpl"/>
+    <bean id="shopConfigDao" class="guda.shop.cms.dao.impl.ShopConfigDaoImpl"/>
+    <bean id="shopMemberDao" class="guda.shop.cms.dao.impl.ShopMemberDaoImpl"/>
+    <bean id="shopMemberGroupDao" class="guda.shop.cms.dao.impl.ShopMemberGroupDaoImpl"/>
+    <bean id="shippingDao" class="guda.shop.cms.dao.impl.ShippingDaoImpl"/>
+    <bean id="customerServiceDao" class="guda.shop.cms.dao.impl.CustomerServiceDaoImpl"/>
+
+    <bean id="cartDao" class="guda.shop.cms.dao.impl.CartDaoImpl"/>
+    <bean id="shopMemberAddressDao" class="guda.shop.cms.dao.impl.ShopMemberAddressDaoImpl"/>
+    <bean id="paymentDao" class="guda.shop.cms.dao.impl.PaymentDaoImpl"/>
+    <bean id="orderDao" class="guda.shop.cms.dao.impl.OrderDaoImpl"/>
+    <bean id="shopChannelDao" class="guda.shop.cms.dao.impl.ShopChannelDaoImpl"/>
+    <bean id="shopChannelContentDao" class="guda.shop.cms.dao.impl.ShopChannelContentDaoImpl"/>
+    <bean id="shopArticleDao" class="guda.shop.cms.dao.impl.ShopArticleDaoImpl"/>
+    <bean id="shopArticleContentDao" class="guda.shop.cms.dao.impl.ShopArticleContentDaoImpl"/>
+    <bean id="productFashionDao" class="guda.shop.cms.dao.impl.ProductFashionDaoImpl"/>
+    <bean id="orderItemDao" class="guda.shop.cms.dao.impl.OrderItemDaoImpl"/>
+    <bean id="standardDao" class="guda.shop.cms.dao.impl.StandardDaoImpl"/>
+    <bean id="standardTypeDao" class="guda.shop.cms.dao.impl.StandardTypeDaoImpl"/>
+    <bean id="productStandardDao" class="guda.shop.cms.dao.impl.ProductStandardDaoImpl"/>
+    <bean id="orderReturnDao" class="guda.shop.cms.dao.impl.OrderReturnDaoImpl"/>
+    <bean id="shopMoneyDao" class="guda.shop.cms.dao.impl.ShopMoneyDaoImpl"/>
+    <bean id="exendedDao" class="guda.shop.cms.dao.impl.ExendedDaoImpl"/>
+    <bean id="exendedItemDao" class="guda.shop.cms.dao.impl.ExendedItemDaoImpl"/>
+    <bean id="paymentPluginsDao" class="guda.shop.cms.dao.impl.PaymentPluginsDaoImpl"/>
+
+
+    <bean id="couponDao" class="guda.shop.cms.dao.impl.CouponDaoImpl"/>
+    <bean id="giftDao" class="guda.shop.cms.dao.impl.GiftDaoImpl"/>
+    <bean id="giftExchangeDao" class="guda.shop.cms.dao.impl.GiftExchangeDaoImpl"/>
+    <bean id="productTypePropertyDao" class="guda.shop.cms.dao.impl.ProductTypePropertyDaoImpl"/>
+    <bean id="dataBackupDao" class="guda.shop.cms.dao.impl.DataBackupDaoImpl"/>
+    <bean id="cartItemDao" class="guda.shop.cms.dao.impl.CartItemDaoImpl"/>
+
+    <bean id="consultDao" class="guda.shop.cms.dao.impl.ConsultDaoImpl"/>
+    <bean id="discussDao" class="guda.shop.cms.dao.impl.DiscussDaoImpl"/>
+
+    <bean id="posterDao" class="guda.shop.cms.dao.impl.PosterDaoImpl"/>
+    <bean id="keyWordDao" class="guda.shop.cms.dao.impl.KeyWordDaoImpl"/>
+    <bean id="memberCouponDao" class="guda.shop.cms.dao.impl.MemberCouponDaoImpl"/>
+    <bean id="collectDao" class="guda.shop.cms.dao.impl.CollectDaoImpl"/>
+    <bean id="shopPayDao" class="guda.shop.cms.dao.impl.ShopPayDaoImpl"/>
+    <bean id="adspaceDao" class="guda.shop.cms.dao.impl.AdspaceDaoImpl"/>
+    <bean id="advertiseDao" class="guda.shop.cms.dao.impl.AdvertiseDaoImpl"/>
+    <bean id="shopDictionaryDao" class="guda.shop.cms.dao.impl.ShopDictionaryDaoImpl"/>
+    <bean id="shopDictionaryTypeDao" class="guda.shop.cms.dao.impl.ShopDictionaryTypeDaoImpl"/>
+    <bean id="shopScoreDao" class="guda.shop.cms.dao.impl.ShopScoreDaoImpl"/>
+    <bean id="gatheringDao" class="guda.shop.cms.dao.impl.GatheringDaoImpl"/>
+    <bean id="shipmentsDao" class="guda.shop.cms.dao.impl.ShipmentsDaoImpl"/>
+    <bean id="popularityGroupDao" class="guda.shop.cms.dao.impl.PopularityGroupDaoImpl"/>
     <bean id="popularityItemDao" class="guda.shop.cms.dao.impl.PopularityItemDaoImpl"/>
 
-	<!--MANAGER-->
-	<bean id="addressMng" class="guda.shop.cms.manager.impl.AddressMngImpl"/>
-	<bean id="updateMng" class="guda.shop.cms.manager.impl.UpdateMngImpl"/>
-	<bean id="shopAdminMng" class="guda.shop.cms.manager.impl.ShopAdminMngImpl"/>
-	<bean id="productTypeMng" class="guda.shop.cms.manager.impl.ProductTypeMngImpl"/>
-	<bean id="productTextMng" class="guda.shop.cms.manager.impl.ProductTextMngImpl"/>
-	<bean id="productTagMng" class="guda.shop.cms.manager.impl.ProductTagMngImpl"/>
-	<bean id="productMng" class="guda.shop.cms.manager.impl.ProductMngImpl"/>
-	<bean id="productExtMng" class="guda.shop.cms.manager.impl.ProductExtMngImpl"/>
-	<bean id="categoryMng" class="guda.shop.cms.manager.impl.CategoryMngImpl"/>
-	<bean id="brandTextMng" class="guda.shop.cms.manager.impl.BrandTextMngImpl"/>
-	<bean id="brandMng" class="guda.shop.cms.manager.impl.BrandMngImpl"/>
-	<bean id="logisticsTextMng" class="guda.shop.cms.manager.impl.LogisticsTextMngImpl"/>
-	<bean id="logisticsMng" class="guda.shop.cms.manager.impl.LogisticsMngImpl"/>
-	<bean id="shopConfigMng" class="guda.shop.cms.manager.impl.ShopConfigMngImpl"/>
-	<bean id="shopMemberGroupMng" class="guda.shop.cms.manager.impl.ShopMemberGroupMngImpl"/>
-	<bean id="shopMemberMng" class="guda.shop.cms.manager.impl.ShopMemberMngImpl"/>
-	<bean id="shippingMng" class="guda.shop.cms.manager.impl.ShippingMngImpl"/>
-	<bean id="customerServiceMng" class="guda.shop.cms.manager.impl.CustomerServiceMngImpl"/>
+    <!--MANAGER-->
+    <bean id="addressMng" class="guda.shop.cms.manager.impl.AddressMngImpl"/>
+    <bean id="updateMng" class="guda.shop.cms.manager.impl.UpdateMngImpl"/>
+    <bean id="shopAdminMng" class="guda.shop.cms.manager.impl.ShopAdminMngImpl"/>
+    <bean id="productTypeMng" class="guda.shop.cms.manager.impl.ProductTypeMngImpl"/>
+    <bean id="productTextMng" class="guda.shop.cms.manager.impl.ProductTextMngImpl"/>
+    <bean id="productTagMng" class="guda.shop.cms.manager.impl.ProductTagMngImpl"/>
+    <bean id="productMng" class="guda.shop.cms.manager.impl.ProductMngImpl"/>
+    <bean id="productExtMng" class="guda.shop.cms.manager.impl.ProductExtMngImpl"/>
+    <bean id="categoryMng" class="guda.shop.cms.manager.impl.CategoryMngImpl"/>
+    <bean id="brandTextMng" class="guda.shop.cms.manager.impl.BrandTextMngImpl"/>
+    <bean id="brandMng" class="guda.shop.cms.manager.impl.BrandMngImpl"/>
+    <bean id="logisticsTextMng" class="guda.shop.cms.manager.impl.LogisticsTextMngImpl"/>
+    <bean id="logisticsMng" class="guda.shop.cms.manager.impl.LogisticsMngImpl"/>
+    <bean id="shopConfigMng" class="guda.shop.cms.manager.impl.ShopConfigMngImpl"/>
+    <bean id="shopMemberGroupMng" class="guda.shop.cms.manager.impl.ShopMemberGroupMngImpl"/>
+    <bean id="shopMemberMng" class="guda.shop.cms.manager.impl.ShopMemberMngImpl"/>
+    <bean id="shippingMng" class="guda.shop.cms.manager.impl.ShippingMngImpl"/>
+    <bean id="customerServiceMng" class="guda.shop.cms.manager.impl.CustomerServiceMngImpl"/>
 
-	<bean id="cartMng" class="guda.shop.cms.manager.impl.CartMngImpl"/>
-	<bean id="shopMemberAddressMng" class="guda.shop.cms.manager.impl.ShopMemberAddressMngImpl"/>
-	<bean id="paymentMng" class="guda.shop.cms.manager.impl.PaymentMngImpl"/>
-	<bean id="orderMng" class="guda.shop.cms.manager.impl.OrderMngImpl"/>
-	<bean id="shopChannelMng" class="guda.shop.cms.manager.impl.ShopChannelMngImpl"/>
-	<bean id="shopChannelContentMng" class="guda.shop.cms.manager.impl.ShopChannelContentMngImpl"/>
-	<bean id="shopArticleMng" class="guda.shop.cms.manager.impl.ShopArticleMngImpl"/>
-	<bean id="shopArticleContentMng" class="guda.shop.cms.manager.impl.ShopArticleContentMngImpl"/>
-	<bean id="productFashionMng" class="guda.shop.cms.manager.impl.ProductFashionMngImpl"/>
-	<bean id="orderItemMng" class="guda.shop.cms.manager.impl.OrderItemMngImpl"/>
-	<bean id="orderReturnMng" class="guda.shop.cms.manager.impl.OrderReturnMngImpl"/>
-	<bean id="shopMoneyMng" class="guda.shop.cms.manager.impl.ShopMoneyMngImpl"/>
-	<bean id="paymentPluginsMng" class="guda.shop.cms.manager.impl.PaymentPluginsMngImpl"/>
+    <bean id="cartMng" class="guda.shop.cms.manager.impl.CartMngImpl"/>
+    <bean id="shopMemberAddressMng" class="guda.shop.cms.manager.impl.ShopMemberAddressMngImpl"/>
+    <bean id="paymentMng" class="guda.shop.cms.manager.impl.PaymentMngImpl"/>
+    <bean id="orderMng" class="guda.shop.cms.manager.impl.OrderMngImpl"/>
+    <bean id="shopChannelMng" class="guda.shop.cms.manager.impl.ShopChannelMngImpl"/>
+    <bean id="shopChannelContentMng" class="guda.shop.cms.manager.impl.ShopChannelContentMngImpl"/>
+    <bean id="shopArticleMng" class="guda.shop.cms.manager.impl.ShopArticleMngImpl"/>
+    <bean id="shopArticleContentMng" class="guda.shop.cms.manager.impl.ShopArticleContentMngImpl"/>
+    <bean id="productFashionMng" class="guda.shop.cms.manager.impl.ProductFashionMngImpl"/>
+    <bean id="orderItemMng" class="guda.shop.cms.manager.impl.OrderItemMngImpl"/>
+    <bean id="orderReturnMng" class="guda.shop.cms.manager.impl.OrderReturnMngImpl"/>
+    <bean id="shopMoneyMng" class="guda.shop.cms.manager.impl.ShopMoneyMngImpl"/>
+    <bean id="paymentPluginsMng" class="guda.shop.cms.manager.impl.PaymentPluginsMngImpl"/>
 
-	<bean id="couponMng" class="guda.shop.cms.manager.impl.CouponMngImpl"/>
-	<bean id="giftMng" class="guda.shop.cms.manager.impl.GiftMngImpl"/>
-	<bean id="giftExchangeMng" class="guda.shop.cms.manager.impl.GiftExchangeMngImpl"/>
-	<bean id="productTypePropertyMng" class="guda.shop.cms.manager.impl.ProductTypePropertyMngImpl"/>
-	<bean id="dataBackupMng" class="guda.shop.cms.manager.impl.DataBackupMngImpl"/>
-	<bean id="cartItemMng" class="guda.shop.cms.manager.impl.CartItemMngImpl"/>
-	<bean id="productStandardMng" class="guda.shop.cms.manager.impl.ProductStandardMngImpl"/>
-	
-	<bean id="consultMng" class="guda.shop.cms.manager.impl.ConsultMngImpl"/>
-	<bean id="discussMng" class="guda.shop.cms.manager.impl.DiscussMngImpl"/>
-	
-	<bean id="posterMng" class="guda.shop.cms.manager.impl.PosterMngImpl"/>
-	<bean id="keyWordMng" class="guda.shop.cms.manager.impl.KeyWordMngImpl"/>
-	<bean id="memberCouponMng" class="guda.shop.cms.manager.impl.MemberCouponMngImpl"/>
-	<bean id="collectMng" class="guda.shop.cms.manager.impl.CollectMngImpl"/>
-	<bean id="shopPayMng" class="guda.shop.cms.manager.impl.ShopPayMngImpl"/>
-	<bean id="adspaceMng" class="guda.shop.cms.manager.impl.AdspaceMngImpl"/>
-	<bean id="advertiseMng" class="guda.shop.cms.manager.impl.AdvertiseMngImpl"/>
+    <bean id="couponMng" class="guda.shop.cms.manager.impl.CouponMngImpl"/>
+    <bean id="giftMng" class="guda.shop.cms.manager.impl.GiftMngImpl"/>
+    <bean id="giftExchangeMng" class="guda.shop.cms.manager.impl.GiftExchangeMngImpl"/>
+    <bean id="productTypePropertyMng" class="guda.shop.cms.manager.impl.ProductTypePropertyMngImpl"/>
+    <bean id="dataBackupMng" class="guda.shop.cms.manager.impl.DataBackupMngImpl"/>
+    <bean id="cartItemMng" class="guda.shop.cms.manager.impl.CartItemMngImpl"/>
+    <bean id="productStandardMng" class="guda.shop.cms.manager.impl.ProductStandardMngImpl"/>
 
-	<bean id="shopDictionaryMng" class="guda.shop.cms.manager.impl.ShopDictionaryMngImpl"/>
-	<bean id="shopDictionaryTypeMng" class="guda.shop.cms.manager.impl.ShopDictionaryTypeMngImpl"/>
-	<bean id="shopScoreMng" class="guda.shop.cms.manager.impl.ShopScoreMngImpl"/>
-	
-	<bean id="standardMng" class="guda.shop.cms.manager.impl.StandardMngImpl"/>
-	<bean id="standardTypeMng" class="guda.shop.cms.manager.impl.StandardTypeMngImpl"/>
-	<bean id="exendedMng" class="guda.shop.cms.manager.impl.ExendedMngImpl"/>
-	<bean id="exendedItemMng" class="guda.shop.cms.manager.impl.ExendedItemMngImpl"/>
-	<bean id="gatheringMng" class="guda.shop.cms.manager.impl.GatheringMngImpl"/>
-	<bean id="shipmentsMng" class="guda.shop.cms.manager.impl.ShipmentsMngImpl"/>
-	<bean id="popularityGroupMng" class="guda.shop.cms.manager.impl.PopularityGroupMngImpl"/>
-	<bean id="popularityItemMng" class="guda.shop.cms.manager.impl.PopularityItemMngImpl"/>
-	
+    <bean id="consultMng" class="guda.shop.cms.manager.impl.ConsultMngImpl"/>
+    <bean id="discussMng" class="guda.shop.cms.manager.impl.DiscussMngImpl"/>
+
+    <bean id="posterMng" class="guda.shop.cms.manager.impl.PosterMngImpl"/>
+    <bean id="keyWordMng" class="guda.shop.cms.manager.impl.KeyWordMngImpl"/>
+    <bean id="memberCouponMng" class="guda.shop.cms.manager.impl.MemberCouponMngImpl"/>
+    <bean id="collectMng" class="guda.shop.cms.manager.impl.CollectMngImpl"/>
+    <bean id="shopPayMng" class="guda.shop.cms.manager.impl.ShopPayMngImpl"/>
+    <bean id="adspaceMng" class="guda.shop.cms.manager.impl.AdspaceMngImpl"/>
+    <bean id="advertiseMng" class="guda.shop.cms.manager.impl.AdvertiseMngImpl"/>
+
+    <bean id="shopDictionaryMng" class="guda.shop.cms.manager.impl.ShopDictionaryMngImpl"/>
+    <bean id="shopDictionaryTypeMng" class="guda.shop.cms.manager.impl.ShopDictionaryTypeMngImpl"/>
+    <bean id="shopScoreMng" class="guda.shop.cms.manager.impl.ShopScoreMngImpl"/>
+
+    <bean id="standardMng" class="guda.shop.cms.manager.impl.StandardMngImpl"/>
+    <bean id="standardTypeMng" class="guda.shop.cms.manager.impl.StandardTypeMngImpl"/>
+    <bean id="exendedMng" class="guda.shop.cms.manager.impl.ExendedMngImpl"/>
+    <bean id="exendedItemMng" class="guda.shop.cms.manager.impl.ExendedItemMngImpl"/>
+    <bean id="gatheringMng" class="guda.shop.cms.manager.impl.GatheringMngImpl"/>
+    <bean id="shipmentsMng" class="guda.shop.cms.manager.impl.ShipmentsMngImpl"/>
+    <bean id="popularityGroupMng" class="guda.shop.cms.manager.impl.PopularityGroupMngImpl"/>
+    <bean id="popularityItemMng" class="guda.shop.cms.manager.impl.PopularityItemMngImpl"/>
+
 </beans>

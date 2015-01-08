@@ -3,48 +3,40 @@ package guda.shop.cms.entity;
 import guda.shop.cms.entity.base.BaseProductTag;
 import guda.shop.core.entity.Website;
 
-public class ProductTag extends BaseProductTag
-{
-  private static final long serialVersionUID = 1L;
+public class ProductTag extends BaseProductTag {
+    private static final long serialVersionUID = 1L;
 
-  public void increaseCount()
-  {
-    addCount(1);
-  }
+    public ProductTag() {
+    }
 
-  public void reduceCount()
-  {
-    addCount(-1);
-  }
+    public ProductTag(Long paramLong) {
+        super(paramLong);
+    }
 
-  public void addCount(int paramInt)
-  {
-    Integer localInteger = getCount();
-    if (localInteger != null)
-      paramInt += localInteger.intValue();
-    if (paramInt < 0)
-      paramInt = 0;
-    setCount(Integer.valueOf(paramInt));
-  }
+    public ProductTag(Long paramLong, Website paramWebsite, String paramString, Integer paramInteger) {
+        super(paramLong, paramWebsite, paramString, paramInteger);
+    }
 
-  public void init()
-  {
-    setCount(Integer.valueOf(0));
-  }
+    public void increaseCount() {
+        addCount(1);
+    }
 
-  public ProductTag()
-  {
-  }
+    public void reduceCount() {
+        addCount(-1);
+    }
 
-  public ProductTag(Long paramLong)
-  {
-    super(paramLong);
-  }
+    public void addCount(int paramInt) {
+        Integer localInteger = getCount();
+        if (localInteger != null)
+            paramInt += localInteger.intValue();
+        if (paramInt < 0)
+            paramInt = 0;
+        setCount(Integer.valueOf(paramInt));
+    }
 
-  public ProductTag(Long paramLong, Website paramWebsite, String paramString, Integer paramInteger)
-  {
-    super(paramLong, paramWebsite, paramString, paramInteger);
-  }
+    public void init() {
+        setCount(Integer.valueOf(0));
+    }
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

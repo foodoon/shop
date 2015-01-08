@@ -2,11 +2,10 @@ package guda.shop.core.dao;
 
 import guda.shop.core.entity.Global;
 
-public abstract interface GlobalDao
-{
-  public abstract Global findById(Long paramLong);
+public abstract interface GlobalDao {
+    public abstract Global findById(Long paramLong);
 
-  public abstract Global update(Global paramGlobal);
+    public abstract Global update(Global paramGlobal);
 }
 
 /* Location:           D:\demo22\jspgou-core.jar

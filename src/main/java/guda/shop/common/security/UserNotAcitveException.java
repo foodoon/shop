@@ -1,15 +1,12 @@
 package guda.shop.common.security;
 
-public class UserNotAcitveException extends AccountStatusException
-{
-  public UserNotAcitveException()
-  {
-  }
+public class UserNotAcitveException extends AccountStatusException {
+    public UserNotAcitveException() {
+    }
 
-  public UserNotAcitveException(String paramString)
-  {
-    super(paramString);
-  }
+    public UserNotAcitveException(String paramString) {
+        super(paramString);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

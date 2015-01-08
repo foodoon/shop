@@ -1,20 +1,16 @@
 package guda.shop.common.security;
 
-public class CredentialsExpiredException extends AccountStatusException
-{
-  public CredentialsExpiredException()
-  {
-  }
+public class CredentialsExpiredException extends AccountStatusException {
+    public CredentialsExpiredException() {
+    }
 
-  public CredentialsExpiredException(String paramString)
-  {
-    super(paramString);
-  }
+    public CredentialsExpiredException(String paramString) {
+        super(paramString);
+    }
 
-  public CredentialsExpiredException(String paramString, Object paramObject)
-  {
-    super(paramString, paramObject);
-  }
+    public CredentialsExpiredException(String paramString, Object paramObject) {
+        super(paramString, paramObject);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

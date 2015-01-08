@@ -1,43 +1,28 @@
 package guda.shop.common.httpClient;
 
+import org.apache.commons.httpclient.*;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.methods.multipart.*;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.apache.commons.httpclient.util.IdleConnectionTimeoutThread;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.HttpConnectionManager;
-import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.HttpMethod;
-import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
-import org.apache.commons.httpclient.NameValuePair;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.methods.multipart.FilePart;
-import org.apache.commons.httpclient.methods.multipart.FilePartSource;
-import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
-import org.apache.commons.httpclient.methods.multipart.Part;
-import org.apache.commons.httpclient.methods.multipart.StringPart;
-import org.apache.commons.httpclient.params.HttpClientParams;
-import org.apache.commons.httpclient.params.HttpConnectionManagerParams;
-import org.apache.commons.httpclient.params.HttpMethodParams;
-import org.apache.commons.httpclient.util.IdleConnectionTimeoutThread;
-
 public class HttpProtocolHandler {
+    private static final long _$3 = 3000L;
     private static String _$9 = "GBK";
+    private static HttpProtocolHandler _$1 = new HttpProtocolHandler();
     private int _$8 = 8000;
     private int _$7 = 30000;
     private int _$6 = 60000;
     private int _$5 = 30;
     private int _$4 = 80;
-    private static final long _$3 = 3000L;
     private HttpConnectionManager _$2 = new MultiThreadedHttpConnectionManager();
-    private static HttpProtocolHandler _$1 = new HttpProtocolHandler();
-
-    public static HttpProtocolHandler getInstance() {
-        return _$1;
-    }
 
     private HttpProtocolHandler() {
         this._$2.getParams().setDefaultMaxConnectionsPerHost(this._$5);
@@ -46,6 +31,10 @@ public class HttpProtocolHandler {
         localIdleConnectionTimeoutThread.addConnectionManager(this._$2);
         localIdleConnectionTimeoutThread.setConnectionTimeout(this._$6);
         localIdleConnectionTimeoutThread.start();
+    }
+
+    public static HttpProtocolHandler getInstance() {
+        return _$1;
     }
 
     public HttpResponse execute(HttpRequest paramHttpRequest, String paramString1, String paramString2)

@@ -1,10 +1,8 @@
 package guda.shop.common.hibernate3;
 
-import java.io.Serializable;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.EmptyInterceptor;
 import org.hibernate.FlushMode;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.type.Type;
@@ -14,35 +12,32 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import java.io.Serializable;
+
 public class TreeIntercptor extends EmptyInterceptor
-  implements ApplicationContextAware
-{
-  private static final Logger log = LoggerFactory.getLogger(TreeIntercptor.class);
-  private ApplicationContext _$2;
-  private SessionFactory _$1;
-  public static final String SESSION_FACTORY = "sessionFactory";
+        implements ApplicationContextAware {
+    public static final String SESSION_FACTORY = "sessionFactory";
+    private static final Logger log = LoggerFactory.getLogger(TreeIntercptor.class);
+    private ApplicationContext _$2;
+    private SessionFactory _$1;
 
-  public void setApplicationContext(ApplicationContext paramApplicationContext)
-    throws BeansException
-  {
-    this._$2 = paramApplicationContext;
-  }
-
-  protected SessionFactory getSessionFactory()
-  {
-    if (this._$1 == null)
-    {
-      this._$1 = ((SessionFactory)this._$2.getBean("sessionFactory", SessionFactory.class));
-      if (this._$1 == null)
-        throw new IllegalStateException("not found bean named 'sessionFactory',please check you spring config file.");
+    public void setApplicationContext(ApplicationContext paramApplicationContext)
+            throws BeansException {
+        this._$2 = paramApplicationContext;
     }
-    return this._$1;
-  }
 
-  protected Session getSession()
-  {
-    return getSessionFactory().getCurrentSession();
-  }
+    protected SessionFactory getSessionFactory() {
+        if (this._$1 == null) {
+            this._$1 = ((SessionFactory) this._$2.getBean("sessionFactory", SessionFactory.class));
+            if (this._$1 == null)
+                throw new IllegalStateException("not found bean named 'sessionFactory',please check you spring config file.");
+        }
+        return this._$1;
+    }
+
+    protected Session getSession() {
+        return getSessionFactory().getCurrentSession();
+    }
 
     public boolean onSave(Object entity, Serializable id, Object[] state,
                           String[] propertyNames, Type[] types) {
@@ -123,156 +118,152 @@ public class TreeIntercptor extends EmptyInterceptor
         return false;
     }
 
-  private boolean updateParent(HibernateTree<?> tree,
-                      HibernateTree<?> preParent, HibernateTree<?> currParent)
-  {
-      if ((preParent == null && currParent == null)
-              || (preParent != null && currParent != null && preParent
-              .getId().equals(currParent.getId()))) {
-          return false;
-      }
-      String beanName = tree.getClass().getName();
-      if (log.isDebugEnabled()) {
-          log.debug("update Tree {}, id={}, "
-                  + "pre-parent id={}, curr-parent id={}", new Object[] {
-                  beanName, tree.getId(),
-                  preParent == null ? null : preParent.getId(),
-                  currParent == null ? null : currParent.getId() });
-      }
-      Session session = getSession();
-      // 保存刷新模式，并设置成手动刷新
-      FlushMode model = session.getFlushMode();
-      session.setFlushMode(FlushMode.MANUAL);
-      // 先空出位置。当前父节点存在时，才需要空出位置。
-      Integer currParentRgt;
-      if (currParent != null) {
-          // 获得节点跨度
-          String hql = "select bean." + tree.getLftName() + ",bean."
-                  + tree.getRgtName() + " from " + beanName
-                  + " bean where bean.id=:id";
-          Object[] position = (Object[]) session.createQuery(hql)
-                  .setParameter("id", tree.getId()).uniqueResult();
-          int nodeLft = ((Number) position[0]).intValue();
-          int nodeRgt = ((Number) position[1]).intValue();
-          int span = nodeRgt - nodeLft + 1;
-          log.debug("current node span={}", span);
+    private boolean updateParent(HibernateTree<?> tree,
+                                 HibernateTree<?> preParent, HibernateTree<?> currParent) {
+        if ((preParent == null && currParent == null)
+                || (preParent != null && currParent != null && preParent
+                .getId().equals(currParent.getId()))) {
+            return false;
+        }
+        String beanName = tree.getClass().getName();
+        if (log.isDebugEnabled()) {
+            log.debug("update Tree {}, id={}, "
+                    + "pre-parent id={}, curr-parent id={}", new Object[]{
+                    beanName, tree.getId(),
+                    preParent == null ? null : preParent.getId(),
+                    currParent == null ? null : currParent.getId()});
+        }
+        Session session = getSession();
+        // 保存刷新模式，并设置成手动刷新
+        FlushMode model = session.getFlushMode();
+        session.setFlushMode(FlushMode.MANUAL);
+        // 先空出位置。当前父节点存在时，才需要空出位置。
+        Integer currParentRgt;
+        if (currParent != null) {
+            // 获得节点跨度
+            String hql = "select bean." + tree.getLftName() + ",bean."
+                    + tree.getRgtName() + " from " + beanName
+                    + " bean where bean.id=:id";
+            Object[] position = (Object[]) session.createQuery(hql)
+                    .setParameter("id", tree.getId()).uniqueResult();
+            int nodeLft = ((Number) position[0]).intValue();
+            int nodeRgt = ((Number) position[1]).intValue();
+            int span = nodeRgt - nodeLft + 1;
+            log.debug("current node span={}", span);
 
-          // 获得当前父节点右位置
-          Object[] currPosition = (Object[]) session.createQuery(hql)
-                  .setParameter("id", currParent.getId()).uniqueResult();
-          int currParentLft = ((Number) currPosition[0]).intValue();
-          currParentRgt = ((Number) currPosition[1]).intValue();
-          log.debug("current parent lft={} rgt={}", currParentLft,
-                  currParentRgt);
+            // 获得当前父节点右位置
+            Object[] currPosition = (Object[]) session.createQuery(hql)
+                    .setParameter("id", currParent.getId()).uniqueResult();
+            int currParentLft = ((Number) currPosition[0]).intValue();
+            currParentRgt = ((Number) currPosition[1]).intValue();
+            log.debug("current parent lft={} rgt={}", currParentLft,
+                    currParentRgt);
 
-          // 空出位置
-          String hql1 = "update " + beanName + " bean set bean."
-                  + tree.getRgtName() + " = bean." + tree.getRgtName()
-                  + " + " + span + " WHERE bean." + tree.getRgtName()
-                  + " >= :parentRgt";
-          String hql2 = "update " + beanName + " bean set bean."
-                  + tree.getLftName() + " = bean." + tree.getLftName()
-                  + " + " + span + " WHERE bean." + tree.getLftName()
-                  + " >= :parentRgt";
-          if (!StringUtils.isBlank(tree.getTreeCondition())) {
-              hql1 += " and (" + tree.getTreeCondition() + ")";
-              hql2 += " and (" + tree.getTreeCondition() + ")";
-          }
-          session.createQuery(hql1).setInteger("parentRgt", currParentRgt)
-                  .executeUpdate();
-          session.createQuery(hql2).setInteger("parentRgt", currParentRgt)
-                  .executeUpdate();
-          log.debug("vacated span hql: {}, {}, parentRgt={}", new Object[] {
-                  hql1, hql2, currParentRgt });
-      } else {
-          // 否则查找最大的右边位置
-          String hql = "select max(bean." + tree.getRgtName() + ") from "
-                  + beanName + " bean";
-          if (!StringUtils.isBlank(tree.getTreeCondition())) {
-              hql += " where " + tree.getTreeCondition();
-          }
-          currParentRgt = ((Number) session.createQuery(hql).uniqueResult())
-                  .intValue();
-          currParentRgt++;
-          log.debug("max node left={}", currParentRgt);
-      }
+            // 空出位置
+            String hql1 = "update " + beanName + " bean set bean."
+                    + tree.getRgtName() + " = bean." + tree.getRgtName()
+                    + " + " + span + " WHERE bean." + tree.getRgtName()
+                    + " >= :parentRgt";
+            String hql2 = "update " + beanName + " bean set bean."
+                    + tree.getLftName() + " = bean." + tree.getLftName()
+                    + " + " + span + " WHERE bean." + tree.getLftName()
+                    + " >= :parentRgt";
+            if (!StringUtils.isBlank(tree.getTreeCondition())) {
+                hql1 += " and (" + tree.getTreeCondition() + ")";
+                hql2 += " and (" + tree.getTreeCondition() + ")";
+            }
+            session.createQuery(hql1).setInteger("parentRgt", currParentRgt)
+                    .executeUpdate();
+            session.createQuery(hql2).setInteger("parentRgt", currParentRgt)
+                    .executeUpdate();
+            log.debug("vacated span hql: {}, {}, parentRgt={}", new Object[]{
+                    hql1, hql2, currParentRgt});
+        } else {
+            // 否则查找最大的右边位置
+            String hql = "select max(bean." + tree.getRgtName() + ") from "
+                    + beanName + " bean";
+            if (!StringUtils.isBlank(tree.getTreeCondition())) {
+                hql += " where " + tree.getTreeCondition();
+            }
+            currParentRgt = ((Number) session.createQuery(hql).uniqueResult())
+                    .intValue();
+            currParentRgt++;
+            log.debug("max node left={}", currParentRgt);
+        }
 
-      // 再调整自己
-      String hql = "select bean." + tree.getLftName() + ",bean."
-              + tree.getRgtName() + " from " + beanName
-              + " bean where bean.id=:id";
-      Object[] position = (Object[]) session.createQuery(hql).setParameter(
-              "id", tree.getId()).uniqueResult();
-      int nodeLft = ((Number) position[0]).intValue();
-      int nodeRgt = ((Number) position[1]).intValue();
-      int span = nodeRgt - nodeLft + 1;
-      if (log.isDebugEnabled()) {
-          log.debug("before adjust self left={} right={} span={}",
-                  new Object[] { nodeLft, nodeRgt, span });
-      }
-      int offset = currParentRgt - nodeLft;
-      hql = "update " + beanName + " bean set bean." + tree.getLftName()
-              + "=bean." + tree.getLftName() + "+:offset, bean."
-              + tree.getRgtName() + "=bean." + tree.getRgtName()
-              + "+:offset WHERE bean." + tree.getLftName()
-              + " between :nodeLft and :nodeRgt";
-      if (!StringUtils.isBlank(tree.getTreeCondition())) {
-          hql += " and (" + tree.getTreeCondition() + ")";
-      }
-      session.createQuery(hql).setParameter("offset", offset).setParameter(
-              "nodeLft", nodeLft).setParameter("nodeRgt", nodeRgt)
-              .executeUpdate();
-      if (log.isDebugEnabled()) {
-          log.debug("adjust self hql: {}, offset={}, nodeLft={}, nodeRgt={}",
-                  new Object[] { hql, offset, nodeLft, nodeRgt });
-      }
+        // 再调整自己
+        String hql = "select bean." + tree.getLftName() + ",bean."
+                + tree.getRgtName() + " from " + beanName
+                + " bean where bean.id=:id";
+        Object[] position = (Object[]) session.createQuery(hql).setParameter(
+                "id", tree.getId()).uniqueResult();
+        int nodeLft = ((Number) position[0]).intValue();
+        int nodeRgt = ((Number) position[1]).intValue();
+        int span = nodeRgt - nodeLft + 1;
+        if (log.isDebugEnabled()) {
+            log.debug("before adjust self left={} right={} span={}",
+                    new Object[]{nodeLft, nodeRgt, span});
+        }
+        int offset = currParentRgt - nodeLft;
+        hql = "update " + beanName + " bean set bean." + tree.getLftName()
+                + "=bean." + tree.getLftName() + "+:offset, bean."
+                + tree.getRgtName() + "=bean." + tree.getRgtName()
+                + "+:offset WHERE bean." + tree.getLftName()
+                + " between :nodeLft and :nodeRgt";
+        if (!StringUtils.isBlank(tree.getTreeCondition())) {
+            hql += " and (" + tree.getTreeCondition() + ")";
+        }
+        session.createQuery(hql).setParameter("offset", offset).setParameter(
+                "nodeLft", nodeLft).setParameter("nodeRgt", nodeRgt)
+                .executeUpdate();
+        if (log.isDebugEnabled()) {
+            log.debug("adjust self hql: {}, offset={}, nodeLft={}, nodeRgt={}",
+                    new Object[]{hql, offset, nodeLft, nodeRgt});
+        }
 
-      // 最后删除（清空位置）
-      String hql1 = "update " + beanName + " bean set bean."
-              + tree.getRgtName() + " = bean." + tree.getRgtName() + " - "
-              + span + " WHERE bean." + tree.getRgtName() + " > :nodeRgt";
-      String hql2 = "update " + beanName + " bean set bean."
-              + tree.getLftName() + " = bean." + tree.getLftName() + " - "
-              + span + " WHERE bean." + tree.getLftName() + " > :nodeRgt";
-      if (!StringUtils.isBlank(tree.getTreeCondition())) {
-          hql1 += " and (" + tree.getTreeCondition() + ")";
-          hql2 += " and (" + tree.getTreeCondition() + ")";
-      }
-      session.createQuery(hql1).setParameter("nodeRgt", nodeRgt)
-              .executeUpdate();
-      session.createQuery(hql2).setParameter("nodeRgt", nodeRgt)
-              .executeUpdate();
-      if (log.isDebugEnabled()) {
-          log.debug("clear span hql1:{}, hql2:{}, nodeRgt:{}", new Object[] {
-                  hql1, hql2, nodeRgt });
-      }
-      session.setFlushMode(model);
-      return true;
-  }
-
-  public void onDelete(Object paramObject, Serializable paramSerializable, Object[] paramArrayOfObject, String[] paramArrayOfString, Type[] paramArrayOfType)
-  {
-    if ((paramObject instanceof HibernateTree))
-    {
-      HibernateTree localHibernateTree = (HibernateTree)paramObject;
-      String str1 = localHibernateTree.getClass().getName();
-      Session localSession = getSession();
-      FlushMode localFlushMode = localSession.getFlushMode();
-      localSession.setFlushMode(FlushMode.MANUAL);
-      String str2 = "select bean." + localHibernateTree.getLftName() + " from " + str1 + " bean where bean.id=:id";
-      Integer localInteger = Integer.valueOf(((Number)localSession.createQuery(str2).setParameter("id", localHibernateTree.getId()).uniqueResult()).intValue());
-      String str3 = "update " + str1 + " bean set bean." + localHibernateTree.getRgtName() + " = bean." + localHibernateTree.getRgtName() + " - 2 WHERE bean." + localHibernateTree.getRgtName() + " > :myPosition";
-      String str4 = "update " + str1 + " bean set bean." + localHibernateTree.getLftName() + " = bean." + localHibernateTree.getLftName() + " - 2 WHERE bean." + localHibernateTree.getLftName() + " > :myPosition";
-      if (!StringUtils.isBlank(localHibernateTree.getTreeCondition()))
-      {
-        str3 = str3 + " and (" + localHibernateTree.getTreeCondition() + ")";
-        str4 = str4 + " and (" + localHibernateTree.getTreeCondition() + ")";
-      }
-      localSession.createQuery(str3).setInteger("myPosition", localInteger.intValue()).executeUpdate();
-      localSession.createQuery(str4).setInteger("myPosition", localInteger.intValue()).executeUpdate();
-      localSession.setFlushMode(localFlushMode);
+        // 最后删除（清空位置）
+        String hql1 = "update " + beanName + " bean set bean."
+                + tree.getRgtName() + " = bean." + tree.getRgtName() + " - "
+                + span + " WHERE bean." + tree.getRgtName() + " > :nodeRgt";
+        String hql2 = "update " + beanName + " bean set bean."
+                + tree.getLftName() + " = bean." + tree.getLftName() + " - "
+                + span + " WHERE bean." + tree.getLftName() + " > :nodeRgt";
+        if (!StringUtils.isBlank(tree.getTreeCondition())) {
+            hql1 += " and (" + tree.getTreeCondition() + ")";
+            hql2 += " and (" + tree.getTreeCondition() + ")";
+        }
+        session.createQuery(hql1).setParameter("nodeRgt", nodeRgt)
+                .executeUpdate();
+        session.createQuery(hql2).setParameter("nodeRgt", nodeRgt)
+                .executeUpdate();
+        if (log.isDebugEnabled()) {
+            log.debug("clear span hql1:{}, hql2:{}, nodeRgt:{}", new Object[]{
+                    hql1, hql2, nodeRgt});
+        }
+        session.setFlushMode(model);
+        return true;
     }
-  }
+
+    public void onDelete(Object paramObject, Serializable paramSerializable, Object[] paramArrayOfObject, String[] paramArrayOfString, Type[] paramArrayOfType) {
+        if ((paramObject instanceof HibernateTree)) {
+            HibernateTree localHibernateTree = (HibernateTree) paramObject;
+            String str1 = localHibernateTree.getClass().getName();
+            Session localSession = getSession();
+            FlushMode localFlushMode = localSession.getFlushMode();
+            localSession.setFlushMode(FlushMode.MANUAL);
+            String str2 = "select bean." + localHibernateTree.getLftName() + " from " + str1 + " bean where bean.id=:id";
+            Integer localInteger = Integer.valueOf(((Number) localSession.createQuery(str2).setParameter("id", localHibernateTree.getId()).uniqueResult()).intValue());
+            String str3 = "update " + str1 + " bean set bean." + localHibernateTree.getRgtName() + " = bean." + localHibernateTree.getRgtName() + " - 2 WHERE bean." + localHibernateTree.getRgtName() + " > :myPosition";
+            String str4 = "update " + str1 + " bean set bean." + localHibernateTree.getLftName() + " = bean." + localHibernateTree.getLftName() + " - 2 WHERE bean." + localHibernateTree.getLftName() + " > :myPosition";
+            if (!StringUtils.isBlank(localHibernateTree.getTreeCondition())) {
+                str3 = str3 + " and (" + localHibernateTree.getTreeCondition() + ")";
+                str4 = str4 + " and (" + localHibernateTree.getTreeCondition() + ")";
+            }
+            localSession.createQuery(str3).setInteger("myPosition", localInteger.intValue()).executeUpdate();
+            localSession.createQuery(str4).setInteger("myPosition", localInteger.intValue()).executeUpdate();
+            localSession.setFlushMode(localFlushMode);
+        }
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

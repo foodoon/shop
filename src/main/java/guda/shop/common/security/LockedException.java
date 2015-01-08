@@ -1,20 +1,16 @@
 package guda.shop.common.security;
 
-public class LockedException extends AccountStatusException
-{
-  public LockedException()
-  {
-  }
+public class LockedException extends AccountStatusException {
+    public LockedException() {
+    }
 
-  public LockedException(String paramString)
-  {
-    super(paramString);
-  }
+    public LockedException(String paramString) {
+        super(paramString);
+    }
 
-  public LockedException(String paramString, Object paramObject)
-  {
-    super(paramString, paramObject);
-  }
+    public LockedException(String paramString, Object paramObject) {
+        super(paramString, paramObject);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

@@ -1,18 +1,12 @@
 package guda.shop.common.security.annotation;
 
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 @Target({java.lang.annotation.ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
-public @interface Secured
-{
+public @interface Secured {
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

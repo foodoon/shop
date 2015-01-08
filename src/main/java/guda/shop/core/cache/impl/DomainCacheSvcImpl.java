@@ -9,44 +9,38 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DomainCacheSvcImpl
-  implements DomainCacheSvc
-{
-  private Ehcache _$1;
+        implements DomainCacheSvc {
+    private Ehcache _$1;
 
-  @Autowired
-  public void setDomainCache(@Qualifier("domain") Ehcache paramEhcache)
-  {
-    this._$1 = paramEhcache;
-  }
+    @Autowired
+    public void setDomainCache(@Qualifier("domain") Ehcache paramEhcache) {
+        this._$1 = paramEhcache;
+    }
 
-  public void put(String paramString, String[] paramArrayOfString, Long paramLong)
-  {
-    this._$1.put(new Element(paramString, paramLong));
-    if (paramArrayOfString != null)
-      for (String str : paramArrayOfString)
-        this._$1.put(new Element(str, paramLong));
-  }
+    public void put(String paramString, String[] paramArrayOfString, Long paramLong) {
+        this._$1.put(new Element(paramString, paramLong));
+        if (paramArrayOfString != null)
+            for (String str : paramArrayOfString)
+                this._$1.put(new Element(str, paramLong));
+    }
 
-  public boolean remove(String paramString, String[] paramArrayOfString)
-  {
-    if (paramArrayOfString != null)
-      for (String str : paramArrayOfString)
-        this._$1.remove(str);
-    return this._$1.remove(paramString);
-  }
+    public boolean remove(String paramString, String[] paramArrayOfString) {
+        if (paramArrayOfString != null)
+            for (String str : paramArrayOfString)
+                this._$1.remove(str);
+        return this._$1.remove(paramString);
+    }
 
-  public Long get(String paramString)
-  {
-    Element localElement = this._$1.get(paramString);
-    if (localElement != null)
-      return (Long)localElement.getValue();
-    return null;
-  }
+    public Long get(String paramString) {
+        Element localElement = this._$1.get(paramString);
+        if (localElement != null)
+            return (Long) localElement.getValue();
+        return null;
+    }
 
-  public void removeAll()
-  {
-    this._$1.removeAll();
-  }
+    public void removeAll() {
+        this._$1.removeAll();
+    }
 }
 
 /* Location:           D:\demo22\jspgou-core.jar

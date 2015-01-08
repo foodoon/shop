@@ -1,124 +1,166 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>鏃犳爣棰樻枃妗�  - ${web.name}${web.additionalTitle!}</title>
-<script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
-<script type="text/javascript">
-  function insertConsult(pid,mid){
-	  var content=$("#goods_question_contens_box").val();
-        $.post("insertConsult.jspx",{
-            productId:pid,content:content
-            },function(data){
-                if(data=='false'){
-              alert('璇峰厛鐧诲叆锛�');
-              var loginForm=getLoginForm();
-              loginForm.submit();
-                    }else if(data=='sameUsually'){
-                   alert('璇峰湪30绉掑悗鍙戣〃');
-                        }
-                    else if(data=='success'){
-                    	 alert('鎴愬姛');
-                    }
-                });
-	  }
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>无标题文档 - ${web.name}${web.additionalTitle!}</title>
+    <script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
+    <script type="text/javascript">
+        function insertConsult(pid, mid) {
+            var content = $("#goods_question_contens_box").val();
+            $.post("insertConsult.jspx", {
+                productId: pid, content: content
+            }, function (data) {
+                if (data == 'false') {
+                    alert('请先登入！');
+                    var loginForm = getLoginForm();
+                    loginForm.submit();
+                } else if (data == 'sameUsually') {
+                    alert('请在30秒后发表');
+                }
+                else if (data == 'success') {
+                    alert('成功');
+                }
+            });
+        }
 
-  function getLoginForm(){
-     return document.getElementById("loginForm");
-	  }
-  function getTableForm(){
-	     return document.getElementById("tableForm");
-		  }
-  
-</script>
+        function getLoginForm() {
+            return document.getElementById("loginForm");
+        }
+        function getTableForm() {
+            return document.getElementById("tableForm");
+        }
+
+    </script>
 </head>
 <style>
-.pl_line { width: 710px; font-size:12px;}
-.pl_zone {color: #000000; display: block; float: left; line-height: 24px; overflow-x: hidden; overflow-y: hidden; word-wrap: break-word; border-bottom: #EAEAEA dotted 1px; padding: 10px 10px 5px 10px; }
-.pl {width: 710px;}
-.pl_zone span {color: #999999;}
-UL, LI {list-style-image: none; list-style-position: outside; list-style-type: none; margin:0; padding: 0;}
-.pl_txt {color: #333333; line-height: 22px;}
+    .pl_line {
+        width: 710px;
+        font-size: 12px;
+    }
 
-.re_txt {
-    color: #999999;
-    line-height: 18px;
-    margin-top: 5px !important;
-	margin-top: 0;
-	margin-left:0;
-}
-.re_txt dd span {
-    color: #C90809;
-}
-.re_txt dd {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-bottom: #DBDBDB solid 1px;
-    border-left: #C90809 solid 2px;
-    border-right: #DBDBDB solid 1px;
-    border-top: #DBDBDB solid 1px;
-    height: 100%;
-    padding-bottom: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 6px;
-    position: relative;
-}
-.re_txt dd div {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: url(bg.gif);
-    background-origin: padding-box;
-    background-position: -647px -58px;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    font-size: 0;
-    height: 8px;
-    left: 12px;
-    line-height: 0;
-    position: absolute;
-    top: -8px;
-    width: 14px;
-}
-.clear/*娓呴櫎涓ょ*/{clear:both; height:0; overflow:hidden;}
+    .pl_zone {
+        color: #000000;
+        display: block;
+        float: left;
+        line-height: 24px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        word-wrap: break-word;
+        border-bottom: #EAEAEA dotted 1px;
+        padding: 10px 10px 5px 10px;
+    }
+
+    .pl {
+        width: 710px;
+    }
+
+    .pl_zone span {
+        color: #999999;
+    }
+
+    UL, LI {
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pl_txt {
+        color: #333333;
+        line-height: 22px;
+    }
+
+    .re_txt {
+        color: #999999;
+        line-height: 18px;
+        margin-top: 5px !important;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .re_txt dd span {
+        color: #C90809;
+    }
+
+    .re_txt dd {
+        -moz-border-bottom-colors: none;
+        -moz-border-image: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        border-bottom: #DBDBDB solid 1px;
+        border-left: #C90809 solid 2px;
+        border-right: #DBDBDB solid 1px;
+        border-top: #DBDBDB solid 1px;
+        height: 100%;
+        padding-bottom: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 6px;
+        position: relative;
+    }
+
+    .re_txt dd div {
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-color: transparent;
+        background-image: url(bg.gif);
+        background-origin: padding-box;
+        background-position: -647px -58px;
+        background-repeat: no-repeat;
+        background-size: auto auto;
+        font-size: 0;
+        height: 8px;
+        left: 12px;
+        line-height: 0;
+        position: absolute;
+        top: -8px;
+        width: 14px;
+    }
+
+    .clear/*清除两端*/ {
+        clear: both;
+        height: 0;
+        overflow: hidden;
+    }
 </style>
-<body> 
-                <div class="intro_box">
-                   <p>
-<table align="center" class="tb-list" summary="涔板鍑轰环璁板綍" server-num="detailskip185125.cm4">
-    <thead>
+<body>
+<div class="intro_box">
+    <p>
+    <table align="center" class="tb-list" summary="买家出价记录" server-num="detailskip185125.cm4">
+        <thead>
         <tr>
-            <td align="center" width="20%">涔板</td>
-          [#if product.fashions?size>0]<td align="center" width="20%">娆惧紡</td>[/#if]
-            <td align="center" width="20%">鎷嶄笅浠锋牸</td>
-            <td align="center" width="20%">鏁伴噺</td>
-            <td align="center" width="20%">涓嬪崟鏃堕棿</td>
+            <td align="center" width="20%">买家</td>
+            [#if product.fashions?size>0]
+            <td align="center" width="20%">款式</td>
+            [/#if]
+            <td align="center" width="20%">拍下价格</td>
+            <td align="center" width="20%">数量</td>
+            <td align="center" width="20%">下单时间</td>
         </tr>
-    </thead>
-    <tbody>
-    [#list pagination.list as c]
+        </thead>
+        <tbody>
+        [#list pagination.list as c]
         <tr>
             <td align="center" width="20%">${c.ordeR.member.username!}</td>
-          [#if c.productFash??]<td align="center" width="20%">${c.productFash.attitude!}</td>[/#if]
+            [#if c.productFash??]
+            <td align="center" width="20%">${c.productFash.attitude!}</td>
+            [/#if]
             <td align="center" width="20%">${c.salePrice!0}</td>
             <td align="center" width="20%">${c.count!}</td>
             <td align="center" width="20%">${c.ordeR.createTime!}</td>
-            
+
         </tr>
-    [/#list]  
-    </tbody>
-</table>
+        [/#list]
+        </tbody>
+    </table>
 
- <div align="center"> [@pagination_style style='8'/]</div>
-  <div class="clear"></div>
-</p>
-                </div>
-
-
+    <div align="center"> [@pagination_style style='8'/]</div>
+    <div class="clear"></div>
+    </p>
+</div>
 
 
 </body>

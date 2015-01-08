@@ -11,23 +11,20 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class DataBackupMngImpl
-  implements DataBackupMng
-{
+        implements DataBackupMng {
 
-  @Autowired
-  private DataBackupDao _$1;
+    @Autowired
+    private DataBackupDao _$1;
 
-  public DataBackup getDataBackup()
-  {
-    return this._$1.getDataBackup();
-  }
+    public DataBackup getDataBackup() {
+        return this._$1.getDataBackup();
+    }
 
-  public DataBackup update(DataBackup paramDataBackup)
-  {
-    Updater localUpdater = new Updater(paramDataBackup);
-    DataBackup localDataBackup = this._$1.updateByUpdater(localUpdater);
-    return localDataBackup;
-  }
+    public DataBackup update(DataBackup paramDataBackup) {
+        Updater localUpdater = new Updater(paramDataBackup);
+        DataBackup localDataBackup = this._$1.updateByUpdater(localUpdater);
+        return localDataBackup;
+    }
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

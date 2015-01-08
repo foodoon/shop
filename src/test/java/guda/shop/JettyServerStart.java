@@ -5,10 +5,7 @@
 package guda.shop;
 
 
-
-
 /**
- * 
  * @author gag
  * @version $Id: JettyTestServer.java, v 0.1 2012-4-26 ����9:19:14 gag Exp $
  */

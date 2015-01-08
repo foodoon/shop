@@ -1,8 +1,7 @@
 package guda.shop.common.web.session.id;
 
-public abstract interface SessionIdGenerator
-{
-  public abstract String get();
+public abstract interface SessionIdGenerator {
+    public abstract String get();
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

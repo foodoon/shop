@@ -1,15 +1,12 @@
 package guda.shop.common.security;
 
-public class BadCredentialsException extends AuthenticationException
-{
-  public BadCredentialsException()
-  {
-  }
+public class BadCredentialsException extends AuthenticationException {
+    public BadCredentialsException() {
+    }
 
-  public BadCredentialsException(String paramString)
-  {
-    super(paramString);
-  }
+    public BadCredentialsException(String paramString) {
+        super(paramString);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

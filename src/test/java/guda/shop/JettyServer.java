@@ -5,7 +5,6 @@
 package guda.shop;
 
 
-
 import guda.mvc.core.config.ConfigrationFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerCollection;
@@ -14,7 +13,6 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import java.io.File;
 
 /**
- * 
  * @author gag
  * @version $Id: JettyServer.java, v 0.1 2012-4-26 下午8:18:54 gag Exp $
  */
@@ -22,7 +20,7 @@ public class JettyServer {
 
     public static final int defaultJettyPort = 9990;
 
-    private int             jettyPort        = defaultJettyPort;
+    private int jettyPort = defaultJettyPort;
 
     public void start() throws Exception {
         Server server = new Server(jettyPort);
@@ -49,17 +47,17 @@ public class JettyServer {
 
     private String getWebDescriptor() {
         return getAppRoot() + File.separatorChar + "htdocs" + File.separatorChar + "home"
-               + File.separatorChar + "WEB-INF"+File.separatorChar+"web.xml";
+                + File.separatorChar + "WEB-INF" + File.separatorChar + "web.xml";
     }
 
     private String getWebDefDescriptor() {
         return getAppRoot() + File.separatorChar + "assembly" + File.separatorChar + "config"
-               + File.separatorChar + "webdefault.xml";
+                + File.separatorChar + "webdefault.xml";
     }
 
     private String getRealm() {
         return getAppRoot() + File.separatorChar + "assembly" + File.separatorChar + "config"
-               + File.separatorChar + "realm.properties";
+                + File.separatorChar + "realm.properties";
     }
 
     protected String getAppName() {

@@ -5,7 +5,6 @@ import guda.shop.common.page.Pagination;
 import guda.shop.core.dao.UserDao;
 import guda.shop.core.entity.User;
 import org.hibernate.Criteria;
-import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
 import org.springframework.stereotype.Repository;
 

@@ -10,6 +10,7 @@
     border-top: 1px solid #CCCCCC;
     margin-bottom: 2px;
 }
+
 .listtool * {
     vertical-align: middle;
 }
@@ -27,6 +28,7 @@
 input, select, textarea {
     font-size: 100%;
 }
+
 button {
     line-height: 20px;
 }
@@ -56,6 +58,7 @@ a.img120 {
     padding-top: 2px;
     text-align: center;
 }
+
 .favorite_tb {
     margin-bottom: 10px;
 }
@@ -64,6 +67,7 @@ a.img120 {
     text-align: left;
     width: 520px;
 }
+
 .favorite_tb td {
     border-bottom: 1px dotted #CCCCCC;
     line-height: 24px;

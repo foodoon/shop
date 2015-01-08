@@ -12,8 +12,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.regex.Pattern;
 
-public class StrUtils
-{
+public class StrUtils {
     /**
      * 禁止实例化
      */
@@ -22,7 +21,7 @@ public class StrUtils
 
     /**
      * 处理url
-     *
+     * <p/>
      * url为null返回null，url为空串或以http://或https://开头，则加上http://，其他情况返回原参数。
      *
      * @param url
@@ -44,12 +43,9 @@ public class StrUtils
     /**
      * 分割并且去除空格
      *
-     * @param str
-     *            待分割字符串
-     * @param sep
-     *            分割符
-     * @param sep2
-     *            第二个分隔符
+     * @param str  待分割字符串
+     * @param sep  分割符
+     * @param sep2 第二个分隔符
      * @return 如果str为空，则返回null。
      */
     public static String[] splitAndTrim(String str, String sep, String sep2) {
@@ -120,10 +116,8 @@ public class StrUtils
     /**
      * 剪切文本。如果进行了剪切，则在文本后加上"..."
      *
-     * @param s
-     *            剪切对象。
-     * @param len
-     *            编码小于256的作为一个字符，大于256的作为两个字符。
+     * @param s   剪切对象。
+     * @param len 编码小于256的作为一个字符，大于256的作为两个字符。
      * @return
      */
     public static String textCut(String s, int len, String append) {
@@ -189,10 +183,9 @@ public class StrUtils
     }
 
     /**
-     *
      * @param keyword 源词汇
-     * @param smart 是否智能分词
-     * @return 分词词组(,拼接)
+     * @param smart   是否智能分词
+     * @return 分词词组(, 拼接)
      */
     public static String getKeywords(String keyword, boolean smart) {
         StringReader reader = new StringReader(keyword);
@@ -214,6 +207,7 @@ public class StrUtils
 
     /**
      * p换行
+     *
      * @param inputString
      * @return
      */
@@ -313,15 +307,15 @@ public class StrUtils
     }
 
 
-    public static String addCharForString(String str, int strLength,char c,int position) {
+    public static String addCharForString(String str, int strLength, char c, int position) {
         int strLen = str.length();
         if (strLen < strLength) {
             while (strLen < strLength) {
                 StringBuffer sb = new StringBuffer();
-                if(position==1){
+                if (position == 1) {
                     //右補充字符c
                     sb.append(c).append(str);
-                }else{
+                } else {
                     //左補充字符c
                     sb.append(str).append(c);
                 }

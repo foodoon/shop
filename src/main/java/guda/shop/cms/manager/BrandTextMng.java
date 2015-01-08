@@ -3,11 +3,10 @@ package guda.shop.cms.manager;
 import guda.shop.cms.entity.Brand;
 import guda.shop.cms.entity.BrandText;
 
-public abstract interface BrandTextMng
-{
-  public abstract BrandText save(Brand paramBrand, String paramString);
+public abstract interface BrandTextMng {
+    public abstract BrandText save(Brand paramBrand, String paramString);
 
-  public abstract BrandText update(BrandText paramBrandText);
+    public abstract BrandText update(BrandText paramBrandText);
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

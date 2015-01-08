@@ -10,25 +10,21 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class GlobalMngImpl
-  implements GlobalMng
-{
-  private GlobalDao _$1;
+        implements GlobalMng {
+    private GlobalDao _$1;
 
-  public Global findById(Long paramLong)
-  {
-    return this._$1.findById(paramLong);
-  }
+    public Global findById(Long paramLong) {
+        return this._$1.findById(paramLong);
+    }
 
-  public Global update(Global paramGlobal)
-  {
-    return this._$1.update(paramGlobal);
-  }
+    public Global update(Global paramGlobal) {
+        return this._$1.update(paramGlobal);
+    }
 
-  @Autowired
-  public void setDao(GlobalDao paramGlobalDao)
-  {
-    this._$1 = paramGlobalDao;
-  }
+    @Autowired
+    public void setDao(GlobalDao paramGlobalDao) {
+        this._$1 = paramGlobalDao;
+    }
 }
 
 /* Location:           D:\demo22\jspgou-core.jar

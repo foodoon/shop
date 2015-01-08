@@ -11,45 +11,38 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ShopPayMngImpl
-  implements ShopPayMng
-{
+        implements ShopPayMng {
 
-  @Autowired
-  private ShopPayDao _$1;
+    @Autowired
+    private ShopPayDao _$1;
 
-  public ShopPay deleteById(Integer paramInteger)
-  {
-    return this._$1.deleteById(paramInteger);
-  }
-
-  public ShopPay[] deleteByIds(Integer[] paramArrayOfInteger)
-  {
-    ShopPay[] arrayOfShopPay = new ShopPay[paramArrayOfInteger.length];
-    int i = 0;
-    int j = paramArrayOfInteger.length;
-    while (i < j)
-    {
-      arrayOfShopPay[i] = deleteById(paramArrayOfInteger[i]);
-      i++;
+    public ShopPay deleteById(Integer paramInteger) {
+        return this._$1.deleteById(paramInteger);
     }
-    return arrayOfShopPay;
-  }
 
-  public ShopPay findById(Integer paramInteger)
-  {
-    return this._$1.findById(paramInteger);
-  }
+    public ShopPay[] deleteByIds(Integer[] paramArrayOfInteger) {
+        ShopPay[] arrayOfShopPay = new ShopPay[paramArrayOfInteger.length];
+        int i = 0;
+        int j = paramArrayOfInteger.length;
+        while (i < j) {
+            arrayOfShopPay[i] = deleteById(paramArrayOfInteger[i]);
+            i++;
+        }
+        return arrayOfShopPay;
+    }
 
-  public ShopPay save(ShopPay paramShopPay)
-  {
-    return this._$1.save(paramShopPay);
-  }
+    public ShopPay findById(Integer paramInteger) {
+        return this._$1.findById(paramInteger);
+    }
 
-  public ShopPay updateByUpdater(ShopPay paramShopPay)
-  {
-    Updater localUpdater = new Updater(paramShopPay);
-    return this._$1.updateByUpdater(localUpdater);
-  }
+    public ShopPay save(ShopPay paramShopPay) {
+        return this._$1.save(paramShopPay);
+    }
+
+    public ShopPay updateByUpdater(ShopPay paramShopPay) {
+        Updater localUpdater = new Updater(paramShopPay);
+        return this._$1.updateByUpdater(localUpdater);
+    }
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

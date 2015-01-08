@@ -1,7 +1,6 @@
 package guda.shop.common.fck;
 
-public class WriteException extends Exception
-{
+public class WriteException extends Exception {
 }
 
 /* Location:           D:\demo22\jspgou-common.jar

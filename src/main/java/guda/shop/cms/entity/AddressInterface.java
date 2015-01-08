@@ -1,7 +1,6 @@
 package guda.shop.cms.entity;
 
-public abstract interface AddressInterface
-{
+public abstract interface AddressInterface {
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar

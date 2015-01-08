@@ -1,10 +1,10 @@
 /**
-$.cookie('the_cookie'); // get cookie
-$.cookie('the_cookie', 'the_value'); // set cookie
-$.cookie('the_cookie', 'the_value', { expires: 7 }); // set cookie with an expiration date seven days in the future
-$.cookie('the_cookie', '', { expires: -1 }); // delete cookie
+ $.cookie('the_cookie'); // get cookie
+ $.cookie('the_cookie', 'the_value'); // set cookie
+ $.cookie('the_cookie', 'the_value', { expires: 7 }); // set cookie with an expiration date seven days in the future
+ $.cookie('the_cookie', '', { expires: -1 }); // delete cookie
  */
-jQuery.cookie = function(name, value, options) {
+jQuery.cookie = function (name, value, options) {
     if (typeof value != 'undefined') { // name and value given, set cookie
         options = options || {};
         if (value === null) {

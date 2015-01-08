@@ -11,27 +11,23 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ProductTextMngImpl
-  implements ProductTextMng
-{
-  private ProductTextDao _$1;
+        implements ProductTextMng {
+    private ProductTextDao _$1;
 
-  public ProductText update(ProductText paramProductText)
-  {
-    Updater localUpdater = new Updater(paramProductText);
-    ProductText localProductText = this._$1.updateByUpdater(localUpdater);
-    return localProductText;
-  }
+    public ProductText update(ProductText paramProductText) {
+        Updater localUpdater = new Updater(paramProductText);
+        ProductText localProductText = this._$1.updateByUpdater(localUpdater);
+        return localProductText;
+    }
 
-  public ProductText save(ProductText paramProductText)
-  {
-    return this._$1.save(paramProductText);
-  }
+    public ProductText save(ProductText paramProductText) {
+        return this._$1.save(paramProductText);
+    }
 
-  @Autowired
-  public void setDao(ProductTextDao paramProductTextDao)
-  {
-    this._$1 = paramProductTextDao;
-  }
+    @Autowired
+    public void setDao(ProductTextDao paramProductTextDao) {
+        this._$1 = paramProductTextDao;
+    }
 }
 
 /* Location:           D:\demo22\jspgou-cms.jar
