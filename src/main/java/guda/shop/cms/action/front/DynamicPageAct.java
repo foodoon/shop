@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -70,17 +71,17 @@ public class DynamicPageAct {
     }
 
     @RequestMapping(value = {"/"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
-    public String first(HttpServletRequest request,HttpServletResponse response, ModelMap model) {
+    public void first(HttpServletRequest request,HttpServletResponse response, ModelMap model) {
 
-        Website web = SiteUtils.getWeb(request);
-
-        ShopFrontHelper.setCommonData(request, model, web, 1);
-
-        return web.getTemplate("index", MessageResolver.getMessage(request, "tpl.index", new Object[0]));
+        try {
+            response.sendRedirect("/index.jhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    @RequestMapping(value = {"/"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+
     public String index(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

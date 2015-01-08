@@ -25,6 +25,9 @@ public class FrontContextInterceptor extends HandlerInterceptorAdapter {
 
     public boolean preHandle(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject)
             throws ServletException {
+        if(paramHttpServletRequest.getRequestURI().equals("/")){
+            return true;
+        }
         Website localWebsite = SiteUtils.getWeb(paramHttpServletRequest);
         ShopConfig localShopConfig = this._$2.findById(localWebsite.getId());
         if (localShopConfig == null)

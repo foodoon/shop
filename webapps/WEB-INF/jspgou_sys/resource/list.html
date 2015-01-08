@@ -48,8 +48,7 @@
 
                 button_image_url: "${base}/thirdparty/swfupload/button_notext.png",
                 button_placeholder_id: "spanButtonPlaceHolder",
-                button_text: "<span class='btnText'><@s.m "resource.upload
-            "/></span>",
+                button_text: "<span class='btnText'><@s.m "resource.upload"/></span>",
                     button_width
             :
             81,
@@ -110,7 +109,7 @@
         <div class="rpos"><@s.m "global.position"/>: <@s.m "resource.function"/> - <@s.m "global.list"/></div>
         <form class="ropt" method="post">
             <input type="hidden" name="root" value="${root}"/>
-            &nbsp; <input type="submit" value="<@s.m " resource.create"/>" onclick="this.form.action='v_add.do';"/>
+            &nbsp; <input type="submit" value="<@s.m "resource.create"/>" onclick="this.form.action='v_add.do';"/>
             <input type="hidden" name="relPath" value="${relPath!}"/>
         </form>
         <div class="clear"></div>
@@ -124,13 +123,13 @@
             <tr>
                 <td><@s.m "resource.currentDir"/>: ${root!}</td>
                 <td width="70" align="center"><span id="spanButtonPlaceHolder"></span></td>
-                <td><input class="cancel" id="btnCancel" type="button" value="<@s.m " global.cancel"/>"
+                <td><input class="cancel" id="btnCancel" type="button" value="<@s.m "global.cancel"/>"
                     onclick="swfu.cancelQueue();" disabled="disabled" />
                 </td>
                 <td>
                     <@s.m "template.createDir"/>: <input type="text" name="dirName" size="10"
                                                          onkeypress="if(event.keyCode==13){$('#dirButton').click();return false;}"/>
-                    <input id="dirButton" type="submit" value="<@s.m " template.createDir"/>"
+                    <input id="dirButton" type="submit" value="<@s.m "template.createDir"/>"
                     onclick="this.form.action='o_create_dir.do';"/>
                     &nbsp;
                 </td>
@@ -150,8 +149,7 @@
         <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
         <input type="checkbox" name="names" value="${resource.name}"/>
         <#t/>
-    </
-    @p.column>
+    </@p.column>
     <#t/>
     <@p.column code="resource.name">
     <img src="${base}/res/common/img/file/${resource.ico}.gif" border="0"/>
@@ -160,12 +158,10 @@
         <#t/>
         <#else>${resource.filename}
     </#if>
-</
-@p.column>
+</@p.column>
 <#t/>
 <@p.column code="resource.size" align="right">${resource.size} KB
-</
-@p.column>
+</@p.column>
 <#t/>
 <@p.column code="resource.lastModified" align="center">${resource.lastModifiedDate?string('yyyy-MM-dd HH:mm:ss')!}
 </@p.column>
@@ -176,15 +172,14 @@
 <#if resource.editable><a href="v_edit.do?root=${root!?url}&name=${resource.name?url}"><@s.m "global.edit"/></a> |
     <#rt/>
 </#if>
-<a href="o_delete_single.do?root=${root!?url}&name=${resource.name?url}" onclick="if(!confirm('<@s.m "
-   global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
+<a href="o_delete_single.do?root=${root!?url}&name=${resource.name?url}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
 <#t/>
 </@p.column>
 <#t/>
 </@p.table>
 <div>
     <input type="hidden" name="relPath" value="${relPath!}"/>
-    <input type="button" value="<@s.m " global.delete"/>" onclick="optDelete();"/>
+    <input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/>
 </div>
 </form>
 </div>
