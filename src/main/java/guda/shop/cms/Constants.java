@@ -18,8 +18,8 @@ public abstract class Constants extends guda.shop.core.web.Constants {
     public static final String TPL_SUFFIX = ".html";
     public static final String TPLDIR_STYLE_LIST = "style_list";
     public static final String TPLDIR_STYLE_PAGE = "style_page";
-    public static final String TPL_STYLE_PAGE_CHANNEL = "/WEB-INF/t/gou_sys_defined/style_page/channel_";
-    public static final String TPL_STYLE_PAGE_CONTENT = "/WEB-INF/t/gou_sys_defined/style_page/content_";
+    public static final String TPL_STYLE_PAGE_CHANNEL = "/WEB-INF/style_page/channel_";
+    public static final String TPL_STYLE_PAGE_CONTENT = "/WEB-INF/style_page/content_";
     public static final String PAGE_NO = "pageNo";
     public static final String HREF = "href";
     public static final String HREF_FORMER = "hrefFormer";

@@ -49,36 +49,36 @@ public abstract class BaseWebsite
     public static String PROP_USERNAME = "username";
     public static String PROP_RELATIVE_PATH = "relativePath";
     EmailSender emailSender;
-    private int _$37 = -2147483648;
-    private Long _$36;
-    private String _$35;
-    private String _$34;
-    private String _$33;
-    private String _$32;
-    private String _$31;
-    private Integer _$30;
-    private Integer _$29;
-    private Date _$28;
-    private String _$27;
-    private String _$26;
-    private String _$25;
-    private String _$24;
-    private Boolean _$23;
-    private Boolean _$22;
-    private String _$21;
-    private String _$20;
-    private String _$19;
-    private String _$18;
-    private String _$17;
-    private Integer _$16;
-    private String _$15;
-    private String _$14;
-    private String _$13;
-    private String _$12;
-    private String _$11;
-    private String _$10;
-    private String _$9;
-    private String _$8;
+    private int hash = -2147483648;
+    private Long id;
+    private String domain;
+    private String name;
+    private String additionalTitle;
+    private String currentSystem;
+    private String suffix;
+    private Integer lft;
+    private Integer rgt;
+    private Date createTime;
+    private String baseDomain;
+    private String domainAlias;
+    private String shortName;
+    private String closeReason;
+    private Boolean close;
+    private Boolean relativePath;
+    private String frontEncoding;
+    private String frontContentType;
+    private String localeFront;
+    private String localeAdmin;
+    private String controlReserved;
+    private Integer controlNameMinlen;
+    private String controlFrontIps;
+    private String controlAdminIps;
+    private String company;
+    private String copyright;
+    private String recordCode;
+    private String email;
+    private String phone;
+    private String mobile;
     private String version;
     private Boolean aBoolean;
     private Admin admin;
@@ -126,236 +126,236 @@ public abstract class BaseWebsite
     }
 
     public Long getId() {
-        return this._$36;
+        return this.id;
     }
 
     public void setId(Long paramLong) {
-        this._$36 = paramLong;
-        this._$37 = -2147483648;
+        this.id = paramLong;
+        this.hash = -2147483648;
     }
 
     public String getDomain() {
-        return this._$35;
+        return this.domain;
     }
 
     public void setDomain(String paramString) {
-        this._$35 = paramString;
+        this.domain = paramString;
     }
 
     public String getName() {
-        return this._$34;
+        return this.name;
     }
 
     public void setName(String paramString) {
-        this._$34 = paramString;
+        this.name = paramString;
     }
 
     public String getAdditionalTitle() {
-        return this._$33;
+        return this.additionalTitle;
     }
 
     public void setAdditionalTitle(String paramString) {
-        this._$33 = paramString;
+        this.additionalTitle = paramString;
     }
 
     public String getCurrentSystem() {
-        return this._$32;
+        return this.currentSystem;
     }
 
     public void setCurrentSystem(String paramString) {
-        this._$32 = paramString;
+        this.currentSystem = paramString;
     }
 
     public String getSuffix() {
-        return this._$31;
+        return this.suffix;
     }
 
     public void setSuffix(String paramString) {
-        this._$31 = paramString;
+        this.suffix = paramString;
     }
 
     public Integer getLft() {
-        return this._$30;
+        return this.lft;
     }
 
     public void setLft(Integer paramInteger) {
-        this._$30 = paramInteger;
+        this.lft = paramInteger;
     }
 
     public Integer getRgt() {
-        return this._$29;
+        return this.rgt;
     }
 
     public void setRgt(Integer paramInteger) {
-        this._$29 = paramInteger;
+        this.rgt = paramInteger;
     }
 
     public Date getCreateTime() {
-        return this._$28;
+        return this.createTime;
     }
 
     public void setCreateTime(Date paramDate) {
-        this._$28 = paramDate;
+        this.createTime = paramDate;
     }
 
     public String getBaseDomain() {
-        return this._$27;
+        return this.baseDomain;
     }
 
     public void setBaseDomain(String paramString) {
-        this._$27 = paramString;
+        this.baseDomain = paramString;
     }
 
     public String getDomainAlias() {
-        return this._$26;
+        return this.domainAlias;
     }
 
     public void setDomainAlias(String paramString) {
-        this._$26 = paramString;
+        this.domainAlias = paramString;
     }
 
     public String getShortName() {
-        return this._$25;
+        return this.shortName;
     }
 
     public void setShortName(String paramString) {
-        this._$25 = paramString;
+        this.shortName = paramString;
     }
 
     public String getCloseReason() {
-        return this._$24;
+        return this.closeReason;
     }
 
     public void setCloseReason(String paramString) {
-        this._$24 = paramString;
+        this.closeReason = paramString;
     }
 
     public Boolean getClose() {
-        return this._$23;
+        return this.close;
     }
 
     public void setClose(Boolean paramBoolean) {
-        this._$23 = paramBoolean;
+        this.close = paramBoolean;
     }
 
     public Boolean getRelativePath() {
-        return this._$22;
+        return this.relativePath;
     }
 
     public void setRelativePath(Boolean paramBoolean) {
-        this._$22 = paramBoolean;
+        this.relativePath = paramBoolean;
     }
 
     public String getFrontEncoding() {
-        return this._$21;
+        return this.frontEncoding;
     }
 
     public void setFrontEncoding(String paramString) {
-        this._$21 = paramString;
+        this.frontEncoding = paramString;
     }
 
     public String getFrontContentType() {
-        return this._$20;
+        return this.frontContentType;
     }
 
     public void setFrontContentType(String paramString) {
-        this._$20 = paramString;
+        this.frontContentType = paramString;
     }
 
     public String getLocaleFront() {
-        return this._$19;
+        return this.localeFront;
     }
 
     public void setLocaleFront(String paramString) {
-        this._$19 = paramString;
+        this.localeFront = paramString;
     }
 
     public String getLocaleAdmin() {
-        return this._$18;
+        return this.localeAdmin;
     }
 
     public void setLocaleAdmin(String paramString) {
-        this._$18 = paramString;
+        this.localeAdmin = paramString;
     }
 
     public String getControlReserved() {
-        return this._$17;
+        return this.controlReserved;
     }
 
     public void setControlReserved(String paramString) {
-        this._$17 = paramString;
+        this.controlReserved = paramString;
     }
 
     public Integer getControlNameMinlen() {
-        return this._$16;
+        return this.controlNameMinlen;
     }
 
     public void setControlNameMinlen(Integer paramInteger) {
-        this._$16 = paramInteger;
+        this.controlNameMinlen = paramInteger;
     }
 
     public String getControlFrontIps() {
-        return this._$15;
+        return this.controlFrontIps;
     }
 
     public void setControlFrontIps(String paramString) {
-        this._$15 = paramString;
+        this.controlFrontIps = paramString;
     }
 
     public String getControlAdminIps() {
-        return this._$14;
+        return this.controlAdminIps;
     }
 
     public void setControlAdminIps(String paramString) {
-        this._$14 = paramString;
+        this.controlAdminIps = paramString;
     }
 
     public String getCompany() {
-        return this._$13;
+        return this.company;
     }
 
     public void setCompany(String paramString) {
-        this._$13 = paramString;
+        this.company = paramString;
     }
 
     public String getCopyright() {
-        return this._$12;
+        return this.copyright;
     }
 
     public void setCopyright(String paramString) {
-        this._$12 = paramString;
+        this.copyright = paramString;
     }
 
     public String getRecordCode() {
-        return this._$11;
+        return this.recordCode;
     }
 
     public void setRecordCode(String paramString) {
-        this._$11 = paramString;
+        this.recordCode = paramString;
     }
 
     public String getEmail() {
-        return this._$10;
+        return this.email;
     }
 
     public void setEmail(String paramString) {
-        this._$10 = paramString;
+        this.email = paramString;
     }
 
     public String getPhone() {
-        return this._$9;
+        return this.phone;
     }
 
     public void setPhone(String paramString) {
-        this._$9 = paramString;
+        this.phone = paramString;
     }
 
     public String getMobile() {
-        return this._$8;
+        return this.mobile;
     }
 
     public void setMobile(String paramString) {
-        this._$8 = paramString;
+        this.mobile = paramString;
     }
 
     public EmailSender getEmailSender() {
@@ -418,13 +418,13 @@ public abstract class BaseWebsite
     }
 
     public int hashCode() {
-        if (-2147483648 == this._$37) {
+        if (-2147483648 == this.hash) {
             if (null == getId())
                 return super.hashCode();
             String str = getClass().getName() + ":" + getId().hashCode();
-            this._$37 = str.hashCode();
+            this.hash = str.hashCode();
         }
-        return this._$37;
+        return this.hash;
     }
 
     public String toString() {

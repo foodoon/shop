@@ -15,9 +15,9 @@ public class ShopChannel extends BaseShopChannel
     public static final int ALONE = 1;
     public static final int ARTICLE = 2;
     public static final int OUTER_URL = 3;
-    public static final String CHANNEL_SUFFIX = "栏目";
-    public static final String CONTENT_SUFFIX = "内容";
-    public static final String ALONE_SUFFIX = "单页";
+    public static final String CHANNEL_SUFFIX = "model";
+    public static final String CONTENT_SUFFIX = "content";
+    public static final String ALONE_SUFFIX = "single";
     private static final long serialVersionUID = 1L;
 
     public ShopChannel() {

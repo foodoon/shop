@@ -26,7 +26,7 @@ public class AdminSecureInterceptor extends HandlerInterceptorAdapter {
             j++;
         }
         if (i <= 0)
-            throw new IllegalStateException("admin access path not like '/jeeadmin/jspgou/...' pattern: " + paramString1);
+            throw new IllegalStateException("admin access path not like '/admin/shop/...' pattern: " + paramString1);
         return paramString1.substring(i);
     }
 
@@ -76,7 +76,3 @@ public class AdminSecureInterceptor extends HandlerInterceptorAdapter {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.admin.AdminSecureInterceptor
- * JD-Core Version:    0.6.2
- */

@@ -55,7 +55,7 @@ public class FrontUtils {
         String str1 = DirectiveUtils.getString("sysPage", paramMap);
         String str2 = DirectiveUtils.getString("userPage", paramMap);
         if (!StringUtils.isBlank(str1)) {
-            String str3 = "/WEB-INF/t/gou_sys_defined/style_page/channel_" + str1 + ".html";
+            String str3 = "/WEB-INF/style_page/channel_" + str1 + ".html";
             paramEnvironment.include(str3, "UTF-8", true);
         } else if (StringUtils.isBlank(str2)) ;
     }

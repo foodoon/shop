@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+       default-lazy-init="true">
+    <!--COOKIE登录-->
+    <bean id="rememberMeService" class="guda.shop.common.security.rememberme.TokenBasedRememberMeServices">
+        <property name="key" value="shop"/>
+        <!--<property name="alwaysRemember" value="true"/>-->
+        <property name="userDetailsService" ref="memberMng"/>
+    </bean>
+
+    <!--HttpSession
+    <bean id="sessionProvider" class="cguda.shopcommon.web.session.HttpSessionProvider"/>
+    -->
+    <!--缓存Session-->
+    <bean id="sessionProvider" class="guda.shop.common.web.session.CacheSessionProvider">
+        <property name="sessionCache" ref="sessionCache"/>
+        <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
+    </bean>
+    <!--Memcached缓存
+    <bean id="sessionCache" class="comguda.shopmmon.web.session.cache.MemcachedDangaCache">
+        <property name="servers">
+            <list>
+                <value>127.0.0.1:11211</value>
+            </list>
+        </property>
+        <property name="weights">
+            <list>
+                <value>1</value>
+            </list>
+        </property>
+    </bean>
+    -->
+    <!--Ehcache缓存-->
+    <bean id="sessionCache" class="guda.shop.common.web.session.cache.EhcacheSessionCache">
+        <property name="cache" ref="ehSessionCache"/>
+    </bean>
+    <!--SessionId生成器-->
+    <bean id="sessionIdGenerator" class="guda.shop.common.web.session.id.JdkUUIDGenerator"/>
+
+    <!--图片处理-->
+    <bean id="imageScale" class="guda.shop.common.image.ImageScaleImpl" init-method="init"/>
+    <!--密码加密器-->
+    <bean id="pwdEncoder" class="guda.shop.common.security.encoder.Md5PwdEncoder"/>
+
+    <!--拦截器-->
+    <bean id="frontLocaleIntercept" class="guda.shop.core.web.front.FrontLocaleInterceptor"/>
+    <bean id="adminLocaleIntercept" class="guda.shop.core.web.admin.AdminLocaleInterceptor"/>
+    <bean id="adminSecureInterceptor" class="guda.shop.core.web.admin.AdminSecureInterceptor">
+        <!--是否开发状态
+        <property name="develop" value="true"/>
+        -->
+    </bean>
+    <!--执行时间标签-->
+    <bean id="process_time" class="guda.shop.core.directive.ProcessTimeDirective"/>
+    <bean id="text_cut" class="guda.shop.common.web.freemarker.TextCutDirective"/>
+    <!--权限标签-->
+    <bean id="authorize" class="guda.shop.core.directive.AuthorizeDirective"/>
+    <bean id="fileRepository" class="guda.shop.common.upload.FileRepository"/>
+    <!--文件模板-->
+    <bean id="tplManager" class="guda.shop.core.tpl.FileTplManagerImpl"/>
+
+    <bean id="realPathResolver" class="guda.shop.common.web.springmvc.ServletContextRealPathResolver"/>
+    <bean id="coreCacheSvc" class="guda.shop.core.cache.impl.CoreCacheSvcImpl"/>
+    <bean id="domainCacheSvc" class="guda.shop.core.cache.impl.DomainCacheSvcImpl"/>
+
+    <bean id="memberDao" class="guda.shop.core.dao.impl.MemberDaoImpl"/>
+    <bean id="userDao" class="guda.shop.core.dao.impl.UserDaoImpl"/>
+    <bean id="websiteDao" class="guda.shop.core.dao.impl.WebsiteDaoImpl"/>
+    <bean id="globalDao" class="guda.shop.core.dao.impl.GlobalDaoImpl"/>
+    <bean id="adminDao" class="guda.shop.core.dao.impl.AdminDaoImpl"/>
+    <bean id="roleDao" class="guda.shop.core.dao.impl.RoleDaoImpl"/>
+    <bean id="logDao" class="guda.shop.core.dao.impl.LogDaoImpl"/>
+
+    <bean id="templateMng" class="guda.shop.core.manager.impl.TemplateMngImpl"/>
+    <bean id="memberMng" class="guda.shop.core.manager.impl.MemberMngImpl"/>
+    <bean id="userMng" class="guda.shop.core.manager.impl.UserMngImpl"/>
+    <bean id="websiteMng" class="guda.shop.core.manager.impl.WebsiteMngImpl"/>
+    <bean id="globalMng" class="guda.shop.core.manager.impl.GlobalMngImpl"/>
+    <bean id="adminMng" class="guda.shop.core.manager.impl.AdminMngImpl"/>
+    <bean id="roleMng" class="guda.shop.core.manager.impl.RoleMngImpl"/>
+    <bean id="resourceMng" class="guda.shop.cms.manager.impl.ResourceMngImpl"/>
+    <bean id="logMng" class="guda.shop.core.manager.impl.LogMngImpl"/>
+</beans>

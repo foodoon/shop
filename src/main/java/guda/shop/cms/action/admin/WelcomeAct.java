@@ -59,7 +59,7 @@ public class WelcomeAct {
 
         model.addAttribute("admin", admin);
 
-        model.addAttribute("restart", Integer.valueOf(Integer.parseInt(this.updateMng.getRestart())));
+       // model.addAttribute("restart", Integer.valueOf(Integer.parseInt(this.updateMng.getRestart())));
 
         model.addAttribute("site", SiteUtils.getWeb(request));
 

@@ -31,13 +31,13 @@ public class PaginationDirective extends WebDirective {
 
             if (!StringUtils.isBlank(sysPage)) {
 
-                String tpl = "/WEB-INF/t/gou_sys_defined/style_page/content_" + sysPage + ".html";
+                String tpl = "/WEB-INF/style_page/content_" + sysPage + ".html";
 
                 env.include(tpl, "UTF-8", true);
 
             } else if (!StringUtils.isBlank(userPage)) {
 
-                String tpl = "/WEB-INF/t/gou_sys_defined/style_page/content_" + userPage + ".html";
+                String tpl = "/WEB-INF/style_page/content_" + userPage + ".html";
 
                 env.include(tpl, "UTF-8", true);
             }

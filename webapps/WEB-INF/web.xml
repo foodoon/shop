@@ -2,15 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID" version="2.4"
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-    <display-name>JspGou</display-name>
+    <display-name>shop</display-name>
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/config/application-context.xml
-            /WEB-INF/config/cache-context.xml
-            /WEB-INF/config/checkcode-context.xml
-            /WEB-INF/config/jeecore-context.xml
-            /WEB-INF/config/jspgou-context.xml
+            classpath*:/spring-*.xml
         </param-value>
     </context-param>
     <filter>
@@ -69,7 +65,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/config/jspgou-admin-servlet.xml</param-value>
+            <param-value>classpath*:/admin-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -78,7 +74,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/config/jspgou-front-servlet.xml</param-value>
+            <param-value>classpath*:/front-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -86,14 +82,10 @@
         <servlet-name>Jcaptcha</servlet-name>
         <servlet-class>guda.shop.common.checkcode.CaptchaServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>JspGouUpdate</servlet-name>
-        <servlet-class>guda.shop.common.update.UpdateServlet</servlet-class>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
+
     <servlet-mapping>
         <servlet-name>JspGouAdmin</servlet-name>
-        <url-pattern>/jeeadmin/jspgou/*</url-pattern>
+        <url-pattern>/admin/shop/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>JspGouFront</servlet-name>

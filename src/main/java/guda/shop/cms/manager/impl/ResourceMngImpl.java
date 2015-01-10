@@ -109,7 +109,7 @@ public class ResourceMngImpl
 
     public List<Zipper.FileEntry> export() {
         ArrayList<Zipper.FileEntry> localArrayList = new ArrayList<Zipper.FileEntry>();
-        File localFile1 = new File(this._$1.get("/WEB-INF/t/gou/tpl"));
+        File localFile1 = new File(this._$1.get("/WEB-INF/front"));
         localArrayList.add(new Zipper.FileEntry("", "", localFile1));
         File localFile2 = new File(this._$1.get("/r/gou/www"));
         if (localFile2.exists())

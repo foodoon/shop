@@ -9,12 +9,11 @@ public class Website extends BaseWebsite {
     public static final String RES_BASE = "r/gou/www";
     public static final String USER_BASE = "t";
     public static final String UPLOAD_PATH = "u";
-    public static final String TEMPLATE_PATH = "gou/tpl";
     public static final String DEFAULT = "default";
     public static final String TPL_SUFFIX = ".html";
     public static final String TPL_PREFIX_SYS = "sys_";
     public static final String TPL_PREFIX_TAG = "tag_";
-    public static final String TPL_BASE = "/WEB-INF/t/gou/tpl";
+    public static final String TPL_BASE = "/WEB-INF/front";
     private static final long serialVersionUID = 1L;
 
     public Website() {
@@ -56,7 +55,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getUploadUrls(String paramString) {
-        StringBuilder localStringBuilder = _$1().append("/").append("u");
+        StringBuilder localStringBuilder = getResBase().append("/").append("u");
         if (!StringUtils.isBlank(paramString)) {
             if (!paramString.startsWith("/"))
                 localStringBuilder.append("/");
@@ -66,7 +65,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getUploadUrl(String paramString) {
-        StringBuilder localStringBuilder = _$1();
+        StringBuilder localStringBuilder = getResBase();
         if (!StringUtils.isBlank(paramString)) {
             if (!paramString.startsWith("/"))
                 localStringBuilder.append("/");
@@ -76,7 +75,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getTplPath() {
-        return "/WEB-INF/t/gou/tpl";
+        return "/WEB-INF/front";
     }
 
     public String getTemplateRel(String paramString) {
@@ -90,7 +89,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getResBaseRel(String paramString) {
-        StringBuilder localStringBuilder = _$2();
+        StringBuilder localStringBuilder = getBase();
         if (!StringUtils.isBlank(paramString)) {
             if (!paramString.startsWith("/"))
                 localStringBuilder.append("/");
@@ -100,7 +99,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getResBaseUrl(String paramString) {
-        StringBuilder localStringBuilder = _$1();
+        StringBuilder localStringBuilder = getResBase();
         if (!StringUtils.isBlank(paramString)) {
             if (!paramString.startsWith("/"))
                 localStringBuilder.append("/");
@@ -109,24 +108,21 @@ public class Website extends BaseWebsite {
         return localStringBuilder.toString();
     }
 
-    private StringBuilder _$3() {
-        return new StringBuilder("/").append("WEB-INF").append("/").append("t");
-    }
 
-    private StringBuilder _$2() {
+    private StringBuilder getBase() {
         return new StringBuilder("/").append("r/gou/www");
     }
 
-    private StringBuilder _$1() {
+    private StringBuilder getResBase() {
         return getUrlBuff(false).append("/").append("r/gou/www");
     }
 
     public String getResBaseUrl() {
-        return _$1().toString();
+        return getResBase().toString();
     }
 
     public StringBuilder getTemplateRelBuff() {
-        StringBuilder localStringBuilder = _$3().append("/").append("gou/tpl");
+        StringBuilder localStringBuilder = new StringBuilder("/WEB-INF/front");
         return localStringBuilder;
     }
 
@@ -148,7 +144,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getResBaseRel() {
-        return _$2().toString();
+        return getBase().toString();
     }
 
     public String getUploadRel() {
