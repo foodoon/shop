@@ -45,10 +45,10 @@ public abstract class FrontHelper {
     public static void setDynamicPageData(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap, Website paramWebsite, String paramString1, String paramString2, String paramString3, int paramInt) {
         paramModelMap.addAttribute("urlPrefix", paramString2);
         paramModelMap.addAttribute("urlSuffix", paramString3);
-        _$1(paramHttpServletRequest, paramModelMap, paramWebsite, paramInt, paramString1);
+        setExt(paramHttpServletRequest, paramModelMap, paramWebsite, paramInt, paramString1);
     }
 
-    private static void _$1(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap, Website paramWebsite, int paramInt, String paramString) {
+    private static void setExt(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap, Website paramWebsite, int paramInt, String paramString) {
         paramModelMap.addAttribute("location", paramString);
         paramModelMap.addAttribute("web", paramWebsite);
         String str1 = (String) paramHttpServletRequest.getAttribute("_base_domain_key");
@@ -75,15 +75,15 @@ public abstract class FrontHelper {
                     localStringBuffer.append(str).append("=").append(arrayOfString[i]).append("&");
             }
         }
-        _$1(paramHttpServletRequest, paramModelMap, paramWebsite, paramInt, localStringBuffer.toString());
+        setExt(paramHttpServletRequest, paramModelMap, paramWebsite, paramInt, localStringBuffer.toString());
     }
 
     public static void setCommon(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap, Website paramWebsite) {
         String str = RequestUtils.getLocation(paramHttpServletRequest);
-        _$1(paramHttpServletRequest, paramModelMap, paramWebsite, str);
+        setCommonAttr(paramHttpServletRequest, paramModelMap, paramWebsite, str);
     }
 
-    private static void _$1(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap, Website paramWebsite, String paramString) {
+    private static void setCommonAttr(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap, Website paramWebsite, String paramString) {
         paramModelMap.addAttribute("location", paramString);
         paramModelMap.addAttribute("web", paramWebsite);
         String str1 = (String) paramHttpServletRequest.getAttribute("_base_domain_key");

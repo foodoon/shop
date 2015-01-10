@@ -480,7 +480,7 @@ INSERT INTO `jc_shop_advertise_attr` VALUES ('1', 'image_url', '/u/201407/091116
 INSERT INTO `jc_shop_advertise_attr` VALUES ('1', 'image_width', '981');
 INSERT INTO `jc_shop_advertise_attr` VALUES ('1', 'image_height', '70');
 INSERT INTO `jc_shop_advertise_attr` VALUES ('1', 'image_target', '_blank');
-INSERT INTO `jc_shop_advertise_attr` VALUES ('1', 'image_link', 'http://demo3.jeecms.com');
+INSERT INTO `jc_shop_advertise_attr` VALUES ('1', 'image_link', 'http://foodoon.com');
 
 -- ----------------------------
 -- Table structure for `jc_shop_advertise_space`
@@ -528,7 +528,7 @@ INSERT INTO `jc_shop_article` VALUES ('2', '1', '1', '购买流程', '2014-07-04
 INSERT INTO `jc_shop_article` VALUES ('3', '1', '1', '账户注册', '2014-07-04 09:30:55', '0', '', '', '');
 INSERT INTO `jc_shop_article` VALUES ('4', '1', '1', '大宗购物', '2014-07-04 09:31:40', '0', '', '', '');
 INSERT INTO `jc_shop_article` VALUES ('5', '1', '2', '最新商品', '2014-07-04 09:42:32', '0', '', '', '');
-INSERT INTO `jc_shop_article` VALUES ('6', '1', '3', 'jspgou v4.0即将发布', '2014-07-04 10:11:58', '0', '', '', '');
+INSERT INTO `jc_shop_article` VALUES ('6', '1', '3', '新版即将发布', '2014-07-04 10:11:58', '0', '', '', '');
 INSERT INTO `jc_shop_article` VALUES ('7', '1', '4', '热门促销', '2014-07-04 10:48:51', '0', '', '', '');
 INSERT INTO `jc_shop_article` VALUES ('8', '1', '5', '订单拆分', '2014-07-04 10:52:47', '0', '', '', '');
 INSERT INTO `jc_shop_article` VALUES ('9', '1', '5', '海外配送', '2014-07-04 10:54:14', '0', '', '', '');

@@ -11,14 +11,14 @@ public abstract class BaseGlobal
     public static String PROP_CONTEXT_PATH = "contextPath";
     public static String PROP_PORT = "port";
     public static String PROP_ID = "id";
-    private int _$8 = -2147483648;
-    private Long _$7;
-    private String _$6;
-    private Integer _$5;
-    private String _$4;
-    private String _$3;
-    private Integer _$2;
-    private Integer _$1;
+    private int hash = -2147483648;
+    private Long id;
+    private String contextPath;
+    private Integer port;
+    private String defImg;
+    private String treaty;
+    private Integer activeScore;
+    private Integer stockWarning;
 
     public BaseGlobal() {
         initialize();
@@ -33,60 +33,60 @@ public abstract class BaseGlobal
     }
 
     public Long getId() {
-        return this._$7;
+        return this.id;
     }
 
     public void setId(Long paramLong) {
-        this._$7 = paramLong;
-        this._$8 = -2147483648;
+        this.id = paramLong;
+        this.hash = -2147483648;
     }
 
     public String getContextPath() {
-        return this._$6;
+        return this.contextPath;
     }
 
     public void setContextPath(String paramString) {
-        this._$6 = paramString;
+        this.contextPath = paramString;
     }
 
     public Integer getPort() {
-        return this._$5;
+        return this.port;
     }
 
     public void setPort(Integer paramInteger) {
-        this._$5 = paramInteger;
+        this.port = paramInteger;
     }
 
     public String getDefImg() {
-        return this._$4;
+        return this.defImg;
     }
 
     public void setDefImg(String paramString) {
-        this._$4 = paramString;
+        this.defImg = paramString;
     }
 
     public String getTreaty() {
-        return this._$3;
+        return this.treaty;
     }
 
     public void setTreaty(String paramString) {
-        this._$3 = paramString;
+        this.treaty = paramString;
     }
 
     public Integer getActiveScore() {
-        return this._$2;
+        return this.activeScore;
     }
 
     public void setActiveScore(Integer paramInteger) {
-        this._$2 = paramInteger;
+        this.activeScore = paramInteger;
     }
 
     public Integer getStockWarning() {
-        return this._$1;
+        return this.stockWarning;
     }
 
     public void setStockWarning(Integer paramInteger) {
-        this._$1 = paramInteger;
+        this.stockWarning = paramInteger;
     }
 
     public boolean equals(Object paramObject) {
@@ -101,13 +101,13 @@ public abstract class BaseGlobal
     }
 
     public int hashCode() {
-        if (-2147483648 == this._$8) {
+        if (-2147483648 == this.hash) {
             if (null == getId())
                 return super.hashCode();
             String str = getClass().getName() + ":" + getId().hashCode();
-            this._$8 = str.hashCode();
+            this.hash = str.hashCode();
         }
-        return this._$8;
+        return this.hash;
     }
 
     public String toString() {

@@ -13,7 +13,3 @@ public class Global extends BaseGlobal {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.Global
- * JD-Core Version:    0.6.2
- */

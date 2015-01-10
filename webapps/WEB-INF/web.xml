@@ -105,6 +105,7 @@
     </servlet-mapping>
 
 
+
     <servlet-mapping>
         <servlet-name>Jcaptcha</servlet-name>
         <url-pattern>/checkcode.svl</url-pattern>
@@ -122,6 +123,10 @@
         </init-param>
     </filter>
     <filter>
+        <filter-name>welcomeFilter</filter-name>
+        <filter-class>guda.shop.core.web.WelcomeFilter</filter-class>
+    </filter>
+    <filter>
         <filter-name>osivFilter</filter-name>
         <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
     </filter>
@@ -129,7 +134,10 @@
         <filter-name>websiteFilter</filter-name>
         <filter-class>guda.shop.core.web.WebsiteFilter</filter-class>
     </filter>
-
+    <filter-mapping>
+        <filter-name>welcomeFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>processTime</filter-name>
         <url-pattern>*.do</url-pattern>
@@ -215,6 +223,7 @@
         <filter-name>websiteFilter</filter-name>
         <url-pattern>/checkcode.svl</url-pattern>
     </filter-mapping>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

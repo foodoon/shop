@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontContextInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
-    private ShopConfigMng _$2;
+    private ShopConfigMng shopConfigMng;
 
     @Autowired
-    private LoginSvc _$1;
+    private LoginSvc loginSvc;
 
     public boolean preHandle(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject)
             throws ServletException {
@@ -29,11 +29,11 @@ public class FrontContextInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
         Website localWebsite = SiteUtils.getWeb(paramHttpServletRequest);
-        ShopConfig localShopConfig = this._$2.findById(localWebsite.getId());
+        ShopConfig localShopConfig = this.shopConfigMng.findById(localWebsite.getId());
         if (localShopConfig == null)
             throw new IllegalStateException("no ShopConfig found in Website id=" + localWebsite.getId());
         paramHttpServletRequest.setAttribute("_shop_config_key", localShopConfig);
-        ShopMember localShopMember = this._$1.getMember(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
+        ShopMember localShopMember = this.loginSvc.getMember(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
         if (localShopMember != null) {
             MemberThread.set(localShopMember);
             GroupThread.set(localShopMember.getGroup());

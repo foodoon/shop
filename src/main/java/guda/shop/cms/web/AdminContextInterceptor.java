@@ -20,11 +20,11 @@ import java.util.Set;
 public class AdminContextInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
-    private LoginSvc _$3;
+    private LoginSvc loginSvc;
 
     @Autowired
-    private ShopAdminMng _$2;
-    private Long _$1;
+    private ShopAdminMng shopAdminMng;
+    private Long developAdminId;
 
     private static String _$1(HttpServletRequest paramHttpServletRequest)
             throws IllegalStateException {
@@ -41,7 +41,7 @@ public class AdminContextInterceptor extends HandlerInterceptorAdapter {
             j++;
         }
         if (i <= 0)
-            throw new IllegalStateException("admin access path not like '/jeeadmin/jspgou/...' pattern: " + str1);
+            throw new IllegalStateException("admin access path not like '/admin/shop/...' pattern: " + str1);
         return str1.substring(i);
     }
 
@@ -49,15 +49,15 @@ public class AdminContextInterceptor extends HandlerInterceptorAdapter {
             throws Exception {
         Website localWebsite = SiteUtils.getWeb(paramHttpServletRequest);
         ShopAdmin localShopAdmin;
-        if (this._$1 != null) {
-            localShopAdmin = this._$2.findById(this._$1);
+        if (this.developAdminId != null) {
+            localShopAdmin = this.shopAdminMng.findById(this.developAdminId);
             if (localShopAdmin == null)
-                throw new IllegalStateException("developAdminId not found: " + this._$1);
+                throw new IllegalStateException("developAdminId not found: " + this.developAdminId);
             Long id = localShopAdmin.getWebsite().getId();
             if (!id.equals(localWebsite.getId()))
                 throw new IllegalStateException("developAdminId's website id=" + id + " not in current website id=" + localWebsite.getId());
         } else {
-            localShopAdmin = this._$3.getAdmin(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
+            localShopAdmin = this.loginSvc.getAdmin(paramHttpServletRequest, paramHttpServletResponse, localWebsite);
         }
         Object localObject = _$1(paramHttpServletRequest);
         if (localShopAdmin != null) {
@@ -96,11 +96,7 @@ public class AdminContextInterceptor extends HandlerInterceptorAdapter {
     }
 
     public void setDevelopAdminId(Long paramLong) {
-        this._$1 = paramLong;
+        this.developAdminId = paramLong;
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.web.AdminContextInterceptor
- * JD-Core Version:    0.6.2
- */

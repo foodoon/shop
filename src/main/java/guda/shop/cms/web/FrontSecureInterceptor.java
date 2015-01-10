@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FrontSecureInterceptor extends HandlerInterceptorAdapter
         implements InitializingBean {
-    private String _$2;
-    private LoginSvc _$1;
+    private String loginUrl;
+    private LoginSvc loginSvc;
 
     public boolean preHandle(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse, Object paramObject)
             throws Exception {
-        paramHttpServletRequest.setAttribute("_login_url", this._$2);
+        paramHttpServletRequest.setAttribute("_login_url", this.loginUrl);
         Secured localSecured = (Secured) paramObject.getClass().getAnnotation(Secured.class);
         if ((localSecured != null) && (MemberThread.get() == null)) {
-            this._$1.clearCookie(paramHttpServletRequest, paramHttpServletResponse);
-            paramHttpServletResponse.sendRedirect(FrontHelper.getLoginUrl(this._$2, paramHttpServletRequest.getContextPath(), paramHttpServletRequest.getRequestURL().toString()));
+            this.loginSvc.clearCookie(paramHttpServletRequest, paramHttpServletResponse);
+            paramHttpServletResponse.sendRedirect(FrontHelper.getLoginUrl(this.loginUrl, paramHttpServletRequest.getContextPath(), paramHttpServletRequest.getRequestURL().toString()));
             return false;
         }
         return true;
@@ -31,20 +31,15 @@ public class FrontSecureInterceptor extends HandlerInterceptorAdapter
 
     public void afterPropertiesSet()
             throws Exception {
-        Assert.notNull(this._$2);
+        Assert.notNull(this.loginUrl);
     }
 
     public void setLoginUrl(String paramString) {
-        this._$2 = paramString;
+        this.loginUrl = paramString;
     }
 
     @Autowired
     public void setLoginSvc(LoginSvc paramLoginSvc) {
-        this._$1 = paramLoginSvc;
+        this.loginSvc = paramLoginSvc;
     }
 }
-
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.web.FrontSecureInterceptor
- * JD-Core Version:    0.6.2
- */

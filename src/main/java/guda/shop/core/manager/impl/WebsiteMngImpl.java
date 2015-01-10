@@ -19,38 +19,38 @@ import java.util.List;
 @Transactional
 public class WebsiteMngImpl
         implements WebsiteMng {
-    private CoreCacheSvc _$3;
-    private DomainCacheSvc _$2;
-    private WebsiteDao _$1;
+    private CoreCacheSvc coreCacheSvc;
+    private DomainCacheSvc domainCacheSvc;
+    private WebsiteDao websiteDao;
 
     @Transactional(readOnly = true)
     public Website getWebsite(String paramString) {
-        Integer localInteger = this._$3.getWebsiteCount();
+        Integer localInteger = this.coreCacheSvc.getWebsiteCount();
         int i;
         if (localInteger == null) {
-            i = this._$1.countWebsite();
-            this._$3.putWebsiteCount(new Integer(i).intValue());
+            i = this.websiteDao.countWebsite();
+            this.coreCacheSvc.putWebsiteCount(new Integer(i).intValue());
         } else {
             i = localInteger.intValue();
         }
         Long localLong;
         Website localWebsite;
         if (i == 1) {
-            localLong = this._$3.getWebsiteId();
+            localLong = this.coreCacheSvc.getWebsiteId();
             if (localLong != null) {
                 localWebsite = findById(localLong);
             } else {
-                localWebsite = this._$1.getUniqueWebsite();
-                this._$3.putWebsiteId(localWebsite.getId());
+                localWebsite = this.websiteDao.getUniqueWebsite();
+                this.coreCacheSvc.putWebsiteId(localWebsite.getId());
             }
         } else if (i > 1) {
-            localLong = this._$2.get(paramString);
+            localLong = this.domainCacheSvc.get(paramString);
             if (localLong != null) {
                 localWebsite = findById(localLong);
             } else {
-                localWebsite = this._$1.findByDomain(paramString);
+                localWebsite = this.websiteDao.findByDomain(paramString);
                 if (localWebsite != null)
-                    this._$2.put(localWebsite.getDomain(), localWebsite.getDomainAliasArray(), localWebsite.getId());
+                    this.domainCacheSvc.put(localWebsite.getDomain(), localWebsite.getDomainAliasArray(), localWebsite.getId());
             }
         } else {
             throw new IllegalStateException("no website data in database, please init database!");
@@ -59,19 +59,19 @@ public class WebsiteMngImpl
     }
 
     public Pagination getAllPage(int paramInt1, int paramInt2) {
-        return this._$1.getAllPage(paramInt1, paramInt2);
+        return this.websiteDao.getAllPage(paramInt1, paramInt2);
     }
 
     public List<Website> getAllList() {
-        return this._$1.getAllList();
+        return this.websiteDao.getAllList();
     }
 
     public Website findById(Long paramLong) {
-        return this._$1.findById(paramLong);
+        return this.websiteDao.findById(paramLong);
     }
 
     public Website save(Website paramWebsite) {
-        Website localWebsite = this._$1.save(paramWebsite);
+        Website localWebsite = this.websiteDao.save(paramWebsite);
         _$1(localWebsite);
         return localWebsite;
     }
@@ -80,13 +80,13 @@ public class WebsiteMngImpl
         Website localWebsite = findById(paramWebsite.getId());
         String str = localWebsite.getDomain();
         String[] arrayOfString = localWebsite.getDomainAliasArray();
-        localWebsite = this._$1.updateByUpdater(new Updater(paramWebsite));
+        localWebsite = this.websiteDao.updateByUpdater(new Updater(paramWebsite));
         _$1(str, arrayOfString, localWebsite);
         return localWebsite;
     }
 
     public Website deleteById(Long paramLong) {
-        Website localWebsite = this._$1.deleteById(paramLong);
+        Website localWebsite = this.websiteDao.deleteById(paramLong);
         _$2(localWebsite);
         return localWebsite;
     }
@@ -94,30 +94,30 @@ public class WebsiteMngImpl
     public Website[] deleteByIds(Long[] paramArrayOfLong) {
         Website[] arrayOfWebsite = new Website[paramArrayOfLong.length];
         for (int i = 0; i < paramArrayOfLong.length; i++)
-            arrayOfWebsite[i] = this._$1.deleteById(paramArrayOfLong[i]);
+            arrayOfWebsite[i] = this.websiteDao.deleteById(paramArrayOfLong[i]);
         _$1(arrayOfWebsite);
         return arrayOfWebsite;
     }
 
     private void _$1() {
-        List localList = this._$1.getAllList();
+        List localList = this.websiteDao.getAllList();
         int i = localList.size();
         if (i == 0)
             throw new IllegalStateException("no website data in database, please init database!");
-        this._$3.putWebsiteCount(i);
+        this.coreCacheSvc.putWebsiteCount(i);
         Website localWebsite;
         if (i == 1) {
             localWebsite = (Website) localList.get(0);
-            this._$3.putWebsiteId(localWebsite.getId());
-            this._$2.removeAll();
-            this._$2.put(localWebsite.getDomain(), localWebsite.getDomainAliasArray(), localWebsite.getId());
+            this.coreCacheSvc.putWebsiteId(localWebsite.getId());
+            this.domainCacheSvc.removeAll();
+            this.domainCacheSvc.put(localWebsite.getDomain(), localWebsite.getDomainAliasArray(), localWebsite.getId());
         } else {
-            this._$3.removeWebsiteId();
-            this._$2.removeAll();
+            this.coreCacheSvc.removeWebsiteId();
+            this.domainCacheSvc.removeAll();
             Iterator localIterator = localList.iterator();
             while (((Iterator) localIterator).hasNext()) {
                 localWebsite = (Website) ((Iterator) localIterator).next();
-                this._$2.put(localWebsite.getDomain(), localWebsite.getDomainAliasArray(), localWebsite.getId());
+                this.domainCacheSvc.put(localWebsite.getDomain(), localWebsite.getDomainAliasArray(), localWebsite.getId());
             }
         }
     }
@@ -126,8 +126,8 @@ public class WebsiteMngImpl
         String str = paramWebsite.getDomain();
         String[] arrayOfString = paramWebsite.getDomainAliasArray();
         if ((!str.equals(paramString)) || (!Arrays.equals(arrayOfString, paramArrayOfString))) {
-            this._$2.remove(paramString, paramArrayOfString);
-            this._$2.put(str, arrayOfString, paramWebsite.getId());
+            this.domainCacheSvc.remove(paramString, paramArrayOfString);
+            this.domainCacheSvc.put(str, arrayOfString, paramWebsite.getId());
         }
     }
 
@@ -161,17 +161,17 @@ public class WebsiteMngImpl
 
     @Autowired
     public void setCoreCacheSvc(CoreCacheSvc paramCoreCacheSvc) {
-        this._$3 = paramCoreCacheSvc;
+        this.coreCacheSvc = paramCoreCacheSvc;
     }
 
     @Autowired
     public void setDomainCacheSvc(DomainCacheSvc paramDomainCacheSvc) {
-        this._$2 = paramDomainCacheSvc;
+        this.domainCacheSvc = paramDomainCacheSvc;
     }
 
     @Autowired
     public void setDao(WebsiteDao paramWebsiteDao) {
-        this._$1 = paramWebsiteDao;
+        this.websiteDao = paramWebsiteDao;
     }
 }
 

@@ -13,7 +13,3 @@ public class SiteUtils extends guda.shop.core.web.SiteUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.web.SiteUtils
- * JD-Core Version:    0.6.2
- */
