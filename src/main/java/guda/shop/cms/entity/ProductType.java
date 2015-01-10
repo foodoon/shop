@@ -42,11 +42,11 @@ public class ProductType extends BaseProductType {
     }
 
     public String getCtgTplDirRel() {
-        return "/" + "category";
+        return "/WEB-INF/front/" + "category";
     }
 
     public String getTxtTplDirRel() {
-        return "/" + "product";
+        return "/WEB-INF/front/" + "product";
     }
 
     public String[] getChannelTpls(String paramString1, String paramString2) {
@@ -74,7 +74,3 @@ public class ProductType extends BaseProductType {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ProductType
- * JD-Core Version:    0.6.2
- */

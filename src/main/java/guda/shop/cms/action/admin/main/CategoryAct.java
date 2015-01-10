@@ -128,73 +128,37 @@ public class CategoryAct
 
     @RequestMapping({"/category/v_add.do"})
     public String add(Long root, Long typeId, HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         Category parent = null;
-
-
         ProductType type = this.productTypeMng.findById(typeId);
-
-
         List itemList = this.productTypePropertyMng.getList(typeId, true);
         List brandList;
-
         if (root != null) {
-
             parent = this.manager.findById(root);
-
             model.addAttribute("parent", parent);
-
             model.addAttribute("root", root);
-
             brandList = new ArrayList(parent.getBrands());
         } else {
-
             brandList = this.brandMng.getList();
         }
-
         model.addAttribute("brandList", brandList);
-
-
         String ctgTplDirRel = type.getCtgTplDirRel();
-
         String realDir = this.servletContext.getRealPath(ctgTplDirRel);
-
         String relPath = ctgTplDirRel.substring(web.getTemplateRel().length());
-
-
         String txtTplDirRel = type.getTxtTplDirRel();
-
         String txtrealDir = this.servletContext.getRealPath(txtTplDirRel);
-
         String txtrelPath = txtTplDirRel.substring(web.getTemplateRel().length());
-
-
         String[] channelTpls = type.getChannelTpls(realDir, relPath);
-
-
         String[] contentTpls = type.getContentTpls(txtrealDir, txtrelPath);
-
-
         List parentList = this.manager.getListForParent(
                 SiteUtils.getWebId(request), null);
-
-
         List standardTypeList = this.standardTypeMng.getList();
-
         model.addAttribute("standardTypeList", standardTypeList);
-
         model.addAttribute("channelTpls", channelTpls);
-
         model.addAttribute("contentTpls", contentTpls);
-
         model.addAttribute("parentList", parentList);
-
         model.addAttribute("type", type);
-
         model.addAttribute("itemList", itemList);
-
         return "category/add";
     }
 
