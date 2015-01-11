@@ -1,5 +1,6 @@
 package guda.shop.cms.entity;
 
+import guda.shop.biz.PathContants;
 import guda.shop.cms.entity.base.BaseProductType;
 import guda.shop.core.entity.Website;
 
@@ -42,11 +43,11 @@ public class ProductType extends BaseProductType {
     }
 
     public String getCtgTplDirRel() {
-        return "/WEB-INF/front/" + "category";
+        return PathContants.FRONT_RELATIVE_PATH + "category";
     }
 
     public String getTxtTplDirRel() {
-        return "/WEB-INF/front/" + "product";
+        return PathContants.FRONT_RELATIVE_PATH  + "product";
     }
 
     public String[] getChannelTpls(String paramString1, String paramString2) {

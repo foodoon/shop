@@ -21,7 +21,7 @@ public class WelcomeFilter  implements Filter {
             HttpServletResponse resp = (HttpServletResponse)response;
             String requestURI = req.getRequestURI();
             if("/".equals(requestURI)){
-                resp.sendRedirect(getBasePath(req) + "/index.jhtml");
+                resp.sendRedirect(getBasePath(req) + "/index.htm");
                 return;
             }
         }

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-01-11 09:35:15
+Date: 2015-01-11 22:10:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -252,7 +252,7 @@ CREATE TABLE `core_user` (
 -- ----------------------------
 -- Records of core_user
 -- ----------------------------
-INSERT INTO `core_user` VALUES ('1', 'admin', 'admin@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2009-08-22 00:00:00', '2352', null, '2015-01-10 22:25:04', '127.0.0.1', '2015-01-10 22:30:43', '127.0.0.1', null, null, null, '0');
+INSERT INTO `core_user` VALUES ('1', 'admin', 'admin@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2009-08-22 00:00:00', '2355', null, '2015-01-11 21:58:54', '127.0.0.1', '2015-01-11 22:02:14', '127.0.0.1', null, null, null, '0');
 INSERT INTO `core_user` VALUES ('4', 'test', '1220788677@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2014-07-09 15:35:28', '1', '127.0.0.1', '2014-07-09 15:38:44', '192.168.0.144', '2014-07-09 15:38:44', '192.168.0.144', null, null, null, '0');
 INSERT INTO `core_user` VALUES ('5', 'test1', 'test@test.com', '5a105e8b9d40e1329780d62ea2265d8a', '2014-07-12 11:03:23', '3', '127.0.0.1', '2014-07-12 11:05:21', '127.0.0.1', '2014-07-12 11:05:44', '127.0.0.1', null, null, null, '0');
 INSERT INTO `core_user` VALUES ('6', 'test2', '1873136502@qq.com', 'a1e8597f91a1ec724bc79eb03f7282ec', '2014-08-05 15:33:52', '1', '127.0.0.1', '2014-08-05 15:49:56', '192.168.0.144', '2014-08-05 15:49:56', '192.168.0.144', null, null, null, '0');
@@ -403,7 +403,7 @@ CREATE TABLE `popularity_item` (
   PRIMARY KEY (`popularityitem_id`),
   KEY `fk_shop_popularityitem_cart` (`cart_id`),
   CONSTRAINT `fk_shop_popularityitem_cart` FOREIGN KEY (`cart_id`) REFERENCES `shop_cart` (`cart_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='购物车';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of popularity_item
@@ -696,7 +696,7 @@ CREATE TABLE `shop_cart_item` (
   CONSTRAINT `fk_shop_cartitem_product` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`),
   CONSTRAINT `fk_shop_cartitem_productFash` FOREIGN KEY (`productFash_id`) REFERENCES `shop_product_fashion` (`fashion_id`),
   CONSTRAINT `fk_shop_cartitem_website` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='购物车';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of shop_cart_item
@@ -888,7 +888,7 @@ CREATE TABLE `shop_collect` (
   CONSTRAINT `fk_shop_collect_fashion` FOREIGN KEY (`fashion_id`) REFERENCES `shop_product_fashion` (`fashion_id`),
   CONSTRAINT `fk_shop_collect_member` FOREIGN KEY (`member_id`) REFERENCES `shop_member` (`member_id`),
   CONSTRAINT `fk_shop_collect_product` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='收藏商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='收藏商品';
 
 -- ----------------------------
 -- Records of shop_collect
@@ -1052,7 +1052,7 @@ CREATE TABLE `shop_discuss` (
   KEY `fk_disucss_product` (`product_id`),
   CONSTRAINT `fk_disucss_member` FOREIGN KEY (`member_id`) REFERENCES `shop_member` (`member_id`),
   CONSTRAINT `fk_disucss_product` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品评论表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品评论表';
 
 -- ----------------------------
 -- Records of shop_discuss
@@ -1120,7 +1120,7 @@ CREATE TABLE `shop_fashion_standard` (
   KEY `fk_shop_standard_fashion` (`standard_id`),
   CONSTRAINT `fk_shop_fashion_standard` FOREIGN KEY (`fashion_id`) REFERENCES `shop_product_fashion` (`fashion_id`),
   CONSTRAINT `fk_shop_standard_fashion` FOREIGN KEY (`standard_id`) REFERENCES `standard` (`standard_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='商品规格表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品规格表';
 
 -- ----------------------------
 -- Records of shop_fashion_standard
@@ -1451,7 +1451,7 @@ CREATE TABLE `shop_order` (
   CONSTRAINT `fk_shop_order_payment` FOREIGN KEY (`payment_id`) REFERENCES `shop_payment` (`payment_id`),
   CONSTRAINT `fk_shop_order_shipping` FOREIGN KEY (`shipping_id`) REFERENCES `shop_shipping` (`shipping_id`),
   CONSTRAINT `fk_shop_order_website` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='订单';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单';
 
 -- ----------------------------
 -- Records of shop_order
@@ -1471,7 +1471,7 @@ CREATE TABLE `shop_order_gathering` (
   `drawee` varchar(255) DEFAULT NULL COMMENT '付款人',
   `comment` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='收款';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='收款';
 
 -- ----------------------------
 -- Records of shop_order_gathering
@@ -1502,7 +1502,7 @@ CREATE TABLE `shop_order_item` (
   CONSTRAINT `fk_shop_orderitem_product` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`),
   CONSTRAINT `fk_shop_orderitem_productFash` FOREIGN KEY (`productFash_id`) REFERENCES `shop_product_fashion` (`fashion_id`),
   CONSTRAINT `fk_shop_orderitem_website` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='订单项';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单项';
 
 -- ----------------------------
 -- Records of shop_order_item
@@ -1530,7 +1530,7 @@ CREATE TABLE `shop_order_return` (
   KEY `fk_shop_order_return` (`order_id`),
   KEY `fk_shop_reason_return` (`reason_id`),
   KEY `fk_shop_paytype_return` (`payType`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='FComment';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='FComment';
 
 -- ----------------------------
 -- Records of shop_order_return
@@ -1567,7 +1567,7 @@ CREATE TABLE `shop_order_shipments` (
   `receiving` varchar(255) DEFAULT NULL COMMENT '收货信息',
   `comment` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='发货信息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='发货信息';
 
 -- ----------------------------
 -- Records of shop_order_shipments
@@ -1722,7 +1722,7 @@ CREATE TABLE `shop_product` (
   CONSTRAINT `fk_shop_product_config` FOREIGN KEY (`config_id`) REFERENCES `shop_config` (`config_id`),
   CONSTRAINT `fk_shop_product_ptype` FOREIGN KEY (`ptype_id`) REFERENCES `shop_ptype` (`ptype_id`),
   CONSTRAINT `fk_shop_product_website` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品';
 
 -- ----------------------------
 -- Records of shop_product
@@ -1816,7 +1816,7 @@ CREATE TABLE `shop_product_fashion` (
   PRIMARY KEY (`fashion_id`),
   KEY `fk_fashion_product` (`product_id`),
   CONSTRAINT `fk_fashion_product` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='商品款式';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品款式';
 
 -- ----------------------------
 -- Records of shop_product_fashion
@@ -1869,7 +1869,7 @@ CREATE TABLE `shop_product_standard` (
   PRIMARY KEY (`ps_id`),
   KEY `fk_shop_product_color` (`product_id`),
   CONSTRAINT `fk_shop_product_standard` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COMMENT='商品规则存储表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品规则存储表';
 
 -- ----------------------------
 -- Records of shop_product_standard

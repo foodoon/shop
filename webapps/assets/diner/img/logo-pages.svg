@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="199.666" height="68.334" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <polygon fill="black" id="svg_2" points="190.33200073242188,6.327003479003906 96.8330078125,6.327003479003906 3.3330001831054688,6.327003479003906 24.925003051757812,33.16699981689453 3.3330001831054688,60.00699996948242 96.8330078125,60.00699996948242 190.33200073242188,60.00699996948242 168.74000549316406,33.16699981689453 " opacity="0.8"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="Fantasy" font-size="43" id="svg_11" y="493.900002" x="1116" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">邻家</text>
+   <text transform="matrix(0.800792, 0, 0, 0.84, 23.2176, 8.94375)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="43" id="svg_12" y="43.138097" x="96.507416" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#eacccc">邻家小厨</text>
+  </g>
+ </g>
+</svg>

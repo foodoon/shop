@@ -1,19 +1,18 @@
 package guda.shop.core.entity;
 
+import guda.shop.biz.PathContants;
 import guda.shop.core.entity.base.BaseWebsite;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.Date;
 
 public class Website extends BaseWebsite {
-    public static final String RES_BASE = "assets/global";
     public static final String USER_BASE = "t";
     public static final String UPLOAD_PATH = "u";
     public static final String DEFAULT = "default";
     public static final String TPL_SUFFIX = ".html";
     public static final String TPL_PREFIX_SYS = "sys_";
     public static final String TPL_PREFIX_TAG = "tag_";
-    public static final String TPL_BASE = "/WEB-INF/front";
     private static final long serialVersionUID = 1L;
 
     public Website() {
@@ -45,7 +44,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getUploadRel(String paramString) {
-        StringBuilder localStringBuilder = new StringBuilder("/").append("u");
+        StringBuilder localStringBuilder = new StringBuilder(PathContants.UPLOAD_PATH);
         if (!StringUtils.isBlank(paramString)) {
             if (!paramString.startsWith("/"))
                 localStringBuilder.append("/");
@@ -55,7 +54,7 @@ public class Website extends BaseWebsite {
     }
 
     public String getUploadUrls(String paramString) {
-        StringBuilder localStringBuilder = getResBase().append("/").append("u");
+        StringBuilder localStringBuilder = getResBase().append(PathContants.UPLOAD_PATH);
         if (!StringUtils.isBlank(paramString)) {
             if (!paramString.startsWith("/"))
                 localStringBuilder.append("/");
@@ -74,9 +73,6 @@ public class Website extends BaseWebsite {
         return localStringBuilder.toString();
     }
 
-    public String getTplPath() {
-        return "/WEB-INF/front";
-    }
 
     public String getTemplateRel(String paramString) {
         StringBuilder localStringBuilder = getTemplateRelBuff();
@@ -114,7 +110,7 @@ public class Website extends BaseWebsite {
     }
 
     private StringBuilder getResBase() {
-        return getUrlBuff(false).append("/").append("assets/global");
+        return getUrlBuff(false).append(PathContants.ASSETS_GLOBAL);
     }
 
     public String getResBaseUrl() {
@@ -122,7 +118,7 @@ public class Website extends BaseWebsite {
     }
 
     public StringBuilder getTemplateRelBuff() {
-        StringBuilder localStringBuilder = new StringBuilder("/WEB-INF/front");
+        StringBuilder localStringBuilder = new StringBuilder(PathContants.FRONT_RELATIVE_PATH);
         return localStringBuilder;
     }
 

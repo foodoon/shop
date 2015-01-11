@@ -1,5 +1,6 @@
 package guda.shop.cms.entity;
 
+import guda.shop.biz.PathContants;
 import guda.shop.cms.entity.base.BaseShopChannel;
 import guda.shop.common.hibernate3.HibernateTree;
 import guda.shop.common.hibernate3.PriorityComparator;
@@ -32,11 +33,11 @@ public class ShopChannel extends BaseShopChannel
     }
 
     public static String getChannelTplDirRel(Website paramWebsite) {
-        return "/" + "channel";
+        return PathContants.FRONT_RELATIVE_PATH + "channel";
     }
 
     public static String getContentTplDirRel(Website paramWebsite) {
-        return "/" + "article";
+        return PathContants.FRONT_RELATIVE_PATH + "article";
     }
 
     public static String[] getChannelTpls(Integer paramInteger, String paramString1, String paramString2) {

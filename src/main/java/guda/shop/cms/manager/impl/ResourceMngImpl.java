@@ -1,5 +1,6 @@
 package guda.shop.cms.manager.impl;
 
+import guda.shop.biz.PathContants;
 import guda.shop.cms.manager.ResourceMng;
 import guda.shop.common.file.FileWrap;
 import guda.shop.common.util.Zipper;
@@ -109,9 +110,9 @@ public class ResourceMngImpl
 
     public List<Zipper.FileEntry> export() {
         ArrayList<Zipper.FileEntry> localArrayList = new ArrayList<Zipper.FileEntry>();
-        File localFile1 = new File(this._$1.get("/WEB-INF/front"));
+        File localFile1 = new File(this._$1.get(PathContants.FRONT_RELATIVE_PATH ));
         localArrayList.add(new Zipper.FileEntry("", "", localFile1));
-        File localFile2 = new File(this._$1.get("/assets/global"));
+        File localFile2 = new File(this._$1.get(PathContants.ASSETS_GLOBAL));
         if (localFile2.exists())
             for (File localFile3 : localFile2.listFiles())
                 localArrayList.add(new Zipper.FileEntry("${res}", localFile3));
@@ -120,8 +121,7 @@ public class ResourceMngImpl
 
     public void imoport(File paramFile, Website paramWebsite)
             throws IOException {
-        String str1 = "/assets/global";
-        String str2 = "/WEB-INF/t/gou";
+
         ZipFile localZipFile = new ZipFile(paramFile, "GBK");
         byte[] arrayOfByte = new byte[1024];
         InputStream localInputStream = null;
@@ -144,9 +144,9 @@ public class ResourceMngImpl
                 _$2.debug("unzip file：{}", str3);
                 String str4;
                 if (str3.startsWith("${res}"))
-                    str4 = str1 + str3.substring("${res}".length());
+                    str4 = PathContants.ASSETS_GLOBAL + str3.substring("${res}".length());
                 else
-                    str4 = str2 + "/" + str3;
+                    str4 = PathContants.ASSETS_SHOP + "/" + str3;
                 _$2.debug("解压地址：{}", str4);
                 File localFile1 = new File(this._$1.get(str4));
                 File localFile2 = localFile1.getParentFile();

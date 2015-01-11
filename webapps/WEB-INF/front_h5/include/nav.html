@@ -1,0 +1,35 @@
+<nav id="menu">
+    <ul>
+        <li class="Selected">
+            <a href="${base}/index.jhtml">
+                <i class="fa fa-home"></i>首页
+            </a>
+
+        </li>
+        <li>
+
+            <a class="mm-subopen mm-fullsubopen">
+                <i class="fa fa-th-list"></i>分类
+            </a>
+            <ul>
+                [@shop_Category]
+                [#list tag_list as ctg]
+                <li><a href="${base}${ctg.url}"><i class="fa fa-th-list"></i>${ctg.name}</a></li>
+                [/#list]
+                [/@shop_Category]
+            </ul>
+        </li>
+        <li>
+            <a href="${base}/order.htm">
+                <i class="fa fa-th-list"></i>订餐
+            </a>
+
+        </li>
+        <li>
+            <a href="${base}/personal.htm">
+                <i class="fa fa-th-list"></i>我的小厨
+            </a>
+
+        </li>
+    </ul>
+</nav>
