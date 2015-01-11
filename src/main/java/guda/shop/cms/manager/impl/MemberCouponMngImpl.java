@@ -47,7 +47,3 @@ public class MemberCouponMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.MemberCouponMngImpl
- * JD-Core Version:    0.6.2
- */

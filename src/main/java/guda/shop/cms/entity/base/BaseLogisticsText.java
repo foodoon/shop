@@ -79,7 +79,3 @@ public abstract class BaseLogisticsText
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseLogisticsText
- * JD-Core Version:    0.6.2
- */

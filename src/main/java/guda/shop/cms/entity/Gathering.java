@@ -17,7 +17,3 @@ public class Gathering extends BaseGathering {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Gathering
- * JD-Core Version:    0.6.2
- */

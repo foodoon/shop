@@ -66,7 +66,3 @@ public class BrandListDirective extends WebDirective {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.BrandListDirective
- * JD-Core Version:    0.6.2
- */

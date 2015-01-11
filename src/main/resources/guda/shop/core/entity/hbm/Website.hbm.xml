@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.core.entity">
-    <class name="Website" table="jc_core_website">
+    <class name="Website" table="core_website">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="java.lang.Long" column="website_id">
@@ -55,7 +55,7 @@
             <one-to-many class="Website"/>
         </set>
 
-        <map name="messages" table="jc_core_message_tpl" cascade="all-delete-orphan">
+        <map name="messages" table="core_message_tpl" cascade="all-delete-orphan">
             <cache usage="read-write"/>
             <key column="website_id" not-null="true"/>
             <map-key column="message_name" type="string" length="50"/>

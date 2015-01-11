@@ -31,7 +31,3 @@ public abstract interface ShopChannelDao {
     public abstract List<ShopChannel> getList(Long paramLong1, Integer paramInteger, Long paramLong2, Long paramLong3);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopChannelDao
- * JD-Core Version:    0.6.2
- */

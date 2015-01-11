@@ -15,7 +15,3 @@ public abstract interface AdminDao {
     public abstract Admin deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.AdminDao
- * JD-Core Version:    0.6.2
- */

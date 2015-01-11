@@ -405,7 +405,3 @@ public abstract class BaseProduct
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseProduct
- * JD-Core Version:    0.6.2
- */

@@ -22,7 +22,3 @@ public abstract interface OrderReturnMng {
     public abstract OrderReturn[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.OrderReturnMng
- * JD-Core Version:    0.6.2
- */

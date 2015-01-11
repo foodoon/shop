@@ -25,7 +25,3 @@ public abstract interface ShopDictionaryMng {
     public abstract ShopDictionary[] updatePriority(Long[] paramArrayOfLong, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopDictionaryMng
- * JD-Core Version:    0.6.2
- */

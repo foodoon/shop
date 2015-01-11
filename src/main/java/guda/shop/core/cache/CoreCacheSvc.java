@@ -12,7 +12,3 @@ public abstract interface CoreCacheSvc {
     public abstract Long getWebsiteId();
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.cache.CoreCacheSvc
- * JD-Core Version:    0.6.2
- */

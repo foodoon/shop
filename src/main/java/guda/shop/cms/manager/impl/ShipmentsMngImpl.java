@@ -76,7 +76,3 @@ public class ShipmentsMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.ShipmentsMngImpl
- * JD-Core Version:    0.6.2
- */

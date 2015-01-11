@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="Product" table="jc_shop_product">
+    <class name="Product" table="shop_product">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="java.lang.Long" column="product_id">
@@ -37,7 +37,7 @@
         <many-to-one name="type" column="ptype_id" class="ProductType" not-null="true"></many-to-one>
         <many-to-one name="website" column="website_id" class="guda.shop.core.entity.Website"
                      not-null="true"></many-to-one>
-        <set name="tags" table="jc_shop_product_tag" cascade="all">
+        <set name="tags" table="shop_product_tag" cascade="all">
             <cache usage="read-write"/>
             <key column="product_id"/>
             <many-to-many column="stag_id" class="ProductTag"/>
@@ -47,7 +47,7 @@
             <one-to-many class="ProductFashion"/>
         </set>
 
-        <list name="exendeds" table="jc_shop_product_exended">
+        <list name="exendeds" table="shop_product_exended">
             <cache usage="read-write"/>
             <key column="product_id"/>
             <list-index column="PRIORITY"/>
@@ -56,13 +56,13 @@
                 <property name="value" column="attr_value" type="string" length="255" not-null="false"/>
             </composite-element>
         </list>
-        <list name="keywords" table="jc_shop_product_keyword" cascade="all">
+        <list name="keywords" table="shop_product_keyword" cascade="all">
             <cache usage="read-write"/>
             <key column="product_id"/>
             <list-index column="priority"/>
             <element column="name" type="string" length="100" not-null="true"/>
         </list>
-        <list name="pictures" table="jc_shop_product_picture">
+        <list name="pictures" table="shop_product_picture">
             <cache usage="read-write"/>
             <key column="product_id"/>
             <list-index column="priority"/>
@@ -73,13 +73,13 @@
             </composite-element>
         </list>
 
-        <map name="attr" table="jc_shop_product_attr" cascade="all-delete-orphan">
+        <map name="attr" table="shop_product_attr" cascade="all-delete-orphan">
             <cache usage="read-write"/>
             <key column="product_id" not-null="true"/>
             <map-key column="attr_name" type="string" length="30"/>
             <element column="attr_value" type="string" length="255"/>
         </map>
-        <set name="popularityGroups" table="jc_popularity_group_product">
+        <set name="popularityGroups" table="popularity_group_product">
             <cache usage="read-write"/>
             <key column="product_id"/>
             <many-to-many column="id" class="PopularityGroup"/>

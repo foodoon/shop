@@ -12,7 +12,3 @@ public abstract interface ShopConfigMng {
     public abstract ShopConfig deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopConfigMng
- * JD-Core Version:    0.6.2
- */

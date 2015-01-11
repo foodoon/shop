@@ -90,7 +90,3 @@ public class ConsultDaoImpl extends HibernateBaseDao<Consult, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ConsultDaoImpl
- * JD-Core Version:    0.6.2
- */

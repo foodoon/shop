@@ -48,7 +48,3 @@ public abstract interface UserMng {
     public abstract User[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.UserMng
- * JD-Core Version:    0.6.2
- */

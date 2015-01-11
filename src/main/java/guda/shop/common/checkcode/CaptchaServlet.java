@@ -58,7 +58,3 @@ public class CaptchaServlet extends HttpServlet {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.checkcode.CaptchaServlet
- * JD-Core Version:    0.6.2
- */

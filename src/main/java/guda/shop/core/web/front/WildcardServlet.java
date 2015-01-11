@@ -50,7 +50,3 @@ public class WildcardServlet extends HttpServlet {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.front.WildcardServlet
- * JD-Core Version:    0.6.2
- */

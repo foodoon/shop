@@ -27,7 +27,3 @@ public abstract class Constants extends guda.shop.core.web.Constants {
     public static final String COUPON = "coupon";
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.Constants
- * JD-Core Version:    0.6.2
- */

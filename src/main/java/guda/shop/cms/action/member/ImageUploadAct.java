@@ -145,7 +145,3 @@ public class ImageUploadAct
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.member.ImageUploadAct
- * JD-Core Version:    0.6.2
- */

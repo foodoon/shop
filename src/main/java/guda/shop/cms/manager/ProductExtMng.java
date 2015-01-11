@@ -9,7 +9,3 @@ public abstract interface ProductExtMng {
     public abstract ProductExt saveOrUpdate(ProductExt paramProductExt, Product paramProduct);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ProductExtMng
- * JD-Core Version:    0.6.2
- */

@@ -17,7 +17,3 @@ public class MoneyTools {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.file.lucene.MoneyTools
- * JD-Core Version:    0.6.2
- */

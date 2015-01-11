@@ -20,7 +20,3 @@ public abstract interface AdspaceMng {
     public abstract List<Adspace> getList();
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.AdspaceMng
- * JD-Core Version:    0.6.2
- */

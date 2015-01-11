@@ -89,7 +89,3 @@ public class RoleAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.RoleAct
- * JD-Core Version:    0.6.2
- */

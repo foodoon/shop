@@ -266,7 +266,3 @@ public class TreeIntercptor extends EmptyInterceptor
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.hibernate3.TreeIntercptor
- * JD-Core Version:    0.6.2
- */

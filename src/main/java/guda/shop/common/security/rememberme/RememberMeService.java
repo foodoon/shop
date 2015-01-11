@@ -16,7 +16,3 @@ public abstract interface RememberMeService {
     public abstract void logout(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse);
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.rememberme.RememberMeService
- * JD-Core Version:    0.6.2
- */

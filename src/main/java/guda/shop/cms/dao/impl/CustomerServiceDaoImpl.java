@@ -50,7 +50,3 @@ public class CustomerServiceDaoImpl extends HibernateBaseDao<CustomerService, Lo
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.CustomerServiceDaoImpl
- * JD-Core Version:    0.6.2
- */

@@ -98,7 +98,3 @@ public abstract class BaseShopPay
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseShopPay
- * JD-Core Version:    0.6.2
- */

@@ -18,7 +18,3 @@ public abstract interface Paginable {
     public abstract int getPrePage();
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.page.Paginable
- * JD-Core Version:    0.6.2
- */

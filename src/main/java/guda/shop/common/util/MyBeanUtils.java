@@ -67,7 +67,3 @@ public class MyBeanUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.util.MyBeanUtils
- * JD-Core Version:    0.6.2
- */

@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="ShopChannel" table="jc_shop_channel" dynamic-update="true">
+    <class name="ShopChannel" table="shop_channel" dynamic-update="true">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="java.lang.Long" column="channel_id">

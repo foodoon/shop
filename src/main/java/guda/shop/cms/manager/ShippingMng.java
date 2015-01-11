@@ -22,7 +22,3 @@ public abstract interface ShippingMng {
     public abstract Shipping[] updatePriority(Long[] paramArrayOfLong, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShippingMng
- * JD-Core Version:    0.6.2
- */

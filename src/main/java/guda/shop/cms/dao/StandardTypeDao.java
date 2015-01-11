@@ -24,7 +24,3 @@ public abstract interface StandardTypeDao {
     public abstract StandardType deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.StandardTypeDao
- * JD-Core Version:    0.6.2
- */

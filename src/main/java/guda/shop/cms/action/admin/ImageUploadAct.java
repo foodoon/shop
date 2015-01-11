@@ -31,277 +31,159 @@ public class ImageUploadAct
     private static final String RESULT_BIG_PAGE = "/common/iframe_big_upload";
     private static final String RESULT_AMP_PAGE = "/common/iframe_amp_upload";
     private ServletContext servletContext;
+    private static final String UPLOAD_RELATIVE_PATH = "upload";
 
     @RequestMapping({"/common/o_upload_image.do"})
     public String execute(String fileName, Integer uploadNum, Integer zoomWidth, Integer zoomHeight, @RequestParam(value = "uploadFile", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
-
         WebErrors errors = validate(fileName, file, request);
-
         if (errors.hasErrors()) {
-
             model.addAttribute("error", errors.getErrors().get(0));
-
             return "/common/iframe_upload";
         }
-
         Website web = SiteUtils.getWeb(request);
-
         String real = this.servletContext.getRealPath(web.getUploadRel());
-
         String dateDir = FileNameUtils.genPathName();
-
-
         File root = new File(real, dateDir);
-
         if (!root.exists()) {
-
             root.mkdirs();
         }
-
-
         if (StringUtils.isBlank(fileName)) {
-
             String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-
             fileName = FileNameUtils.genFileName(ext);
         } else {
-
             fileName = FilenameUtils.getName(fileName);
         }
-
-
         File tempFile = new File(root, fileName);
-
-
         String ctx = request.getContextPath();
-
-        String relPath = ctx + "/" + "u" + "/" + dateDir + "/" + fileName;
-
+        String relPath = ctx + "/" + UPLOAD_RELATIVE_PATH + "/" + dateDir + "/" + fileName;
         model.addAttribute("zoomWidth", zoomWidth);
-
         model.addAttribute("zoomHeight", zoomHeight);
         try {
-
             file.transferTo(tempFile);
-
             model.addAttribute("uploadPath", relPath);
-
             model.addAttribute("uploadNum", uploadNum);
         } catch (IllegalStateException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         } catch (IOException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         }
-
         return "/common/iframe_upload";
     }
 
     @RequestMapping({"/common/o_upload_switch_image.do"})
     public String executeSwitch(String fileName, Integer uploadNum, @RequestParam(value = "uploadFileSwitch", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
-
         WebErrors errors = validate(fileName, file, request);
-
         if (errors.hasErrors()) {
-
             model.addAttribute("error", errors.getErrors().get(0));
-
             return "/common/iframe_switch_upload";
         }
-
         Website web = SiteUtils.getWeb(request);
-
         String real = this.servletContext.getRealPath(web.getUploadRel());
-
         String dateDir = FileNameUtils.genPathName();
-
-
         File root = new File(real, dateDir);
-
         if (!root.exists()) {
-
             root.mkdirs();
         }
-
-
         if (StringUtils.isBlank(fileName)) {
-
             String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-
             fileName = FileNameUtils.genFileName(ext);
         } else {
-
             fileName = FilenameUtils.getName(fileName);
         }
-
-
         File tempFile = new File(root, fileName);
-
-
         String ctx = request.getContextPath();
-
-        String relPath = ctx + "/" + "u" + "/" + dateDir + "/" + fileName;
+        String relPath = ctx + "/" + UPLOAD_RELATIVE_PATH + "/" + dateDir + "/" + fileName;
         try {
-
             file.transferTo(tempFile);
-
             model.addAttribute("uploadPath", relPath);
-
             model.addAttribute("uploadNum", uploadNum);
         } catch (IllegalStateException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         } catch (IOException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         }
-
         return "/common/iframe_switch_upload";
     }
 
     @RequestMapping({"/common/o_upload_big_image.do"})
     public String executeBig(String fileName, Integer uploadNum, @RequestParam(value = "uploadFileBig", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
-
         WebErrors errors = validate(fileName, file, request);
-
         if (errors.hasErrors()) {
-
             model.addAttribute("error", errors.getErrors().get(0));
-
             return "/common/iframe_big_upload";
         }
-
         Website web = SiteUtils.getWeb(request);
-
         String real = this.servletContext.getRealPath(web.getUploadRel());
-
         String dateDir = FileNameUtils.genPathName();
-
-
         File root = new File(real, dateDir);
-
         if (!root.exists()) {
-
             root.mkdirs();
         }
-
-
         if (StringUtils.isBlank(fileName)) {
-
             String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-
             fileName = FileNameUtils.genFileName(ext);
         } else {
-
             fileName = FilenameUtils.getName(fileName);
         }
-
-
         File tempFile = new File(root, fileName);
-
-
         String ctx = request.getContextPath();
-
-        String relPath = ctx + "/" + "u" + "/" + dateDir + "/" + fileName;
+        String relPath = ctx + "/" + UPLOAD_RELATIVE_PATH + "/" + dateDir + "/" + fileName;
         try {
-
             file.transferTo(tempFile);
-
             model.addAttribute("uploadPath", relPath);
-
             model.addAttribute("uploadNum", uploadNum);
         } catch (IllegalStateException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         } catch (IOException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         }
-
         return "/common/iframe_big_upload";
     }
 
     @RequestMapping({"/common/o_upload_amp_image.do"})
     public String executeAmp(String fileName, Integer uploadNum, @RequestParam(value = "uploadFileAmp", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
-
         WebErrors errors = validate(fileName, file, request);
-
         if (errors.hasErrors()) {
-
             model.addAttribute("error", errors.getErrors().get(0));
-
             return "/common/iframe_amp_upload";
         }
-
         Website web = SiteUtils.getWeb(request);
-
         String real = this.servletContext.getRealPath(web.getUploadRel());
-
         String dateDir = FileNameUtils.genPathName();
-
-
         File root = new File(real, dateDir);
-
         if (!root.exists()) {
-
             root.mkdirs();
         }
-
-
         if (StringUtils.isBlank(fileName)) {
-
             String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-
             fileName = FileNameUtils.genFileName(ext);
         } else {
-
             fileName = FilenameUtils.getName(fileName);
         }
-
-
         File tempFile = new File(root, fileName);
-
-
         String ctx = request.getContextPath();
-
-        String relPath = ctx + "/" + "u" + "/" + dateDir + "/" + fileName;
+        String relPath = ctx + "/" + UPLOAD_RELATIVE_PATH + "/" + dateDir + "/" + fileName;
         try {
-
             file.transferTo(tempFile);
-
             model.addAttribute("uploadPath", relPath);
-
             model.addAttribute("uploadNum", uploadNum);
         } catch (IllegalStateException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         } catch (IOException e) {
-
             model.addAttribute("error", e.getMessage());
-
             log.error("upload file error!", e);
         }
-
         return "/common/iframe_amp_upload";
     }
 
     private WebErrors validate(String fileName, MultipartFile file, HttpServletRequest request) {
-
         WebErrors errors = WebErrors.create(request);
 
         if (file == null) {
@@ -334,7 +216,3 @@ public class ImageUploadAct
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.ImageUploadAct
- * JD-Core Version:    0.6.2
- */

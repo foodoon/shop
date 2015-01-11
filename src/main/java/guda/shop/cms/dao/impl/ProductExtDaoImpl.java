@@ -23,7 +23,3 @@ public class ProductExtDaoImpl extends HibernateBaseDao<ProductExt, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ProductExtDaoImpl
- * JD-Core Version:    0.6.2
- */

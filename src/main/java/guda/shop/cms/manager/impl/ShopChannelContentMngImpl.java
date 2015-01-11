@@ -65,7 +65,3 @@ public class ShopChannelContentMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.ShopChannelContentMngImpl
- * JD-Core Version:    0.6.2
- */

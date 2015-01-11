@@ -16,7 +16,3 @@ public abstract interface ShopPayDao {
     public abstract ShopPay deleteById(Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopPayDao
- * JD-Core Version:    0.6.2
- */

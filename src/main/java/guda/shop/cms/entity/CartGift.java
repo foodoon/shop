@@ -18,7 +18,3 @@ public class CartGift extends BaseCartGift {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.CartGift
- * JD-Core Version:    0.6.2
- */

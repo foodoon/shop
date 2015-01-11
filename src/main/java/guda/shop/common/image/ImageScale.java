@@ -10,7 +10,3 @@ public abstract interface ImageScale {
             throws Exception;
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.image.ImageScale
- * JD-Core Version:    0.6.2
- */

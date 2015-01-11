@@ -53,7 +53,3 @@ public class CollectDaoImpl extends HibernateBaseDao<Collect, Integer>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.CollectDaoImpl
- * JD-Core Version:    0.6.2
- */

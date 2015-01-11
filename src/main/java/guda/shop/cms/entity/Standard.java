@@ -29,7 +29,3 @@ public class Standard extends BaseStandard {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Standard
- * JD-Core Version:    0.6.2
- */

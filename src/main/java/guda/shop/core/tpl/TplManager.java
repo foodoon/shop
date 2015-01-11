@@ -24,7 +24,3 @@ public abstract interface TplManager {
     public abstract int delete(String[] paramArrayOfString);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.tpl.TplManager
- * JD-Core Version:    0.6.2
- */

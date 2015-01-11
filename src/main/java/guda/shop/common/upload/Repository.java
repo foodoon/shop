@@ -11,7 +11,3 @@ public abstract interface Repository {
     public abstract boolean retrieve(String paramString, OutputStream paramOutputStream);
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.upload.Repository
- * JD-Core Version:    0.6.2
- */

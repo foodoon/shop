@@ -41,7 +41,3 @@ public class ShopArticle extends BaseShopArticle {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ShopArticle
- * JD-Core Version:    0.6.2
- */

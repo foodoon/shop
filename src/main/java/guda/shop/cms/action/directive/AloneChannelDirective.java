@@ -55,7 +55,3 @@ public class AloneChannelDirective extends ProductAbstractDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.AloneChannelDirective
- * JD-Core Version:    0.6.2
- */

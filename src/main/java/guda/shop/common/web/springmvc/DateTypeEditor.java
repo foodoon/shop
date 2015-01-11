@@ -38,7 +38,3 @@ public class DateTypeEditor extends PropertyEditorSupport {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.DateTypeEditor
- * JD-Core Version:    0.6.2
- */

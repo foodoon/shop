@@ -23,7 +23,3 @@ public abstract interface ProductStandardMng {
     public abstract ProductStandard[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ProductStandardMng
- * JD-Core Version:    0.6.2
- */

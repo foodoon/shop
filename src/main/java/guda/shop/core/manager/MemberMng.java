@@ -31,7 +31,3 @@ public abstract interface MemberMng {
     public abstract Member[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.MemberMng
- * JD-Core Version:    0.6.2
- */

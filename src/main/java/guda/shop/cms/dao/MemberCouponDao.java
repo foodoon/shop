@@ -25,7 +25,3 @@ public abstract interface MemberCouponDao {
     public abstract MemberCoupon update(MemberCoupon paramMemberCoupon);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.MemberCouponDao
- * JD-Core Version:    0.6.2
- */

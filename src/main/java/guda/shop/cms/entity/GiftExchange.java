@@ -19,7 +19,3 @@ public class GiftExchange extends BaseGiftExchange {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.GiftExchange
- * JD-Core Version:    0.6.2
- */

@@ -111,7 +111,3 @@ public abstract class DirectiveUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.freemarker.DirectiveUtils
- * JD-Core Version:    0.6.2
- */

@@ -20,7 +20,3 @@ public abstract interface GiftExchangeDao {
     public abstract GiftExchange deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.GiftExchangeDao
- * JD-Core Version:    0.6.2
- */

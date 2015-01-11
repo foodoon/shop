@@ -175,7 +175,3 @@ public class WebsiteMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.impl.WebsiteMngImpl
- * JD-Core Version:    0.6.2
- */

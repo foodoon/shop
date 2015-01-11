@@ -82,7 +82,3 @@ public class ProductTypePropertyDaoImpl extends HibernateBaseDao<ProductTypeProp
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ProductTypePropertyDaoImpl
- * JD-Core Version:    0.6.2
- */

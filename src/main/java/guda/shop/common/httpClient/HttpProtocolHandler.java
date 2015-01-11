@@ -105,7 +105,3 @@ public class HttpProtocolHandler {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.httpClient.HttpProtocolHandler
- * JD-Core Version:    0.6.2
- */

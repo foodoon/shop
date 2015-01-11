@@ -20,7 +20,3 @@ public abstract interface ExendedItemMng {
     public abstract ExendedItem[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ExendedItemMng
- * JD-Core Version:    0.6.2
- */

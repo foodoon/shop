@@ -22,7 +22,3 @@ public abstract interface ShopDictionaryDao {
     public abstract ShopDictionary deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopDictionaryDao
- * JD-Core Version:    0.6.2
- */

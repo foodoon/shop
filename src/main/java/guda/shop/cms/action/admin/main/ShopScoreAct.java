@@ -181,7 +181,3 @@ public class ShopScoreAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.ShopScoreAct
- * JD-Core Version:    0.6.2
- */

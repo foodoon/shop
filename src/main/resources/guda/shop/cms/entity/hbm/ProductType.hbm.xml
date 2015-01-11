@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="ProductType" table="jc_shop_ptype">
+    <class name="ProductType" table="shop_ptype">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="java.lang.Long" column="ptype_id">
@@ -22,7 +22,7 @@
         <property name="minImgHeight" column="min_img_height" type="integer" not-null="true" length="10"/>
         <many-to-one name="website" column="website_id" class="guda.shop.core.entity.Website"
                      not-null="true"></many-to-one>
-        <set name="exendeds" table="jc_shop_ptype_exended">
+        <set name="exendeds" table="shop_ptype_exended">
             <cache usage="read-write"/>
             <key column="ptype_id"/>
             <many-to-many column="exended_id" class="Exended"/>

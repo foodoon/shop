@@ -81,7 +81,3 @@ public class LogisticsMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.LogisticsMngImpl
- * JD-Core Version:    0.6.2
- */

@@ -63,7 +63,3 @@ public class WebsiteDaoImpl extends HibernateBaseDao<Website, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.impl.WebsiteDaoImpl
- * JD-Core Version:    0.6.2
- */

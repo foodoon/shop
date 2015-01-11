@@ -69,7 +69,3 @@ public class GiftPageDirective extends WebDirective {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.GiftPageDirective
- * JD-Core Version:    0.6.2
- */

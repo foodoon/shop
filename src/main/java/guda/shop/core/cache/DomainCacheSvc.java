@@ -10,7 +10,3 @@ public abstract interface DomainCacheSvc {
     public abstract void removeAll();
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.cache.DomainCacheSvc
- * JD-Core Version:    0.6.2
- */

@@ -63,7 +63,3 @@ public class Updater<T> {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.hibernate3.Updater
- * JD-Core Version:    0.6.2
- */

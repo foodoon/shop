@@ -192,7 +192,3 @@ public abstract class HibernateBaseDao<T, ID extends Serializable> {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.hibernate3.HibernateBaseDao
- * JD-Core Version:    0.6.2
- */

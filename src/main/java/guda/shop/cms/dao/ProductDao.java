@@ -55,7 +55,3 @@ public abstract interface ProductDao {
     public abstract List<Product> getHistoryProduct(HashSet<Long> paramHashSet, Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ProductDao
- * JD-Core Version:    0.6.2
- */

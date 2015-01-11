@@ -18,7 +18,3 @@ public abstract interface ProductTypeMng {
     public abstract ProductType[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ProductTypeMng
- * JD-Core Version:    0.6.2
- */

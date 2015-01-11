@@ -43,7 +43,3 @@ public class WebsiteFilter
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.WebsiteFilter
- * JD-Core Version:    0.6.2
- */

@@ -61,7 +61,3 @@ public class OrderReturn extends BaseOrderReturn {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.OrderReturn
- * JD-Core Version:    0.6.2
- */

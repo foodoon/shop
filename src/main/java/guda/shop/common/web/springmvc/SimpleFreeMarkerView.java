@@ -63,7 +63,3 @@ public class SimpleFreeMarkerView extends AbstractTemplateView {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.SimpleFreeMarkerView
- * JD-Core Version:    0.6.2
- */

@@ -15,7 +15,3 @@ public class RichFreeMarkerView extends FreeMarkerView {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.RichFreeMarkerView
- * JD-Core Version:    0.6.2
- */

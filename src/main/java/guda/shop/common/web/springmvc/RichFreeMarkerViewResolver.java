@@ -17,7 +17,3 @@ public class RichFreeMarkerViewResolver extends AbstractTemplateViewResolver {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.RichFreeMarkerViewResolver
- * JD-Core Version:    0.6.2
- */

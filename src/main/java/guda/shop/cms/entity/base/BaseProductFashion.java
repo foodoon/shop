@@ -256,7 +256,3 @@ public abstract class BaseProductFashion
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseProductFashion
- * JD-Core Version:    0.6.2
- */

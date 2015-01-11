@@ -47,7 +47,3 @@ public class ShopDictionaryTypeDaoImpl extends HibernateBaseDao<ShopDictionaryTy
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ShopDictionaryTypeDaoImpl
- * JD-Core Version:    0.6.2
- */

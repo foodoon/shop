@@ -72,7 +72,3 @@ public class Order extends BaseOrder {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Order
- * JD-Core Version:    0.6.2
- */

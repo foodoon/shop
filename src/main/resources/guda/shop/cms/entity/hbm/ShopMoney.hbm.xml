@@ -6,7 +6,7 @@
 <hibernate-mapping package="guda.shop.cms.entity">
     <class
             name="ShopMoney"
-            table="jc_shop_money"
+            table="shop_money"
             >
         <meta attribute="sync-DAO">false</meta>
         <id

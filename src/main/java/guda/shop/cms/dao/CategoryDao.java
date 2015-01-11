@@ -29,7 +29,3 @@ public abstract interface CategoryDao {
     public abstract List<Category> getListByptype(Long paramLong1, Long paramLong2, Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.CategoryDao
- * JD-Core Version:    0.6.2
- */

@@ -28,7 +28,3 @@ public class Advertise extends BaseAdvertise {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Advertise
- * JD-Core Version:    0.6.2
- */

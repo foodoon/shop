@@ -110,7 +110,3 @@ public abstract class BaseDiscuss
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseDiscuss
- * JD-Core Version:    0.6.2
- */

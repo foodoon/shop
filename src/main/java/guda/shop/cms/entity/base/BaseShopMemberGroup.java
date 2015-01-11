@@ -109,7 +109,3 @@ public abstract class BaseShopMemberGroup
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseShopMemberGroup
- * JD-Core Version:    0.6.2
- */

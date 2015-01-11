@@ -43,7 +43,3 @@ public class DomainCacheSvcImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.cache.impl.DomainCacheSvcImpl
- * JD-Core Version:    0.6.2
- */

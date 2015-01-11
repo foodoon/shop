@@ -59,7 +59,3 @@ public class IsRecommendDirective extends ProductAbstractDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.IsRecommendDirective
- * JD-Core Version:    0.6.2
- */

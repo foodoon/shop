@@ -175,7 +175,3 @@ public class ModuleGenerator {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.developer.ModuleGenerator
- * JD-Core Version:    0.6.2
- */

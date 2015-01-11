@@ -53,7 +53,3 @@ public class PaymentDaoImpl extends HibernateBaseDao<Payment, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.PaymentDaoImpl
- * JD-Core Version:    0.6.2
- */

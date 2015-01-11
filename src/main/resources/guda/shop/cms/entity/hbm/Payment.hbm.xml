@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="Payment" table="jc_shop_payment">
+    <class name="Payment" table="shop_payment">
         <meta attribute="sync-DAO">false</meta>
         <id name="id" type="java.lang.Long" column="payment_id">
             <generator class="native"/>
@@ -17,7 +17,7 @@
         <property name="introduce" column="introduce" type="string" not-null="false" length="255"/>
         <many-to-one name="website" column="website_id" class="guda.shop.core.entity.Website"
                      not-null="true"></many-to-one>
-        <set name="shippings" table="jc_shop_payment_shipping">
+        <set name="shippings" table="shop_payment_shipping">
             <key column="payment_id"/>
             <many-to-many column="shipping_id" class="Shipping"/>
         </set>

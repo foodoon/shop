@@ -23,7 +23,3 @@ public abstract interface OrderItemMng {
     public abstract Pagination getOrderItem(Integer paramInteger1, Integer paramInteger2, Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.OrderItemMng
- * JD-Core Version:    0.6.2
- */

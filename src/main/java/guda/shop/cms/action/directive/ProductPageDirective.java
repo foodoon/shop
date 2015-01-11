@@ -56,7 +56,3 @@ public class ProductPageDirective extends ProductAbstractDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.ProductPageDirective
- * JD-Core Version:    0.6.2
- */

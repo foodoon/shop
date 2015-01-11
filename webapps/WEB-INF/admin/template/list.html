@@ -103,7 +103,7 @@ function queueComplete2(numFilesUploaded) {
 	<@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
 		<input type="checkbox" name="names" value="${template.name}"/><#t/>
 	</@p.column><#t/>
-	<@p.column code="template.name"><img src="${base}/res/common/img/file/${template.directory?string('folder','html')}.gif"/> ${template.filename}
+	<@p.column code="template.name"><img src="${base}/assets/common/img/file/${template.directory?string('folder','html')}.gif"/> ${template.filename}
     </@p.column><#t/>
 	<@p.column code="template.size" align="right">${template.size} KB</@p.column><#t/>
 	<@p.column code="template.lastModified" align="center">${template.lastModifiedDate?string('yyyy-MM-dd HH:mm:ss')!}</@p.column><#t/>

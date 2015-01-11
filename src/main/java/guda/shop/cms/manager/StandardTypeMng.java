@@ -27,7 +27,3 @@ public abstract interface StandardTypeMng {
     public abstract StandardType[] updatePriority(Long[] paramArrayOfLong, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.StandardTypeMng
- * JD-Core Version:    0.6.2
- */

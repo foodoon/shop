@@ -18,7 +18,3 @@ public abstract interface CartItemMng {
     public abstract int deleteByProductId(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.CartItemMng
- * JD-Core Version:    0.6.2
- */

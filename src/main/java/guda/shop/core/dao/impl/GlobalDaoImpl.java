@@ -23,7 +23,3 @@ public class GlobalDaoImpl extends HibernateBaseDao<Global, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.impl.GlobalDaoImpl
- * JD-Core Version:    0.6.2
- */

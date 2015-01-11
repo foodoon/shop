@@ -17,7 +17,3 @@ public class SimpleFreeMarkerViewResolver extends AbstractTemplateViewResolver {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.SimpleFreeMarkerViewResolver
- * JD-Core Version:    0.6.2
- */

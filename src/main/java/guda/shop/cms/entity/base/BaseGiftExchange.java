@@ -160,7 +160,3 @@ public abstract class BaseGiftExchange
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseGiftExchange
- * JD-Core Version:    0.6.2
- */

@@ -23,7 +23,3 @@ public abstract interface ShipmentsMng {
     public abstract Shipments[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShipmentsMng
- * JD-Core Version:    0.6.2
- */

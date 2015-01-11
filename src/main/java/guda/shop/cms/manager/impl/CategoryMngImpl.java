@@ -234,7 +234,3 @@ public class CategoryMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.CategoryMngImpl
- * JD-Core Version:    0.6.2
- */

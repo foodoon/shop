@@ -30,7 +30,3 @@ public final class ResponseUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.ResponseUtils
- * JD-Core Version:    0.6.2
- */

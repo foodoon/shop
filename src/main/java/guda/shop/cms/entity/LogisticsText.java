@@ -13,7 +13,3 @@ public class LogisticsText extends BaseLogisticsText {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.LogisticsText
- * JD-Core Version:    0.6.2
- */

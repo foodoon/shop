@@ -41,7 +41,3 @@ public class PosterDaoImpl extends HibernateBaseDao<Poster, Integer>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.PosterDaoImpl
- * JD-Core Version:    0.6.2
- */

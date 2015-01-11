@@ -49,7 +49,3 @@ public class FileRepository
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.upload.FileRepository
- * JD-Core Version:    0.6.2
- */

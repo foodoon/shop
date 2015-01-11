@@ -17,7 +17,3 @@ public abstract interface RoleDao {
     public abstract Role deleteById(Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.RoleDao
- * JD-Core Version:    0.6.2
- */

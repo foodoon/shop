@@ -81,7 +81,3 @@ public class ShopDictionaryMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.ShopDictionaryMngImpl
- * JD-Core Version:    0.6.2
- */

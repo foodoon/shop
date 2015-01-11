@@ -75,7 +75,3 @@ public class BrandByCategoryListDirective extends WebDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.BrandByCategoryListDirective
- * JD-Core Version:    0.6.2
- */

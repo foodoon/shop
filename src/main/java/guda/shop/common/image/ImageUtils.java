@@ -22,7 +22,3 @@ public abstract class ImageUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.image.ImageUtils
- * JD-Core Version:    0.6.2
- */

@@ -227,7 +227,3 @@ public class GiftAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.front.GiftAct
- * JD-Core Version:    0.6.2
- */

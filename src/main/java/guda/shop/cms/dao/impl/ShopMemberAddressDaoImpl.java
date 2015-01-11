@@ -52,7 +52,3 @@ public class ShopMemberAddressDaoImpl extends HibernateBaseDao<ShopMemberAddress
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ShopMemberAddressDaoImpl
- * JD-Core Version:    0.6.2
- */

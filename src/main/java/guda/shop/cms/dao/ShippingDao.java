@@ -17,7 +17,3 @@ public abstract interface ShippingDao {
     public abstract Shipping deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShippingDao
- * JD-Core Version:    0.6.2
- */

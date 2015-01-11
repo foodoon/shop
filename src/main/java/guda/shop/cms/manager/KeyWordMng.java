@@ -16,7 +16,3 @@ public abstract interface KeyWordMng {
     public abstract List<KeyWord> findKeyWord(Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.KeyWordMng
- * JD-Core Version:    0.6.2
- */

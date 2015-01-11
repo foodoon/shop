@@ -32,7 +32,3 @@ public class PopularityGroup extends BasePopularityGroup {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.PopularityGroup
- * JD-Core Version:    0.6.2
- */

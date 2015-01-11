@@ -59,7 +59,3 @@ public class FooterChannelDirective extends ProductAbstractDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.FooterChannelDirective
- * JD-Core Version:    0.6.2
- */

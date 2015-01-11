@@ -15,7 +15,3 @@ public class BindingInitializer
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.BindingInitializer
- * JD-Core Version:    0.6.2
- */

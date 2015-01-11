@@ -13,7 +13,3 @@ public class ShopPay extends BaseShopPay {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ShopPay
- * JD-Core Version:    0.6.2
- */

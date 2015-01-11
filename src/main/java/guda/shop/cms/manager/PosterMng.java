@@ -18,7 +18,3 @@ public abstract interface PosterMng {
     public abstract void deleteByIds(Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.PosterMng
- * JD-Core Version:    0.6.2
- */

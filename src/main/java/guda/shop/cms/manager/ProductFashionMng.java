@@ -35,7 +35,3 @@ public abstract interface ProductFashionMng {
     public abstract void updateStandard(ProductFashion paramProductFashion, String[] paramArrayOfString);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ProductFashionMng
- * JD-Core Version:    0.6.2
- */

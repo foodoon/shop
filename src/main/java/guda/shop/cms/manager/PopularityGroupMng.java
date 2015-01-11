@@ -21,7 +21,3 @@ public abstract interface PopularityGroupMng {
     public abstract void updateProduct(PopularityGroup paramPopularityGroup, Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.PopularityGroupMng
- * JD-Core Version:    0.6.2
- */

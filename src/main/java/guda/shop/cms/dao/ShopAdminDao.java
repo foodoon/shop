@@ -16,7 +16,3 @@ public abstract interface ShopAdminDao {
     public abstract ShopAdmin deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopAdminDao
- * JD-Core Version:    0.6.2
- */

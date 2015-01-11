@@ -17,7 +17,3 @@ public abstract interface ProductTypeDao {
     public abstract ProductType deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ProductTypeDao
- * JD-Core Version:    0.6.2
- */

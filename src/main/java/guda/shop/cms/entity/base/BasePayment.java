@@ -159,7 +159,3 @@ public abstract class BasePayment
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BasePayment
- * JD-Core Version:    0.6.2
- */

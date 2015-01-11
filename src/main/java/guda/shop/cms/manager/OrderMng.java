@@ -53,7 +53,3 @@ public abstract interface OrderMng {
     public abstract Pagination getOrderByReturn(Long paramLong, Integer paramInteger1, Integer paramInteger2);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.OrderMng
- * JD-Core Version:    0.6.2
- */

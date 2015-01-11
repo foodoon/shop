@@ -24,7 +24,7 @@ import java.util.Map.Entry;
 
 @Controller
 public class FckAct {
-    public static final String UPLOAD_PATH = "/u/jspgou/";
+    public static final String UPLOAD_PATH = "/upload/shop/";
     private static final Logger log = LoggerFactory.getLogger(FckAct.class);
     private FileRepository fileRepository;
 
@@ -99,7 +99,7 @@ public class FckAct {
             }
 
 
-            String fileUrl = this.fileRepository.storeByExt("/u/jspgou/", ext, uplFile);
+            String fileUrl = this.fileRepository.storeByExt(UPLOAD_PATH, ext, uplFile);
 
 
             fileUrl = request.getContextPath() + fileUrl;
@@ -147,7 +147,3 @@ public class FckAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.FckAct
- * JD-Core Version:    0.6.2
- */

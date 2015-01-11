@@ -16,7 +16,3 @@ public class ParentDirIsFileExceptioin extends RuntimeException {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.tpl.ParentDirIsFileExceptioin
- * JD-Core Version:    0.6.2
- */

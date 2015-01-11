@@ -95,7 +95,3 @@ public abstract class BasePoster
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BasePoster
- * JD-Core Version:    0.6.2
- */

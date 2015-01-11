@@ -97,7 +97,3 @@ public abstract class BasePopularityItem
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BasePopularityItem
- * JD-Core Version:    0.6.2
- */

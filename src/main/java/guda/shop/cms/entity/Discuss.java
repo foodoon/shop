@@ -17,7 +17,3 @@ public class Discuss extends BaseDiscuss {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Discuss
- * JD-Core Version:    0.6.2
- */

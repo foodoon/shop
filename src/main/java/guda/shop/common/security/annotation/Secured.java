@@ -9,7 +9,3 @@ import java.lang.annotation.*;
 public @interface Secured {
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.annotation.Secured
- * JD-Core Version:    0.6.2
- */

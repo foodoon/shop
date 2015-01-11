@@ -194,7 +194,3 @@ public abstract class WebErrors {
     protected abstract String getErrorAttrName();
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.WebErrors
- * JD-Core Version:    0.6.2
- */

@@ -20,7 +20,3 @@ public abstract interface AdvertiseDao {
     public abstract Advertise deleteById(Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.AdvertiseDao
- * JD-Core Version:    0.6.2
- */

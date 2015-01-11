@@ -158,7 +158,3 @@ public class FileTplManagerImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.tpl.FileTplManagerImpl
- * JD-Core Version:    0.6.2
- */

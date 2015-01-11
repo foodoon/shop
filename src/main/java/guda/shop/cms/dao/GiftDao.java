@@ -16,7 +16,3 @@ public abstract interface GiftDao {
     public abstract Gift deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.GiftDao
- * JD-Core Version:    0.6.2
- */

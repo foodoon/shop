@@ -75,7 +75,3 @@ public class UploadUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.upload.UploadUtils
- * JD-Core Version:    0.6.2
- */

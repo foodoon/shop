@@ -25,7 +25,3 @@ public abstract interface AddressMng {
     public abstract Address[] updatePriority(Long[] paramArrayOfLong, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.AddressMng
- * JD-Core Version:    0.6.2
- */

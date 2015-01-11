@@ -48,7 +48,3 @@ public class GatheringDaoImpl extends HibernateBaseDao<Gathering, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.GatheringDaoImpl
- * JD-Core Version:    0.6.2
- */

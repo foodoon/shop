@@ -166,7 +166,3 @@ public class Alipay {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.Alipay
- * JD-Core Version:    0.6.2
- */

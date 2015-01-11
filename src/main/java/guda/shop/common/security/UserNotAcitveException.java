@@ -9,7 +9,3 @@ public class UserNotAcitveException extends AccountStatusException {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.UserNotAcitveException
- * JD-Core Version:    0.6.2
- */

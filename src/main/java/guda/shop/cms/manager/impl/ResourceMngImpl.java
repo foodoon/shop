@@ -111,7 +111,7 @@ public class ResourceMngImpl
         ArrayList<Zipper.FileEntry> localArrayList = new ArrayList<Zipper.FileEntry>();
         File localFile1 = new File(this._$1.get("/WEB-INF/front"));
         localArrayList.add(new Zipper.FileEntry("", "", localFile1));
-        File localFile2 = new File(this._$1.get("/r/gou/www"));
+        File localFile2 = new File(this._$1.get("/assets/global"));
         if (localFile2.exists())
             for (File localFile3 : localFile2.listFiles())
                 localArrayList.add(new Zipper.FileEntry("${res}", localFile3));
@@ -120,7 +120,7 @@ public class ResourceMngImpl
 
     public void imoport(File paramFile, Website paramWebsite)
             throws IOException {
-        String str1 = "/r/gou/www";
+        String str1 = "/assets/global";
         String str2 = "/WEB-INF/t/gou";
         ZipFile localZipFile = new ZipFile(paramFile, "GBK");
         byte[] arrayOfByte = new byte[1024];
@@ -178,7 +178,3 @@ public class ResourceMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.ResourceMngImpl
- * JD-Core Version:    0.6.2
- */

@@ -211,7 +211,3 @@ public class ConsultAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.ConsultAct
- * JD-Core Version:    0.6.2
- */

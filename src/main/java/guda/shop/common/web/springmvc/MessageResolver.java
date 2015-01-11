@@ -22,7 +22,3 @@ public final class MessageResolver {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.springmvc.MessageResolver
- * JD-Core Version:    0.6.2
- */

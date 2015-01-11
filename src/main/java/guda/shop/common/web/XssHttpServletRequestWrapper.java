@@ -64,7 +64,3 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.XssHttpServletRequestWrapper
- * JD-Core Version:    0.6.2
- */

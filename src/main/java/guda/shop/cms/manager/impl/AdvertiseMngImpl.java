@@ -93,7 +93,3 @@ public class AdvertiseMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.AdvertiseMngImpl
- * JD-Core Version:    0.6.2
- */

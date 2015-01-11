@@ -15,7 +15,3 @@ public abstract interface CartMng {
     public abstract Cart collectAddItem(Product paramProduct, Long paramLong1, Long paramLong2, int paramInt, boolean paramBoolean, Long paramLong3, Long paramLong4);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.CartMng
- * JD-Core Version:    0.6.2
- */

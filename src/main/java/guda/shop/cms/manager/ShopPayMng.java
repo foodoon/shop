@@ -14,7 +14,3 @@ public abstract interface ShopPayMng {
     public abstract ShopPay[] deleteByIds(Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopPayMng
- * JD-Core Version:    0.6.2
- */

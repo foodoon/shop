@@ -39,7 +39,3 @@ public class ShopChannelContentDaoImpl extends HibernateBaseDao<ShopChannelConte
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ShopChannelContentDaoImpl
- * JD-Core Version:    0.6.2
- */

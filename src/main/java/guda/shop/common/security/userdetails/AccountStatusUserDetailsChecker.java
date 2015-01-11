@@ -17,7 +17,3 @@ public class AccountStatusUserDetailsChecker
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.userdetails.AccountStatusUserDetailsChecker
- * JD-Core Version:    0.6.2
- */

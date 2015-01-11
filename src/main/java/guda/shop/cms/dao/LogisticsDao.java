@@ -17,7 +17,3 @@ public abstract interface LogisticsDao {
     public abstract Logistics deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.LogisticsDao
- * JD-Core Version:    0.6.2
- */

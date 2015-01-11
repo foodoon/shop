@@ -74,7 +74,3 @@ public class Command {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.fck.Command
- * JD-Core Version:    0.6.2
- */

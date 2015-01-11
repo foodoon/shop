@@ -69,15 +69,15 @@ deep=0 isEndList=[true] index=0>
      onclick="Pn.Tree.lineSelected(this,'${treeId}');" isDisplay="${isDisplay?string}">
 <#--空格列-->
     <#if deep gt 0>
-        <img src="${base}/res/common/img/tree/s.gif" width="15px"/><#t/>
+        <img src="${base}/assets/common/img/tree/s.gif" width="15px"/><#t/>
     </#if>
 <#--直线列-->
     <#if deep gt 1>
         <#list 2..deep as i>
             <#if isEndList[i-1]>
-                <img src="${base}/res/common/img/tree/s.gif" width="15px"/><#t/>
+                <img src="${base}/assets/common/img/tree/s.gif" width="15px"/><#t/>
             <#else>
-                <img src="${base}/res/common/img/tree/elbow-line.gif"/><#t/>
+                <img src="${base}/assets/common/img/tree/elbow-line.gif"/><#t/>
             </#if>
         </#list>
     </#if>
@@ -97,23 +97,23 @@ deep=0 isEndList=[true] index=0>
         <#local closeDisplay="" />
     </#if>
     <#if isLeaf && isEndList[deep]>
-        <img src="${base}/res/common/img/tree/elbow-end.gif"/><img src="${base}/res/common/img/tree/leaf.gif"/><#t/>
+        <img src="${base}/assets/common/img/tree/elbow-end.gif"/><img src="${base}/assets/common/img/tree/leaf.gif"/><#t/>
     <#elseif isLeaf && !isEndList[deep]>
-        <img src="${base}/res/common/img/tree/elbow.gif"/><img src="${base}/res/common/img/tree/leaf.gif"/><#t/>
+        <img src="${base}/assets/common/img/tree/elbow.gif"/><img src="${base}/assets/common/img/tree/leaf.gif"/><#t/>
     <#elseif !isLeaf && isEndList[deep]>
-        <img id="${id}-co" src="${base}/res/common/img/tree/elbow-end-minus.gif"
+        <img id="${id}-co" src="${base}/assets/common/img/tree/elbow-end-minus.gif"
              onclick="Pn.Tree.switchDisplay('${id}')" style="cursor:pointer;${openDisplay}"/><#t/>
-        <img id="${id}-cc" src="${base}/res/common/img/tree/elbow-end-plus.gif" onclick="Pn.Tree.switchDisplay('${id}')"
+        <img id="${id}-cc" src="${base}/assets/common/img/tree/elbow-end-plus.gif" onclick="Pn.Tree.switchDisplay('${id}')"
              style="cursor:pointer;${closeDisplay}"/><#t/>
-        <img id="${id}-fo" src="${base}/res/common/img/tree/folder-open.gif" style="${openDisplay}"/><#t/>
-        <img id="${id}-fc" src="${base}/res/common/img/tree/folder.gif" style="${closeDisplay}"/><#t/>
+        <img id="${id}-fo" src="${base}/assets/common/img/tree/folder-open.gif" style="${openDisplay}"/><#t/>
+        <img id="${id}-fc" src="${base}/assets/common/img/tree/folder.gif" style="${closeDisplay}"/><#t/>
     <#elseif !isLeaf && !isEndList[deep]>
-        <img id="${id}-co" src="${base}/res/common/img/tree/elbow-minus.gif" onclick="Pn.Tree.switchDisplay('${id}')"
+        <img id="${id}-co" src="${base}/assets/common/img/tree/elbow-minus.gif" onclick="Pn.Tree.switchDisplay('${id}')"
              style="cursor:pointer;${openDisplay}"/><#t/>
-        <img id="${id}-cc" src="${base}/res/common/img/tree/elbow-plus.gif" onclick="Pn.Tree.switchDisplay('${id}')"
+        <img id="${id}-cc" src="${base}/assets/common/img/tree/elbow-plus.gif" onclick="Pn.Tree.switchDisplay('${id}')"
              style="cursor:pointer;${closeDisplay}"/><#t/>
-        <img id="${id}-fo" src="${base}/res/common/img/tree/folder-open.gif" style="${openDisplay}"/><#t/>
-        <img id="${id}-fc" src="${base}/res/common/img/tree/folder.gif" style="${closeDisplay}"/><#t/>
+        <img id="${id}-fo" src="${base}/assets/common/img/tree/folder-open.gif" style="${openDisplay}"/><#t/>
+        <img id="${id}-fc" src="${base}/assets/common/img/tree/folder.gif" style="${closeDisplay}"/><#t/>
     </#if>
     <#if isCheckBox>
         <input type="checkbox" name="${checkBoxName}" <#rt/>

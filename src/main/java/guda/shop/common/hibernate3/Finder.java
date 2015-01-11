@@ -231,7 +231,3 @@ public class Finder {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.hibernate3.Finder
- * JD-Core Version:    0.6.2
- */

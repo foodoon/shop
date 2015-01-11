@@ -37,7 +37,3 @@ public class RoleDaoImpl extends HibernateBaseDao<Role, Integer>
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.impl.RoleDaoImpl
- * JD-Core Version:    0.6.2
- */

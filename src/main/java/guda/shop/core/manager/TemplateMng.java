@@ -11,7 +11,3 @@ public abstract interface TemplateMng {
     public abstract int uploadResourceFile(String paramString, MultipartFile[] paramArrayOfMultipartFile);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.TemplateMng
- * JD-Core Version:    0.6.2
- */

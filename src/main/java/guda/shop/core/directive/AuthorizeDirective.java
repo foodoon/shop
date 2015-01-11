@@ -86,7 +86,3 @@ public class AuthorizeDirective extends WebDirective {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.directive.AuthorizeDirective
- * JD-Core Version:    0.6.2
- */

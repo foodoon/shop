@@ -63,7 +63,3 @@ public class TemplateMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.impl.TemplateMngImpl
- * JD-Core Version:    0.6.2
- */

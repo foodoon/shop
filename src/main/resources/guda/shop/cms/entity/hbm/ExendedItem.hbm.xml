@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="ExendedItem" table="jc_shop_exended_item">
+    <class name="ExendedItem" table="shop_exended_item">
         <meta attribute="sync-DAO">false</meta>
         <id name="id" type="java.lang.Long" column="Id">
             <generator class="native"/>

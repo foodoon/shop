@@ -17,7 +17,3 @@ public abstract interface SessionProvider {
     public abstract void logout(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse);
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.session.SessionProvider
- * JD-Core Version:    0.6.2
- */

@@ -163,7 +163,3 @@ public abstract class BaseShopArticle
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseShopArticle
- * JD-Core Version:    0.6.2
- */

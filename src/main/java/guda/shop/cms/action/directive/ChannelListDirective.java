@@ -111,7 +111,3 @@ public class ChannelListDirective extends WebDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.ChannelListDirective
- * JD-Core Version:    0.6.2
- */

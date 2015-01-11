@@ -16,7 +16,3 @@ public abstract interface PosterDao {
     public abstract List<Poster> getPage();
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.PosterDao
- * JD-Core Version:    0.6.2
- */

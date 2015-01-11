@@ -49,7 +49,3 @@ public class KeyWordDirective extends ProductAbstractDirective {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.KeyWordDirective
- * JD-Core Version:    0.6.2
- */

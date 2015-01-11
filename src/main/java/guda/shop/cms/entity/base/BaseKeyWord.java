@@ -85,7 +85,3 @@ public abstract class BaseKeyWord
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseKeyWord
- * JD-Core Version:    0.6.2
- */

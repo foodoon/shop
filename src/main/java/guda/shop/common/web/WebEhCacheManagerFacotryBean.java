@@ -77,7 +77,3 @@ public class WebEhCacheManagerFacotryBean
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.WebEhCacheManagerFacotryBean
- * JD-Core Version:    0.6.2
- */

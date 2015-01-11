@@ -35,7 +35,3 @@ public class AdminDaoImpl extends HibernateBaseDao<Admin, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.impl.AdminDaoImpl
- * JD-Core Version:    0.6.2
- */

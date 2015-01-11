@@ -17,7 +17,3 @@ public class PaymentPlugins extends BasePaymentPlugins {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.PaymentPlugins
- * JD-Core Version:    0.6.2
- */

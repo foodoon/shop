@@ -107,7 +107,3 @@ public class RepeatDirective
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.RepeatDirective
- * JD-Core Version:    0.6.2
- */

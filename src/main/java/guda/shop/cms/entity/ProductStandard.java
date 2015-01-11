@@ -17,7 +17,3 @@ public class ProductStandard extends BaseProductStandard {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ProductStandard
- * JD-Core Version:    0.6.2
- */

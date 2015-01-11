@@ -11,7 +11,3 @@ public abstract interface ProductExtDao {
     public abstract ProductExt updateByUpdater(Updater<ProductExt> paramUpdater);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ProductExtDao
- * JD-Core Version:    0.6.2
- */

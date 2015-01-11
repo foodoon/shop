@@ -132,7 +132,3 @@ public abstract class BaseCart
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseCart
- * JD-Core Version:    0.6.2
- */

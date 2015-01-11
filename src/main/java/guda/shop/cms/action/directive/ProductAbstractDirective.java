@@ -97,7 +97,3 @@ public abstract class ProductAbstractDirective extends WebDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.ProductAbstractDirective
- * JD-Core Version:    0.6.2
- */

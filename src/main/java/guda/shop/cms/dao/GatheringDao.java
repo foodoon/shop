@@ -20,7 +20,3 @@ public abstract interface GatheringDao {
     public abstract Gathering deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.GatheringDao
- * JD-Core Version:    0.6.2
- */

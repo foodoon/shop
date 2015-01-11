@@ -54,7 +54,3 @@ public abstract interface ProductMng {
     public abstract void resetProfitTop();
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ProductMng
- * JD-Core Version:    0.6.2
- */

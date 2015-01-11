@@ -64,7 +64,3 @@ public class RoleMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.impl.RoleMngImpl
- * JD-Core Version:    0.6.2
- */

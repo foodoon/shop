@@ -35,7 +35,3 @@ public class CartDaoImpl extends HibernateBaseDao<Cart, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.CartDaoImpl
- * JD-Core Version:    0.6.2
- */

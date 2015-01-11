@@ -34,7 +34,3 @@ public class ProcessTimeDirective extends WebDirective {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.directive.ProcessTimeDirective
- * JD-Core Version:    0.6.2
- */

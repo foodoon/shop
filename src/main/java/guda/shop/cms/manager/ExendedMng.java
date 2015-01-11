@@ -26,7 +26,3 @@ public abstract interface ExendedMng {
     public abstract Exended[] updatePriority(Long[] paramArrayOfLong, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ExendedMng
- * JD-Core Version:    0.6.2
- */

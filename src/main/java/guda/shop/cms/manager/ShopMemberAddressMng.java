@@ -20,7 +20,3 @@ public abstract interface ShopMemberAddressMng {
     public abstract ShopMemberAddress deleteById(Long paramLong1, Long paramLong2);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopMemberAddressMng
- * JD-Core Version:    0.6.2
- */

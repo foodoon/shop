@@ -13,7 +13,3 @@ public class ShopDictionaryType extends BaseShopDictionaryType {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ShopDictionaryType
- * JD-Core Version:    0.6.2
- */

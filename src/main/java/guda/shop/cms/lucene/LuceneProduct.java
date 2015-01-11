@@ -535,7 +535,3 @@ public class LuceneProduct
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.lucene.LuceneProduct
- * JD-Core Version:    0.6.2
- */

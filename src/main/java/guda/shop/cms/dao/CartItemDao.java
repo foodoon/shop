@@ -17,7 +17,3 @@ public abstract interface CartItemDao {
     public abstract int deleteByProductId(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.CartItemDao
- * JD-Core Version:    0.6.2
- */

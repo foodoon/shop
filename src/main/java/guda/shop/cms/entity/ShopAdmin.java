@@ -86,7 +86,3 @@ public class ShopAdmin extends BaseShopAdmin {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ShopAdmin
- * JD-Core Version:    0.6.2
- */

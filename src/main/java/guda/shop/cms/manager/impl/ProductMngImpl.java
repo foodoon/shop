@@ -414,7 +414,3 @@ public class ProductMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.ProductMngImpl
- * JD-Core Version:    0.6.2
- */

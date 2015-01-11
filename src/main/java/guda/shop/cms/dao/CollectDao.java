@@ -22,7 +22,3 @@ public abstract interface CollectDao {
     public abstract Collect findByProductFashionId(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.CollectDao
- * JD-Core Version:    0.6.2
- */

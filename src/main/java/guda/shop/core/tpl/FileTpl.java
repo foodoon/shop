@@ -65,7 +65,3 @@ public class FileTpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.tpl.FileTpl
- * JD-Core Version:    0.6.2
- */

@@ -39,7 +39,3 @@ public class ExendedItemDaoImpl extends HibernateBaseDao<ExendedItem, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ExendedItemDaoImpl
- * JD-Core Version:    0.6.2
- */

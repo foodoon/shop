@@ -123,7 +123,3 @@ public class AlipayAct extends Alipay {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.AlipayAct
- * JD-Core Version:    0.6.2
- */

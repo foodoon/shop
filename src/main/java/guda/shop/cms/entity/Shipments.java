@@ -17,7 +17,3 @@ public class Shipments extends BaseShipments {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Shipments
- * JD-Core Version:    0.6.2
- */

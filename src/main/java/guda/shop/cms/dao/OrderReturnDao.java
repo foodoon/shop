@@ -20,7 +20,3 @@ public abstract interface OrderReturnDao {
     public abstract OrderReturn deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.OrderReturnDao
- * JD-Core Version:    0.6.2
- */

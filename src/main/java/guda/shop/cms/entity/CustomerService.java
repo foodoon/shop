@@ -17,7 +17,3 @@ public class CustomerService extends BaseCustomerService {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.CustomerService
- * JD-Core Version:    0.6.2
- */

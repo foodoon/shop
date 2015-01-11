@@ -6,7 +6,7 @@
 <hibernate-mapping package="guda.shop.cms.entity">
     <class
             name="ShopDictionaryType"
-            table="jc_shop_dictionary_type"
+            table="shop_dictionary_type"
             >
         <meta attribute="sync-DAO">false</meta>
         <id

@@ -8,7 +8,3 @@ public abstract interface DataBackupMng {
     public abstract DataBackup getDataBackup();
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.DataBackupMng
- * JD-Core Version:    0.6.2
- */

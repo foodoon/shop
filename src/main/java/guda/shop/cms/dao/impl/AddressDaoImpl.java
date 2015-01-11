@@ -65,7 +65,3 @@ public class AddressDaoImpl extends HibernateBaseDao<Address, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.AddressDaoImpl
- * JD-Core Version:    0.6.2
- */

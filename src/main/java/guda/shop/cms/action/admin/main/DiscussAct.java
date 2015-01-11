@@ -211,7 +211,3 @@ public class DiscussAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.DiscussAct
- * JD-Core Version:    0.6.2
- */

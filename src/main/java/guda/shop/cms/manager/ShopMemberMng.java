@@ -39,7 +39,3 @@ public abstract interface ShopMemberMng {
     public abstract ShopMember updateScore(ShopMember paramShopMember, Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopMemberMng
- * JD-Core Version:    0.6.2
- */

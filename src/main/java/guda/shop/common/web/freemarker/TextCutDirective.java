@@ -32,7 +32,3 @@ public class TextCutDirective
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.freemarker.TextCutDirective
- * JD-Core Version:    0.6.2
- */

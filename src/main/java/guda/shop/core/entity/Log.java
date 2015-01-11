@@ -19,7 +19,3 @@ public class Log extends BaseLog {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.Log
- * JD-Core Version:    0.6.2
- */

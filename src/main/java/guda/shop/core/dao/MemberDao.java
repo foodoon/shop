@@ -20,7 +20,3 @@ public abstract interface MemberDao {
     public abstract Member deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.MemberDao
- * JD-Core Version:    0.6.2
- */

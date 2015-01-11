@@ -38,7 +38,3 @@ public abstract interface ShopChannelMng {
     public abstract List<ShopChannel> getList(Long paramLong1, Long paramLong2, Long paramLong3);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopChannelMng
- * JD-Core Version:    0.6.2
- */

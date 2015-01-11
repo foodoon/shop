@@ -45,7 +45,3 @@ public class Exended extends BaseExended {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Exended
- * JD-Core Version:    0.6.2
- */

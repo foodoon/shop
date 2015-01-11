@@ -30,7 +30,3 @@ public abstract interface ProductFashionDao {
     public abstract Boolean getOneFashion(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ProductFashionDao
- * JD-Core Version:    0.6.2
- */

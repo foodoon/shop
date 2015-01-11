@@ -20,7 +20,3 @@ public abstract interface CustomerServiceDao {
     public abstract CustomerService save(CustomerService paramCustomerService);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.CustomerServiceDao
- * JD-Core Version:    0.6.2
- */

@@ -111,7 +111,3 @@ public class PropertiesLoader {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.fck.PropertiesLoader
- * JD-Core Version:    0.6.2
- */

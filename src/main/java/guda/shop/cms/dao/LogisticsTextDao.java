@@ -9,7 +9,3 @@ public abstract interface LogisticsTextDao {
     public abstract LogisticsText updateByUpdater(Updater<LogisticsText> paramUpdater);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.LogisticsTextDao
- * JD-Core Version:    0.6.2
- */

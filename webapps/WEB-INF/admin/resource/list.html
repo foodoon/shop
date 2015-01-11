@@ -122,7 +122,7 @@ function queueComplete2(numFilesUploaded) {
 		<input type="checkbox" name="names" value="${resource.name}"/><#t/>
 	</@p.column><#t/>
 	<@p.column code="resource.name">
-		<img src="${base}/res/common/img/file/${resource.ico}.gif" border="0"/> <#t/>
+		<img src="${base}/assets/common/img/file/${resource.ico}.gif" border="0"/> <#t/>
 		<#if resource.image><a href="${base+resource.name}" target="_blank">${resource.filename}</a><#t/>
 		<#else>${resource.filename}</#if></@p.column><#t/>
 	<@p.column code="resource.size" align="right">${resource.size} KB</@p.column><#t/>

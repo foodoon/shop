@@ -151,7 +151,3 @@ public class AdvertiseAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.AdvertiseAct
- * JD-Core Version:    0.6.2
- */

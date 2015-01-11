@@ -136,7 +136,3 @@ public abstract class BaseStandardType
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseStandardType
- * JD-Core Version:    0.6.2
- */

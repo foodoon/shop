@@ -8,7 +8,3 @@ public abstract interface UserDetailsService {
             throws UsernameNotFoundException, DataAccessException;
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.userdetails.UserDetailsService
- * JD-Core Version:    0.6.2
- */

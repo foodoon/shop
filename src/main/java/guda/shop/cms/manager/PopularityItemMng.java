@@ -26,7 +26,3 @@ public abstract interface PopularityItemMng {
     public abstract void save(Cart paramCart, Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.PopularityItemMng
- * JD-Core Version:    0.6.2
- */

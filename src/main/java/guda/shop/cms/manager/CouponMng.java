@@ -23,7 +23,3 @@ public abstract interface CouponMng {
     public abstract Coupon[] deleteByIds(Long[] paramArrayOfLong, String paramString);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.CouponMng
- * JD-Core Version:    0.6.2
- */

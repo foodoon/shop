@@ -82,7 +82,3 @@ public class LocalizedMessages {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.fck.LocalizedMessages
- * JD-Core Version:    0.6.2
- */

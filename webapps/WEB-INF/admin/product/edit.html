@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title></title>
 <#include "/admin/head.html"/>
-<link href="${base}/res/jspgou/css/product.css" rel="stylesheet" type="text/css"/>
+<link href="${base}/assets/shop/css/product.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 function g(o){
 	return document.getElementById(o);
@@ -126,7 +126,7 @@ $(function() {
 							tbeSpec +="<td align='center' width='120'><input name='salePrices' type='text' size='10' class='required digits'/></td>";
 							tbeSpec +="<td align='center' width='120'><input name='marketPrices' type='text' size='10' class='required digits'/></td>";
 							tbeSpec +="<td align='center' width='120'><input name='costPrices' type='text' size='10' class='required digits'/></td>";
-							tbeSpec +="<td align='center' width='40'><img src='../../../res/jspgou/img/admin/icon_delete.gif' onclick='deleteItem(this);'/></td></tr>";
+							tbeSpec +="<td align='center' width='40'><img src='../../../assets/shop/img/admin/icon_delete.gif' onclick='deleteItem(this);'/></td></tr>";
 						}
 					}
 				$("#tbeSpec").before(tbeSpec);
@@ -244,7 +244,7 @@ function standardAdd(checkname){
 					tbeSpec +="<td align='center' width='120'><input name='salePrices' type='text' size='10' class='required digits'/></td>";
 					tbeSpec +="<td align='center' width='120'><input name='marketPrices' type='text' size='10' class='required digits'/></td>";
 					tbeSpec +="<td align='center' width='120'><input name='costPrices' type='text' size='10' class='required digits'/></td>";
-					tbeSpec +="<td align='center' width='40'><img src='../../../res/jspgou/img/admin/icon_delete.gif' onclick='deleteItem(this);'/></td></tr>";
+					tbeSpec +="<td align='center' width='40'><img src='../../../assets/shop/img/admin/icon_delete.gif' onclick='deleteItem(this);'/></td></tr>";
 				}
 			}
 		$("#tbeSpec").before(tbeSpec);
@@ -627,7 +627,7 @@ var boo;
          <td align="center" width="120"><input name="salePrices" type="text"  size="10" class="required digits" value="${fash.salePrice!}"/></td>
          <td align="center" width="120"><input name="marketPrices" type="text"  size="10" class="required digits" value="${fash.marketPrice!}"/></td>
          <td align="center" width="120"><input name="costPrices" type="text"  size="10" class="required digits" value="${fash.costPrice!}"/></td>
-         <td align="center" width="40"><img src="../../../res/jspgou/img/admin/icon_delete.gif" onclick="deleteItem(this);"/></td>
+         <td align="center" width="40"><img src="../../../assets/shop/img/admin/icon_delete.gif" onclick="deleteItem(this);"/></td>
       </tr>
       </#list>
       <tr id="tbeSpec" style="display:none;"><td colspan="8" height="1"></td></tr>

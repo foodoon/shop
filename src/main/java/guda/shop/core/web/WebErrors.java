@@ -38,7 +38,3 @@ public class WebErrors extends guda.shop.common.web.springmvc.WebErrors {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.WebErrors
- * JD-Core Version:    0.6.2
- */

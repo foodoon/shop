@@ -208,7 +208,3 @@ public abstract class BaseShipping
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseShipping
- * JD-Core Version:    0.6.2
- */

@@ -29,7 +29,3 @@ public class FileNameUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.file.FileNameUtils
- * JD-Core Version:    0.6.2
- */

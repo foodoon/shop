@@ -8,7 +8,3 @@ public class MustNumberException extends TemplateModelException {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.freemarker.MustNumberException
- * JD-Core Version:    0.6.2
- */

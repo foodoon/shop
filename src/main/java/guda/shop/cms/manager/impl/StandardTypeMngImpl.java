@@ -84,7 +84,3 @@ public class StandardTypeMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.StandardTypeMngImpl
- * JD-Core Version:    0.6.2
- */

@@ -19,7 +19,3 @@ public abstract interface RoleMng {
     public abstract Role[] deleteByIds(Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.RoleMng
- * JD-Core Version:    0.6.2
- */

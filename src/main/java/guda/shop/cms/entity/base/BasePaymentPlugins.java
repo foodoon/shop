@@ -146,7 +146,3 @@ public abstract class BasePaymentPlugins
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BasePaymentPlugins
- * JD-Core Version:    0.6.2
- */

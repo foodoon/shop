@@ -95,7 +95,3 @@ public class LuceneDirectivePage extends LuceneDirectiveAbstract {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.lucene.LuceneDirectivePage
- * JD-Core Version:    0.6.2
- */

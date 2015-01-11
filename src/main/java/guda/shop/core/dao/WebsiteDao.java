@@ -26,7 +26,3 @@ public abstract interface WebsiteDao {
     public abstract Website deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.WebsiteDao
- * JD-Core Version:    0.6.2
- */

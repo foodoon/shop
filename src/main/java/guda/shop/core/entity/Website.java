@@ -6,7 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import java.util.Date;
 
 public class Website extends BaseWebsite {
-    public static final String RES_BASE = "r/gou/www";
+    public static final String RES_BASE = "assets/global";
     public static final String USER_BASE = "t";
     public static final String UPLOAD_PATH = "u";
     public static final String DEFAULT = "default";
@@ -110,11 +110,11 @@ public class Website extends BaseWebsite {
 
 
     private StringBuilder getBase() {
-        return new StringBuilder("/").append("r/gou/www");
+        return new StringBuilder("/").append("assets/global");
     }
 
     private StringBuilder getResBase() {
-        return getUrlBuff(false).append("/").append("r/gou/www");
+        return getUrlBuff(false).append("/").append("assets/global");
     }
 
     public String getResBaseUrl() {
@@ -184,7 +184,3 @@ public class Website extends BaseWebsite {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.Website
- * JD-Core Version:    0.6.2
- */

@@ -74,7 +74,3 @@ public class BrandDaoImpl extends HibernateBaseDao<Brand, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.BrandDaoImpl
- * JD-Core Version:    0.6.2
- */

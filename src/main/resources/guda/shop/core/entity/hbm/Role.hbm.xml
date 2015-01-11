@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.core.entity">
-    <class name="Role" table="jc_core_role">
+    <class name="Role" table="core_role">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="integer" column="role_id">
@@ -11,7 +11,7 @@
         <property name="name" column="role_name" type="string" not-null="true" length="100"/>
         <property name="priority" column="priority" type="integer" not-null="true" length="10"/>
         <property name="super" column="is_super" type="java.lang.Boolean" not-null="true"/>
-        <set name="perms" table="jc_core_role_permission">
+        <set name="perms" table="core_role_permission">
             <cache usage="read-write"/>
             <key column="role_id" not-null="true"/>
             <element column="uri" type="string" length="100" not-null="true"/>

@@ -76,7 +76,3 @@ public class PaymentPluginsMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.impl.PaymentPluginsMngImpl
- * JD-Core Version:    0.6.2
- */

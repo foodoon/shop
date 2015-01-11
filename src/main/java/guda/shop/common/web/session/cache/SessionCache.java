@@ -17,7 +17,3 @@ public abstract interface SessionCache {
     public abstract void setSession(String paramString, Map<String, Serializable> paramMap, int paramInt);
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.web.session.cache.SessionCache
- * JD-Core Version:    0.6.2
- */

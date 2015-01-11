@@ -110,7 +110,3 @@ public class ScorePageDirective extends WebDirective {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.ScorePageDirective
- * JD-Core Version:    0.6.2
- */

@@ -16,7 +16,3 @@ public abstract interface LuceneProductSvc {
             throws CorruptIndexException, IOException, ParseException;
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.lucene.LuceneProductSvc
- * JD-Core Version:    0.6.2
- */

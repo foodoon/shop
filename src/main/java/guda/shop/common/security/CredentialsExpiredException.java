@@ -13,7 +13,3 @@ public class CredentialsExpiredException extends AccountStatusException {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.CredentialsExpiredException
- * JD-Core Version:    0.6.2
- */

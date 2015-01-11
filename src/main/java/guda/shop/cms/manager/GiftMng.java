@@ -19,7 +19,3 @@ public abstract interface GiftMng {
     public abstract Gift[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.GiftMng
- * JD-Core Version:    0.6.2
- */

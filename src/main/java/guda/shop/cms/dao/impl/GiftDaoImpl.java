@@ -38,7 +38,3 @@ public class GiftDaoImpl extends HibernateBaseDao<Gift, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.GiftDaoImpl
- * JD-Core Version:    0.6.2
- */

@@ -17,7 +17,3 @@ public class PopularityItem extends BasePopularityItem {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.PopularityItem
- * JD-Core Version:    0.6.2
- */

@@ -31,7 +31,3 @@ public abstract interface ProductTypePropertyMng {
     public abstract List<ProductTypeProperty> getList(Long paramLong, boolean paramBoolean);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ProductTypePropertyMng
- * JD-Core Version:    0.6.2
- */

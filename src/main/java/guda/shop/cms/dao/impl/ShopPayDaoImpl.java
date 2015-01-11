@@ -38,7 +38,3 @@ public class ShopPayDaoImpl extends HibernateBaseDao<ShopPay, Integer>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.ShopPayDaoImpl
- * JD-Core Version:    0.6.2
- */

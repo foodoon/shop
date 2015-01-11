@@ -17,7 +17,3 @@ public abstract class SiteUtils {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.SiteUtils
- * JD-Core Version:    0.6.2
- */

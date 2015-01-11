@@ -56,7 +56,3 @@ public class ProductTagListDirective extends ProductAbstractDirective {
 
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.directive.ProductTagListDirective
- * JD-Core Version:    0.6.2
- */

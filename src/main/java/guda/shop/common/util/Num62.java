@@ -73,7 +73,3 @@ public class Num62 {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.util.Num62
- * JD-Core Version:    0.6.2
- */

@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="Category" table="jc_shop_category" dynamic-update="true">
+    <class name="Category" table="shop_category" dynamic-update="true">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="java.lang.Long" column="category_id">
@@ -30,17 +30,17 @@
             <one-to-many class="Category"/>
         </set>
 
-        <set name="brands" table="jc_shop_category_brand">
+        <set name="brands" table="shop_category_brand">
             <cache usage="read-write"/>
             <key column="category_id"/>
             <many-to-many column="brand_id" class="Brand"/>
         </set>
-        <set name="standardType" table="jc_shop_category_sdtype">
+        <set name="standardType" table="shop_category_sdtype">
             <cache usage="read-write"/>
             <key column="category_id"/>
             <many-to-many column="standardtype_id" class="StandardType"/>
         </set>
-        <map name="attr" table="jc_shop_category_attr" cascade="all-delete-orphan">
+        <map name="attr" table="shop_category_attr" cascade="all-delete-orphan">
             <cache usage="read-write"/>
             <key column="category_id" not-null="true"/>
             <map-key column="attr_name" type="string" length="30"/>

@@ -39,7 +39,3 @@ public class ProductTag extends BaseProductTag {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ProductTag
- * JD-Core Version:    0.6.2
- */

@@ -13,7 +13,3 @@ public abstract interface ShopConfigDao {
     public abstract ShopConfig deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopConfigDao
- * JD-Core Version:    0.6.2
- */

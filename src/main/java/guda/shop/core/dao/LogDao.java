@@ -16,7 +16,3 @@ public abstract interface LogDao {
     public abstract Log deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.LogDao
- * JD-Core Version:    0.6.2
- */

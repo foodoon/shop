@@ -11,7 +11,3 @@ public class RememberMeAuthenticationException extends AuthenticationException {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.security.rememberme.RememberMeAuthenticationException
- * JD-Core Version:    0.6.2
- */

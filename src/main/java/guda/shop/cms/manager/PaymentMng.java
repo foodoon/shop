@@ -28,7 +28,3 @@ public abstract interface PaymentMng {
     public abstract void updateShipping(Payment paramPayment, long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.PaymentMng
- * JD-Core Version:    0.6.2
- */

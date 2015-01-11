@@ -9,7 +9,3 @@ public abstract interface BrandTextMng {
     public abstract BrandText update(BrandText paramBrandText);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.BrandTextMng
- * JD-Core Version:    0.6.2
- */

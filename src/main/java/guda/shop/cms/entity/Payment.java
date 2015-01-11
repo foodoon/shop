@@ -35,7 +35,3 @@ public class Payment extends BasePayment {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Payment
- * JD-Core Version:    0.6.2
- */

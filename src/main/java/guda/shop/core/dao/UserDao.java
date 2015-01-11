@@ -20,7 +20,3 @@ public abstract interface UserDao {
     public abstract User deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.dao.UserDao
- * JD-Core Version:    0.6.2
- */

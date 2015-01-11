@@ -23,7 +23,3 @@ public abstract interface AdminMng {
     public abstract void addRole(Admin paramAdmin, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.AdminMng
- * JD-Core Version:    0.6.2
- */

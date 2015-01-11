@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="guda.shop.cms.entity">
-    <class name="Brand" table="jc_shop_brand">
+    <class name="Brand" table="shop_brand">
         <meta attribute="sync-DAO">false</meta>
         <cache usage="read-write"/>
         <id name="id" type="java.lang.Long" column="brand_id">
@@ -18,7 +18,7 @@
         <property name="firstCharacter" column="firstcharacter" type="string" not-null="false" length="255"/>
         <many-to-one name="website" column="website_id" class="guda.shop.core.entity.Website"
                      not-null="true"></many-to-one>
-        <set name="categorys" table="jc_shop_category_brand" inverse="true">
+        <set name="categorys" table="shop_category_brand" inverse="true">
             <cache usage="read-write"/>
             <key column="brand_id"/>
             <many-to-many column="category_id" class="Category"/>

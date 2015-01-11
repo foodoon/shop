@@ -43,7 +43,3 @@ public class HttpResponse {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.httpClient.HttpResponse
- * JD-Core Version:    0.6.2
- */

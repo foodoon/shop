@@ -7,7 +7,3 @@ public class MessageTemplate extends BaseMessageTemplate {
     private static final long serialVersionUID = 1L;
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.MessageTemplate
- * JD-Core Version:    0.6.2
- */

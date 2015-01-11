@@ -74,7 +74,3 @@ public class CouponAct {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.action.admin.main.CouponAct
- * JD-Core Version:    0.6.2
- */

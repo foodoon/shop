@@ -189,7 +189,3 @@ public abstract class BaseUser
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.base.BaseUser
- * JD-Core Version:    0.6.2
- */

@@ -13,7 +13,3 @@ public class ShopArticleContent extends BaseShopArticleContent {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ShopArticleContent
- * JD-Core Version:    0.6.2
- */

@@ -17,7 +17,3 @@ public class ExendedItem extends BaseExendedItem {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.ExendedItem
- * JD-Core Version:    0.6.2
- */

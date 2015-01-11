@@ -91,7 +91,3 @@ public class AdminMngImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.impl.AdminMngImpl
- * JD-Core Version:    0.6.2
- */

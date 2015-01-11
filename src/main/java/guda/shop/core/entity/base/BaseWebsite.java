@@ -448,7 +448,3 @@ public abstract class BaseWebsite
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.base.BaseWebsite
- * JD-Core Version:    0.6.2
- */

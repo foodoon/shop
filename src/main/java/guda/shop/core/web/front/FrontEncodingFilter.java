@@ -37,7 +37,3 @@ public class FrontEncodingFilter
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.front.FrontEncodingFilter
- * JD-Core Version:    0.6.2
- */

@@ -27,7 +27,3 @@ public abstract interface BrandDao {
     public abstract int countByBrandName(String paramString);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.BrandDao
- * JD-Core Version:    0.6.2
- */

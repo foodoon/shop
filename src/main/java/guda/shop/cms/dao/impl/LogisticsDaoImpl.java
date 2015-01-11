@@ -42,7 +42,3 @@ public class LogisticsDaoImpl extends HibernateBaseDao<Logistics, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.LogisticsDaoImpl
- * JD-Core Version:    0.6.2
- */

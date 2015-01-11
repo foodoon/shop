@@ -61,7 +61,3 @@ public class AdvertiseDaoImpl extends HibernateBaseDao<Advertise, Integer>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.AdvertiseDaoImpl
- * JD-Core Version:    0.6.2
- */

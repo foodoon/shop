@@ -371,7 +371,3 @@ public class Product extends BaseProduct
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Product
- * JD-Core Version:    0.6.2
- */

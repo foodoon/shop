@@ -17,7 +17,3 @@ public abstract interface ShopMemberGroupDao {
     public abstract ShopMemberGroup deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopMemberGroupDao
- * JD-Core Version:    0.6.2
- */

@@ -151,7 +151,3 @@ public class Zipper {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.util.Zipper
- * JD-Core Version:    0.6.2
- */

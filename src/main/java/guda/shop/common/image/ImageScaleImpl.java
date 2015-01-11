@@ -40,7 +40,3 @@ public class ImageScaleImpl
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.image.ImageScaleImpl
- * JD-Core Version:    0.6.2
- */

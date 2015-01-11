@@ -22,7 +22,3 @@ public abstract interface AddressDao {
     public abstract Address deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.AddressDao
- * JD-Core Version:    0.6.2
- */

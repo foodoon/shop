@@ -124,7 +124,3 @@ public abstract class FrontHelper {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.web.front.FrontHelper
- * JD-Core Version:    0.6.2
- */

@@ -17,7 +17,3 @@ public class DataBackup extends BaseDataBackup {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.DataBackup
- * JD-Core Version:    0.6.2
- */

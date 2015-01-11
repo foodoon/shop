@@ -21,7 +21,3 @@ public abstract interface ShopDictionaryTypeMng {
     public abstract ShopDictionaryType[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.ShopDictionaryTypeMng
- * JD-Core Version:    0.6.2
- */

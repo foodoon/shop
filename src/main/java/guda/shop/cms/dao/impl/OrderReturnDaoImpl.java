@@ -49,7 +49,3 @@ public class OrderReturnDaoImpl extends HibernateBaseDao<OrderReturn, Long>
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.impl.OrderReturnDaoImpl
- * JD-Core Version:    0.6.2
- */

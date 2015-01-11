@@ -20,7 +20,3 @@ public abstract interface LogisticsMng {
     public abstract Logistics[] updatePriority(Long[] paramArrayOfLong, Integer[] paramArrayOfInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.manager.LogisticsMng
- * JD-Core Version:    0.6.2
- */

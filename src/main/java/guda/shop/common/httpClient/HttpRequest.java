@@ -92,7 +92,3 @@ public class HttpRequest {
     }
 }
 
-/* Location:           D:\demo22\jspgou-common.jar
- * Qualified Name:     com.jspgou.common.httpClient.HttpRequest
- * JD-Core Version:    0.6.2
- */

@@ -23,7 +23,3 @@ public abstract interface WebsiteMng {
     public abstract Website[] deleteByIds(Long[] paramArrayOfLong);
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.manager.WebsiteMng
- * JD-Core Version:    0.6.2
- */

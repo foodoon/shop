@@ -21,7 +21,3 @@ public abstract interface KeyWordDao {
     public abstract List<KeyWord> findKeyWord(Integer paramInteger);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.KeyWordDao
- * JD-Core Version:    0.6.2
- */

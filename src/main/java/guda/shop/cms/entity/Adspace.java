@@ -13,7 +13,3 @@ public class Adspace extends BaseAdspace {
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.Adspace
- * JD-Core Version:    0.6.2
- */

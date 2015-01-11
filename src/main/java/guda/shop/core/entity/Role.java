@@ -33,7 +33,3 @@ public class Role extends BaseRole {
     }
 }
 
-/* Location:           D:\demo22\jspgou-core.jar
- * Qualified Name:     com.jspgou.core.entity.Role
- * JD-Core Version:    0.6.2
- */

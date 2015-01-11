@@ -97,7 +97,3 @@ public abstract class BaseProductTag
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseProductTag
- * JD-Core Version:    0.6.2
- */

@@ -118,7 +118,3 @@ public abstract class BaseDataBackup
     }
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.entity.base.BaseDataBackup
- * JD-Core Version:    0.6.2
- */

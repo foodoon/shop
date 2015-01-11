@@ -21,7 +21,3 @@ public abstract interface ShopScoreDao {
     public abstract ShopScore deleteById(Long paramLong);
 }
 
-/* Location:           D:\demo22\jspgou-cms.jar
- * Qualified Name:     com.jspgou.cms.dao.ShopScoreDao
- * JD-Core Version:    0.6.2
- */
