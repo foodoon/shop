@@ -856,7 +856,7 @@ header {
 	padding:2px;
 	box-shadow:0px 0px 5px #C2C1C1;
 	border:1px solid #E6E6E6;
-	margin-left:160px;
+	margin-left:140px;
 	position:relative;
 }
 .header-wrapper header .header-bottom .cart-block ul {
@@ -2916,10 +2916,20 @@ h1.page-title {
 
 .banner-add .link-block {
         float:left;
-        width:50%;
+        width:100%;
     }
-.banner-add .link-block ul {
+.banner-add .link-block .contain {
         float:left;
         width:120px;
         margin-right:10px;
+    }
+    .banner-add .link-block .title {
+        font-size:16px;
+        font-weight: bold;
+    }
+.float-right{
+    float:right;
+}
+.float-left{
+        float:left;
     }

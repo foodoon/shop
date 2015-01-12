@@ -24,7 +24,7 @@
         <ul class="banner-add">
            <div class="link-block">
 
-               <ul><li><h5>公告</h5></li>
+            <div class="contain float-left"><li class="title">商城快报</li>
             [@shop_Channel count='2']
             [#list tag_list as c]
             [@shop_ArticleList channelId=c.id count='5' ]
@@ -34,8 +34,8 @@
             [/@shop_ArticleList]
             [/#list]
             [/@shop_Channel]
-           </ul>
-               <ul><li><h5>公告</h5></li>
+           </div>
+               <div class="contain float-right">< class="title">新手教程</li>
                 [@shop_Channel count='2']
                 [#list tag_list as c]
                 [@shop_ArticleList channelId=c.id count='5' ]
@@ -45,7 +45,7 @@
                 [/@shop_ArticleList]
                 [/#list]
                 [/@shop_Channel]
-                   </ul>
+                   </div>
             </div>
         </ul>
     </div>
