@@ -1,0 +1,28 @@
+<!--Footer Block-->
+<section class="footer-wrapper">
+    <footer class="container">
+        <div class="link-block">
+
+            [@shop_Channel count='6']
+            [#list tag_list as c]
+            <ul>
+                    <li class="link-title"><a href="${c.url!}" class="track" target="_blank">${c.name!}</a><br/></li>
+                    [@shop_ArticleList channelId=c.id count='20']
+                    [#list tag_list as a]
+                    <li><a href="${a.url!}" class="track" target="_blank">${a.title!}</a></li>
+                    [/#list]
+                    [/@shop_ArticleList]
+            </ul>
+            [/#list]
+            [/@shop_Channel]
+
+
+        </div>
+        <div class="footer-bottom-block">
+
+            <p class="copyright-block">Copyright &copy; 2014.洽诚网络 版权所有.</p>
+        </div>
+    </footer>
+</section>
+
+

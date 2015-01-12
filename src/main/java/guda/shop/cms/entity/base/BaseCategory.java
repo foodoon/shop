@@ -29,27 +29,27 @@ public abstract class BaseCategory
     public static String PROP_IMAGE_PATH = "imagePath";
     public static String PROP_KEYWORDS = "keywords";
     public static String PROP_TPL_CONTENT = "tplContent";
-    private int _$21 = -2147483648;
-    private Long _$20;
-    private String _$19;
-    private String _$18;
-    private String _$17;
-    private String _$16;
-    private Integer _$15;
-    private Integer _$14;
-    private Integer _$13;
-    private String _$12;
-    private String _$11;
-    private String _$10;
-    private String _$9;
-    private Boolean _$8;
-    private Category _$7;
-    private ProductType _$6;
-    private Website _$5;
-    private Set<Category> _$4;
-    private Set<Brand> _$3;
-    private Set<StandardType> _$2;
-    private Map<String, String> _$1;
+    private int hash = -2147483648;
+    private Long id;
+    private String name;
+    private String path;
+    private String tplChannel;
+    private String tplContent;
+    private Integer lft;
+    private Integer rgt;
+    private Integer priority;
+    private String title;
+    private String imagePath;
+    private String keywords;
+    private String description;
+    private Boolean colorsize;
+    private Category parent;
+    private ProductType type;
+    private Website website;
+    private Set<Category> child;
+    private Set<Brand> brands;
+    private Set<StandardType> standardType;
+    private Map<String, String> attr;
 
     public BaseCategory() {
         initialize();
@@ -76,164 +76,164 @@ public abstract class BaseCategory
     }
 
     public Long getId() {
-        return this._$20;
+        return this.id;
     }
 
     public void setId(Long paramLong) {
-        this._$20 = paramLong;
-        this._$21 = -2147483648;
+        this.id = paramLong;
+        this.hash = -2147483648;
     }
 
     public String getName() {
-        return this._$19;
+        return this.name;
     }
 
     public void setName(String paramString) {
-        this._$19 = paramString;
+        this.name = paramString;
     }
 
     public String getPath() {
-        return this._$18;
+        return this.path;
     }
 
     public void setPath(String paramString) {
-        this._$18 = paramString;
+        this.path = paramString;
     }
 
     public String getTplChannel() {
-        return this._$17;
+        return this.tplChannel;
     }
 
     public void setTplChannel(String paramString) {
-        this._$17 = paramString;
+        this.tplChannel = paramString;
     }
 
     public String getTplContent() {
-        return this._$16;
+        return this.tplContent;
     }
 
     public void setTplContent(String paramString) {
-        this._$16 = paramString;
+        this.tplContent = paramString;
     }
 
     public Integer getLft() {
-        return this._$15;
+        return this.lft;
     }
 
     public void setLft(Integer paramInteger) {
-        this._$15 = paramInteger;
+        this.lft = paramInteger;
     }
 
     public Integer getRgt() {
-        return this._$14;
+        return this.rgt;
     }
 
     public void setRgt(Integer paramInteger) {
-        this._$14 = paramInteger;
+        this.rgt = paramInteger;
     }
 
     public Integer getPriority() {
-        return this._$13;
+        return this.priority;
     }
 
     public void setPriority(Integer paramInteger) {
-        this._$13 = paramInteger;
+        this.priority = paramInteger;
     }
 
     public Boolean getColorsize() {
-        return this._$8;
+        return this.colorsize;
     }
 
     public void setColorsize(Boolean paramBoolean) {
-        this._$8 = paramBoolean;
+        this.colorsize = paramBoolean;
     }
 
     public String getTitle() {
-        return this._$12;
+        return this.title;
     }
 
     public void setTitle(String paramString) {
-        this._$12 = paramString;
+        this.title = paramString;
     }
 
     public String getImagePath() {
-        return this._$11;
+        return this.imagePath;
     }
 
     public void setImagePath(String paramString) {
-        this._$11 = paramString;
+        this.imagePath = paramString;
     }
 
     public String getKeywords() {
-        return this._$10;
+        return this.keywords;
     }
 
     public void setKeywords(String paramString) {
-        this._$10 = paramString;
+        this.keywords = paramString;
     }
 
     public String getDescription() {
-        return this._$9;
+        return this.description;
     }
 
     public void setDescription(String paramString) {
-        this._$9 = paramString;
+        this.description = paramString;
     }
 
     public Category getParent() {
-        return this._$7;
+        return this.parent;
     }
 
     public void setParent(Category paramCategory) {
-        this._$7 = paramCategory;
+        this.parent = paramCategory;
     }
 
     public ProductType getType() {
-        return this._$6;
+        return this.type;
     }
 
     public void setType(ProductType paramProductType) {
-        this._$6 = paramProductType;
+        this.type = paramProductType;
     }
 
     public Website getWebsite() {
-        return this._$5;
+        return this.website;
     }
 
     public void setWebsite(Website paramWebsite) {
-        this._$5 = paramWebsite;
+        this.website = paramWebsite;
     }
 
     public Set<Category> getChild() {
-        return this._$4;
+        return this.child;
     }
 
     public void setChild(Set<Category> paramSet) {
-        this._$4 = paramSet;
+        this.child = paramSet;
     }
 
     public Set<Brand> getBrands() {
-        return this._$3;
+        return this.brands;
     }
 
     public void setBrands(Set<Brand> paramSet) {
-        this._$3 = paramSet;
+        this.brands = paramSet;
     }
 
     public Set<StandardType> getStandardType() {
-        return this._$2;
+        return this.standardType;
     }
 
     public void setStandardType(Set<StandardType> paramSet) {
-        this._$2 = paramSet;
+        this.standardType = paramSet;
     }
 
     public Map<String, String> getAttr() {
-        return this._$1;
+        return this.attr;
     }
 
     public void setAttr(Map<String, String> paramMap) {
-        this._$1 = paramMap;
+        this.attr = paramMap;
     }
 
     public boolean equals(Object paramObject) {
@@ -248,13 +248,13 @@ public abstract class BaseCategory
     }
 
     public int hashCode() {
-        if (-2147483648 == this._$21) {
+        if (-2147483648 == this.hash) {
             if (null == getId())
                 return super.hashCode();
             String str = getClass().getName() + ":" + getId().hashCode();
-            this._$21 = str.hashCode();
+            this.hash = str.hashCode();
         }
-        return this._$21;
+        return this.hash;
     }
 
     public String toString() {

@@ -17,54 +17,54 @@ import java.io.IOException;
 
 public class WebEhCacheManagerFacotryBean
         implements FactoryBean, InitializingBean, DisposableBean {
-    private final Logger _$5 = LoggerFactory.getLogger(WebEhCacheManagerFacotryBean.class);
-    private Resource _$4;
-    private Resource _$3;
-    private String _$2;
-    private CacheManager _$1;
+    private final Logger log = LoggerFactory.getLogger(WebEhCacheManagerFacotryBean.class);
+    private Resource configLocation;
+    private Resource diskStoreLocation;
+    private String cacheManagerName;
+    private CacheManager cacheManager;
 
     public void setConfigLocation(Resource paramResource) {
-        this._$4 = paramResource;
+        this.configLocation = paramResource;
     }
 
     public void setdiskStoreLocation(Resource paramResource) {
-        this._$3 = paramResource;
+        this.diskStoreLocation = paramResource;
     }
 
     public void setCacheManagerName(String paramString) {
-        this._$2 = paramString;
+        this.cacheManagerName = paramString;
     }
 
     public void afterPropertiesSet()
             throws IOException, CacheException {
-        this._$5.info("Initializing EHCache CacheManager");
+        this.log.info("Initializing EHCache CacheManager");
         Configuration localConfiguration = null;
-        if (this._$4 != null) {
-            localConfiguration = ConfigurationFactory.parseConfiguration(this._$4.getInputStream());
-            if (this._$3 != null) {
+        if (this.configLocation != null) {
+            localConfiguration = ConfigurationFactory.parseConfiguration(this.configLocation.getInputStream());
+            if (this.diskStoreLocation != null) {
                 DiskStoreConfiguration localDiskStoreConfiguration = new DiskStoreConfiguration();
-                localDiskStoreConfiguration.setPath(this._$3.getFile().getAbsolutePath());
+                localDiskStoreConfiguration.setPath(this.diskStoreLocation.getFile().getAbsolutePath());
                 try {
                     localConfiguration.addDiskStore(localDiskStoreConfiguration);
                 } catch (ObjectExistsException localObjectExistsException) {
-                    this._$5.warn("if you want to config distStore in spring, please remove diskStore in config file!", localObjectExistsException);
+                    this.log.warn("if you want to config distStore in spring, please remove diskStore in config file!", localObjectExistsException);
                 }
             }
         }
         if (localConfiguration != null)
-            this._$1 = new CacheManager(localConfiguration);
+            this.cacheManager = new CacheManager(localConfiguration);
         else
-            this._$1 = new CacheManager();
-        if (this._$2 != null)
-            this._$1.setName(this._$2);
+            this.cacheManager = new CacheManager();
+        if (this.cacheManagerName != null)
+            this.cacheManager.setName(this.cacheManagerName);
     }
 
     public CacheManager getObject() {
-        return this._$1;
+        return this.cacheManager;
     }
 
     public Class<? extends CacheManager> getObjectType() {
-        return this._$1 == null ? CacheManager.class : this._$1.getClass();
+        return this.cacheManager == null ? CacheManager.class : this.cacheManager.getClass();
     }
 
     public boolean isSingleton() {
@@ -72,8 +72,8 @@ public class WebEhCacheManagerFacotryBean
     }
 
     public void destroy() {
-        this._$5.info("Shutting down EHCache CacheManager");
-        this._$1.shutdown();
+        this.log.info("Shutting down EHCache CacheManager");
+        this.cacheManager.shutdown();
     }
 }
 

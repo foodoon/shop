@@ -18,12 +18,13 @@
 
 
 .content-wrapper .content-container .heading-block{ }
-.jcarousel-prev-horizontal{background:url(../images/scrollerNav.gif) left top;}
+/*.jcarousel-prev-horizontal{background:url(../images/scrollerNav.gif) left top;}
 .jcarousel-next-horizontal{background:url(../images/scrollerNav.gif) right top;}
 .pagination li.grid a{background:url(../images/scrollerNav.gif) center top;}
 
 .jcarousel-prev-horizontal:hover{background-position:left bottom;}
 .jcarousel-next-horizontal:hover{background-position:right bottom;}
+*/
 .pagination li.grid a:hover{background-position:center bottom;}
 .content-wrapper .content-container .feature-block, .content-wrapper .content-container .new-product-block, .content-wrapper .content-container .new-product-block .product-grid li .pro-content, .content-wrapper .content-container .news-letter-container, .main .like-pro-block .like-pro, .main .related-pro-block .related-pro
 {  border-color:#FE6732; background:url("../images/nav_arrow.png") no-repeat top center; }

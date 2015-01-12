@@ -58,9 +58,9 @@ public class ShopChannel extends BaseShopChannel
         if (paramInteger == null)
             throw new IllegalStateException("ShopChannle type connot be null");
         if (paramInteger.intValue() == 1)
-            return "单页";
+            return PathContants.SIGNAL;
         if (paramInteger.intValue() == 2)
-            return paramBoolean ? "栏目" : "内容";
+            return paramBoolean ? PathContants.MODEL : PathContants.CONTENT;
         return null;
     }
 
@@ -69,7 +69,7 @@ public class ShopChannel extends BaseShopChannel
         if (StringUtils.isBlank(str1)) {
             String str2 = getPrefix(getType(), true);
             if (str2 != null)
-                return getWebsite().getTemplate("channel", "栏目");
+                return getWebsite().getTemplate("channel", PathContants.MODEL);
             return null;
         }
         return getWebsite().getTemplateRel(str1);
@@ -80,7 +80,7 @@ public class ShopChannel extends BaseShopChannel
         if (StringUtils.isBlank(str1)) {
             String str2 = getPrefix(getType(), false);
             if (str2 != null)
-                return getWebsite().getTemplate("article", "内容");
+                return getWebsite().getTemplate("article", PathContants.CONTENT);
             return null;
         }
         return getWebsite().getTemplateRel(str1);

@@ -94,9 +94,12 @@
 		.banner-wrapper .banner-block .banner-slider, .banner-wrapper .banner-block .flexslider {
 			max-width: 630px;
 		}
-		.banner-wrapper .banner-block .banner-add {
+.banner-wrapper .banner-block .banner-add {
 			max-width: 265px;
-		}
+}
+.banner-add-block{
+            max-width: 130px;
+}
 		.col-main-left {
 			float: left;
 			width: 620px;
@@ -151,7 +154,7 @@
 		.banner-wrapper .banner-block .banner-slider, .banner-wrapper .banner-block .flexslider{ max-width:495px; }
 		.banner-wrapper .banner-block .banner-add{ max-width:205px; }
 		.banner-wrapper .banner-block .banner-add li.add2{ width:100%; height:auto; }
-		.banner-wrapper .banner-block .banner-add li{}
+
 		.banner-wrapper .banner-block .banner-add li img{ width:100%; }
 		.header-wrapper header .head-right{ width:100%; float:none; display:inline-block; text-align:center; }
 		.header-wrapper header .top-nav {

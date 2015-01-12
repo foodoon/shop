@@ -29,26 +29,26 @@ public abstract class BaseShopChannel
     public static String PROP_NAME = "name";
     public static String PROP_PARAM2 = "param2";
     public static String PROP_ID = "id";
-    private int _$20 = -2147483648;
-    private Long _$19;
-    private Integer _$18;
-    private Integer _$17;
-    private Integer _$16;
-    private String _$15;
-    private String _$14;
-    private String _$13;
-    private String _$12;
-    private String _$11;
-    private Integer _$10;
-    private Boolean _$9;
-    private Boolean _$8;
-    private String _$7;
-    private String _$6;
-    private String _$5;
-    private ShopChannelContent _$4;
-    private ShopChannel _$3;
-    private Website _$2;
-    private Set<ShopChannel> _$1;
+    private int hash = -2147483648;
+    private Long id;
+    private Integer lft;
+    private Integer rgt;
+    private Integer type;
+    private String name;
+    private String path;
+    private String outerUrl;
+    private String tplChannel;
+    private String tplContent;
+    private Integer priority;
+    private Boolean blank;
+    private Boolean display;
+    private String param1;
+    private String param2;
+    private String param3;
+    private ShopChannelContent channelContent;
+    private ShopChannel parent;
+    private Website website;
+    private Set<ShopChannel> child;
 
     public BaseShopChannel() {
         initialize();
@@ -74,156 +74,156 @@ public abstract class BaseShopChannel
     }
 
     public Long getId() {
-        return this._$19;
+        return this.id;
     }
 
     public void setId(Long paramLong) {
-        this._$19 = paramLong;
-        this._$20 = -2147483648;
+        this.id = paramLong;
+        this.hash = -2147483648;
     }
 
     public Integer getLft() {
-        return this._$18;
+        return this.lft;
     }
 
     public void setLft(Integer paramInteger) {
-        this._$18 = paramInteger;
+        this.lft = paramInteger;
     }
 
     public Integer getRgt() {
-        return this._$17;
+        return this.rgt;
     }
 
     public void setRgt(Integer paramInteger) {
-        this._$17 = paramInteger;
+        this.rgt = paramInteger;
     }
 
     public Integer getType() {
-        return this._$16;
+        return this.type;
     }
 
     public void setType(Integer paramInteger) {
-        this._$16 = paramInteger;
+        this.type = paramInteger;
     }
 
     public String getName() {
-        return this._$15;
+        return this.name;
     }
 
     public void setName(String paramString) {
-        this._$15 = paramString;
+        this.name = paramString;
     }
 
     public String getPath() {
-        return this._$14;
+        return this.path;
     }
 
     public void setPath(String paramString) {
-        this._$14 = paramString;
+        this.path = paramString;
     }
 
     public String getOuterUrl() {
-        return this._$13;
+        return this.outerUrl;
     }
 
     public void setOuterUrl(String paramString) {
-        this._$13 = paramString;
+        this.outerUrl = paramString;
     }
 
     public String getTplChannel() {
-        return this._$12;
+        return this.tplChannel;
     }
 
     public void setTplChannel(String paramString) {
-        this._$12 = paramString;
+        this.tplChannel = paramString;
     }
 
     public String getTplContent() {
-        return this._$11;
+        return this.tplContent;
     }
 
     public void setTplContent(String paramString) {
-        this._$11 = paramString;
+        this.tplContent = paramString;
     }
 
     public Integer getPriority() {
-        return this._$10;
+        return this.priority;
     }
 
     public void setPriority(Integer paramInteger) {
-        this._$10 = paramInteger;
+        this.priority = paramInteger;
     }
 
     public Boolean getBlank() {
-        return this._$9;
+        return this.blank;
     }
 
     public void setBlank(Boolean paramBoolean) {
-        this._$9 = paramBoolean;
+        this.blank = paramBoolean;
     }
 
     public Boolean getDisplay() {
-        return this._$8;
+        return this.display;
     }
 
     public void setDisplay(Boolean paramBoolean) {
-        this._$8 = paramBoolean;
+        this.display = paramBoolean;
     }
 
     public String getParam1() {
-        return this._$7;
+        return this.param1;
     }
 
     public void setParam1(String paramString) {
-        this._$7 = paramString;
+        this.param1 = paramString;
     }
 
     public String getParam2() {
-        return this._$6;
+        return this.param2;
     }
 
     public void setParam2(String paramString) {
-        this._$6 = paramString;
+        this.param2 = paramString;
     }
 
     public String getParam3() {
-        return this._$5;
+        return this.param3;
     }
 
     public void setParam3(String paramString) {
-        this._$5 = paramString;
+        this.param3 = paramString;
     }
 
     public ShopChannelContent getChannelContent() {
-        return this._$4;
+        return this.channelContent;
     }
 
     public void setChannelContent(ShopChannelContent paramShopChannelContent) {
-        this._$4 = paramShopChannelContent;
+        this.channelContent = paramShopChannelContent;
     }
 
     public ShopChannel getParent() {
-        return this._$3;
+        return this.parent;
     }
 
     public void setParent(ShopChannel paramShopChannel) {
-        this._$3 = paramShopChannel;
+        this.parent = paramShopChannel;
     }
 
     public Website getWebsite() {
-        return this._$2;
+        return this.website;
     }
 
     public void setWebsite(Website paramWebsite) {
-        this._$2 = paramWebsite;
+        this.website = paramWebsite;
     }
 
     public Set<ShopChannel> getChild() {
-        return this._$1;
+        return this.child;
     }
 
     public void setChild(Set<ShopChannel> paramSet) {
-        this._$1 = paramSet;
+        this.child = paramSet;
     }
 
     public boolean equals(Object paramObject) {
@@ -238,13 +238,13 @@ public abstract class BaseShopChannel
     }
 
     public int hashCode() {
-        if (-2147483648 == this._$20) {
+        if (-2147483648 == this.hash) {
             if (null == getId())
                 return super.hashCode();
             String str = getClass().getName() + ":" + getId().hashCode();
-            this._$20 = str.hashCode();
+            this.hash = str.hashCode();
         }
-        return this._$20;
+        return this.hash;
     }
 
     public String toString() {

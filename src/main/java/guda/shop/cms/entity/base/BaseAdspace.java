@@ -11,11 +11,11 @@ public abstract class BaseAdspace
     public static String PROP_DESCRIPTION = "description";
     public static String PROP_ENABLE = "enable";
     public static String PROP_ID = "id";
-    private int _$5 = -2147483648;
-    private Integer _$4;
-    private String _$3;
-    private String _$2;
-    private Boolean _$1;
+    private int hash = -2147483648;
+    private Integer id;
+    private String name;
+    private String description;
+    private Boolean enabled;
 
     public BaseAdspace() {
         initialize();
@@ -30,36 +30,36 @@ public abstract class BaseAdspace
     }
 
     public Integer getId() {
-        return this._$4;
+        return this.id;
     }
 
     public void setId(Integer paramInteger) {
-        this._$4 = paramInteger;
-        this._$5 = -2147483648;
+        this.id = paramInteger;
+        this.hash = -2147483648;
     }
 
     public String getName() {
-        return this._$3;
+        return this.name;
     }
 
     public void setName(String paramString) {
-        this._$3 = paramString;
+        this.name = paramString;
     }
 
     public String getDescription() {
-        return this._$2;
+        return this.description;
     }
 
     public void setDescription(String paramString) {
-        this._$2 = paramString;
+        this.description = paramString;
     }
 
     public Boolean getEnabled() {
-        return this._$1;
+        return this.enabled;
     }
 
     public void setEnabled(Boolean paramBoolean) {
-        this._$1 = paramBoolean;
+        this.enabled = paramBoolean;
     }
 
     public boolean equals(Object paramObject) {
@@ -74,13 +74,13 @@ public abstract class BaseAdspace
     }
 
     public int hashCode() {
-        if (-2147483648 == this._$5) {
+        if (-2147483648 == this.hash) {
             if (null == getId())
                 return super.hashCode();
             String str = getClass().getName() + ":" + getId().hashCode();
-            this._$5 = str.hashCode();
+            this.hash = str.hashCode();
         }
-        return this._$5;
+        return this.hash;
     }
 
     public String toString() {

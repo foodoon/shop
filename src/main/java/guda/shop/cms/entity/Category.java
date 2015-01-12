@@ -48,7 +48,7 @@ public class Category extends BaseCategory
 
     public Category getTopCategory() {
         Category localObject = this;
-        for (Category localCategory = ((Category) localObject).getParent(); localCategory != null; localCategory = localCategory.getParent())
+        for (Category localCategory = ( localObject).getParent(); localCategory != null; localCategory = localCategory.getParent())
             localObject = localCategory;
         return localObject;
     }
@@ -149,15 +149,15 @@ public class Category extends BaseCategory
     }
 
     public String getLftName() {
-        return "lft";
+        return PROP_LFT;
     }
 
     public String getParentName() {
-        return "parent";
+        return PROP_PARENT;
     }
 
 
     public String getRgtName() {
-        return "rgt";
+        return PROP_RGT;
     }
 }
