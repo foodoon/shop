@@ -23,30 +23,26 @@
 
         <ul class="banner-add">
            <div class="link-block">
-
-            <div class="contain float-left"><li class="title">商城快报</li>
             [@shop_Channel count='2']
             [#list tag_list as c]
-            [@shop_ArticleList channelId=c.id count='5' ]
-                [#list tag_list as a]
-                <li ><a href="${c.url!}" class="red">[${c.name!}]</a> <a href="${a.url!}" class="gray2">${a.title!}</a></li>
-                [/#list]
-            [/@shop_ArticleList]
+                <div class="contain float-left">
+                    <li class="title">
+                     [#if c_index+1=1]
+                        新手教程
+                      [#elseif c_index+1=2]
+                        商城快报
+                     [/#if]
+                    </li>
+                    [@shop_ArticleList channelId=c.id count='5' ]
+                        [#list tag_list as a]
+                        <li ><a href="${c.url!}" class="red">[${c.name!}]</a> <a href="${a.url!}" class="gray2">${a.title!}</a></li>
+                        [/#list]
+                    [/@shop_ArticleList]
+                   </div>
             [/#list]
             [/@shop_Channel]
            </div>
-               <div class="contain float-right">< class="title">新手教程</li>
-                [@shop_Channel count='2']
-                [#list tag_list as c]
-                [@shop_ArticleList channelId=c.id count='5' ]
-                [#list tag_list as a]
-                <li ><a href="${c.url!}" class="red">[${c.name!}]</a> <a href="${a.url!}" class="gray2">${a.title!}</a></li>
-                [/#list]
-                [/@shop_ArticleList]
-                [/#list]
-                [/@shop_Channel]
-                   </div>
-            </div>
+
         </ul>
     </div>
 </section>
