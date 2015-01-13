@@ -1,0 +1,9 @@
+
+
+<form id="searchForm" action="${base}/search.jspx">
+    <input name="q" id="q" value="${q!'请输入关键词'}" type="text"
+           onfocus="if(this.value=='请输入关键词')this.value=''"
+           onblur="if(this.value=='')this.value='请输入关键词'" maxlength="24"
+          />
+    <input type="submit" value="搜索"/>
+</form>
