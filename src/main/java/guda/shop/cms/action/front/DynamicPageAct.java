@@ -29,35 +29,21 @@ public class DynamicPageAct {
     public static final String TPL_INDEX = "tpl.index";
     private static final String BRAND = "tpl.brand";
     private static final String BRAND_DETAIL = "tpl.brandDetail";
-
-
+    private static final String GLOBAL_CURRENT_PATH = "global_current_path";
     @Autowired
     private CategoryMng categoryMng;
-
-
     @Autowired
     private ProductMng productMng;
-
-
     @Autowired
     private ShopChannelMng shopChannelMng;
-
-
     @Autowired
     private ShopArticleMng shopArticleMng;
-
-
     @Autowired
     private BrandMng brandMng;
-
-
     @Autowired
     private StandardTypeMng standardTypeMng;
-
-
     @Autowired
     private ProductStandardMng productStandardMng;
-
     @Autowired
     private ExendedMng exendedMng;
 
@@ -80,6 +66,7 @@ public class DynamicPageAct {
     public String index(HttpServletRequest request, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         ShopFrontHelper.setCommonData(request, model, web, 1);
+        model.addAttribute(GLOBAL_CURRENT_PATH,"/");
         return web.getTemplate("index", MessageResolver.getMessage(request, "tpl.index", new Object[0]));
 
     }
@@ -95,6 +82,7 @@ public class DynamicPageAct {
         Website web = SiteUtils.getWeb(request);
         ShopFrontHelper.setDynamicPageData(request, model, web, url, info.getUrlPrefix(), info.getUrlSuffix(), info.getPageNo());
         String[] paths = info.getPaths();
+        model.addAttribute(GLOBAL_CURRENT_PATH,paths[0]);
         String[] params = info.getParams();
         int pageNo = info.getPageNo();
         int len = paths.length;

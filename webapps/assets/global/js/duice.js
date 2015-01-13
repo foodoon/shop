@@ -43,4 +43,4 @@ function showFImg(il, nl, cs) {
         indx = (++indx) % ($(il).length);
     }
 }
-//һ���ز���www.16sucai.com
+

@@ -1,7 +1,7 @@
-var WEB = 'http://www.quwan.com/';
+var WEB = 'http://www.foodoon.com/';
 
 try {
-    document.domain = "quwan.com"
+    document.domain = "foodoon.com"
 } catch (e) {
 }
 jQuery.extend({
