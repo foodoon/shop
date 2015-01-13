@@ -1,55 +1,36 @@
 <header class="container">
+
     <div class="head-right">
+        [#if member??]
+          <span>您好,<b color="red">${member.username!}</b>.欢迎光临</span>
+        [#else]
+        <span>您好,欢迎光临</span>
+        [/#if]
         <ul class="top-nav">
-            <li class=""><a href="${base}/404_error.html" title="My Account">我的账户</a></li>
-            <li class="log-in"><a href="${base}/account_login.html" title="Log In">登录</a></li>
+            [#if member??]
+            <li><a href="${base}/logout.jspx">退出登录</a></li>
+            <li><a href="${base}/shopMember/index.jspx" target="_self">个人中心</a></li>
+            [#else]
+            <li><a href="${base}/login.jspx" target="_self">用户登录</a> </li>
+            <li><a href="${base}/register.jspx" target="_self">免费注册</a> </li>
+            <li><a href="${base}/forgot_password.jspx" target="_blank">找回密码</a></li>
+            [/#if]
         </ul>
+
+
 
         <section class="header-bottom">
             <div class="cart-block">
                 <ul>
-                    <li>(2)</li>
-                    <li><a href="${base}/cart.html" title="Cart"><img title="Item" alt="Item" src="${base}/assets/h5_shop/images/item_icon.png" /></a></li>
-                    <li>购物车</li>
+                    <li>(<span id="cart_total_items"></span>)</li>
+                    <li><a href="${base}/cart/shopping_cart.jspx" title="Cart">
+                        <img title="Item" alt="Item" src="${base}/assets/h5_shop/images/item_icon.png" /></a></li>
+                    <li><a href="${base}/cart/checkout_shipping.jspx" >结算</a></li>
                 </ul>
-                <div id="minicart" class="remain_cart" style="display: none;">
-                    <p class="empty">购物车共两件商品</p>
-                    <ol>
-                        <li>
-                            <div class="img-block"><img src="${base}/assets/h5_shop/images/small_img.png" title="" alt="" /></div>
-                            <div class="detail-block">
-                                <h4><a href="#" title="Htc Mobile 1120">Htc Mobile 1120</a></h4>
-                                <p>
-                                    <strong>1</strong> x $900.00
-                                </p>
-                                <a href="#" title="Details">Details</a>
-                            </div>
-                            <div class="edit-delete-block">
-                                <a href="#" title="Edit"><img src="${base}/assets/h5_shop/images/edit_icon.png" alt="Edit" title="Edit" /></a>
-                                <a href="#" title="Remove"><img src="${base}/assets/h5_shop/images/delete_item_btn.png" alt="Remove" title="Remove" /></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img-block"><img src="${base}/assets/h5_shop/images/small_img.png" title="" alt="" /></div>
-                            <div class="detail-block">
-                                <h4><a href="#" title="Htc Mobile 1120">Htc Mobile 1120</a></h4>
-                                <p>
-                                    <strong>1</strong> x $900.00
-                                </p>
-                                <a href="#" title="Details">Details</a>
-                            </div>
-                            <div class="edit-delete-block">
-                                <a href="#" title="Edit"><img src="${base}/assets/h5_shop/images/edit_icon.png" alt="修改" title="修改" /></a>
-                                <a href="#" title="Remove"><img src="${base}/assets/h5_shop/images/delete_item_btn.png" alt="删除" title="删除" /></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="total-block">Total:<span>$1,900.00</span></div>
-                            <a href="cart.html" title="Checkout" class="orange-btn">结算</a>
-                            <div class="clear"></div>
-                        </li>
-                    </ol>
-                </div>
+                <script type="text/javascript">
+                    $('#cart_total_items').html(Shop.cartTotalItems());
+                </script>
+
             </div>
             <div class="search-block">
                 <input type="text" value="Search" />
@@ -99,43 +80,7 @@
         </ul>
     </nav>
 
-    <div class="mobMenu">
-        <h1>
-            <span>Menu</span>
-            <a class="menuBox highlight" href="javascript:void(0);">ccc</a>
-            <span class="clearfix"></span>
-        </h1>
-        <div id="menuInnner" style="display:none;">
-            <ul class="accordion">
-                <li class="active"><a href="index-2.html" title="Home">Home</a></li>
-                <li class="parent"><a href="category.html" title="Shop by">Shop by</a>
-                    <ul>
-                        <li><a href="category.html">Woman Collection</a></li>
-                        <li><a href="category.html">Men Collection</a></li>
-                        <li><a href="category.html">Accessories</a></li>
-                        <li><a href="category.html">Mobile</a>
-                            <ul>
-                                <li><a href="category.html">Second level</a></li>
-                                <li><a href="category.html">Second level</a></li>
-                                <li><a href="category.html">Second level</a></li>
-                                <li><a href="category.html">Second level</a></li>
-                                <li><a href="category.html">Second level</a></li>
-                                <li><a href="category.html">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="category.html">Shoes</a></li>
-                        <li><a href="category.html">Others</a></li>
-                    </ul>
-                </li>
-                <li class=""><a href="blog.html" title="Blog">Blog</a></li>
-                <li class=""><a href="faq.html" title="Faq">Faq</a></li>
-                <li class=""><a href="about_us.html" title="About us">About us</a></li>
-                <li class=""><a href="404_error.html" title="Pages">Pages</a></li>
-                <li class=""><a href="contact_us.html" title="Footwear">Contact us</a></li>
-                <span class="clearfix"></span>
-            </ul>
 
-        </div>
-    </div>
+
 
 </header>

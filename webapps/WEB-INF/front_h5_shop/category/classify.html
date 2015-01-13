@@ -1,5 +1,27 @@
 ﻿[#include "../include/html_header.html"/]
+    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
+    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
+    <link href="${root}/css/category.css" type="text/css" rel="stylesheet"/>
+    <script src="${root}/js/jquery.js" type="text/javascript"></script>
+    <script language="JavaScript" src="${root}/js/category.js" type="text/javascript"></script>
+    <script language="JavaScript" src="${root}/js/img.js" type="text/javascript"></script>
+    <script language="JavaScript" type="text/JavaScript">
+        function getTableForm() {
+            return document.getElementById("tableForm");
+        }
+        function _gotoPage(pageNo, urlp, urls) {
+            try {
+                var tableForm = getTableForm();
+                tableForm.action = urlp + "_" + pageNo + urls;
+                tableForm.onsubmit = null;
+                tableForm.submit();
+            } catch (e) {
+                alert('_gotoPage(pageNo)方法出错');
+            }
+        }
 
+    </script>
+</head>
 <body>
 <div class="mainContainer sixteen container">
     <!--Header Block-->
@@ -7,8 +29,6 @@
         [#include "../include/html_header_top.html"/]
     </div>
 </div>
-
-
 <div class="searchwrap w980">
     [#include "classify_side.html"/]
     <div id="bodyRight" class="searchColMain fr">
@@ -71,23 +91,4 @@
 </div>
 [#include "../include/footer.html"/]
 </body>
-
-<script language="JavaScript" src="${root}/js/category.js" type="text/javascript"></script>
-<script language="JavaScript" src="${root}/js/img.js" type="text/javascript"></script>
-<script language="JavaScript" type="text/JavaScript">
-    function getTableForm() {
-        return document.getElementById("tableForm");
-    }
-    function _gotoPage(pageNo, urlp, urls) {
-        try {
-            var tableForm = getTableForm();
-            tableForm.action = urlp + "_" + pageNo + urls;
-            tableForm.onsubmit = null;
-            tableForm.submit();
-        } catch (e) {
-            alert('_gotoPage(pageNo)方法出错');
-        }
-    }
-
-</script>
 </html>

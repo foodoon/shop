@@ -1,7 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+[#include "../include/html_header.html"/]
     <title>用户中心欢迎页 - ${web.name}${web.additionalTitle!}</title>
     <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
     <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
@@ -12,10 +9,11 @@
     </style>
 </head>
 <body>
-[#include "../include/header_top.html"/]
-<div id="head">
-    [#include "../include/header_search.html"/]
-    [#include "../include/header_nav.html"/]
+<div class="mainContainer sixteen container">
+    <!--Header Block-->
+    <div class="header-wrapper">
+        [#include "../include/html_header_top.html"/]
+    </div>
 </div>
 <div class="w960 mt10">
     [#include "member_nav.html"/]
