@@ -1,4 +1,5 @@
 /*
+/*
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
@@ -900,14 +901,13 @@ CREATE TABLE `shop_channel` (
 -- ----------------------------
 -- Records of shop_channel
 -- ----------------------------
-INSERT INTO `shop_channel` VALUES ('1', '1', 'xsrm', '新手入门', '2', null, '1', '/channel/网站公告栏目.html', '/article/网站公告内容.html', null, '1', '2', '0', '10', '', '', '');
-INSERT INTO `shop_channel` VALUES ('2', '1', 'wzgg', '网站公告', '2', null, '1', '/channel/帮助中心栏目.html', '/article/帮助中心内容.html', null, '3', '4', '0', '10', '', '', '');
+INSERT INTO `shop_channel` VALUES ('1', '1', 'xsrm', '新手入门', '2', null, '1', '/channel/notice_model.html', '/article/notice_content.html', null, '1', '2', '0', '10', '', '', '');
+INSERT INTO `shop_channel` VALUES ('2', '1', 'wzgg', '网站公告', '2', null, '1', '/channel/help_model.html', '/article/help_content.html', null, '3', '4', '0', '10', '', '', '');
 INSERT INTO `shop_channel` VALUES ('3', '1', 'news', '新闻中心', '2', null, '1', '', '', null, '5', '6', '0', '10', '', '', '');
-INSERT INTO `shop_channel` VALUES ('4', '1', 'remen', '热门促销', '2', null, '1', '/channel/新闻中心栏目.html', '/article/新闻中心内容.html', null, '7', '8', '0', '10', '', '', '');
+INSERT INTO `shop_channel` VALUES ('4', '1', 'remen', '热门促销', '2', null, '1', '/channel/news_model.html', '/article/news_content.html', null, '7', '8', '0', '10', '', '', '');
 INSERT INTO `shop_channel` VALUES ('5', '1', 'ps', '配送范围及时间', '2', null, '1', '', '', null, '9', '10', '0', '10', '', '', '');
 INSERT INTO `shop_channel` VALUES ('6', '1', 'zffs', '支付方式', '2', null, '0', '', '', null, '11', '12', '0', '10', '', '', '');
-INSERT INTO `shop_channel` VALUES ('7', '1', 'gsjj', '公司简介', '1', null, '1', '/channel/单页.html', null, null, '13', '14', '0', '10', '', '', '');
-
+INSERT INTO `shop_channel` VALUES ('7', '1', 'gsjj', '公司简介', '1', null, '1', '/channel/single.html', null, null, '13', '14', '0', '10', '', '', '');
 -- ----------------------------
 -- Table structure for `shop_channel_content`
 -- ----------------------------
@@ -2160,15 +2160,15 @@ CREATE TABLE `shop_ptype` (
 -- ----------------------------
 -- Records of shop_ptype
 -- ----------------------------
-INSERT INTO `shop_ptype` VALUES ('1', '1', '数码', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('2', '1', '服装', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('3', '1', '鞋包配饰', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('4', '1', '日用百货', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('5', '1', '家居建材', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('6', '1', '珠宝手表', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('7', '1', '酒店', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('8', '1', '手机', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
-INSERT INTO `shop_ptype` VALUES ('9', '1', '笔记本', null, null, '分类', '商品', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('1', '1', '数码', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('2', '1', '服装', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('3', '1', '鞋包配饰', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('4', '1', '日用百货', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('5', '1', '家居建材', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('6', '1', '珠宝手表', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('7', '1', '酒店', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('8', '1', '手机', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
+INSERT INTO `shop_ptype` VALUES ('9', '1', '笔记本', null, null, 'classify', 'item', null, '310', '310', '140', '140', '100', '100');
 
 -- ----------------------------
 -- Table structure for `shop_ptype_exended`
