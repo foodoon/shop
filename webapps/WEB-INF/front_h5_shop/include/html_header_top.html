@@ -43,11 +43,11 @@
     <nav id="smoothmenu1" class="ddsmoothmenu mainMenu">
         <ul id="nav">
 
-            <li [#if "/" == "${global_current_path}"] class="active" [/#if]> <a class="active"   href="${base}/" title="Home">首页</a></li>
+            <li [#if global_current_path??][#if "/" == "${global_current_path}"] class="active" [/#if][/#if]> <a class="active"   href="${base}/" title="Home">首页</a></li>
             [@shop_Category]
             [#list tag_list as ctg]
 
-            <li [#if "${ctg.path}" == "${global_current_path}"] class="active" [/#if] ><a href="${ctg.url}"  >${ctg.name}</a>
+            <li [#if global_current_path??][#if "${ctg.path}" == "${global_current_path}"] class="active" [/#if][/#if] ><a href="${ctg.url}"  >${ctg.name}</a>
             </li>
             [/#list]
             [/@shop_Category]

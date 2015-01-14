@@ -1,8 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+[#include "../include/html_header.html"/]
     <title>商品 - ${web.name}${web.additionalTitle!}</title>
     <link href="${root}/css/product.css" type="text/css" rel="stylesheet"/>
     <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
@@ -53,12 +49,12 @@
     </script>
 </head>
 <body>
-[#include "../include/header_top.html"/]
-<div id="head">
-    [#include "../include/header_search.html"/]
-    [#include "../include/header_nav.html"/]
+<div class="mainContainer sixteen container">
+    <!--Header Block-->
+    <div class="header-wrapper">
+        [#include "../include/html_header_top.html"/]
+    </div>
 </div>
-[#include "../include/header_banner.html"/]
 <div class="position">您现在的位置：<a href="${base}/">首页</a> »<a href="${base}/gift.jspx" target="_blank"> 礼品</a></div>
 <div class="center mt10">
     <div class="produce clearfix">

@@ -1,0 +1,46 @@
+<header class="container">
+
+    <div class="head-right">
+        [#if member??]
+        <span>您好,<b color="red">${member.username!}</b>.欢迎光临</span>
+        [#else]
+        <span>您好,欢迎光临</span>
+        [/#if]
+        <ul class="top-nav">
+            [#if member??]
+            <li><a href="${base}/logout.jspx">退出登录</a></li>
+            <li><a href="${base}/shopMember/index.jspx" target="_self">个人中心</a></li>
+            [#else]
+            <li><a href="${base}/login.jspx" target="_self">用户登录</a> </li>
+            <li><a href="${base}/register.jspx" target="_self">免费注册</a> </li>
+            <li><a href="${base}/forgot_password.jspx" target="_blank">找回密码</a></li>
+            [/#if]
+        </ul>
+
+
+
+        <section class="header-bottom">
+            <div class="cart-block">
+                <ul>
+                    <li>(<span id="cart_total_items"></span>)</li>
+                    <li><a href="${base}/cart/shopping_cart.jspx" title="Cart">
+                        <img title="Item" alt="Item" src="${base}/assets/h5_shop/images/item_icon.png" /></a></li>
+                    <li><a href="${base}/cart/checkout_shipping.jspx" >结算</a></li>
+                </ul>
+                <script type="text/javascript">
+                    $('#cart_total_items').html(Shop.cartTotalItems());
+                </script>
+
+            </div>
+            <div class="search-block">
+                [#include "../include/html_header_search.html"/]
+            </div>
+        </section>
+    </div>
+    <h1 class="logo"><a href="${base}/" title="Logo">
+        <img title="Logo" alt="Logo" height="100px;" src="${base}/assets/h5_shop/images/logo.jpg" />
+    </a></h1>
+
+
+
+</header>
