@@ -1,34 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title></title>
-<#include "/admin/head.html"/>
-<script type="text/javascript">
-$(function() {
-	$("#jvForm").validate();
-});
+<!DOCTYPE html>
+<html >
+<head lang="en">
 
-</script>
+    <#include "../head_import.html" />
+
 </head>
 <body>
+<#include "../include/top_nav.html">
+    <div class="am-cf admin-main">
 
-<div class="body-box">
-<div class="rhead">
-	<div class="rpos"><@s.m "global.position"/>: <@s.m "product.discuss"/> - <@s.m "global.add"/></div>
-	<form class="ropt">
-		<input type="button" value="<@s.m "global.backToList"/>" onclick="javascript:history.go(-1);"/>
-	</form>
-	<div class="clear"></div>
+        <!-- sidebar start -->
+        <#include "../left.html">
+            <!-- sidebar end -->
+            <!-- content start-->
+            <div class="admin-content">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><@s.m "global.position"/>: <@s.m "product.discuss"/> - <@s.m "global.add"/></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+                        <form>
+                            <input type="button" value="<@s.m "global.backToList"/>" onclick="javascript:history.go(-1);"/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+                        <@p.form id="jvForm" action="o_update.do">
+                        <!-- <@p.text colspan="2" label="product.name" name="name" value=discuss.product.name required="true" class="required" maxlength="100"/><@p.tr/> -->
+                        <@p.td width="100" colspan="2" label="product.name"> ${discuss.product.name!}</@p.td><@p.tr/>
+                        <@p.textarea colspan="2" label="discuss.txt" name="content" value=discuss.content! rows="3" cols="70" maxlength="255"/><@p.tr/>
+                        <input type="hidden" value="${discuss.id!}" name="id">
+                        <!-- <@p.td colspan="2"><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>
+                         -->
+                    </@p.form>
+                    </div>
+                </div>
+
+
+
 </div>
-<@p.form id="jvForm" action="o_update.do">
-<!-- <@p.text colspan="2" label="product.name" name="name" value=discuss.product.name required="true" class="required" maxlength="100"/><@p.tr/> -->
-<@p.td width="100" colspan="2" label="product.name"> ${discuss.product.name!}</@p.td><@p.tr/>
-<@p.textarea colspan="2" label="discuss.txt" name="content" value=discuss.content! rows="3" cols="70" maxlength="255"/><@p.tr/>
-<input type="hidden" value="${discuss.id!}" name="id">
-<!-- <@p.td colspan="2"><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>
- -->
-</@p.form>
 </div>
 </body>
 </html>
