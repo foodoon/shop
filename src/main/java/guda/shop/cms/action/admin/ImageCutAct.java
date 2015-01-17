@@ -28,15 +28,10 @@ public class ImageCutAct
 
     @RequestMapping({"/common/v_image_area_select.do"})
     public String imageAreaSelect(String imgSrcPath, Integer zoomWidth, Integer zoomHeight, Integer uploadNum, HttpServletRequest request, ModelMap model) {
-
         model.addAttribute("imgSrcPath", imgSrcPath);
-
         model.addAttribute("zoomWidth", zoomWidth);
-
         model.addAttribute("zoomHeight", zoomHeight);
-
         model.addAttribute("uploadNum", uploadNum);
-
         return "/common/image_area_select";
     }
 
@@ -44,13 +39,9 @@ public class ImageCutAct
     public String imageCut(String imgSrcPath, Integer imgTop, Integer imgLeft, Integer imgWidth, Integer imgHeight, Integer reMinWidth, Integer reMinHeight, Float imgScale, Integer uploadNum, HttpServletRequest request, ModelMap model) {
 
         String ctx = request.getContextPath();
-
         imgSrcPath = imgSrcPath.substring(ctx.length());
-
         String real = this.realPathResolver.get(imgSrcPath);
-
         File srcFile = new File(real);
-
         model.addAttribute("uploadNum", uploadNum);
         try {
 

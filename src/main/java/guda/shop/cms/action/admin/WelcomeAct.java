@@ -23,8 +23,25 @@ public class WelcomeAct {
     private UpdateMng updateMng;
 
     @RequestMapping({"/main.do"})
-    public String main() {
-
+    public String main(HttpServletRequest request, ModelMap model) {
+        List o = this.manager.getTotlaOrder();
+        ShopAdmin admin = AdminThread.get();
+        Long[] c = (Long[]) o.get(0);
+        Runtime runtime = Runtime.getRuntime();
+        long freeMemoery = runtime.freeMemory();
+        long totalMemory = runtime.totalMemory();
+        long usedMemory = totalMemory - freeMemoery;
+        long maxMemory = runtime.maxMemory();
+        long useableMemory = maxMemory - totalMemory + freeMemoery;
+        model.addAttribute("c", c);
+        model.addAttribute("admin", admin);
+        // model.addAttribute("restart", Integer.valueOf(Integer.parseInt(this.updateMng.getRestart())));
+        model.addAttribute("site", SiteUtils.getWeb(request));
+        model.addAttribute("freeMemoery", Long.valueOf(freeMemoery));
+        model.addAttribute("totalMemory", Long.valueOf(totalMemory));
+        model.addAttribute("usedMemory", Long.valueOf(usedMemory));
+        model.addAttribute("maxMemory", Long.valueOf(maxMemory));
+        model.addAttribute("useableMemory", Long.valueOf(useableMemory));
         return "main";
     }
 
