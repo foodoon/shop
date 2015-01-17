@@ -74,7 +74,6 @@ public abstract class ProductAbstractDirective extends WebDirective {
 
 
     protected void renderBody(Environment env, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
-
         body.render(env.getOut());
 
     }
@@ -82,17 +81,13 @@ public abstract class ProductAbstractDirective extends WebDirective {
 
     @Autowired
     public void setProductMng(ProductMng productMng) {
-
         this.productMng = productMng;
-
     }
 
 
     @Autowired
     public void setWebsiteMng(WebsiteMng websiteMng) {
-
         this.websiteMng = websiteMng;
-
     }
 
 }

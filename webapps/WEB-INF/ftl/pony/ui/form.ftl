@@ -2,13 +2,12 @@
 <form></form>
 -->
 <#macro form
-action="" method="post" target="" enctype="" acceptCharset=""
-theme="jeesys" width="100%" tableClass="pn-ftable" labelWidth="20" required="false" colspan="1"
+action="" method="post" target="" enctype="" acceptCharset="" width="100%" tableClass="am-table am-table-striped am-table-hover table-main" labelWidth="20" required="false" colspan="1"
 validate="false" query="true" beanName=""
 id="" name="" class="" style="" size="" title="" disabled="" tabindex="" accesskey=""
 onsubmit=""
 >
-<form<#rt/>
+<form class="am-form" <#rt/>
         method="${method}"<#rt/>
         action="${action}"<#rt/>
     <#if id!=""> id="${id}"</#if><#rt/>
@@ -26,14 +25,14 @@ onsubmit=""
             </#if>
         </#list>
     </#if>
-    <#if theme!="simple">
+
         <#assign labelWidth=labelWidth/>
     <table width="${width}" class="${tableClass}" cellpadding="2" cellspacing="1" border="0">
     <tr>
-    </#if>
+
     <#nested/><#rt/>
-    <#if theme=="jeesys">
+
     </tr></table>
-    </#if>
+
 </form>
 </#macro>

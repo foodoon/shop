@@ -81,56 +81,47 @@ public class ProductAct
     @RequestMapping({"/product/v_list.do"})
     public String list(Long ctgId, Boolean isOnSale, Boolean isRecommend, Boolean isSpecial, Boolean isHotsale, Boolean isNewProduct, Long typeId, Double startSalePrice, Double endSalePrice, Integer startStock, Integer endStock, Integer pageNo, HttpServletRequest request, ModelMap model) {
         String productName = RequestUtils.getQueryParam(request, "productName");
-
         productName = StringUtils.trim(productName);
-
         String brandName = RequestUtils.getQueryParam(request, "brandName");
-
         brandName = StringUtils.trim(brandName);
-
         Website web = SiteUtils.getWeb(request);
-
         if (ctgId != null) {
-
             model.addAttribute("category", this.categoryMng.findById(ctgId));
         }
-
         Pagination pagination = this.manager.getPage(SiteUtils.getWebId(request),
                 ctgId, productName, brandName, isOnSale, isRecommend, isSpecial, isHotsale, isNewProduct, typeId,
                 startSalePrice, endSalePrice, startStock, endStock,
                 SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
         List typeList = this.productTypeMng.getList(web.getId());
-
         model.addAttribute("typeList", typeList);
-
         model.addAttribute("productName", productName);
-
         model.addAttribute("brandName", brandName);
-
         model.addAttribute("isOnSale", isOnSale);
-
         model.addAttribute("isRecommend", isRecommend);
-
         model.addAttribute("isSpecial", isSpecial);
-
         model.addAttribute("isHotsale", isHotsale);
-
         model.addAttribute("isNewProduct", isNewProduct);
-
         model.addAttribute("typeId", typeId);
-
         model.addAttribute("startSalePrice", startSalePrice);
-
         model.addAttribute("endSalePrice", endSalePrice);
-
         model.addAttribute("startStock", startStock);
-
         model.addAttribute("endStock", endStock);
-
         model.addAttribute("pagination", pagination);
-
         model.addAttribute("ctgId", ctgId);
+        /// 查找栏目树
+
+        List list = this.categoryMng.getTopList(
+                SiteUtils.getWebId(request));
+        if (list.size() > 0) {
+            Category treeRoot = new Category();
+            treeRoot.setName(
+                    MessageResolver.getMessage(request,
+                            "product.allCategory", new Object[0])
+            );
+            treeRoot.setChild(new LinkedHashSet(list));
+            model.addAttribute("treeRoot", treeRoot);
+        }
 
         return "product/list";
     }

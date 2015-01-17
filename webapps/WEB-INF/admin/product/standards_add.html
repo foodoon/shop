@@ -1,5 +1,5 @@
-<tr><td width="12%" class="pn-flabel pn-flabel-h">${standardType.name}</td>
-<td colspan="3" width="88%" class="pn-fcontent">
+<tr><td width="12%" >${standardType.name}</td>
+<td colspan="3" width="88%">
 <input type="hidden" name="standardType" value="${standardType.name}" attr="${standardType.field}"/>
 <#list sList as standard>
 <input type="checkbox" value="${standard.id}" id="sType_${standardType.field}" name="sType_${standardType.field}" nameAttr="${standard.name}" attr="${standardType.name}" onclick="standardAdd('sType_${standardType.field}');"/>

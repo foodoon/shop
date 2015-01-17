@@ -1,8 +1,11 @@
 package guda.shop.cms.action.admin.main;
 
+import guda.shop.cms.entity.Category;
 import guda.shop.cms.entity.ProductTag;
+import guda.shop.cms.manager.CategoryMng;
 import guda.shop.cms.manager.ProductTagMng;
 import guda.shop.cms.web.SiteUtils;
+import guda.shop.common.web.springmvc.MessageResolver;
 import guda.shop.core.web.WebErrors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +15,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 @Controller
@@ -20,14 +24,27 @@ public class ProductTagAct {
 
     @Autowired
     private ProductTagMng manager;
-
+    @Autowired
+    private CategoryMng categoryMng;
 
     @RequestMapping({"/tag/v_list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(SiteUtils.getWebId(request));
 
         model.addAttribute("list", list);
+        /// 查找栏目树
 
+        List categoryList = this.categoryMng.getTopList(
+                SiteUtils.getWebId(request));
+        if (categoryList.size() > 0) {
+            Category treeRoot = new Category();
+            treeRoot.setName(
+                    MessageResolver.getMessage(request,
+                            "product.allCategory", new Object[0])
+            );
+            treeRoot.setChild(new LinkedHashSet(categoryList));
+            model.addAttribute("treeRoot", treeRoot);
+        }
         return "tag/list";
     }
 

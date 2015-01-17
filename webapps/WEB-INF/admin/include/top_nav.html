@@ -10,18 +10,18 @@
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
             <li><a href="${base}/admin/shop/main.do"><@s.m "global.admin.home"/> </a></li>
             <@authorize url="frame/category_main.do">
-            <li><a href="${base}/admin/shop/frame/category_main.do"><@s.m "shop.function.category"/></a></li>
+            <li><a href="${base}/admin/shop/category/v_list.do"><@s.m "shop.function.category"/></a></li>
             </@authorize>
             <@authorize url="frame/product_main.do">
-                <li><a href="${base}/admin/shop/frame/product_main.do"><@s.m "shop.function.product"/></a></li>
+                <li><a href="${base}/admin/shop/product/v_list.do"><@s.m "shop.function.product"/></a></li>
             </@authorize>
 
             <@authorize url="frame/order_main.do">
-                <li><a href="${base}/admin/shop/frame/order_main.do"><@s.m "shop.function.order"/></a></li>
+                <li><a href="${base}/admin/shop/order/v_list.do"><@s.m "shop.function.order"/></a></li>
             </@authorize>
 
             <@authorize url="frame/channel_main.do">
-            <li><a href="${base}/admin/shop/frame/channel_main.do"><@s.m "shop.function.channel"/></a></li>
+            <li><a href="${base}/admin/shop/channel/v_list.do"><@s.m "shop.function.channel"/></a></li>
             </@authorize>
 
             <@authorize url="frame/article_main.do">
