@@ -9,14 +9,15 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 <title>管理后台登录</title>
-<#include "/admin/head.html"/>
+
+    <link rel="stylesheet" href="${base}/assets/amazeui/css/amazeui.min.css"/>
 <script type="text/javascript">
 if(top!=this) {
 	top.location=this.location;
 }
 $(function() {
 	$("#username").focus();
-	$("#jvForm").validate();
+
 });
 </script>
     <style>
@@ -43,24 +44,24 @@ $(function() {
     <hr />
 </div>
 <div class="am-g">
-    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <div class="am-u-lg-3 am-u-md-4 am-u-sm-centered">
         <h3>登录</h3>
         <hr>
 
         <br>
         <br>
 
-        <form method="post"  id="jvForm" action="${base}/index.do" class="am-form">
+        <form method="post"   action="${base}/admin/shop/index.do" class="am-form">
             <#if errors??>
 
                     <span style="color:red"><#list errors as error><li>${error}</li></#list></span>
 
             </#if>
             <label for="username">用户名:</label>
-            <input type="text" id="username" name="username" vld="{required:true}" maxlength="100" class="input">
+            <input type="text" id="username" name="username" >
             <br>
             <label for="password">密码:</label>
-            <input type="password" id="password" name="password" vld="{required:true}" maxlength="32" class="input">
+            <input type="password" id="password" name="password"  >
 
             <br />
             <div class="am-cf">
