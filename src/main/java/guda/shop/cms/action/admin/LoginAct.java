@@ -36,7 +36,7 @@ public class LoginAct {
 
             model.addAttribute("admin", admin);
 
-            return "index";
+            return "redirect:main.do";
         }
 
         return "login";
