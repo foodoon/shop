@@ -56,49 +56,31 @@ public class CategoryAct
 
     @RequestMapping({"/category/v_tree.do"})
     public String tree(String root, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         log.debug("tree path={}", root);
         boolean isRoot;
-
         if ((StringUtils.isBlank(root)) || ("source".equals(root)))
             isRoot = true;
         else {
-
             isRoot = false;
         }
-
         model.addAttribute("isRoot", Boolean.valueOf(isRoot));
-
         WebErrors errors = validateTree(root, request);
-
         if (errors.hasErrors()) {
-
             log.error((String) errors.getErrors().get(0));
-
             ResponseUtils.renderJson(response, "[]");
-
             return null;
         }
         List list;
-
         if (isRoot) {
-
             list = this.manager.getTopList(web.getId());
         } else {
-
             Long rootId = Long.valueOf(root);
-
             list = this.manager.getChildList(web.getId(), rootId);
         }
-
         model.addAttribute("list", list);
-
         response.setHeader("Cache-Control", "no-cache");
-
         response.setContentType("text/json;charset=UTF-8");
-
         return "category/tree";
     }
 

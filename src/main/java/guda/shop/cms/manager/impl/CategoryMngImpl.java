@@ -30,22 +30,22 @@ public class CategoryMngImpl
 
     @Autowired
     private StandardTypeMng _$3;
-    private ProductTypeMng _$2;
-    private CategoryDao _$1;
+    private ProductTypeMng productTypeMng;
+    private CategoryDao paramCategoryDao;
 
     public Category getByPath(Long paramLong, String paramString) {
-        return this._$1.getByPath(paramLong, paramString, false);
+        return this.paramCategoryDao.getByPath(paramLong, paramString, false);
     }
 
     public Category getByPathForTag(Long paramLong, String paramString) {
-        return this._$1.getByPath(paramLong, paramString, true);
+        return this.paramCategoryDao.getByPath(paramLong, paramString, true);
     }
 
     @Transactional(readOnly = true)
     public List<Category> getListForParent(Long paramLong1, Long paramLong2) {
         List localList1 = getList(paramLong1);
         if (paramLong2 != null) {
-            List localList2 = this._$1.getListForChild(paramLong1, paramLong2);
+            List localList2 = this.paramCategoryDao.getListForChild(paramLong1, paramLong2);
             localList1.removeAll(localList2);
         }
         return localList1;
@@ -61,32 +61,32 @@ public class CategoryMngImpl
 
     @Transactional(readOnly = true)
     public List<Category> getTopList(Long paramLong) {
-        return this._$1.getTopList(paramLong, false);
+        return this.paramCategoryDao.getTopList(paramLong, false);
     }
 
     public List<Category> getChildList(Long paramLong1, Long paramLong2) {
-        return this._$1.getChildList(paramLong1, paramLong2);
+        return this.paramCategoryDao.getChildList(paramLong1, paramLong2);
     }
 
     public List<Category> getTopListForTag(Long paramLong) {
-        return this._$1.getTopList(paramLong, true);
+        return this.paramCategoryDao.getTopList(paramLong, true);
     }
 
     @Transactional(readOnly = true)
     public List<Category> getList(Long paramLong) {
-        List localList = this._$1.getTopList(paramLong, false);
+        List localList = this.paramCategoryDao.getTopList(paramLong, false);
         ArrayList localArrayList = new ArrayList();
         _$1(localArrayList, localList, null);
         return localArrayList;
     }
 
     public boolean checkPath(Long paramLong, String paramString) {
-        return this._$1.countPath(paramLong, paramString) <= 0;
+        return this.paramCategoryDao.countPath(paramLong, paramString) <= 0;
     }
 
     @Transactional(readOnly = true)
     public Category findById(Long paramLong) {
-        Category localCategory = this._$1.findById(paramLong);
+        Category localCategory = this.paramCategoryDao.findById(paramLong);
         return localCategory;
     }
 
@@ -97,8 +97,8 @@ public class CategoryMngImpl
             paramCategory.setParent(localCategory1);
         }
         if (paramLong2 != null)
-            paramCategory.setType(this._$2.findById(paramLong2));
-        Category localCategory2 = this._$1.save(paramCategory);
+            paramCategory.setType(this.productTypeMng.findById(paramLong2));
+        Category localCategory2 = this.paramCategoryDao.save(paramCategory);
         Long localLong = null;
         if ((paramArrayOfLong1 != null) && (paramArrayOfLong1.length > 0))
             for (Long t : paramArrayOfLong1)
@@ -133,7 +133,7 @@ public class CategoryMngImpl
         }
         Updater localUpdater = new Updater(paramCategory);
         localUpdater.include(Category.PROP_PARENT);
-        localCategory1 = this._$1.updateByUpdater(localUpdater);
+        localCategory1 = this.paramCategoryDao.updateByUpdater(localUpdater);
         if (localCategory2 != null)
             localCategory2.removeFromChild(localCategory1);
         if (localCategory3 != null)
@@ -170,7 +170,7 @@ public class CategoryMngImpl
 
     public Category deleteById(Long paramLong) {
         Category localCategory1 = findById(paramLong).getParent();
-        Category localCategory2 = this._$1.deleteById(paramLong);
+        Category localCategory2 = this.paramCategoryDao.deleteById(paramLong);
         if (localCategory1 != null)
             localCategory1.removeFromChild(localCategory2);
         return localCategory2;
@@ -181,7 +181,7 @@ public class CategoryMngImpl
         int i = 0;
         int j = paramArrayOfLong.length;
         while (i < j) {
-            arrayOfCategory1[i] = this._$1.deleteById(paramArrayOfLong[i]);
+            arrayOfCategory1[i] = this.paramCategoryDao.deleteById(paramArrayOfLong[i]);
             i++;
         }
         for (Category localCategory2 : arrayOfCategory1) {
@@ -220,17 +220,17 @@ public class CategoryMngImpl
     }
 
     public List<Category> getListBypType(Long paramLong1, Long paramLong2, Integer paramInteger) {
-        return this._$1.getListByptype(paramLong1, paramLong2, paramInteger);
+        return this.paramCategoryDao.getListByptype(paramLong1, paramLong2, paramInteger);
     }
 
     @Autowired
     public void setProductTypeMng(ProductTypeMng paramProductTypeMng) {
-        this._$2 = paramProductTypeMng;
+        this.productTypeMng = paramProductTypeMng;
     }
 
     @Autowired
     public void setDao(CategoryDao paramCategoryDao) {
-        this._$1 = paramCategoryDao;
+        this.paramCategoryDao = paramCategoryDao;
     }
 }
 

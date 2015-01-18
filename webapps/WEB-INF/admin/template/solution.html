@@ -1,13 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title></title>
-<#include "/admin/head.html"/>
+
+<!DOCTYPE html>
+<html class="no-js">
+<head lang="en">
+
+    <#include "../head_import.html" />
+
+</head>
+<body>
+<#include "../include/top_nav.html">
+    <div class="am-cf admin-main">
+
+        <!-- sidebar start -->
+        <#include "../left.html">
+            <!-- sidebar end -->
+            <!-- content start-->
+            <div class="admin-content">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><@s.m "global.position"/>: <@s.m "template.function"/> - <@s.m "template.solution.function"/></div>
+                </div>
+
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+                        <@p.form id="jvForm" labelWidth="20" action="o_solution.do">
+
+                        <@p.td label="template.import">
+                        <input type="file" id="tplZip" name="tplZip"/>
+                        &nbsp; <input type="button" onclick="importTpl();" value="导入"/>
+                            </@p.td><@p.tr/>
+
+                            <@p.td label="template.export">
+                            <input type="button" onclick="exportTpl();" value="导出"/>
+                        </@p.td>
+                    </@p.form>
+            </div>
+    </div>
+
+
+
+    </div>
+
+    </div>
+
 <script type="text/javascript">
-$(function() {
-	$("#jvForm").validate();
-});
 function importTpl() {
 	if($("#tplZip").val()=="") {
 		alert("rrrr");
@@ -25,25 +59,7 @@ function exportTpl() {
 	form.submit();
 }
 </script>
-</head>
-<body>
-<div class="body-box">
-<div class="rhead">
-	<div class="rpos"><@s.m "global.position"/>: <@s.m "template.function"/> - <@s.m "template.solution.function"/></div>
-	<div class="clear"></div>
-</div>
-<@p.form id="jvForm" labelWidth="20" action="o_solution.do">
 
-<@p.td label="template.import">
-	<input type="file" id="tplZip" name="tplZip"/>
-&nbsp; <input type="button" onclick="importTpl();" value="导入"/>
-</@p.td><@p.tr/>
-
-<@p.td label="template.export">
-<input type="button" onclick="exportTpl();" value="导出"/>
-</@p.td>
-</@p.form>
-</div>
 <#include "/common/alert_message.html"/>
 </body>
 </html>

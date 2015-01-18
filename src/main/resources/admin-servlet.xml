@@ -166,4 +166,6 @@
     <bean id="gatheringAct" class="guda.shop.cms.action.admin.main.GatheringAct"/>
     <bean id="shipmentsAct" class="guda.shop.cms.action.admin.main.ShipmentsAct"/>
     <bean id="popularityGroupAct" class="guda.shop.cms.action.admin.main.PopularityGroupAct"/>
+
+    <bean id="marketingAct" class="guda.shop.cms.action.admin.main.MarketingAct"/>
 </beans>

@@ -1,28 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title></title>
-<#include "/admin/head.html"/>
-<script type="text/javascript">
-$(function() {
-	$("#jvForm").validate();
-});
-</script>
+<!DOCTYPE html>
+<html class="no-js">
+<head lang="en">
+
+    <#include "../head_import.html" />
+
 </head>
 <body>
-<div class="body-box">
-<div class="rhead">
-	<div class="rpos"><@s.m "global.position"/>: <@s.m "shopMerchandise.function"/> - <@s.m "global.add"/></div>
-	<form class="ropt">
-		<input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
-	</form>
-	<div class="clear"></div>
-</div>
-<@p.form id="jvForm" action="o_save.do">
-<@p.text label="shopMerchandise.name" name="name" required="true" class="required" maxlength="100"/>
-<@p.td><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>
-</@p.form>
-</div>
+<#include "../include/top_nav.html">
+    <div class="am-cf admin-main">
+
+        <!-- sidebar start -->
+        <#include "../left.html">
+            <!-- sidebar end -->
+            <!-- content start-->
+            <div class="admin-content">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><@s.m "global.position"/>: <@s.m "shopMerchandise.function"/> - <@s.m "global.add"/></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+                        <form class="ropt">
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+                        <@p.form id="jvForm" action="o_save.do">
+                        <@p.text label="shopMerchandise.name" name="name" required="true" class="required" maxlength="100"/>
+                        <@p.td><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>
+                </@p.form>
+            </div>
+    </div>
+
+
+
+    </div>
+
+    </div>
+
 </body>
 </html>

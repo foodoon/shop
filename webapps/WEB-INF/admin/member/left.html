@@ -1,0 +1,31 @@
+
+<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+
+        <ul class="am-list admin-sidebar-list">
+            <li><a href="member_right.do" target="rightFrame"><@s.m "global.admin.index"/></a></li>
+            <@authorize url="member/v_list.do">
+            <li><a href="../member/v_list.do" target="rightFrame"><@s.m "member.function"/></a></li>
+        </@authorize>
+        <@authorize url="group/v_list.do">
+        <li><a href="../group/v_list.do" target="rightFrame"><@s.m "group.function"/></a></li>
+    </@authorize>
+    <@authorize url="shopDictionary/v_list.do">
+    <li><a href="../shopDictionary/v_list.do" target="rightFrame"><@s.m "shopDictionary.function"/></a></li>
+</@authorize>
+<@authorize url="shopDictionaryType/v_list.do">
+<li><a href="../shopDictionaryType/v_list.do" target="rightFrame"><@s.m "shopDictionaryType.function"/></a></li>
+</@authorize>
+<@authorize url="address/v_list.do">
+<li><a href="../address/v_list.do" target="rightFrame">地区管理</a></li>
+</@authorize>
+
+        </ul>
+        <div class="am-panel am-panel-default admin-sidebar-panel">
+
+        </div>
+    </div>
+
+
+</div>

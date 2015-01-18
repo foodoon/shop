@@ -1,9 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title></title>
-<#include "/admin/head.html"/>
+
+<!DOCTYPE html>
+<html class="no-js">
+<head lang="en">
+
+    <#include "../head_import.html" />
+
+</head>
+<body>
+<#include "../include/top_nav.html">
+    <div class="am-cf admin-main">
+
+        <!-- sidebar start -->
+        <#include "../resource/left.html">
+            <!-- sidebar end -->
+            <!-- content start-->
+            <div class="admin-content">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><@s.m "global.position"/>: <@s.m "resource.function"/> - <@s.m "global.list"/></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+                        <form class="ropt" method="post">
+                            <input type="hidden" name="root" value="${root}"/>
+                            &nbsp; <input type="submit" value="<@s.m "resource.create"/>" onclick="this.form.action='v_add.do';"/>
+                            <input type="hidden" name="relPath" value="${relPath!}"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+
+                        <form id="tableForm" method="post">
+                            <@p.table value=list;resource,i,has_next><#rt/>
+                            <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
+                            <input type="checkbox" name="names" value="${resource.name}"/><#t/>
+                        </@p.column><#t/>
+                        <@p.column code="resource.name">
+                        <img src="${base}/assets/common/img/file/${resource.ico}.gif" border="0"/> <#t/>
+                        <#if resource.image><a href="${base+resource.name}" target="_blank">${resource.filename}</a><#t/>
+                            <#else>${resource.filename}</#if></@p.column><#t/>
+                    <@p.column code="resource.size" align="right">${resource.size} KB</@p.column><#t/>
+                <@p.column code="resource.lastModified" align="center">${resource.lastModifiedDate?string('yyyy-MM-dd HH:mm:ss')!}</@p.column><#t/>
+                            <@p.column code="global.operate" align="center">
+                            <a href="v_rename.do?root=${root!?url}&name=${resource.name?url}"><@s.m "resource.rename"/></a> | <#rt/>
+                            <#if resource.editable><a href="v_edit.do?root=${root!?url}&name=${resource.name?url}"><@s.m "global.edit"/></a> | <#rt/></#if>
+                            <a href="o_delete_single.do?root=${root!?url}&name=${resource.name?url}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
+                        </@p.column><#t/>
+                    </@p.table>
+                    <div>
+                        <input type="hidden" name="relPath" value="${relPath!}"/>
+                        <input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/>
+                    </div>
+                    </form>
+            </div>
+    </div>
+
+
+
+    </div>
+
+    </div>
+
 <script src="${base}/thirdparty/swfupload/swfupload.js" type="text/javascript"></script>
 <script src="${base}/thirdparty/swfupload/swfupload.queue.js" type="text/javascript"></script>
 <script src="${base}/thirdparty/swfupload/fileprogress.js" type="text/javascript"></script>
@@ -70,75 +127,7 @@ function queueComplete2(numFilesUploaded) {
 	location.href="v_list.do?root=${root}";
 }
 </script>
-</head>
-<body>
-<div class="body-box">
-<div class="rhead">
-	<div class="rpos"><@s.m "global.position"/>: <@s.m "resource.function"/> - <@s.m "global.list"/></div>
-	<form class="ropt" method="post">
-	  <input type="hidden" name="root" value="${root}"/>
-&nbsp; <input type="submit" value="<@s.m "resource.create"/>" onclick="this.form.action='v_add.do';"/>
-		<input type="hidden" name="relPath" value="${relPath!}"/>
-	</form>
-	<div class="clear"></div>
-</div>
 
-
-<form method="post" enctype="multipart/form-data">
-<input type="hidden" name="root" value="${root!}"/>
-<input type="hidden" name="relPath" value="${relPath!}"/>
-<table border="0" style="padding-top:3px">
-<tr>
-	<td><@s.m "resource.currentDir"/>: ${root!}</td>
-	<td width="70" align="center"><span id="spanButtonPlaceHolder"></span></td>
-	<td><input class="cancel" id="btnCancel" type="button" value="<@s.m "global.cancel"/>" onclick="swfu.cancelQueue();" disabled="disabled" /></td>
-	<td>
-		<@s.m "template.createDir"/>: <input type="text" name="dirName" size="10" onkeypress="if(event.keyCode==13){$('#dirButton').click();return false;}"/>
-		<input id="dirButton" type="submit" value="<@s.m "template.createDir"/>" onclick="this.form.action='o_create_dir.do';"/>
-&nbsp;
-	</td>
-</tr>
-<tr><td colspan="4"><div id="fsUploadProgress"></div></td></tr>
-</table>
-</form>
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-<form id="tableForm" method="post">
-<@p.table value=list;resource,i,has_next><#rt/>
-	<@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
-		<input type="checkbox" name="names" value="${resource.name}"/><#t/>
-	</@p.column><#t/>
-	<@p.column code="resource.name">
-		<img src="${base}/assets/common/img/file/${resource.ico}.gif" border="0"/> <#t/>
-		<#if resource.image><a href="${base+resource.name}" target="_blank">${resource.filename}</a><#t/>
-		<#else>${resource.filename}</#if></@p.column><#t/>
-	<@p.column code="resource.size" align="right">${resource.size} KB</@p.column><#t/>
-	<@p.column code="resource.lastModified" align="center">${resource.lastModifiedDate?string('yyyy-MM-dd HH:mm:ss')!}</@p.column><#t/>
-	<@p.column code="global.operate" align="center">
-		<a href="v_rename.do?root=${root!?url}&name=${resource.name?url}"><@s.m "resource.rename"/></a> | <#rt/>
-		<#if resource.editable><a href="v_edit.do?root=${root!?url}&name=${resource.name?url}"><@s.m "global.edit"/></a> | <#rt/></#if>
-		<a href="o_delete_single.do?root=${root!?url}&name=${resource.name?url}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
-	</@p.column><#t/>
-</@p.table>
-<div>
-	<input type="hidden" name="relPath" value="${relPath!}"/>
-	<input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/>
-</div>
-</form>
-</div>
 <#include "/common/alert_message.html"/>
 </body>
 </html>

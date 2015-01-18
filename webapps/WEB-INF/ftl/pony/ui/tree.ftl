@@ -14,7 +14,7 @@ valueContent：值集合，指示复选框是否选中。
 isUrl：是否有链接。
 suffix：链接后缀。
 -->
-<#macro tree root treeId="t" target="rightFrame" showDeep=0
+<#macro tree root treeId="t"  showDeep=0
 isCheckBox=false checkBoxName="ids" vld="" valueContent=[]
 childName="child" treeName="treeName" leafName="treeLeaf"
 url="" durl="" params={} dparams={} prefix="" suffix=".do" isUrl=true>
@@ -27,13 +27,13 @@ url="" durl="" params={} dparams={} prefix="" suffix=".do" isUrl=true>
 <div id="${treeId}" class="pn-tree">
     <#if root?is_sequence>
 <#list root as node>
-        <@drawNode node=node treeId=treeId pid=treeId target=target showDeep=showDeep
+        <@drawNode node=node treeId=treeId pid=treeId  showDeep=showDeep
         isCheckBox=isCheckBox checkBoxName=checkBoxName valueContent=valueContent
         url=url durl=durl prefix=prefix suffix=suffix isUrl=isUrl
         index=node_index isEndList=[!node_has_next]/>
     </#list>
 <#else>
-        <@drawNode node=root treeId=treeId pid=treeId target=target showDeep=showDeep
+        <@drawNode node=root treeId=treeId pid=treeId  showDeep=showDeep
         isCheckBox=isCheckBox checkBoxName=checkBoxName valueContent=valueContent
         url=url durl=durl prefix=prefix suffix=suffix isUrl=isUrl/>
     </#if>
@@ -55,7 +55,7 @@ isEndList：祖先节点是否为末节点
 pid：父级ID
 index：当前层的序号
 -->
-<#macro drawNode node pid treeId target showDeep isCheckBox checkBoxName valueContent
+<#macro drawNode node pid treeId  showDeep isCheckBox checkBoxName valueContent
 url durl prefix suffix isUrl
 deep=0 isEndList=[true] index=0>
     <#local id=pid+'-'+index />
@@ -131,7 +131,7 @@ deep=0 isEndList=[true] index=0>
 <#list _tree_dparams?keys as pa>
 <#if pa_index==0>?<#else>&</#if>${pa}=${node[_tree_dparams[pa]]!?url}<#rt/>
 </#list>
-" target="${target}" onclick="Pn.Tree.switchDisplay('${id}',true)">${node[_tree_tree_name]}</a>
+"  onclick="Pn.Tree.switchDisplay('${id}',true)">${node[_tree_tree_name]}</a>
         <#else>
             <span onclick="Pn.Tree.switchDisplay('${id}')" style="cursor:pointer;">${node[_tree_tree_name]}</span>
         </#if>
@@ -140,7 +140,7 @@ deep=0 isEndList=[true] index=0>
         <div id="${id+'-'}" style="${openDisplay}">
             <#if node[_tree_child_name]??>
 <#list node[_tree_child_name] as cnode>
-                <@drawNode node=cnode pid=id target=target treeId=treeId showDeep=showDeep
+                <@drawNode node=cnode pid=id  treeId=treeId showDeep=showDeep
                 isCheckBox=isCheckBox checkBoxName=checkBoxName valueContent=valueContent
                 url=url durl=durl prefix=prefix suffix=suffix isUrl=isUrl
                 deep=deep+1 isEndList=isEndList+[!cnode_has_next] index=cnode_index />
@@ -155,7 +155,7 @@ deep=0 isEndList=[true] index=0>
 <#list _tree_params?keys as pa>
 <#if pa_index==0>?<#else>&</#if>${pa}=${node[_tree_params[pa]]!?url}<#rt/>
 </#list>
-" target="${target}">${node[_tree_tree_name]}</a>
+" >${node[_tree_tree_name]}</a>
         </#if>
     </div>
     </#if>

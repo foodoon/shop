@@ -51,6 +51,13 @@ public class ConfigAct {
         return "config/global_edit";
     }
 
+    @RequestMapping({"/config/v_list.do"})
+    public String list(HttpServletRequest request, ModelMap model) {
+        model.addAttribute("global", SiteUtils.getWeb(request).getGlobal());
+
+        return "config/list";
+    }
+
     @RequestMapping({"/config/o_global_update.do"})
     public String globalUpdate(Global global, HttpServletRequest request, ModelMap model) {
 
