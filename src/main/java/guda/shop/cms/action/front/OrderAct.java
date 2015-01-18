@@ -68,191 +68,113 @@ public class OrderAct {
 
     @RequestMapping({"/order/myorder*.jspx"})
     public String myOrder(Integer status, String code, String userName, Long paymentId, Long shippingId, String startTime, String endTime, Double startOrderTotal, Double endOrderTotal, HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
         if (member == null) {
-
             return "redirect:../login.jspx";
         }
-
         if (StringUtils.isBlank(userName)) {
-
             userName = null;
         }
-
         if (StringUtils.isBlank(startTime)) {
-
             startTime = null;
         }
-
         if (StringUtils.isBlank(endTime)) {
-
             endTime = null;
         }
-
         List shippingList = this.shippingMng.getList(web.getId(), true);
-
         List paymentList = this.paymentMng.getList(web.getId(), true);
-
         model.addAttribute("historyProductIds", getHistoryProductIds(request));
-
         model.addAttribute("paymentList", paymentList);
-
         model.addAttribute("shippingList", shippingList);
-
         model.addAttribute("status", status);
-
         model.addAttribute("code", code);
-
         model.addAttribute("userName", userName);
-
         model.addAttribute("startTime", startTime);
-
         model.addAttribute("endTime", endTime);
-
         model.addAttribute("paymentId", paymentId);
-
         model.addAttribute("shippingId", shippingId);
-
         model.addAttribute("startOrderTotal", startOrderTotal);
-
         model.addAttribute("endOrderTotal", endOrderTotal);
-
         Integer pageNo = Integer.valueOf(URLHelper.getPageNo(request));
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         ShopFrontHelper.setDynamicPageData(request, model, web, "", "myorder", ".jspx", pageNo.intValue());
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myOrder", new Object[0]));
     }
 
     @RequestMapping({"/order/myOrderView.jspx"})
     public String myOrderView(Long orderId, HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
         if (member == null) {
-
             return "redirect:../login.jspx";
         }
-
         WebErrors errors = validateOrderView(orderId, member, request);
-
         if (errors.hasErrors()) {
-
             return FrontHelper.showError(errors, web, model, request);
         }
-
         Order order = this.manager.findById(orderId);
-
         model.addAttribute("order", order);
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myOrderView", new Object[0]));
     }
 
     @RequestMapping(value = {"/order/order_shipping.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String orderShipping(Long deliveryInfo, Long shippingMethodId, Long paymentMethodId, Long[] cartItemId, String comments, String memberCouponId, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
         if (member == null) {
-
             return "redirect:../login.jspx";
         }
-
         Order order = null;
-
         Cart cart = this.shoppingSvc.getCart(member.getId());
-
         if (cart != null) {
-
             order = this.manager.createOrder(cart, cartItemId, shippingMethodId, deliveryInfo, paymentMethodId, comments, request.getRemoteAddr(), member, web.getId(), memberCouponId);
         }
-
         this.shoppingSvc.clearCookie(request, response);
-
         List list = this.paymentPluginsMng.getList();
-
         model.addAttribute("list", list);
-
         model.addAttribute("order", order);
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.successfullyOrder", new Object[0]));
     }
 
     @RequestMapping({"/order/deleteOrder.jspx"})
     public void deleteOrder(Long orderId, HttpServletRequest request, HttpServletResponse response)
             throws JSONException {
-
         JSONObject json = new JSONObject();
-
         if (orderId != null) {
-
             Order order = this.manager.findById(orderId);
-
             order.getItems().clear();
-
             this.manager.deleteById(orderId);
         }
-
         json.put("success", true);
-
         ResponseUtils.renderJson(response, json.toString());
     }
 
     @RequestMapping({"/order/abolishOrder.jspx"})
     public void abolishOrder(Long orderId, HttpServletRequest request, HttpServletResponse response)
             throws JSONException {
-
         JSONObject json = new JSONObject();
-
         ShopMember member = MemberThread.get();
-
         if (orderId != null) {
-
             Order order = this.manager.findById(orderId);
-
             order.setStatus(Integer.valueOf(3));
-
             Set<OrderItem> set = order.getItems();
             Product product;
-
             for (OrderItem item : set) {
-
                 product = item.getProduct();
-
                 if (item.getProductFash() != null) {
-
                     ProductFashion fashion = item.getProductFash();
-
                     fashion.setStockCount(Integer.valueOf(fashion.getStockCount().intValue() + item.getCount().intValue()));
-
                     product.setStockCount(Integer.valueOf(product.getStockCount().intValue() + item.getCount().intValue()));
-
                     this.productFashionMng.update(fashion);
                 } else {
-
                     product.setStockCount(Integer.valueOf(product.getStockCount().intValue() + item.getCount().intValue()));
                 }
-
                 this.productMng.updateByUpdater(product);
             }
-
-
             member.setFreezeScore(Integer.valueOf(member.getFreezeScore().intValue() - order.getScore().intValue()));
-
             this.shopMemberMng.update(member);
 
             List<ShopScore> list = this.shopScoreMng.getlist(Long.toString(order.getCode()));

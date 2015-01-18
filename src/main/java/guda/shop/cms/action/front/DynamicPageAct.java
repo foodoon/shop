@@ -29,7 +29,7 @@ public class DynamicPageAct {
     public static final String TPL_INDEX = "tpl.index";
     private static final String BRAND = "tpl.brand";
     private static final String BRAND_DETAIL = "tpl.brandDetail";
-    private static final String GLOBAL_CURRENT_PATH = "global_current_path";
+    public static final String GLOBAL_CURRENT_PATH = "global_current_path";
     @Autowired
     private CategoryMng categoryMng;
     @Autowired
