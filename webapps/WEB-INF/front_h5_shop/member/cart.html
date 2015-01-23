@@ -13,7 +13,7 @@
     </script>
     <script type="text/javascript">
         function addToCart(productId, fashId, count, isAdd) {
-            $.post('${base}/add_to_cart.jspx', {
+            $.post('${base}/add_to_cart.htm', {
                 'productId': productId,
                 'productFashId': fashId,//新加属性（wang ze wu ）
                 'count': count,
@@ -31,14 +31,14 @@
                     alert("暂无库存!");
                     return false;
                 }
-                $.post("${base}/add_to_cart.jspx", {
+                $.post("${base}/add_to_cart.htm", {
                     'productId': pid,
                     'productFashId': faid,//新加属性（wang ze wu ）
                     'count': 1,
                     'isAdd': true
                 }, function (data) {
                     if (data.status == 1) {
-                        location.href = '${base}/shopping_cart.jspx?backUrl=${location}';
+                        location.href = '${base}/shopping_cart.htm?backUrl=${location}';
                     } else if (data.status == 0) {
                         location.href = '${loginUrl}';
                     } else {
@@ -147,7 +147,7 @@
 </ul>
 [#if cart??]
 <div class="gray-box pro-li">
-<form id="jvForm" action="../cart/checkout_shipping.jspx" method="post">
+<form id="jvForm" action="../cart/checkout_shipping.htm" method="post">
 <div class="shop_name">
     <h2>
         <input type="checkbox" id="chkBill" class="chkAllBill" onclick="checkedStatus(this.id);"

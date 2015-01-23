@@ -33,7 +33,7 @@ public class CouponAct {
     @Autowired
     private MemberCouponMng memberCouponMng;
 
-    @RequestMapping(value = {"/coupon*.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/coupon*.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String list(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -42,12 +42,12 @@ public class CouponAct {
 
         ShopFrontHelper.setCommonData(request, model, web, pageNo);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, RequestUtils.getLocation(request), "coupon", ".jspx", pageNo);
+        ShopFrontHelper.setDynamicPageData(request, model, web, RequestUtils.getLocation(request), "coupon", ".htm", pageNo);
 
         return web.getTplSys("coupon", MessageResolver.getMessage(request, "tpl.coupon", new Object[0]));
     }
 
-    @RequestMapping({"/getcoupon.jspx"})
+    @RequestMapping({"/getcoupon.htm"})
     public void fetchGift(Long id, HttpServletRequest request, HttpServletResponse response, ModelMap model) throws JSONException {
 
         Website web = SiteUtils.getWeb(request);

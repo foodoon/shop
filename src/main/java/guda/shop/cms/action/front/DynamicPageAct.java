@@ -168,7 +168,7 @@ public class DynamicPageAct {
     }
 
 
-    @RequestMapping(value = {"/brand.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/brand.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String brand(Long id, HttpServletRequest request, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         WebErrors errors = validateBrand(id, request);

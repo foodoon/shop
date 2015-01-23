@@ -65,7 +65,7 @@ public class RegisterAct {
     @Autowired
     private SessionProvider session;
 
-    @RequestMapping(value = {"/register.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/register.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String registerInput(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -75,7 +75,7 @@ public class RegisterAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.register", new Object[0]));
     }
 
-    @RequestMapping(value = {"/register.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/register.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String registerSubmit(String checkcode, String username, String email, String password, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -138,7 +138,7 @@ public class RegisterAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.registerResult", new Object[0]));
     }
 
-    @RequestMapping(value = {"/active.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/active.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String active(String userName, String activationCode, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws IOException {
 
@@ -209,7 +209,7 @@ public class RegisterAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.registerActiveStatus", new Object[0]));
     }
 
-    @RequestMapping(value = {"/reactive.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/reactive.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public void reactive(Long userId, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws IOException {
 
@@ -269,7 +269,7 @@ public class RegisterAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/treaty.jspx"})
+    @RequestMapping({"/treaty.htm"})
     public String treaty(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -284,7 +284,7 @@ public class RegisterAct {
         );
     }
 
-    @RequestMapping({"/username_unique.jspx"})
+    @RequestMapping({"/username_unique.htm"})
     public void checkUsername(HttpServletRequest request, HttpServletResponse response) {
 
         String username = RequestUtils.getQueryParam(request, "username");
@@ -308,7 +308,7 @@ public class RegisterAct {
         ResponseUtils.renderJson(response, "true");
     }
 
-    @RequestMapping({"/email_unique.jspx"})
+    @RequestMapping({"/email_unique.htm"})
     public void checkEmail(HttpServletRequest request, HttpServletResponse response) {
 
         String email = RequestUtils.getQueryParam(request, "email");

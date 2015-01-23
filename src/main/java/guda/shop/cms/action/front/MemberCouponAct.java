@@ -22,7 +22,7 @@ public class MemberCouponAct {
     @Autowired
     private MemberCouponMng manage;
 
-    @RequestMapping(value = {"/myCoupon.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/myCoupon.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String pay1(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

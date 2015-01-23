@@ -105,12 +105,12 @@
     <div class="topleft">
         <span class="welcome">您好,欢迎光临JSPGO!</span>
     <span class="login_text">
-       <a href="/login.jspx" target="_self">用户登录</a> |
-       <a href="/register.jspx" target="_self">免费注册</a> |
-       <a href="/forgot_password.jspx" target="_blank">找回密码</a>
+       <a href="/login.htm" target="_self">用户登录</a> |
+       <a href="/register.htm" target="_self">免费注册</a> |
+       <a href="/forgot_password.htm" target="_blank">找回密码</a>
     </span>
 </div>    <div class="topright">
-        <span class="arrow_text"><a href="/shopMember/index.jspx" target="_self">我的JSPGO</a></span>
+        <span class="arrow_text"><a href="/shopMember/index.htm" target="_self">我的JSPGO</a></span>
     <span>
          <a href="javascript:void(0);"
             onclick="window.external.addFavorite('http://demo2.11077.net','jspgou-国内专业、开源、免费的JAVA (JSP)版网上商城管理系统')">加入收藏</a>  |
@@ -124,7 +124,7 @@
 
     <div class="search">
         <div>
-            <form id="searchForm" action="/search.jspx">
+            <form id="searchForm" action="/search.htm">
                 <input name="q" id="q" value="请输入关键词" type="text"
                        onfocus="if(this.value=='请输入关键词')this.value=''"
                        onblur="if(this.value=='')this.value='请输入关键词'" maxlength="24"
@@ -204,9 +204,9 @@
     </ul>
     <div class="nav_rg">
         <div class="gwc">
-            <a href="/cart/shopping_cart.jspx">我的购物车<span id="cart_total_items"></span>个商品</a>
+            <a href="/cart/shopping_cart.htm">我的购物车<span id="cart_total_items"></span>个商品</a>
         </div>
-        <a href="/cart/checkout_shipping.jspx" class="jiesuan"></a>
+        <a href="/cart/checkout_shipping.htm" class="jiesuan"></a>
     </div>
     <script type="text/javascript">
         $('#cart_total_items').html(Shop.cartTotalItems());
@@ -359,18 +359,18 @@
             <ul class="part1-bottom-list">
                 <li><img src="/u/201407/09112204ybg6.png" width="74" height="75"/>
 
-                    <p> 名称： <a target="_blank" href="/present.jspx?id=2">test</a></p>
+                    <p> 名称： <a target="_blank" href="/present.htm?id=2">test</a></p>
 
                     <p>积分: 10000</p>
                 </li>
                 <li><img src="/u/201407/09112222y6v6.png" width="74" height="75"/>
 
-                    <p> 名称： <a target="_blank" href="/present.jspx?id=1">天天</a></p>
+                    <p> 名称： <a target="_blank" href="/present.htm?id=1">天天</a></p>
 
                     <p>积分: 400</p>
                 </li>
             </ul>
-            <div style="float:right"><a href="/gift.jspx" target="_blank">更多</a></div>
+            <div style="float:right"><a href="/gift.htm" target="_blank">更多</a></div>
         </div>
         <div class="ad1"><a href="#" target="_blank"><img src="/assets/global/img/right_ad1.gif" width="224"/></a></div>
     </div>

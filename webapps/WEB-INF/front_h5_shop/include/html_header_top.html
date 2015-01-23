@@ -1,48 +1,61 @@
-<header class="container">
+<header class="am-topbar ">
+    <div class="am-container">
 
-    <div class="head-right">
         [#if member??]
-          <span>您好,<b color="red">${member.username!}</b>.欢迎光临</span>
+        <div class="am-topbar-left">您好,<b color="red">${member.username!}</b>.欢迎光临</div>
         [#else]
-        <span>您好,欢迎光临</span>
+        <div class="am-topbar-left">您好,欢迎光临</div>
         [/#if]
-        <ul class="top-nav">
-            [#if member??]
-            <li><a href="${base}/logout.jspx">退出登录</a></li>
-            <li><a href="${base}/shopMember/index.jspx" target="_self">个人中心</a></li>
-            [#else]
-            <li><a href="${base}/login.jspx" target="_self">用户登录</a> </li>
-            <li><a href="${base}/register.jspx" target="_self">免费注册</a> </li>
-            <li><a href="${base}/forgot_password.jspx" target="_blank">找回密码</a></li>
-            [/#if]
-        </ul>
+
+        [#if member??]
+        <div class="am-topbar-right"><a href="${base}/logout.htm">退出登录</a></div>
+        <div class="am-topbar-right"><a href="${base}/shopMember/index.htm" target="_self">个人中心</a></div>
+        [#else]
+        <div class="am-topbar-right"><a href="${base}/login.htm" target="_self">用户登录</a> </div>
+        <div class="am-topbar-right"><a href="${base}/register.htm" target="_self">免费注册</a> </div>
+        <div class="am-topbar-right"><span><a href="${base}/forgot_password.htm" target="_blank">找回密码</a></span></div>
+        [/#if]
 
 
-
-        <section class="header-bottom">
-            <div class="cart-block">
-                <ul>
-                    <li>(<span id="cart_total_items"></span>)</li>
-                    <li><a href="${base}/cart/shopping_cart.jspx" title="Cart">
-                        <img title="Item" alt="Item" src="${base}/assets/h5_shop/images/item_icon.png" /></a></li>
-                    <li><a href="${base}/cart/checkout_shipping.jspx" >结算</a></li>
-                </ul>
-                <script type="text/javascript">
-                    $('#cart_total_items').html(Shop.cartTotalItems());
-                </script>
-
-            </div>
-            <div class="search-block">
-                [#include "../include/html_header_search.html"/]
-            </div>
-        </section>
     </div>
-    <h1 class="logo"><a href="${base}/" title="Logo">
-        <img title="Logo" alt="Logo" height="100px;" src="${base}/assets/h5_shop/images/logo.jpg" />
-    </a></h1>
-    <nav id="smoothmenu1" class="ddsmoothmenu mainMenu">
-        <ul id="nav">
+</header>
+<div class="am-g am-container" >
+    <div class="am-u-sm-2">
+        <a href="${base}/" title="Logo">
+            <img title="Logo" alt="Logo" height="100px;" src="${base}/assets/h5_shop/images/logo.jpg" />
+        </a>
+    </div>
+    <div class="am-u-sm-8 am-vertical-align" style="height:72px;">
+        <div class="am-vertical-align-middle" style="width:100%;">
+            <form class="am-form "  id="searchForm" action="${base}/search.htm">
+                <input  name="q" id="q" value="${q!'请输入关键词'}" type="text"
+                        onfocus="if(this.value=='请输入关键词')this.value=''"
+                        onblur="if(this.value=='')this.value='请输入关键词'" maxlength="24"
+                        />
+                <input type="submit" style="display: none" value="搜索"/>
+            </form>
+        </div>
+    </div>
+    <div class="am-u-sm-2  am-vertical-align"  style="height:72px;">
+        <div class="am-vertical-align-middle" style="width:100%;">
 
+            <a href="${base}/cart/shopping_cart.htm" title="Cart">
+                <img title="Item" alt="Item" src="${base}/assets/h5_shop/images/item_icon.png" /></a>
+            (<span id="cart_total_items"></span>)
+            <a href="${base}/cart/checkout_shipping.htm" >结算</a>
+        </div>
+        <script type="text/javascript">
+            $('#cart_total_items').html(Shop.cartTotalItems());
+        </script>
+    </div>
+
+
+
+</div>
+<!-- 导航开始-->
+<div class="am-g am-container" >
+    <nav data-am-widget="menu" class="am-menu  am-menu-stack">
+        <ul class="am-menu-nav am-avg-sm-1">
             <li [#if global_current_path??][#if "/" == "${global_current_path}"] class="active" [/#if][/#if]> <a class="active"   href="${base}/" title="Home">首页</a></li>
             [@shop_Category]
             [#list tag_list as ctg]
@@ -51,37 +64,7 @@
             </li>
             [/#list]
             [/@shop_Category]
-            <!--
-            <li class="active"><a href="index-2.html" title="Home">Home</a></li>
-            <li class=""><a href="classify.html" title="Shop by">Shop by</a>
-                <ul>
-                    <li><a href="classify.html">Woman Collection</a></li>
-                    <li><a href="classify.html">Men Collection</a></li>
-                    <li><a href="classify.html">Accessories</a></li>
-                    <li><a href="classify.html">Mobile</a>
-                        <ul>
-                            <li><a href="classify.html">Second level</a></li>
-                            <li><a href="classify.html">Second level</a></li>
-                            <li><a href="classify.html">Second level</a></li>
-                            <li><a href="classify.html">Second level</a></li>
-                            <li><a href="classify.html">Second level</a></li>
-                            <li><a href="classify.html">Second level</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="classify.html">Shoes</a></li>
-                    <li><a href="classify.html">Others</a></li>
-                </ul>
-            </li>
-            <li class=""><a href="blog.html" title="Blog">Blog</a></li>
-            <li class=""><a href="faq.html" title="Faq">Faq</a></li>
-            <li class=""><a href="about_us.html" title="About us">About us</a></li>
-            <li class=""><a href="404_error.html" title="Pages">Pages</a></li>
-            <li class=""><a href="contact_us.html" title="Footwear">Contact us</a></li>
-            -->
+
         </ul>
     </nav>
-
-
-
-
-</header>
+</div>

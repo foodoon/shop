@@ -8,7 +8,7 @@
     <script type="text/javascript">
         function insertConsult(pid, mid) {
             var content = $("#goods_question_contens_box").val();
-            $.post("insertConsult.jspx", {
+            $.post("insertConsult.htm", {
                 productId: pid, content: content
             }, function (data) {
                 if (data == 'false') {
@@ -152,8 +152,8 @@
     [/#list]
     [@pagination_style style='8'/]
     <div class="clear"></div>
-    <form id="loginForm" action="${base!}/login.jspx" method="get" target="_top"></form>
-    <form id="tableForm" action="consultProduct.jspx" method="post">
+    <form id="loginForm" action="${base!}/login.htm" method="get" target="_top"></form>
+    <form id="tableForm" action="consultProduct.htm" method="post">
         <input type="hidden" value="${product.id!}" name="productId">
     </form>
     <ul class="wenti_box">

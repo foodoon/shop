@@ -44,7 +44,7 @@ public class GiftAct {
     @Autowired
     private GiftExchangeMng giftExchangeMng;
 
-    @RequestMapping(value = {"/gift*.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/gift*.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String list(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -53,12 +53,12 @@ public class GiftAct {
 
         ShopFrontHelper.setCommonData(request, model, web, pageNo);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, RequestUtils.getLocation(request), "gift", ".jspx", pageNo);
+        ShopFrontHelper.setDynamicPageData(request, model, web, RequestUtils.getLocation(request), "gift", ".htm", pageNo);
 
         return web.getTplSys("gift", MessageResolver.getMessage(request, "tpl.gift", new Object[0]));
     }
 
-    @RequestMapping(value = {"/present.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/present.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String present(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -75,7 +75,7 @@ public class GiftAct {
         return web.getTplSys("gift", MessageResolver.getMessage(request, "tpl.present", new Object[0]));
     }
 
-    @RequestMapping({"/fetchGift.jspx"})
+    @RequestMapping({"/fetchGift.htm"})
     public void fetchGift(Long giftId, Integer giftNumb, HttpServletRequest request, HttpServletResponse response, ModelMap model) throws JSONException {
 
         Website web = SiteUtils.getWeb(request);
@@ -114,7 +114,7 @@ public class GiftAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/exchange.jspx"})
+    @RequestMapping({"/exchange.htm"})
     public String shippingInput(Long id, Integer count, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -123,7 +123,7 @@ public class GiftAct {
 
         if (member == null) {
 
-            return "redirect:login.jspx";
+            return "redirect:login.htm";
         }
 
         WebErrors errors = validateGiftView(id, request);
@@ -169,7 +169,7 @@ public class GiftAct {
         );
     }
 
-    @RequestMapping(value = {"/create_exchange.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/create_exchange.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String createExchange(Long deliveryInfo, Long id, Integer count, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -178,7 +178,7 @@ public class GiftAct {
 
         if (member == null) {
 
-            return "redirect:login.jspx";
+            return "redirect:login.htm";
         }
 
         WebErrors errors = validateGiftView(id, request);

@@ -515,7 +515,7 @@ function decrement(base, itemId, j) {
     $("#total_score_items_" + e + "_" + index).html('');
     $("#total_score_items_" + e + "_" + index).html(accMul(score, c));
     aa();
-    $.post(base + "/cart/ajaxUpdateCartItem.jspx", {
+    $.post(base + "/cart/ajaxUpdateCartItem.htm", {
         'cartItemId': itemId,
         'count': c
     }, function (data) {
@@ -564,7 +564,7 @@ function increment(base, itemId, j) {
     $("#total_score_items_" + e + "_" + index).html('');
     $("#total_score_items_" + e + "_" + index).html(accMul(score, c));
     aa();
-    $.post(base + "/cart/ajaxUpdateCartItem.jspx", {
+    $.post(base + "/cart/ajaxUpdateCartItem.htm", {
         'cartItemId': itemId,
         'count': c
     }, function (data) {
@@ -615,7 +615,7 @@ function calSubTotal(base, itemId, i, h, g, score, dj, dweight) {
     $("#total_score_items_" + e + "_" + index).html('');
     $("#total_score_items_" + e + "_" + index).html(accMul(score, a));
     aa();
-    $.post(base + "/cart/ajaxUpdateCartItem.jspx", {
+    $.post(base + "/cart/ajaxUpdateCartItem.htm", {
         'cartItemId': itemId,
         'count': a
     }, function (data) {
@@ -648,7 +648,7 @@ function ajaxEmpty() {
 
 /*删除购物车项*/
 function ajaxDeleteCartItem(base, cartItemId) {
-    $.post(base + "/cart/ajaxDeleteCartItem.jspx", {
+    $.post(base + "/cart/ajaxDeleteCartItem.htm", {
         'cartItemId': cartItemId
     }, function (data) {
         if (data.status == 1) {
@@ -687,7 +687,7 @@ function checksubmit() {
         var count = $("#items_" + e + "_" + index).val();
         var fashId = $("#items_fash_" + e + "_" + index).val();
         if ($("#chkMat_" + e + "_" + index).attr("checked")) {
-            $.post(URLPrefix.url + "/cart/checkStockCount.jspx", {
+            $.post(URLPrefix.url + "/cart/checkStockCount.htm", {
                 'productId': e,
                 'productFashionId': fashId,
                 'count': count
@@ -788,7 +788,7 @@ ajaxQueue.add = function (a) {
 ajaxQueue.confirm = function () {
     cart2.blockUI();
     ajaxQueue.confirmFlag = true;
-    var a = "/cart/checkCartBeforeConfirm.jspx?rd=" + Math.random();
+    var a = "/cart/checkCartBeforeConfirm.htm?rd=" + Math.random();
     optMan.mergeReq("check", a, "0")
 };
 

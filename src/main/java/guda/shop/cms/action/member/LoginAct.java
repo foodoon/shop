@@ -35,7 +35,7 @@ public class LoginAct {
     @Autowired
     private UserMng userMng;
 
-    @RequestMapping(value = {"/login.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/login.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String loginInput(String returnUrl, String message, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -58,7 +58,7 @@ public class LoginAct {
         );
     }
 
-    @RequestMapping(value = {"/login.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/login.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String loginSubmit(String username, String password, String returnUrl, String redirectUrl, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -138,7 +138,7 @@ public class LoginAct {
         return null;
     }
 
-    @RequestMapping({"/logout.jspx"})
+    @RequestMapping({"/logout.htm"})
     public String logout(String redirectUrl, HttpServletRequest request, HttpServletResponse response) {
 
         this.loginSvc.logout(request, response);

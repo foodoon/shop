@@ -42,7 +42,7 @@ public class OrderReturnAct {
     @Autowired
     private ShopDictionaryMng shopDictionaryMng;
 
-    @RequestMapping({"/orderReturn/orderReturn.jspx"})
+    @RequestMapping({"/orderReturn/orderReturn.htm"})
     public String getOrderReturn(Long orderId, Boolean delivery, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -51,7 +51,7 @@ public class OrderReturnAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         WebErrors errors = validateOrderView(orderId, member, request);
@@ -92,7 +92,7 @@ public class OrderReturnAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.noDeliveryOrderReturn", new Object[0]));
     }
 
-    @RequestMapping(value = {"/orderReturn/orderReturnRefer.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/orderReturn/orderReturnRefer.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String getOrderReturnRefer(OrderReturn bean, Long orderId, Boolean delivery, Long reasonId, String[] picPaths, String[] picDescs, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -101,7 +101,7 @@ public class OrderReturnAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         WebErrors errors = validateOrderView(orderId, member, request);

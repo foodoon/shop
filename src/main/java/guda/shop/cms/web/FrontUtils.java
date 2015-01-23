@@ -69,7 +69,7 @@ public class FrontUtils {
 
     public static String showLogin(HttpServletRequest paramHttpServletRequest, ModelMap paramModelMap) {
         StringBuilder localStringBuilder = new StringBuilder("redirect:");
-        localStringBuilder.append("/login.jspx").append("?");
+        localStringBuilder.append("/login.htm").append("?");
         localStringBuilder.append("returnUrl").append("=");
         localStringBuilder.append(RequestUtils.getLocation(paramHttpServletRequest));
         return localStringBuilder.toString();

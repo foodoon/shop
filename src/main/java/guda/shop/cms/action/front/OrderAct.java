@@ -66,12 +66,12 @@ public class OrderAct {
     @Autowired
     private OrderReturnMng orderReturnMng;
 
-    @RequestMapping({"/order/myorder*.jspx"})
+    @RequestMapping({"/order/myorder*.htm"})
     public String myOrder(Integer status, String code, String userName, Long paymentId, Long shippingId, String startTime, String endTime, Double startOrderTotal, Double endOrderTotal, HttpServletRequest request, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         ShopMember member = MemberThread.get();
         if (member == null) {
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
         if (StringUtils.isBlank(userName)) {
             userName = null;
@@ -98,16 +98,16 @@ public class OrderAct {
         model.addAttribute("endOrderTotal", endOrderTotal);
         Integer pageNo = Integer.valueOf(URLHelper.getPageNo(request));
         ShopFrontHelper.setCommonData(request, model, web, 1);
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "myorder", ".jspx", pageNo.intValue());
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "myorder", ".htm", pageNo.intValue());
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myOrder", new Object[0]));
     }
 
-    @RequestMapping({"/order/myOrderView.jspx"})
+    @RequestMapping({"/order/myOrderView.htm"})
     public String myOrderView(Long orderId, HttpServletRequest request, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         ShopMember member = MemberThread.get();
         if (member == null) {
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
         WebErrors errors = validateOrderView(orderId, member, request);
         if (errors.hasErrors()) {
@@ -119,12 +119,12 @@ public class OrderAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myOrderView", new Object[0]));
     }
 
-    @RequestMapping(value = {"/order/order_shipping.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/order/order_shipping.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String orderShipping(Long deliveryInfo, Long shippingMethodId, Long paymentMethodId, Long[] cartItemId, String comments, String memberCouponId, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         ShopMember member = MemberThread.get();
         if (member == null) {
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
         Order order = null;
         Cart cart = this.shoppingSvc.getCart(member.getId());
@@ -139,7 +139,7 @@ public class OrderAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.successfullyOrder", new Object[0]));
     }
 
-    @RequestMapping({"/order/deleteOrder.jspx"})
+    @RequestMapping({"/order/deleteOrder.htm"})
     public void deleteOrder(Long orderId, HttpServletRequest request, HttpServletResponse response)
             throws JSONException {
         JSONObject json = new JSONObject();
@@ -152,7 +152,7 @@ public class OrderAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/order/abolishOrder.jspx"})
+    @RequestMapping({"/order/abolishOrder.htm"})
     public void abolishOrder(Long orderId, HttpServletRequest request, HttpServletResponse response)
             throws JSONException {
         JSONObject json = new JSONObject();
@@ -192,7 +192,7 @@ public class OrderAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/order/accomplishOrder.jspx"})
+    @RequestMapping({"/order/accomplishOrder.htm"})
     public void accomplishOrder(Long orderId, HttpServletRequest request, HttpServletResponse response)
             throws JSONException {
 
@@ -232,7 +232,7 @@ public class OrderAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/order/order_payAgain.jspx"})
+    @RequestMapping({"/order/order_payAgain.htm"})
     public String payOrderAgain(Long orderId, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -241,7 +241,7 @@ public class OrderAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         WebErrors errors = validateOrderView(orderId, member, request);
@@ -266,7 +266,7 @@ public class OrderAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.successfullyOrder", new Object[0]));
     }
 
-    @RequestMapping({"/order/myReturnOrder*.jspx"})
+    @RequestMapping({"/order/myReturnOrder*.htm"})
     public String myReturnOrder(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -275,7 +275,7 @@ public class OrderAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
 
@@ -289,12 +289,12 @@ public class OrderAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "myReturnOrder", ".jspx", pageNo.intValue());
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "myReturnOrder", ".htm", pageNo.intValue());
 
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myReturnOrder", new Object[0]));
     }
 
-    @RequestMapping({"/order/shipments.jspx"})
+    @RequestMapping({"/order/shipments.htm"})
     public String shipments(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -303,7 +303,7 @@ public class OrderAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         WebErrors errors = validateOrderReturnView(id, member, request);
@@ -322,7 +322,7 @@ public class OrderAct {
         return myReturnOrder(request, model);
     }
 
-    @RequestMapping({"/order/accomplish.jspx"})
+    @RequestMapping({"/order/accomplish.htm"})
     public String accomplish(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -331,7 +331,7 @@ public class OrderAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         WebErrors errors = validateOrderReturnView(id, member, request);

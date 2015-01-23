@@ -34,7 +34,7 @@ public class AlipayAct extends Alipay {
     @Autowired
     private PaymentPluginsMng paymentPluginsMng;
 
-    @RequestMapping(value = {"/pay.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/pay.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String pay(Long orderId, String code, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -77,7 +77,7 @@ public class AlipayAct extends Alipay {
         return FrontHelper.pageNotFound(web, model, request);
     }
 
-    @RequestMapping({"/aliReturn.jspx"})
+    @RequestMapping({"/aliReturn.htm"})
     public String aliReturn(HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws UnsupportedEncodingException {
 
@@ -158,10 +158,10 @@ public class AlipayAct extends Alipay {
         String payment_type = "1";
 
 
-        String notify_url = "http://" + web.getDomain() + "/aliReturn.jspx";
+        String notify_url = "http://" + web.getDomain() + "/aliReturn.htm";
 
 
-        String return_url = "http://" + web.getDomain() + "/aliReturn.jspx";
+        String return_url = "http://" + web.getDomain() + "/aliReturn.htm";
 
 
         String seller_email = paymentPlugins.getSellerEmail();
@@ -259,7 +259,7 @@ public class AlipayAct extends Alipay {
         return sHtmlText;
     }
 
-    @RequestMapping({"/aliReturnUrl.jspx"})
+    @RequestMapping({"/aliReturnUrl.htm"})
     public String aliReturndirect(HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws UnsupportedEncodingException {
 
@@ -334,10 +334,10 @@ public class AlipayAct extends Alipay {
         String payment_type = "1";
 
 
-        String notify_url = "http://" + web.getDomain() + "/aliReturnUrl.jspx";
+        String notify_url = "http://" + web.getDomain() + "/aliReturnUrl.htm";
 
 
-        String return_url = "http://" + web.getDomain() + "/aliReturnUrl.jspx";
+        String return_url = "http://" + web.getDomain() + "/aliReturnUrl.htm";
 
 
         String seller_email = paymentPlugins.getSellerEmail();

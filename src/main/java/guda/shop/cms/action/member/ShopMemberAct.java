@@ -51,7 +51,7 @@ public class ShopMemberAct {
     @Autowired
     private ShopDictionaryMng shopDictionaryMng;
 
-    @RequestMapping(value = {"/shopMember/index.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMember/index.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String index(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -61,7 +61,7 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         BigDecimal money = this.dao.getMemberMoneyByYear(member.getId());
@@ -86,7 +86,7 @@ public class ShopMemberAct {
         );
     }
 
-    @RequestMapping(value = {"/shopMember/profile.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMember/profile.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -96,7 +96,7 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
 
@@ -132,7 +132,7 @@ public class ShopMemberAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberProfile", new Object[0]));
     }
 
-    @RequestMapping(value = {"/shopMember/profile.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/shopMember/profile.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String profileSubmit(ShopMember bean, Long groupId, Long userDegreeId, Long degreeId, Long incomeDescId, Long workSeniorityId, Long familyMembersId, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         ShopMember member = MemberThread.get();
@@ -140,7 +140,7 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         bean = this.manager.update(bean, groupId, userDegreeId, degreeId, incomeDescId, workSeniorityId, familyMembersId);
@@ -150,7 +150,7 @@ public class ShopMemberAct {
         return index(request, response, model);
     }
 
-    @RequestMapping(value = {"/shopMember/pwd.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMember/pwd.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String passwordInput(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -160,7 +160,7 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
@@ -172,7 +172,7 @@ public class ShopMemberAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberPassword", new Object[0]));
     }
 
-    @RequestMapping(value = {"/shopMember/portrait.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMember/portrait.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String portrait(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -182,7 +182,7 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
@@ -190,7 +190,7 @@ public class ShopMemberAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberPortrait", new Object[0]));
     }
 
-    @RequestMapping(value = {"/shopMember/updateAvatar.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/shopMember/updateAvatar.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String updateAvatar(String picPaths, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         ShopMember member = MemberThread.get();
@@ -198,17 +198,17 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         member.setAvatar(picPaths);
 
         this.manager.update(member);
 
-        return "redirect: index.jspx";
+        return "redirect: index.htm";
     }
 
-    @RequestMapping(value = {"/shopMember/pwd.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/shopMember/pwd.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String passwordSubmit(String origPwd, String newPwd, String email, String nextUrl, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws IOException {
 
@@ -219,7 +219,7 @@ public class ShopMemberAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Long userId = member.getMember().getUser().getId();
@@ -238,7 +238,7 @@ public class ShopMemberAct {
         return FrontHelper.showSuccess("global.success", nextUrl, web, model, request);
     }
 
-    @RequestMapping({"/shopMember/checkPwd.jspx"})
+    @RequestMapping({"/shopMember/checkPwd.htm"})
     public void checkPwd(String origPwd, HttpServletRequest request, HttpServletResponse response) {
 
         ShopMember member = MemberThread.get();

@@ -33,7 +33,7 @@ public class MyInfomationAct {
     @Autowired
     private DiscussMng discussMng;
 
-    @RequestMapping({"/my_discuss*.jspx"})
+    @RequestMapping({"/my_discuss*.htm"})
     public String getMyDiscuss(Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -42,7 +42,7 @@ public class MyInfomationAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Pagination pagination = this.discussMng.getPageByMember(member.getId(), SimplePage.cpn(pageNo), 10, true);
@@ -53,12 +53,12 @@ public class MyInfomationAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "my_discuss", ".jspx", SimplePage.cpn(pageNo));
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "my_discuss", ".htm", SimplePage.cpn(pageNo));
 
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.mydiscuss", new Object[0]));
     }
 
-    @RequestMapping({"/my_cousult*.jspx"})
+    @RequestMapping({"/my_cousult*.htm"})
     public String getMyCousult(Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -67,7 +67,7 @@ public class MyInfomationAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Pagination pagination = this.consultMng.getPageByMember(member.getId(), SimplePage.cpn(pageNo), 1, true);
@@ -78,12 +78,12 @@ public class MyInfomationAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "my_cousult", ".jspx", SimplePage.cpn(pageNo));
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "my_cousult", ".htm", SimplePage.cpn(pageNo));
 
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myconsult", new Object[0]));
     }
 
-    @RequestMapping({"/buyRecord*.jspx"})
+    @RequestMapping({"/buyRecord*.htm"})
     public String getBuyRecord(Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -92,7 +92,7 @@ public class MyInfomationAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Pagination pagination = this.orderItemMng.getPageByMember(Integer.valueOf(4), member.getId(), SimplePage.cpn(pageNo), 2);
@@ -103,7 +103,7 @@ public class MyInfomationAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "buyRecord", ".jspx", SimplePage.cpn(pageNo));
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "buyRecord", ".htm", SimplePage.cpn(pageNo));
 
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.buyRecord", new Object[0]));
     }

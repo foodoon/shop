@@ -93,7 +93,7 @@
 
         //获得城市
         function getResultCity(d) {
-            $.post('../shopMemberAddress/findAllCity.jspx', {"id": d},
+            $.post('../shopMemberAddress/findAllCity.htm', {"id": d},
                     function (data) {
                         if (data.success) {
                             $("#itemcity").html("");
@@ -109,7 +109,7 @@
         }
         //获得县、区
         function getResultCountry(a) {
-            $.post('../shopMemberAddress/findAllCountry.jspx', {"id": a},
+            $.post('../shopMemberAddress/findAllCountry.htm', {"id": a},
                     function (data) {
                         if (data.success) {
                             $("#itemarea").html("");
@@ -132,7 +132,7 @@
                 alert("手机跟电话至少有一项必填");
                 return;
             }
-            $("#jvForm").attr("action", "../shopMemberAddress/address_save.jspx");
+            $("#jvForm").attr("action", "../shopMemberAddress/address_save.htm");
             $("#jvForm").submit();
         }
 
@@ -161,7 +161,7 @@
                 return;
             }
             $("#addrInputDiv").html('');
-            $("#jvForm").attr("action", "../order/order_shipping.jspx");
+            $("#jvForm").attr("action", "../order/order_shipping.htm");
             $("#jvForm").submit();
         }
         function showBalanceDiv(a) {
@@ -211,7 +211,7 @@
 </ul>
 <div id="checkoutUI" class="mt10">
 <div id="errorMsgDisplayDiv" style="z-index:1000;"></div>
-<form id="jvForm" action="../order/order_shipping.jspx" method="post">
+<form id="jvForm" action="../order/order_shipping.htm" method="post">
 <div id="receiver_buffer_window" class="delivery mb10">
     <div class="title"><h2>收货人信息</h2></div>
 
@@ -226,9 +226,9 @@
 	                  <span class="text" style="position:relative">
 	                   ${sma.username!}&nbsp;${sma.province.name!}&nbsp;${sma.city.name!}
 	                    &nbsp;${sma.detailaddress!}&nbsp;${sma.tel!}&nbsp;&nbsp;&nbsp;&nbsp;
-	                  <a href="../shopMemberAddress/address_delete.jspx?id=${sma.id}&returnUrl=../cart/checkout_shipping.jspx"
+	                  <a href="../shopMemberAddress/address_delete.htm?id=${sma.id}&returnUrl=../cart/checkout_shipping.htm"
                          class="w44">删除|</a>
-                      <a href="../shopMemberAddress/address_default.jspx?id=${sma.id}&returnUrl=../cart/checkout_shipping.jspx">设为默认</a>
+                      <a href="../shopMemberAddress/address_default.htm?id=${sma.id}&returnUrl=../cart/checkout_shipping.htm">设为默认</a>
 	                 </span>
             </label>
         </p>
@@ -300,7 +300,7 @@
             </p>
 
             <p class="btn" id="addrSubBtn">
-                <input type="hidden" name="returnUrl" value="../cart/checkout_shipping.jspx"/>
+                <input type="hidden" name="returnUrl" value="../cart/checkout_shipping.htm"/>
                 <input type="button" value="保存收货信息" onclick="checkSubmit();"/>
             </p>
         </div>
@@ -391,7 +391,7 @@
 
                 <div><a href="javascript:void(0);" onclick="showCouponDiv(this)"><span
                         style="font-size:14px;color:#a71f24;font-weight:bold">使用优惠券抵消部分总额</span></a> （<a
-                        target="_blank" href="${base}/coupon.jspx">领取优惠券</a>）
+                        target="_blank" href="${base}/coupon.htm">领取优惠券</a>）
                 </div>
                 <div style="display: none;" id="coupon_div">
                     <input type="hidden" id="memberCouponId" name="memberCouponId"/>

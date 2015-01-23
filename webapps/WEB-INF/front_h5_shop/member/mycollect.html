@@ -1,63 +1,57 @@
 ﻿[#include "../include/html_header.html"/]
-    <title>我的收藏夹 - ${web.name}${web.additionalTitle!}</title>
-    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/member.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/buy.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/collect.css" type="text/css" rel="stylesheet"/>
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function del(id) {
-            var ids = new Array(1);
-            ;
-            ids[0] = id;
-            $.post("${base}/collect/delCollect.jspx", {collectIds: ids}, function (data) {
-                alert(data);
-                location.reload();
-            });
-        }
-        function dels() {
-            var j = 0;
-            var h = 0;
-            var fchecked = document.getElementsByName("colect_goods_list");
-            for (var i = 0; i < fchecked.length; i++) {
-                if (fchecked[i].checked) {
-                    j++;
-                }
+<script type="text/javascript">
+    function del(id) {
+        var ids = new Array(1);
+        ;
+        ids[0] = id;
+        $.post("${base}/collect/delCollect.htm", {collectIds: ids}, function (data) {
+            alert(data);
+            location.reload();
+        });
+    }
+    function dels() {
+        var j = 0;
+        var h = 0;
+        var fchecked = document.getElementsByName("colect_goods_list");
+        for (var i = 0; i < fchecked.length; i++) {
+            if (fchecked[i].checked) {
+                j++;
             }
-            var ids = new Array(j);
-            for (var i = 0; i < fchecked.length; i++) {
-                if (fchecked[i].checked) {
-                    ids[h] = fchecked[i].id;
-                    h++;
-                }
-            }
-            if (ids.length < 1) {
-                alert('请选择');
-                return;
-            }
-            $.post("${base}/collect/delCollect.jspx", {collectIds: ids}, function (data) {
-                alert(data);
-                location.reload();
-            });
         }
-        function checkall(o) {
-            $("input[type=checkbox]").each(function () {
-                $(this).attr("checked", o);
-            });
+        var ids = new Array(j);
+        for (var i = 0; i < fchecked.length; i++) {
+            if (fchecked[i].checked) {
+                ids[h] = fchecked[i].id;
+                h++;
+            }
         }
-    </script>
+        if (ids.length < 1) {
+            alert('请选择');
+            return;
+        }
+        $.post("${base}/collect/delCollect.htm", {collectIds: ids}, function (data) {
+            alert(data);
+            location.reload();
+        });
+    }
+    function checkall(o) {
+        $("input[type=checkbox]").each(function () {
+            $(this).attr("checked", o);
+        });
+    }
+</script>
+
 </head>
 <body>
-<div class="mainContainer sixteen container">
-    <!--Header Block-->
-    <div class="header-wrapper">
-        [#include "../include/html_header_top.html"/]
-    </div>
-</div>
-<div class="center mt10">
-    [#include "member_nav.html"/]
-    <div class="user_right">
+[#include "../include/html_header_top.html"/]
+
+<div class="am-container">
+    <div class="am-cf admin-main">
+        <!-- sidebar start -->
+        [#include "member_nav.html"/]
+        <div class="admin-content">
+
+
         <div class="usercenter_position"><span>我的收藏夹</span></div>
         <div class="intro_box">
             <div class="intro">
@@ -72,7 +66,7 @@
                         </button>
                         <!--  <button class="w44 deleteFavorite" onclick="addToCart();">购买</button>-->
                     </div>
-                    <table class="favorite_tb" cellspacing="0" cellpadding="0" width="100%" border="0">
+                    <table class="am-table" cellspacing="0" cellpadding="0" width="100%" border="0">
                         [#if tag_list?size gt 0]
                         [#list tag_list as coll]
                         <tr>
@@ -142,7 +136,7 @@
             </div>
         </div>
     </div>
-    <div class="clear"></div>
+</div>
 </div>
 [#include "../include/footer.html"/]
 </body>

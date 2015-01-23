@@ -35,18 +35,18 @@
 
         function addCart(orderId) {
             $("#orderId").val(orderId);
-            $("#jvForm").attr("action", "${base}/cart/add_orderItem1.jspx");
+            $("#jvForm").attr("action", "${base}/cart/add_orderItem1.htm");
             $("#jvForm").submit();
         }
 
         function payOrderAgain(orderId) {
             $("#orderId").val(orderId);
-            $("#jvForm").attr("action", "${base}/order/order_payAgain.jspx");
+            $("#jvForm").attr("action", "${base}/order/order_payAgain.htm");
             $("#jvForm").submit();
         }
 
         function deleteOrder(orderId) {
-            $.post('${base}/order/deleteOrder.jspx', {
+            $.post('${base}/order/deleteOrder.htm', {
                 'orderId': orderId
             }, function (data) {
                 if (data.success) {
@@ -56,7 +56,7 @@
         }
 
         function abolishOrder(orderId) {
-            $.post('${base}/order/abolishOrder.jspx', {
+            $.post('${base}/order/abolishOrder.htm', {
                 'orderId': orderId
             }, function (data) {
                 if (data.success) {
@@ -67,7 +67,7 @@
 
 
         function accomplishOrder(orderId) {
-            $.post('${base}/order/accomplishOrder.jspx', {
+            $.post('${base}/order/accomplishOrder.htm', {
                 'orderId': orderId
             }, function (data) {
                 if (data.success) {
@@ -102,7 +102,7 @@
         <div class="usercenter_position"><span>我的订单</span></div>
         <br/>
 
-        <form id="jvForm" action="myorder.jspx" method="post"
+        <form id="jvForm" action="myorder.htm" method="post"
               class="skin-gray clearfix bought-search bought-search-more">
             <input type="hidden" id="status" name="status" [#if status??] value="${status}"[#else] value=""[/#if]/>
             <input type="hidden" id="orderId" name="orderId"/>
@@ -201,7 +201,7 @@
             <div class="or_box">
                 <div class="or_info order_dr">
                     <p><span>订单号：</span>
-                        <a href="myOrderView.jspx?orderId=${order.id}" target="_blank">${order.code!}</a>
+                        <a href="myOrderView.htm?orderId=${order.id}" target="_blank">${order.code!}</a>
                     </p>
 
                     <p><span>订购日期：</span>${order.createTime?string('yyyy-MM-dd HH:mm:ss')!}</p>
@@ -225,21 +225,21 @@
                         "order.shippingStatus.${order.shippingStatus}"/][/#if]
                     </p>
 
-                    <p><a class="aBlu" href="myOrderView.jspx?orderId=${order.id}" target="_blank">订单详情</a></p>
+                    <p><a class="aBlu" href="myOrderView.htm?orderId=${order.id}" target="_blank">订单详情</a></p>
                     <button class="y90 mr5 orderListAgain" onclick="addCart(${order.id});">再放进购物车</button>
                     [#if order.status=3]
                     <button class="w90 payItem netPayButton" onclick="deleteOrder(${order.id});">删除订单</button>
                     [#elseif order.status=4]
                     <button class="w90 payItem netPayButton" onclick="deleteOrder(${order.id});">删除订单</button>
                     [#if !(order.returnOrder??)] <a class="w90 payItem netPayButton"
-                                                    href="../orderReturn/orderReturn.jspx?orderId=${order.id}&delivery=1">申请退货</a>[/#if]
+                                                    href="../orderReturn/orderReturn.htm?orderId=${order.id}&delivery=1">申请退货</a>[/#if]
                     [#elseif order.shippingStatus=1]
                     [#if order.paymentStatus=1]
                     <button class="w90 payItem netPayButton" onclick="payOrderAgain(${order.id});">立即支付</button>
                     <button class="w90 payItem netPayButton" onclick="abolishOrder(${order.id});">取消订单</button>
                     [#elseif order.paymentStatus=2]
                     [#if !(order.returnOrder??)] <a class="w90 payItem netPayButton"
-                                                    href="../orderReturn/orderReturn.jspx?orderId=${order.id}&delivery=0"
+                                                    href="../orderReturn/orderReturn.htm?orderId=${order.id}&delivery=0"
                                                     target="_blank">申请退款</a>[/#if]
                     [/#if]
                     [#elseif order.shippingStatus=2]

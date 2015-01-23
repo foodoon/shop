@@ -19,7 +19,7 @@
 
         //获得城市
         function getResultCity(d) {
-            $.post('${base}/shopMemberAddress/findAllCity.jspx', {"id": d},
+            $.post('${base}/shopMemberAddress/findAllCity.htm', {"id": d},
                     function (data) {
                         if (data.success) {
                             $("#itemcity").html("");
@@ -35,7 +35,7 @@
         }
         //获得县、区
         function getResultCountry(a) {
-            $.post('${base}/shopMemberAddress/findAllCountry.jspx', {"id": a},
+            $.post('${base}/shopMemberAddress/findAllCountry.htm', {"id": a},
                     function (data) {
                         if (data.success) {
                             $("#itemarea").html("");
@@ -58,7 +58,7 @@
                 alert("手机跟电话至少有一项必填");
                 return;
             }
-            $("#jvForm").attr("action", "${base}/shopMemberAddress/address_save.jspx");
+            $("#jvForm").attr("action", "${base}/shopMemberAddress/address_save.htm");
             $("#jvForm").submit();
         }
         function checkSubmit1() {
@@ -67,7 +67,7 @@
                 return;
             }
             $("#addrInputDiv").html('');
-            $("#jvForm").attr("action", "create_exchange.jspx");
+            $("#jvForm").attr("action", "create_exchange.htm");
             $("#jvForm").submit();
         }
     </script>
@@ -84,7 +84,7 @@
     <div class="buy_position">您当前的位置：<a href="" target="_blank">首页</a>&nbsp;&gt;&nbsp;礼品兑换</div>
     <div id="checkoutUI" class="mt10">
         <div id="errorMsgDisplayDiv" style="z-index:1000;"></div>
-        <form id="jvForm" action="create_exchange.jspx" method="post">
+        <form id="jvForm" action="create_exchange.htm" method="post">
             <div id="receiver_buffer_window" class="delivery mb10">
                 <div class="title"><h2>收货地址</h2></div>
 
@@ -99,9 +99,9 @@
 	                  <span class="text" style="position:relative">
 	                   ${sma.username!}&nbsp;${sma.province.name!}&nbsp;${sma.city.name!}
 	                    &nbsp;${sma.detailaddress!}&nbsp;${sma.tel!}&nbsp;&nbsp;&nbsp;&nbsp;
-	                  <a href="${base}/shopMemberAddress/address_delete.jspx?id=${sma.id}&returnUrl=../exchange.jspx?id=${gift.id!}&count=${count!}"
+	                  <a href="${base}/shopMemberAddress/address_delete.htm?id=${sma.id}&returnUrl=../exchange.htm?id=${gift.id!}&count=${count!}"
                          class="w44">删除|</a>
-                      <a href="${base}/shopMemberAddress/address_default.jspx?id=${sma.id}&returnUrl=../exchange.jspx?id=${gift.id!}&count=${count!}">设为默认</a>
+                      <a href="${base}/shopMemberAddress/address_default.htm?id=${sma.id}&returnUrl=../exchange.htm?id=${gift.id!}&count=${count!}">设为默认</a>
 	                 </span>
                         </label>
                     </p>
@@ -174,7 +174,7 @@
 
                         <p class="btn" id="addrSubBtn">
                             <input type="hidden" name="returnUrl"
-                                   value="../exchange.jspx?id=${gift.id!}&count=${count!}"/>
+                                   value="../exchange.htm?id=${gift.id!}&count=${count!}"/>
                             <input type="button" value="保存收货信息" onclick="checkSubmit();"/>
                         </p>
                     </div>

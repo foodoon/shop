@@ -14,7 +14,7 @@
             var ids = new Array(1);
             ;
             ids[0] = id;
-            $.post("${base}/collect/delCollect.jspx", {collectIds: ids}, function (data) {
+            $.post("${base}/collect/delCollect.htm", {collectIds: ids}, function (data) {
                 alert(data);
                 location.reload();
             });
@@ -39,7 +39,7 @@
                 alert('请选择');
                 return;
             }
-            $.post("${base}/collect/delCollect.jspx", {collectIds: ids}, function (data) {
+            $.post("${base}/collect/delCollect.htm", {collectIds: ids}, function (data) {
                 alert(data);
                 location.reload();
             });

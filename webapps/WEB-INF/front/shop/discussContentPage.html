@@ -7,7 +7,7 @@
     <script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
     <script type="text/javascript">
         function discuss(productId) {
-            $.post("haveDiscuss.jspx", {productId: productId}, function (data) {
+            $.post("haveDiscuss.htm", {productId: productId}, function (data) {
                 if (data == 'success') {
                     $("#discussTextArea").css("display", "");
                 } else if (data == 'denru') {
@@ -30,7 +30,7 @@
                 alert('评论内容不能为空！');
                 return false;
             }
-            $.post("insertDiscuss.jspx", {productId: productId, disCon: disCon}, function (data) {
+            $.post("insertDiscuss.htm", {productId: productId, disCon: disCon}, function (data) {
                 if (data == 'success') {
                     alert('发表成功!');
                     getTableForm().submit();
@@ -103,8 +103,8 @@
 </div>
 [/#list]
 [@pagination_style style='8'/]
-<form id="loginForm" action="${base!}/login.jspx" method="get" target="_top"></form>
-<form id="tableForm" action="searchDiscussPage.jspx" method="post">
+<form id="loginForm" action="${base!}/login.htm" method="get" target="_top"></form>
+<form id="tableForm" action="searchDiscussPage.htm" method="post">
     <input type="hidden" value="${product.id!}" name="productId">
 </form>
 </body>

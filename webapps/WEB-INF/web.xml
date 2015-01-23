@@ -29,35 +29,35 @@
 
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/present.jspx</url-pattern>
+        <url-pattern>/present.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/adspace.jspx</url-pattern>
+        <url-pattern>/adspace.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/exchange.jspx</url-pattern>
+        <url-pattern>/exchange.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/searchDiscussPage.jspx</url-pattern>
+        <url-pattern>/searchDiscussPage.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/consultProduct.jspx</url-pattern>
+        <url-pattern>/consultProduct.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/bargain.jspx</url-pattern>
+        <url-pattern>/bargain.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/search.jspx</url-pattern>
+        <url-pattern>/search.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>XssFilter</filter-name>
-        <url-pattern>/searchProduct.jspx</url-pattern>
+        <url-pattern>/searchProduct.htm</url-pattern>
     </filter-mapping>
 
     <servlet>
@@ -114,7 +114,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Front</servlet-name>
-        <url-pattern>*.jspx</url-pattern>
+        <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
 
 
@@ -169,19 +169,19 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>processTime</filter-name>
-        <url-pattern>*.jspx</url-pattern>
+        <url-pattern>*.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>encoding</filter-name>
-        <url-pattern>*.jspx</url-pattern>
+        <url-pattern>*.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>osivFilter</filter-name>
-        <url-pattern>*.jspx</url-pattern>
+        <url-pattern>*.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>websiteFilter</filter-name>
-        <url-pattern>*.jspx</url-pattern>
+        <url-pattern>*.htm</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>processTime</filter-name>

@@ -33,13 +33,13 @@
 <div class="center mt10">
     <div class="column_title"><span>注册新用户</span></div>
     <div class="regist_box">
-        <form id="jvForm" action="register.jspx" method="post">
+        <form id="jvForm" action="register.htm" method="post">
             <div class="regist_box_left">
                 <table width="100%" border="0" cellspacing="2" cellpadding="0">
                     <tr>
                         <td height="35" width="257" align="right" style="font-size:14px; color:#666666;">用户名：</td>
                         <td width="648"><input type="text" id="username" name="username" class="regist_input"
-                                               vld="{required:true,rangelength:[3,20],remote:'${base}/username_unique.jspx',messages:{remote:'用户名已存在'}}"/>
+                                               vld="{required:true,rangelength:[3,20],remote:'${base}/username_unique.htm',messages:{remote:'用户名已存在'}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -49,7 +49,7 @@
                     <tr>
                         <td height="35" width="257" align="right" style="font-size:14px; color:#666666;">Email：</td>
                         <td width="648"><input type="text" name="email" id="email" class="regist_input"
-                                               vld="{required:true,email:true,remote:'${base}/email_unique.jspx',messages:{remote:'email已经被使用'}}"/>
+                                               vld="{required:true,email:true,remote:'${base}/email_unique.htm',messages:{remote:'email已经被使用'}}"/>
                         </td>
                     </tr>
                     <tr>
@@ -84,7 +84,7 @@
                         <td width="648">
                             <input type="checkbox" id="contract" name="contract" checked="checked"/>
                             <a href="javascript:void(0);"
-                               onclick="window.open('treaty.jspx','','height=600,width=600,scrollbars=1');"
+                               onclick="window.open('treaty.htm','','height=600,width=600,scrollbars=1');"
                                class="xieyi">已阅读并接受《 JSPGOU协议 》</a></td>
                     </tr>
                     <tr>

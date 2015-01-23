@@ -130,14 +130,14 @@
                 [#list tag_list as gift]
                 <li><img src="${gift.giftPicture!}" width="74" height="75"/>
 
-                    <p> 名称： <a target="_blank" href="${base}/present.jspx?id=${gift.id!}">${gift.giftName!}</a></p>
+                    <p> 名称： <a target="_blank" href="${base}/present.htm?id=${gift.id!}">${gift.giftName!}</a></p>
 
                     <p>积分: ${gift.giftScore!}</p>
                 </li>
                 [/#list]
                 [/@gift_page]
             </ul>
-            <div style="float:right"><a href="${base}/gift.jspx" target="_blank">更多</a></div>
+            <div style="float:right"><a href="${base}/gift.htm" target="_blank">更多</a></div>
         </div>
         <div class="ad1"><a href="#" target="_blank"><img src="${root}/img/right_ad1.gif" width="224"/></a></div>
     </div>

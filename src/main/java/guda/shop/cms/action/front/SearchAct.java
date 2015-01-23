@@ -55,7 +55,7 @@ public class SearchAct
         return q;
     }
 
-    @RequestMapping(value = {"/search*.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/search*.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String search(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

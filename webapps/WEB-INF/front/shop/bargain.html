@@ -8,7 +8,7 @@
     <script type="text/javascript">
         function insertConsult(pid, mid) {
             var content = $("#goods_question_contens_box").val();
-            $.post("insertConsult.jspx", {
+            $.post("insertConsult.htm", {
                 productId: pid, content: content
             }, function (data) {
                 if (data == 'false') {

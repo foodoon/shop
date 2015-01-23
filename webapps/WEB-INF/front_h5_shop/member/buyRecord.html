@@ -1,41 +1,31 @@
 ﻿[#include "../include/html_header.html"/]
-    <title>购买记录 - ${web.name}${web.additionalTitle!}</title>
-    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/member.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/buy.css" type="text/css" rel="stylesheet"/>
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function g(o) {
-            return document.getElementById(o);
+<script type="text/javascript">
+    function g(o) {
+        return document.getElementById(o);
+    }
+    function HoverLi(m, n, counter) {
+        for (var i = 1; i <= counter; i++) {
+            g('tb_' + m + i).className = 'dd_normal';
+            g('tbc_' + m + i).className = 'undis';
         }
-        function HoverLi(m, n, counter) {
-            for (var i = 1; i <= counter; i++) {
-                g('tb_' + m + i).className = 'dd_normal';
-                g('tbc_' + m + i).className = 'undis';
-            }
-            g('tbc_' + m + n).className = 'dis';
-            g('tb_' + m + n).className = 'dd_curr';
-        }
+        g('tbc_' + m + n).className = 'dis';
+        g('tb_' + m + n).className = 'dd_curr';
+    }
 
-    </script>
+</script>
+
 </head>
-
 <body>
-<div class="mainContainer sixteen container">
-    <!--Header Block-->
-    <div class="header-wrapper">
-        [#include "../include/html_header_top.html"/]
-    </div>
-</div>
-<div class="center mt10">
-    [#include "member_nav.html"/]
-    <div class="user_right">
-        <div class="usercenter_position">
-            <span>购物记录</span>
-        </div>
-        <div class="right_line">
-            <table class="table" cellspacing="0" cellpadding="0" width="100%" border="0">
+[#include "../include/html_header_top.html"/]
+
+<div class="am-container">
+    <div class="am-cf admin-main">
+        <!-- sidebar start -->
+        [#include "member_nav.html"/]
+        <div class="admin-content">
+
+
+            <table class="am-table" cellspacing="0" cellpadding="0" width="100%" border="0">
                 <tbody>
                 [#if pagination?? && pagination.list?size gt 0]
                 [#list pagination.list as p]
@@ -72,7 +62,7 @@
             [@pagination_style style='10'][/@pagination_style]
         </div>
     </div>
-    <div class="clear"></div>
+
 </div>
 [#include "../include/footer.html"/]
 </body>

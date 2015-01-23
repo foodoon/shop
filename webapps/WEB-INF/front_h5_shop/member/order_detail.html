@@ -10,11 +10,11 @@
     <script type="text/javascript">
         function addCart(orderId) {
             $("#orderId").val(orderId);
-            $("#jvForm").attr("action", "${base}/cart/add_orderItem1.jspx");
+            $("#jvForm").attr("action", "${base}/cart/add_orderItem1.htm");
             $("#jvForm").submit();
         }
         function addToCollect(productId, productFashId) {
-            $.post('${base}/collect/add_to_collect.jspx', {
+            $.post('${base}/collect/add_to_collect.htm', {
                 'productId': productId,
                 'productFashId': productFashId
             }, function (data) {
@@ -24,20 +24,20 @@
                     alert('收藏过该商品');
                 }
                 else {
-                    location.href = '${base}/login.jspx';
+                    location.href = '${base}/login.htm';
                 }
 
             }, 'json');
         }
 
         function addToCart(productId, count, fashId) {
-            $.post('${base}/cart/add_orderItem.jspx', {
+            $.post('${base}/cart/add_orderItem.htm', {
                 'productId': productId,
                 'productAmount': count,
                 'fashId': fashId
             }, function (data) {
                 if (data.status == 1) {
-                    location.href = '${base}/cart/shopping_cart.jspx?backUrl=${location}';
+                    location.href = '${base}/cart/shopping_cart.htm?backUrl=${location}';
                 } else if (data.status == 0) {
                     location.href = '${loginUrl}';
                 } else {
@@ -73,7 +73,7 @@
                              [#elseif order.paymentStatus=2][@s.m "order.paymentStatus.${order.paymentStatus}"/]&nbsp;[@s.m "order.shippingStatus.${order.shippingStatus}"/][/#if]
                             </span></li>
                     <li style="float:right;">
-                        <form id="jvForm" action="../cart/add_orderItem1.jspx" method="post">
+                        <form id="jvForm" action="../cart/add_orderItem1.htm" method="post">
                             <input type="hidden" id="orderId" name="orderId" value="${order.id}"/>
                             <button class="y90 mr5 orderListAgain" onclick="addCart(${order.id});">再放进购物车</button>
                         </form>
@@ -108,7 +108,7 @@
                     <dt>积分信息</dt>
                     <dd>可获积分：￥${order.score!0}[#if order.status==20](可用积分)[#else](冻结中)[/#if]
                         <a class="hblue" href="${base}/xsrm/20.htm" target="_blank">查看积分规则</a>
-                        <a class="hblue" href="${base}/shopScore/myscore.jspx" target="_blank">查看我的积分</a>
+                        <a class="hblue" href="${base}/shopScore/myscore.htm" target="_blank">查看我的积分</a>
                     </dd>
                 </dl>
                 <div class="order_info_list mt10">

@@ -29,7 +29,7 @@ public class CollectAct {
     @Autowired
     private CollectMng manager;
 
-    @RequestMapping({"/collect/add_to_collect.jspx"})
+    @RequestMapping({"/collect/add_to_collect.htm"})
     public String addToCollect(Long productId, Long productFashId, Boolean isAdd, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
         ShopMember member = MemberThread.get();
@@ -59,7 +59,7 @@ public class CollectAct {
         return null;
     }
 
-    @RequestMapping({"/collect/mycollect*.jspx"})
+    @RequestMapping({"/collect/mycollect*.htm"})
     public String myCollect(HttpServletRequest request, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         ShopMember member = MemberThread.get();
@@ -77,11 +77,11 @@ public class CollectAct {
             }
         }
         ShopFrontHelper.setCommonData(request, model, web, 1);
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "mycollect", ".jspx", pageNo.intValue());
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "mycollect", ".htm", pageNo.intValue());
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.mycollect", new Object[0]));
     }
 
-    @RequestMapping({"/collect/delCollect.jspx"})
+    @RequestMapping({"/collect/delCollect.htm"})
     public String delCollect(Integer[] collectIds, HttpServletResponse response, ModelMap model) {
         ShopMember member = MemberThread.get();
         if (member == null) {

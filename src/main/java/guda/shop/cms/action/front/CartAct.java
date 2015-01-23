@@ -71,14 +71,14 @@ public class CartAct {
     @Autowired
     private PopularityItemMng popularityItemMng;
 
-    @RequestMapping({"/cart/shopping_cart.jspx"})
+    @RequestMapping({"/cart/shopping_cart.htm"})
     public String shoppingCart(String backUrl, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         ShopMember member = MemberThread.get();
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Website web = SiteUtils.getWeb(request);
@@ -106,7 +106,7 @@ public class CartAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.shoppingCart", new Object[0]));
     }
 
-    @RequestMapping({"/cart/add_orderItem.jspx"})
+    @RequestMapping({"/cart/add_orderItem.htm"})
     public void addToCart(Long productId, Integer productAmount, Long fashId, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -164,7 +164,7 @@ public class CartAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/cart/add_popularity.jspx"})
+    @RequestMapping({"/cart/add_popularity.htm"})
     public void addToPopularity(Long popularityId, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -216,7 +216,7 @@ public class CartAct {
         return true;
     }
 
-    @RequestMapping({"/cart/add_orderItem1.jspx"})
+    @RequestMapping({"/cart/add_orderItem1.htm"})
     public String orderAddToCart(Long orderId, Boolean isAdd, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -227,7 +227,7 @@ public class CartAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Order order = this.orderMng.findById(orderId);
@@ -254,10 +254,10 @@ public class CartAct {
             cart = this.shoppingSvc.collectAddToCart(product, fashId, null, productAmount.intValue(), true, member, web, request, response);
         }
 
-        return "redirect:shopping_cart.jspx";
+        return "redirect:shopping_cart.htm";
     }
 
-    @RequestMapping({"/cart/ajaxUpdateCartItem.jspx"})
+    @RequestMapping({"/cart/ajaxUpdateCartItem.htm"})
     public void ajaxUpdateCartItem(Long cartItemId, Integer count, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -285,7 +285,7 @@ public class CartAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/cart/ajaxDeleteCartItem.jspx"})
+    @RequestMapping({"/cart/ajaxDeleteCartItem.htm"})
     public void ajaxDeleteCartItem(Long cartItemId, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -341,7 +341,7 @@ public class CartAct {
         }
     }
 
-    @RequestMapping({"/cart/checkStockCount.jspx"})
+    @RequestMapping({"/cart/checkStockCount.htm"})
     public void checkStockCount(Long productId, String productFashionId, Integer count, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -386,7 +386,7 @@ public class CartAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/cart/ajaxtotalDeliveryFee.jspx"})
+    @RequestMapping({"/cart/ajaxtotalDeliveryFee.htm"})
     public void ajaxtotalDeliveryFee(Long deliveryMethod, Double weight, HttpServletRequest request, HttpServletResponse response, ModelMap model)
             throws JSONException {
 
@@ -411,7 +411,7 @@ public class CartAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/cart/checkout_shipping.jspx"})
+    @RequestMapping({"/cart/checkout_shipping.htm"})
     public String shippingInput(Long[] cart2Checkbox, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -420,14 +420,14 @@ public class CartAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Cart cart = this.shoppingSvc.getCart(member.getId());
 
         if (cart == null) {
 
-            return "redirect:shopping_cart.jspx";
+            return "redirect:shopping_cart.htm";
         }
 
         List<PopularityItem> popularityItems = null;

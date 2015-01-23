@@ -26,7 +26,7 @@ public class ShopScoreAct {
     @Autowired
     private GiftExchangeMng giftExchangeMng;
 
-    @RequestMapping({"/shopScore/myscore*.jspx"})
+    @RequestMapping({"/shopScore/myscore*.htm"})
     public String getMyScore(Integer status, Integer useStatus, String startTime, String endTime, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -36,7 +36,7 @@ public class ShopScoreAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Integer pageNo = Integer.valueOf(URLHelper.getPageNo(request));
@@ -55,12 +55,12 @@ public class ShopScoreAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "myscore", ".jspx", pageNo.intValue());
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "myscore", ".htm", pageNo.intValue());
 
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.myscore", new Object[0]));
     }
 
-    @RequestMapping({"/shopScore/exchange.jspx"})
+    @RequestMapping({"/shopScore/exchange.htm"})
     public String exchange(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -70,7 +70,7 @@ public class ShopScoreAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         model.addAttribute("list", this.giftExchangeMng.getlist(member.getId()));
@@ -80,7 +80,7 @@ public class ShopScoreAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.exchange", new Object[0]));
     }
 
-    @RequestMapping({"/shopScore/exchange_accomplish.jspx"})
+    @RequestMapping({"/shopScore/exchange_accomplish.htm"})
     public String exchangeaccomplish(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -90,7 +90,7 @@ public class ShopScoreAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         WebErrors errors = validateGiftExchangeView(id, request);

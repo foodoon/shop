@@ -42,7 +42,7 @@
         <property name="cookieMaxAge" value="-1"/>
     </bean>
     <bean id="frontSecureInterceptor" class="guda.shop.cms.web.FrontSecureInterceptor">
-        <property name="loginUrl" value="/login.jspx"/>
+        <property name="loginUrl" value="/login.htm"/>
     </bean>
 
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">

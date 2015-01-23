@@ -416,7 +416,7 @@ public class OrderReturnAct {
         String seller_user_id = paymentPlugins.getSellerKey();
 
 
-        String notify_url = "http://" + web.getDomain() + "/cart/aliReturn.jspx";
+        String notify_url = "http://" + web.getDomain() + "/cart/aliReturn.htm";
 
 
         Map sParaTemp = new HashMap();

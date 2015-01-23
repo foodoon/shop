@@ -26,7 +26,7 @@ public class ImageCutAct
     private ImageScale imageScale;
     private ServletContext servletContext;
 
-    @RequestMapping({"/common/v_image_area_select.jspx"})
+    @RequestMapping({"/common/v_image_area_select.htm"})
     public String imageAreaSelect(String imgSrcRoot, String imgSrcPath, Integer zoomWidth, Integer zoomHeight, Integer uploadNum, HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("imgSrcRoot", imgSrcRoot);
@@ -42,7 +42,7 @@ public class ImageCutAct
         return "/common/image_area_select";
     }
 
-    @RequestMapping({"/common/o_image_cut.jspx"})
+    @RequestMapping({"/common/o_image_cut.htm"})
     public String imageCut(String imgSrcPath, Integer imgTop, Integer imgLeft, Integer imgWidth, Integer imgHeight, Integer reMinWidth, Integer reMinHeight, Float imgScale, Integer uploadNum, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

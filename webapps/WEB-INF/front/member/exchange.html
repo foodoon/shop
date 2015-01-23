@@ -32,7 +32,7 @@
     <div id="container" class="user_right clearfix">
         <div class="usercenter_position"><span>兑换</span></div>
         <div id="demo2" class="s-demo">
-            <form id="jvForm" action="myscore.jspx" method="post">
+            <form id="jvForm" action="myscore.htm" method="post">
                 <div class="ks-switchable-content">
                     <div>
                         <table id="detailShowtab">
@@ -59,7 +59,7 @@
                                 <td>${giftExchange.detailaddress!}</td>
                                 <td>${giftExchange.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                 [#if giftExchange.status=2]
-                                <td><a href="${base}/shopScore/exchange_accomplish.jspx?id=${giftExchange.id!}">确认收货</a>
+                                <td><a href="${base}/shopScore/exchange_accomplish.htm?id=${giftExchange.id!}">确认收货</a>
                                 </td>
                                 [/#if]
                             </tr>

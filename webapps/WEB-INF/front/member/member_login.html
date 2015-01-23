@@ -26,7 +26,7 @@
 <div class="center mt10">
     <div class="column_title"><span>用户登录</span></div>
     <div class="login_box">
-        <form id="jvForm" action="login.jspx" method="post">
+        <form id="jvForm" action="login.htm" method="post">
             <div class="login_box_left">
                 <div class="login">
                     [#if returnUrl??]
@@ -54,7 +54,7 @@
                             <td height="55" width="70" align="right" style="font-size:14px;">密码：</td>
                             <td height="55" width="200"><input type="password" name="password" class="input_style"
                                                                vld="{required:true,rangelength:[3,32]}"/></td>
-                            <td height="55"><a href="${base}/forgot_password.jspx" target="_blank"
+                            <td height="55"><a href="${base}/forgot_password.htm" target="_blank"
                                                class="forgota">忘记密码？</a></td>
                         </tr>
                         <tr>
@@ -71,7 +71,7 @@
             <h5>还不是注册会员</h5>
 
             <p>现在免费注册成为会员，便能即立刻享受便宜又放心的购物乐趣</p>
-            <a href="${base}/register.jspx" target="_blank" class="zcxyh">注册新用户</a>
+            <a href="${base}/register.htm" target="_blank" class="zcxyh">注册新用户</a>
         </div>
         <div class="clear"></div>
     </div>

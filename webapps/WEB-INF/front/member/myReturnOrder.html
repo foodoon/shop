@@ -33,7 +33,7 @@
         <div class="usercenter_position"><span>退货订单</span> <a href="${base}/xsrm/20.htm" target="_blank"
                                                               style="color: #1A66B3;float:right;">查看积分规则</a></div>
         <div id="demo2" class="s-demo">
-            <form id="jvForm" action="myscore.jspx" method="post">
+            <form id="jvForm" action="myscore.htm" method="post">
                 <div class="ks-switchable-content">
                     <div>
                         <table id="detailShowtab">
@@ -50,19 +50,19 @@
                             [#list pagination.list as o]
                             <tr>
                                 <td style="text-align:left;vertical-align: middle; height:60px;">
-                                    <a class="aBlu" href="myOrderView.jspx?orderId=${o.id}"
+                                    <a class="aBlu" href="myOrderView.htm?orderId=${o.id}"
                                        target="_blank">${o.code!}</a></td>
                                 <td>[@s.m "orderReturn.returnType.${o.returnOrder.returnType!}"/]</td>
                                 <td>${o.returnOrder.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                 <td> [@s.m "orderReturn.status.${o.returnOrder.status}"/][#if
                                     o.returnOrder.returnType=1][#if o.returnOrder.status=2]&nbsp;&nbsp;<a class="aBlu"
-                                                                                                          href="shipments.jspx?id=${o.returnOrder.id}"
+                                                                                                          href="shipments.htm?id=${o.returnOrder.id}"
                                                                                                           target="_blank">发货</a>[#elseif
                                     o.returnOrder.status=6]&nbsp;&nbsp;<a class="aBlu"
-                                                                          href="accomplish.jspx?id=${o.returnOrder.id}"
+                                                                          href="accomplish.htm?id=${o.returnOrder.id}"
                                                                           target="_blank">确认</a>[/#if][#else][#if
                                     o.returnOrder.status=6]&nbsp;&nbsp;<a class="aBlu"
-                                                                          href="accomplish.jspx?id=${o.returnOrder.id}"
+                                                                          href="accomplish.htm?id=${o.returnOrder.id}"
                                                                           target="_blank">确认</a>[/#if][/#if]
                                 </td>
                             </tr>

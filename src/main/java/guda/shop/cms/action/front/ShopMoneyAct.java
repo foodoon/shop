@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ShopMoneyAct {
     public static final String MEMBER_MONEY = "tpl.mymoney";
 
-    @RequestMapping({"/shopMoney/mymoney*.jspx"})
+    @RequestMapping({"/shopMoney/mymoney*.htm"})
     public String getMyScore(Integer status, Integer useStatus, String startTime, String endTime, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -27,7 +27,7 @@ public class ShopMoneyAct {
 
         if (member == null) {
 
-            return "redirect:../login.jspx";
+            return "redirect:../login.htm";
         }
 
         Integer pageNo = Integer.valueOf(URLHelper.getPageNo(request));
@@ -40,7 +40,7 @@ public class ShopMoneyAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "mymoney", ".jspx", pageNo.intValue());
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "mymoney", ".htm", pageNo.intValue());
 
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.mymoney", new Object[0]));
     }

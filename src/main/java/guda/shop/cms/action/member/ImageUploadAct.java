@@ -30,7 +30,7 @@ public class ImageUploadAct
     private static final String RESULT_PAGE = "iframe_upload";
     private ServletContext servletContext;
 
-    @RequestMapping({"/common/o_upload_image.jspx"})
+    @RequestMapping({"/common/o_upload_image.htm"})
     public String execute(String fileName, Integer uploadNum, Integer zoomWidth, Integer zoomHeight, @RequestParam(value = "uploadFile", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validate(fileName, file, request);

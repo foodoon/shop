@@ -43,7 +43,7 @@ public class ShopMenberAddressAct {
     @Autowired
     private ShopMemberAddressMng shopMemberAddressMng;
 
-    @RequestMapping(value = {"/shopMemberAddress/address_list.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMemberAddress/address_list.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String list(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -63,7 +63,7 @@ public class ShopMenberAddressAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberAddress", new Object[0]));
     }
 
-    @RequestMapping(value = {"/shopMemberAddress/address_save.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/shopMemberAddress/address_save.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String save(ShopMemberAddress bean, Long provinceId, Long cityId, Long countryId, String returnUrl, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -108,10 +108,10 @@ public class ShopMenberAddressAct {
             return "redirect:" + returnUrl;
         }
 
-        return "redirect:address_list.jspx";
+        return "redirect:address_list.htm";
     }
 
-    @RequestMapping(value = {"/shopMemberAddress/address_edit.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMemberAddress/address_edit.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -152,7 +152,7 @@ public class ShopMenberAddressAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberAddressEdit", new Object[0]));
     }
 
-    @RequestMapping(value = {"/shopMemberAddress/address_update.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/shopMemberAddress/address_update.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String update(ShopMemberAddress bean, Long provinceId, Long cityId, Long countryId, HttpServletRequest request, ModelMap model) {
 
         ShopMember member = MemberThread.get();
@@ -178,10 +178,10 @@ public class ShopMenberAddressAct {
 
         log.info("ShopMemberAddress update success, id= {}", bean.getId());
 
-        return "redirect:address_list.jspx";
+        return "redirect:address_list.htm";
     }
 
-    @RequestMapping(value = {"/shopMemberAddress/address_default.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMemberAddress/address_default.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String isDefault(Long id, String returnUrl, HttpServletRequest request, ModelMap model) {
 
         ShopMember member = MemberThread.get();
@@ -213,10 +213,10 @@ public class ShopMenberAddressAct {
             return "redirect:" + returnUrl;
         }
 
-        return "redirect:address_list.jspx";
+        return "redirect:address_list.htm";
     }
 
-    @RequestMapping(value = {"/shopMemberAddress/address_delete.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/shopMemberAddress/address_delete.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String delete(Long id, String returnUrl, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -244,10 +244,10 @@ public class ShopMenberAddressAct {
             return "redirect:" + returnUrl;
         }
 
-        return "redirect:address_list.jspx";
+        return "redirect:address_list.htm";
     }
 
-    @RequestMapping({"/shopMemberAddress/findAllCity.jspx"})
+    @RequestMapping({"/shopMemberAddress/findAllCity.htm"})
     public void findAllCity(Long id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         List clist = this.addressMng.getListById(id);
@@ -289,7 +289,7 @@ public class ShopMenberAddressAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/shopMemberAddress/findAllCountry.jspx"})
+    @RequestMapping({"/shopMemberAddress/findAllCountry.htm"})
     public void findAllArea(Long id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         List alist = this.addressMng.getListById(id);

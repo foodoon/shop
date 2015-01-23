@@ -1,28 +1,36 @@
+
 <!--Footer Block-->
-<section class="footer-wrapper">
-    <footer class="container">
-        <div class="link-block">
+
+<footer  class="am-footer am-footer-default" style="background:#555;color:#999;">
+    <div class="am-container">
+        <div class="am-g">
 
             [@shop_Channel count='6']
             [#list tag_list as c]
-            <ul>
-                    <li class="link-title"><a href="${c.url!}" class="track" target="_blank">${c.name!}</a><br/></li>
-                    [@shop_ArticleList channelId=c.id count='20']
-                    [#list tag_list as a]
-                    <li><a href="${a.url!}" class="track" target="_blank">${a.title!}</a></li>
-                    [/#list]
-                    [/@shop_ArticleList]
-            </ul>
+            <div class="am-u-sm-6 am-u-md-4 am-u-lg-3">
+           <ul>
+            <a style="color:#aaa;" href="${c.url!}" target="_blank">${c.name!}</a><br/>
+            [@shop_ArticleList channelId=c.id count='20']
+            [#list tag_list as a]
+            <a style="color:#999;" href="${a.url!}"  target="_blank">${a.title!}</a>
+            [/#list]
+            [/@shop_ArticleList]
+           </ul>
+            </div>
             [/#list]
             [/@shop_Channel]
 
-
         </div>
-        <div class="footer-bottom-block">
 
-            <p class="copyright-block">Copyright &copy; 2014.洽诚网络 版权所有.</p>
-        </div>
-    </footer>
-</section>
+    </div>
+    <div class="am-container">
+
+        <p class="copyright-block">Copyright &copy; 2014.洽诚网络 版权所有.</p>
+    </div>
+</footer>
+
+
+
+
 
 

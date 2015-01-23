@@ -22,7 +22,7 @@
             g('tb_' + m + n).className = 'spms_curr';
         }
         function addToCollect(productId) {
-            $.post('${base}/collect/add_to_collect.jspx', {
+            $.post('${base}/collect/add_to_collect.htm', {
                 'productId': productId
             }, function (data) {
                 if (data.status == 1) {
@@ -30,18 +30,18 @@
                 } else if (data.status == 2) {
                     alert('收藏过该商品');
                 } else {
-                    location.href = '${base}/login.jspx';
+                    location.href = '${base}/login.htm';
                 }
             }, 'json');
         }
 
         function fetchGift(id, count) {
-            $.post('fetchGift.jspx', {
+            $.post('fetchGift.htm', {
                 'giftId': id,
                 'giftNumb': count
             }, function (data) {
                 if (data.status == 1) {
-                    location.href = '${base}/exchange.jspx?id=' + id + '&count=' + count;
+                    location.href = '${base}/exchange.htm?id=' + id + '&count=' + count;
                 } else if (data.status == 0) {
                     location.href = '${loginUrl}';
                 } else {
@@ -59,7 +59,7 @@
     [#include "../include/header_nav.html"/]
 </div>
 [#include "../include/header_banner.html"/]
-<div class="position">您现在的位置：<a href="${base}/">首页</a> »<a href="${base}/gift.jspx" target="_blank"> 礼品</a></div>
+<div class="position">您现在的位置：<a href="${base}/">首页</a> »<a href="${base}/gift.htm" target="_blank"> 礼品</a></div>
 <div class="center mt10">
     <div class="produce clearfix">
         <div class="p_title"><h2><font id="productMainName">${gift.giftName!}</font></h2></div>

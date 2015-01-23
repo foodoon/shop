@@ -1,39 +1,31 @@
 ﻿[#include "../include/html_header.html"/]
-    <title>退货订单- ${web.name}${web.additionalTitle!}</title>
-    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/member.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/buy.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/order.css" type="text/css" rel="stylesheet"/>
-
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
-    <script src="${base}/thirdparty/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("#jvForm").validate();
-        });
-    </script>
+<script type="text/javascript">
+    function onSubmit() {
+        if (!$("#contract").attr("checked") == true) {
+            alert("请阅读注册协议!");
+            return;
+        }
+        $("#jvForm").submit();
+    }
+</script>
+<script src="${base}/thirdparty/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 </head>
 <body>
-[#--
-[#include '../shop/develop/inc_head.html'/]
---]
-<div class="mainContainer sixteen container">
-    <!--Header Block-->
-    <div class="header-wrapper">
-        [#include "../include/html_header_top.html"/]
-    </div>
-</div>
-<div class="center mt10">
-    [#include "member_nav.html"/]
-    <div id="container" class="user_right clearfix">
+[#include "../include/html_header_top.html"/]
+
+<div class="am-container">
+    <div class="am-cf admin-main">
+        <!-- sidebar start -->
+        [#include "member_nav.html"/]
+        <div class="admin-content">
+
         <div class="usercenter_position"><span>退货订单</span> <a href="${base}/xsrm/20.htm" target="_blank"
                                                               style="color: #1A66B3;float:right;">查看积分规则</a></div>
         <div id="demo2" class="s-demo">
-            <form id="jvForm" action="myscore.jspx" method="post">
+            <form id="jvForm" action="myscore.htm" method="post">
                 <div class="ks-switchable-content">
                     <div>
-                        <table id="detailShowtab">
+                        <table id="detailShowtab" class="am-table">
                             <thead>
                             <tr>
                                 <th width="100" style="text-align:left; padding-left:20px;">订单号</th>
@@ -47,19 +39,19 @@
                             [#list pagination.list as o]
                             <tr>
                                 <td style="text-align:left;vertical-align: middle; height:60px;">
-                                    <a class="aBlu" href="myOrderView.jspx?orderId=${o.id}"
+                                    <a class="aBlu" href="myOrderView.htm?orderId=${o.id}"
                                        target="_blank">${o.code!}</a></td>
                                 <td>[@s.m "orderReturn.returnType.${o.returnOrder.returnType!}"/]</td>
                                 <td>${o.returnOrder.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                 <td> [@s.m "orderReturn.status.${o.returnOrder.status}"/][#if
                                     o.returnOrder.returnType=1][#if o.returnOrder.status=2]&nbsp;&nbsp;<a class="aBlu"
-                                                                                                          href="shipments.jspx?id=${o.returnOrder.id}"
+                                                                                                          href="shipments.htm?id=${o.returnOrder.id}"
                                                                                                           target="_blank">发货</a>[#elseif
                                     o.returnOrder.status=6]&nbsp;&nbsp;<a class="aBlu"
-                                                                          href="accomplish.jspx?id=${o.returnOrder.id}"
+                                                                          href="accomplish.htm?id=${o.returnOrder.id}"
                                                                           target="_blank">确认</a>[/#if][#else][#if
                                     o.returnOrder.status=6]&nbsp;&nbsp;<a class="aBlu"
-                                                                          href="accomplish.jspx?id=${o.returnOrder.id}"
+                                                                          href="accomplish.htm?id=${o.returnOrder.id}"
                                                                           target="_blank">确认</a>[/#if][/#if]
                                 </td>
                             </tr>
@@ -80,7 +72,7 @@
         </div>
     </div>
 </div>
-<div class="clear"></div>
+</div>
 
 [#include "../include/footer.html"/]
 

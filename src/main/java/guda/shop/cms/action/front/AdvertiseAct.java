@@ -28,7 +28,7 @@ public class AdvertiseAct {
     @Autowired
     private AdspaceMng adspaceMng;
 
-    @RequestMapping({"/ad.jspx"})
+    @RequestMapping({"/ad.htm"})
     public String ad(Integer id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -48,7 +48,7 @@ public class AdvertiseAct {
         );
     }
 
-    @RequestMapping({"/adspace.jspx"})
+    @RequestMapping({"/adspace.htm"})
     public String adspace(Integer id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -69,7 +69,7 @@ public class AdvertiseAct {
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.adspace", new Object[0]));
     }
 
-    @RequestMapping({"/ad_display.jspx"})
+    @RequestMapping({"/ad_display.htm"})
     public void display(Integer id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         if (id != null) {
@@ -84,7 +84,7 @@ public class AdvertiseAct {
         response.setDateHeader("Expires", 0L);
     }
 
-    @RequestMapping({"/ad_click.jspx"})
+    @RequestMapping({"/ad_click.htm"})
     public void click(Integer id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         if (id != null) {

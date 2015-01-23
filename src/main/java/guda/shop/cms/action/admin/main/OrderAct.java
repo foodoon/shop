@@ -645,7 +645,7 @@ public class OrderAct {
         String detail_data = orderReturn.getOrder().getId().toString() + "^" + 1.0D + "^" + orderReturn.getShopDictionary().getName();
 
 
-        String notify_url = "http://" + web.getDomain() + "/cart/aliReturn.jspx";
+        String notify_url = "http://" + web.getDomain() + "/cart/aliReturn.htm";
 
 
         Map sParaTemp = new HashMap();

@@ -40,7 +40,7 @@ public class ForgotPasswordAct {
     @Autowired
     private SessionProvider session;
 
-    @RequestMapping(value = {"/forgot_password.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/forgot_password.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String fogottenInput(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -53,7 +53,7 @@ public class ForgotPasswordAct {
         );
     }
 
-    @RequestMapping(value = {"/forgot_password.jspx"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/forgot_password.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String fogottenSubmit(String checkcode, String username, String email, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -130,7 +130,7 @@ public class ForgotPasswordAct {
         );
     }
 
-    @RequestMapping({"/reset_password.jspx"})
+    @RequestMapping({"/reset_password.htm"})
     public String resetPwd(Long uid, String activationCode, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

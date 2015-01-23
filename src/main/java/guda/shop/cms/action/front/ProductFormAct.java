@@ -39,7 +39,7 @@ public class ProductFormAct {
     @Autowired
     private DiscussMng discussMng;
 
-    @RequestMapping({"/searchDiscussPage*.jspx"})
+    @RequestMapping({"/searchDiscussPage*.htm"})
     public String searchDiscussPage(Long productId, Integer pageNo, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -59,12 +59,12 @@ public class ProductFormAct {
 
         ShopFrontHelper.setCommonData(request, model, web, 1);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "searchDiscussPage", ".jspx", SimplePage.cpn(pageNo));
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "searchDiscussPage", ".htm", SimplePage.cpn(pageNo));
 
         return web.getTemplate("shop", MessageResolver.getMessage(request, "tpl.discussContentPage", new Object[0]));
     }
 
-    @RequestMapping({"/haveDiscuss.jspx"})
+    @RequestMapping({"/haveDiscuss.htm"})
     public String haveDiscuss(Long productId, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -97,7 +97,7 @@ public class ProductFormAct {
         return null;
     }
 
-    @RequestMapping({"/consultProduct*.jspx"})
+    @RequestMapping({"/consultProduct*.htm"})
     public String consultProduct(Long productId, Integer pageNo, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -117,12 +117,12 @@ public class ProductFormAct {
 
         model.addAttribute("pagination", page);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "consultProduct", ".jspx", SimplePage.cpn(pageNo));
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "consultProduct", ".htm", SimplePage.cpn(pageNo));
 
         return web.getTemplate("shop", MessageResolver.getMessage(request, "tpl.consultProduct", new Object[0]));
     }
 
-    @RequestMapping({"/bargain*.jspx"})
+    @RequestMapping({"/bargain*.htm"})
     public String bargain(Long productId, Integer pageNo, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -142,12 +142,12 @@ public class ProductFormAct {
 
         model.addAttribute("product", bean);
 
-        ShopFrontHelper.setDynamicPageData(request, model, web, "", "bargain", ".jspx", SimplePage.cpn(pageNo));
+        ShopFrontHelper.setDynamicPageData(request, model, web, "", "bargain", ".htm", SimplePage.cpn(pageNo));
 
         return web.getTemplate("shop", MessageResolver.getMessage(request, "tpl.bargain", new Object[0]));
     }
 
-    @RequestMapping({"/insertConsult.jspx"})
+    @RequestMapping({"/insertConsult.htm"})
     public String insertConsult(Long productId, String content, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -180,7 +180,7 @@ public class ProductFormAct {
         return null;
     }
 
-    @RequestMapping({"/insertDiscuss.jspx"})
+    @RequestMapping({"/insertDiscuss.htm"})
     public String insertDiscuss(Long productId, String disCon, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -213,7 +213,7 @@ public class ProductFormAct {
         return null;
     }
 
-    @RequestMapping({"/historyRecord.jspx"})
+    @RequestMapping({"/historyRecord.htm"})
     public String historyRecord(Long productId, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

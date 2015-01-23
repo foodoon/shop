@@ -12,7 +12,7 @@
         });
         //获得城市
         function getResultCity(d) {
-            $.post('findAllCity.jspx', {"id": d},
+            $.post('findAllCity.htm', {"id": d},
                     function (data) {
                         if (data.success) {
                             $("#itemcity").html("");
@@ -28,7 +28,7 @@
         }
         //获得县、区
         function getResultCountry(a) {
-            $.post('findAllCountry.jspx', {"id": a},
+            $.post('findAllCountry.htm', {"id": a},
                     function (data) {
                         if (data.success) {
                             $("#itemarea").html("");
@@ -65,9 +65,9 @@
             [#list list as address]
             <li
             [#if address.isDefault]class="current"[/#if]><s>${address_index+1}</s><span class="fr">
-			 <a href="address_edit.jspx?id=${address.id}" class="y44" target="_self">修改</a> | 
-             <a href="address_delete.jspx?id=${address.id}" class="w44">删除|</a>
-             <a href="address_default.jspx?id=${address.id}">设为默认</a></span>
+			 <a href="address_edit.htm?id=${address.id}" class="y44" target="_self">修改</a> |
+             <a href="address_delete.htm?id=${address.id}" class="w44">删除|</a>
+             <a href="address_default.htm?id=${address.id}">设为默认</a></span>
             ${address.username!},${address.province.name!},${address.city.name!},
             ${address.country.name!},${address.detailaddress!},${address.postCode!},${address.tel!}
             </li>
@@ -75,7 +75,7 @@
         </ul>
         <h3>收货地址修改<span class="gray">（手机、固定电话选填一项，其余均为必填）</span></h3>
 
-        <form action="address_update.jspx" id="jvForm" name="addAddress" method="post">
+        <form action="address_update.htm" id="jvForm" name="addAddress" method="post">
             <table width="100%" border="0" cellspacing="2" cellpadding="0">
                 <tr>
                     <td height="25" width="70" align="right" style="color:#333;">收货人：</td>

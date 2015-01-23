@@ -12,7 +12,7 @@
     <script type="text/javascript">
         function reSendEamil(userId) {
             alert("正在重新发送激活邮件，请稍候！");
-            $.post('${base}/reactive.jspx', {'userId': userId},
+            $.post('${base}/reactive.htm', {'userId': userId},
                     function (data) {
                         if (data.data == 1)
                             alert('该帐号已经被激活，请直接登录！');

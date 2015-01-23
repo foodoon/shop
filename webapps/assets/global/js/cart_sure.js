@@ -29,7 +29,7 @@ jQuery(document).ready(function () {
 });
 
 function ajaxtotalDeliveryFee(d, w) {
-    $.post(URLPrefix.url + "/cart/ajaxtotalDeliveryFee.jspx", {
+    $.post(URLPrefix.url + "/cart/ajaxtotalDeliveryFee.htm", {
         'deliveryMethod': d,
         'weight': w
     }, function (data) {
