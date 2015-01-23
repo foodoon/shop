@@ -62,21 +62,13 @@ public class ShopScoreAct {
 
     @RequestMapping({"/shopScore/exchange.htm"})
     public String exchange(HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
-
         if (member == null) {
-
             return "redirect:../login.htm";
         }
-
         model.addAttribute("list", this.giftExchangeMng.getlist(member.getId()));
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.exchange", new Object[0]));
     }
 

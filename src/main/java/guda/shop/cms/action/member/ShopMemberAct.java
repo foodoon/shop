@@ -88,47 +88,23 @@ public class ShopMemberAct {
 
     @RequestMapping(value = {"/shopMember/profile.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
-
         if (member == null) {
-
             return "redirect:../login.htm";
         }
-
-
         List userDegreeList = this.shopDictionaryMng.getListByType(Long.valueOf(1L));
-
-
         List familyMembersList = this.shopDictionaryMng.getListByType(Long.valueOf(2L));
-
-
         List incomeDescList = this.shopDictionaryMng.getListByType(Long.valueOf(3L));
-
-
         List workSeniorityList = this.shopDictionaryMng.getListByType(Long.valueOf(4L));
-
-
         List degreeList = this.shopDictionaryMng.getListByType(Long.valueOf(5L));
-
         model.addAttribute("member", member);
-
-
         model.addAttribute("userDegreeList", userDegreeList);
-
         model.addAttribute("familyMembersList", familyMembersList);
-
         model.addAttribute("incomeDescList", incomeDescList);
-
         model.addAttribute("workSeniorityList", workSeniorityList);
-
         model.addAttribute("degreeList", degreeList);
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberProfile", new Object[0]));
     }
 

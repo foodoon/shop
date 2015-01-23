@@ -8,12 +8,12 @@
             $("#status").attr("value", status);
             $("#useStatus").attr("value", '');
         }
-        $("#jvForm").submit();
+        $("#search-form").submit();
     }
 
     function checkUseStatus(useStatus) {
         $("#useStatus").attr("value", useStatus);
-        $("#jvForm").submit();
+        $("#search-form").submit();
     }
 </script>
 
@@ -27,10 +27,11 @@
         [#include "member_nav.html"/]
         <div class="admin-content">
 
-        <div class="usercenter_position"><span>积分明细</span> <a href="${base}/xsrm/20.htm" target="_blank"
+
+        <div class="am-cf am-padding"><span>积分明细</span> <a href="${base}/xsrm/20.htm" target="_blank"
                                                               style="color: #1A66B3;float:right;">查看积分规则</a></div>
-        <div class="dd_list">
-            <ul id="detail-item" class="clearfix">
+        <div class="am-u-sm-12">
+            <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
                 <li class="usable-inte"><p class="available fweight">可用积分</p>
 
                     <p class="fweight fsize">${member.score!}</p></li>
@@ -38,39 +39,45 @@
 
                     <p class="fweight fsize">${member.freezeScore!}</p></li>
             </ul>
+
         </div>
-        <div id="demo2" class="s-demo">
-            <form id="jvForm" action="myscore.htm" method="post">
+        <div class="am-u-sm-12">
+            <form id="search-form" action="myscore.htm" method="post" class="am-form">
+                <div id="queryCodeNum"  class="am-u-sm-12">
+
+                    时间:<input  type="text" name="startTime" [#if startTime??]value="${startTime!}"[/#if]
+                    onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="width:100px;display:inline;"/>至:
+                    <input  type="text" name="endTime" [#if endTime??]value="${endTime!}"[/#if]
+                    onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="width:100px;display:inline;"/>
+
+                    <input id="toQuery" type="submit" value="查询"/>
+
+                </div>
                 <input type="hidden" id="status" name="status" value="${status!}"/>
                 <input type="hidden" id="useStatus" name="useStatus" value="${useStatus!}"/>
-                <ul class="ks-switchable-nav clearfix">
-                    <li
-                    [#if !(status??)&&!(useStatus??)]class="ks-active"[/#if]><a href="javascript:vodi(0);"
+
+                <div class="am-u-sm-12 am-u-sm-centered">
+                    <div class="am-tabs am-margin" data-am-tabs>
+                        <ul class="am-tabs-nav am-nav am-nav-tabs">
+
+                    <li [#if !(status??)&&!(useStatus??)]class="ks-active"[/#if]><a href="javascript:vodi(0);"
                                                                                 onclick="checkStatus(1);">全部明细
                     [@score_page count='10'](${tag_pagination.totalCount})[/@score_page]</a></li>
-                    <li
-                    [#if useStatus??&useStatus==0]class="ks-active"[/#if]><a href="javascript:vodi(0);"
+                    <li [#if useStatus??&useStatus==0]class="ks-active"[/#if]><a href="javascript:vodi(0);"
                                                                              onclick="checkUseStatus(0);">全部收入[@score_page
                     useStatus='0' count='10'](${tag_pagination.totalCount})[/@score_page]</a></li>
-                    <li
-                    [#if useStatus??&useStatus==1]class="ks-active"[/#if]><a href="javascript:vodi(0);"
+                    <li [#if useStatus??&useStatus==1]class="ks-active"[/#if]><a href="javascript:vodi(0);"
                                                                              onclick="checkUseStatus(1);">全部支出[@score_page
                     useStatus='1' count='10'](${tag_pagination.totalCount})[/@score_page]</a></li>
-                    <li
-                    [#if status??&status==0]class="ks-active"[/#if]><a href="javascript:vodi(0);"
+                    <li [#if status??&status==0]class="ks-active"[/#if]><a href="javascript:vodi(0);"
                                                                        onclick="checkStatus(0);">冻结积分[@score_page
                     status='0' count='10'](${tag_pagination.totalCount})[/@score_page]</a></li>
                 </ul>
-                <div id="queryCodeNum">
-                    时间:<input type="text" name="startTime" [#if startTime??]value="${startTime!}"[/#if] class="Wdate"
-                    onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="width:80px"/>至:
-                    <input type="text" name="endTime" [#if endTime??]value="${endTime!}"[/#if] class="Wdate"
-                    onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="width:80px"/>
-                    <input id="toQuery" type="submit" value="查询"/>
-                </div>
-                <div class="ks-switchable-content">
-                    <div>
-                        <table id="detailShowtab" class="am-table">
+
+                <div class="am-tabs-bd">
+                  <div class="am-tab-panel am-fade am-in am-active" id="tab">
+                        <div class="am-g am-margin-top">
+                            <table class="am-table">
                             <thead>
                             <tr>
                                 <th width="225" style="text-align:left; padding-left:20px;">来源 / 用途</th>
@@ -123,8 +130,11 @@
                             [/@score_page]
                             </tbody>
                         </table>
+                            </div>
                     </div>
                 </div>
+                        </div>
+                    </div>
             </form>
         </div>
     </div>

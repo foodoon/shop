@@ -1,11 +1,11 @@
-<form id="jvForm" action="${urlPrefix}${urlSuffix}">
-    <div class="searchColMainItem searchResultOp">
-        <dl>
-            <dt>品牌：</dt>
+<form id="jvForm" action="${urlPrefix}${urlSuffix}" class="am-form">
+    <table class="am-form">
+        <tr>
+            <td>品牌：</td>
             <input type="hidden" name="brandId" id="brandId" value="${brandId!}"/>
             <input type="hidden" name="isShow" id="isShow" value="${isShow!}"/>
             [@cate_brand categoryId=category.id]
-            <dd><span class="all"><a [#if !(brandId??)]class="cur"[/#if] onclick="clickBrand('');">全部</a></span>
+            <td><span class="all"><a [#if !(brandId??)]class="cur"[/#if] onclick="clickBrand('');">全部</a></span>
                   <span class="selection fashion" id="FacetBrandsAll">
                   [#list tag_list as brd]
                   	 [#if brd_index lt 12]
@@ -15,25 +15,25 @@
                       [/#if]
                    [/#list]
                   </span>
-            </dd>
-            <dd class="more">
+            </td>
+            <td class="more">
                 [#if !(tag_list?size lt 12)]
                 <a [#if isShow==1]class="pack" style="display:none"[/#if] id="FacetBrandsMoreBtn"
                 onclick="showMore('FacetBrandsAll','more')" href="javascript:void(0)" >更多</a>
                 <a [#if isShow==0]class="pack" style="display:none"[/#if] id="FacetBrandsBackBtn"
                 onclick="showMore('FacetBrandsAll','back')" href="javascript:void(0)" >收起</a>
                 [/#if]
-            </dd>
+            </td>
             [/@cate_brand]
-        </dl>
+        </tr>
         <!--判断是要被隐藏的属性部分是否有被选中的属性，如果有则显示隐藏部分-->
         [#list map?keys as mykey]
         [#assign mlist=map[mykey]]
         [#assign st=map1[mykey]]
         [#if 0<(fields?size)]
-        <dl class="last">
-            <dt>${st.name!}：</dt>
-            <dd>
+        <tr>
+            <td>${st.name!}：</td>
+            <td>
                 [#list fields as field]
                 [#if field==st.field]
                 [#list zhis as zhi]
@@ -51,12 +51,12 @@
                 [/#list]
                 [/#if]
                 [/#list]
-            </dd>
-        </dl>
+            </td>
+        </tr>
         [#else]
-        <dl class="last">
-            <dt>${st.name!}：</dt>
-            <dd>
+        <tr>
+            <td>${st.name!}：</td>
+            <td>
 		                  <span class="all">
 		                     <a class="cur" onclick="clickchang('exended_${st.field}','');">全部</a>
 		                  </span>
@@ -66,39 +66,31 @@
 		                     <a onclick="clickchang('exended_${st.field}','${m.id}');">${m.name!}</a>
 		                    [/#list]
 		                  </span>
-            </dd>
-        </dl>
+            </td>
+        </tr>
         [/#if]
         [/#list]
-    </div>
+    </table>
     <!-- 排序方式与布局方式切换区 -->
-    <div class="rankOp clearfix">
-        <input type="hidden" name="orderBy" id="orderBy" value="${orderBy!}"/>
-        <ul class="rank clearfix">
-            <!-- 排序方式 -->
-            <li
-            [#if orderBy==0]class="normal"[/#if]><a onclick="clickOrderBy(0);">默认排序</a></li>
-            <li
-            [#if orderBy==4]class="down"[#else]class="default"[/#if]><a
-                onclick="clickOrderBy(4);"><span>销量</span></a></li>
-            [#if orderBy==7]
-            <li class="defaultPrice priceUp"><a onclick="clickOrderBy(6);"><span>价格</span></a></li>
-            [#elseif orderBy==6]
-            <li class="defaultPrice priceDown"><a onclick="clickOrderBy(7);"><span>价格</span></a></li>
-            [#else]
-            <li class="defaultPrice"><a onclick="clickOrderBy(7);"> <span>价格</span></a></li>
-            [/#if]
-            <li class="default"><a onclick="clickOrderBy(1);"><span>评价</span></a></li>
-            <li
-            [#if orderBy==2]class="down"[#else]class="default"[/#if]><a
-                onclick="clickOrderBy(2);"><span>上架时间</span></a></li>
-        </ul>
-        <ul class="page clearfix">
-            <li><a href="javascript:void(0);">每页显示数量：</a></li>
-            <li><a [#if pageSize==2] class="cur"[/#if] onclick="clickPageSize(2);">2</a></li>
-            <li><a [#if pageSize==8] class="cur"[/#if] onclick="clickPageSize(8);">8</a></li>
-            <li><a [#if pageSize==12] class="cur"[/#if] onclick="clickPageSize(12);">12</a></li>
-            <input type="hidden" name="pageSize" id="pageSize" value="${pageSize!}"/>
-        </ul>
+<div class="am-g">
+    <div class="am-u-sm-6 am-u-md-6">
+        <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+                <button type="button" class="am-btn am-btn-default" onclick="clickOrderBy(0);"><span></span>默认排序</button>
+                <button type="button" class="am-btn am-btn-default"  onclick="clickOrderBy(4);"><span [#if orderBy==4] class="arrow-down" [#else]class=""[/#if]></span> 销量</button>
+                [#if orderBy==7]
+                <button type="button" class="am-btn am-btn-default"  onclick="clickOrderBy(6);"><span  class="arrow-up"></span> 价格</button>
+                [#elseif orderBy==6]
+                <button type="button" class="am-btn am-btn-default"  onclick="clickOrderBy(7);"><span class="arrow-down" ></span> 价格</button>
+                [#else]
+                <button type="button" class="am-btn am-btn-default"  onclick="clickOrderBy(7);"><span></span> 价格</button>
+
+                [/#if]
+                <button type="button" class="am-btn am-btn-default"  onclick="clickOrderBy(2);"><span  [#if orderBy==2]class="arrow-down"[#else]class=""[/#if]></span> 上架时间</button>
+
+            </div>
+        </div>
     </div>
+
+</div>
 </form>

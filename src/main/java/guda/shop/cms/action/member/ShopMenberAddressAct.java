@@ -45,21 +45,13 @@ public class ShopMenberAddressAct {
 
     @RequestMapping(value = {"/shopMemberAddress/address_list.htm"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String list(HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
         List list = this.shopMemberAddressMng.getList(member.getId());
-
         model.addAttribute("list", list);
-
         List plist = this.addressMng.getListById(null);
-
         model.addAttribute("plist", plist);
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.memberAddress", new Object[0]));
     }
 

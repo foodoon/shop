@@ -13,8 +13,8 @@
             <legend>登录</legend>
         </fieldset>
 
-            <div class="login_box_left">
-                <div class="login">
+            <div>
+                <div>
                     [#if returnUrl??]
                     <p style="font-color:red">[#if message??][@s.mt code=message
                         text=message/][#else]您需要登录才能继续刚才的操作[/#if]</p>
@@ -29,7 +29,7 @@
                         [/#list]
                     </ul>
                     [/#if]
-                    <table width="100%" border="0" cellspacing="2" cellpadding="0">
+                    <table width="100%" border="0" cellspacing="2" cellpadding="0" class="am-table">
                         <tr>
                             <td height="55" width="70" align="right" style="font-size:14px;">登录帐号：</td>
                             <td height="55" width="200"><input type="text" name="username" id="username"
