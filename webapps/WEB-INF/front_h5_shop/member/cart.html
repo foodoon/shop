@@ -229,14 +229,14 @@
         <del>￥<span id="market_items_${item.product.id}_${item_index}">${item.product.marketPrice!}</span>
         </del>
         <br/>
-        <strong class="red">￥<span
+        <strong class="red">￥<span class="sale_items_span"
                 id="sale_items_${item.product.id}_${item_index}">${item.product.salePrice!}</span></strong>
         [/#if]
-        <span id="score_items_${item.product.id}_${item_index}" style="display:none;">${item.product.score!0}</span>
-        <span id="weight_items_${item.product.id}_${item_index}" style="display:none;">${item.product.productExt.weight!0}</span>
+        <span class="score_items_span" id="score_items_${item.product.id}_${item_index}" style="display:none;">${item.product.score!0}</span>
+        <span calss="weight_items_span" id="weight_items_${item.product.id}_${item_index}" style="display:none;">${item.product.productExt.weight!0}</span>
     </td>
     <td>
-        <span id="total_score_items_${item.product.id}_${item_index}">${item.count*item.product.score!0}</span>
+        <span class="total_score_items_span" id="total_score_items_${item.product.id}_${item_index}">${item.count*item.product.score!0}</span>
     </td>
     <td>
         <input class="btn-reduce-active" type="button"

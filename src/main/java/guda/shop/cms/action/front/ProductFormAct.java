@@ -99,26 +99,16 @@ public class ProductFormAct {
 
     @RequestMapping({"/consultProduct*.htm"})
     public String consultProduct(Long productId, Integer pageNo, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         if ((productId == null) || (this.productMng.findById(productId) == null)) {
-
             return FrontHelper.pageNotFound(web, model, request);
         }
-
         ShopFrontHelper.setCommonData(request, model, web, SimplePage.cpn(pageNo));
-
         Product bean = this.productMng.findById(productId);
-
         Pagination page = this.consultMng.getPage(productId, null, null, null, null, SimplePage.cpn(pageNo), 5, Boolean.valueOf(true));
-
         model.addAttribute("product", bean);
-
         model.addAttribute("pagination", page);
-
         ShopFrontHelper.setDynamicPageData(request, model, web, "", "consultProduct", ".htm", SimplePage.cpn(pageNo));
-
         return web.getTemplate("shop", MessageResolver.getMessage(request, "tpl.consultProduct", new Object[0]));
     }
 

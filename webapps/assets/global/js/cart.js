@@ -7,8 +7,7 @@
     var c = function () {
     };
     var j = document.documentMode || 0;
-    var e = i.browser.msie && ((i.browser.version < 8 && !j) || j < 8);
-    var f = i.browser.msie && /MSIE 6.0/.test(navigator.userAgent) && !j;
+
     i.blockUI = function (p) {
         d(window, p);
     };
@@ -363,7 +362,7 @@ function aa() {
     var market = 0.0;
     var sale = 0.0;
     var popularity = 0.0;
-    $("#[id^='total_score_items_']").each(function () {
+    $(".total_score_items_span").each(function () {
         var ss = parseInt(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
@@ -375,13 +374,13 @@ function aa() {
         }
         $("#items_score").html(score);
     });
-    $("#[id^='total_weight_items_']").each(function () {
+    $("total_weight_items_span").each(function () {
         var ww = parseFloat(jQuery(this).html());
         weight = accAdd(weight, ww);
         $("#items_weight").html(weight);
     });
 
-    $("#[id^='total_market_items_']").each(function () {
+    $(".total_market_items_span").each(function () {
         var mk = parseFloat(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
@@ -392,7 +391,7 @@ function aa() {
             market = market;
         }
     });
-    $("#[id^='total_sale_items_']").each(function () {
+    $(".total_sale_items_span").each(function () {
         var sl = parseFloat(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
@@ -403,7 +402,7 @@ function aa() {
             sale = sale;
         }
     });
-    $("#[id^='total_popularity_']").each(function () {
+    $(".total_popularity_span").each(function () {
         var ss = parseFloat(jQuery(this).html());
         popularity = accAdd(weight, ss);
     });

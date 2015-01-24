@@ -1,9 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>无标题文档 - ${web.name}${web.additionalTitle!}</title>
+    <meta charset="utf-8">
+    <title>鏃犳爣棰樻枃妗� - ${web.name}${web.additionalTitle!}</title>
     <script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
     <script type="text/javascript">
         function insertConsult(pid, mid) {
@@ -12,14 +16,14 @@
                 productId: pid, content: content
             }, function (data) {
                 if (data == 'false') {
-                    alert('请先登入！');
+                    alert('璇峰厛鐧诲叆锛�');
                     var loginForm = getLoginForm();
                     loginForm.submit();
                 } else if (data == 'sameUsually') {
-                    alert('请在30秒后发表');
+                    alert('璇峰湪30绉掑悗鍙戣〃');
                 }
                 else if (data == 'success') {
-                    alert('成功');
+                    alert('鎴愬姛');
                 }
             });
         }
@@ -120,7 +124,7 @@
         width: 14px;
     }
 
-    .clear/*清除两端*/  {
+    .clear/*娓呴櫎涓ょ*/  {
         clear: both;
         height: 0;
         overflow: hidden;
@@ -129,16 +133,16 @@
 <body>
 <div class="intro_box">
     <p>
-    <table align="center" class="tb-list" summary="买家出价记录" server-num="detailskip185125.cm4">
+    <table align="center" class="tb-list" summary="涔板鍑轰环璁板綍" server-num="detailskip185125.cm4">
         <thead>
         <tr>
-            <td align="center" width="20%">买家</td>
+            <td align="center" width="20%">涔板</td>
             [#if product.fashions?size>0]
-            <td align="center" width="20%">款式</td>
+            <td align="center" width="20%">娆惧紡</td>
             [/#if]
-            <td align="center" width="20%">拍下价格</td>
-            <td align="center" width="20%">数量</td>
-            <td align="center" width="20%">下单时间</td>
+            <td align="center" width="20%">鎷嶄笅浠锋牸</td>
+            <td align="center" width="20%">鏁伴噺</td>
+            <td align="center" width="20%">涓嬪崟鏃堕棿</td>
         </tr>
         </thead>
         <tbody>
