@@ -1,23 +1,11 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title> ${article.title} - ${web.name}${web.additionalTitle!}</title>
-    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
+﻿[#include "../include/html_header.html"/]
+<script language="javascript" src="${root}/js/duice.js"></script>
+<script type="text/javascript" src="${root}/js/img.js"></script>
+
+
 </head>
 <body>
-[#include "../include/header_top.html"/]
-<div id="head">
-    [#include "../include/header_search.html"/]
-    [#include "../include/header_nav.html"/]
-</div>
-[#include "../include/header_banner.html"/]
-<div class="position">您现在的位置：<a href="${base!}">首页</a> &raquo;<a href="${article.channel.url!}" class="red">${article.channel.name!}</a>
-</div>
-
+[#include "../include/html_header_top.html"/]
 <div class="list_line" style="margin:auto;width:980px">
     ${article.content!}
 </div>
