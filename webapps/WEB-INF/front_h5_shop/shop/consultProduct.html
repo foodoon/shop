@@ -1,38 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>ÎŞ±êÌâÎÄµµ - ${web.name}${web.additionalTitle!}</title>
-    <script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
-    <script type="text/javascript">
-        function insertConsult(pid, mid) {
-            var content = $("#goods_question_contens_box").val();
-            $.post("insertConsult.htm", {
-                productId: pid, content: content
-            }, function (data) {
-                if (data == 'false') {
-                    alert('ÇëÏÈµÇÈë£¡');
-                    var loginForm = getLoginForm();
-                    loginForm.submit();
-                } else if (data == 'sameUsually') {
-                    alert('ÇëÔÚ30Ãëºó·¢±í');
-                }
-                else if (data == 'success') {
-                    alert('³É¹¦');
-                }
-            });
-        }
+    <meta charset="utf-8">
+<script type="text/javascript">
+    function insertConsult(pid, mid) {
+        var content = $("#goods_question_contens_box").val();
+        $.post("insertConsult.htm", {
+            productId: pid, content: content
+        }, function (data) {
+            if (data == 'false') {
+                alert('è¯·å…ˆç™»å…¥ï¼');
+                var loginForm = getLoginForm();
+                loginForm.submit();
+            } else if (data == 'sameUsually') {
+                alert('è¯·åœ¨30ç§’åå‘è¡¨');
+            }
+            else if (data == 'success') {
+                alert('æˆåŠŸ');
+            }
+        });
+    }
 
-        function getLoginForm() {
-            return document.getElementById("loginForm");
-        }
-        function getTableForm() {
-            return document.getElementById("tableForm");
-        }
+    function getLoginForm() {
+        return document.getElementById("loginForm");
+    }
+    function getTableForm() {
+        return document.getElementById("tableForm");
+    }
 
-    </script>
-</head>
+</script>
 <style>
     .pl_line {
         width: 710px;
@@ -120,23 +121,24 @@
         width: 14px;
     }
 
-    .clear/*Çå³ıÁ½¶Ë*/  {
+    .clear/*æ¸…é™¤ä¸¤ç«¯*/  {
         clear: both;
         height: 0;
         overflow: hidden;
     }
 </style>
+</head>
 <body>
+
 <div class="pl_line ">
     [#list pagination.list as c]
     <ul class="pl_zone" style="width:715px;">
         <li><strong>${c.member.username!}</strong>&nbsp;&nbsp;<span>[${c.time}]</span></li>
         <li class="pl_txt">${c.consult!}</li>
-
         [#if c.adminReplay??]
         <li>
             <dl class="re_txt">
-                <dd><span>¿Í·ş£º</span>${c.adminReplay}
+                <dd><span>å®¢æœï¼š</span>${c.adminReplay}
                     <div></div>
                 </dd>
             </dl>
@@ -157,12 +159,12 @@
         <input type="hidden" value="${product.id!}" name="productId">
     </form>
     <ul class="wenti_box">
-        <li>ÄãÓĞÊ²Ã´¹ºÂòÎÊÌâ¼°²úÆ·Òâ¼û£¿</li>
+        <li>ä½ æœ‰ä»€ä¹ˆè´­ä¹°é—®é¢˜åŠäº§å“æ„è§ï¼Ÿ</li>
         <li>
             <textarea rows="6" cols="50" id="goods_question_contens_box" name="content" class="wenti_input"></textarea>
         </li>
     </ul>
-    <input type="button" value="Ìá½»" onclick="insertConsult('${product.id}');"/>
+    <input type="button" value="æäº¤" onclick="insertConsult('${product.id}');"/>
 </div>
 </body>
 </html>

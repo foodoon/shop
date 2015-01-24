@@ -1,9 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>ÎŞ±êÌâÎÄµµ - ${web.name}${web.additionalTitle!}</title>
+    <meta charset="utf-8">
     <script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
     <script type="text/javascript">
         function discuss(productId) {
@@ -11,12 +14,12 @@
                 if (data == 'success') {
                     $("#discussTextArea").css("display", "");
                 } else if (data == 'denru') {
-                    alert('ÇëµÇÈë');
+                    alert('è¯·ç™»å…¥');
                     var loginForm = getLoginForm();
                     loginForm.submit();
                 }
                 else if (data == 'false') {
-                    alert('±ØĞë¹ºÂò¹ı¸Ã²úÆ·²ÅÄÜ¹»ÆÀÂÛ!');
+                    alert('å¿…é¡»è´­ä¹°è¿‡è¯¥äº§å“æ‰èƒ½å¤Ÿè¯„è®º!');
                 }
             });
         }
@@ -27,12 +30,12 @@
         function insertDiscuss(productId) {
             var disCon = $("#disContent").val();
             if ($.trim(disCon) == "") {
-                alert('ÆÀÂÛÄÚÈİ²»ÄÜÎª¿Õ£¡');
+                alert('è¯„è®ºå†…å®¹ä¸èƒ½ä¸ºç©ºï¼');
                 return false;
             }
             $.post("insertDiscuss.htm", {productId: productId, disCon: disCon}, function (data) {
                 if (data == 'success') {
-                    alert('·¢±í³É¹¦!');
+                    alert('å‘è¡¨æˆåŠŸ!');
                     getTableForm().submit();
                 }
             })
@@ -85,18 +88,18 @@
 </style>
 <body>
 
-<a href="javascript:void(0)" onclick="discuss('${product.id!}');">Ğ´ÆÀÂÛ </a>
+<a href="javascript:void(0)" onclick="discuss('${product.id!}');">å†™è¯„è®º </a>
 
 <div id="discussTextArea" style="display:none">
     <textarea rows="6" cols="50" id="disContent"></textarea>
-    <button onclick="insertDiscuss('${product.id}');">·¢±íÆÀÂÛ</button>
+    <button onclick="insertDiscuss('${product.id}');">å‘è¡¨è¯„è®º</button>
 </div>
 
 
 [#list pagination.list as c]
 <div class="pl_line ">
     <ul class="pl_zone pl">
-        <li><strong>${c.member.username!}</strong>&nbsp;&nbsp;<span>·¢±íÓÚ ${c.time!}</span></li>
+        <li><strong>${c.member.username!}</strong>&nbsp;&nbsp;<span>å‘è¡¨äº ${c.time!}</span></li>
         <li class="pl_txt"> ${c.content!}</li>
     </ul>
     <div class="clear"></div>
