@@ -31,7 +31,7 @@
                         <form id="tableForm" method="post">
                             <input type="hidden" name="pageNo" value="${pageNo!}"/>
                             <input type="hidden" name="ctgId" value="${ctgId!}"/>
-                            <@p.table listAction="v_productSaleTop.do" value=pagination;productId,i,has_next><#rt/>
+                            <@p.table listAction="productSaleTop.do" value=pagination;productId,i,has_next><#rt/>
                             <@p.column code="product.name">${productId.name}</@p.column><#t/>
                                             <@p.column code="product.category">${productId.category.name}</@p.column><#t/>
                                         <@p.column code="product.type">${productId.type.name}</@p.column><#t/>

@@ -19,7 +19,7 @@ public class CouponAct {
     @Autowired
     private CouponMng manager;
 
-    @RequestMapping({"/coupon/v_add.do"})
+    @RequestMapping({"/coupon/add.do"})
     public String add(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         return "coupon/add";
@@ -35,7 +35,7 @@ public class CouponAct {
         return list(request, response, model);
     }
 
-    @RequestMapping({"/coupon/v_list.do"})
+    @RequestMapping({"/coupon/list.do"})
     public String list(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         List cList = this.manager.getList();
@@ -45,7 +45,7 @@ public class CouponAct {
         return "coupon/list";
     }
 
-    @RequestMapping({"/coupon/v_edit.do"})
+    @RequestMapping({"/coupon/edit.do"})
     public String edit(Long id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         model.addAttribute("coupon", this.manager.findById(id));

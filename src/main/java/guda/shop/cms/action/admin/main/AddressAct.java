@@ -25,7 +25,7 @@ public class AddressAct {
     private AddressMng manager;
 
 
-    @RequestMapping({"/address/v_list.do"})
+    @RequestMapping({"/address/list.do"})
     public String list(Long parentId, Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPageByParentId(parentId, SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -37,7 +37,7 @@ public class AddressAct {
         return "address/list";
     }
 
-    @RequestMapping({"/address/v_add.do"})
+    @RequestMapping({"/address/add.do"})
     public String add(Long parentId, ModelMap model) {
 
         model.addAttribute("parentId", parentId);
@@ -45,7 +45,7 @@ public class AddressAct {
         return "address/add";
     }
 
-    @RequestMapping({"/address/v_edit.do"})
+    @RequestMapping({"/address/edit.do"})
     public String edit(Long id, Long parentId, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -85,7 +85,7 @@ public class AddressAct {
 
         model.addAttribute("parentId", parentId);
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/address/o_update.do"})

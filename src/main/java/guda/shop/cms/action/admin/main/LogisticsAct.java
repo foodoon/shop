@@ -22,7 +22,7 @@ public class LogisticsAct {
     private LogisticsMng manager;
 
 
-    @RequestMapping({"/logistics/v_list.do"})
+    @RequestMapping({"/logistics/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
         List list = this.manager.getAllList();
 
@@ -31,13 +31,13 @@ public class LogisticsAct {
         return "logistics/list";
     }
 
-    @RequestMapping({"/logistics/v_add.do"})
+    @RequestMapping({"/logistics/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         return "logistics/add";
     }
 
-    @RequestMapping({"/logistics/v_edit.do"})
+    @RequestMapping({"/logistics/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -66,7 +66,7 @@ public class LogisticsAct {
 
         log.info("save brand. id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/logistics/o_update.do"})

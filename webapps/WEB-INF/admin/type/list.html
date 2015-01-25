@@ -11,7 +11,7 @@
     <div class="am-cf admin-main">
 
         <!-- sidebar start -->
-        <#include "../config/left.html">
+        <#include "../category/left.html">
             <!-- sidebar end -->
             <!-- content start-->
             <div class="admin-content">
@@ -21,7 +21,8 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -40,12 +41,12 @@
             <@p.column code="productType.contentPrefix">${productType.contentPrefix}</@p.column><#t/>
 
                         <@p.column code="属性列表" align="center">
-                        <a href="../typeProperty/v_list.do?typeId=${productType.id}&isCategory=true">[分类列表]</a>
-                        <a href="../typeProperty/v_list.do?typeId=${productType.id}&isCategory=false">[商品列表]</a>
+                        <a href="../typeProperty/list.do?typeId=${productType.id}&isCategory=true">[分类列表]</a>
+                        <a href="../typeProperty/list.do?typeId=${productType.id}&isCategory=false">[商品列表]</a>
                     </@p.column><#t/>
 
                     <@p.column code="global.operate" align="center">
-                    <a href="v_edit.do?id=${productType.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
+                    <a href="edit.do?id=${productType.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
                     <a href="o_delete.do?ids=${productType.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                 </@p.column><#t/>
                 </@p.table>

@@ -22,7 +22,7 @@ public class ShopMemberGroupAct {
     private ShopMemberGroupMng manager;
 
 
-    @RequestMapping({"/group/v_list.do"})
+    @RequestMapping({"/group/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(
                 SiteUtils.getWebId(request));
@@ -32,13 +32,13 @@ public class ShopMemberGroupAct {
         return "group/list";
     }
 
-    @RequestMapping({"/group/v_add.do"})
+    @RequestMapping({"/group/add.do"})
     public String add(ModelMap model) {
 
         return "group/add";
     }
 
-    @RequestMapping({"/group/v_edit.do"})
+    @RequestMapping({"/group/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -67,7 +67,7 @@ public class ShopMemberGroupAct {
 
         log.info("save ShopMemberGroup. id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/group/o_update.do"})

@@ -19,7 +19,7 @@ public class PosterAct {
     @Autowired
     private PosterMng manager;
 
-    @RequestMapping({"/poster/v_list.do"})
+    @RequestMapping({"/poster/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
 
         List listPoster = this.manager.getPage();
@@ -63,7 +63,7 @@ public class PosterAct {
         }
 
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/poster/o_delPoster.do"})

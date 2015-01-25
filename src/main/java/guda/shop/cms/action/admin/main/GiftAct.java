@@ -24,7 +24,7 @@ public class GiftAct {
     private GiftMng manager;
 
 
-    @RequestMapping({"/gift/v_list.do"})
+    @RequestMapping({"/gift/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPageGift(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -34,13 +34,13 @@ public class GiftAct {
         return "gift/list";
     }
 
-    @RequestMapping({"/gift/v_add.do"})
+    @RequestMapping({"/gift/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         return "gift/add";
     }
 
-    @RequestMapping({"/gift/v_edit.do"})
+    @RequestMapping({"/gift/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -62,7 +62,7 @@ public class GiftAct {
 
         log.info("save brand. id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/gift/o_update.do"})

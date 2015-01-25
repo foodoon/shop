@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -38,7 +38,7 @@
                             <@p.column code="payment.priority"><input type="text" name="priority" value="${payment.priority}" size="7"/><input type="hidden" name="wids" value="${payment.id}"/></@p.column><#t/>
                         <@p.column code="payment.disabled"><#if payment.disabled><@s.m "global.true"/><#else><@s.m "global.false"/></#if></@p.column><#t/>
                     <@p.column code="global.operate" align="center">
-                    <a href="v_edit.do?id=${payment.id}"><@s.m "global.edit"/></a> | <#rt/>
+                    <a href="edit.do?id=${payment.id}"><@s.m "global.edit"/></a> | <#rt/>
                     <a href="o_delete.do?ids=${payment.id}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                 </@p.column><#t/>
             </@p.table>

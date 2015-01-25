@@ -21,14 +21,14 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form action="v_list.do" class="am-form">
+                        <form action="list.do" class="am-form">
 
                             <div style="padding-top:5px">
                                 订单编号: <input type="text" name="code" value="${code!}" style="width:100px;display: inline;"/>
@@ -90,8 +90,8 @@
                         <@p.column code="order.paymentStatus"><@s.m "order.paymentStatus.${order.paymentStatus}"/></@p.column><#t/>
                         <@p.column code="order.shippingStatus"><@s.m "order.shippingStatus.${order.shippingStatus}"/></@p.column><#t/>
                         <@p.column code="global.operate" align="center">
-                        <a href="v_view.do?id=${order.id}&pageNo=${pageNo!}">查看</a> | <#rt/>
-                        <a href="v_edit.do?id=${order.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
+                        <a href="view.do?id=${order.id}&pageNo=${pageNo!}">查看</a> | <#rt/>
+                        <a href="edit.do?id=${order.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
                         <a href="o_delete.do?ids=${order.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                         </@p.column><#t/>
                         </@p.table>

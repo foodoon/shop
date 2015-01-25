@@ -30,13 +30,13 @@ public class ShopChannelAct
     private ServletContext servletContext;
 
 
-    @RequestMapping({"/channel/v_left.do"})
+    @RequestMapping({"/channel/left.do"})
     public String left() {
         return "channel/left";
     }
 
 
-    @RequestMapping({"/channel/v_tree.do"})
+    @RequestMapping({"/channel/tree.do"})
     public String tree(String root, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -84,7 +84,7 @@ public class ShopChannelAct
         return "channel/tree";
     }
 
-    @RequestMapping({"/channel/v_list.do"})
+    @RequestMapping({"/channel/list.do"})
     public String list(Long root, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -104,7 +104,7 @@ public class ShopChannelAct
         return "channel/list";
     }
 
-    @RequestMapping({"/channel/v_add.do"})
+    @RequestMapping({"/channel/add.do"})
     public String add(Long root, Integer type, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -148,7 +148,7 @@ public class ShopChannelAct
         return "channel/add";
     }
 
-    @RequestMapping({"/channel/v_edit.do"})
+    @RequestMapping({"/channel/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -211,7 +211,7 @@ public class ShopChannelAct
 
         log.info("save ShopChannel id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/channel/o_update.do"})
@@ -228,7 +228,7 @@ public class ShopChannelAct
 
         log.info("update ShopChannel id={}.", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/channel/o_delete.do"})
@@ -248,7 +248,7 @@ public class ShopChannelAct
             log.info("delete ShopChannel id={}", bean.getId());
         }
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/channel/o_priority.do"})

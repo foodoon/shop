@@ -25,7 +25,7 @@ public class ShopDictionaryTypeAct {
     private ShopDictionaryTypeMng manager;
 
 
-    @RequestMapping({"/shopDictionaryType/v_list.do"})
+    @RequestMapping({"/shopDictionaryType/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -35,13 +35,13 @@ public class ShopDictionaryTypeAct {
         return "shopDictionaryType/list";
     }
 
-    @RequestMapping({"/shopDictionaryType/v_add.do"})
+    @RequestMapping({"/shopDictionaryType/add.do"})
     public String add(ModelMap model) {
 
         return "shopDictionaryType/add";
     }
 
-    @RequestMapping({"/shopDictionaryType/v_edit.do"})
+    @RequestMapping({"/shopDictionaryType/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -70,7 +70,7 @@ public class ShopDictionaryTypeAct {
 
         log.info("save ShopDictionaryType id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/shopDictionaryType/o_update.do"})

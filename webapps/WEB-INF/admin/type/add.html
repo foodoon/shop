@@ -11,7 +11,7 @@
     <div class="am-cf admin-main">
 
         <!-- sidebar start -->
-        <#include "../config/left.html">
+        <#include "../category/left.html">
             <!-- sidebar end -->
             <!-- content start-->
             <div class="admin-content">
@@ -21,7 +21,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -33,16 +33,16 @@
                         <@p.text colspan="1" width="50" label="productType.channelPrefix" name="channelPrefix" required="true" class="required" maxlength="20"/>
                         <@p.text colspan="1" width="50" label="productType.contentPrefix" name="contentPrefix" required="true" class="required" maxlength="20"/><@p.tr/>
                         <@p.td colspan="1" width="50" label="productType.detailImg">
-                        <@s.m "productType.width"/>: <input type="text" name="detailImgWidth" value="310" style="width:40px" class="required digits" maxlength="10"/>
-                        <@s.m "productType.height"/>: <input type="text" name="detailImgHeight" value="310" style="width:40px" class="required digits" maxlength="10"/>
+                        <@s.m "productType.width"/>: <input type="text" name="detailImgWidth" value="310" style="width:40px;display:inline;" class="required digits" maxlength="10"/>
+                        <@s.m "productType.height"/>: <input type="text" name="detailImgHeight" value="310" style="width:40px;display:inline;" class="required digits" maxlength="10"/>
                     </@p.td>
                     <@p.td colspan="1" width="50" label="productType.listImg">
-                    <@s.m "productType.width"/>: <input type="text" name="listImgWidth" value="140" style="width:40px" class="required digits" maxlength="10"/>
-                    <@s.m "productType.height"/>: <input type="text" name="listImgHeight" value="140" style="width:40px" class="required digits" maxlength="10"/>
+                    <@s.m "productType.width"/>: <input type="text" name="listImgWidth" value="140" style="width:40px;display:inline;" class="required digits" maxlength="10"/>
+                    <@s.m "productType.height"/>: <input type="text" name="listImgHeight" value="140" style="width:40px;display:inline;" class="required digits" maxlength="10"/>
                             </@p.td><@p.tr/>
                             <@p.td colspan="2" label="productType.minImg">
-                            <@s.m "productType.width"/>: <input type="text" name="minImgWidth" value="100" style="width:40px" class="required digits" maxlength="10"/>
-                            <@s.m "productType.height"/>: <input type="text" name="minImgHeight" value="100" style="width:40px" class="required digits" maxlength="10"/>
+                            <@s.m "productType.width"/>: <input type="text" name="minImgWidth" value="100" style="width:40px;display:inline;" class="required digits" maxlength="10"/>
+                            <@s.m "productType.height"/>: <input type="text" name="minImgHeight" value="100" style="width:40px;display:inline;" class="required digits" maxlength="10"/>
                         </@p.td><@p.tr/>
                         <@p.td colspan="2"><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>
                 </@p.form>

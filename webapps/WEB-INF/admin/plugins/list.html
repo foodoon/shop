@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -37,7 +37,7 @@
                     <@p.column code="payment.name">${payment.name}</@p.column><#t/>
                 <@p.column code="payment.priority"><input type="text" name="priority" value="${payment.priority}" size="7"/><input type="hidden" name="wids" value="${payment.id}"/></@p.column><#t/>
             <@p.column code="global.operate" align="center">
-            <a href="v_edit.do?id=${payment.id} "><@s.m "global.edit"/></a> | <#rt/>
+            <a href="edit.do?id=${payment.id} "><@s.m "global.edit"/></a> | <#rt/>
             <a href="o_delete.do?ids=${payment.id}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                     </@p.column><#t/>
                 </@p.table>
@@ -54,10 +54,10 @@
         <div class="am-u-sm-12 am-u-sm-centered">
             <table class="am-table am-table-striped am-table-hover table-main">
                 <#if !codeSet?seq_contains('alipay')>
-                    <tr><td width="300"><@s.m "payment.type.alipay"/></td><td width="70"><a href="v_add.do?code=alipay"><@s.m "payment.install"/></a></td></tr>
+                    <tr><td width="300"><@s.m "payment.type.alipay"/></td><td width="70"><a href="add.do?code=alipay"><@s.m "payment.install"/></a></td></tr>
                 </#if>
                 <#if !codeSet?seq_contains('alipayPartner')>
-                    <tr><td width="300"><@s.m "payment.type.alipay"/>担保交易</td><td width="70"><a href="v_add.do?code=alipayPartner"><@s.m "payment.install"/></a></td></tr>
+                    <tr><td width="300"><@s.m "payment.type.alipay"/>担保交易</td><td width="70"><a href="add.do?code=alipayPartner"><@s.m "payment.install"/></a></td></tr>
                 </#if>
             </table>
         </div>

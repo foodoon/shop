@@ -34,13 +34,13 @@ public class ShopArticleAct {
     private ShopArticleMng manager;
 
 
-    @RequestMapping({"/article/v_left.do"})
+    @RequestMapping({"/article/left.do"})
     public String left() {
         return "article/left";
     }
 
 
-    @RequestMapping({"/article/v_tree.do"})
+    @RequestMapping({"/article/tree.do"})
     public String tree(String root, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -88,7 +88,7 @@ public class ShopArticleAct {
         return "article/tree";
     }
 
-    @RequestMapping({"/article/v_list.do"})
+    @RequestMapping({"/article/list.do"})
     public String list(Long cid, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -110,7 +110,7 @@ public class ShopArticleAct {
         return "article/list";
     }
 
-    @RequestMapping({"/article/v_add.do"})
+    @RequestMapping({"/article/add.do"})
     public String add(Long cid, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -128,7 +128,7 @@ public class ShopArticleAct {
         return "article/add";
     }
 
-    @RequestMapping({"/article/v_edit.do"})
+    @RequestMapping({"/article/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -164,7 +164,7 @@ public class ShopArticleAct {
 
         log.info("save ShopArticle id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/article/o_update.do"})

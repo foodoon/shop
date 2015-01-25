@@ -10,47 +10,48 @@
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
             <li><a href="${base}/admin/shop/main.do"><@s.m "global.admin.home"/> </a></li>
             <@authorize url="frame/category_main.do">
-            <li><a href="${base}/admin/shop/category/v_list.do"><@s.m "shop.function.category"/></a></li>
+            <li><a href="${base}/admin/shop/category/list.do"><@s.m "shop.function.category"/></a></li>
             </@authorize>
             <@authorize url="frame/product_main.do">
-                <li><a href="${base}/admin/shop/product/v_list.do"><@s.m "shop.function.product"/></a></li>
+                <li><a href="${base}/admin/shop/product/list.do"><@s.m "shop.function.product"/></a></li>
             </@authorize>
 
             <@authorize url="frame/order_main.do">
-                <li><a href="${base}/admin/shop/order/v_list.do"><@s.m "shop.function.order"/></a></li>
+                <li><a href="${base}/admin/shop/order/list.do"><@s.m "shop.function.order"/></a></li>
             </@authorize>
 
             <@authorize url="frame/channel_main.do">
-            <li><a href="${base}/admin/shop/channel/v_list.do"><@s.m "shop.function.channel"/></a></li>
+            <li><a href="${base}/admin/shop/channel/list.do"><@s.m "shop.function.channel"/></a></li>
             </@authorize>
 
             <@authorize url="frame/article_main.do">
-            <li><a href="${base}/admin/shop/article/v_list.do"><@s.m "shop.function.article"/></a></li>
+            <li><a href="${base}/admin/shop/article/list.do"><@s.m "shop.function.article"/></a></li>
             </@authorize>
-
+<!--
             <@authorize url="frame/template_main.do">
-            <li><a href="${base}/admin/shop/template/v_list.do"><@s.m "shop.function.template"/></a></li>
+            <li><a href="${base}/admin/shop/template/list.do"><@s.m "shop.function.template"/></a></li>
             </@authorize>
 
             <@authorize url="frame/resource_main.do">
-            <li><a href="${base}/admin/shop/resource/v_list.do"><@s.m "shop.function.resource"/></a></li>
+            <li><a href="${base}/admin/shop/resource/list.do"><@s.m "shop.function.resource"/></a></li>
             </@authorize>
-
+-->
             <@authorize url="frame/assistant_main.do">
-            <li><a href="${base}/admin/shop/adspace/v_list.do"><@s.m "shop.function.assistant"/></a></li>
+            <li><a href="${base}/admin/shop/adspace/list.do"><@s.m "shop.function.assistant"/></a></li>
             </@authorize>
 
             <@authorize url="frame/member_main.do">
-            <li><a href="${base}/admin/shop/member/v_list.do"><@s.m "shop.function.member"/></a></li>
+            <li><a href="${base}/admin/shop/member/list.do"><@s.m "shop.function.member"/></a></li>
             </@authorize>
 
             <@authorize url="frame/config_main.do">
-            <li><a href="${base}/admin/shop/config/v_list.do"><@s.m "shop.function.config"/></a></li>
+            <li><a href="${base}/admin/shop/config/list.do"><@s.m "shop.function.config"/></a></li>
             </@authorize>
+        <!--
             <@authorize url="frame/marketing_main.do">
-            <li><a href="${base}/admin/shop/marketing/v_list.do">营销</a></li>
+            <li><a href="${base}/admin/shop/marketing/list.do">营销</a></li>
             </@authorize>
-
+         -->
 
 
         </ul>

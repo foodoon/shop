@@ -45,7 +45,7 @@ public class ResourceAct
     private ServletContext servletContext;
     private RealPathResolver realPathResolver;
 
-    @RequestMapping({"/resource/v_left.do"})
+    @RequestMapping({"/resource/left.do"})
     public String left(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -62,7 +62,7 @@ public class ResourceAct
         return "resource/left";
     }
 
-    @RequestMapping({"/resource/v_tree.do"})
+    @RequestMapping({"/resource/tree.do"})
     public String tree(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -93,7 +93,7 @@ public class ResourceAct
         return "resource/tree";
     }
 
-    @RequestMapping({"/resource/v_list.do"})
+    @RequestMapping({"/resource/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -140,7 +140,7 @@ public class ResourceAct
         return list(request, model);
     }
 
-    @RequestMapping({"/resource/v_rename.do"})
+    @RequestMapping({"/resource/rename.do"})
     public String renameInput(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -180,7 +180,7 @@ public class ResourceAct
         return list(request, model);
     }
 
-    @RequestMapping({"/resource/v_add.do"})
+    @RequestMapping({"/resource/add.do"})
     public String add(String relPath, HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("relPath", relPath);
@@ -211,7 +211,7 @@ public class ResourceAct
         return list(request, model);
     }
 
-    @RequestMapping({"/resource/v_edit.do"})
+    @RequestMapping({"/resource/edit.do"})
     public String edit(HttpServletRequest request, ModelMap model) {
 
         String root = RequestUtils.getQueryParam(request, "root");
@@ -297,7 +297,7 @@ public class ResourceAct
         return list(request, model);
     }
 
-    @RequestMapping({"/resource/v_upload.do"})
+    @RequestMapping({"/resource/upload.do"})
     public String uploadInput(String relPath, HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("relPath", relPath);

@@ -26,7 +26,7 @@ public class ShippingAct {
     private LogisticsMng logisticsMng;
 
 
-    @RequestMapping({"/shipping/v_list.do"})
+    @RequestMapping({"/shipping/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(SiteUtils.getWebId(request), true);
 
@@ -35,7 +35,7 @@ public class ShippingAct {
         return "shipping/list";
     }
 
-    @RequestMapping({"/shipping/v_add.do"})
+    @RequestMapping({"/shipping/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         List list = this.logisticsMng.getAllList();
@@ -45,7 +45,7 @@ public class ShippingAct {
         return "shipping/add";
     }
 
-    @RequestMapping({"/shipping/v_edit.do"})
+    @RequestMapping({"/shipping/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -92,7 +92,7 @@ public class ShippingAct {
 
         log.info("save Shipping. id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/shipping/o_update.do"})

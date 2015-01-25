@@ -21,7 +21,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -41,8 +41,8 @@
                             <p class="attr"><@s.m "global.linkTarget"/>: <@p.radio name="attr_image_target" value="_blank" list={"_blank":"global.blank","_self":"global.blank"}/></p>
                         </div>
                     </@p.td><@p.tr/>
-                    <@p.text colspan="1" width="50" label="global.startTime" name="startTime" style="width:120px" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="Wdate"/>
-                    <@p.text colspan="1" width="50" label="global.endTime" name="endTime" style="width:120px" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="Wdate"/><@p.tr/>
+                    <@p.text colspan="1" width="50" label="global.startTime" name="startTime" style="width:120px" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                    <@p.text colspan="1" width="50" label="global.endTime" name="endTime" style="width:120px" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /><@p.tr/>
                     <@p.text colspan="1" width="50" label="global.clickCount" name="clickCount" value="0" required="true" class="required digits" style="width:70px"/>
                     <@p.text colspan="1" width="50" label="global.displayCount" name="displayCount" value="0" required="true" class="required digits" style="width:70px"/><@p.tr/>
                     <@p.text colspan="1" width="50" label="advertise.weight" name="weight" value="1" required="true" class="required digits" style="width:70px"/>

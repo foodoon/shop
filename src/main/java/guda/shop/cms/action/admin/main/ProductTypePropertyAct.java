@@ -27,7 +27,7 @@ public class ProductTypePropertyAct {
     private ProductTypeMng productTypeMng;
 
 
-    @RequestMapping({"/typeProperty/v_list.do"})
+    @RequestMapping({"/typeProperty/list.do"})
     public String list(Long typeId, Boolean isCategory, HttpServletRequest request, ModelMap model) {
         ProductType pType = this.productTypeMng.findById(typeId);
 
@@ -51,7 +51,7 @@ public class ProductTypePropertyAct {
         return "typeProperty/list_product";
     }
 
-    @RequestMapping({"/typeProperty/v_add.do"})
+    @RequestMapping({"/typeProperty/add.do"})
     public String add(Long typeId, Boolean isCategory, HttpServletRequest request, ModelMap model) {
 
         ProductTypeProperty property = this.manager.findById(typeId);
@@ -65,7 +65,7 @@ public class ProductTypePropertyAct {
         return "typeProperty/add";
     }
 
-    @RequestMapping({"/typeProperty/v_edit.do"})
+    @RequestMapping({"/typeProperty/edit.do"})
     public String delete(Long id, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         ProductTypeProperty property = this.manager.findById(id);
@@ -95,7 +95,7 @@ public class ProductTypePropertyAct {
 
         model.addAttribute("isCategory", isCategory);
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/typeProperty/o_save.do"})
@@ -117,7 +117,7 @@ public class ProductTypePropertyAct {
 
         model.addAttribute("isCategory", bean.getCategory());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/typeProperty/o_update.do"})
@@ -129,7 +129,7 @@ public class ProductTypePropertyAct {
 
         model.addAttribute("isCategory", Boolean.valueOf(category));
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/typeProperty/o_priority.do"})
@@ -159,7 +159,7 @@ public class ProductTypePropertyAct {
 
         model.addAttribute("isCategory", isCategory);
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     private List<String> getFieldList(List<ProductTypeProperty> items) {

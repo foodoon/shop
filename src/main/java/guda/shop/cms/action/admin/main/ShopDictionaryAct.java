@@ -31,7 +31,7 @@ public class ShopDictionaryAct {
     private ShopDictionaryTypeMng shopDictionaryTypeMng;
 
 
-    @RequestMapping({"/shopDictionary/v_list.do"})
+    @RequestMapping({"/shopDictionary/list.do"})
     public String list(Long typeId, Integer pageNo, HttpServletRequest request, ModelMap model) {
         String name = RequestUtils.getQueryParam(request, "name");
 
@@ -51,7 +51,7 @@ public class ShopDictionaryAct {
         return "shopDictionary/list";
     }
 
-    @RequestMapping({"/shopDictionary/v_add.do"})
+    @RequestMapping({"/shopDictionary/add.do"})
     public String add(ModelMap model) {
 
         List sdtList = this.shopDictionaryTypeMng.findAll();
@@ -61,7 +61,7 @@ public class ShopDictionaryAct {
         return "shopDictionary/add";
     }
 
-    @RequestMapping({"/shopDictionary/v_edit.do"})
+    @RequestMapping({"/shopDictionary/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -96,7 +96,7 @@ public class ShopDictionaryAct {
 
         log.info("save ShopDictionary id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/shopDictionary/o_update.do"})

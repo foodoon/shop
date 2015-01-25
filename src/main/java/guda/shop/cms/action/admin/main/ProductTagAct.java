@@ -27,7 +27,7 @@ public class ProductTagAct {
     @Autowired
     private CategoryMng categoryMng;
 
-    @RequestMapping({"/tag/v_list.do"})
+    @RequestMapping({"/tag/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(SiteUtils.getWebId(request));
 
@@ -62,7 +62,7 @@ public class ProductTagAct {
 
         log.info("save ProductTag. id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/tag/o_update_tag_names.do"})
@@ -83,7 +83,7 @@ public class ProductTagAct {
                     bean.getName());
         }
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/tag/o_delete.do"})

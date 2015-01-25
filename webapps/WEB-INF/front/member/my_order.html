@@ -124,9 +124,9 @@
             [#if
             !(startTime??||endTime??||userName??||paymentId??||startOrderTotal??||endOrderTotal??||shippingId??)]style="display:none;"[/#if]>
             <li class="col1"><label>下单时间:</label>
-                <input type="text" name="startTime" value="${startTime!}" class="Wdate"
+                <input type="text" name="startTime" value="${startTime!}"
                        onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" style="width:80px" size="10"/>到
-                <input type="text" name="endTime" value="${endTime!}" class="Wdate"
+                <input type="text" name="endTime" value="${endTime!}"
                        onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" style="width:80px" size="10"/>
             </li>
             <li class="col2">

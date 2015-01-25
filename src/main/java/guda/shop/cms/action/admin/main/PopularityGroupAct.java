@@ -43,7 +43,7 @@ public class PopularityGroupAct {
     private ProductMng productMng;
 
 
-    @RequestMapping({"/popularityGroup/v_list.do"})
+    @RequestMapping({"/popularityGroup/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
@@ -52,7 +52,7 @@ public class PopularityGroupAct {
         return "popularityGroup/list";
     }
 
-    @RequestMapping({"/popularityGroup/v_search.do"})
+    @RequestMapping({"/popularityGroup/search.do"})
     public void update(Long typeId, Long brandId, String productName, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         List<Product> list = this.productMng.getList(typeId, brandId, productName);
@@ -73,7 +73,7 @@ public class PopularityGroupAct {
         ResponseUtils.renderJson(response, json.toString());
     }
 
-    @RequestMapping({"/popularityGroup/v_add.do"})
+    @RequestMapping({"/popularityGroup/add.do"})
     public String add(ModelMap model) {
 
         List typeList = this.productTypeMng.getList(Long.valueOf(1L));
@@ -87,7 +87,7 @@ public class PopularityGroupAct {
         return "popularityGroup/add";
     }
 
-    @RequestMapping({"/popularityGroup/v_edit.do"})
+    @RequestMapping({"/popularityGroup/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -126,7 +126,7 @@ public class PopularityGroupAct {
 
         log.info("save PopularityGroup id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/popularityGroup/o_update.do"})

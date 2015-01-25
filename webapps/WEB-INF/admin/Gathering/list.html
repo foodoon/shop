@@ -21,7 +21,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -38,7 +38,7 @@
                                 <@p.column code="金额">${gathering.money}</@p.column><#t/>
                             <@p.column code="操作员">${gathering.shopAdmin.username!}</@p.column><#t/>
                         <@p.column code="global.operate" align="center">
-                        <a href="v_edit.do?id=${gathering.id}&pageNo=${pageNo!}">查看</a>
+                        <a href="edit.do?id=${gathering.id}&pageNo=${pageNo!}">查看</a>
                     </@p.column><#t/>
                 </@p.table>
                 <div><input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/></div>

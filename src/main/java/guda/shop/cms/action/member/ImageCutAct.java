@@ -26,7 +26,7 @@ public class ImageCutAct
     private ImageScale imageScale;
     private ServletContext servletContext;
 
-    @RequestMapping({"/common/v_image_area_select.htm"})
+    @RequestMapping({"/common/image_area_select.htm"})
     public String imageAreaSelect(String imgSrcRoot, String imgSrcPath, Integer zoomWidth, Integer zoomHeight, Integer uploadNum, HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("imgSrcRoot", imgSrcRoot);

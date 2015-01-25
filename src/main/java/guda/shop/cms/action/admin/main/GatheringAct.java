@@ -25,7 +25,7 @@ public class GatheringAct {
     private GatheringMng manager;
 
 
-    @RequestMapping({"/Gathering/v_list.do"})
+    @RequestMapping({"/Gathering/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -35,13 +35,13 @@ public class GatheringAct {
         return "Gathering/list";
     }
 
-    @RequestMapping({"/Gathering/v_add.do"})
+    @RequestMapping({"/Gathering/add.do"})
     public String add(ModelMap model) {
 
         return "Gathering/add";
     }
 
-    @RequestMapping({"/Gathering/v_edit.do"})
+    @RequestMapping({"/Gathering/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -72,7 +72,7 @@ public class GatheringAct {
 
         log.info("save Gathering id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/Gathering/o_update.do"})

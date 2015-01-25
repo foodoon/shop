@@ -23,7 +23,7 @@
                         <form class="ropt">
                             <input id="typeId" type="hidden" name="typeId" value="${typeId}"/>
                             <input id="isCategory" type="hidden" name="isCategory" value="${isCategory?string("true","false")}"/>
-                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                             &nbsp; <input type="submit" value="<@s.m "global.backToList"/>" onclick="backToList(this);"/>
                         </form>
                     </div>
@@ -61,7 +61,7 @@
                                 <input type="hidden" id="s${item_index}" name="single" value="${item.single?string('true','false')}"/>
                             </td>
                             <td align="center">
-                                <a href="v_edit.do?id=${item.id}" class="pn-opt"><@s.m "global.edit"/></a> |
+                                <a href="edit.do?id=${item.id}" class="pn-opt"><@s.m "global.edit"/></a> |
                                 <a href="o_delete.do?ids=${item.id}&typeId=${typeId}&isCategory=${isCategory?string('true','false')}" class="pn-opt" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a>
                             </td>
                         </tr>
@@ -470,7 +470,7 @@
         f.submit();
     }
     function backToList(o) {
-        o.form.action='../type/v_list.do';
+        o.form.action='../type/list.do';
         $('#typeId').attr('disabled','disabled');
         $('#isCategroy').attr('disabled','disabled');
     }

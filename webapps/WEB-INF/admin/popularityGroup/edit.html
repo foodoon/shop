@@ -29,8 +29,8 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <@p.form id="baseForm" action="o_update.do">
                         <@p.text colspan="2" label="名称" name="name" value=popularityGroup.name required="true" class="required" maxlength="100"/><@p.tr/>
-                        <@p.text colspan="2" label="开始时间" name="beginTime" value=popularityGroup.beginTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/><@p.tr/>
-                        <@p.text colspan="2" label="结束时间" name="endTime" value=popularityGroup.endTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/><@p.tr/>
+                        <@p.text colspan="2" label="开始时间" name="beginTime" value=popularityGroup.beginTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" /><@p.tr/>
+                        <@p.text colspan="2" label="结束时间" name="endTime" value=popularityGroup.endTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" /><@p.tr/>
                         <@p.text colspan="2" label="优惠" name="price" value=popularityGroup.price required="true" class="required number" maxlength="12"/><@p.tr/>
                         <@p.textarea colspan="2" label="活动描述" name="description" value=popularityGroup.description cols="70" rows="3"/><@p.tr/>
                         <@p.td colspan="2">商品搜索：
@@ -147,7 +147,7 @@ function getList(){
     document.getElementById("rightlist").value =list; 
 }
 function optSearch() {
-	$.post('v_search.do', {
+	$.post('search.do', {
 		"typeId" : $("#typeId").val(),
 		"brandId" : $("#brandId").val(),
 		'productName' : $('#productName').val()

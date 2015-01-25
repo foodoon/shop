@@ -57,9 +57,9 @@ function optDelete() {
 	f.submit();
 }
 function  unLock(username){alert(username);
-	$.post("v_unlock.do",{username:username},function(data){
+	$.post("unlock.do",{username:username},function(data){
               alert(data);
-              location.href="v_list.do";
+              location.href="list.do";
 		});
 }
 </script>

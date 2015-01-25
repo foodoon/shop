@@ -25,7 +25,7 @@ public class ShopMoneyAct {
     private ShopMoneyMng manager;
 
 
-    @RequestMapping({"/shopMoney/v_list.do"})
+    @RequestMapping({"/shopMoney/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -35,13 +35,13 @@ public class ShopMoneyAct {
         return "shopMoney/list";
     }
 
-    @RequestMapping({"/shopMoney/v_add.do"})
+    @RequestMapping({"/shopMoney/add.do"})
     public String add(ModelMap model) {
 
         return "shopMoney/add";
     }
 
-    @RequestMapping({"/shopMoney/v_edit.do"})
+    @RequestMapping({"/shopMoney/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -70,7 +70,7 @@ public class ShopMoneyAct {
 
         log.info("save ShopMoney id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/shopMoney/o_update.do"})

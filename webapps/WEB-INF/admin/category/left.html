@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(function () {
         $("#browser").treeview({
-            url: "v_tree.do"
+            url: "tree.do"
         });
         JCore.lmenu('lmenu');
     });
@@ -13,7 +13,7 @@
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <div>
             <a href="javascript:location.href=location.href"><@s.m "global.refresh"/></a>
-            &nbsp; <a href="../type/v_list.do" target="rightFrame"><@s.m "productType.function"/></a>
+            &nbsp; <a href="../type/list.do" target="rightFrame"><@s.m "productType.function"/></a>
         </div>
         <ul class="am-list admin-sidebar-list" id="browser">
         </ul>

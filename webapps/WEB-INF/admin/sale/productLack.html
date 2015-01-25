@@ -23,7 +23,7 @@
                             <input type="radio" name="status" <#if status>checked="checked"</#if> value="1" />提醒
                             <input type="radio" name="status" <#if !status>checked="checked"</#if> value="0" />不提醒
                             库存预警值:<input type="text"  name="count" value="${count!}" />
-                            <input type="submit" value="查找" onclick="this.form.action='v_productLack.do';"/>
+                            <input type="submit" value="查找" onclick="this.form.action='productLack.do';"/>
                         </form>
                     </div>
                     <div class="am-u-sm-12 am-u-sm-centered">
@@ -32,7 +32,7 @@
                             <input type="hidden" name="ctgId" value="${ctgId!}"/>
                             <input type="hidden" name="count" value="${count!}"/>
                             <input type="hidden" name="status" value="${status?string('true','false')}"/>
-                            <@p.table listAction="v_productLack.do" value=pagination;product,i,has_next>
+                            <@p.table listAction="productLack.do" value=pagination;product,i,has_next>
                                 <@p.column code="product.name">${product.name!}</@p.column><#t/>
                                  <@p.column code="product.category">${product.category.name!}</@p.column><#t/>
                                  <@p.column code="product.type">${product.type.name!}</@p.column><#t/>

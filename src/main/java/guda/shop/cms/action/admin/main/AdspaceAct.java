@@ -17,7 +17,7 @@ public class AdspaceAct {
     @Autowired
     private AdspaceMng manager;
 
-    @RequestMapping({"/adspace/v_list.do"})
+    @RequestMapping({"/adspace/list.do"})
     public String list(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         List list = this.manager.getList();
@@ -27,13 +27,13 @@ public class AdspaceAct {
         return "adspace/list";
     }
 
-    @RequestMapping({"/adspace/v_add.do"})
+    @RequestMapping({"/adspace/add.do"})
     public String add(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         return "adspace/add";
     }
 
-    @RequestMapping({"/adspace/v_edit.do"})
+    @RequestMapping({"/adspace/edit.do"})
     public String edit(Integer pageNo, Integer id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Adspace bean = this.manager.findById(id);

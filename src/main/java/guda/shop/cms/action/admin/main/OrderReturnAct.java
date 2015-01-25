@@ -196,7 +196,7 @@ public class OrderReturnAct {
         return result;
     }
 
-    @RequestMapping({"/orderReturn/v_list.do"})
+    @RequestMapping({"/orderReturn/list.do"})
     public String list(Integer status, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Pagination pagination = this.manager.getPage(status, SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
@@ -208,7 +208,7 @@ public class OrderReturnAct {
         return "orderReturn/list";
     }
 
-    @RequestMapping({"/orderReturn/v_view.do"})
+    @RequestMapping({"/orderReturn/view.do"})
     public String view(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);

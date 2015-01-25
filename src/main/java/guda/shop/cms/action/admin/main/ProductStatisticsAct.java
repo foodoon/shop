@@ -21,7 +21,7 @@ public class ProductStatisticsAct {
     @Autowired
     private ProductMng productMng;
 
-    @RequestMapping({"/productStatistics/v_productLack.do"})
+    @RequestMapping({"/productStatistics/productLack.do"})
     public String productLack(Integer count, Boolean status, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -65,7 +65,7 @@ public class ProductStatisticsAct {
 
         model.addAttribute("count", count);
 
-        return "redirect:v_productLack.do";
+        return "redirect:productLack.do";
     }
 
     @RequestMapping({"/productStatistics/o_resetSaleTop.do"})
@@ -76,7 +76,7 @@ public class ProductStatisticsAct {
         return productSaleTop(pageNo, request, model);
     }
 
-    @RequestMapping({"/productStatistics/v_productSaleTop.do"})
+    @RequestMapping({"/productStatistics/productSaleTop.do"})
     public String productSaleTop(Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Pagination pagination = this.productMng.getPage(4, SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
@@ -96,7 +96,7 @@ public class ProductStatisticsAct {
         return productProfitTop(pageNo, request, model);
     }
 
-    @RequestMapping({"/productStatistics/v_productProfitTop.do"})
+    @RequestMapping({"/productStatistics/productProfitTop.do"})
     public String productProfitTop(Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Pagination pagination = this.productMng.getPage(8, SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));

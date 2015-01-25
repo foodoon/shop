@@ -81,9 +81,9 @@
                     status='0' count='10'](${tag_pagination.totalCount})[/@score_page]</a></li>
                 </ul>
                 <div id="queryCodeNum">
-                    时间:<input type="text" name="startTime" [#if startTime??]value="${startTime!}"[/#if] class="Wdate"
+                    时间:<input type="text" name="startTime" [#if startTime??]value="${startTime!}"[/#if]
                     onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="width:80px"/>至:
-                    <input type="text" name="endTime" [#if endTime??]value="${endTime!}"[/#if] class="Wdate"
+                    <input type="text" name="endTime" [#if endTime??]value="${endTime!}"[/#if]
                     onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="width:80px"/>
                     <input id="toQuery" type="submit" value="查询"/>
                 </div>

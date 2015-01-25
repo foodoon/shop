@@ -24,7 +24,7 @@ public class PaymentPluginsAct {
     private PaymentPluginsMng manager;
 
 
-    @RequestMapping({"/plugins/v_list.do"})
+    @RequestMapping({"/plugins/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
         List<PaymentPlugins> list = this.manager.getList();
 
@@ -42,7 +42,7 @@ public class PaymentPluginsAct {
         return "plugins/list";
     }
 
-    @RequestMapping({"/plugins/v_add.do"})
+    @RequestMapping({"/plugins/add.do"})
     public String add(String code, HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("code", code);
@@ -50,7 +50,7 @@ public class PaymentPluginsAct {
         return "plugins/add";
     }
 
-    @RequestMapping({"/plugins/v_edit.do"})
+    @RequestMapping({"/plugins/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -81,7 +81,7 @@ public class PaymentPluginsAct {
 
         log.info("save Payment, id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/plugins/o_update.do"})

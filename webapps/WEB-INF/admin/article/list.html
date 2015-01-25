@@ -24,7 +24,7 @@
                             <input type="hidden" name="cid" value="${cid!}"/>
                             <#if channel??>
                                 <#if !(channel.child?size gt 0)>
-                                    <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                                    <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                                 </#if>
                             </#if>
                         </form>
@@ -43,7 +43,7 @@
                 <@p.column code="shopArticle.publishTime">${shopArticle.publishTime?string('yyyy-MM-dd')}</@p.column><#t/>
             <@p.column code="shopArticle.disabled"><#if shopArticle.disabled><@s.m "global.true"/><#else><@s.m "global.false"/></#if></@p.column><#t/>
                         <@p.column code="global.operate" align="center">
-                        <a href="v_edit.do?id=${shopArticle.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
+                        <a href="edit.do?id=${shopArticle.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
                         <a href="o_delete.do?ids=${shopArticle.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                     </@p.column><#t/>
                 </@p.table>

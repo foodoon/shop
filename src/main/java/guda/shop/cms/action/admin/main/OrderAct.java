@@ -220,7 +220,7 @@ public class OrderAct {
         return result;
     }
 
-    @RequestMapping({"/order/v_list.do"})
+    @RequestMapping({"/order/list.do"})
     public String list(Long code, Integer status, Integer paymentStatus, Integer shippingStatus, Long paymentId, Long shoppingId, Date startTime, Date endTime, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -263,7 +263,7 @@ public class OrderAct {
         return "order/list";
     }
 
-    @RequestMapping({"/order/v_view.do"})
+    @RequestMapping({"/order/view.do"})
     public String view(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -368,7 +368,7 @@ public class OrderAct {
         return "order/view";
     }
 
-    @RequestMapping({"/order/v_payment.do"})
+    @RequestMapping({"/order/payment.do"})
     public String zhifu(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -387,7 +387,7 @@ public class OrderAct {
         return "order/payment";
     }
 
-    @RequestMapping({"/order/v_shipments.do"})
+    @RequestMapping({"/order/shipments.do"})
     public String shipmentses(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -484,7 +484,7 @@ public class OrderAct {
         return "order/view";
     }
 
-    @RequestMapping({"/order/v_edit.do"})
+    @RequestMapping({"/order/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

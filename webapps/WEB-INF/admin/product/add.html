@@ -23,7 +23,7 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form>
                             <input type="hidden" name="ctgId" value="${ctgId!}"/>
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                     </div>
                 </div>
@@ -43,9 +43,9 @@
                                             <#elseif item.field="price">
                                                 <#if !category.colorsize>
                                                     <@p.td label=item.propertyName colspan=item.single?string("2","1") required="true" width="${item.single?string(100,50)}">
-                                                    <@s.m "product.salePrice"/>: <@p.text name="salePrice" value="0" style="width:50px" class="required number"/> &nbsp;
-                                                    <@s.m "product.marketPrice"/>: <@p.text name="marketPrice" value="0" style="width:50px" class="required number"/> &nbsp;
-                                                    <@s.m "product.costPrice"/>: <@p.text name="costPrice" value="0" style="width:50px" class="required number"/> &nbsp;
+                                                    <@s.m "product.salePrice"/>: <@p.text name="salePrice" value="0" style="width:50px;display:inline;" class="required number"/> &nbsp;
+                                                    <@s.m "product.marketPrice"/>: <@p.text name="marketPrice" value="0" style="width:50px;display:inline;" class="required number"/> &nbsp;
+                                                    <@s.m "product.costPrice"/>: <@p.text name="costPrice" value="0" style="width:50px;display:inline;" class="required number"/> &nbsp;
                                                 </@p.td><#if count%2==0><@p.tr/></#if>
                                 </#if>
                                 <#elseif item.field="stockCount">
@@ -459,7 +459,7 @@ $(function() {
         //第一次打开，需要获取数据。
         if(!channels_opened) {
             //获取数据
-            $.get("v_standardTypes_add.do",{"categoryId":${category.id}},function(s) {
+            $.get("standardTypes_add.do",{"categoryId":${category.id}},function(s) {
                 $(s).appendTo("#channels");
             });
             channels_opened = true;

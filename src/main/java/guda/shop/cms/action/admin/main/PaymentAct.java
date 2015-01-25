@@ -30,7 +30,7 @@ public class PaymentAct {
     private ShippingMng shippingMng;
 
 
-    @RequestMapping({"/payment/v_list.do"})
+    @RequestMapping({"/payment/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(SiteUtils.getWebId(request), true);
 
@@ -39,7 +39,7 @@ public class PaymentAct {
         return "payment/list";
     }
 
-    @RequestMapping({"/payment/v_add.do"})
+    @RequestMapping({"/payment/add.do"})
     public String add(String code, HttpServletRequest request, ModelMap model) {
 
         List shippingList = this.shippingMng.getList(SiteUtils.getWebId(request), false);
@@ -49,7 +49,7 @@ public class PaymentAct {
         return "payment/add";
     }
 
-    @RequestMapping({"/payment/v_edit.do"})
+    @RequestMapping({"/payment/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -100,7 +100,7 @@ public class PaymentAct {
 
         log.info("save Payment, id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/payment/o_update.do"})

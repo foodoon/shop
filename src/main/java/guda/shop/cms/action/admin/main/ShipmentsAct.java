@@ -25,7 +25,7 @@ public class ShipmentsAct {
     private ShipmentsMng manager;
 
 
-    @RequestMapping({"/Shipments/v_list.do"})
+    @RequestMapping({"/Shipments/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -35,13 +35,13 @@ public class ShipmentsAct {
         return "Shipments/list";
     }
 
-    @RequestMapping({"/Shipments/v_add.do"})
+    @RequestMapping({"/Shipments/add.do"})
     public String add(ModelMap model) {
 
         return "Shipments/add";
     }
 
-    @RequestMapping({"/Shipments/v_edit.do"})
+    @RequestMapping({"/Shipments/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -72,7 +72,7 @@ public class ShipmentsAct {
 
         log.info("save Shipments id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/Shipments/o_update.do"})

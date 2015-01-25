@@ -26,7 +26,7 @@ public class ProductTypeAct {
     private ProductTypeMng manager;
 
 
-    @RequestMapping({"/type/v_list.do"})
+    @RequestMapping({"/type/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
         List list = this.manager.getList(SiteUtils.getWebId(request));
 
@@ -35,13 +35,13 @@ public class ProductTypeAct {
         return "type/list";
     }
 
-    @RequestMapping({"/type/v_add.do"})
+    @RequestMapping({"/type/add.do"})
     public String add(ModelMap model) {
 
         return "type/add";
     }
 
-    @RequestMapping({"/type/v_edit.do"})
+    @RequestMapping({"/type/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);

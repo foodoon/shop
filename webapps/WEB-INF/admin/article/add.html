@@ -11,7 +11,7 @@
     <div class="am-cf admin-main">
 
         <!-- sidebar start -->
-        <#include "../left.html">
+        <#include "../article/left.html">
             <!-- sidebar end -->
             <!-- content start-->
             <div class="admin-content">
@@ -21,7 +21,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <label><input type="checkbox" onclick="$('#linkDiv').toggle(this.checked);if(!this.checked){$('#link').val('');}"/><@s.m "global.link"/></label>
                         <div id="linkDiv" style="display:none">url: <input type="text" id="link" name="link" size="35" maxlength="255"/></div>
                     </@p.td><@p.tr/>
-                    <@p.text colspan="1" width="50" label="shopArticle.publishTime" readonly="readonly" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" help="shopArticle.publishTime.help"/>
+                    <@p.text colspan="1" width="50" label="shopArticle.publishTime" readonly="readonly"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" help="shopArticle.publishTime.help"/>
                     <@p.radio colspan="1" width="50" label="shopArticle.disabled" name="disabled" value="false" list={"true":"global.true","false":"global.false"}/><@p.tr/>
                     <@p.editor colspan="2" width="100"  label="shopArticle.content" name="content" height="300"/><@p.tr/>
                     <@p.td colspan="2" width="100"  label="shopArticle.extendData">

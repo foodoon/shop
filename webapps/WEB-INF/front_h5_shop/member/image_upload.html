@@ -29,7 +29,7 @@
             alert("请先上传图片>");
             return;
         }
-        var url = "../common/v_image_area_select.htm?uploadNum=" + n + "&imgSrcPath="
+        var url = "../common/image_area_select.htm?uploadNum=" + n + "&imgSrcPath="
                 + $("#uploadImgPath" + n).val() + "&zoomWidth=" + $("#zoomWidth" + n).val() + "&zoomHeight=" + $("#zoomHeight" + n).val();
         window.open(url, "imgcut", "height=550, width=1000, top=0, left=0, toolbar=no, menubar=no, scrollbars=auto, resizable=yes,location=no, status=no");
     }

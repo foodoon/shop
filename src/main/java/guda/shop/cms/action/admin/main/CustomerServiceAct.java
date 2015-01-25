@@ -25,7 +25,7 @@ public class CustomerServiceAct {
     private CustomerServiceMng manager;
 
 
-    @RequestMapping({"/customerService/v_list.do"})
+    @RequestMapping({"/customerService/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPagination(null, SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -37,13 +37,13 @@ public class CustomerServiceAct {
         return "customerService/list";
     }
 
-    @RequestMapping({"/customerService/v_add.do"})
+    @RequestMapping({"/customerService/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         return "customerService/add";
     }
 
-    @RequestMapping({"/customerService/v_edit.do"})
+    @RequestMapping({"/customerService/edit.do"})
     public String edit(Long id, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -74,7 +74,7 @@ public class CustomerServiceAct {
 
         log.info("save CustomerService id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/customerService/o_update.do"})

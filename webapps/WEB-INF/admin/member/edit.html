@@ -31,7 +31,7 @@
                         <#assign emailExist><@s.m "error.emailExist"/></#assign>
                         <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.text colspan="1" width="50" label="member.username" id="username" name="username" value=member.username rvalue=member.username size="30" disabled="disabled"/>
-                        <@p.text colspan="1" width="50" label="member.email" id="email" name="email" value=member.email rvalue=member.email size="30" required="true" vld="{required:true,email:true,maxlength:100,remote:'../admin/v_check_email.do',messages:{remote:'${emailExist}'}}"/><@p.tr/>
+                        <@p.text colspan="1" width="50" label="member.email" id="email" name="email" value=member.email rvalue=member.email size="30" required="true" vld="{required:true,email:true,maxlength:100,remote:'../admin/check_email.do',messages:{remote:'${emailExist}'}}"/><@p.tr/>
                         <@p.password colspan="1" width="50" label="member.password" id="password" name="password" maxlength="32"/>
                         <@p.password colspan="1" width="50" label="member.pwdAgain" equalTo="#password" maxlength="32"/><@p.tr/>
                         <@p.select colspan="1" width="50" label="group.function" id="groupId" name="groupId" value=member.group.id list=groupList listKey="id" listValue="name" required="true"/>
@@ -43,7 +43,7 @@
                         <@p.text colspan="1"  width="50" label="member.mobile" id="mobile" name="mobile" value=member.mobile required="true" class="required digits" maxlength="50"/>
                         <@p.text colspan="1"  width="50" label="member.tel" id="tel" name="tel" value=member.tel maxlength="50"/><@p.tr/>
                         <@p.text colspan="1"  width="50" label="member.schoolTag" id="schoolTag" name="schoolTag" value=member.schoolTag maxlength="50"/>
-                        <@p.text colspan="1" width="50" label="member.schoolTagDate" id="schoolTagDate" name="schoolTagDate" value=member.schoolTagDate onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="Wdate"/><@p.tr/>
+                        <@p.text colspan="1" width="50" label="member.schoolTagDate" id="schoolTagDate" name="schoolTagDate" value=member.schoolTagDate onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /><@p.tr/>
                         <@p.radio colspan="1" width="50" label="member.disabled" id="disabled" name="disabled" value=member.disabled  required="true" list={"true":"global.true","false":"global.false"}/>
                         <@p.radio colspan="1" width="50" label="member.isCar" id="isCar" name="isCar" value=member.isCar required="true" list={"true":"global.true","false":"global.false"}/><@p.tr/>
                         <@p.text colspan="2"  width="50" label="member.position" id="position" name="position" value=member.position maxlength="50"/><@p.tr/>

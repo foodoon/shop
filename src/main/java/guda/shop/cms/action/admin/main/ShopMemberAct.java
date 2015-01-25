@@ -39,7 +39,7 @@ public class ShopMemberAct {
     private ShopDictionaryMng shopDictionaryMng;
 
 
-    @RequestMapping({"/member/v_list.do"})
+    @RequestMapping({"/member/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SiteUtils.getWebId(request),
                 SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
@@ -49,7 +49,7 @@ public class ShopMemberAct {
         return "member/list";
     }
 
-    @RequestMapping({"/member/v_add.do"})
+    @RequestMapping({"/member/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -106,10 +106,10 @@ public class ShopMemberAct {
 
         log.info("save ShopMember, id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
-    @RequestMapping({"/member/v_edit.do"})
+    @RequestMapping({"/member/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);

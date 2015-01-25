@@ -5,20 +5,20 @@
 
         <ul class="am-list admin-sidebar-list">
             <li><a href="member_right.do" target="rightFrame"><@s.m "global.admin.index"/></a></li>
-            <@authorize url="member/v_list.do">
-            <li><a href="../member/v_list.do" target="rightFrame"><@s.m "member.function"/></a></li>
+            <@authorize url="member/list.do">
+            <li><a href="../member/list.do" target="rightFrame"><@s.m "member.function"/></a></li>
         </@authorize>
-        <@authorize url="group/v_list.do">
-        <li><a href="../group/v_list.do" target="rightFrame"><@s.m "group.function"/></a></li>
+        <@authorize url="group/list.do">
+        <li><a href="../group/list.do" target="rightFrame"><@s.m "group.function"/></a></li>
     </@authorize>
-    <@authorize url="shopDictionary/v_list.do">
-    <li><a href="../shopDictionary/v_list.do" target="rightFrame"><@s.m "shopDictionary.function"/></a></li>
+    <@authorize url="shopDictionary/list.do">
+    <li><a href="../shopDictionary/list.do" target="rightFrame"><@s.m "shopDictionary.function"/></a></li>
 </@authorize>
-<@authorize url="shopDictionaryType/v_list.do">
-<li><a href="../shopDictionaryType/v_list.do" target="rightFrame"><@s.m "shopDictionaryType.function"/></a></li>
+<@authorize url="shopDictionaryType/list.do">
+<li><a href="../shopDictionaryType/list.do" target="rightFrame"><@s.m "shopDictionaryType.function"/></a></li>
 </@authorize>
-<@authorize url="address/v_list.do">
-<li><a href="../address/v_list.do" target="rightFrame">地区管理</a></li>
+<@authorize url="address/list.do">
+<li><a href="../address/list.do" target="rightFrame">地区管理</a></li>
 </@authorize>
 
         </ul>

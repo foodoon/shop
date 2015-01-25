@@ -23,7 +23,7 @@
                         <form class="ropt">
                             <#if category??>
                                 <input type="hidden" name="ctgId" value="${category.id}"/>
-                                <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                                <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                                 <#else>
                                     <div style="padding:5px 0 0 0"><@s.m "product.selectCategory"/></div>
                             </#if>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form action="v_list.do">
+                        <form action="list.do">
                             <select name="typeId">
                                 <option value="">--商品分类--</option>
                                 <#list typeList as productType>
@@ -81,7 +81,7 @@
                 <@p.column code="product.brand"><#if product.brand??>${(product.brand.name)!}</#if></@p.column><#t/>
                 <@p.column code="product.onSale"><#if product.onSale><@s.m "global.true"/><#else><@s.m "global.false"/></#if></@p.column><#t/>
                 <@p.column code="global.operate" align="center">
-                <a href="v_edit.do?id=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}"><@s.m "global.edit"/></a> | <#rt/>
+                <a href="edit.do?id=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}"><@s.m "global.edit"/></a> | <#rt/>
                 <a href="o_delete.do?ids=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                 </@p.column><#t/>
                 </@p.table>

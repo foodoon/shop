@@ -17,7 +17,7 @@ import java.util.Set;
 public class UnLoadAdminAct {
     private static final Logger log = LoggerFactory.getLogger(UnLoadAdminAct.class);
 
-    @RequestMapping(value = {"/commonAdmin/v_list.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/commonAdmin/list.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String unLoad(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Map adminMap = AdminMap.adminmap;
@@ -35,7 +35,7 @@ public class UnLoadAdminAct {
         return "admin/uplocklist";
     }
 
-    @RequestMapping(value = {"/commonAdmin/v_unlock.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value = {"/commonAdmin/unlock.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     public String unlock(HttpServletResponse response, String username) {
 
         AdminMap.unLoadAdmin(username);

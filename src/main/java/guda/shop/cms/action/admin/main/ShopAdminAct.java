@@ -39,7 +39,7 @@ public class ShopAdminAct {
     private UserMng userMng;
 
 
-    @RequestMapping({"/admin/v_list.do"})
+    @RequestMapping({"/admin/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SiteUtils.getWebId(request), SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
@@ -48,7 +48,7 @@ public class ShopAdminAct {
         return "admin/list";
     }
 
-    @RequestMapping({"/admin/v_add.do"})
+    @RequestMapping({"/admin/add.do"})
     public String add(ModelMap model) {
 
         List roleList = this.roleMng.getList();
@@ -58,7 +58,7 @@ public class ShopAdminAct {
         return "admin/add";
     }
 
-    @RequestMapping({"/admin/v_edit.do"})
+    @RequestMapping({"/admin/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -97,7 +97,7 @@ public class ShopAdminAct {
 
         log.info("save ShopAdmin id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/admin/o_update.do"})
@@ -139,7 +139,7 @@ public class ShopAdminAct {
         return list(pageNo, request, model);
     }
 
-    @RequestMapping({"/admin/v_check_username.do"})
+    @RequestMapping({"/admin/check_username.do"})
     public String checkUsername(String username, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(username)) || (this.userMng.usernameExist(username)))
@@ -152,7 +152,7 @@ public class ShopAdminAct {
         return null;
     }
 
-    @RequestMapping({"/admin/v_check_email.do"})
+    @RequestMapping({"/admin/check_email.do"})
     public String checkEmail(String email, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(email)) || (this.userMng.emailExist(email)))

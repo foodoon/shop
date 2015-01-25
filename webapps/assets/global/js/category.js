@@ -71,8 +71,8 @@ function clickPageSize(a) {
 function clickOrderBy(a) {
     $("#orderBy").val(a);
     var jvForm = getJvForm();
-    jvForm.onsubmit = null;
-    jvForm.submit();
+    baseForm.onsubmit = null;
+    baseForm.submit();
 }
 
 function clickchang(a, b) {

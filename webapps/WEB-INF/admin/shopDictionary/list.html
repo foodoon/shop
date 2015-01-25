@@ -20,14 +20,14 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form action="v_list.do" class="am-form">
+                        <form action="list.do" class="am-form">
                             <div style="padding-top:5px">
                                 <@s.m "shopDictionary.name"/>: <input type="text" name="name" id="name" value="${name!}" style="width:150px"/>
                                 <@s.m "shopDictionaryType.function"/>:
@@ -57,7 +57,7 @@
                 <@p.column code="shopDictionaryType.function">${shopDictionary.shopDictionaryType.name!}</@p.column><#t/>
             <@p.column code="global.priority" align="center"><input type="text" name="priority" value="${shopDictionary.priority}" style="width:40px"/></@p.column><#t/>
         <@p.column code="global.operate" align="center">
-        <a href="v_edit.do?id=${shopDictionary.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
+        <a href="edit.do?id=${shopDictionary.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
         <a href="o_delete.do?ids=${shopDictionary.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
     </@p.column><#t/>
 </@p.table>

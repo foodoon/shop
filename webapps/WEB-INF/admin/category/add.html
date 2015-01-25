@@ -21,7 +21,7 @@
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-sm-centered">
                     <form>
-                        <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                        <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                     </form>
 
                 </div>
@@ -39,7 +39,7 @@
                     <#if item.field=="name">
                         <@p.text label=item.propertyName name=item.field value="${item.defValue!}" required="true" class="required" colspan=item.single?string("2","1") width="${item.single?string(100,50)}" maxlength="100"/><#if count%2==0><@p.tr/></#if>
                         <#elseif item.field=="path">
-                            <@p.text label=item.propertyName name=item.field value="${item.defValue!}" required="true" maxlength="30" vld="{required:true,maxlength:100,path:true,remote:'v_checkPath.do',messages:{remote:'${errorPathExist}'}}" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/><#if count%2==0><@p.tr/></#if>
+                            <@p.text label=item.propertyName name=item.field value="${item.defValue!}" required="true" maxlength="30" vld="{required:true,maxlength:100,path:true,remote:'checkPath.do',messages:{remote:'${errorPathExist}'}}" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/><#if count%2==0><@p.tr/></#if>
                             <#elseif item.field=="tplChannel">
                                 <@p.select label=item.propertyName name=item.field value="${item.defValue!}" list=channelTpls headerKey="" headerValue="global.default" colspan=item.single?string("2","1") width="${item.single?string(100,50)}"/><#if count%2==0><@p.tr/></#if>
                                 <#elseif item.field=="tplContent">

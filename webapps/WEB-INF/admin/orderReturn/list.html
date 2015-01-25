@@ -20,7 +20,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form action="v_list.do">
+                        <form action="list.do">
                                 <label><input type="radio" name="status" value="" onclick="chgStatus();" <#if !(status??)> checked="checked"</#if>/>所有</label>
                                 <label><input type="radio" name="status" value="1" onclick="chgStatus();" <#if status??&&status=1> checked="checked"</#if>/>待审</label>
                                 <label><input type="radio" name="status" value="2" onclick="chgStatus();" <#if status??&&status=2> checked="checked"</#if>/>已审</label>
@@ -53,7 +53,7 @@
                         <@p.column code="申请时间">${orderReturn.createTime?string('yyyy-MM-dd HH:mm:ss')}</@p.column><#t/>
                         <@p.column code="状态"><@s.m "orderReturn.status.${orderReturn.status}"/></@p.column><#t/>
                         <@p.column code="global.operate" align="center">
-                        <a href="v_view.do?id=${orderReturn.id}&pageNo=${pageNo!}">查看</a>|<#rt/>
+                        <a href="view.do?id=${orderReturn.id}&pageNo=${pageNo!}">查看</a>|<#rt/>
                         <a href="o_delete.do?ids=${orderReturn.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                         </@p.column><#t/>
                         </@p.table>
@@ -87,7 +87,7 @@ function optDelete() {
 
 function chgStatus() {
 	var status = $("input[name=status]:checked").val();
-	location.href="v_list.do?status=" + status;
+	location.href="list.do?status=" + status;
 }
 </script>
 

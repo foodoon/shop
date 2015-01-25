@@ -28,7 +28,7 @@ public class ConsultAct {
     private ConsultMng manager;
 
 
-    @RequestMapping({"/consult/v_list.do"})
+    @RequestMapping({"/consult/list.do"})
     public String list(Date startTime, Date endTime, Integer pageNo, HttpServletRequest request, ModelMap model) {
         String userName = RequestUtils.getQueryParam(request, "userName");
 
@@ -65,13 +65,13 @@ public class ConsultAct {
         return "consult/list";
     }
 
-    @RequestMapping({"/consult/v_add.do"})
+    @RequestMapping({"/consult/add.do"})
     public String add(ModelMap model) {
 
         return "consult/add";
     }
 
-    @RequestMapping({"/consult/v_edit.do"})
+    @RequestMapping({"/consult/edit.do"})
     public String edit(Long id, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -101,7 +101,7 @@ public class ConsultAct {
 
         log.info("save Consult id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/consult/o_update.do"})

@@ -49,7 +49,7 @@ public class ExendedAct {
     }
 
 
-    @RequestMapping({"/exended/v_list.do"})
+    @RequestMapping({"/exended/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
 
@@ -58,7 +58,7 @@ public class ExendedAct {
         return "exended/list";
     }
 
-    @RequestMapping({"/exended/v_add.do"})
+    @RequestMapping({"/exended/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -70,7 +70,7 @@ public class ExendedAct {
         return "exended/add";
     }
 
-    @RequestMapping({"/exended/v_edit.do"})
+    @RequestMapping({"/exended/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -117,7 +117,7 @@ public class ExendedAct {
 
         log.info("save exended id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/exended/o_update.do"})

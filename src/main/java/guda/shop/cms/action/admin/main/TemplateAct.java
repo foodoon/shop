@@ -40,7 +40,7 @@ public class TemplateAct
     private ResourceMng resourceMng;
     private TplManager tplManager;
 
-    @RequestMapping({"/template/v_left.do"})
+    @RequestMapping({"/template/left.do"})
     public String left(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -70,7 +70,7 @@ public class TemplateAct
         ResponseUtils.renderText(response, "");
     }
 
-    @RequestMapping(value = {"/template/v_tree.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/template/tree.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String tree(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -101,7 +101,7 @@ public class TemplateAct
         return "template/tree";
     }
 
-    @RequestMapping(value = {"/template/v_list.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/template/list.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String list(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -156,7 +156,7 @@ public class TemplateAct
         return list(request, model);
     }
 
-    @RequestMapping(value = {"/template/v_rename.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/template/rename.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String renameInput(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -196,7 +196,7 @@ public class TemplateAct
         return list(request, model);
     }
 
-    @RequestMapping(value = {"/template/v_add.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    @RequestMapping(value = {"/template/add.do"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String add(HttpServletRequest request, ModelMap model) {
 
         String root = RequestUtils.getQueryParam(request, "root");
@@ -206,7 +206,7 @@ public class TemplateAct
         return "template/add";
     }
 
-    @RequestMapping({"/template/v_edit.do"})
+    @RequestMapping({"/template/edit.do"})
     public String edit(HttpServletRequest request, ModelMap model) {
 
         String root = RequestUtils.getQueryParam(request, "root");
@@ -231,7 +231,7 @@ public class TemplateAct
 
         log.info("save Template name={}", filename);
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/template/o_update.do"})
@@ -279,7 +279,7 @@ public class TemplateAct
         return list(request, model);
     }
 
-    @RequestMapping({"/template/v_solution.do"})
+    @RequestMapping({"/template/solution.do"})
     public String solutionInput(HttpServletRequest request, ModelMap model) {
 
         return "template/solution";

@@ -20,7 +20,7 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
                             <input type="hidden" name="parentId" value="${parentId!}"/>
-                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -40,8 +40,8 @@
                 <input type="text" name="priority" value="${address.priority!10}" size="3"/>
                 <input type="hidden" name="wids" value="${address.id}"/></@p.column><#t/>
                         <@p.column code="global.operate" align="center">
-                        <a href="v_list.do?parentId=${address.id!}">子城市</a> | <#rt/>
-                        <a href="v_edit.do?id=${address.id}&pageNo=${pageNo!}&parentId=${parentId!}"><@s.m "global.edit"/></a> | <#rt/>
+                        <a href="list.do?parentId=${address.id!}">子城市</a> | <#rt/>
+                        <a href="edit.do?id=${address.id}&pageNo=${pageNo!}&parentId=${parentId!}"><@s.m "global.edit"/></a> | <#rt/>
                         <a href="o_delete.do?ids=${address.id}&pageNo=${pageNo!}&parentId=${parentId!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                     </@p.column><#t/>
                 </@p.table>

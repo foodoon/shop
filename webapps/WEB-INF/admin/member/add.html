@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -30,8 +30,8 @@
                         <#assign usernameExist><@s.m "error.usernameExist"/></#assign>
                         <#assign emailExist><@s.m "error.emailExist"/></#assign>
                         <@p.form id="baseForm" action="o_save.do" labelWidth="12">
-                        <@p.text colspan="1" width="50" label="member.username" id="username" name="username" size="30" required="true" vld="{required:true,rangelength:[3,100],remote:'../admin/v_check_username.do',messages:{remote:'${usernameExist}'}}"/>
-                        <@p.text colspan="1" width="50" label="member.email" id="email" name="email" size="30" required="true" vld="{required:true,email:true,maxlength:100,remote:'../admin/v_check_email.do',messages:{remote:'${emailExist}'}}"/><@p.tr/>
+                        <@p.text colspan="1" width="50" label="member.username" id="username" name="username" size="30" required="true" vld="{required:true,rangelength:[3,100],remote:'../admin/check_username.do',messages:{remote:'${usernameExist}'}}"/>
+                        <@p.text colspan="1" width="50" label="member.email" id="email" name="email" size="30" required="true" vld="{required:true,email:true,maxlength:100,remote:'../admin/check_email.do',messages:{remote:'${emailExist}'}}"/><@p.tr/>
                         <@p.password width="50" colspan="1" label="member.password" id="password" name="password" maxlength="100" required="true" class="required"/>
                         <@p.password width="50" colspan="1" label="member.pwdAgain" equalTo="#password"/><@p.tr/>
                         <@p.select colspan="1" width="50" label="group.function" id="groupId" name="groupId" list=groupList listKey="id" listValue="name" required="true"/>
@@ -43,7 +43,7 @@
                         <@p.text colspan="1"  width="50" label="member.mobile" id="mobile" name="mobile" required="true" class="required mobile" minlength="11" maxlength="11"/><font color="red"> <span id="checkmobile"></span></font>
                         <@p.text colspan="1"  width="50" label="member.tel" id="tel" name="tel" maxlength="50"/><@p.tr/>
                         <@p.text colspan="1"  width="50" label="member.schoolTag" id="schoolTag" name="schoolTag" maxlength="50"/>
-                        <@p.text colspan="1" width="50" label="member.schoolTagDate" id="schoolTagDate" name="schoolTagDate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="Wdate"/><@p.tr/>
+                        <@p.text colspan="1" width="50" label="member.schoolTagDate" id="schoolTagDate" name="schoolTagDate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /><@p.tr/>
                         <@p.radio colspan="1" width="50" label="member.disabled" id="disabled" name="disabled" value="false" required="true" list={"true":"global.true","false":"global.false"}/>
                         <@p.radio colspan="1" width="50" label="member.isCar" id="isCar" name="isCar" value="false" required="true" list={"true":"global.true","false":"global.false"}/><@p.tr/>
                         <@p.text colspan="2"  width="50" label="member.position" id="position" name="position" maxlength="50"/><@p.tr/>

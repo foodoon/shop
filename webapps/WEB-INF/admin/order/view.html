@@ -31,8 +31,8 @@
                         <form id="baseForm" method="post" class="am-form">
                             <input type="hidden" name="id" value="${order.id}"/>
                             <input type="submit" value="确认" onclick="this.form.action='o_affirm.do'" <#if order.status!=1>disabled</#if>/>
-                            <input type="submit" value="支付" onclick="this.form.action='v_payment.do'" <#if order.paymentStatus!=1>disabled <#elseif order.payment.type==1>disabled</#if>/>
-                            <input type="submit" value="发货" onclick="this.form.action='v_shipments.do'" <#if order.shippingStatus!=1>disabled<#elseif order.status!=2>disabled<#elseif order.payment.type==1><#if order.paymentStatus!=2>disabled</#if></#if>/>
+                            <input type="submit" value="支付" onclick="this.form.action='payment.do'" <#if order.paymentStatus!=1>disabled <#elseif order.payment.type==1>disabled</#if>/>
+                            <input type="submit" value="发货" onclick="this.form.action='shipments.do'" <#if order.shippingStatus!=1>disabled<#elseif order.status!=2>disabled<#elseif order.payment.type==1><#if order.paymentStatus!=2>disabled</#if></#if>/>
                             <input type="submit" value="完成" onclick="this.form.action='o_accomplish.do'" <#if order.shippingStatus!=2>disabled<#elseif order.paymentStatus!=2>disabled<#elseif order.status!=2>disabled</#if>/>
                             <input type="submit" value="取消"  onclick="this.form.action='o_abolish.do'" <#if order.status=3>disabled<#elseif order.shippingStatus=2>disabled<#elseif order.paymentStatus=2>disabled<#elseif order.status=4>disabled</#if>/>
                         </form>

@@ -1,6 +1,6 @@
 <div class="perm-container">
 <#--图片处理权限-->
-<#assign imgPerms="/common/v_image_area_select.do,/common/o_image_cut.do,/common/o_upload_image.do"/>
+<#assign imgPerms="/common/image_area_select.do,/common/o_image_cut.do,/common/o_upload_image.do"/>
 <#--默认有的权限，比如后台首页-->
 <input type="hidden" name="perms" value="/index.do,/top.do,/main.do,/left.do,/right.do,/logout.do"/>
 <div class="perm-layout-1">
@@ -19,30 +19,30 @@
 	<label><input value="/productStatistics/" type="checkbox" name="perms"/>利润排行</label>
 	</div>
 <div class="perm-layout-1">
-<label><input value="/frame/category,/category/v_left.do,/category/v_tree.do,/category/v_list.do,/category/o_priority.do" type="checkbox" name="perms"/><@s.m "shop.function.category"/></label>
+<label><input value="/frame/category,/category/left.do,/category/tree.do,/category/list.do,/category/o_priority.do" type="checkbox" name="perms"/><@s.m "shop.function.category"/></label>
 	<div class="perm-layout-2">
-	<label><input value="/category/v_add.do,/category/o_save.do,/category/v_checkPath.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
-	<label><input value="/category/v_edit.do,/category/o_update.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/category/add.do,/category/o_save.do,/category/checkPath.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
+	<label><input value="/category/edit.do,/category/o_update.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/category/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
 	</div>
 </div>
 <div class="perm-layout-1">
-<label><input value="/frame/product,/product/v_left.do,/product/v_tree.do,/product/v_list.do" type="checkbox" name="perms"/><@s.m "shop.function.product"/>:</label>
+<label><input value="/frame/product,/product/left.do,/product/tree.do,/product/list.do" type="checkbox" name="perms"/><@s.m "shop.function.product"/>:</label>
 	<div class="perm-layout-2">
-	<label><input value="/product/v_add.do,/product/v_standardTypes_add.do,/product/o_save.do,/product/getpurchasingClass.do,/product/getpurchasingClass.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
-	<label><input value="/product/v_edit.do,/product/o_update.do,/product/o_delFashion.do,/product/getpurchasingClass.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/product/add.do,/product/standardTypes_add.do,/product/o_save.do,/product/getpurchasingClass.do,/product/getpurchasingClass.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
+	<label><input value="/product/edit.do,/product/o_update.do,/product/o_delFashion.do,/product/getpurchasingClass.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/product/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
 	</div>
 </div>
 <div class="perm-layout-1">
-<label><input value="/frame/order,/frame/order_left.do,/frame/order_right.do,/order/v_list.do" type="checkbox" name="perms"/><@s.m "shop.function.order"/>:</label>
+<label><input value="/frame/order,/frame/order_left.do,/frame/order_right.do,/order/list.do" type="checkbox" name="perms"/><@s.m "shop.function.order"/>:</label>
 	<div class="perm-layout-2">
-	<label><input value="/order/v_edit.do,/order/o_update.do,/order/o_returnMoney.do,/order/ajaxtotalDeliveryFee.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/order/edit.do,/order/o_update.do,/order/o_returnMoney.do,/order/ajaxtotalDeliveryFee.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/order/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
-	<label><input value="/order/v_edit.do,/order/o_update.do,/order/o_returnMoney.do,/order/ajaxtotalDeliveryFee.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
-	<label><input value="/order/v_edit.do,/order/o_update.do,/order/o_returnMoney.do,/order/ajaxtotalDeliveryFee.do,/common/v_,/common/o_" type="checkbox" name="perms"/>确认</label>
-	<label><input value="/order/v_payment.do,/order/o_payment.do" type="checkbox" name="perms"/>支付</label>	
-	<label><input value="/order/v_shipments.do,/order/o_shipments.do" type="checkbox" name="perms"/>发货</label>	
+	<label><input value="/order/edit.do,/order/o_update.do,/order/o_returnMoney.do,/order/ajaxtotalDeliveryFee.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/order/edit.do,/order/o_update.do,/order/o_returnMoney.do,/order/ajaxtotalDeliveryFee.do,/common/,/common/o_" type="checkbox" name="perms"/>确认</label>
+	<label><input value="/order/payment.do,/order/o_payment.do" type="checkbox" name="perms"/>支付</label>
+	<label><input value="/order/shipments.do,/order/o_shipments.do" type="checkbox" name="perms"/>发货</label>
 	<label><input value="/order/o_abolish.do" type="checkbox" name="perms"/>取消</label>	
 	<label><input value="/order/o_affirm.do,/order/o_sendback.do,/order/o_salesreturn.do" type="checkbox" name="perms"/>退货</label>	
 	<label><input value="/order/o_reimburse.do" type="checkbox" name="perms"/>退款</label>	
@@ -50,40 +50,40 @@
 </div>
 
 <div class="perm-layout-1">
-<label><input value="/frame/channel.do,/channel/v_left.do,/channel/v_tree.do,/channel/v_list.do,o_priority.do" type="checkbox" name="perms"/>栏目</label>
+<label><input value="/frame/channel.do,/channel/left.do,/channel/tree.do,/channel/list.do,o_priority.do" type="checkbox" name="perms"/>栏目</label>
 	<div class="perm-layout-2">
-	<label><input value="/channel/v_add.do,/channel/o_save.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
-	<label><input value="/channel/v_edit.do,/channel/o_update.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/channel/add.do,/channel/o_save.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
+	<label><input value="/channel/edit.do,/channel/o_update.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/channel/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
 	</div>
 </div>
 <div class="perm-layout-1">
-<label><input value="/frame/article,/article/v_left.do,/article/v_tree.do,/article/v_list.do" type="checkbox" name="perms"/>文章</label>
+<label><input value="/frame/article,/article/left.do,/article/tree.do,/article/list.do" type="checkbox" name="perms"/>文章</label>
 	<div class="perm-layout-2">
-	<label><input value="/article/v_add.do,/article/o_save.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
-	<label><input value="/article/v_edit.do,/article/o_update.do,/common/v_,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/article/add.do,/article/o_save.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.add"/></label>
+	<label><input value="/article/edit.do,/article/o_update.do,/common/,/common/o_" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/article/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
 	</div>
 </div>
 <div class="perm-layout-1">
-<label><input value="/frame/template,/template/v_left.do,/template/v_tree.do,/template/v_list.do" type="checkbox" name="perms"/>模板</label>
+<label><input value="/frame/template,/template/left.do,/template/tree.do,/template/list.do" type="checkbox" name="perms"/>模板</label>
 	<div class="perm-layout-2">
-	<label><input value="/template/v_solution.do,/template/o_import.do,/template/o_export.do" type="checkbox" name="perms"/>设置</label>
+	<label><input value="/template/solution.do,/template/o_import.do,/template/o_export.do" type="checkbox" name="perms"/>设置</label>
 	<label><input value="/template/o_create_dir.do" type="checkbox" name="perms"/>创建目录</label>
-	<label><input value="/template/v_rename.do,/template/o_rename.do" type="checkbox" name="perms"/>重命名</label>
-	<label><input value="/template/v_add.do,/template/o_save.do" type="checkbox" name="perms"/><@s.m "global.add"/></label>
-	<label><input value="/template/v_edit.do,/template/o_update.do" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/template/rename.do,/template/o_rename.do" type="checkbox" name="perms"/>重命名</label>
+	<label><input value="/template/add.do,/template/o_save.do" type="checkbox" name="perms"/><@s.m "global.add"/></label>
+	<label><input value="/template/edit.do,/template/o_update.do" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/template/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
 	</div>
 </div>
 <div class="perm-layout-1">
-<label><input value="/frame/resource,/resource/v_left.do,/resource/v_list.do" type="checkbox" name="perms"/>资源</label>
+<label><input value="/frame/resource,/resource/left.do,/resource/list.do" type="checkbox" name="perms"/>资源</label>
 	<div class="perm-layout-2">
 	<label><input value="/resource/o_create_dir.do" type="checkbox" name="perms"/>创建目录</label>
-	<label><input value="/resource/v_upload.do,/resource/o_upload.do" type="checkbox" name="perms"/>上传文件</label>
-	<label><input value="/resource/v_rename.do,/resource/o_rename.do" type="checkbox" name="perms"/>重命名</label>
-	<label><input value="/resource/v_add.do,/resource/o_save.do" type="checkbox" name="perms"/><@s.m "global.add"/></label>
-	<label><input value="/resource/v_edit.do,/resource/o_update.do" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
+	<label><input value="/resource/upload.do,/resource/o_upload.do" type="checkbox" name="perms"/>上传文件</label>
+	<label><input value="/resource/rename.do,/resource/o_rename.do" type="checkbox" name="perms"/>重命名</label>
+	<label><input value="/resource/add.do,/resource/o_save.do" type="checkbox" name="perms"/><@s.m "global.add"/></label>
+	<label><input value="/resource/edit.do,/resource/o_update.do" type="checkbox" name="perms"/><@s.m "global.edit"/></label>
 	<label><input value="/resource/o_delete.do" type="checkbox" name="perms"/><@s.m "global.delete"/></label>	
 	</div>
 </div>
@@ -144,13 +144,13 @@
 <label><input value="/frame/config" type="checkbox" name="perms"/>配置:</label>
 <div>
 	<div class="perm-layout-2">
-	<label><input value="/config/v_global_edit.do,/config/o_global_update.do" type="checkbox" name="perms"/>全局设置</label>
+	<label><input value="/config/global_edit.do,/config/o_global_update.do" type="checkbox" name="perms"/>全局设置</label>
 	</div>
 	<div class="perm-layout-2">
-	<label><input value="/config/v_basic_edit.do,/config/o_basic_update.do" type="checkbox" name="perms"/>基本设置</label>
+	<label><input value="/config/basic_edit.do,/config/o_basic_update.do" type="checkbox" name="perms"/>基本设置</label>
 	</div>
 	<div class="perm-layout-2">
-	<label><input value="/config/v_email_edit.do,/config/o_email_update.do" type="checkbox" name="perms"/>邮箱设置</label>
+	<label><input value="/config/email_edit.do,/config/o_email_update.do" type="checkbox" name="perms"/>邮箱设置</label>
 	</div>
 	<div class="perm-layout-2">
 	<label><input value="/shipping/" type="checkbox" name="perms"/>配送方式</label>
@@ -174,7 +174,7 @@
 	<label><input value="/commonAdmin/" type="checkbox" name="perms"/>管理员解锁</label>
 	</div>
 	<div class="perm-layout-2">
-	<label><input value="/config/v_qqList.do,/config/v_qqAdd.do,/config/o_qqSave.do,/config/o_qqDelete.do,/config/v_qqEdit.do,/config/o_qqUpdate.do" type="checkbox" name="perms"/>在线客户</label>
+	<label><input value="/config/qqList.do,/config/qqAdd.do,/config/o_qqSave.do,/config/o_qqDelete.do,/config/qqEdit.do,/config/o_qqUpdate.do" type="checkbox" name="perms"/>在线客户</label>
 	</div>
 	<div class="perm-layout-2">
 	<label><input value="/role/" type="checkbox" name="perms"/>角色管理</label>

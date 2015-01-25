@@ -13,17 +13,17 @@ $(function(){
 <body class="lbody">
 <ul id="lmenu">
 <li><a href="marketing_right.do" target="rightFrame"><@s.m "global.admin.index"/></a></li>
-<li><a href="../popularityGroup/v_list.do" target="rightFrame">人气组合</a></li>
-<@authorize url="gift/v_list.do"> 
-<li><a href="../gift/v_list.do" target="rightFrame">礼品管理</a></li>
+<li><a href="../popularityGroup/list.do" target="rightFrame">人气组合</a></li>
+<@authorize url="gift/list.do">
+<li><a href="../gift/list.do" target="rightFrame">礼品管理</a></li>
 </@authorize>
 
-<@authorize url="exchange/v_list.do"> 
-<li><a href="../exchange/v_list.do" target="rightFrame">礼品兑换</a></li>
+<@authorize url="exchange/list.do">
+<li><a href="../exchange/list.do" target="rightFrame">礼品兑换</a></li>
 </@authorize>
 
-<@authorize url="coupon/v_list.do"> 
-<li><a href="../coupon/v_list.do" target="rightFrame">优惠劵</a></li>
+<@authorize url="coupon/list.do">
+<li><a href="../coupon/list.do" target="rightFrame">优惠劵</a></li>
 </@authorize>
 </ul>
 </body>

@@ -25,7 +25,7 @@ public class LogAct {
     private LogMng manager;
 
 
-    @RequestMapping({"/log/v_list.do"})
+    @RequestMapping({"/log/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -35,13 +35,13 @@ public class LogAct {
         return "log/list";
     }
 
-    @RequestMapping({"/log/v_add.do"})
+    @RequestMapping({"/log/add.do"})
     public String add(ModelMap model) {
 
         return "log/add";
     }
 
-    @RequestMapping({"/log/v_edit.do"})
+    @RequestMapping({"/log/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -70,7 +70,7 @@ public class LogAct {
 
         log.info("save Log id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/log/o_update.do"})

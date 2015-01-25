@@ -24,7 +24,7 @@ function optDelete() {
 <div class="rhead">
 	<div class="rpos"><@s.m "global.position"/>: <@s.m "group.function"/> - <@s.m "global.list"/></div>
 	<form class="ropt">
-		<input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+		<input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
 	</form>
 	<div class="clear"></div>
 </div>
@@ -40,7 +40,7 @@ function optDelete() {
 	<@p.column code="分数">${student.point}</@p.column><#t/>
 	<@p.column code="老师名"><#if student.teacherSet?size gt 0><#list student.teacherSet as st><#if st_index==0>${st.tname!}</#if></#list></#if></@p.column><#t/>
 	<@p.column code="global.operate" align="center">
-		<a href="v_edit.do?id=${student.sid}"><@s.m "global.edit"/></a> | <#rt/>
+		<a href="edit.do?id=${student.sid}"><@s.m "global.edit"/></a> | <#rt/>
 		<a href="o_delete.do?ids=${student.sid}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
 	</@p.column><#t/>
 </@p.table>

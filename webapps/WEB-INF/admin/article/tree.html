@@ -1,6 +1,6 @@
 <#if isRoot>
 [{
-	"text": "<a href='v_list.do' ><@s.m "global.root"/></a>",
+	"text": "<a href='list.do' ><@s.m "global.root"/></a>",
 	"classes": "folder"
 	<#if list?size gt 0>,
 	"expanded": true,
@@ -8,7 +8,7 @@
 	<#list list as channel>
 		{
 		"id": "${channel.id}",
-		"text": "<a href='v_list.do?cid=${channel.id}' >${channel.name}</a>",
+		"text": "<a href='list.do?cid=${channel.id}' >${channel.name}</a>",
 		"classes": "<#if channel.child?size gt 0>folder<#else>file</#if>",
 		"hasChildren": <#if channel.child?size gt 0>true<#else>false</#if>
 		}<#if channel_has_next>,</#if>
@@ -21,7 +21,7 @@
 	<#list list as channel>
 		{
 		"id": "${channel.id}",
-		"text": "<a href='v_list.do?cid=${channel.id}' >${channel.name}</a>",
+		"text": "<a href='list.do?cid=${channel.id}' >${channel.name}</a>",
 		"classes": "<#if channel.child?size gt 0>folder<#else>file</#if>",
 		"hasChildren": <#if channel.child?size gt 0>true<#else>false</#if>
 		}<#if channel_has_next>,</#if>

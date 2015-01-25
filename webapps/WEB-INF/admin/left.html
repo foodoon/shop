@@ -4,20 +4,20 @@
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
 
-            <@authorize url="productStatistics/v_productLack.do">
-            <li><a href="${base}/admin/shop/productStatistics/v_productLack.do?status=1" >库存预警</a></li>
+            <@authorize url="productStatistics/productLack.do">
+            <li><a href="${base}/admin/shop/productStatistics/productLack.do?status=1" >库存预警</a></li>
             </@authorize>
-                <@authorize url="productStatistics/v_productSaleTop.do">
-                <li><a href="${base}/admin/shop/productStatistics/v_productSaleTop.do" >销量排行</a></li>
+                <@authorize url="productStatistics/productSaleTop.do">
+                <li><a href="${base}/admin/shop/productStatistics/productSaleTop.do" >销量排行</a></li>
             </@authorize>
-            <@authorize url="productStatistics/v_productProfitTop.do">
-                <li><a href="${base}/admin/shop/productStatistics/v_productProfitTop.do" >利润排行</a></li>
+            <@authorize url="productStatistics/productProfitTop.do">
+                <li><a href="${base}/admin/shop/productStatistics/productProfitTop.do" >利润排行</a></li>
             </@authorize>
-            <@authorize url="discuss/v_list.do">
-            <li><a href="${base}/admin/shop/discuss/v_list.do" ><@s.m "product.discuss"/></a></li>
+            <@authorize url="discuss/list.do">
+            <li><a href="${base}/admin/shop/discuss/list.do" ><@s.m "product.discuss"/></a></li>
             </@authorize>
-            <@authorize url="consult/v_list.do">
-            <li><a href="${base}/admin/shop/consult/v_list.do" ><@s.m "customer.consult"/></a></li>
+            <@authorize url="consult/list.do">
+            <li><a href="${base}/admin/shop/consult/list.do" ><@s.m "customer.consult"/></a></li>
             </@authorize>
 
         </ul>

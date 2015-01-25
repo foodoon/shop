@@ -78,7 +78,7 @@ public class ProductAct
     private ServletContext servletContext;
 
 
-    @RequestMapping({"/product/v_list.do"})
+    @RequestMapping({"/product/list.do"})
     public String list(Long ctgId, Boolean isOnSale, Boolean isRecommend, Boolean isSpecial, Boolean isHotsale, Boolean isNewProduct, Long typeId, Double startSalePrice, Double endSalePrice, Integer startStock, Integer endStock, Integer pageNo, HttpServletRequest request, ModelMap model) {
         String productName = RequestUtils.getQueryParam(request, "productName");
         productName = StringUtils.trim(productName);
@@ -126,7 +126,7 @@ public class ProductAct
         return "product/list";
     }
 
-    @RequestMapping({"/product/v_left.do"})
+    @RequestMapping({"/product/left.do"})
     public String left(HttpServletRequest request, ModelMap model) {
 
         List list = this.categoryMng.getTopList(
@@ -150,7 +150,7 @@ public class ProductAct
         return "product/left";
     }
 
-    @RequestMapping({"/product/v_add.do"})
+    @RequestMapping({"/product/add.do"})
     public String add(Long ctgId, HttpServletRequest request, ModelMap model) {
 
         Category category = this.categoryMng.findById(ctgId);
@@ -194,7 +194,7 @@ public class ProductAct
         return "product/add";
     }
 
-    @RequestMapping({"/product/v_edit.do"})
+    @RequestMapping({"/product/edit.do"})
     public String edit(Long id, Long ctgId, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -506,20 +506,20 @@ public class ProductAct
                 log.info("delete Product. id={}", bean.getId());
         } catch (Exception e) {
 
-            return "redirect:v_error.do";
+            return "redirect:error.do";
         }
         Product[] beans;
 
         return list(ctgId, null, isRecommend, isSpecial, null, null, null, null, null, null, null, pageNo, request, model);
     }
 
-    @RequestMapping({"/product/v_error.do"})
+    @RequestMapping({"/product/error.do"})
     public String error(HttpServletRequest request, ModelMap model) {
 
         return "product/error";
     }
 
-    @RequestMapping({"/product/v_standardTypes_add.do"})
+    @RequestMapping({"/product/standardTypes_add.do"})
     public String standardTypesAdd(Long categoryId, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         List standardTypeList = this.standardTypeMng.getList(categoryId);
@@ -535,7 +535,7 @@ public class ProductAct
         return "product/standardTypes_add";
     }
 
-    @RequestMapping({"/product/v_standards_add.do"})
+    @RequestMapping({"/product/standards_add.do"})
     public String standards(Long standardTypeId, HttpServletRequest request, HttpServletResponse response, ModelMap model) throws JSONException {
 
         List sList = this.standardMng.findByTypeId(standardTypeId);

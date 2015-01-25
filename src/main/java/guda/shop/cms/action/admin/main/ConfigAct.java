@@ -44,14 +44,14 @@ public class ConfigAct {
     private DataBackupMng dataBackupMng;
 
 
-    @RequestMapping({"/config/v_global_edit.do"})
+    @RequestMapping({"/config/global_edit.do"})
     public String globalEdit(HttpServletRequest request, ModelMap model) {
         model.addAttribute("global", SiteUtils.getWeb(request).getGlobal());
 
         return "config/global_edit";
     }
 
-    @RequestMapping({"/config/v_list.do"})
+    @RequestMapping({"/config/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
         model.addAttribute("global", SiteUtils.getWeb(request).getGlobal());
 
@@ -72,7 +72,7 @@ public class ConfigAct {
         return globalEdit(request, model);
     }
 
-    @RequestMapping({"/config/v_basic_edit.do"})
+    @RequestMapping({"/config/basic_edit.do"})
     public String basicEdit(HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("website", SiteUtils.getWeb(request));
@@ -94,7 +94,7 @@ public class ConfigAct {
         return basicEdit(request, model);
     }
 
-    @RequestMapping({"/config/v_shop_edit.do"})
+    @RequestMapping({"/config/shop_edit.do"})
     public String shopEdit(HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("config", SiteUtils.getWeb(request));
@@ -116,7 +116,7 @@ public class ConfigAct {
         return basicEdit(request, model);
     }
 
-    @RequestMapping({"/config/v_email_edit.do"})
+    @RequestMapping({"/config/email_edit.do"})
     public String emailEdit(HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -191,8 +191,8 @@ public class ConfigAct {
         return null;
     }
 
-    @RequestMapping({"/config/v_dataBackup.do"})
-    public String v_dataBackup(HttpServletRequest request, ModelMap model) {
+    @RequestMapping({"/config/dataBackup.do"})
+    public String dataBackup(HttpServletRequest request, ModelMap model) {
 
         DataBackup dataBackup = this.dataBackupMng.getDataBackup();
 

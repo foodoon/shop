@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="增加" onclick="this.form.action='v_qqAdd.do';"/>
+                            <input type="submit" value="增加" onclick="this.form.action='qqAdd.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -29,13 +29,13 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form id="tableForm" method="post" class="am-form">
                             <input type="hidden" value="${pageNo!}" name="pageNo">
-                            <@p.table listAction="v_qqList.do" value=pagination;qq,i,has_next><#rt/>
+                            <@p.table listAction="qqList.do" value=pagination;qq,i,has_next><#rt/>
                             <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
                             <input type='checkbox' name='ids' value='${qq.id}'/><#t/>
                         </@p.column><#t/>
                         <@p.column code="QQ号">${qq.content}</@p.column><#t/>
                     <@p.column code="global.operate" align="center">
-                    <a href="v_qqEdit.do?id=${qq.id}"><@s.m "global.edit"/></a> | <#rt/>
+                    <a href="qqEdit.do?id=${qq.id}"><@s.m "global.edit"/></a> | <#rt/>
                     <a href="o_qqDelete.do?ids=${qq.id}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                 </@p.column><#t/>
             </@p.table>

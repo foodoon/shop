@@ -21,7 +21,7 @@
                 <div class="am-u-sm-12 am-u-sm-centered">
                     <form >
                         <input type="hidden" name="root" value="${category.id!}"/>
-                        <select name="typeId" onchange="if(this.options[this.selectedIndex].value!=''){this.form.action='v_add.do';this.form.submit();}">
+                        <select name="typeId" onchange="if(this.options[this.selectedIndex].value!=''){this.form.action='add.do';this.form.submit();}">
                             <option>--添加子类型--</option>
                             <#list typeList as type>
                                 <option value="${type.id}">${type.name}</option>

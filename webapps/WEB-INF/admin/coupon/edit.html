@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>
+                            <input type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='list.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -29,8 +29,8 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.text colspan="2" width="50" label="优惠劵名称" name="couponName" value=coupon.couponName required="true" class="required" maxlength="50"/><@p.tr/>
-                        <@p.text colspan="1" width="50" label="优惠开始时间" name="couponTime" value=coupon.couponTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/>
-                        <@p.text colspan="1" width="50" label="优惠结束时间" name="couponEndTime" value=coupon.couponEndTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/><@p.tr/>
+                        <@p.text colspan="1" width="50" label="优惠开始时间" name="couponTime" value=coupon.couponTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
+                        <@p.text colspan="1" width="50" label="优惠结束时间" name="couponEndTime" value=coupon.couponEndTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" /><@p.tr/>
                         <@p.text colspan="1" width="50" label="满足金额" name="leastPrice" value=coupon.leastPrice required="true" class="required number" maxlength="12"/>
                         <@p.text colspan="1" width="50" label="惠券面值" name="couponPrice" value=coupon.couponPrice required="true" class="required number" maxlength="12"/><@p.tr/>
                         <@p.text colspan="1" width="50" label="数量" name="couponCount" value=coupon.couponCount required="true" class="required number" maxlength="11"/>

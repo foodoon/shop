@@ -28,7 +28,7 @@ public class DiscussAct {
     private DiscussMng manager;
 
 
-    @RequestMapping({"/discuss/v_list.do"})
+    @RequestMapping({"/discuss/list.do"})
     public String list(Date startTime, Date endTime, Integer pageNo, HttpServletRequest request, ModelMap model) {
         String userName = RequestUtils.getQueryParam(request, "userName");
 
@@ -64,13 +64,13 @@ public class DiscussAct {
         return "discuss/list";
     }
 
-    @RequestMapping({"/discuss/v_add.do"})
+    @RequestMapping({"/discuss/add.do"})
     public String add(ModelMap model) {
 
         return "discuss/add";
     }
 
-    @RequestMapping({"/discuss/v_edit.do"})
+    @RequestMapping({"/discuss/edit.do"})
     public String edit(Long id, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -100,7 +100,7 @@ public class DiscussAct {
 
         log.info("save Discuss id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/discuss/o_update.do"})

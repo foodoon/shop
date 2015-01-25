@@ -25,7 +25,7 @@ public class ShopScoreAct {
     private ShopScoreMng manager;
 
 
-    @RequestMapping({"/shopScore/v_list.do"})
+    @RequestMapping({"/shopScore/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(null, Boolean.valueOf(false), Boolean.valueOf(false), null, null, Integer.valueOf(SimplePage.cpn(pageNo)),
                 Integer.valueOf(CookieUtils.getPageSize(request)));
@@ -35,13 +35,13 @@ public class ShopScoreAct {
         return "shopScore/list";
     }
 
-    @RequestMapping({"/shopScore/v_add.do"})
+    @RequestMapping({"/shopScore/add.do"})
     public String add(ModelMap model) {
 
         return "shopScore/add";
     }
 
-    @RequestMapping({"/shopScore/v_edit.do"})
+    @RequestMapping({"/shopScore/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -70,7 +70,7 @@ public class ShopScoreAct {
 
         log.info("save ShopScore id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/shopScore/o_update.do"})

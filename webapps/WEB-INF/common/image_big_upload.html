@@ -29,7 +29,7 @@ function imgCut(n) {
 		alert("<@s.m "imageupload.error.noFileToCut"/>");
 		return;
 	}
-	var url = "../common/v_image_area_select.do?uploadNum="+n+"&imgSrcPath="
+	var url = "../common/image_area_select.do?uploadNum="+n+"&imgSrcPath="
 		+$("#uploadImgPathBig"+n).val()+"&zoomWidthBig="+$("#zoomWidthBig"+n).val()+"&zoomHeightBig="+$("#zoomHeightBig"+n).val();
 	window.open(url,"imgcut","height=550, width=1000, top=0, left=0, toolbar=no, menubar=no, scrollbars=auto, resizable=yes,location=no, status=no");
 }

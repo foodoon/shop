@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+                            <input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='add.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -36,7 +36,7 @@
                         <@p.column title="ID">${shopDictionaryType.id}</@p.column><#t/>
                     <@p.column code="shopDictionaryType.function">${shopDictionaryType.name}</@p.column><#t/>
                 <@p.column code="global.operate" align="center">
-                <a href="v_edit.do?id=${shopDictionaryType.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
+                <a href="edit.do?id=${shopDictionaryType.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
                 <a href="o_delete.do?ids=${shopDictionaryType.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
             </@p.column><#t/>
         </@p.table>

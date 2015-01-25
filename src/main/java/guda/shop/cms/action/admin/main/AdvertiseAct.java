@@ -33,7 +33,7 @@ public class AdvertiseAct {
     private AdvertiseMng manager;
 
 
-    @RequestMapping({"/advertise/v_list.do"})
+    @RequestMapping({"/advertise/list.do"})
     public String list(Integer queryAdspaceId, Boolean queryEnabled, Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(queryAdspaceId,
                 queryEnabled, SimplePage.cpn(pageNo), CookieUtils.getPageSize(request));
@@ -55,7 +55,7 @@ public class AdvertiseAct {
         return "advertise/list";
     }
 
-    @RequestMapping({"/advertise/v_add.do"})
+    @RequestMapping({"/advertise/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         List adspaceList = this.adspaceMng.getList();
@@ -65,7 +65,7 @@ public class AdvertiseAct {
         return "advertise/add";
     }
 
-    @RequestMapping({"/advertise/v_edit.do"})
+    @RequestMapping({"/advertise/edit.do"})
     public String edit(Integer id, Integer pageNo, HttpServletRequest request, ModelMap model) {
 
         Advertise advertise = this.manager.findById(id);
@@ -106,7 +106,7 @@ public class AdvertiseAct {
 
         log.info("save advertise id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/advertise/o_update.do"})

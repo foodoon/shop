@@ -26,7 +26,7 @@ public class ImageCutAct
     private ServletContext servletContext;
     private RealPathResolver realPathResolver;
 
-    @RequestMapping({"/common/v_image_area_select.do"})
+    @RequestMapping({"/common/image_area_select.do"})
     public String imageAreaSelect(String imgSrcPath, Integer zoomWidth, Integer zoomHeight, Integer uploadNum, HttpServletRequest request, ModelMap model) {
         model.addAttribute("imgSrcPath", imgSrcPath);
         model.addAttribute("zoomWidth", zoomWidth);

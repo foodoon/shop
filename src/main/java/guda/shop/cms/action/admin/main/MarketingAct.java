@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MarketingAct {
 
-    @RequestMapping({"/marketing/v_list.do"})
+    @RequestMapping({"/marketing/list.do"})
     public String marketingLeft(ModelMap model) {
 
         return "marketing/list";

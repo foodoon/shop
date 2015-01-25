@@ -25,7 +25,7 @@ public class GiftExchangeAct {
     private GiftExchangeMng manager;
 
 
-    @RequestMapping({"/exchange/v_list.do"})
+    @RequestMapping({"/exchange/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -35,13 +35,13 @@ public class GiftExchangeAct {
         return "exchange/list";
     }
 
-    @RequestMapping({"/exchange/v_add.do"})
+    @RequestMapping({"/exchange/add.do"})
     public String add(ModelMap model) {
 
         return "exchange/add";
     }
 
-    @RequestMapping({"/exchange/v_edit.do"})
+    @RequestMapping({"/exchange/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -70,7 +70,7 @@ public class GiftExchangeAct {
 
         log.info("save GiftExchange id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/exchange/o_update.do"})

@@ -48,13 +48,13 @@ public class CategoryAct
     private ServletContext servletContext;
 
 
-    @RequestMapping({"/category/v_left.do"})
+    @RequestMapping({"/category/left.do"})
     public String left() {
         return "category/left";
     }
 
 
-    @RequestMapping({"/category/v_tree.do"})
+    @RequestMapping({"/category/tree.do"})
     public String tree(String root, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         log.debug("tree path={}", root);
@@ -84,7 +84,7 @@ public class CategoryAct
         return "category/tree";
     }
 
-    @RequestMapping({"/category/v_list.do"})
+    @RequestMapping({"/category/list.do"})
     public String list(Long root, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -108,7 +108,7 @@ public class CategoryAct
         return "category/list";
     }
 
-    @RequestMapping({"/category/v_add.do"})
+    @RequestMapping({"/category/add.do"})
     public String add(Long root, Long typeId, HttpServletRequest request, ModelMap model) {
         Website web = SiteUtils.getWeb(request);
         Category parent = null;
@@ -144,7 +144,7 @@ public class CategoryAct
         return "category/add";
     }
 
-    @RequestMapping({"/category/v_edit.do"})
+    @RequestMapping({"/category/edit.do"})
     public String edit(Long id, Long root, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -258,7 +258,7 @@ public class CategoryAct
 
         model.addAttribute("root", root);
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/category/o_update.do"})
@@ -300,7 +300,7 @@ public class CategoryAct
         return list(root, request, model);
     }
 
-    @RequestMapping({"/category/v_checkPath.do"})
+    @RequestMapping({"/category/checkPath.do"})
     public String checkPath(String path, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(path)) ||

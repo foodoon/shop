@@ -23,9 +23,9 @@
                         <form class="ropt">
                             <input type="hidden" name="root" value="${root!}"/>
                             <input type="hidden" id="type" name="type" value="1"/>
-                            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.1"/>" onclick="this.form.action='v_add.do';$('#type').val(1);"/>
-                            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.2"/>" onclick="this.form.action='v_add.do';$('#type').val(2);"/>
-                            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.3"/>" onclick="this.form.action='v_add.do';$('#type').val(3);"/>
+                            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.1"/>" onclick="this.form.action='add.do';$('#type').val(1);"/>
+                            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.2"/>" onclick="this.form.action='add.do';$('#type').val(2);"/>
+                            <input type="submit" value="<@s.m "global.add"/><@s.m "shopChannel.type.3"/>" onclick="this.form.action='add.do';$('#type').val(3);"/>
                         </form>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <@p.column code="shopChannel.display"><#if shopChannel.display><@s.m "global.true"/><#else><@s.m "global.false"/></#if></@p.column><#t/>
                 <@p.column code="global.priority" align="center"><input type="text" name="priority" value="${shopChannel.priority}" style="width:30px"/></@p.column><#t/>
                 <@p.column code="global.operate" align="center">
-                <a href="v_edit.do?id=${shopChannel.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
+                <a href="edit.do?id=${shopChannel.id}&pageNo=${pageNo!}"><@s.m "global.edit"/></a> | <#rt/>
                 <a href="o_delete.do?ids=${shopChannel.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                 </@p.column><#t/>
                 </@p.table>

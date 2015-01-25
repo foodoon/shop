@@ -205,68 +205,41 @@ public class ProductFormAct {
 
     @RequestMapping({"/historyRecord.htm"})
     public String historyRecord(Long productId, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
-
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
         if (member == null) {
-
             ResponseUtils.renderJson(response, "false");
-
             return null;
         }
-
         if ((productId == null) || (this.productMng.findById(productId) == null)) {
-
             return FrontHelper.pageNotFound(web, model, request);
         }
-
         String str = "";
-
         Cookie[] cookeis = request.getCookies();
-
         int num = cookeis.length;
-
         for (int i = 0; i < num; i++) {
-
             if (cookeis[i].getName().equals("shop_record")) {
-
                 str = ',' + cookeis[i].getValue();
-
                 break;
             }
         }
-
         str = productId + str;
-
         int n = 0;
         int m = 0;
-
         int j = str.length();
-
         for (int i = 0; i < j; i++) {
-
             if (str.charAt(i) == ',') {
-
                 n++;
             }
-
             if (n == 6) {
                 break;
             }
-
             m = i + 1;
         }
-
         Cookie cook = new Cookie("shop_record", str.substring(0, m));
-
         String path = request.getContextPath();
-
         cook.setPath(StringUtils.isBlank(path) ? "/" : path);
-
         response.addCookie(cook);
-
         return null;
     }
 }

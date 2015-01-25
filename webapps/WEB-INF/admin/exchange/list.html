@@ -35,9 +35,9 @@
                     <@p.column code="收货地址">${giftExchange.detailaddress!}</@p.column><#t/>
                     <@p.column code="日期">${giftExchange.createTime?string('yyyy-MM-dd HH:mm:ss')}</@p.column><#t/>
                     <@p.column code="global.operate" align="center">
-                    <#if giftExchange.status=1><a href="v_edit.do?id=${giftExchange.id}&pageNo=${pageNo!}">发货</a> | <#rt/>
+                    <#if giftExchange.status=1><a href="edit.do?id=${giftExchange.id}&pageNo=${pageNo!}">发货</a> | <#rt/>
                         <#else>
-                            <a href="v_edit.do?id=${giftExchange.id}&pageNo=${pageNo!}">查看</a> | <#rt/>
+                            <a href="edit.do?id=${giftExchange.id}&pageNo=${pageNo!}">查看</a> | <#rt/>
                     </#if>
                     <a href="o_delete.do?ids=${giftExchange.id}&pageNo=${pageNo!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                     </@p.column><#t/>

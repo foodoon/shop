@@ -20,7 +20,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt">
-                            <input type="submit" value="增加" onclick="this.form.action='v_add.do';"/>
+                            <input type="submit" value="增加" onclick="this.form.action='add.do';"/>
                         </form>
                         <div class="clear"></div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form id="tableForm" method="post" class="am-form">
                             <input type="hidden" value="${pageNo!}" name="pageNo">
-                            <@p.table listAction="v_qqList.do" value=pagination;customerService,i,has_next><#rt/>
+                            <@p.table listAction="qqList.do" value=pagination;customerService,i,has_next><#rt/>
                             <@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
                             <input type='checkbox' name='ids' value='${customerService.id}'/><#t/>
                         </@p.column><#t/>
@@ -38,7 +38,7 @@
                 <@p.column code="禁用">${customerService.disable!?string('是','否')}</@p.column><#t/>
             <@p.column code="排序"><input type="text" name="priority" value="${customerService.priority}" size="7"/><input type="hidden" name="wids" value="${customerService.id}"/></@p.column><#t/>
                         <@p.column code="global.operate" align="center">
-                        <a href="v_edit.do?id=${customerService.id}"><@s.m "global.edit"/></a> | <#rt/>
+                        <a href="edit.do?id=${customerService.id}"><@s.m "global.edit"/></a> | <#rt/>
                         <a href="o_delete.do?ids=${customerService.id}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                     </@p.column><#t/>
                 </@p.table>

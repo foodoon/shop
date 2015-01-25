@@ -22,7 +22,7 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <form class="ropt" method="post">
                             <input type="hidden" name="root" value="${root}"/>
-                            &nbsp; <input type="submit" value="<@s.m "resource.create"/>" onclick="this.form.action='v_add.do';"/>
+                            &nbsp; <input type="submit" value="<@s.m "resource.create"/>" onclick="this.form.action='add.do';"/>
                             <input type="hidden" name="relPath" value="${relPath!}"/>
                         </form>
                     </div>
@@ -42,8 +42,8 @@
                     <@p.column code="resource.size" align="right">${resource.size} KB</@p.column><#t/>
                 <@p.column code="resource.lastModified" align="center">${resource.lastModifiedDate?string('yyyy-MM-dd HH:mm:ss')!}</@p.column><#t/>
                             <@p.column code="global.operate" align="center">
-                            <a href="v_rename.do?root=${root!?url}&name=${resource.name?url}"><@s.m "resource.rename"/></a> | <#rt/>
-                            <#if resource.editable><a href="v_edit.do?root=${root!?url}&name=${resource.name?url}"><@s.m "global.edit"/></a> | <#rt/></#if>
+                            <a href="rename.do?root=${root!?url}&name=${resource.name?url}"><@s.m "resource.rename"/></a> | <#rt/>
+                            <#if resource.editable><a href="edit.do?root=${root!?url}&name=${resource.name?url}"><@s.m "global.edit"/></a> | <#rt/></#if>
                             <a href="o_delete_single.do?root=${root!?url}&name=${resource.name?url}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
                         </@p.column><#t/>
                     </@p.table>
@@ -124,7 +124,7 @@ window.onload=function() {
 };
 function queueComplete2(numFilesUploaded) {
 	//刷新页面
-	location.href="v_list.do?root=${root}";
+	location.href="list.do?root=${root}";
 }
 </script>
 

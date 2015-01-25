@@ -27,7 +27,7 @@ public class BrandAct {
     private BrandMng manager;
 
 
-    @RequestMapping({"/brand/v_list.do"})
+    @RequestMapping({"/brand/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         List list = this.manager.getAllList();
 
@@ -36,13 +36,13 @@ public class BrandAct {
         return "brand/list";
     }
 
-    @RequestMapping({"/brand/v_add.do"})
+    @RequestMapping({"/brand/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         return "brand/add";
     }
 
-    @RequestMapping({"/brand/v_edit.do"})
+    @RequestMapping({"/brand/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         WebErrors errors = validateEdit(id, request);
@@ -78,7 +78,7 @@ public class BrandAct {
 
         log.info("save brand. id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/brand/o_update.do"})
@@ -142,7 +142,7 @@ public class BrandAct {
         return list(pageNo, request, model);
     }
 
-    @RequestMapping({"/brand/v_check_brandName.do"})
+    @RequestMapping({"/brand/check_brandName.do"})
     public void checkUsername(String name, HttpServletResponse response) {
         String pass;
 

@@ -36,7 +36,7 @@ public class StandardTypeAct {
     private StandardMng standardMng;
 
 
-    @RequestMapping({"/standardType/v_list.do"})
+    @RequestMapping({"/standardType/list.do"})
     public String list(Integer pageNo, HttpServletRequest request, ModelMap model) {
         Pagination pagination = this.manager.getPage(SimplePage.cpn(pageNo),
                 CookieUtils.getPageSize(request));
@@ -46,13 +46,13 @@ public class StandardTypeAct {
         return "standardType/list";
     }
 
-    @RequestMapping({"/standardType/v_add.do"})
+    @RequestMapping({"/standardType/add.do"})
     public String add(HttpServletRequest request, ModelMap model) {
 
         return "standardType/add";
     }
 
-    @RequestMapping({"/standardType/v_edit.do"})
+    @RequestMapping({"/standardType/edit.do"})
     public String edit(Long id, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
@@ -91,7 +91,7 @@ public class StandardTypeAct {
 
         log.info("save StandardType id={}", bean.getId());
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/standardType/o_update.do"})
@@ -175,7 +175,7 @@ public class StandardTypeAct {
         }
     }
 
-    @RequestMapping({"/standardType/v_check_field.do"})
+    @RequestMapping({"/standardType/check_field.do"})
     public String checkUsername(String field, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(field)) || (this.manager.getByField(field) != null))

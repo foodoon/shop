@@ -10,7 +10,7 @@ public class ResourceType {
     public static final ResourceType FLASH = new ResourceType("Flash", PropertiesLoader.getFlashResourceTypePath(), Utils.getSet(PropertiesLoader.getFlashResourceTypeAllowedExtensions()), Utils.getSet(PropertiesLoader.getFlashResourceTypeDeniedExtensions()));
     public static final ResourceType IMAGE = new ResourceType("Image", PropertiesLoader.getImageResourceTypePath(), Utils.getSet(PropertiesLoader.getImageResourceTypeAllowedExtensions()), Utils.getSet(PropertiesLoader.getImageResourceTypeDeniedExtensions()));
     public static final ResourceType MEDIA = new ResourceType("Media", PropertiesLoader.getMediaResourceTypePath(), Utils.getSet(PropertiesLoader.getMediaResourceTypeAllowedExtensions()), Utils.getSet(PropertiesLoader.getMediaResourceTypeDeniedExtensions()));
-    private static Map<String, ResourceType> _$1 = new HashMap(4);
+    private static Map<String, ResourceType> resourceTypeMap = new HashMap(4);
     private String _$5;
     private String _$4;
     private Set<String> _$3;
@@ -30,14 +30,14 @@ public class ResourceType {
     public static ResourceType valueOf(String paramString) {
         if (Utils.isEmpty(paramString))
             throw new NullPointerException("Name is null or empty");
-        ResourceType localResourceType = (ResourceType) _$1.get(paramString);
+        ResourceType localResourceType = (ResourceType) resourceTypeMap.get(paramString);
         if (localResourceType == null)
             throw new IllegalArgumentException("No resource type const " + paramString);
         return localResourceType;
     }
 
     public static boolean isValidType(String paramString) {
-        return _$1.containsKey(paramString);
+        return resourceTypeMap.containsKey(paramString);
     }
 
     public static ResourceType getResourceType(String paramString) {
@@ -103,10 +103,10 @@ public class ResourceType {
     }
 
     static {
-        _$1.put(FILE.getName(), FILE);
-        _$1.put(FLASH.getName(), FLASH);
-        _$1.put(IMAGE.getName(), IMAGE);
-        _$1.put(MEDIA.getName(), MEDIA);
+        resourceTypeMap.put(FILE.getName(), FILE);
+        resourceTypeMap.put(FLASH.getName(), FLASH);
+        resourceTypeMap.put(IMAGE.getName(), IMAGE);
+        resourceTypeMap.put(MEDIA.getName(), MEDIA);
     }
 }
 

@@ -19,7 +19,7 @@ public class RoleAct {
     @Autowired
     private RoleMng manager;
 
-    @RequestMapping({"/role/v_list.do"})
+    @RequestMapping({"/role/list.do"})
     public String list(HttpServletRequest request, ModelMap model) {
 
         List list = this.manager.getList();
@@ -29,13 +29,13 @@ public class RoleAct {
         return "role/list";
     }
 
-    @RequestMapping({"/role/v_add.do"})
+    @RequestMapping({"/role/add.do"})
     public String add(ModelMap model) {
 
         return "role/add";
     }
 
-    @RequestMapping({"/role/v_edit.do"})
+    @RequestMapping({"/role/edit.do"})
     public String edit(Integer id, HttpServletRequest request, ModelMap model) {
 
         model.addAttribute("role", this.manager.findById(id));
@@ -48,7 +48,7 @@ public class RoleAct {
 
         bean = this.manager.save(bean, splitPerms(perms));
 
-        return "redirect:v_list.do";
+        return "redirect:list.do";
     }
 
     @RequestMapping({"/role/o_update.do"})
