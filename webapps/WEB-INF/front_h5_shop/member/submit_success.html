@@ -1,12 +1,4 @@
 [#include "../include/html_header.html"/]
-    <title>我的购物车 - ${web.name}${web.additionalTitle!}</title>
-    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/checkout.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/member.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/buy.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/cart.css" type="text/css" rel="stylesheet"/>
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
     <script src="${root}/js/cart_sure.js" type="text/javascript"></script>
     <script type="text/javascript">
         var URLPrefix = {
@@ -15,27 +7,17 @@
     </script>
 </head>
 <body>
-<div class="mainContainer sixteen container">
-    <!--Header Block-->
-    <div class="header-wrapper">
-        [#include "../include/html_header_top.html"/]
-    </div>
-</div>
-<div class="center mt10">
-    <div id="topcolumn"></div>
-    <div class="buy_position">您当前的位置：<a href="" target="_blank">首页</a>&nbsp;&gt;&nbsp;成功提交订单</div>
-    <ul class="step clearfix mt10">
-        <li><span>STEP 1.</span>查看购物车</li>
-        <li><span>STEP 2.</span>确认订单信息</li>
-        <li class="on"><span>STEP 3.</span>成功提交订单</li>
-    </ul>
-    <div class="order">
-        <div class="result">
+[#include "../include/html_header_top.html"/]
+
+
+<div class="am-g am-g-fixed">
+
+        <div class="am-g">
             [#if order??]
-            <div class="title">您的订单已提交成功，[#if order.payment??][#if
+            <div class="am-text-center am-text-xl am-margin-top-lg">您的订单已提交成功，[#if order.payment??][#if
                 order.payment.type=1]正在等待您的付款！[#else]正在等待处理！[/#if][/#if]
             </div>
-            <table>
+            <table class="am-table">
                 <tr>
                     <th colspan="4">订单信息:</th>
                 </tr>
@@ -86,7 +68,7 @@
                     </tr>
                 </table>
                 <input type="hidden" name="orderId" value="${order.id}"/>
-                <input type="submit" class="paymentButton" value="立即支付"/>
+               <div class="am-align-right"><input type="submit" class="am-btn am-btn-warning" value="立即支付"/></div>
             </form>
             [#else]
             ${order.payment.description!}
@@ -99,7 +81,7 @@
         </div>
 
     </div>
-</div>
+
 [#include "../include/footer.html"/]
 </body>
 </html>
