@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.td width="50" colspan="2" label="公司名称">${logistics.name}</@p.td><@p.tr/>
                     <@p.hidden name="name" value=logistics.name/>
                     <@p.text colspan="2" width="100" label="官网网址" name="webUrl" value=logistics.webUrl size="50" maxlength="255"/><@p.tr/>
@@ -54,7 +54,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 	<#if logistics.logoPath??>
 	$("#preImg1").css("width","139").css("height","139").attr("src","${logistics.logoPath}?d="+new Date()*1);
 	</#if>

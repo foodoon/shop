@@ -31,7 +31,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do">
+                        <@p.form id="baseForm" action="o_update.do">
                         <@p.text label="shipping.name" name="name" value=shipping.name required="true" class="required" size="40" maxlength="150"/>
                         <@p.select  label="物流公司" name="logisticsId" value=((shipping.logistics!).id!) list=list listKey="id" listValue="name" required="true"/>
                         <@p.select  label="物流类型" name="logisticsType" required="true" value=shipping.logisticsType list={"EXPRESS":"快递","POST":"平邮","EMS":"EMS"} />
@@ -68,7 +68,7 @@
 <script type="text/javascript">
 $(function() {
 	methodChange();
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 });
 function methodChange() {
 var method = $("input[name=method]:checked").val();

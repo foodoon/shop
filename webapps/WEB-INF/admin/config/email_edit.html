@@ -20,7 +20,7 @@
 
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" labelWidth="12" action="o_email_update.do">
+                        <@p.form id="baseForm" labelWidth="12" action="o_email_update.do">
                         <@p.text colspan="1" width="50" label="emailSender.host" id="host" name="host" value=(emailSender.host)! required="true" class="required" maxlength="50" help="emailSender.host.help"/>
                         <@p.text colspan="1" width="50" label="emailSender.encoding" id="encoding" name="encoding" value=(emailSender.encoding)! required="true" class="required" maxlength="20" help="emailSender.encoding.help"/><@p.tr/>
                         <@p.text colspan="1" width="50" label="emailSender.username" id="username" name="username" value=(emailSender.username)! required="true" class="required" maxlength="100" help="emailSender.username.help"/>

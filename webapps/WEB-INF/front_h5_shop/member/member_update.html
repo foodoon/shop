@@ -5,9 +5,9 @@
         return document.getElementById(o);
     }
     $(function () {
-        $("#jvForm").validate();
-        $("#jvForm1").validate();
-        $("#jvForm2").validate();
+        $("#baseForm").validate();
+        $("#baseForm1").validate();
+        $("#baseForm2").validate();
     });
     function HoverLi(m, n, counter) {
         for (var i = 1; i <= counter; i++) {
@@ -17,7 +17,7 @@
         g('tbc_' + m + n).className = 'dis';
         g('tb_' + m + n).className = 'curr3';
     }
-    function checkJvForm() {
+    function checkbaseForm() {
         var mobile = $("#mobile").val();
         if (mobile == null || mobile == "") {
             $("#checkmobile").html("请输入您的手机号码");
@@ -63,10 +63,10 @@
             $("#checkIsCar").html("");
         }
 
-        $("#jvForm").submit();
+        $("#baseForm").submit();
     }
 
-    function checkJvForm1() {
+    function checkbaseForm1() {
         var flag = false;
 
         var workSeniorityId = $("#workSeniorityId").val();
@@ -90,10 +90,10 @@
             $("#checkDegreeId").html("");
         }
 
-        $("#jvForm1").submit();
+        $("#baseForm1").submit();
     }
-    function checkJvForm2() {
-        $("#jvForm2").submit();
+    function checkbaseForm2() {
+        $("#baseForm2").submit();
     }
 
 </script>
@@ -120,7 +120,7 @@
 <div class="am-tabs-bd">
 <div class="am-tab-panel am-fade am-in am-active" id="tab1">
 <div class="am-g am-margin-top">
-    <form id="jvForm" action="${base}/shopMember/profile.htm" method="post" class="am-form">
+    <form id="baseForm" action="${base}/shopMember/profile.htm" method="post" class="am-form">
         <div style="float:left;widht:500px;">
             <table width="98%" border="0" align="center" cellpadding="2" cellspacing="1">
                 <tr>
@@ -259,7 +259,7 @@
                     <td height="30">&nbsp;</td>
                     <td>
                         <input type="hidden" name="id" value="${member.id}"/>
-                        <input type="button" value="提交" onclick="checkJvForm();" class="member_button"/>
+                        <input type="button" value="提交" onclick="checkbaseForm();" class="member_button"/>
                         &nbsp; <input type="reset" value="重置" class="member_button"/>
                         <input type="hidden" name="backUrl" value="${location}"/></td>
                 </tr>
@@ -287,7 +287,7 @@
 </div>
 </div>
 <div class="am-tab-panel am-fade" id="tab2">
-    <form id="jvForm1" action="${base}/shopMember/profile.htm" method="post" class="am-form">
+    <form id="baseForm1" action="${base}/shopMember/profile.htm" method="post" class="am-form">
         <table width="98%" border="0" align="center" cellpadding="2" cellspacing="1">
             <tr>
                 <td height="30" align="right" style="font-size:12px; color:#666666;">单位名称：</td>
@@ -348,7 +348,7 @@
                 <td height="30">&nbsp;</td>
                 <td>
                     <input type="hidden" name="id" value="${member.id}"/>
-                    <input type="button" value="提交" onclick="checkJvForm1();" class="member_button"/>
+                    <input type="button" value="提交" onclick="checkbaseForm1();" class="member_button"/>
                     &nbsp; <input type="reset" value="重置" class="member_button"/>
                     <input type="hidden" name="backUrl" value="${location}"/></td>
             </tr>
@@ -356,7 +356,7 @@
     </form>
 </div>
 <div class="am-tab-panel am-fade" id="tab3">
-    <form id="jvForm2" action="${base}/shopMember/profile.htm" method="post" class="am-form">
+    <form id="baseForm2" action="${base}/shopMember/profile.htm" method="post" class="am-form">
         <table width="98%" border="0" align="center" cellpadding="2" cellspacing="1">
 
 
@@ -391,7 +391,7 @@
                 <td height="30">&nbsp;</td>
                 <td>
                     <input type="hidden" name="id" value="${member.id}"/>
-                    &nbsp;<input type="button" value="提交" onclick="checkJvForm2();" class="member_button"/>
+                    &nbsp;<input type="button" value="提交" onclick="checkbaseForm2();" class="member_button"/>
                     &nbsp; <input type="reset" value="重置" class="member_button"/>
                     <input type="hidden" name="backUrl" value="${location}"/></td>
             </tr>

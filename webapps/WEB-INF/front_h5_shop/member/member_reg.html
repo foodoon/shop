@@ -1,14 +1,14 @@
 ﻿[#include "../include/html_header.html"/]
 <script type="text/javascript">
     $(function () {
-        $("#jvForm").validate();
+        $("#baseForm").validate();
     });
     function onSubmit() {
         if (!$("#contract").attr("checked") == true) {
             alert("请阅读注册协议!");
             return;
         }
-        $("#jvForm").submit();
+        $("#baseForm").submit();
     }
 </script>
 
@@ -16,71 +16,71 @@
 <body>
 [#include "../include/html_header_top.html"/]
 <div class="am-container">
-    <form class="am-form" id="jvForm" action="register.htm" method="post">
+
+    <div class="am-u-sm-12">
+    <form class="am-form" id="baseForm" action="register.htm" method="post">
         <fieldset>
             <legend>注册新用户</legend>
         </fieldset>
-            <div class="regist_box_left">
-                <table width="100%" border="0" cellspacing="2" cellpadding="0">
+
+                <table class="am-form">
                     <tr>
-                        <td height="35" width="257" align="right" style="font-size:14px; color:#666666;">用户名：</td>
-                        <td width="648"><input type="text" id="username" name="username" class="regist_input"
+                        <td>用户名：</td>
+                        <td width="300px"><input type="text" id="username" name="username"
                                                vld="{required:true,rangelength:[3,20],remote:'${base}/username_unique.htm',messages:{remote:'用户名已存在'}}"/>
                         </td>
+                        <td><font size="3">用户名由3到20位的中文字符、英文字母、数字组成。</font></td>
                     </tr>
+
                     <tr>
-                        <td height="35" width="257" align="right">&nbsp;</td>
-                        <td width="648"><font size="3">用户名由3到20位的中文字符、英文字母、数字组成。</font></td>
-                    </tr>
-                    <tr>
-                        <td height="35" width="257" align="right" style="font-size:14px; color:#666666;">Email：</td>
-                        <td width="648"><input type="text" name="email" id="email" class="regist_input"
+                        <td>邮箱：</td>
+                        <td ><input type="text" name="email" id="email"
                                                vld="{required:true,email:true,remote:'${base}/email_unique.htm',messages:{remote:'email已经被使用'}}"/>
                         </td>
+                        <td><font size="3">输入有效邮箱地址并成功激活，可用此邮箱做为登录账号及找回密码</font></td>
                     </tr>
+
                     <tr>
-                        <td height="35" width="257" align="right">&nbsp;</td>
-                        <td width="648"><font size="3">输入有效邮箱地址并成功激活，可用此邮箱做为登录账号及找回密码</font></td>
-                    </tr>
-                    <tr>
-                        <td height="35" width="257" align="right" style="font-size:14px; color:#666666;">密码：</td>
-                        <td width="648"><input name="password" type="password" class="regist_input" id="password"
+                        <td>密码：</td>
+                        <td><input name="password" type="password"  id="password"
                                                vld="{required:true,rangelength:[6,32]}"/></td>
+                        <td><font size="3">6－20位字符，可由大小写英文、数字或符号组成 </font></td>
+                    </tr>
+
+                    <tr>
+                        <td>确认密码：</td>
+                        <td ><input type="password" equalTo="#password" class="regist_input"/></td>
                     </tr>
                     <tr>
-                        <td height="35" width="257" align="right">&nbsp;</td>
-                        <td width="648"><font size="3">6－20位字符，可由大小写英文、数字或符号组成 </font></td>
-                    </tr>
-                    <tr>
-                        <td height="35" width="257" align="right" style="font-size:14px; color:#666666;">确认密码：</td>
-                        <td width="648"><input type="password" equalTo="#password" class="regist_input"/></td>
-                    </tr>
-                    <tr>
-                        <td height="55" width="257" align="right" style="font-size:14px; color:#666666;">验证码：</td>
-                        <td width="648"><input type="text" name="checkcode" class="regist_input"
-                                               style="width:150px;height:25px;" vld="{required:true}"/>
+                        <td >验证码：</td>
+                        <td ><input type="text" name="checkcode"      vld="{required:true}"/>
+
+                        </td>
+                        <td>
                             <img id="checkcode" src="${base}/checkcode.svl" border="1" style="height:40px;width:100px;"
                                  onclick="$('#checkcode').attr('src','${base}/checkcode.svl?d'+new Date()*1);"/>
-                            <a href="javascript:void(0);" class="xieyi"
+                            <a href="javascript:void(0);"
                                onclick="$('#checkcode').attr('src','${base}/checkcode.svl?d'+new Date()*1);return false">看不清，换一张 </a>
                         </td>
                     </tr>
+
                     <tr>
-                        <td height="35" width="257" align="right">&nbsp;</td>
-                        <td width="648">
+                        <td>&nbsp;</td>
+                        <td colspan="2">
                             <input type="checkbox" id="contract" name="contract" checked="checked"/>
                             <a href="javascript:void(0);"
                                onclick="window.open('treaty.htm','','height=600,width=600,scrollbars=1');"
                                class="xieyi">已阅读并接受《 本站协议 》</a></td>
                     </tr>
                     <tr>
-                        <td height="35" width="257" align="right">&nbsp;</td>
-                        <td width="648"><input type="button" onclick="onSubmit();" value="确定" class="regist-submit"/>
+                        <td>&nbsp;</td>
+                        <td><input type="button" onclick="onSubmit();" value="确定" class="am-btn am-btn-warning"/>
                         </td>
                     </tr>
                 </table>
-            </div>
+
         </form>
+        </div>
 </div>
 [#include "../include/footer.html"/]
 </body>

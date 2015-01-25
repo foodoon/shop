@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form id="jvForm" method="post" class="am-form">
+                        <form id="baseForm" method="post" class="am-form">
                             <input type="hidden" name="id" value="${order.id}"/>
                             <input type="submit" value="确认" onclick="this.form.action='o_affirm.do'" <#if order.status!=1>disabled</#if>/>
                             <input type="submit" value="支付" onclick="this.form.action='v_payment.do'" <#if order.paymentStatus!=1>disabled <#elseif order.payment.type==1>disabled</#if>/>
@@ -36,7 +36,7 @@
                             <input type="submit" value="完成" onclick="this.form.action='o_accomplish.do'" <#if order.shippingStatus!=2>disabled<#elseif order.paymentStatus!=2>disabled<#elseif order.status!=2>disabled</#if>/>
                             <input type="submit" value="取消"  onclick="this.form.action='o_abolish.do'" <#if order.status=3>disabled<#elseif order.shippingStatus=2>disabled<#elseif order.paymentStatus=2>disabled<#elseif order.status=4>disabled</#if>/>
                         </form>
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.td colspan="2"><strong class="title"><@s.m "order.product"/></strong></@p.td><@p.tr/>
                     <@p.td colspan="2">
                     <@p.table value=order.items;item,i,has_next><#rt/>
@@ -153,7 +153,7 @@
 
     function statusChange(status){
         if(status==19){
-            $("#jvForm").attr("action","o_returnMoney.do");
+            $("#baseForm").attr("action","o_returnMoney.do");
         }
         $("#status").val(status);
     }

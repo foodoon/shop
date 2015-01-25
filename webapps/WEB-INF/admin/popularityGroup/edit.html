@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do">
+                        <@p.form id="baseForm" action="o_update.do">
                         <@p.text colspan="2" label="名称" name="name" value=popularityGroup.name required="true" class="required" maxlength="100"/><@p.tr/>
                         <@p.text colspan="2" label="开始时间" name="beginTime" value=popularityGroup.beginTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/><@p.tr/>
                         <@p.text colspan="2" label="结束时间" name="endTime" value=popularityGroup.endTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/><@p.tr/>
@@ -93,7 +93,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 	getList();
 	$('#add').click(function() {
 	    //获取选中的选项，删除并追加给对方

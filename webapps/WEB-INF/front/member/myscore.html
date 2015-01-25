@@ -14,7 +14,7 @@
     <script src="${base}/thirdparty/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
-            $("#jvForm").validate();
+            $("#baseForm").validate();
         });
 
         function checkStatus(status) {
@@ -25,12 +25,12 @@
                 $("#status").attr("value", status);
                 $("#useStatus").attr("value", '');
             }
-            $("#jvForm").submit();
+            $("#baseForm").submit();
         }
 
         function checkUseStatus(useStatus) {
             $("#useStatus").attr("value", useStatus);
-            $("#jvForm").submit();
+            $("#baseForm").submit();
         }
     </script>
 </head>
@@ -59,7 +59,7 @@
             </ul>
         </div>
         <div id="demo2" class="s-demo">
-            <form id="jvForm" action="myscore.htm" method="post">
+            <form id="baseForm" action="myscore.htm" method="post">
                 <input type="hidden" id="status" name="status" value="${status!}"/>
                 <input type="hidden" id="useStatus" name="useStatus" value="${useStatus!}"/>
                 <ul class="ks-switchable-nav clearfix">

@@ -20,7 +20,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form id="jvForm" action="o_save.do" method="post" style="padding-top:5px">
+                        <form id="baseForm" action="o_save.do" method="post" style="padding-top:5px">
                             <input type="text" name="name" class="required" maxlength="100"/> &nbsp;
                             <input type="submit" value="<@s.m "productTag.saveTag"/>"/>
                         </form>
@@ -80,7 +80,7 @@ function optDelete() {
 	f.submit();
 }
 $(function() {
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 });
 </script>
 

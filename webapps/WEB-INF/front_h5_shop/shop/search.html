@@ -1,10 +1,14 @@
 [#include "../include/html_header.html"/]
-    <title>全文搜索 - ${web.name}${web.additionalTitle!}</title>
+<script language="javascript" src="${root}/js/duice.js"></script>
+<script type="text/javascript" src="${root}/js/img.js"></script>
+
+
 </head>
 <body>
+[#include "../include/html_header_top.html"/]
 <h1>全文检索</h1>
 
-<form action="${base}/search.htm" method="post" id="jvForm">
+<form action="${base}/search.htm" method="post" id="baseForm">
     <input name="q" id="q" value="${q!'请输入关键词'}" type="text" id="keyword"
            onfocus="if(this.value=='请输入关键词')this.value=''"
            onblur="if(this.value=='')this.value='请输入关键词'" maxlength="24"

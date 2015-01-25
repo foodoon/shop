@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_payment.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_payment.do" labelWidth="12">
                         <@p.td colspan="2"><strong class="title">收款信息</strong></@p.td><@p.tr/>
                     <@p.td colspan="1" width="50" label="订单编号">${order.code}</@p.td>
                                 <@p.td colspan="1" width="50" label="order.paymentStatus">
@@ -116,7 +116,7 @@
 
     function statusChange(status){
         if(status==19){
-            $("#jvForm").attr("action","o_returnMoney.do");
+            $("#baseForm").attr("action","o_returnMoney.do");
         }
         $("#status").val(status);
     }

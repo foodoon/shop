@@ -17,7 +17,7 @@
             "url": "${base}"
         };
         $(function () {
-            $("#jvForm").validate();
+            $("#baseForm").validate();
         });
 
 
@@ -62,8 +62,8 @@
                 alert("手机跟电话至少有一项必填");
                 return;
             }
-            $("#jvForm").attr("action", "${base}/shopMemberAddress/address_save.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "${base}/shopMemberAddress/address_save.htm");
+            $("#baseForm").submit();
         }
         function checkSubmit1() {
             if ($("input[name='deliveryInfo']").length <= 0) {
@@ -71,8 +71,8 @@
                 return;
             }
             $("#addrInputDiv").html('');
-            $("#jvForm").attr("action", "create_exchange.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "create_exchange.htm");
+            $("#baseForm").submit();
         }
     </script>
 </head>
@@ -87,7 +87,7 @@
     <div class="buy_position">您当前的位置：<a href="" target="_blank">首页</a>&nbsp;&gt;&nbsp;礼品兑换</div>
     <div id="checkoutUI" class="mt10">
         <div id="errorMsgDisplayDiv" style="z-index:1000;"></div>
-        <form id="jvForm" action="create_exchange.htm" method="post">
+        <form id="baseForm" action="create_exchange.htm" method="post">
             <div id="receiver_buffer_window" class="delivery mb10">
                 <div class="title"><h2>收货地址</h2></div>
 

@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do">
+                        <@p.form id="baseForm" action="o_update.do">
                         <@p.text label="名称" colspan="1" width="50" name="name" value=exended.name required="true" class="required" maxlength="100"/>
                         <@p.text label="字段名称" colspan="1" width="50" name="field" value=exended.field required="true" class="required" maxlength="100"/><@p.tr/>
                         <@p.select label="数据类型" colspan="1" width="50" id="dataType"  required="true" value="${exended.dataType}" list={"1":"下拉列表","2":"单选框"} name="dataType"/>
@@ -74,7 +74,7 @@ $(function() {
 	<#list list as item>
 	$("#itemColor${item_index}").colorPicker();
 	</#list>
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 	
 });
 

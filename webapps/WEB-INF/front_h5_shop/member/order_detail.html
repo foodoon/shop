@@ -10,8 +10,8 @@
     <script type="text/javascript">
         function addCart(orderId) {
             $("#orderId").val(orderId);
-            $("#jvForm").attr("action", "${base}/cart/add_orderItem1.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "${base}/cart/add_orderItem1.htm");
+            $("#baseForm").submit();
         }
         function addToCollect(productId, productFashId) {
             $.post('${base}/collect/add_to_collect.htm', {
@@ -73,7 +73,7 @@
                              [#elseif order.paymentStatus=2][@s.m "order.paymentStatus.${order.paymentStatus}"/]&nbsp;[@s.m "order.shippingStatus.${order.shippingStatus}"/][/#if]
                             </span></li>
                     <li style="float:right;">
-                        <form id="jvForm" action="../cart/add_orderItem1.htm" method="post">
+                        <form id="baseForm" action="../cart/add_orderItem1.htm" method="post">
                             <input type="hidden" id="orderId" name="orderId" value="${order.id}"/>
                             <button class="y90 mr5 orderListAgain" onclick="addCart(${order.id});">再放进购物车</button>
                         </form>

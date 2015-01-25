@@ -29,7 +29,7 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <#assign custom=property.custom/>
                         <#assign type=property.dataType/>
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <#if custom>
                             <@p.text colspan="1" width="50" label="字段" name="field" value=property.field required="true" class="required" maxlength="100"/>
                             <#else>

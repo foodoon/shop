@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_save.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_save.do" labelWidth="12">
                         <@p.text colspan="1" width="50" label="advertise.name" name="name" required="true" class="required" maxlength="100"/>
                         <@p.select colspan="1" width="50" label="adspace.name" name="adspaceId" list=adspaceList listKey="id" listValue="name" required="true"/><@p.tr/>
                         <@p.td colspan="2" label="advertise.txt" required="true">
@@ -63,7 +63,7 @@
 $(function() {
 	//attrChange("image");
 	//$("#textColor").colorPicker();
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 });
 var attr_all=["image","flash","text","code"];
 function attrChange(value) {

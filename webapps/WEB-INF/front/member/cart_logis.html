@@ -16,7 +16,7 @@
             "url": "${base}"
         };
         $(function () {
-            $("#jvForm").validate();
+            $("#baseForm").validate();
             $(':checkbox[name=memberCoupon]').each(function () {
                 $(this).click(function () {
                     if ($(this).attr('checked')) {
@@ -135,8 +135,8 @@
                 alert("手机跟电话至少有一项必填");
                 return;
             }
-            $("#jvForm").attr("action", "../shopMemberAddress/address_save.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "../shopMemberAddress/address_save.htm");
+            $("#baseForm").submit();
         }
 
         function checkSubmit1() {
@@ -164,8 +164,8 @@
                 return;
             }
             $("#addrInputDiv").html('');
-            $("#jvForm").attr("action", "../order/order_shipping.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "../order/order_shipping.htm");
+            $("#baseForm").submit();
         }
         function showBalanceDiv(a) {
             if (a.className == "") {
@@ -213,7 +213,7 @@
 </ul>
 <div id="checkoutUI" class="mt10">
 <div id="errorMsgDisplayDiv" style="z-index:1000;"></div>
-<form id="jvForm" action="../order/order_shipping.htm" method="post">
+<form id="baseForm" action="../order/order_shipping.htm" method="post">
 <div id="receiver_buffer_window" class="delivery mb10">
     <div class="title"><h2>收货人信息</h2></div>
 

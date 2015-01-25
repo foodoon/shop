@@ -1,35 +1,26 @@
 [#include "../include/html_header.html"/]
-    <title>会员注册激活页 - ${web.name}${web.additionalTitle!}</title>
-    <link href="${root}/css/global.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="${root}/css/member.css" type="text/css" rel="stylesheet"/>
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function reSendEamil(userId) {
-            alert("正在重新发送激活邮件，请稍候！");
-            $.post('${base}/reactive.htm', {'userId': userId},
-                    function (data) {
-                        if (data.data == 1)
-                            alert('该帐号已经被激活，请直接登录！');
-                        else if (data.data == 2)
-                            alert('已重新发送激活邮件，请注意查收！');
-                        else if (data.data == 3)
-                            alert('发生错误，系统无法验证用户身份，请稍候重试！');
-                    }, "json");
-        }
-    </script>
+<script type="text/javascript">
+    function reSendEamil(userId) {
+        alert("正在重新发送激活邮件，请稍候！");
+        $.post('${base}/reactive.htm', {'userId': userId},
+                function (data) {
+                    if (data.data == 1)
+                        alert('该帐号已经被激活，请直接登录！');
+                    else if (data.data == 2)
+                        alert('已重新发送激活邮件，请注意查收！');
+                    else if (data.data == 3)
+                        alert('发生错误，系统无法验证用户身份，请稍候重试！');
+                }, "json");
+    }
+</script>
 </head>
-
 <body>
-<div class="mainContainer sixteen container">
-    <!--Header Block-->
-    <div class="header-wrapper">
-        [#include "../include/html_header_top.html"/]
-    </div>
-</div>
-<div class="center mt10">
-    <div class="column_title"><span>注册新用户</span></div>
-    <div class="regist_active_box">
+[#include "../include/html_header_top.html"/]
+
+<div class="am-container">
+<div class="am-u-sm-12">
+    <div><span>注册新用户</span></div>
+    <div>
         [#if status==1]
         <div class="gxzccg"><img src="${root!}/img/success.png" align="middle" width="50" height="42"
                                  style="margin-top:-6px;"/>
@@ -44,8 +35,8 @@
                 <img src="${root!}/img/email.jpg" align="middle" width="182" height="34" style="margin-top:5px;"/></a>
             </p>
         </div>
-        <div class="cgxxxt">&nbsp;</div>
-        <div class="cgxxx">
+        <div>&nbsp;</div>
+        <div>
             <p>没有收到确认邮件怎么办？</p>
 
             <p>稍等几分钟，若仍没收到确认信，让JSPGOU<a href="javascript:void(0);" onclick="reSendEamil(${member.id!});"><font
@@ -74,6 +65,7 @@
         </div>
         [/#if]
     </div>
+</div>
 </div>
 [#include "../include/footer.html"/]
 </body>

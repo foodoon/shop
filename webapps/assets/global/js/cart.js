@@ -40,9 +40,7 @@
             if (i.css(this, "position") == "static") {
                 this.style.position = "relative";
             }
-            if (i.browser.msie) {
-                this.style.zoom = 1;
-            }
+
             d(this, p);
         })
     };
@@ -108,7 +106,7 @@
             }
         }
         var B = F.baseZ;
-        var M = (i.browser.msie || F.forceIframe) ? i('<iframe class="blockUI" style="z-index:' + (B++) + ';display:none;border:none;margin:0;padding:0;position:absolute;width:100%;height:100%;top:0;left:0" src="' + F.iframeSrc + '"></iframe>') : i('<div class="blockUI" style="display:none"></div>');
+        var M =  i('<div class="blockUI" style="display:none"></div>');
         var L = i('<div class="blockUI blockOverlay" style="z-index:' + (B++) + ';display:none;border:none;margin:0;padding:0;width:100%;height:100%;top:0;left:0"></div>');
         var K, G;
         if (F.theme && A) {
@@ -133,13 +131,11 @@
                 K.css(C)
             }
         }
-        if (!F.applyPlatformOpacityRules || !(i.browser.mozilla && /Linux/.test(navigator.platform))) {
+        if (!F.applyPlatformOpacityRules) {
             L.css(F.overlayCSS)
         }
         L.css("position", A ? "fixed" : "absolute");
-        if (i.browser.msie || F.forceIframe) {
-            M.css("opacity", 0)
-        }
+
         var y = [M, L, K], O = A ? i("body") : i(r);
         i.each(y, function () {
             this.appendTo(O)
@@ -147,12 +143,12 @@
         if (F.theme && F.draggable && i.fn.draggable) {
             K.draggable({handle: ".ui-dialog-titlebar", cancel: "li"})
         }
-        var v = e && (!i.boxModel || i("object,embed", A ? null : r).length > 0);
-        if (f || v) {
+        var v = (!i.boxModel || i("object,embed", A ? null : r).length > 0);
+        if ( v) {
             if (A && F.allowBodyStretch && i.boxModel) {
                 i("html,body").css("height", "100%")
             }
-            if ((f || !i.boxModel) && !A) {
+            if (( !i.boxModel) && !A) {
                 var E = m(r, "borderTopWidth"), J = m(r, "borderLeftWidth");
                 var x = E ? "(0 - " + E + ")" : 0;
                 var D = J ? "(0 - " + J + ")" : 0
@@ -162,8 +158,7 @@
                     var z = S[0].style;
                     z.position = "absolute";
                     if (t < 2) {
-                        A ? z.setExpression("height", "Math.max(document.body.scrollHeight, document.body.offsetHeight) - (jQuery.boxModel?0:" + F.quirksmodeOffsetHack + ') + "px"') : z.setExpression("height", 'this.parentNode.offsetHeight + "px"');
-                        A ? z.setExpression("width", 'jQuery.boxModel && document.documentElement.clientWidth || document.body.clientWidth + "px"') : z.setExpression("width", 'this.parentNode.offsetWidth + "px"');
+
                         if (D) {
                             z.setExpression("left", D)
                         }
@@ -196,9 +191,7 @@
                 i(w).show()
             }
         }
-        if ((i.browser.msie || F.forceIframe) && F.showOverlay) {
-            M.show()
-        }
+
         if (F.fadeIn) {
             var H = F.onBlock ? F.onBlock : c;
             var q = (F.showOverlay && !w) ? H : c;
@@ -352,64 +345,65 @@
 
 /*自动加载方法*/
 jQuery(function () {
-    aa();
+    countTotal();
 });
 
 /*自动加载总重量，总价格，节省费用*/
-function aa() {
+function countTotal() {
     var score = 0;
     var weight = 0.0;
     var market = 0.0;
     var sale = 0.0;
     var popularity = 0.0;
-    $(".total_score_items_span").each(function () {
+    jQuery(".total_score_items_span").each(function () {
         var ss = parseInt(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
         var f = h.split("_")[4];
-        if ($("#chkMat_" + e + "_" + f).attr("checked")) {
+        if (jQuery("#chkMat_" + e + "_" + f).attr("checked")) {
             score += ss;
         } else {
             score = score;
         }
-        $("#items_score").html(score);
-    });
-    $("total_weight_items_span").each(function () {
-        var ww = parseFloat(jQuery(this).html());
-        weight = accAdd(weight, ww);
-        $("#items_weight").html(weight);
+        jQuery("#items_score").html(score);
     });
 
-    $(".total_market_items_span").each(function () {
+    jQuery(".total_weight_items_span").each(function () {
+        var ww = parseFloat(jQuery(this).html());
+        weight = accAdd(weight, ww);
+        jQuery("#items_weight").html(weight);
+    });
+
+    jQuery(".total_market_items_span").each(function () {
         var mk = parseFloat(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
         var f = h.split("_")[4];
-        if ($("#chkMat_" + e + "_" + f).attr("checked")) {
+        if (jQuery("#chkMat_" + e + "_" + f).attr("checked")) {
             market = accAdd(market, mk);
         } else {
             market = market;
         }
     });
-    $(".total_sale_items_span").each(function () {
+    jQuery(".total_sale_items_span").each(function () {
         var sl = parseFloat(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
         var f = h.split("_")[4];
-        if ($("#chkMat_" + e + "_" + f).attr("checked")) {
+        if (jQuery("#chkMat_" + e + "_" + f).attr("checked")) {
             sale = accAdd(sale, sl);
         } else {
             sale = sale;
         }
     });
-    $(".total_popularity_span").each(function () {
+    jQuery(".total_popularity_span").each(function () {
         var ss = parseFloat(jQuery(this).html());
         popularity = accAdd(weight, ss);
     });
     sale = accSub(sale, popularity)
-    $("#items_sale").html(sale);
-    $("#total_price_bottom").html(sale);
-    $("#items_spare").html(accSub(market, sale));
+    jQuery("#items_sale").html(sale);
+    jQuery("#total_price_bottom").html(sale);
+    jQuery("#items_spare").html(accSub(market, sale));
 }
 
 
@@ -501,20 +495,20 @@ function decrement(base, itemId, j) {
     var h = jQuery("#" + j).attr("id");
     var e = h.split("_")[1];
     var index = h.split("_")[2];
-    var mk = $("#market_items_" + e + "_" + index).html();
-    var sl = $("#sale_items_" + e + "_" + index).html();
-    var dweight = $("#weight_items_" + e + "_" + index).html();
-    var score = $("#score_items_" + e + "_" + index).html();
-    $("#total_market_items_" + e + "_" + index).html('');
-    $("#total_market_items_" + e + "_" + index).html(accMul(mk, c));
-    $("#total_sale_items_" + e + "_" + index).html('');
-    $("#total_sale_items_" + e + "_" + index).html(accMul(sl, c));
-    $("#total_weight_items_" + e + "_" + index).html('');
-    $("#total_weight_items_" + e + "_" + index).html(accMul(dweight, c));
-    $("#total_score_items_" + e + "_" + index).html('');
-    $("#total_score_items_" + e + "_" + index).html(accMul(score, c));
-    aa();
-    $.post(base + "/cart/ajaxUpdateCartItem.htm", {
+    var mk = jQuery("#market_items_" + e + "_" + index).html();
+    var sl = jQuery("#sale_items_" + e + "_" + index).html();
+    var dweight = jQuery("#weight_items_" + e + "_" + index).html();
+    var score = jQuery("#score_items_" + e + "_" + index).html();
+    jQuery("#total_market_items_" + e + "_" + index).html('');
+    jQuery("#total_market_items_" + e + "_" + index).html(accMul(mk, c));
+    jQuery("#total_sale_items_" + e + "_" + index).html('');
+    jQuery("#total_sale_items_" + e + "_" + index).html(accMul(sl, c));
+    jQuery("#total_weight_items_" + e + "_" + index).html('');
+    jQuery("#total_weight_items_" + e + "_" + index).html(accMul(dweight, c));
+    jQuery("#total_score_items_" + e + "_" + index).html('');
+    jQuery("#total_score_items_" + e + "_" + index).html(accMul(score, c));
+    countTotal();
+    jQuery.post(base + "/cart/ajaxUpdateCartItem.htm", {
         'cartItemId': itemId,
         'count': c
     }, function (data) {
@@ -550,20 +544,20 @@ function increment(base, itemId, j) {
     var h = jQuery("#" + j).attr("id");
     var e = h.split("_")[1];
     var index = h.split("_")[2];
-    var mk = $("#market_items_" + e + "_" + index).html();
-    var sl = $("#sale_items_" + e + "_" + index).html();
-    var dweight = $("#weight_items_" + e + "_" + index).html();
-    var score = $("#score_items_" + e + "_" + index).html();
-    $("#total_market_items_" + e + "_" + index).html('');
-    $("#total_market_items_" + e + "_" + index).html(accMul(mk, c));
-    $("#total_sale_items_" + e + "_" + index).html('');
-    $("#total_sale_items_" + e + "_" + index).html(accMul(sl, c));
-    $("#total_weight_items_" + e + "_" + index).html('');
-    $("#total_weight_items_" + e + "_" + index).html(accMul(dweight, c));
-    $("#total_score_items_" + e + "_" + index).html('');
-    $("#total_score_items_" + e + "_" + index).html(accMul(score, c));
-    aa();
-    $.post(base + "/cart/ajaxUpdateCartItem.htm", {
+    var mk = jQuery("#market_items_" + e + "_" + index).html();
+    var sl = jQuery("#sale_items_" + e + "_" + index).html();
+    var dweight = jQuery("#weight_items_" + e + "_" + index).html();
+    var score = jQuery("#score_items_" + e + "_" + index).html();
+    jQuery("#total_market_items_" + e + "_" + index).html('');
+    jQuery("#total_market_items_" + e + "_" + index).html(accMul(mk, c));
+    jQuery("#total_sale_items_" + e + "_" + index).html('');
+    jQuery("#total_sale_items_" + e + "_" + index).html(accMul(sl, c));
+    jQuery("#total_weight_items_" + e + "_" + index).html('');
+    jQuery("#total_weight_items_" + e + "_" + index).html(accMul(dweight, c));
+    jQuery("#total_score_items_" + e + "_" + index).html('');
+    jQuery("#total_score_items_" + e + "_" + index).html(accMul(score, c));
+    countTotal();
+    jQuery.post(base + "/cart/ajaxUpdateCartItem.htm", {
         'cartItemId': itemId,
         'count': c
     }, function (data) {
@@ -601,20 +595,20 @@ function calSubTotal(base, itemId, i, h, g, score, dj, dweight) {
     var b = jQuery("#" + i).attr("id");
     var e = b.split("_")[1];
     var index = b.split("_")[2];
-    var mk = $("#market_items_" + e + "_" + index).html();
-    var sl = $("#sale_items_" + e + "_" + index).html();
-    var dweight = $("#weight_items_" + e + "_" + index).html();
-    var score = $("#score_items_" + e + "_" + index).html();
-    $("#total_market_items_" + e + "_" + index).html('');
-    $("#total_market_items_" + e + "_" + index).html(accMul(sl, a));
-    $("#total_sale_items_" + e + "_" + index).html('');
-    $("#total_sale_items_" + e + "_" + index).html(accMul(sl, a));
-    $("#total_weight_items_" + e + "_" + index).html('');
-    $("#total_weight_items_" + e + "_" + index).html(accMul(dweight, a));
-    $("#total_score_items_" + e + "_" + index).html('');
-    $("#total_score_items_" + e + "_" + index).html(accMul(score, a));
-    aa();
-    $.post(base + "/cart/ajaxUpdateCartItem.htm", {
+    var mk = jQuery("#market_items_" + e + "_" + index).html();
+    var sl = jQuery("#sale_items_" + e + "_" + index).html();
+    var dweight = jQuery("#weight_items_" + e + "_" + index).html();
+    var score = jQuery("#score_items_" + e + "_" + index).html();
+    jQuery("#total_market_items_" + e + "_" + index).html('');
+    jQuery("#total_market_items_" + e + "_" + index).html(accMul(sl, a));
+    jQuery("#total_sale_items_" + e + "_" + index).html('');
+    jQuery("#total_sale_items_" + e + "_" + index).html(accMul(sl, a));
+    jQuery("#total_weight_items_" + e + "_" + index).html('');
+    jQuery("#total_weight_items_" + e + "_" + index).html(accMul(dweight, a));
+    jQuery("#total_score_items_" + e + "_" + index).html('');
+    jQuery("#total_score_items_" + e + "_" + index).html(accMul(score, a));
+    countTotal();
+    jQuery.post(base + "/cart/ajaxUpdateCartItem.htm", {
         'cartItemId': itemId,
         'count': a
     }, function (data) {
@@ -633,21 +627,21 @@ function continueShopping() {
 
 /*批量删除*/
 function ajaxBatchDelete() {
-    $('input[type="checkbox"][name="cart2Checkbox"]:checked').each(function () {
-        $(this).parent().parent().find(".deleteButton").trigger("click");
+    jQuery('input[type="checkbox"][name="cart2Checkbox"]:checked').each(function () {
+        jQuery(this).parent().parent().find(".deleteButton").trigger("click");
     });
 }
 
 /*清空购物车*/
 function ajaxEmpty() {
-    $('input[type="checkbox"][name="cart2Checkbox"]').each(function () {
-        $(this).parent().parent().find(".deleteButton").trigger("click");
+    jQuery('input[type="checkbox"][name="cart2Checkbox"]').each(function () {
+        jQuery(this).parent().parent().find(".deleteButton").trigger("click");
     });
 }
 
 /*删除购物车项*/
 function ajaxDeleteCartItem(base, cartItemId) {
-    $.post(base + "/cart/ajaxDeleteCartItem.htm", {
+    jQuery.post(base + "/cart/ajaxDeleteCartItem.htm", {
         'cartItemId': cartItemId
     }, function (data) {
         if (data.status == 1) {
@@ -661,12 +655,12 @@ function ajaxDeleteCartItem(base, cartItemId) {
 function checksubmit() {
 
     var sale = 0.0;
-    $("#[id^='total_sale_items_']").each(function () {
+    jQuery(".total_sale_items_span").each(function () {
         var sl = parseFloat(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[3];
         var f = h.split("_")[4];
-        if ($("#chkMat_" + e + "_" + f).attr("checked")) {
+        if (jQuery("#chkMat_" + e + "_" + f).attr("checked")) {
             sale += sl;
         } else {
             sale = sale;
@@ -677,16 +671,16 @@ function checksubmit() {
         alert("请勾选你需要的商品");
         return;
     }
-    ajaxQueue.confirm();
-    $("#[id^='item_tr_']").each(function () {
+   // ajaxQueue.confirm();
+    jQuery(".item_tr_span").each(function () {
         var sl = parseFloat(jQuery(this).html());
         var h = this.id;
         var e = h.split("_")[2];
         var index = h.split("_")[3];
-        var count = $("#items_" + e + "_" + index).val();
-        var fashId = $("#items_fash_" + e + "_" + index).val();
-        if ($("#chkMat_" + e + "_" + index).attr("checked")) {
-            $.post(URLPrefix.url + "/cart/checkStockCount.htm", {
+        var count = jQuery("#items_" + e + "_" + index).val();
+        var fashId = jQuery("#items_fash_" + e + "_" + index).val();
+        if (jQuery("#chkMat_" + e + "_" + index).attr("checked")) {
+            jQuery.post(URLPrefix.url + "/cart/checkStockCount.htm", {
                 'productId': e,
                 'productFashionId': fashId,
                 'count': count
@@ -702,7 +696,7 @@ function checksubmit() {
             }, 'json');
         }
     });
-    $("#jvForm").submit();
+    jQuery("#baseForm").submit();
 }
 
 var trackerUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "tracker.yihaodian.com/tracker/info.do?1=1";
@@ -785,10 +779,10 @@ ajaxQueue.add = function (a) {
 };
 
 ajaxQueue.confirm = function () {
-    cart2.blockUI();
-    ajaxQueue.confirmFlag = true;
-    var a = "/cart/checkCartBeforeConfirm.htm?rd=" + Math.random();
-    optMan.mergeReq("check", a, "0")
+//    cart2.blockUI();
+//    ajaxQueue.confirmFlag = true;
+//    var a = "/cart/checkCartBeforeConfirm.htm?rd=" + Math.random();
+//    optMan.mergeReq("check", a, "0")
 };
 
 var cart2 = {
@@ -819,12 +813,7 @@ var cart2 = {
     blockUI: function () {
         cart2.isBlocked = true;
         var a = (jQuery(window).width()) / 2 - 400 + jQuery(window).scrollLeft();
-        if (jQuery.browser.msie && jQuery.browser.version == "6.0") {
-            var b = (jQuery(window).height()) / 2 + jQuery(window).scrollTop();
-            a = (jQuery(window).width()) / 2 + jQuery(window).scrollLeft() - 300;
-            jQuery("#cart2BlockUI").show().css({
-                position: "absolute", width: "60%", height: "20%", zIndex: "9999", top: b, left: a})
-        } else {
+
             jQuery("#cart2BlockUI").show().css({
                 position: "fixed",
                 width: "60%",
@@ -832,20 +821,17 @@ var cart2 = {
                 zIndex: "9999",
                 top: "200px",
                 left: a});
-        }
+
         cart2.showBlockUI('<table width="100%" border="0" cellspacing="0" cellpadding="0" id="cart2BlockUIMsg"><tr><td width="100%" height="50" align="center" class="font14"><img src="http://image.yihaodian.com/images/wait_loading.gif"/></td></tr><tr><td height="25" align="center" class="font14">正在处理中,请稍候...</td></tr></table>')
     },
     blockUI2: function (d, b) {
         cart2.isBlocked = true;
         var a = jQuery("#favorites_" + b).offset().left;
         var e = jQuery("#favorites_" + b).offset().top;
-        if (jQuery.browser.msie && jQuery.browser.version == "6.0") {
-            jQuery("#cart2BlockUI").show().css({
-                position: "absolute", width: "40%", height: "20%", zIndex: "9999", top: e - 32, left: a - 215})
-        } else {
+
             jQuery("#cart2BlockUI").show().css({
                 position: "absolute", width: "30%", height: "50px", zIndex: "9999", top: e - 40, left: a - 230})
-        }
+
         var c = "";
         if (d == "已添加入收藏夹") {
             c = "<i></i>";
@@ -1029,9 +1015,9 @@ optMan.buildReq = function (b, a, g, f, h, e, d) {
         c.addDeletePost(h, e)
     }
     c.getParam = function () {
-        var i = $('input[type="checkbox"][name="cart2Checkbox"]').map(
+        var i = jQuery('input[type="checkbox"][name="cart2Checkbox"]').map(
             function () {
-                return $(this).val() + "=" + ($(this).attr("checked") ? "1" : "0")
+                return jQuery(this).val() + "=" + (jQuery(this).attr("checked") ? "1" : "0")
             }).get().join(",");
         if (this.type == "delete") {
             return{
@@ -1079,11 +1065,11 @@ optMan.buildReq = function (b, a, g, f, h, e, d) {
 };
 
 optMan.reloadDelete = function () {
-    $("#cart2_content .gray-box.pro-li .clear.list tr").each(function () {
+    jQuery("#cart2_content .gray-box.pro-li .clear.list tr").each(function () {
         for (var a in optMan.map.entry) {
             var b = optMan.map.get(a);
-            if (b != null && b.type == "delete" && b.stage < 3 && b.deleteRecord.containsKey($(this).attr("id"))) {
-                $(this).find(".deleteButton").trigger("click");
+            if (b != null && b.type == "delete" && b.stage < 3 && b.deleteRecord.containsKey(jQuery(this).attr("id"))) {
+                jQuery(this).find(".deleteButton").trigger("click");
             }
         }
     });
@@ -1156,47 +1142,47 @@ function Map() {
 var ckbMan = {
     map: new Map(),
     reset: function () {
-        $('input[type="checkbox"][name="cart2Checkbox"]').each(
+        jQuery('input[type="checkbox"][name="cart2Checkbox"]').each(
             function () {
-                var a = $(this).val();
+                var a = jQuery(this).val();
                 var b = ckbMan.map.get(a);
                 if (b != null) {
-                    $(this).attr("checked", b)
+                    jQuery(this).attr("checked", b)
                 } else {
-                    ckbMan.map.put($(this).val(), $(this).attr("checked"))
+                    ckbMan.map.put(jQuery(this).val(), jQuery(this).attr("checked"))
                 }
             })
     },
     click: function (a) {
-        this.map.put($(a).val(), $(a).attr("checked"))
+        this.map.put(jQuery(a).val(), jQuery(a).attr("checked"))
     },
     remove: function (a) {
-        this.map.remove($(a).val())
+        this.map.remove(jQuery(a).val())
     },
     removeByKey: function (a) {
         this.map.remove(a)
     },
     loadStatusFromJs: function () {
-        $('input[type="checkbox"][name="cart2Checkbox"]').each(
+        jQuery('input[type="checkbox"][name="cart2Checkbox"]').each(
             function () {
-                var a = $(this).val();
+                var a = jQuery(this).val();
                 var b = ckbMan.map.get(a) == null ? true : ckbMan.map.get(a);
-                $(this).attr("checked", b)
+                jQuery(this).attr("checked", b)
             }
         );
         refreshCheckbox()
     },
     anyChecked: function () {
         var a = false;
-        $('input[type="checkbox"][name="cart2Checkbox"]').each(
+        jQuery('input[type="checkbox"][name="cart2Checkbox"]').each(
             function () {
-                if ($(this).attr("checked")) {
+                if (jQuery(this).attr("checked")) {
                     a = true;
                     return false
                 }
             }
         );
-        if ($('input[type="hidden"][name="XYItem"]').size() > 0) {
+        if (jQuery('input[type="hidden"][name="XYItem"]').size() > 0) {
             a = true
         }
         return a

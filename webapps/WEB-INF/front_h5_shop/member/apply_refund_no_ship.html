@@ -1,10 +1,9 @@
 ﻿[#include "../include/html_header.html"/]
 
-<script src="${root}/js/jquery.js" type="text/javascript"></script>
 <script src="${base}/thirdparty/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
-        $("#jvForm").validate();
+        $("#baseForm").validate();
     });
     function g(o) {
         return document.getElementById(o);
@@ -53,7 +52,7 @@
             <div class="content-main bor-r f-l">
                 <div class="main-wrap">
                     <div id="apply-form" class="rf-status ">
-                        <form id="jvForm" action="orderReturnRefer.htm" method="post">
+                        <form id="baseForm" action="orderReturnRefer.htm" method="post">
                             <input type="hidden" name="orderId" value="${order.id}"/>
                             <input type="hidden" name="delivery" [#if delivery] value="ture"
                             [#else]value="false"[/#if]/>

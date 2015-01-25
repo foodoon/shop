@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" labelWidth="12" action="o_save.do">
+                        <@p.form id="baseForm" labelWidth="12" action="o_save.do">
                         <@p.td colspan="1" width="50" label="category.parent"><#if parent??>${parent.name}<#else>顶级栏目</#if></@p.td>
                     <@p.td colspan="1" width="50" label="shopChannel.type"><@s.m "shopChannel.type.${type}"/></@p.td><@p.tr/>
                 <@p.text colspan="1" width="50" label="shopChannel.name" name="name" required="true" class="required" maxlength="100"/>

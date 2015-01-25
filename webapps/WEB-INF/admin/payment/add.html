@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_save.do" labelWidth="15">
+                        <@p.form id="baseForm" action="o_save.do" labelWidth="15">
                         <@p.text label="payment.name" name="name" required="true" class="required" maxlength="150"/>
                         <@p.select  label="支付类型"  name="type" required="true" list={"1":"在线支付","2":"线下支付"} />
                         <@p.checkboxlist label="支持配送方式" name="shippingIds" list=shippingList listKey="id" listValue="name" onclick="checkedThis(this);" /><@p.tr/>

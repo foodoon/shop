@@ -29,7 +29,7 @@
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <#assign usernameExist><@s.m "error.usernameExist"/></#assign>
                         <#assign emailExist><@s.m "error.emailExist"/></#assign>
-                        <@p.form id="jvForm" action="o_save.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_save.do" labelWidth="12">
                         <@p.text colspan="1" width="50" label="member.username" id="username" name="username" size="30" required="true" vld="{required:true,rangelength:[3,100],remote:'../admin/v_check_username.do',messages:{remote:'${usernameExist}'}}"/>
                         <@p.text colspan="1" width="50" label="member.email" id="email" name="email" size="30" required="true" vld="{required:true,email:true,maxlength:100,remote:'../admin/v_check_email.do',messages:{remote:'${emailExist}'}}"/><@p.tr/>
                         <@p.password width="50" colspan="1" label="member.password" id="password" name="password" maxlength="100" required="true" class="required"/>

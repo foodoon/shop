@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_save.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_save.do" labelWidth="12">
                         <@p.select colspan="2" width="100" label="shopArticle.channel" name="channelId" list=channelList  value=(cid)!  listKey="id" listValue="name" listDeep="deep" headerKey="" headerValue="global.none" required="true"/><@p.tr/>
                         <@p.td colspan="2" width="100"  label="shopArticle.title" required="true" >
                         <@p.text name="title" size="70" required="true" class="required"  maxlength="255"/>

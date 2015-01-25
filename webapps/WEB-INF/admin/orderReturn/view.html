@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <form id="jvForm" method="post" class="am-form">
+                        <form id="baseForm" method="post" class="am-form">
                             <input type="hidden" name="id" value="${order.returnOrder.id}"/>
                             <input type="submit" value="审核" onclick="this.form.action='o_affirm.do'" <#if order.returnOrder.status!=1>disabled</#if>/>
                             <input type="submit" value="退回" onclick="this.form.action='o_sendback.do'" <#if order.returnOrder.status!=1>disabled</#if>/>
@@ -39,7 +39,7 @@
     </div>
            <div class="am-g">
                <div class="am-u-sm-12 am-u-sm-centered">
-                   <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                   <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                    <@p.td colspan="2"><strong class="title"><@s.m "order.product"/></strong></@p.td><@p.tr/>
                <@p.td colspan="2">
                <@p.table value=order.items;item,i,has_next><#rt/>
@@ -179,7 +179,7 @@
 
     function statusChange(status){
         if(status==19){
-            $("#jvForm").attr("action","o_returnMoney.do");
+            $("#baseForm").attr("action","o_returnMoney.do");
         }
         $("#status").val(status);
     }

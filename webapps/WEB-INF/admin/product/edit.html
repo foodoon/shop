@@ -30,7 +30,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <#include "/common/image_upload.html"/>
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12" enctype="multipart/form-data">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12" enctype="multipart/form-data">
                         <#assign count=0/>
                         <#list itemList as item>
                             <#if !item.single><#assign count=count+1/></#if>
@@ -435,7 +435,7 @@ function clickchange(i){
 }
 
 $(function() {
-    $("#jvForm").validate();
+    $("#baseForm").validate();
     //栏目权限对话框
     $("#channelDialog").dialog({
         autoOpen: false,
@@ -751,7 +751,7 @@ function checkSubmit(){
         });
         if(pd){ alert("请必须填写款式成本价");return;}
     }
-    $("#jvForm").submit();
+    $("#baseForm").submit();
 }
 
 function delFash(id,productId){

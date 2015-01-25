@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_save.do">
+                        <@p.form id="baseForm" action="o_save.do">
                         <@p.text label="名称" colspan="1" width="50" name="name" required="true" class="required" maxlength="100"/>
                         <@p.text label="字段名称" colspan="1" width="50" name="field" required="true" class="required" maxlength="100"/><@p.tr/>
                         <@p.select  label="数据类型" colspan="1" width="50"  name="dataType" required="true" list={"1":"下拉列表","2":"单选框"} />
@@ -62,7 +62,7 @@
 <script type="text/javascript">
 $(function() {
 	$("#color").colorPicker();
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 });
 
 var tpl = $.format($("#itemTpl").val());

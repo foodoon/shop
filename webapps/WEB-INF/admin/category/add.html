@@ -29,7 +29,7 @@
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-sm-centered">
                     <#assign errorPathExist><@s.m "category.path.pathExist"/></#assign>
-                    <@p.form id="jvForm" action="o_save.do" labelWidth="12">
+                    <@p.form id="baseForm" action="o_save.do" labelWidth="12">
                     <@p.td colspan="1" width="50" label="category.parent"><#if parent??>${parent.name}<#else>顶级栏目</#if></@p.td>
                 <@p.td colspan="1" width="50" label="category.type">${type.name}</@p.td><@p.tr/>
             <#assign count=0/>

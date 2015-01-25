@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.text colspan="2" width="50" label="优惠劵名称" name="couponName" value=coupon.couponName required="true" class="required" maxlength="50"/><@p.tr/>
                         <@p.text colspan="1" width="50" label="优惠开始时间" name="couponTime" value=coupon.couponTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/>
                         <@p.text colspan="1" width="50" label="优惠结束时间" name="couponEndTime" value=coupon.couponEndTime?string('yyyy-MM-dd HH:mm:ss') required="true" class="required" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/><@p.tr/>
@@ -64,7 +64,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 	<#if coupon.couponPicture??>
 	$("#preImg1").css("width","139").css("height","139").attr("src","${coupon.couponPicture}?d="+new Date()*1);
 	</#if>

@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.td width="50" colspan="1" label="brand.name">${brand.name}</@p.td>
                     <@p.hidden name="name" value=brand.name/>
                     <@p.text colspan="1" width="50" label="brand.alias" name="alias" value=brand.alias maxlength="100"/><@p.tr/>

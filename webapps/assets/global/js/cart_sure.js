@@ -2,7 +2,7 @@ jQuery(document).ready(function () {
     var price = 0.0;
     var weight = 0.0;
     var spid;
-    $("#[id^='cart_price_']").each(function () {
+    $(".cart_price_span").each(function () {
         var ss = jQuery(this).html();
         var h = jQuery(this).attr("id");
         var index = h.split("_")[2];
@@ -10,7 +10,7 @@ jQuery(document).ready(function () {
         price += accMul(ss, count);
         $("#cart_price").html(price);
     });
-    $("#[id^='cart_weight_']").each(function () {
+    $(".cart_weight_span").each(function () {
         var ss = parseInt(jQuery(this).html());
         var h = jQuery(this).attr("id");
         var index = h.split("_")[2];
@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
         weight += accMul(ss, count);
         $("#cart_weight").html(weight);
     });
-    $("#[id^='shippingMethod_']").each(function () {
+    $(".shippingMethod_span").each(function () {
         if (jQuery(this).attr("checked")) {
             spid = jQuery(this).val();
         }

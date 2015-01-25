@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do">
+                        <@p.form id="baseForm" action="o_update.do">
                         <@p.text label="名称" name="name" value=address.name required="true" class="required" maxlength="100"/>
                         <input type="hidden" name="parentId" value="${parentId!}"/>
                         <@p.td><@p.hidden name="id" value=address.id/><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>

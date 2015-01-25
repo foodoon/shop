@@ -13,22 +13,7 @@
     function g(o){
         return document.getElementById(o);
     }
-    function HoverLi(m,n,counter){
-        for(var i=1;i<=counter;i++){
-            g('tb_'+m+i).className='spms_normal';
-            g('tbc_'+m+i).className='undis';
-        }
-        g('tbc_'+m+n).className='dis';
-        g('tb_'+m+n).className='spms_curr';
-    }
-    function HoverLi1(m,n,counter){
-        for(var i=1;i<=counter;i++){
-            g('tb1_'+m+i).className='spms_normal';
-            g('tbc1_'+m+i).className='undis';
-        }
-        g('tbc1_'+m+n).className='dis';
-        g('tb1_'+m+n).className='spms_curr';
-    }
+
     [#if category.colorsize]
     function addToCart(productId,count,fashId) {
         if(!Core.username()) {
@@ -95,8 +80,8 @@
 [#include "../include/html_header_top.html"/]
 
 
-<div class="am-g am-container" >
-    <div class="am-u-sm-12">
+<div class="am-g am-g-fixed" >
+
          <div class="am-u-sm-6">
              <div><h2><font id="productMainName">${product.name!}</font></h2></div>
              <div class="gallery " id="gallery_view">
@@ -273,10 +258,9 @@
     </div>
 </div>
     <!-- 促销套餐展示-->
-    <div class="am-g am-container" >
- <div class="am-u-sm-12">
+<div class="am-g am-g-fixed" >
     [#if product.popularityGroups??]
-    <div class="am-u-sm-12 am-u-sm-centered">
+    <div class=" am-u-sm-centered">
         <div class="am-tabs am-margin" data-am-tabs>
             <ul class="am-tabs-nav am-nav am-nav-tabs">
             [#list product.popularityGroups as popularityGroup]
@@ -308,14 +292,14 @@
             [/#list]
             </div>
         <!-- 展示套餐组合结束-->
-       </div>
+
 </div>
     [/#if]
 </div>
         </div>
     <!-- 促销套餐展示结束-->
     <!-- 商品详情展示-->
-    <div class="am-g am-container" >
+    <div class="am-g am-g-fixed" >
 <div class="am-u-sm-12 am-u-sm-centered">
         <div class="am-tabs am-margin" data-am-tabs>
             <ul class="am-tabs-nav am-nav am-nav-tabs">

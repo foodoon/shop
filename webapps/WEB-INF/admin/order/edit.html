@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_save.do">
+                        <@p.form id="baseForm" action="o_save.do">
                         <@p.text label="discuss.name" name="name" required="true" class="required" maxlength="100"/>
                         <@p.td><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>
                 </@p.form>
@@ -46,7 +46,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$("#jvForm").validate();
+	$("#baseForm").validate();
 });
 function changeCount(){
 	var totalWeight=0.0;
@@ -116,7 +116,7 @@ function ajaxtotalDeliveryFee(d,w){
 	</form>
 	<div class="clear"></div>
 </div>
-<@p.form id="jvForm" action="o_update.do" labelWidth="12">
+<@p.form id="baseForm" action="o_update.do" labelWidth="12">
 <@p.td colspan="2"><strong class="title"><@s.m "order.product"/></strong></@p.td><@p.tr/>
 <@p.td colspan="2">
 <@p.table value=order.items;item,i,has_next><#rt/>

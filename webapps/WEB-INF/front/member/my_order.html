@@ -22,7 +22,7 @@
             } else {
                 $("#status").attr("value", status);
             }
-            $("#jvForm").submit();
+            $("#baseForm").submit();
         }
         function HoverLi(m, n, counter) {
             for (var i = 1; i <= counter; i++) {
@@ -35,14 +35,14 @@
 
         function addCart(orderId) {
             $("#orderId").val(orderId);
-            $("#jvForm").attr("action", "${base}/cart/add_orderItem1.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "${base}/cart/add_orderItem1.htm");
+            $("#baseForm").submit();
         }
 
         function payOrderAgain(orderId) {
             $("#orderId").val(orderId);
-            $("#jvForm").attr("action", "${base}/order/order_payAgain.htm");
-            $("#jvForm").submit();
+            $("#baseForm").attr("action", "${base}/order/order_payAgain.htm");
+            $("#baseForm").submit();
         }
 
         function deleteOrder(orderId) {
@@ -102,7 +102,7 @@
         <div class="usercenter_position"><span>我的订单</span></div>
         <br/>
 
-        <form id="jvForm" action="myorder.htm" method="post"
+        <form id="baseForm" action="myorder.htm" method="post"
               class="skin-gray clearfix bought-search bought-search-more">
             <input type="hidden" id="status" name="status" [#if status??] value="${status}"[#else] value=""[/#if]/>
             <input type="hidden" id="orderId" name="orderId"/>

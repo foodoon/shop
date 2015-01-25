@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" labelWidth="12" action="o_save.do">
+                        <@p.form id="baseForm" labelWidth="12" action="o_save.do">
                         <@p.td label="resource.name">
                         <@p.text name="filename" required="true" class="required" maxlength="27"/>
                         <@p.select name="extension" list=[".css",".js",".html",".text"]/>

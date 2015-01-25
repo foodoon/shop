@@ -322,9 +322,7 @@ jQuery("#productImgA").bind("click",
                         a.parent().css("position", "relative")
                     } else {
                     }
-                    if ($.browser.safari || $.browser.opera) {
-                        $(img).css({position: "absolute", top: "0px", left: "0px"})
-                    }
+
                     smallimagedata.w = $(this).width();
                     smallimagedata.h = $(this).height();
                     smallimagedata.h = $(this).height();
@@ -448,11 +446,9 @@ jQuery("#productImgA").bind("click",
                     lensleft = 0 + bleft
                 } else {
                     if (overright()) {
-                        if ($.browser.msie) {
-                            lensleft = smallimagedata.w - lensdata.w + bleft + 1
-                        } else {
+
                             lensleft = smallimagedata.w - lensdata.w + bleft - 1
-                        }
+
                     }
                 }
                 if (overtop()) {
@@ -504,13 +500,11 @@ jQuery("#productImgA").bind("click",
                     $("div.jqZoomPup img", a).css({position: "absolute", top: -(lenstop - btop + 1), left: -(lensleft - bleft + 1)})
                 }
                 largeimage.setposition();
-                if ($.browser.msie) {
-                    $("div.jqZoomPup", a).show()
-                } else {
+
                     setTimeout(function () {
                         $("div.jqZoomPup").fadeIn("fast")
                     }, 10)
-                }
+
             };
             Lens.prototype.getoffset = function () {
                 var o = {};
@@ -679,9 +673,7 @@ jQuery("#productImgA").bind("click",
                         break
                 }
                 $(this.node).show();
-                if ($.browser.msie && $.browser.version < 7) {
-                    this.ieframe = $('<iframe class="zoom_ieframe" frameborder="0" src="#"></iframe>').css({position: "absolute", left: this.node.style.left, top: this.node.style.top, zIndex: 99, width: settings.zoomWidth, height: settings.zoomHeight}).insertBefore(this.node)
-                }
+
                 largeimage.node.style.display = "block"
             };
             Stage.prototype.remove = function () {

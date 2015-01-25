@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_global_update.do">
+                        <@p.form id="baseForm" action="o_global_update.do">
                         <@p.text label="global.setting.contextPath" name="contextPath" value=global.contextPath maxlength="20" help="global.setting.contextPath.help"/>
                         <@p.text label="global.setting.port" name="port" value=global.port class="digits" maxlength="10" help="global.setting.port.help"/><@p.tr/>
                         <@p.text label="global.setting.activeScore" name="activeScore" value=global.activeScore class="required digits" maxlength="10" help="global.setting.activeScore.help"/><@p.tr/>

@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_rename.do">
+                        <@p.form id="baseForm" action="o_rename.do">
                         <@p.text label="template.origName" name="origName" value=origName readonly="readonly" size="40"/>
                         <@p.text label="template.newName" name="newName" value=origName required="true" class="required" size="40" maxlength="32"/>
                         <@p.td><@p.hidden name="relPath" value=relPath/><@p.submit code="global.submit"/> &nbsp; <@p.reset code="global.reset"/></@p.td>

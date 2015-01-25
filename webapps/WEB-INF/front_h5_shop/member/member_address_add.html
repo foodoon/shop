@@ -1,7 +1,7 @@
 ﻿[#include "../include/html_header.html"/]
 <script type="text/javascript">
     $(function () {
-        $("#jvForm").validate();
+        $("#baseForm").validate();
     });
     //获得城市
     function getResultCity(d) {
@@ -44,7 +44,7 @@
             alert("手机跟电话至少有一项必填");
             return;
         }
-        $("#jvForm").submit();
+        $("#baseForm").submit();
     }
 </script>
 
@@ -79,7 +79,7 @@
 
         <h3>新增收货地址<span class="gray">（手机、固定电话选填一项，其余均为必填）</span></h3>
 
-        <form action="address_save.htm" class="am-form" id="jvForm" method="post">
+        <form action="address_save.htm" class="am-form" id="baseForm" method="post">
             <table width="100%" border="0" cellspacing="2" cellpadding="0">
                 <tr>
                     <td height="25" width="70" align="right" style="color:#333;">收货人：</td>

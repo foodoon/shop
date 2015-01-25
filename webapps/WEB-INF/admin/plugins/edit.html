@@ -27,7 +27,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="15">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="15">
                         <@p.text colspan="2" width="50" label="名称" name="name" required="true" value=paymentPlugins.name class="required" maxlength="150"/><@p.tr/>
                         <@p.text colspan="2" width="50" label="排列顺序" name="priority" size="7" value=paymentPlugins.priority required="true" class="required digits" maxlength="10"/><@p.tr/>
                         <@p.text colspan="2" width="50" label="合作身份者ID" name="partner"  value=paymentPlugins.partner required="true" class="required" maxlength="150"/><@p.tr/>

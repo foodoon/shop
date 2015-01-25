@@ -12,7 +12,7 @@
     <script type="text/javascript">
         function checkType(type) {
             $("#type").attr("value", type);
-            $("#jvForm").submit();
+            $("#baseForm").submit();
         }
         function HoverLi(m, n, counter) {
             for (var i = 1; i <= counter; i++) {
@@ -45,7 +45,7 @@
 <div class="w960 mt10">
     [#include "member_nav.html"/]
     <div class="user_right">
-        <form id="jvForm" action="my_order.jspx">
+        <form id="baseForm" action="my_order.jspx">
             <div class="usercenter_position">
                 <span>我的订单</span>
             </div>

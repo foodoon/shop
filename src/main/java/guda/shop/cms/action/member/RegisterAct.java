@@ -79,62 +79,36 @@ public class RegisterAct {
     public String registerSubmit(String checkcode, String username, String email, String password, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
-
         ShopConfig config = SiteUtils.getConfig(request);
-
         WebErrors errors = validate(checkcode, username, email, password, request, response);
-
         if (errors.hasErrors()) {
-
             return FrontHelper.showError(errors, web, model, request);
         }
-
         ShopFrontHelper.setCommonData(request, model, web, 1);
-
         EmailSender sender = web.getEmailSender();
-
         MessageTemplate tpl = (MessageTemplate) web.getMessages().get("resetPassword");
-
-
         if (sender == null) {
-
             model.addAttribute("status", Integer.valueOf(2));
-
         } else if (tpl == null) {
-
             model.addAttribute("status", Integer.valueOf(3));
         } else {
             try {
-
                 String uuid = StringUtils.remove(UUID.randomUUID().toString(), '-');
-
                 String base = new String(web.getUrlBuff(true));
-
                 this.userMng.senderActiveEmail(username, base, email, uuid, sender, tpl);
-
                 ShopMember member = this.shopMemberMng.register(username, password, email, Boolean.valueOf(false), uuid,
                         request.getRemoteAddr(), Boolean.valueOf(false), web.getId(), config.getRegisterGroup().getId());
-
-
                 String emailtype = email.substring(email.indexOf("@") + 1, email.indexOf("."));
-
                 model.addAttribute("emailtype", emailtype);
-
                 model.addAttribute("member", member);
-
                 model.addAttribute("status", Integer.valueOf(1));
-
                 log.info("register member '{}'", member.getUsername());
             } catch (Exception e) {
-
                 model.addAttribute("status", Integer.valueOf(4));
-
                 model.addAttribute("message", e.getMessage());
-
                 log.error("send email exception {}.", e.getMessage());
             }
         }
-
         return web.getTplSys("member", MessageResolver.getMessage(request, "tpl.registerResult", new Object[0]));
     }
 

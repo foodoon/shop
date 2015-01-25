@@ -35,7 +35,7 @@
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-sm-centered">
                     <#assign errorPathExist><@s.m "category.path.pathExist"/></#assign>
-                    <@p.form id="jvForm" action="o_update.do" labelWidth="12" >
+                    <@p.form id="baseForm" action="o_update.do" labelWidth="12" >
                     <@p.td colspan="1" width="50" label="category.parent">
                     <@p.select name="parentId"  list=parentList value=(category.parent.id)! listKey="id" listValue="name" listDeep="deep" headerKey="" headerValue="category.top" required="true"/>
                     <!--<#if category.parent??>${category.parent.name}<#else>顶级栏目</#if> -->
@@ -113,7 +113,7 @@
 
 <script type="text/javascript">
     $(function() {
-        $("#jvForm").validate();
+        $("#baseForm").validate();
         <#if category.imagePath??>
         $("#preImg1").attr("src","${category.imagePath}?d="+new Date()*1);
         </#if>

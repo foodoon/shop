@@ -28,7 +28,7 @@
                 </div>
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
-                        <@p.form id="jvForm" labelWidth="12" action="o_upload.do" enctype="multipart/form-data">
+                        <@p.form id="baseForm" labelWidth="12" action="o_upload.do" enctype="multipart/form-data">
                         <@p.text label="resource.currentDir" name="relPath" value=relPath! readonly="readonly" size="50"/>
                         <@p.td label="resource.file" noHeight="true">
                         <@p.file name="file1" size="70"/>

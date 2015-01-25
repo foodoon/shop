@@ -33,7 +33,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12 am-u-sm-centered">
                         <#assign type=shopChannel.type/>
-                        <@p.form id="jvForm" action="o_update.do" labelWidth="12">
+                        <@p.form id="baseForm" action="o_update.do" labelWidth="12">
                         <@p.select colspan="1" width="50" label="shopChannel.parent" name="parentId" list=parentList value=(shopChannel.parent.id)! listKey="id" listValue="name" listDeep="deep" headerKey="" headerValue="global.none" required="true"/>
                         <@p.td colspan="1" width="50" label="shopChannel.type"><@s.m "shopChannel.type.${type}"/></@p.td><@p.tr/>
                     <@p.text colspan="1" width="50" label="shopChannel.name" name="name" value=shopChannel.name required="true" class="required" maxlength="100"/>

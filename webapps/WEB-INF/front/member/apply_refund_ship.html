@@ -12,7 +12,7 @@
     <script src="${base}/thirdparty/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
-            $("#jvForm").validate();
+            $("#baseForm").validate();
         });
         function clickSubmit() {
             var total = parseFloat($("#total").val());
@@ -79,7 +79,7 @@
     <div class="content-main bor-r f-l">
         <div class="main-wrap">
             <div id="apply-form" class="rf-status ">
-                <form id="jvForm" action="orderReturnRefer.htm" method="post">
+                <form id="baseForm" action="orderReturnRefer.htm" method="post">
                     <input type="hidden" name="orderId" value="${order.id}"/>
                     <input type="hidden" name="delivery" [#if delivery] value="true"
                     [#else]value="false"[/#if]/>

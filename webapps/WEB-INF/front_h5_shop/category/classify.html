@@ -22,21 +22,18 @@
 <body>
 [#include "../include/html_header_top.html"/]
 
-<div class="am-container">
+<div class="am-g am-g-fixed">
     <div class="am-cf admin-main">
         <!-- sidebar start -->
         [#include "classify_side.html"/]
         <div class="admin-content">
-
-
-
 
        <div class="am-u-sm-12">
         [#include "classify_search.html"/]
         <form id="tableForm" action="${category.url!}" method="get" class="am-form">
             [@shop_ProductPageChannel categoryId=category.id brandId=brandId names=names values=values count=pageSize
             pageNo=pageNo orderBy=orderBy]
-            <div class="am-g am-container" >
+            <div class="am-g am-g-fixed" >
 
                 <ul data-am-widget="gallery" class="am-gallery am-avg-sm-3 am-avg-md-3 am-avg-lg-4 am-gallery-default">
                     [#list tag_pagination.list as product]
