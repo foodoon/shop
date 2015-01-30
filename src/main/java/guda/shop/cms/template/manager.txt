@@ -1,6 +1,6 @@
 package #{manager_p};
 
-import com.jspgou.common.page.Pagination;
+import com.shop.common.page.Pagination;
 import #{entity_p}.#{Entity};
 
 public interface #{Entity}Mng {

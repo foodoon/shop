@@ -132,7 +132,7 @@ public class UpdateMngImpl
         public void run()
         {
             Website localWebsite = UpdateMngImpl.this._$1.findById(Long.valueOf(1L));
-            String str1 = "http://update.jeecms.com/update.jhtml?version=" + getVersion() + "&domain=" + localWebsite.getDomain() + "&name=" + localWebsite.getName();
+            String str1 = "http://update.shop.com/update.jhtml?version=" + getVersion() + "&domain=" + localWebsite.getDomain() + "&name=" + localWebsite.getName();
             DefaultHttpClient localDefaultHttpClient = new DefaultHttpClient();
             ResponseHandlerMngImpl localIllIlllIlllIIllI = new ResponseHandlerMngImpl(UpdateMngImpl.this, "UTF-8");
             try

@@ -1,6 +1,6 @@
 package #{action_p};
 
-import static com.jspgou.common.page.SimplePage.cpn;
+import static com.shop.common.page.SimplePage.cpn;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.jspgou.common.page.Pagination;
-import com.jspgou.common.web.CookieUtils;
-import com.jspgou.core.entity.Website;
-import com.jspgou.core.web.SiteUtils;
-import com.jspgou.core.web.WebErrors;
+import com.shop.common.page.Pagination;
+import com.shop.common.web.CookieUtils;
+import com.shop.core.entity.Website;
+import com.shop.core.web.SiteUtils;
+import com.shop.core.web.WebErrors;
 import #{entity_p}.#{Entity};
 import #{manager_p}.#{Entity}Mng;
 

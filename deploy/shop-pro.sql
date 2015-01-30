@@ -128,7 +128,7 @@ CREATE TABLE `core_log` (
   KEY `fk_log_user` (`user_id`),
   CONSTRAINT `fk_log_site` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`),
   CONSTRAINT `fk_log_user` FOREIGN KEY (`user_id`) REFERENCES `core_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='jspgou日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='shop日志表';
 
 -- ----------------------------
 -- Records of core_log
@@ -740,7 +740,7 @@ CREATE TABLE `shop_category_attr` (
   `attr_value` varchar(255) DEFAULT NULL COMMENT '值',
   KEY `fk_shop_category_attr` (`category_id`),
   CONSTRAINT `fK_shop_category_attr` FOREIGN KEY (`category_id`) REFERENCES `shop_category` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='jspgou类型扩展属性表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='shop类型扩展属性表';
 
 -- ----------------------------
 -- Records of shop_category_attr
@@ -1756,7 +1756,7 @@ CREATE TABLE `shop_product_attr` (
   `attr_value` varchar(255) DEFAULT NULL COMMENT '值',
   KEY `fK_shop_product_attr` (`product_id`),
   CONSTRAINT `fk_shop_product_attr` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='jspgou商品扩展属性表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='shop商品扩展属性表';
 
 -- ----------------------------
 -- Records of shop_product_attr

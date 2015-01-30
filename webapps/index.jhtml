@@ -4,9 +4,7 @@
 <head>
     <meta http-equiv="x-ua-compatible" content="ie=7"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>首页 - jeegou开发站- Powered by JSPGOU</title>
-    <meta http-equiv="keywords" content="JSPGOU演示站"/>
-    <meta http-equiv="description" content="JSPGOU演示站"/>
+    <title>首页</title>
     <link href="/assets/global/css/global.css" type="text/css" rel="stylesheet"/>
     <link href="/assets/global/css/layout.css" type="text/css" rel="stylesheet"/>
 
@@ -76,7 +74,7 @@
                                             <td valign="top" width="15" height="23">
                                                 <a href='tencent://message/?uin=1220788677&amp;Menu=yes'><img
                                                         src='http://wpa.qq.com/pa?p=1:1220788677:7'
-                                                        alt='点击与jspgou交谈'/></a>
+                                                        alt='点击交谈'/></a>
                                             </td>
                                         </tr>
                                     </table>
@@ -110,10 +108,10 @@
        <a href="/forgot_password.htm" target="_blank">找回密码</a>
     </span>
 </div>    <div class="topright">
-        <span class="arrow_text"><a href="/shopMember/index.htm" target="_self">我的JSPGO</a></span>
+        <span class="arrow_text"><a href="/shopMember/index.htm" target="_self">个人中心</a></span>
     <span>
          <a href="javascript:void(0);"
-            onclick="window.external.addFavorite('http://demo2.11077.net','jspgou-国内专业、开源、免费的JAVA (JSP)版网上商城管理系统')">加入收藏</a>  |
+            onclick="window.external.addFavorite('http://demo2.11077.net','网上商城管理系统')">加入收藏</a>  |
          <a href="javascript:void(0);"
             onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/gou/');">设为主页</a>
     </span>
@@ -594,7 +592,7 @@
         <div class="helpCol">
             <ul>
                 <li><a href="/news/index.htm" class="track" target="_blank"><h3>新闻中心</h3></a><br/></li>
-                <li><a href="/news/6.htm" class="track" target="_blank">jspgou v4.0即将发布</a></li>
+                <li><a href="/news/6.htm" class="track" target="_blank">shop v4.0即将发布</a></li>
             </ul>
         </div>
         <div class="helpCol">

@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class WildcardServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public static String DYNAMIC = "jeedynamic";
+    public static String DYNAMIC = "dynamic";
     private String _$2 = DYNAMIC;
     public static String URL = "_dynamic_url";
     public static String URI_INFO = "_dynamic_uri_info";

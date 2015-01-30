@@ -47,7 +47,7 @@ public class ModuleGenerator {
     }
 
     public static void main(String[] paramArrayOfString) {
-        String str1 = "com.jeecms.common.developer.template";
+        String str1 = "guda.common.developer.template";
         String str2 = "template.properties";
         new ModuleGenerator(str1, str2).generate();
     }
