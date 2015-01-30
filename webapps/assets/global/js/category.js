@@ -50,35 +50,35 @@ function nav_search_page() {
 }
 
 function getJvForm() {
-    return document.getElementById("jvForm");
+    return document.getElementById("baseForm");
 }
 
 function clickBrand(brandId, isShow) {
     $("#brandId").val(brandId);
     $("#isShow").val(isShow);
-    var jvForm = getJvForm();
-    jvForm.onsubmit = null;
-    jvForm.submit();
+    var baseForm = getJvForm();
+    baseForm.onsubmit = null;
+    baseForm.submit();
 }
 
 function clickPageSize(a) {
     $("#pageSize").val(a);
-    var jvForm = getJvForm();
-    jvForm.onsubmit = null;
-    jvForm.submit();
+    var baseForm = getJvForm();
+    baseForm.onsubmit = null;
+    baseForm.submit();
 }
 
 function clickOrderBy(a) {
     $("#orderBy").val(a);
-    var jvForm = getJvForm();
+    var baseForm = getJvForm();
     baseForm.onsubmit = null;
     baseForm.submit();
 }
 
 function clickchang(a, b) {
     $("#" + a).val(b);
-    var jvForm = getJvForm();
-    jvForm.submit();
+    var baseForm = getJvForm();
+    baseForm.submit();
 }
 
 function searchPriceRange() {
@@ -107,9 +107,9 @@ function searchPriceRange() {
             return;
         }
     }
-    var jvForm = getJvForm();
-    jvForm.onsubmit = null;
-    jvForm.submit();
+    var baseForm = getJvForm();
+    baseForm.onsubmit = null;
+    baseForm.submit();
 }
 
 /*更多和收起js*/
