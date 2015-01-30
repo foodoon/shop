@@ -5,13 +5,13 @@
             <input type="hidden" name="brandId" id="brandId" value="${brandId!}"/>
             <input type="hidden" name="isShow" id="isShow" value="${isShow!}"/>
             [@cate_brand categoryId=category.id]
-            <td><span class="all"><a [#if !(brandId??)]class="cur"[/#if] onclick="clickBrand('');">全部</a></span>
-                  <span class="selection fashion" id="FacetBrandsAll">
+            <td><span class="all"><a [#if !(brandId??)]style="cursor:pointer"[/#if] onclick="clickBrand('');">全部</a></span>
+                  <span  id="FacetBrandsAll">
                   [#list tag_list as brd]
                   	 [#if brd_index lt 12]
-                    	<a [#if brandId??][#if brandId==brd.id]class="cur"[/#if][/#if] onclick="clickBrand(${brd.id},0);">${brd.name!}</a>
+                    	<a style="cursor:pointer" [#if brandId??][#if brandId==brd.id]class="cur"[/#if][/#if] onclick="clickBrand(${brd.id},0);">${brd.name!}</a>
                       [#else]
-                        <a [#if brandId??][#if brandId==brd.id]class="cur"[/#if][/#if]  onclick="clickBrand(${brd.id},1);" [#if isShow==0] style="display:none"[/#if]>${brd.name!}</a>
+                        <a style="cursor:pointer" [#if brandId??][#if brandId==brd.id]class="cur"[/#if][/#if]  onclick="clickBrand(${brd.id},1);" [#if isShow==0] style="display:none"[/#if]>${brd.name!}</a>
                       [/#if]
                    [/#list]
                   </span>
