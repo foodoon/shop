@@ -10,11 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-01-25 21:45:56
+Date: 2015-01-30 15:10:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for `address`
 -- ----------------------------
@@ -251,13 +250,13 @@ CREATE TABLE `core_user` (
 -- ----------------------------
 -- Records of core_user
 -- ----------------------------
-INSERT INTO `core_user` VALUES ('1', 'admin', 'admin@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2009-08-22 00:00:00', '2345', null, '2015-01-25 19:42:25', '127.0.0.1', '2015-01-25 20:30:58', '127.0.0.1', null, null, null, '0');
-INSERT INTO `core_user` VALUES ('4', 'test', '1220788677@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2014-07-09 15:35:28', '1', '127.0.0.1', '2014-07-09 15:38:44', '192.168.0.144', '2014-07-09 15:38:44', '192.168.0.144', null, null, null, '0');
-INSERT INTO `core_user` VALUES ('5', 'test1', 'test@test.com', '5a105e8b9d40e1329780d62ea2265d8a', '2014-07-12 11:03:23', '10', '127.0.0.1', '2015-01-25 07:53:29', '127.0.0.1', '2015-01-25 12:45:43', '127.0.0.1', null, null, null, '0');
-INSERT INTO `core_user` VALUES ('6', 'test2', '1873136502@qq.com', 'a1e8597f91a1ec724bc79eb03f7282ec', '2014-08-05 15:33:52', '1', '127.0.0.1', '2014-08-05 15:49:56', '192.168.0.144', '2014-08-05 15:49:56', '192.168.0.144', null, null, null, '0');
-INSERT INTO `core_user` VALUES ('7', 'abc1', 'foodoon@qq.com', '96e79218965eb72c92a549dd5a330112', '2015-01-24 20:11:31', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
-INSERT INTO `core_user` VALUES ('8', 'abc2', 'foodoon1@qq.com', '96e79218965eb72c92a549dd5a330112', '2015-01-24 20:16:02', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
-INSERT INTO `core_user` VALUES ('9', 'abc3', 'foodoon2@qq.com', '96e79218965eb72c92a549dd5a330112', '2015-01-24 20:19:04', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
+INSERT INTO `core_user` VALUES ('1', 'admin', 'admin@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2009-08-22 00:00:00', '2346', null, '2015-01-25 20:30:58', '127.0.0.1', '2015-01-30 15:09:43', '0:0:0:0:0:0:0:1', null, null, null, '0');
+INSERT INTO `core_user` VALUES ('4', 'test', '1220788677@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2014-07-09 15:35:28', '1', '127.0.0.1', '2014-07-09 15:38:44', '192.168.0.144', '2014-07-09 15:38:44', '192.168.0.144', null, null, null, '0');
+INSERT INTO `core_user` VALUES ('5', 'test1', 'test@test.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2014-07-12 11:03:23', '10', '127.0.0.1', '2015-01-25 07:53:29', '127.0.0.1', '2015-01-25 12:45:43', '127.0.0.1', null, null, null, '0');
+INSERT INTO `core_user` VALUES ('6', 'test2', '1873136502@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2014-08-05 15:33:52', '1', '127.0.0.1', '2014-08-05 15:49:56', '192.168.0.144', '2014-08-05 15:49:56', '192.168.0.144', null, null, null, '0');
+INSERT INTO `core_user` VALUES ('7', 'abc1', 'foodoon@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:11:31', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
+INSERT INTO `core_user` VALUES ('8', 'abc2', 'foodoon1@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:16:02', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
+INSERT INTO `core_user` VALUES ('9', 'abc3', 'foodoon2@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:19:04', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
 
 -- ----------------------------
 -- Table structure for `core_website`
@@ -316,7 +315,7 @@ CREATE TABLE `core_website` (
 -- ----------------------------
 -- Records of core_website
 -- ----------------------------
-INSERT INTO `core_website` VALUES ('1', '1', '1', null, '192.168.0.144', '测试站点', '洽诚网络', '商城', '.htm', '1', '2', '2009-06-13 00:00:00', '', null, null, '网站暂时关闭', '0', 'GBK', 'text/html; charset=gbk', 'zh_CN', 'zh_CN', null, '4', null, null, '', '', '', '', '', '', '1', 'smtp.163.com', 'UTF-8', 'gang0119@163.com', 'G商城', 'gavin1217', '4.5', '0');
+INSERT INTO `core_website` VALUES ('1', '1', '1', null, '192.168.0.144', '测试站点', '洽诚网络', '商城', '.htm', '1', '2', '2009-06-13 00:00:00', '', null, null, '网站暂时关闭', '0', 'GBK', 'text/html; charset=gbk', 'zh_CN', 'zh_CN', null, '4', null, null, '', '', '', '', '', '', '1', 'smtp.163.com', 'UTF-8', 'gang0119@163.com', 'G商城', 'vivian119', '4.5', '0');
 
 -- ----------------------------
 -- Table structure for `data_backup`
@@ -1332,7 +1331,6 @@ CREATE TABLE `shop_member_address` (
 -- Records of shop_member_address
 -- ----------------------------
 INSERT INTO `shop_member_address` VALUES ('1', '1', '1', '7', '8', 'test', '1', 'test', '330000', '1599004480', '', '', '', '1');
-INSERT INTO `shop_member_address` VALUES ('2', '9', '10', '15', '16', '测试', '1', 'XXX路', '100211', '17098158159', '', '', '', '1');
 
 -- ----------------------------
 -- Table structure for `shop_member_coupon`
