@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-01-30 15:10:05
+Date: 2015-01-30 16:45:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -128,7 +128,7 @@ CREATE TABLE `core_log` (
   KEY `fk_log_user` (`user_id`),
   CONSTRAINT `fk_log_site` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`),
   CONSTRAINT `fk_log_user` FOREIGN KEY (`user_id`) REFERENCES `core_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='shop日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='jspgou日志表';
 
 -- ----------------------------
 -- Records of core_log
@@ -151,7 +151,7 @@ CREATE TABLE `core_member` (
   KEY `fk_member_website` (`website_id`),
   CONSTRAINT `fk_member_user` FOREIGN KEY (`user_id`) REFERENCES `core_user` (`user_id`),
   CONSTRAINT `fk_member_website` FOREIGN KEY (`website_id`) REFERENCES `core_website` (`website_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='核心会员表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='核心会员表';
 
 -- ----------------------------
 -- Records of core_member
@@ -163,6 +163,7 @@ INSERT INTO `core_member` VALUES ('6', '7', '1', '2015-01-24 20:11:31', '0', '0'
 INSERT INTO `core_member` VALUES ('7', '8', '1', '2015-01-24 20:16:02', '0', '0', '0b9bf1af39f741019c33f93850ce7def');
 INSERT INTO `core_member` VALUES ('8', '9', '1', '2015-01-24 20:19:04', '0', '0', 'eb921b41e75b4b2fa3eba75c5eed770a');
 INSERT INTO `core_member` VALUES ('9', '5', '1', '2015-01-24 20:36:19', '0', '1', null);
+INSERT INTO `core_member` VALUES ('10', '10', '1', '2015-01-30 16:29:10', '0', '0', '2547dcdf2a22433e8716bf9c0753b6c5');
 
 -- ----------------------------
 -- Table structure for `core_message_tpl`
@@ -245,18 +246,19 @@ CREATE TABLE `core_user` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_login_name` (`username`),
   UNIQUE KEY `ak_email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='统一用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='统一用户表';
 
 -- ----------------------------
 -- Records of core_user
 -- ----------------------------
-INSERT INTO `core_user` VALUES ('1', 'admin', 'admin@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2009-08-22 00:00:00', '2346', null, '2015-01-25 20:30:58', '127.0.0.1', '2015-01-30 15:09:43', '0:0:0:0:0:0:0:1', null, null, null, '0');
+INSERT INTO `core_user` VALUES ('1', 'admin', 'admin@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2009-08-22 00:00:00', '2347', null, '2015-01-30 15:09:43', '0:0:0:0:0:0:0:1', '2015-01-30 16:30:39', '0:0:0:0:0:0:0:1', null, null, null, '0');
 INSERT INTO `core_user` VALUES ('4', 'test', '1220788677@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2014-07-09 15:35:28', '1', '127.0.0.1', '2014-07-09 15:38:44', '192.168.0.144', '2014-07-09 15:38:44', '192.168.0.144', null, null, null, '0');
 INSERT INTO `core_user` VALUES ('5', 'test1', 'test@test.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2014-07-12 11:03:23', '10', '127.0.0.1', '2015-01-25 07:53:29', '127.0.0.1', '2015-01-25 12:45:43', '127.0.0.1', null, null, null, '0');
 INSERT INTO `core_user` VALUES ('6', 'test2', '1873136502@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2014-08-05 15:33:52', '1', '127.0.0.1', '2014-08-05 15:49:56', '192.168.0.144', '2014-08-05 15:49:56', '192.168.0.144', null, null, null, '0');
-INSERT INTO `core_user` VALUES ('7', 'abc1', 'foodoon@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:11:31', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
+INSERT INTO `core_user` VALUES ('7', 'abc1', 'foodoon3@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:11:31', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
 INSERT INTO `core_user` VALUES ('8', 'abc2', 'foodoon1@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:16:02', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
 INSERT INTO `core_user` VALUES ('9', 'abc3', 'foodoon2@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-24 20:19:04', '0', '127.0.0.1', null, null, null, null, null, null, null, '0');
+INSERT INTO `core_user` VALUES ('10', 'foodoon', 'foodoon@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-01-30 16:29:10', '0', '0:0:0:0:0:0:0:1', null, null, null, null, null, null, null, '0');
 
 -- ----------------------------
 -- Table structure for `core_website`
@@ -315,7 +317,7 @@ CREATE TABLE `core_website` (
 -- ----------------------------
 -- Records of core_website
 -- ----------------------------
-INSERT INTO `core_website` VALUES ('1', '1', '1', null, '192.168.0.144', '测试站点', '洽诚网络', '商城', '.htm', '1', '2', '2009-06-13 00:00:00', '', null, null, '网站暂时关闭', '0', 'GBK', 'text/html; charset=gbk', 'zh_CN', 'zh_CN', null, '4', null, null, '', '', '', '', '', '', '1', 'smtp.163.com', 'UTF-8', 'gang0119@163.com', 'G商城', 'vivian119', '4.5', '0');
+INSERT INTO `core_website` VALUES ('1', '1', '1', null, 'shop.ums365.com', '测试站点', '洽诚网络', '商城', '.htm', '1', '2', '2009-06-13 00:00:00', '', null, null, '网站暂时关闭', '0', 'GBK', 'text/html; charset=gbk', 'zh_CN', 'zh_CN', null, '4', null, null, '', '', '', '', '', '', '1', 'smtp.163.com', 'UTF-8', 'gang0119@163.com', 'G商城', 'vivian119', '4.5', '0');
 
 -- ----------------------------
 -- Table structure for `data_backup`
@@ -740,7 +742,7 @@ CREATE TABLE `shop_category_attr` (
   `attr_value` varchar(255) DEFAULT NULL COMMENT '值',
   KEY `fk_shop_category_attr` (`category_id`),
   CONSTRAINT `fK_shop_category_attr` FOREIGN KEY (`category_id`) REFERENCES `shop_category` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='shop类型扩展属性表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='jspgou类型扩展属性表';
 
 -- ----------------------------
 -- Records of shop_category_attr
@@ -1296,6 +1298,7 @@ INSERT INTO `shop_member` VALUES ('6', '1', '1', null, null, null, null, null, n
 INSERT INTO `shop_member` VALUES ('7', '1', '1', null, null, null, null, null, null, null, null, null, null, '0', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `shop_member` VALUES ('8', '1', '1', null, null, null, null, null, null, null, null, null, null, '0', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `shop_member` VALUES ('9', '1', '1', null, null, null, null, null, null, null, null, null, null, '0', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `shop_member` VALUES ('10', '1', '1', null, null, null, null, null, null, null, null, null, null, '0', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `shop_member_address`
@@ -1756,7 +1759,7 @@ CREATE TABLE `shop_product_attr` (
   `attr_value` varchar(255) DEFAULT NULL COMMENT '值',
   KEY `fK_shop_product_attr` (`product_id`),
   CONSTRAINT `fk_shop_product_attr` FOREIGN KEY (`product_id`) REFERENCES `shop_product` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='shop商品扩展属性表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='jspgou商品扩展属性表';
 
 -- ----------------------------
 -- Records of shop_product_attr
