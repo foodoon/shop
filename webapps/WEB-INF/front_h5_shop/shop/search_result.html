@@ -7,7 +7,7 @@
 <body>
 [#include "../include/html_header_top.html"/]
 <div class="am-g am-g-fixed">
-    <div class="position">您现在的位置：<a href="${base!}">首页</a> > <a href="#" class="red">商品检索</a></div>
+
     <div class="list_line" style="margin:auto;width:980px">
         [#if q??]
         [@shop_lucene_page q=q ctgId=ctgId descLen='100' append='...' count='2']
@@ -16,21 +16,26 @@
             查询结果，[@process_time/]
         </div>
         [#if tag_list??]
-        <ul>
+        <div class="am-g am-g-fixed" >
+
+            <ul data-am-widget="gallery" class="am-gallery am-avg-sm-3 am-avg-md-3 am-avg-lg-4 am-gallery-default">
+
             [#list tag_list as p]
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="${p.url!}" target="_blank">
+                            <img  src="${p.coverImgUrl!}" width="148" height="150"/></a>
+                    </div>
+                    <h3 class="am-gallery-title"><a href="${p.url!}" >${p.description!}</a> </h3>
+
+                    <div class="am-gallery-desc">
+                        <a href="${p.url!}" class="sp_title1">${p.name!}</a>
+                        ￥${p.salePrice!}元
+                        </div>
+                </li>
+
             <li>
-                <a href="${p.url!}">
-                    <img src="${p.coverImgUrl!}" width="148" height="150"/></a>
 
-                <p><a href="${p.url!}" class="sp_title">${p.description!}</a></p>
-
-                <p><a href="${p.url!}" class="sp_title1">${p.name!}</a></p>
-
-                <p class="red">￥${p.salePrice!}元
-                </p>
-
-
-            </li>
             [/#list]
         </ul>
         <div align="center">[@pagination_style sysPage='3'/]</div>
