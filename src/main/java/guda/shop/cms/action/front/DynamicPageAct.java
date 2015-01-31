@@ -85,7 +85,9 @@ public class DynamicPageAct {
         if(paths.length>0) {
             model.addAttribute(GLOBAL_CURRENT_PATH, paths[0]);
         }else{
-            model.addAttribute(GLOBAL_CURRENT_PATH, "/");
+            ShopFrontHelper.setCommonData(request, model, web, 1);
+            model.addAttribute(GLOBAL_CURRENT_PATH,"/");
+            return web.getTemplate("index", MessageResolver.getMessage(request, "tpl.index", new Object[0]));
         }
         String[] params = info.getParams();
         int pageNo = info.getPageNo();
