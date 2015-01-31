@@ -82,7 +82,11 @@ public class DynamicPageAct {
         Website web = SiteUtils.getWeb(request);
         ShopFrontHelper.setDynamicPageData(request, model, web, url, info.getUrlPrefix(), info.getUrlSuffix(), info.getPageNo());
         String[] paths = info.getPaths();
-        model.addAttribute(GLOBAL_CURRENT_PATH,paths[0]);
+        if(paths.length>0) {
+            model.addAttribute(GLOBAL_CURRENT_PATH, paths[0]);
+        }else{
+            model.addAttribute(GLOBAL_CURRENT_PATH, "/");
+        }
         String[] params = info.getParams();
         int pageNo = info.getPageNo();
         int len = paths.length;

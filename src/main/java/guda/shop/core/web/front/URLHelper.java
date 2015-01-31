@@ -223,68 +223,68 @@ public class URLHelper {
     }
 
     public static class URLInfo {
-        private String[] _$6;
-        private int _$5;
-        private String[] _$4;
-        private String _$3;
-        private String _$2;
-        private String _$1;
+        private String[] paths;
+        private int pageNo;
+        private String[] params;
+        private String queryString;
+        private String urlPrefix;
+        private String urlSuffix;
 
-        public URLInfo(String[] paramArrayOfString1, int paramInt, String[] paramArrayOfString2, String paramString1, String paramString2, String paramString3) {
-            this._$6 = paramArrayOfString1;
-            this._$5 = paramInt;
-            this._$4 = paramArrayOfString2;
-            this._$2 = paramString1;
-            this._$1 = paramString2;
-            this._$3 = paramString3;
+        public URLInfo(String[] paths, int pageNo, String[] params, String urlPrefix, String urlSuffix, String queryString) {
+            this.paths = paths;
+            this.pageNo = pageNo;
+            this.params = params;
+            this.urlPrefix = urlPrefix;
+            this.urlSuffix = urlSuffix;
+            this.queryString = queryString;
         }
 
         public String[] getPaths() {
-            return this._$6;
+            return this.paths;
         }
 
         public void setPaths(String[] paramArrayOfString) {
-            this._$6 = paramArrayOfString;
+            this.paths = paramArrayOfString;
         }
 
         public int getPageNo() {
-            return this._$5;
+            return this.pageNo;
         }
 
         public void setPageNo(int paramInt) {
-            this._$5 = paramInt;
+            this.pageNo = paramInt;
         }
 
         public String[] getParams() {
-            return this._$4;
+            return this.params;
         }
 
         public void setParams(String[] paramArrayOfString) {
-            this._$4 = paramArrayOfString;
+            this.params = paramArrayOfString;
         }
 
         public String getUrlPrefix() {
-            return this._$2;
+            return this.urlPrefix;
         }
 
         public void setUrlPrefix(String paramString) {
-            this._$2 = paramString;
+            this.urlPrefix = paramString;
         }
 
         public String getUrlSuffix() {
-            return this._$1;
+            return this.urlSuffix;
         }
 
         public void setUrlSuffix(String paramString) {
-            this._$1 = paramString;
+            this.urlSuffix = paramString;
         }
 
         public String getQueryString() {
-            return this._$3;
+            return this.queryString;
         }
 
         public void setQueryString(String paramString) {
-            this._$3 = paramString;
+            this.queryString = paramString;
         }
     }
 }
