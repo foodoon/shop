@@ -26,7 +26,7 @@ public class Alipay {
         return str2;
     }
 
-    private static Map<String, String> _$1(Map<String, String> paramMap, String paramString) {
+    private static Map<String, String> appendSign(Map<String, String> paramMap, String paramString) {
         Map localMap = paraFilter(paramMap);
         String str = buildRequestMysign(localMap, paramString);
         localMap.put("sign", str);
@@ -35,7 +35,7 @@ public class Alipay {
     }
 
     public static String buildRequest(Map<String, String> paramMap, String paramString1, String paramString2, String paramString3) {
-        Map localMap = _$1(paramMap, paramString1);
+        Map localMap = appendSign(paramMap, paramString1);
         ArrayList localArrayList = new ArrayList(localMap.keySet());
         StringBuffer localStringBuffer = new StringBuffer();
         localStringBuffer.append("<form id=\"alipaysubmit\" name=\"alipaysubmit\" action=\"https://mapi.alipay.com/gateway.do?_input_charset=utf-8\" method=\"" + paramString2 + "\">");
@@ -51,7 +51,7 @@ public class Alipay {
 
     public static String buildRequest(String paramString1, String paramString2, Map<String, String> paramMap, String paramString3)
             throws Exception {
-        Map localMap = _$1(paramMap, paramString3);
+        Map localMap = appendSign(paramMap, paramString3);
         HttpProtocolHandler localHttpProtocolHandler = HttpProtocolHandler.getInstance();
         HttpRequest localHttpRequest = new HttpRequest(HttpResultType.BYTES);
         localHttpRequest.setCharset("utf-8");
