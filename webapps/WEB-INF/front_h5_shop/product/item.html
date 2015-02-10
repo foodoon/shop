@@ -108,9 +108,9 @@
                          [#if product.pictures?? && product.pictures?size gt 0]
                          [#list product.pictures as pic]
 
-                         <li><img   src="${pic.picturePath!}"  onmousemove="preview(this);"/></li>
-                         <li><img   src="${pic.bigPicturePath!}"  onmousemove="preview(this);"/></li>
-                         <li><img   src="${pic.appPicturePath!}"  onmousemove="preview(this);"/></li>
+                         <li><img bimg="${pic.bigPicturePath!}"  src="${pic.picturePath!}"  onmousemove="preview(this);"/></li>
+                         <li><img bimg="${pic.bigPicturePath!}"  src="${pic.bigPicturePath!}"  onmousemove="preview(this);"/></li>
+                         <li><img  bimg="${pic.bigPicturePath!}" src="${pic.appPicturePath!}"  onmousemove="preview(this);"/></li>
                          [/#list]
                          [/#if]
 

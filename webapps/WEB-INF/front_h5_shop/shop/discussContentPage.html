@@ -7,7 +7,12 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <script language="JavaScript" type="text/javascript" src="${root}/js/jquery.js"></script>
+    <link rel="stylesheet" href="${base}/assets/amazeui/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${base}/assets/amazeui/css/admin.css"/>
+    <link rel="stylesheet" href="${base}/assets/amazeui/amazeui-ext.css"/>
+
+    <script src="${base}/assets/amazeui/js/jquery.min.js"></script>
+    <script src="${base}/assets/amazeui/js/amazeui.min.js"></script>
     <script type="text/javascript">
         function discuss(productId) {
             $.post("haveDiscuss.htm", {productId: productId}, function (data) {
@@ -47,47 +52,10 @@
 
     </script>
 </head>
-<style>
-    .pl_line {
-        width: 710px;
-        font-size: 12px;
-    }
 
-    .pl_zone {
-        color: #000000;
-        display: block;
-        float: left;
-        line-height: 24px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        word-wrap: break-word;
-        border-bottom: #EAEAEA dotted 1px;
-        padding: 10px;
-    }
 
-    .pl {
-        width: 710px;
-    }
-
-    .pl_zone span {
-        color: #999999;
-    }
-
-    UL, LI {
-        list-style-image: none;
-        list-style-position: outside;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .pl_txt {
-        color: #333333;
-        line-height: 22px;
-    }
-</style>
 <body>
-
+<div class="am-container">
 <a href="javascript:void(0)" onclick="discuss('${product.id!}');">写评论 </a>
 
 <div id="discussTextArea" style="display:none">
@@ -97,18 +65,19 @@
 
 
 [#list pagination.list as c]
-<div class="pl_line ">
-    <ul class="pl_zone pl">
+<div class="am-g">
+    <ul>
         <li><strong>${c.member.username!}</strong>&nbsp;&nbsp;<span>发表于 ${c.time!}</span></li>
-        <li class="pl_txt"> ${c.content!}</li>
+        <li> ${c.content!}</li>
     </ul>
     <div class="clear"></div>
 </div>
 [/#list]
 [@pagination_style style='8'/]
 <form id="loginForm" action="${base!}/login.htm" method="get" target="_top"></form>
-<form id="tableForm" action="searchDiscussPage.htm" method="post">
+<form class="am-form" id="tableForm" action="searchDiscussPage.htm" method="post">
     <input type="hidden" value="${product.id!}" name="productId">
 </form>
+</div>
 </body>
 </html>

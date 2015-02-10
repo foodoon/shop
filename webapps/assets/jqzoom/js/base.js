@@ -8,10 +8,7 @@ function preview(img){
 	$("#preview .jqzoom img").attr("src",$(img).attr("src"));
 	$("#preview .jqzoom img").attr("jqimg",$(img).attr("bimg"));
 }
-//图片放大镜效果
-$(function(){
-	$(".jqzoom").jqueryzoom({xzoom:380,yzoom:410});
-});
+
 
 //图片预览小图移动效果,页面加载时触发
 $(function(){
@@ -23,7 +20,7 @@ $(function(){
 	var scrollItems = $(".spec-scroll .items ul li"); //移动容器里的集合
 	var moveLength = scrollItems.eq(0).width() * moveNum; //计算每次移动的长度
 	var countLength = (scrollItems.length - viewNum) * scrollItems.eq(0).width(); //计算总长度,总个数*单个长度
-	  
+
 	//下一张
 	$(".spec-scroll .next").bind("click",function(){
 		if(tempLength < countLength){

@@ -1,5 +1,6 @@
 package guda.shop.common.web;
 
+import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +24,7 @@ public final class ResponseUtils {
         paramHttpServletResponse.setHeader("Cache-Control", "no-cache");
         paramHttpServletResponse.setDateHeader("Expires", 0L);
         try {
-            paramHttpServletResponse.getWriter().write(paramString2);
+            paramHttpServletResponse.getWriter().write(JSON.toJSONString(paramString2));
         } catch (IOException localIOException) {
             log.error(localIOException.getMessage(), localIOException);
         }

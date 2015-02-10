@@ -141,32 +141,20 @@ public class ProductFormAct {
     public String insertConsult(Long productId, String content, HttpServletResponse response, HttpServletRequest request, ModelMap model) {
 
         Website web = SiteUtils.getWeb(request);
-
         ShopMember member = MemberThread.get();
-
         if (member == null) {
-
             ResponseUtils.renderJson(response, "false");
-
             return null;
         }
-
         if ((productId == null) || (this.productMng.findById(productId) == null)) {
-
             return FrontHelper.pageNotFound(web, model, request);
         }
-
         Consult bean = this.consultMng.saveOrUpdate(productId, content, member.getId());
-
         if (bean == null) {
-
             ResponseUtils.renderJson(response, "sameUsually");
-
             return null;
         }
-
         ResponseUtils.renderJson(response, "success");
-
         return null;
     }
 

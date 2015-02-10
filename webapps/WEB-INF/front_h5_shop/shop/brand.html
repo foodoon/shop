@@ -7,10 +7,15 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>${web.name} - ${web.name}${web.additionalTitle!}</title>
-    <script src="${root}/js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${base}/assets/amazeui/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${base}/assets/amazeui/css/admin.css"/>
+    <link rel="stylesheet" href="${base}/assets/amazeui/amazeui-ext.css"/>
+
+    <script src="${base}/assets/amazeui/js/jquery.min.js"></script>
+    <script src="${base}/assets/amazeui/js/amazeui.min.js"></script>
 </head>
 <body>
+<div class="am-container">
 <p>
     <script type="text/javascript">document.write(document.cookie)</script>
 </p>
@@ -18,5 +23,6 @@
 <h1>品牌专区</h1>
 [@shop_BrandList tpl='1' count='100'/]
 <div>[@process_time/]</div>
+    </div>
 </body>
 </html>
