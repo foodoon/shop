@@ -73,7 +73,7 @@ public class ProductFormAct {
 
         if (member == null) {
 
-            ResponseUtils.renderJson(response, "denru");
+            ResponseUtils.renderJsonString(response, "denru");
 
             return null;
         }
@@ -87,12 +87,12 @@ public class ProductFormAct {
 
         if (bean != null) {
 
-            ResponseUtils.renderJson(response, "success");
+            ResponseUtils.renderJsonString(response, "success");
 
             return null;
         }
 
-        ResponseUtils.renderJson(response, "false");
+        ResponseUtils.renderJsonString(response, "false");
 
         return null;
     }
@@ -196,7 +196,7 @@ public class ProductFormAct {
         Website web = SiteUtils.getWeb(request);
         ShopMember member = MemberThread.get();
         if (member == null) {
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
             return null;
         }
         if ((productId == null) || (this.productMng.findById(productId) == null)) {

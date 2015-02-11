@@ -88,7 +88,7 @@ public class CollectAct {
             return "";
         }
         this.manager.deleteByIds(collectIds);
-        ResponseUtils.renderJson(response, "删除成功!");
+        ResponseUtils.renderJsonString(response, "删除成功!");
         return null;
     }
 }

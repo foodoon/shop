@@ -14,6 +14,10 @@ public final class ResponseUtils {
         render(paramHttpServletResponse, "application/json;charset=UTF-8", paramString);
     }
 
+    public static void renderJsonString(HttpServletResponse paramHttpServletResponse, String paramString) {
+        render(paramHttpServletResponse, "application/json;charset=UTF-8", JSON.toJSONString(paramString));
+    }
+
     public static void renderText(HttpServletResponse paramHttpServletResponse, String paramString) {
         render(paramHttpServletResponse, "text/plain;charset=UTF-8", paramString);
     }
@@ -24,7 +28,7 @@ public final class ResponseUtils {
         paramHttpServletResponse.setHeader("Cache-Control", "no-cache");
         paramHttpServletResponse.setDateHeader("Expires", 0L);
         try {
-            paramHttpServletResponse.getWriter().write(JSON.toJSONString(paramString2));
+            paramHttpServletResponse.getWriter().write((paramString2));
         } catch (IOException localIOException) {
             log.error(localIOException.getMessage(), localIOException);
         }

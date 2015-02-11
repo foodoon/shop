@@ -266,7 +266,7 @@ public class RegisterAct {
 
         if (StringUtils.isBlank(username)) {
 
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
 
             return;
         }
@@ -274,12 +274,12 @@ public class RegisterAct {
 
         if (this.userMng.usernameExist(username)) {
 
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
 
             return;
         }
 
-        ResponseUtils.renderJson(response, "true");
+        ResponseUtils.renderJsonString(response, "true");
     }
 
     @RequestMapping({"/email_unique.htm"})
@@ -290,7 +290,7 @@ public class RegisterAct {
 
         if (StringUtils.isBlank(email)) {
 
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
 
             return;
         }
@@ -298,12 +298,12 @@ public class RegisterAct {
 
         if (this.userMng.emailExist(email)) {
 
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
 
             return;
         }
 
-        ResponseUtils.renderJson(response, "true");
+        ResponseUtils.renderJsonString(response, "true");
     }
 
     private WebErrors validate(String checkcode, String username, String email, String password, HttpServletRequest request, HttpServletResponse response) {

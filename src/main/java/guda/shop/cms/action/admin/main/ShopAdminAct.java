@@ -143,10 +143,10 @@ public class ShopAdminAct {
     public String checkUsername(String username, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(username)) || (this.userMng.usernameExist(username)))
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
         else {
 
-            ResponseUtils.renderJson(response, "true");
+            ResponseUtils.renderJsonString(response, "true");
         }
 
         return null;
@@ -156,10 +156,10 @@ public class ShopAdminAct {
     public String checkEmail(String email, HttpServletRequest request, HttpServletResponse response) {
 
         if ((StringUtils.isBlank(email)) || (this.userMng.emailExist(email)))
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
         else {
 
-            ResponseUtils.renderJson(response, "true");
+            ResponseUtils.renderJsonString(response, "true");
         }
 
         return null;

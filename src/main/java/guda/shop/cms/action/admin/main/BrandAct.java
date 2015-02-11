@@ -153,7 +153,7 @@ public class BrandAct {
             pass = this.manager.brandNameNotExist(name) ? "true" : "false";
         }
 
-        ResponseUtils.renderJson(response, pass);
+        ResponseUtils.renderJsonString(response, pass);
     }
 
     private WebErrors validateSave(Brand bean, HttpServletRequest request) {

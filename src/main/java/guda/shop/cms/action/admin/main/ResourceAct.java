@@ -258,7 +258,7 @@ public class ResourceAct
             log.error("write resource file error", e);
         }
 
-        ResponseUtils.renderJson(response, "true");
+        ResponseUtils.renderJsonString(response, "true");
 
 
         return null;

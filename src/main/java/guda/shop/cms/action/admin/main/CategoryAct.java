@@ -305,10 +305,10 @@ public class CategoryAct
 
         if ((StringUtils.isBlank(path)) ||
                 (!this.manager.checkPath(SiteUtils.getWebId(request), path)))
-            ResponseUtils.renderJson(response, "false");
+            ResponseUtils.renderJsonString(response, "false");
         else {
 
-            ResponseUtils.renderJson(response, "true");
+            ResponseUtils.renderJsonString(response, "true");
         }
 
         return null;

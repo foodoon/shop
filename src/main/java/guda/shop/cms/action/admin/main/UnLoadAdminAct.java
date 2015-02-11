@@ -40,7 +40,7 @@ public class UnLoadAdminAct {
 
         AdminMap.unLoadAdmin(username);
 
-        ResponseUtils.renderJson(response, "解锁成功 !");
+        ResponseUtils.renderJsonString(response, "解锁成功 !");
 
         return null;
     }

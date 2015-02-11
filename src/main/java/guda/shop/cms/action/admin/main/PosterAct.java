@@ -38,7 +38,7 @@ public class PosterAct {
 
         this.manager.update(bean);
 
-        ResponseUtils.renderJson(response, "success");
+        ResponseUtils.renderJsonString(response, "success");
 
         return null;
     }
@@ -71,7 +71,7 @@ public class PosterAct {
 
         this.manager.deleteById(id);
 
-        ResponseUtils.renderJson(response, "success");
+        ResponseUtils.renderJsonString(response, "success");
 
         return null;
     }

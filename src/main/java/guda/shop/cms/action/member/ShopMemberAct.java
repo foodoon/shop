@@ -223,7 +223,7 @@ public class ShopMemberAct {
 
         boolean pass = this.userMng.isPasswordValid(userId, origPwd);
 
-        ResponseUtils.renderJson(response, pass ? "true" : "false");
+        ResponseUtils.renderJsonString(response, pass ? "true" : "false");
     }
 
     public String getHistoryProductIds(HttpServletRequest request) {
